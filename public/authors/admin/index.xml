@@ -5,12 +5,20 @@
     <link>/authors/admin/</link>
       <atom:link href="/authors/admin/index.xml" rel="self" type="application/rss+xml" />
     <description>Anthony Schmidt</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 Mar 2019 13:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 16 Jan 2020 13:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Anthony Schmidt</title>
       <link>/authors/admin/</link>
     </image>
+    
+    <item>
+      <title>A survey of teachers and administrators regarding the implementation of new K-8 computing education standards in Tennessee</title>
+      <link>/talk/planting-the-seeds/</link>
+      <pubDate>Thu, 16 Jan 2020 13:00:00 +0000</pubDate>
+      <guid>/talk/planting-the-seeds/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>A Comparison of Direct Admit and IEP Student Academic Achievement</title>

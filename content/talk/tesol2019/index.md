@@ -25,7 +25,7 @@ math: true
 projects:
 - internal-project
 publishDate: "2019-03-01T00:00:00Z"
-slides: example
+slides:
 summary: An example talk using Academic's Markdown slides feature.
 tags: [International Students, Education]
 title: A Comparison of Direct Admit and IEP Student Academic Achievement
