@@ -53,17 +53,32 @@
   </url>
   
   <url>
+    <loc>/project/tidy-tuesday/</loc>
+    <lastmod>2020-01-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/data-science/</loc>
+    <lastmod>2020-01-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/project/</loc>
+    <lastmod>2020-01-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tags/climate-change/</loc>
     <lastmod>2019-12-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/project/fly-or-die-phd-grads/</loc>
+    <loc>/tags/employability/</loc>
     <lastmod>2019-12-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/project/</loc>
+    <loc>/project/fly-or-die-phd-grads/</loc>
     <lastmod>2019-12-07T00:00:00+00:00</lastmod>
   </url>
   
@@ -75,31 +90,6 @@
   <url>
     <loc>/tags/international-students/</loc>
     <lastmod>2019-03-01T13:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication_types/1/</loc>
-    <lastmod>2019-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication/conference-paper/1/</loc>
-    <lastmod>2019-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/gpa/</loc>
-    <lastmod>2019-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication_types/</loc>
-    <lastmod>2019-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication/</loc>
-    <lastmod>2019-03-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -123,18 +113,8 @@
   </url>
   
   <url>
-    <loc>/project/internal-project/</loc>
+    <loc>/project/iep-gpa/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/demo/</loc>
-    <lastmod>2013-03-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/project/external-project/</loc>
-    <lastmod>2013-03-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -154,10 +134,6 @@
   </url>
   
   <url>
-    <loc>/project/fly-or-die-faculty/</loc>
-  </url>
-  
-  <url>
     <loc>/tags/graduation-rates/</loc>
   </url>
   
@@ -166,7 +142,19 @@
   </url>
   
   <url>
+    <loc>/project/planting-the-seeds-for-cs/</loc>
+  </url>
+  
+  <url>
     <loc>/post/</loc>
+  </url>
+  
+  <url>
+    <loc>/publication_types/</loc>
+  </url>
+  
+  <url>
+    <loc>/publication/</loc>
   </url>
   
 </urlset>

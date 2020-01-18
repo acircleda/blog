@@ -23,6 +23,7 @@ links:
 location: 
 math: true
 projects:
+- planting-the-seeds-for-cs
 publishDate: "2020-01-16T00:00:00Z"
 slides: example
 summary: Preliminary results of needs analysis surveys of administrators and teachers on TN state computer science standards.

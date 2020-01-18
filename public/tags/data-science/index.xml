@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Science | Anthony Schmidt</title>
+    <link>/tags/data-science/</link>
+      <atom:link href="/tags/data-science/index.xml" rel="self" type="application/rss+xml" />
+    <description>Data Science</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 16 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Data Science</title>
+      <link>/tags/data-science/</link>
+    </image>
+    
+    <item>
+      <title>Becoming Tidyr over Time</title>
+      <link>/project/tidy-tuesday/</link>
+      <pubDate>Thu, 16 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/project/tidy-tuesday/</guid>
+      <description>&lt;p&gt;This project analyzes tweets from the #TidyTuesday hashtag to understand participation and development of data visualization and data science skills.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

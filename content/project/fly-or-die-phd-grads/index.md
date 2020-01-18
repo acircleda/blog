@@ -2,22 +2,30 @@
 date: "2019-12-07T00:00:00Z"
 external_link: ""
 image:
-  caption: Photo by rawpixel on Unsplash
+  caption: Image by David Mark from Pixabay 
   focal_point: Smart
 links:
 - icon: twitter
   icon_pack: fab
   name: Follow
-  url: https://twitter.com/georgecushen
+  url: https://twitter.com/anthonyteacher
 slides:
-summary: Understanding the relationship between PhD students' conference travel as listed on their CV and employment outcomes.
+summary: The "Fly or Die" project is a multi-survey research project that looks at the complex relationship between graduate student conference travel, employability, and the climate crisis.
+
 tags:
 - Climate Change
-title: Fly or Die - The Relationship Between Graduate Student's Conference Travel and Employability
+- Employability
+title: Fly or Die - The Relationship between Conference Travel, Employability, and the Climate Crisis.
 url_code: ""
 url_pdf: ""
 url_slides: ""
 url_video: ""
 ---
 
-This project uses a survey of recently-graduated PhD students to collect their employment status and their conferences and publications as listed on their CVs at the time of graduation. Using a logistic regression model, this research will attempt to determine if their is a connection between the number of conferences and their employment outcomes (full-time employment vs unemployment).
+The "Fly or Die" project is a multi-survey research project that looks at the complex relationship between graduate student conference travel, employability, and the climate crisis.
+
+**Survey One** focuses on doctoral student employment outcomes, conferences attendance, conference activities, conference types, and publications. Analyses are across disciplines and job industries.
+
+**Survey Two** focuses on tenure-track faculty search comittees and their attitudes toward recently-graduated PhD students' conference attendance, conference activities, and publications.
+
+The ulitmate goal of this research is to understand the ideal conference and publication record that can maximize employment outcomes while minimizing our carbon footprints.

@@ -91,11 +91,26 @@
     </item>
     
     <item>
-      <title>Fly or Die - The Relationship Between Graduate Student&#39;s Conference Travel and Employability</title>
+      <title>Becoming Tidyr over Time</title>
+      <link>/project/tidy-tuesday/</link>
+      <pubDate>Thu, 16 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/project/tidy-tuesday/</guid>
+      <description>&lt;p&gt;This project analyzes tweets from the #TidyTuesday hashtag to understand participation and development of data visualization and data science skills.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Fly or Die - The Relationship between Conference Travel, Employability, and the Climate Crisis.</title>
       <link>/project/fly-or-die-phd-grads/</link>
       <pubDate>Sat, 07 Dec 2019 00:00:00 +0000</pubDate>
       <guid>/project/fly-or-die-phd-grads/</guid>
-      <description>&lt;p&gt;This project uses a survey of recently-graduated PhD students to collect their employment status and their conferences and publications as listed on their CVs at the time of graduation. Using a logistic regression model, this research will attempt to determine if their is a connection between the number of conferences and their employment outcomes (full-time employment vs unemployment).&lt;/p&gt;
+      <description>&lt;p&gt;The &amp;ldquo;Fly or Die&amp;rdquo; project is a multi-survey research project that looks at the complex relationship between graduate student conference travel, employability, and the climate crisis.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Survey One&lt;/strong&gt; focuses on doctoral student employment outcomes, conferences attendance, conference activities, conference types, and publications. Analyses are across disciplines and job industries.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Survey Two&lt;/strong&gt; focuses on tenure-track faculty search comittees and their attitudes toward recently-graduated PhD students&amp;rsquo; conference attendance, conference activities, and publications.&lt;/p&gt;
+
+&lt;p&gt;The ulitmate goal of this research is to understand the ideal conference and publication record that can maximize employment outcomes while minimizing our carbon footprints.&lt;/p&gt;
 </description>
     </item>
     
@@ -104,14 +119,6 @@
       <link>/talk/tesol2019/</link>
       <pubDate>Fri, 01 Mar 2019 13:00:00 +0000</pubDate>
       <guid>/talk/tesol2019/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>A Comparison of Direct Admit and IEP Student Academic Achievement</title>
-      <link>/publication/conference-paper/1/</link>
-      <pubDate>Fri, 01 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>/publication/conference-paper/1/</guid>
       <description></description>
     </item>
     
@@ -316,19 +323,11 @@ $$&lt;/p&gt;
     
     <item>
       <title>The Efficacy of an Intensive English program</title>
-      <link>/project/internal-project/</link>
+      <link>/project/iep-gpa/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>/project/internal-project/</guid>
+      <guid>/project/iep-gpa/</guid>
       <description>&lt;p&gt;This project uses longitudinal institutional data to understand the efficacy of an intensive English program (IEP) by comparing IEP students, who arrive with TOEFL scores under the institutional minimum, with directly admitted students, who have scores at or above the minimum.&lt;/p&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>Planting the Seeds of Computer Science</title>
-      <link>/project/external-project/</link>
-      <pubDate>Wed, 27 Mar 2013 00:00:00 +0000</pubDate>
-      <guid>/project/external-project/</guid>
-      <description></description>
     </item>
     
     <item>
@@ -340,11 +339,13 @@ $$&lt;/p&gt;
     </item>
     
     <item>
-      <title>Faculty Attitudes toward Conference Attendance of Job Applicants - A Focus on Recent PhD Graduates</title>
-      <link>/project/fly-or-die-faculty/</link>
+      <title>Planting the Seeds for Computer Science Education in East Tennessee</title>
+      <link>/project/planting-the-seeds-for-cs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/project/fly-or-die-faculty/</guid>
-      <description>&lt;p&gt;This project uses a survey of faculty to understand how they see the importance of a recently graduated PhD students conference activities, conference types, and publication record when serving on a search committee. This survey will use ordinal regression and multiple corrected univariate factorial ANOVAs to determine differences between discipline groups, with Carnegie classification serving as an interaction factor.&lt;/p&gt;
+      <guid>/project/planting-the-seeds-for-cs/</guid>
+      <description>&lt;p&gt;The project is focused on understanding the needs of administrators and teachings in order to develop opportunities for K-8 teachers to engage in professional development on the Tennessee computer science standards.&lt;/p&gt;
+
+&lt;p&gt;This project is was funded through the [University of Tennessee’s Community Engaged Research Seed Program].(&lt;a href=&#34;https://research.utk.edu/2019-research-seed-program-recipients/&#34; target=&#34;_blank&#34;&gt;https://research.utk.edu/2019-research-seed-program-recipients/&lt;/a&gt;). It is related to the &lt;a href=&#34;https://www.makingdatasciencecount.com/project/cs4appalachia/&#34; target=&#34;_blank&#34;&gt;CS for Appalachia&lt;/a&gt; Research-Practice Partnership and NSF grant.&lt;/p&gt;
 </description>
     </item>
     

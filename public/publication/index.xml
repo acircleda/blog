@@ -5,20 +5,12 @@
     <link>/publication/</link>
       <atom:link href="/publication/index.xml" rel="self" type="application/rss+xml" />
     <description>Publications</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
     <image>
       <url>/img/icon-192.png</url>
       <title>Publications</title>
       <link>/publication/</link>
     </image>
-    
-    <item>
-      <title>A Comparison of Direct Admit and IEP Student Academic Achievement</title>
-      <link>/publication/conference-paper/1/</link>
-      <pubDate>Fri, 01 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>/publication/conference-paper/1/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>Are International Students Getting a Bang for their Buck? The Relationship between Expenditures and International Student Graduation Rates</title>

@@ -23,7 +23,7 @@ links:
 location: 
 math: true
 projects:
-- internal-project
+- iep-gpa
 publishDate: "2019-03-01T00:00:00Z"
 slides:
 summary: An example talk using Academic's Markdown slides feature.

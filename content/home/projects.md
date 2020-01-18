@@ -40,6 +40,10 @@ subtitle = ""
   [[content.filter_button]]
     name = "Employability"
     tag = "Employability"
+    
+  [[content.filter_button]]
+    name = "Data Science"
+    tag = "Data Science"
 
 
 
