@@ -25,11 +25,6 @@
   weight = 40
 
 [[main]]
-  name = "Other Blogs"
-  url = "otherblogs/"
-  weight = 50
-
-[[main]]
   name = "Experience"
   url = "#experience"
   weight = 60

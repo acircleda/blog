@@ -20,7 +20,7 @@ interests:
 - Climate change and education
 - Quantiative research methods
 - Data visualization
-name: Anthonyyyy Schmidt
+name: Anthony Schmidt
 organizations:
 - name: University of Tennessee-Knoxville
   url: "http://www.utk.edu"
