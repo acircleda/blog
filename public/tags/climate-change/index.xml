@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Climate Change | Anthony Schmidt</title>
+    <link>/tags/climate-change/</link>
+      <atom:link href="/tags/climate-change/index.xml" rel="self" type="application/rss+xml" />
+    <description>Climate Change</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 07 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Climate Change</title>
+      <link>/tags/climate-change/</link>
+    </image>
+    
+    <item>
+      <title>Fly or Die - The Relationship Between Graduate Student&#39;s Conference Travel and Employability</title>
+      <link>/project/fly-or-die-phd-grads/</link>
+      <pubDate>Sat, 07 Dec 2019 00:00:00 +0000</pubDate>
+      <guid>/project/fly-or-die-phd-grads/</guid>
+      <description>&lt;p&gt;This project uses a survey of recently-graduated PhD students to collect their employment status and their conferences and publications as listed on their CVs at the time of graduation. Using a logistic regression model, this research will attempt to determine if their is a connection between the number of conferences and their employment outcomes (full-time employment vs unemployment).&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Faculty Attitudes toward Conference Attendance of Job Applicants - A Focus on Recent PhD Graduates</title>
+      <link>/project/fly-or-die-faculty/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/project/fly-or-die-faculty/</guid>
+      <description>&lt;p&gt;This project uses a survey of faculty to understand how they see the importance of a recently graduated PhD students conference activities, conference types, and publication record when serving on a search committee. This survey will use ordinal regression and multiple corrected univariate factorial ANOVAs to determine differences between discipline groups, with Carnegie classification serving as an interaction factor.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
