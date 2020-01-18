@@ -10,7 +10,7 @@ subtitle = ""
 
 [content]
   # Page type to display. E.g. project.
-  page_type = "project"
+  page_type = "project2"
   
   # Filter toolbar (optional).
   # Add or remove as many filters (`[[content.filter_button]]` instances) as you like.
@@ -23,24 +23,27 @@ subtitle = ""
   
   [[content.filter_button]]
     name = "All"
-    tag = "*"
+    tag2 = "*"
   
   [[content.filter_button]]
     name = "Interactive"
-    tag = "Interactive"
+    tag2 = "Interactive"
   
   [[content.filter_button]]
     name = "Static"
-    tag = "Static"
+    tag2 = "Static"
     
 [[content.filter_button]]
     name = "Print"
-    tag = "Print"
+    tag2 = "Print"
     
 [[content.filter_button]]
     name = "Reports"
-    tag = "Reports"
-
+    tag2 = "Reports"
+    
+[[content.filter_button]]
+    name = "Other"
+    tag2 = "Other"
 
 
 [design]

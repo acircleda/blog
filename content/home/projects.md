@@ -28,10 +28,20 @@ subtitle = ""
   [[content.filter_button]]
     name = "Education"
     tag = "Education"
+    
+  [[content.filter_button]]
+    name = "International Students"
+    tag = "International Students"
   
   [[content.filter_button]]
     name = "Climate Change"
     tag = "Climate Change"
+    
+  [[content.filter_button]]
+    name = "Employability"
+    tag = "Employability"
+
+
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
