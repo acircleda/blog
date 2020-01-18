@@ -24,7 +24,7 @@ name: Anthony Schmidt
 organizations:
 - name: University of Tennessee-Knoxville
   url: "http://www.utk.edu"
-role: PhD Student - Evaluation, Statistics, and Measurement
+role: PhD Student / Data Visualization Researcher
 social:
 - icon: envelope
   icon_pack: fas
@@ -44,4 +44,4 @@ user_groups:
 - Visitors
 ---
 
-Anthony Schmidt is a PhD student in evaluation, statistics, and measurement at the Universty of Tennessee-Knoxville. He is also a full-time data visualization researcher at [CUPA-HR](http://www.cupahr.org/). 
+Anthony Schmidt is a PhD student in [Evaluation, Statistics, and Measurement](https://epc.utk.edu/evaluation-statistics-measurement/) at the Universty of Tennessee-Knoxville. He is also a full-time data visualization researcher at [CUPA-HR](http://www.cupahr.org/). 
