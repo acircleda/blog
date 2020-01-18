@@ -3,9 +3,9 @@
 widget = "portfolio"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
-weight = 150  # Order that this section will appear.
+weight = 20  # Order that this section will appear.
 
-title = "Portfolio"
+title = "Projects"
 subtitle = ""
 
 [content]
@@ -26,22 +26,12 @@ subtitle = ""
     tag = "*"
   
   [[content.filter_button]]
-    name = "Interactive"
-    tag = "Interactive"
+    name = "Education"
+    tag = "Education"
   
   [[content.filter_button]]
-    name = "Static"
-    tag = "Static"
-    
-[[content.filter_button]]
-    name = "Print"
-    tag = "Print"
-    
-[[content.filter_button]]
-    name = "Reports"
-    tag = "Reports"
-
-
+    name = "Climate Change"
+    tag = "Climate Change"
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
