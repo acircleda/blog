@@ -5,12 +5,20 @@
     <link>/authors/admin/</link>
       <atom:link href="/authors/admin/index.xml" rel="self" type="application/rss+xml" />
     <description>Anthony Schmidt</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 Mar 2019 13:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Anthony Schmidt</title>
       <link>/authors/admin/</link>
     </image>
+    
+    <item>
+      <title>A Comparison of Direct Admit and IEP Student Academic Achievement</title>
+      <link>/talk/tesol2019/</link>
+      <pubDate>Fri, 01 Mar 2019 13:00:00 +0000</pubDate>
+      <guid>/talk/tesol2019/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>A Comparison of Direct Admit and IEP Student Academic Achievement</title>

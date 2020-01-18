@@ -24,6 +24,8 @@ name: Anthony Schmidt
 organizations:
 - name: University of Tennessee-Knoxville
   url: "http://www.utk.edu"
+- name: College and University Professional Association for Human Resources (CUPA-HR)
+  url: "http://www.cupahr.org"
 role: PhD Student / Data Visualization Researcher
 social:
 - icon: envelope
