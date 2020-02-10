@@ -31,7 +31,7 @@
   <meta name="description" content="Google collects a lot of data on us. If you have Google Maps, chances are your location is being tracked, too. Unless, of course, you have it disabled. But, if you don&rsquo;t, you&rsquo;d be surprised by the amount of location data (and its accuracy) contained in your Google Timeline. Many worry about Google&rsquo;s tracking, but for those of us who don&rsquo;t, there is some potential fun we can have with our own data.">
 
   
-  <link rel="alternate" hreflang="en-us" href="/post/2020-02-10-carbon-footprint-google-data/2020-02-10-carbon-footprint-google-data/">
+  <link rel="alternate" hreflang="en-us" href="/post/2020-02-10-carbon-footprint-google-data/post/">
 
   
 
@@ -100,7 +100,7 @@
   <link rel="icon" type="image/png" href="/img/icon-32.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="/post/2020-02-10-carbon-footprint-google-data/2020-02-10-carbon-footprint-google-data/">
+  <link rel="canonical" href="/post/2020-02-10-carbon-footprint-google-data/post/">
 
   
   
@@ -116,7 +116,7 @@
   <meta property="twitter:creator" content="@anthonyteacher">
   
   <meta property="og:site_name" content="Anthony Schmidt">
-  <meta property="og:url" content="/post/2020-02-10-carbon-footprint-google-data/2020-02-10-carbon-footprint-google-data/">
+  <meta property="og:url" content="/post/2020-02-10-carbon-footprint-google-data/post/">
   <meta property="og:title" content="Assessing Your Carbon Footprint from Google Location Data | Anthony Schmidt">
   <meta property="og:description" content="Google collects a lot of data on us. If you have Google Maps, chances are your location is being tracked, too. Unless, of course, you have it disabled. But, if you don&rsquo;t, you&rsquo;d be surprised by the amount of location data (and its accuracy) contained in your Google Timeline. Many worry about Google&rsquo;s tracking, but for those of us who don&rsquo;t, there is some potential fun we can have with our own data."><meta property="og:image" content="/img/icon-192.png">
   <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="en-us">
@@ -148,7 +148,7 @@
   "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "/post/2020-02-10-carbon-footprint-google-data/2020-02-10-carbon-footprint-google-data/"
+    "@id": "/post/2020-02-10-carbon-footprint-google-data/post/"
   },
   "headline": "Assessing Your Carbon Footprint from Google Location Data",
   
@@ -746,7 +746,7 @@ mar &lt;- json_process(mar2019)
 <pre><code>prep &lt;- data %&gt;% drop_na(activity) %&gt;%
   filter(activity %in% carbon_activities$activity) %&gt;%
   mutate(
-    emissions = ifelse(activity == &quot;FLYING&quot;, km*.18, km*.12)
+    emissions = ifelse(activity == &quot;FLYING&quot;, km*.18, km*.14)
   ) %&gt;% drop_na(emissions)
 </code></pre>
 
@@ -781,7 +781,7 @@ mar &lt;- json_process(mar2019)
        y = &quot;kgCO2&quot;)
 </code></pre>
 
-<p><img src="~/personal-emissions.png" alt="My Personal Emissions for 2019" /></p>
+<p><img src="/post/personal-emissions.png" alt="My Personal Emissions - 2019" /></p>
 
 <h1 id="conclusion">Conclusion</h1>
 
@@ -808,7 +808,7 @@ mar &lt;- json_process(mar2019)
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=/post/2020-02-10-carbon-footprint-google-data/2020-02-10-carbon-footprint-google-data/&amp;text=Assessing%20Your%20Carbon%20Footprint%20from%20Google%20Location%20Data" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=/post/2020-02-10-carbon-footprint-google-data/post/&amp;text=Assessing%20Your%20Carbon%20Footprint%20from%20Google%20Location%20Data" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -821,7 +821,7 @@ mar &lt;- json_process(mar2019)
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=/post/2020-02-10-carbon-footprint-google-data/2020-02-10-carbon-footprint-google-data/&amp;t=Assessing%20Your%20Carbon%20Footprint%20from%20Google%20Location%20Data" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=/post/2020-02-10-carbon-footprint-google-data/post/&amp;t=Assessing%20Your%20Carbon%20Footprint%20from%20Google%20Location%20Data" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -834,7 +834,7 @@ mar &lt;- json_process(mar2019)
       
       
       <li>
-        <a href="mailto:?subject=Assessing%20Your%20Carbon%20Footprint%20from%20Google%20Location%20Data&amp;body=/post/2020-02-10-carbon-footprint-google-data/2020-02-10-carbon-footprint-google-data/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=Assessing%20Your%20Carbon%20Footprint%20from%20Google%20Location%20Data&amp;body=/post/2020-02-10-carbon-footprint-google-data/post/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -847,7 +847,7 @@ mar &lt;- json_process(mar2019)
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=/post/2020-02-10-carbon-footprint-google-data/2020-02-10-carbon-footprint-google-data/&amp;title=Assessing%20Your%20Carbon%20Footprint%20from%20Google%20Location%20Data" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=/post/2020-02-10-carbon-footprint-google-data/post/&amp;title=Assessing%20Your%20Carbon%20Footprint%20from%20Google%20Location%20Data" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -860,7 +860,7 @@ mar &lt;- json_process(mar2019)
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=Assessing%20Your%20Carbon%20Footprint%20from%20Google%20Location%20Data%20/post/2020-02-10-carbon-footprint-google-data/2020-02-10-carbon-footprint-google-data/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=Assessing%20Your%20Carbon%20Footprint%20from%20Google%20Location%20Data%20/post/2020-02-10-carbon-footprint-google-data/post/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -873,7 +873,7 @@ mar &lt;- json_process(mar2019)
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=/post/2020-02-10-carbon-footprint-google-data/2020-02-10-carbon-footprint-google-data/&amp;title=Assessing%20Your%20Carbon%20Footprint%20from%20Google%20Location%20Data" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=/post/2020-02-10-carbon-footprint-google-data/post/&amp;title=Assessing%20Your%20Carbon%20Footprint%20from%20Google%20Location%20Data" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>

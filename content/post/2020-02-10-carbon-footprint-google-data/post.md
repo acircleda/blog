@@ -2,7 +2,6 @@
   title: Assessing Your Carbon Footprint from Google Location Data
 author: ''
 date: '2020-02-10'
-slug: assessing-your-carbon-footprint-from-google-location-data
 categories:
   - media
 tags:
@@ -155,7 +154,7 @@ I think created a new data frame that dropped missing values, selected only flyi
 prep <- data %>% drop_na(activity) %>%
   filter(activity %in% carbon_activities$activity) %>%
   mutate(
-    emissions = ifelse(activity == "FLYING", km*.18, km*.12)
+    emissions = ifelse(activity == "FLYING", km*.18, km*.14)
   ) %>% drop_na(emissions)
 ```
 
@@ -189,7 +188,7 @@ prep %>%
        y = "kgCO2")
 ```
 
-![My Personal Emissions for 2019](personal-emissions.png)
+![My Personal Emissions - 2019](/post/personal-emissions.png)
 
 # Conclusion
 

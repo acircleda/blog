@@ -14,9 +14,9 @@
     
     <item>
       <title>Assessing Your Carbon Footprint from Google Location Data</title>
-      <link>/post/2020-02-10-carbon-footprint-google-data/2020-02-10-carbon-footprint-google-data/</link>
+      <link>/post/2020-02-10-carbon-footprint-google-data/post/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/post/2020-02-10-carbon-footprint-google-data/2020-02-10-carbon-footprint-google-data/</guid>
+      <guid>/post/2020-02-10-carbon-footprint-google-data/post/</guid>
       <description>
 
 &lt;p&gt;Google collects &lt;em&gt;a lot&lt;/em&gt; of data on us. If you have Google Maps, chances are your location is being tracked, too. Unless, of course, you have it disabled. But, if you don&amp;rsquo;t, you&amp;rsquo;d be surprised by the amount of location data (and its accuracy) contained in your Google Timeline. &lt;a href=&#34;https://www.nytimes.com/interactive/2019/12/19/opinion/location-tracking-cell-phone.html&#34; target=&#34;_blank&#34;&gt;Many worry about Google&amp;rsquo;s tracking&lt;/a&gt;, but for those of us who don&amp;rsquo;t, there is some potential fun we can have with our own data.&lt;/p&gt;
@@ -173,7 +173,7 @@ mar &amp;lt;- json_process(mar2019)
 &lt;pre&gt;&lt;code&gt;prep &amp;lt;- data %&amp;gt;% drop_na(activity) %&amp;gt;%
   filter(activity %in% carbon_activities$activity) %&amp;gt;%
   mutate(
-    emissions = ifelse(activity == &amp;quot;FLYING&amp;quot;, km*.18, km*.12)
+    emissions = ifelse(activity == &amp;quot;FLYING&amp;quot;, km*.18, km*.14)
   ) %&amp;gt;% drop_na(emissions)
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -208,7 +208,7 @@ mar &amp;lt;- json_process(mar2019)
        y = &amp;quot;kgCO2&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;img src=&#34;personal-emissions.png&#34; alt=&#34;My Personal Emissions for 2019&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/personal-emissions.png&#34; alt=&#34;My Personal Emissions - 2019&#34; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
 
