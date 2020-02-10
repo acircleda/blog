@@ -61,10 +61,26 @@
     </item>
     
     <item>
+      <title>Interactive</title>
+      <link>/tags/interactive/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/tags/interactive/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>IPEDS</title>
       <link>/tags/ipeds/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>/tags/ipeds/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Viz</title>
+      <link>/tags/viz/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/tags/viz/</guid>
       <description></description>
     </item>
     

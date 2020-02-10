@@ -46,6 +46,19 @@
     </item>
     
     <item>
+      <title>Data-Related Jobs for ESM Students</title>
+      <link>/project/esm-data-jobs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/project/esm-data-jobs/</guid>
+      <description>&lt;p&gt;This is an ongoing project to analyze data-related jobs posted on &lt;a href=&#34;http://www.higheredjobs.com&#34; target=&#34;_blank&#34;&gt;HigherEdJobs&lt;/a&gt;. These are jobs a typical ESM student would qualify. The jobs are analyzed in order to understand the skills and competencies that are in demand.&lt;/p&gt;
+
+&lt;p&gt;The project is currently focused on administrative-level jobs. Faculty job analyses will be forthcoming.&lt;/p&gt;
+
+&lt;p&gt;The project files can be found on Github &lt;a href=&#34;https://github.com/acircleda/Data-Jobs&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;. The analyses, always under development, can be found &lt;a href=&#34;https://acircleda.github.io/Data-Jobs/&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Planting the Seeds for Computer Science Education in East Tennessee</title>
       <link>/project/planting-the-seeds-for-cs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -53,6 +66,17 @@
       <description>&lt;p&gt;The project is focused on understanding the needs of administrators and teachings in order to develop opportunities for K-8 teachers to engage in professional development on the Tennessee computer science standards.&lt;/p&gt;
 
 &lt;p&gt;This project is was funded through the [University of Tennessee’s Community Engaged Research Seed Program].(&lt;a href=&#34;https://research.utk.edu/2019-research-seed-program-recipients/&#34; target=&#34;_blank&#34;&gt;https://research.utk.edu/2019-research-seed-program-recipients/&lt;/a&gt;). It is related to the &lt;a href=&#34;https://www.makingdatasciencecount.com/project/cs4appalachia/&#34; target=&#34;_blank&#34;&gt;CS for Appalachia&lt;/a&gt; Research-Practice Partnership and NSF grant.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Student Enrollment Dashboard</title>
+      <link>/project/portfolio/port-example/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/project/portfolio/port-example/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Note: The following Tableau dashboard represents real data that has been altered to maintain confidentiality.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The purpose of this dashboard is to allow users to understand enrollment trends, compare enrollment to another institution, and see enrollment by student country of origin.&lt;/p&gt;
 </description>
     </item>
     

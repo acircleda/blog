@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.5.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Anthony Schmidt">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Google collects a lot of data on us. If you have Google Maps, chances are your location is being tracked, too. Unless, of course, you have it disabled. But, if you don&rsquo;t, you&rsquo;d be surprised by the amount of location data (and its accuracy) contained in your Google Timeline. Many worry about Google&rsquo;s tracking, but for those of us who don&rsquo;t, there is some potential fun we can have with our own data.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/post/2020-02-10-carbon-footprint-google-data/2020-02-10-carbon-footprint-google-data/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#FF8200">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    
+
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon-32.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="/post/2020-02-10-carbon-footprint-google-data/2020-02-10-carbon-footprint-google-data/">
+
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="twitter:site" content="@anthonyteacher">
+  <meta property="twitter:creator" content="@anthonyteacher">
+  
+  <meta property="og:site_name" content="Anthony Schmidt">
+  <meta property="og:url" content="/post/2020-02-10-carbon-footprint-google-data/2020-02-10-carbon-footprint-google-data/">
+  <meta property="og:title" content="Assessing Your Carbon Footprint from Google Location Data | Anthony Schmidt">
+  <meta property="og:description" content="Google collects a lot of data on us. If you have Google Maps, chances are your location is being tracked, too. Unless, of course, you have it disabled. But, if you don&rsquo;t, you&rsquo;d be surprised by the amount of location data (and its accuracy) contained in your Google Timeline. Many worry about Google&rsquo;s tracking, but for those of us who don&rsquo;t, there is some potential fun we can have with our own data."><meta property="og:image" content="/img/icon-192.png">
+  <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="en-us">
+  
+    
+    
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/2020-02-10-carbon-footprint-google-data/2020-02-10-carbon-footprint-google-data/"
+  },
+  "headline": "Assessing Your Carbon Footprint from Google Location Data",
+  
+  "datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Anthony Schmidt"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Anthony Schmidt",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/img/icon-512.png"
+    }
+  },
+  "description": "Google collects a lot of data on us. If you have Google Maps, chances are your location is being tracked, too. Unless, of course, you have it disabled. But, if you don\u0026rsquo;t, you\u0026rsquo;d be surprised by the amount of location data (and its accuracy) contained in your Google Timeline. Many worry about Google\u0026rsquo;s tracking, but for those of us who don\u0026rsquo;t, there is some potential fun we can have with our own data."
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Assessing Your Carbon Footprint from Google Location Data | Anthony Schmidt</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Anthony Schmidt</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav mr-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Blog</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#talks"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#talks"><span>Presentations</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#portfolio"><span>Portfolio</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#experience"><span>Experience</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Assessing Your Carbon Footprint from Google Location Data</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Jan 1, 0001
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    7 min read
+  </span>
+  
+
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      
+
+<p>Google collects <em>a lot</em> of data on us. If you have Google Maps, chances are your location is being tracked, too. Unless, of course, you have it disabled. But, if you don&rsquo;t, you&rsquo;d be surprised by the amount of location data (and its accuracy) contained in your Google Timeline. <a href="https://www.nytimes.com/interactive/2019/12/19/opinion/location-tracking-cell-phone.html" target="_blank">Many worry about Google&rsquo;s tracking</a>, but for those of us who don&rsquo;t, there is some potential fun we can have with our own data.</p>
+
+<p>For example, we can <strong>estimate</strong> our carbon emissions. I say <strong>estimate</strong> because it is not exact and it is likely very difficult to account for (or even remember) all of your trips, who was with you, and how to split your emissions. But, we can come close. We can get the date and time, start and end location, the distance travelled, the place, and most importantly, the activity type.</p>
+
+<p>Follow along and I&rsquo;ll show you what I did. It&rsquo;s no doubt imperfect, but for a beginner&rsquo;s effort, I&rsquo;d say it&rsquo;s not too bad.</p>
+
+<h1 id="get-your-data">Get Your Data</h1>
+
+<p>Navigate to <a href="https://takeout.google.com/?pli=1" target="_blank">Google Takeout</a>, and first click &ldquo;Deselect all&rdquo; at the right. Then, scroll down to &ldquo;Location History&rdquo; and click on &ldquo;Multiple Formats&rdquo;. Choose JSON and click &ldquo;OK&rdquo;. Check the checkbox and scroll down to the bottom. Select &ldquo;Next step&rdquo;. Here you can export your data once or set a schedule. Click &ldquo;create export&rdquo;. Dependning on the amount of data, the export can take a few minutes (or &ldquo;days&rdquo; as Google claims). I got a year&rsquo;s worth of data in about 3 minutes. Just refresh the page to check on the status.</p>
+
+<p>When its ready, download your zip file. Extract your zip file somewhere convenient. Drill into the extract folder until you find &ldquo;Semantic Location Data&rdquo;. That is what we are after. This will contain a folder for each year and a JSON file for each month in that year.</p>
+
+<h1 id="load-and-process">Load and Process</h1>
+
+<p>You&rsquo;ll need at minimum the following packages</p>
+
+<ul>
+<li>jsonlite</li>
+<li>tidyverse</li>
+<li>lubridate</li>
+<li>ggplot2</li>
+</ul>
+
+<h2 id="load-data">Load Data</h2>
+
+<p>You can load your data like so:</p>
+
+<pre><code>df &lt;- data.frame(fromJSON(&quot;file location/file&quot;, flatten=TRUE))
+</code></pre>
+
+<p>JSON comes unadultered as a list format. I have no clue how to work with lists. So, I flattened it out to a data frame. I know how to work with those.</p>
+
+<p>I was going to write a for-loop to process the file list and automatically load the data, but since I was only working with 12 files (2019), I just did it like this:</p>
+
+<pre><code>jan2019 &lt;- data.frame(fromJSON(&quot;2019/2019_JANUARY.json&quot;, flatten = TRUE))
+feb2019 &lt;- data.frame(fromJSON(&quot;2019/2019_FEBRUARY.json&quot;, flatten = TRUE))
+mar2019 &lt;- data.frame(fromJSON(&quot;2019/2019_MARCH.json&quot;, flatten = TRUE))
+april2019 &lt;- data.frame(fromJSON(&quot;2019/2019_APRIL.json&quot;, flatten = TRUE))
+may2019 &lt;- data.frame(fromJSON(&quot;2019/2019_MAY.json&quot;, flatten = TRUE))
+</code></pre>
+
+<p>&hellip;and so on.</p>
+
+<h2 id="process-data">Process Data</h2>
+
+<p>I thought I would simply <code>rbind</code> the data and work with a single large data set, but many files had different numbers of columns, making rbind useless. Thankfully, they had the same variable names, so I wrote a function to process the data, selecting the variables I wanted and making a few changes.</p>
+
+<h2 id="become-familiar-with-the-variables">Become Familiar with the Variables</h2>
+
+<p>There are <em>a lot</em> of variables in the JSON file. There are variables for start and end location, path variables, distance, place name, accuracy estimates, etc. Here are the ones I was most interested in:</p>
+
+<ul>
+<li>timelineObjects.activitySegment.distance
+
+<ul>
+<li>distance travelled in feet</li>
+</ul></li>
+<li>timelineObjects.activitySegment.activityType
+
+<ul>
+<li>flying, walking, in a car, etc.</li>
+</ul></li>
+<li>timelineObjects.activitySegment.startLocation.latitudeE7 and timelineObjects.activitySegment.startLocation.longitudeE7
+
+<ul>
+<li>starting location</li>
+</ul></li>
+<li>timelineObjects.activitySegment.endLocation.latitudeE7 and timelineObjects.activitySegment.endLocation.longitudeE7
+
+<ul>
+<li>ending location</li>
+</ul></li>
+<li>timelineObjects.placeVisit.location.name
+
+<ul>
+<li>the place I went to</li>
+</ul></li>
+<li>timelineObjects.placeVisit.duration.startTimestampMs
+
+<ul>
+<li>the start time</li>
+</ul></li>
+</ul>
+
+<p>Thanks to <a href="https://shiring.github.io/maps/2016/12/30/Standortverlauf_post" target="_blank">Shirin&rsquo;s playgRound</a>, I had some clues about what to process in R, namely:</p>
+
+<ul>
+<li>How to convert long/late from IE7 to GPS (divide by <code>1e7</code>)</li>
+<li>How to convert time from POSIX miliseconds to human readable time `as.POSIXct(as.numeric(time_variable)/1000, origin = &ldquo;1970-01-01&rdquo;)</li>
+</ul>
+
+<p>One problem I noticed was that many rows were offset. Meaning data was split between two or three rows. For example, time, location, and activity. I used <code>lead()</code> and <code>zoo::na.locf()</code> to deal with these.</p>
+
+<h2 id="select-and-mutate">Select and Mutate</h2>
+
+<p>The following function selects key variables and then mutates them, creatng variables with human-readable names. It also converts the distance to miles and kilometers. You could take it a step further and then select only those variables, but I decided to leave them in out of laziness.</p>
+
+<p>The function takes a dataframe name as its only input.</p>
+
+<pre><code>##process data function
+json_process &lt;- function(dfin){
+  dfin %&gt;% select(timelineObjects.activitySegment.distance,
+                  timelineObjects.activitySegment.activityType,
+                  timelineObjects.activitySegment.startLocation.latitudeE7,
+                  timelineObjects.activitySegment.startLocation.longitudeE7,
+                  timelineObjects.activitySegment.endLocation.latitudeE7,
+                  timelineObjects.activitySegment.endLocation.longitudeE7,
+                  timelineObjects.placeVisit.location.name,
+                  timelineObjects.placeVisit.duration.startTimestampMs) %&gt;%
+    mutate(
+      start_lat = timelineObjects.activitySegment.startLocation.latitudeE7 / 1e7,
+      star_long = timelineObjects.activitySegment.startLocation.longitudeE7 / 1e7,
+      end_lat = timelineObjects.activitySegment.endLocation.latitudeE7 / 1e7,
+      end_long = timelineObjects.activitySegment.endLocation.longitudeE7 / 1e7,
+      time = lead(as.POSIXct(as.numeric(timelineObjects.placeVisit.duration.startTimestampMs)/1000, origin = &quot;1970-01-01&quot;), 3L),
+      year = year(time),
+      month = ifelse(is.na(time), month(zoo::na.locf(time)), month(time)),
+      activity = ifelse(is.na(timelineObjects.activitySegment.activityType), zoo::na.locf(timelineObjects.activitySegment.activityType), timelineObjects.activitySegment.activityType),
+      place = lead(timelineObjects.placeVisit.location.name, 3L),
+      miles = timelineObjects.activitySegment.distance/1609,
+      km = timelineObjects.activitySegment.distance/1000)
+  }
+</code></pre>
+
+<p>I called the function like so:</p>
+
+<pre><code>jan &lt;- json_process(jan2019)
+feb &lt;- json_process(feb2019)
+mar &lt;- json_process(mar2019)
+</code></pre>
+
+<p>And then combined the dataframes:</p>
+
+<pre><code>data &lt;- rbind(jan, feb, mar, april, may, june, july, aug, sep, oct, nov, dec)
+</code></pre>
+
+<h1 id="analyze-and-visualize">Analyze and Visualize</h1>
+
+<p>First, check what activities are listed in your data:</p>
+
+<pre><code>data %&gt;% group_by(activity) %&gt;% count
+</code></pre>
+
+<p>The activities included IN_FERRY, IN_BUS, IN_SUBWAY, etc. However, I focused on only two carbon-emitting activities in my data - those that I could easily account carbon emissions for - and created a small dataframe to use for filtering:</p>
+
+<pre><code>carbon_activities &lt;- data.frame(activity = c(&quot;FLYING&quot;,
+                              &quot;IN_PASSENGER_VEHICLE&quot;))
+</code></pre>
+
+<p>I think created a new data frame that dropped missing values, selected only flying and car activities, and then calculated emissions.</p>
+
+<pre><code>prep &lt;- data %&gt;% drop_na(activity) %&gt;%
+  filter(activity %in% carbon_activities$activity) %&gt;%
+  mutate(
+    emissions = ifelse(activity == &quot;FLYING&quot;, km*.18, km*.12)
+  ) %&gt;% drop_na(emissions)
+</code></pre>
+
+<p>How did I get the figures for emissions? Well, it turns out that calculating carbon emissions from flying is quite difficult. This is from the <a href="https://www.icao.int/environmental-protection/Carbonoffset/Pages/default.aspx" target="_blank">ICAO website</a>:</p>
+
+<ul>
+<li>Step 1: Estimation of the aircraft fuel burn</li>
+<li>Step 2: Calculation of the passengers&rsquo; fuel burn based on a passenger/freight factor which is derived from RTK data</li>
+<li>Step 3: Calculation of seats occupied (assumption: all aircraft are entirely configured with economic seats). Seat occupied = Total seats x Load Factor</li>
+<li>Step 4: CO2 emissions per passenger = (Passengers&rsquo; fuel burn x 3.16) / Seat occupied</li>
+<li>Note: for flights above 3000 km, CO2 emissions per passenger in premium cabin = 2 x CO2 emissions per passenger in economy</li>
+</ul>
+
+<p>Their <a href="https://www.icao.int/environmental-protection/CarbonOffset/Documents/Methodology%20ICAO%20Carbon%20Calculator_v10-2017.pdf" target="_blank">methodology paper</a> <em>probably</em> paper has enough of this information, including numerous tables, to make these calculations. While I intend to make a better attempt at this in the future, I just wanted a rough, liberal estimate of my emissions.</p>
+
+<p>I found <a href="https://www.eci.ox.ac.uk/research/energy/downloads/jardine09-carboninflights.pdf" target="_blank">this paper from the Environmental Change Institute</a> that explained several different methods of calculation. The simplest is based on the World Resource Institute&rsquo;s liberal estimate of 0.18 kgCO2/km. I chose this because it was simple to calculate.</p>
+
+<p>For driving, I used <a href="https://www.carbonfootprint.com/calculator.aspx" target="_blank">this online carbon footprint calculator</a>. I selected &ldquo;Car&rdquo;, entered in 1000km and my car&rsquo;s average MPG (38MPG - though I often get 40-45 on longer trips), and the result was &ldquo;0.14 metric tons:  1000 km in a petrol vehicle doing 38 mpg (US).&rdquo; That is, 140 kgCO2/1000 km, which is the same as .14 kgCO2/km.</p>
+
+<p>Finally, I can visualize the result:</p>
+
+<pre><code>prep %&gt;%
+  group_by(month, activity) %&gt;%
+  summarize(sum = sum(emissions)) %&gt;%
+  ggplot()+
+  geom_bar(aes(x=as.factor(month), y=sum, fill=activity), stat=&quot;identity&quot;)+
+  #facet_wrap(~activity, scales=&quot;free&quot;)+
+  scale_y_continuous(labels = function(x) format(x, scientific = FALSE))+
+  labs(title = &quot;Personal CO2 Emissions from Transportation&quot;,
+       caption = &quot;kgC02/km for flights calculated based on liberal WRI estimate: km * .18. \nkgCO2/km for car calculated based on .14kg per 1000km&quot;,
+       x = &quot;Month&quot;,
+       y = &quot;kgCO2&quot;)
+</code></pre>
+
+<p><img src="personal-emissions.png" alt="My Personal Emissions for 2019" /></p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>This is a just a simple example of what one can do with their location data. I still need to add references to compare my data against (average by US, by world). In addition, I will be using my data in an interactive Tableau dashboard that also includes utility usage. I think there are a lot of possibilities with Google Location data (for tracking carbon emissions, for making cool visualizations), and even with liberal estimates of kgCO2, you still get a sense of your impact and have a visual goal you can compare against in the future.</p>
+
+    </div>
+
+    
+
+
+
+
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=/post/2020-02-10-carbon-footprint-google-data/2020-02-10-carbon-footprint-google-data/&amp;text=Assessing%20Your%20Carbon%20Footprint%20from%20Google%20Location%20Data" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/post/2020-02-10-carbon-footprint-google-data/2020-02-10-carbon-footprint-google-data/&amp;t=Assessing%20Your%20Carbon%20Footprint%20from%20Google%20Location%20Data" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Assessing%20Your%20Carbon%20Footprint%20from%20Google%20Location%20Data&amp;body=/post/2020-02-10-carbon-footprint-google-data/2020-02-10-carbon-footprint-google-data/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=/post/2020-02-10-carbon-footprint-google-data/2020-02-10-carbon-footprint-google-data/&amp;title=Assessing%20Your%20Carbon%20Footprint%20from%20Google%20Location%20Data" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=Assessing%20Your%20Carbon%20Footprint%20from%20Google%20Location%20Data%20/post/2020-02-10-carbon-footprint-google-data/2020-02-10-carbon-footprint-google-data/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=/post/2020-02-10-carbon-footprint-google-data/2020-02-10-carbon-footprint-google-data/&amp;title=Assessing%20Your%20Carbon%20Footprint%20from%20Google%20Location%20Data" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <img class="portrait mr-3" src="/authors/admin/avatar_hu52a603635ecebd45650b162dadabb4e5_12861_250x250_fill_q90_lanczos_center.jpg" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="/">Anthony Schmidt</a></h5>
+      <h6 class="card-subtitle">PhD Student / Data Visualization Researcher</h6>
+      <p class="card-text">My research interests include higher education, quantitative methods, and data visualization.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/AnthonyTeacher" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/acircleda" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.d6bd04fdad2ad213aa8111c5a3b72fc5.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+  <p class="powered-by">
+    
+      <a href="/privacy/">Privacy Policy</a>
+    
+    
+       &middot; 
+      <a href="/terms/">Terms</a>
+    
+  </p>
+  
+
+  <p class="powered-by">
+    
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

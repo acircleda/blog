@@ -10,7 +10,7 @@ subtitle = ""
 
 [content]
   # Page type to display. E.g. project.
-  page_type = "project2"
+  page_type = "project"
   
   # Filter toolbar (optional).
   # Add or remove as many filters (`[[content.filter_button]]` instances) as you like.
@@ -18,32 +18,36 @@ subtitle = ""
   # To filter by a specific tag, set `tag` to an existing tag name.
   # To remove toolbar, delete/comment all instances of `[[content.filter_button]]` below.
   
+    # Filter posts by a taxonomy term.
+  [content.filters]
+    category = ""
+
   # Default filter index (e.g. 0 corresponds to the first `[[filter_button]]` instance below).
   filter_default = 0
   
   [[content.filter_button]]
     name = "All"
-    tag2 = "*"
+    tag = "Viz"
   
   [[content.filter_button]]
     name = "Interactive"
-    tag2 = "Interactive"
+    tag = "Interactive"
   
   [[content.filter_button]]
     name = "Static"
-    tag2 = "Static"
+    tag = "Static"
     
 [[content.filter_button]]
     name = "Print"
-    tag2 = "Print"
+    tag = "Print"
     
 [[content.filter_button]]
     name = "Reports"
-    tag2 = "Reports"
+    tag = "Reports"
     
 [[content.filter_button]]
     name = "Other"
-    tag2 = "Other"
+    tag = "Other"
 
 
 [design]

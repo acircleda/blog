@@ -126,6 +126,10 @@
   </url>
   
   <url>
+    <loc>/post/2020-02-10-carbon-footprint-google-data/2020-02-10-carbon-footprint-google-data/</loc>
+  </url>
+  
+  <url>
     <loc>/categories/</loc>
   </url>
   
@@ -134,7 +138,15 @@
   </url>
   
   <url>
+    <loc>/project/esm-data-jobs/</loc>
+  </url>
+  
+  <url>
     <loc>/tags/graduation-rates/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/interactive/</loc>
   </url>
   
   <url>
@@ -155,6 +167,14 @@
   
   <url>
     <loc>/publication/</loc>
+  </url>
+  
+  <url>
+    <loc>/project/portfolio/port-example/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/viz/</loc>
   </url>
   
 </urlset>

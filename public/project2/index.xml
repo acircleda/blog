@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Project2s | Anthony Schmidt</title>
+    <link>/project2/</link>
+      <atom:link href="/project2/index.xml" rel="self" type="application/rss+xml" />
+    <description>Project2s</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Project2s</title>
+      <link>/project2/</link>
+    </image>
+    
+    <item>
+      <title>Data-Related Jobs for ESM Students</title>
+      <link>/project2/example/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/project2/example/</guid>
+      <description>&lt;p&gt;This is an ongoing project to analyze data-related jobs posted on &lt;a href=&#34;http://www.higheredjobs.com&#34; target=&#34;_blank&#34;&gt;HigherEdJobs&lt;/a&gt;. These are jobs a typical ESM student would qualify. The jobs are analyzed in order to understand the skills and competencies that are in demand.&lt;/p&gt;
+
+&lt;p&gt;The project is currently focused on administrative-level jobs. Faculty job analyses will be forthcoming.&lt;/p&gt;
+
+&lt;p&gt;The project files can be found on Github &lt;a href=&#34;https://github.com/acircleda/Data-Jobs&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;. The analyses, always under development, can be found &lt;a href=&#34;https://acircleda.github.io/Data-Jobs/&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

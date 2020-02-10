@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Interactive | Anthony Schmidt</title>
+    <link>/tags/interactive/</link>
+      <atom:link href="/tags/interactive/index.xml" rel="self" type="application/rss+xml" />
+    <description>Interactive</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Interactive</title>
+      <link>/tags/interactive/</link>
+    </image>
+    
+    <item>
+      <title>Student Enrollment Dashboard</title>
+      <link>/project/portfolio/port-example/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/project/portfolio/port-example/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Note: The following Tableau dashboard represents real data that has been altered to maintain confidentiality.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The purpose of this dashboard is to allow users to understand enrollment trends, compare enrollment to another institution, and see enrollment by student country of origin.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
