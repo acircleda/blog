@@ -21,7 +21,7 @@
 
 &lt;p&gt;Google collects &lt;em&gt;a lot&lt;/em&gt; of data on us. If you have Google Maps, chances are your location is being tracked, too. Unless, of course, you have it disabled. But, if you don&amp;rsquo;t, you&amp;rsquo;d be surprised by the amount of location data (and its accuracy) contained in your Google Timeline. &lt;a href=&#34;https://www.nytimes.com/interactive/2019/12/19/opinion/location-tracking-cell-phone.html&#34; target=&#34;_blank&#34;&gt;Many worry about Google&amp;rsquo;s tracking&lt;/a&gt;, but for those of us who don&amp;rsquo;t, there is some potential fun we can have with our own data.&lt;/p&gt;
 
-&lt;p&gt;For example, we can &lt;strong&gt;estimate&lt;/strong&gt; our carbon emissions. I say &lt;strong&gt;estimate&lt;/strong&gt; because it is not exact and it is likely very difficult to account for (or even remember) all of your trips, who was with you, and how to split your emissions. But, we can come close. We can get the date and time, start and end location, the distance travelled, the place, and most importantly, the activity type.&lt;/p&gt;
+&lt;p&gt;For example, we can &lt;strong&gt;estimate&lt;/strong&gt; our carbon emissions. I say &lt;strong&gt;estimate&lt;/strong&gt; because it is not exact and it is likely very difficult to account for (or even remember) all of your trips, who was with you, and how to split your emissions. But, we can come close. We can get the date and time, start and end location, the distance traveled, the place, and most importantly, the activity type.&lt;/p&gt;
 
 &lt;p&gt;Follow along and I&amp;rsquo;ll show you what I did. It&amp;rsquo;s no doubt imperfect, but for a beginner&amp;rsquo;s effort, I&amp;rsquo;d say it&amp;rsquo;s not too bad.&lt;/p&gt;
 
@@ -49,7 +49,7 @@
 &lt;pre&gt;&lt;code&gt;df &amp;lt;- data.frame(fromJSON(&amp;quot;file location/file&amp;quot;, flatten=TRUE))
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;JSON comes unadultered as a list format. I have no clue how to work with lists. So, I flattened it out to a data frame. I know how to work with those.&lt;/p&gt;
+&lt;p&gt;JSON comes unadulterated as a list format. I have no clue how to work with lists. So, I flattened it out to a data frame. I know how to work with those.&lt;/p&gt;
 
 &lt;p&gt;I was going to write a for-loop to process the file list and automatically load the data, but since I was only working with 12 files (2019), I just did it like this:&lt;/p&gt;
 
@@ -107,16 +107,16 @@ may2019 &amp;lt;- data.frame(fromJSON(&amp;quot;2019/2019_MAY.json&amp;quot;, fl
 
 &lt;ul&gt;
 &lt;li&gt;How to convert long/late from IE7 to GPS (divide by &lt;code&gt;1e7&lt;/code&gt;)&lt;/li&gt;
-&lt;li&gt;How to convert time from POSIX miliseconds to human readable time `as.POSIXct(as.numeric(time_variable)/1000, origin = &amp;ldquo;1970-01-01&amp;rdquo;)&lt;/li&gt;
+&lt;li&gt;How to convert time from POSIX milliseconds to human readable time `as.POSIXct(as.numeric(time_variable)/1000, origin = &amp;ldquo;1970-01-01&amp;rdquo;)&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;One problem I noticed was that many rows were offset. Meaning data was split between two or three rows. For example, time, location, and activity. I used &lt;code&gt;lead()&lt;/code&gt; and &lt;code&gt;zoo::na.locf()&lt;/code&gt; to deal with these.&lt;/p&gt;
 
 &lt;h2 id=&#34;select-and-mutate&#34;&gt;Select and Mutate&lt;/h2&gt;
 
-&lt;p&gt;The following function selects key variables and then mutates them, creatng variables with human-readable names. It also converts the distance to miles and kilometers. You could take it a step further and then select only those variables, but I decided to leave them in out of laziness.&lt;/p&gt;
+&lt;p&gt;The following function selects key variables and then mutates them, creating variables with human-readable names. It also converts the distance to miles and kilometers. You could take it a step further and then select only those variables, but I decided to leave them in out of laziness.&lt;/p&gt;
 
-&lt;p&gt;The function takes a dataframe name as its only input.&lt;/p&gt;
+&lt;p&gt;The function takes a data frame name as its only input.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;##process data function
 json_process &amp;lt;- function(dfin){
@@ -150,7 +150,7 @@ feb &amp;lt;- json_process(feb2019)
 mar &amp;lt;- json_process(mar2019)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;And then combined the dataframes:&lt;/p&gt;
+&lt;p&gt;And then combined the data frames:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;data &amp;lt;- rbind(jan, feb, mar, april, may, june, july, aug, sep, oct, nov, dec)
 &lt;/code&gt;&lt;/pre&gt;
@@ -162,7 +162,7 @@ mar &amp;lt;- json_process(mar2019)
 &lt;pre&gt;&lt;code&gt;data %&amp;gt;% group_by(activity) %&amp;gt;% count
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;The activities included IN_FERRY, IN_BUS, IN_SUBWAY, etc. However, I focused on only two carbon-emitting activities in my data - those that I could easily account carbon emissions for - and created a small dataframe to use for filtering:&lt;/p&gt;
+&lt;p&gt;The activities included IN_FERRY, IN_BUS, IN_SUBWAY, etc. However, I focused on only two carbon-emitting activities in my data - those that I could easily account carbon emissions for - and created a small data frame to use for filtering:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;carbon_activities &amp;lt;- data.frame(activity = c(&amp;quot;FLYING&amp;quot;,
                               &amp;quot;IN_PASSENGER_VEHICLE&amp;quot;))
@@ -187,7 +187,7 @@ mar &amp;lt;- json_process(mar2019)
 &lt;li&gt;Note: for flights above 3000 km, CO2 emissions per passenger in premium cabin = 2 x CO2 emissions per passenger in economy&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Their &lt;a href=&#34;https://www.icao.int/environmental-protection/CarbonOffset/Documents/Methodology%20ICAO%20Carbon%20Calculator_v10-2017.pdf&#34; target=&#34;_blank&#34;&gt;methodology paper&lt;/a&gt; &lt;em&gt;probably&lt;/em&gt; paper has enough of this information, including numerous tables, to make these calculations. While I intend to make a better attempt at this in the future, I just wanted a rough, liberal estimate of my emissions.&lt;/p&gt;
+&lt;p&gt;Their &lt;a href=&#34;https://www.icao.int/environmental-protection/CarbonOffset/Documents/Methodology%20ICAO%20Carbon%20Calculator_v10-2017.pdf&#34; target=&#34;_blank&#34;&gt;methodology paper&lt;/a&gt; &lt;em&gt;probably&lt;/em&gt; has enough of this information, including numerous tables, to make these calculations. While I intend to make a better attempt at this in the future, I just wanted a rough, liberal estimate of my emissions.&lt;/p&gt;
 
 &lt;p&gt;I found &lt;a href=&#34;https://www.eci.ox.ac.uk/research/energy/downloads/jardine09-carboninflights.pdf&#34; target=&#34;_blank&#34;&gt;this paper from the Environmental Change Institute&lt;/a&gt; that explained several different methods of calculation. The simplest is based on the World Resource Institute&amp;rsquo;s liberal estimate of 0.18 kgCO2/km. I chose this because it was simple to calculate.&lt;/p&gt;
 

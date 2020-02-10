@@ -21,7 +21,7 @@ projects: []
   
 Google collects *a lot* of data on us. If you have Google Maps, chances are your location is being tracked, too. Unless, of course, you have it disabled. But, if you don't, you'd be surprised by the amount of location data (and its accuracy) contained in your Google Timeline. [Many worry about Google's tracking](https://www.nytimes.com/interactive/2019/12/19/opinion/location-tracking-cell-phone.html), but for those of us who don't, there is some potential fun we can have with our own data.
 
-For example, we can **estimate** our carbon emissions. I say **estimate** because it is not exact and it is likely very difficult to account for (or even remember) all of your trips, who was with you, and how to split your emissions. But, we can come close. We can get the date and time, start and end location, the distance travelled, the place, and most importantly, the activity type.
+For example, we can **estimate** our carbon emissions. I say **estimate** because it is not exact and it is likely very difficult to account for (or even remember) all of your trips, who was with you, and how to split your emissions. But, we can come close. We can get the date and time, start and end location, the distance traveled, the place, and most importantly, the activity type.
 
 Follow along and I'll show you what I did. It's no doubt imperfect, but for a beginner's effort, I'd say it's not too bad.
 
@@ -48,7 +48,7 @@ You can load your data like so:
 df <- data.frame(fromJSON("file location/file", flatten=TRUE))
 ```
 
-JSON comes unadultered as a list format. I have no clue how to work with lists. So, I flattened it out to a data frame. I know how to work with those.
+JSON comes unadulterated as a list format. I have no clue how to work with lists. So, I flattened it out to a data frame. I know how to work with those.
 
 I was going to write a for-loop to process the file list and automatically load the data, but since I was only working with 12 files (2019), I just did it like this:
 
@@ -85,15 +85,15 @@ There are *a lot* of variables in the JSON file. There are variables for start a
 Thanks to [Shirin's playgRound](https://shiring.github.io/maps/2016/12/30/Standortverlauf_post), I had some clues about what to process in R, namely:
 
 * How to convert long/late from IE7 to GPS (divide by `1e7`)
-* How to convert time from POSIX miliseconds to human readable time `as.POSIXct(as.numeric(time_variable)/1000, origin = "1970-01-01")
+* How to convert time from POSIX milliseconds to human readable time `as.POSIXct(as.numeric(time_variable)/1000, origin = "1970-01-01")
 
 One problem I noticed was that many rows were offset. Meaning data was split between two or three rows. For example, time, location, and activity. I used `lead()` and `zoo::na.locf()` to deal with these.
 
 ## Select and Mutate
 
-The following function selects key variables and then mutates them, creatng variables with human-readable names. It also converts the distance to miles and kilometers. You could take it a step further and then select only those variables, but I decided to leave them in out of laziness.
+The following function selects key variables and then mutates them, creating variables with human-readable names. It also converts the distance to miles and kilometers. You could take it a step further and then select only those variables, but I decided to leave them in out of laziness.
 
-The function takes a dataframe name as its only input.
+The function takes a data frame name as its only input.
 
 ```
 ##process data function
@@ -128,7 +128,7 @@ feb <- json_process(feb2019)
 mar <- json_process(mar2019)
 ```
 
-And then combined the dataframes:
+And then combined the data frames:
 
 ```
 data <- rbind(jan, feb, mar, april, may, june, july, aug, sep, oct, nov, dec)
@@ -141,7 +141,7 @@ First, check what activities are listed in your data:
 ```
 data %>% group_by(activity) %>% count
 ```
-The activities included IN_FERRY, IN_BUS, IN_SUBWAY, etc. However, I focused on only two carbon-emitting activities in my data - those that I could easily account carbon emissions for - and created a small dataframe to use for filtering:
+The activities included IN_FERRY, IN_BUS, IN_SUBWAY, etc. However, I focused on only two carbon-emitting activities in my data - those that I could easily account carbon emissions for - and created a small data frame to use for filtering:
 
 ```
 carbon_activities <- data.frame(activity = c("FLYING",
@@ -166,7 +166,7 @@ How did I get the figures for emissions? Well, it turns out that calculating car
 * Step 4: CO2 emissions per passenger = (Passengers' fuel burn x 3.16) / Seat occupied
 * Note: for flights above 3000 km, CO2 emissions per passenger in premium cabin = 2 x CO2 emissions per passenger in economy
 
-Their [methodology paper](https://www.icao.int/environmental-protection/CarbonOffset/Documents/Methodology%20ICAO%20Carbon%20Calculator_v10-2017.pdf) *probably* paper has enough of this information, including numerous tables, to make these calculations. While I intend to make a better attempt at this in the future, I just wanted a rough, liberal estimate of my emissions.
+Their [methodology paper](https://www.icao.int/environmental-protection/CarbonOffset/Documents/Methodology%20ICAO%20Carbon%20Calculator_v10-2017.pdf) *probably* has enough of this information, including numerous tables, to make these calculations. While I intend to make a better attempt at this in the future, I just wanted a rough, liberal estimate of my emissions.
 
 I found [this paper from the Environmental Change Institute](https://www.eci.ox.ac.uk/research/energy/downloads/jardine09-carboninflights.pdf) that explained several different methods of calculation. The simplest is based on the World Resource Institute's liberal estimate of 0.18 kgCO2/km. I chose this because it was simple to calculate.
 
@@ -193,5 +193,3 @@ prep %>%
 # Conclusion
 
 This is a just a simple example of what one can do with their location data. I still need to add references to compare my data against (average by US, by world). In addition, I will be using my data in an interactive Tableau dashboard that also includes utility usage. I think there are a lot of possibilities with Google Location data (for tracking carbon emissions, for making cool visualizations), and even with liberal estimates of kgCO2, you still get a sense of your impact and have a visual goal you can compare against in the future.
-
-
