@@ -188,7 +188,7 @@ prep %>%
        y = "kgCO2")
 ```
 
-![My Personal Emissions - 2019](personal-emissions.png)
+![My Personal Emissions - 2019](https://anthonyschmidt.netlify.com/post/2020-02-10-carbon-footprint-google-data/personal-emissions.png)
 
 # Conclusion
 
