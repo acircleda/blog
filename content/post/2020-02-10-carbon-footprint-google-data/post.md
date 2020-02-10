@@ -188,7 +188,7 @@ prep %>%
        y = "kgCO2")
 ```
 
-![My Personal Emissions - 2019](/post/personal-emissions.png)
+![My Personal Emissions - 2019](personal-emissions.png)
 
 # Conclusion
 
