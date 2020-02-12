@@ -554,7 +554,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    6 min read
+    7 min read
   </span>
   
 
@@ -594,7 +594,9 @@
 
 <p>Google collects <em>a lot</em> of data on us. If you have Google Maps, chances are your location is being tracked, too. Unless, of course, you have it disabled. But, if you don&rsquo;t, you&rsquo;d be surprised by the amount of location data (and its accuracy) contained in your Google Timeline. <a href="https://www.nytimes.com/interactive/2019/12/19/opinion/location-tracking-cell-phone.html" target="_blank">Many worry about Google&rsquo;s tracking</a>, but for those of us who don&rsquo;t, there is some potential fun we can have with our own data.</p>
 
-<p>For example, we can <strong>estimate</strong> our carbon emissions. I say <strong>estimate</strong> because it is not exact and it is likely very difficult to account for (or even remember) all of your trips, who was with you, and how to split your emissions. But, we can come close. We can get the date and time, start and end location, the distance travelled, the place, and most importantly, the activity type.</p>
+<p>For example, we can <strong>estimate</strong> our carbon emissions. I say <strong>estimate</strong> because it is not exact and it is likely very difficult to account for (or even remember) all of your trips, who was with you, and how to split your emissions. Was your flight full? How &ldquo;clean&rdquo; was the train? How much of an Uber trip&rsquo;s emissions count for you vs the driver?</p>
+
+<p>Those are difficult questions, and the real answer is elusive. But, we can come close. Using Google Location data, We can get the date and time of travel, start and end location, the distance traveled, the place, and most importantly, the activity type.</p>
 
 <p>Follow along and I&rsquo;ll show you what I did. It&rsquo;s no doubt imperfect, but for a beginner&rsquo;s effort, I&rsquo;d say it&rsquo;s not too bad.</p>
 
@@ -602,17 +604,17 @@
 
 <p>Navigate to <a href="https://takeout.google.com/?pli=1" target="_blank">Google Takeout</a>, and first click &ldquo;Deselect all&rdquo; at the right. Then, scroll down to &ldquo;Location History&rdquo; and click on &ldquo;Multiple Formats&rdquo;. Choose JSON and click &ldquo;OK&rdquo;. Check the checkbox and scroll down to the bottom. Select &ldquo;Next step&rdquo;. Here you can export your data once or set a schedule. Click &ldquo;create export&rdquo;. Dependning on the amount of data, the export can take a few minutes (or &ldquo;days&rdquo; as Google claims). I got a year&rsquo;s worth of data in about 3 minutes. Just refresh the page to check on the status.</p>
 
-<p>When its ready, download your zip file. Extract your zip file somewhere convenient. Drill into the extract folder until you find &ldquo;Semantic Location Data&rdquo;. That is what we are after. This will contain a folder for each year and a JSON file for each month in that year.</p>
+<p>When its ready, download your zip file. Extract your zip file somewhere convenient. Drill into the extracted folder until you find &ldquo;Semantic Location Data&rdquo;. That is what we are after. This will contain a folder for each year and a JSON file for each month in that year.</p>
 
 <h1 id="load-and-process">Load and Process</h1>
 
 <p>You&rsquo;ll need at minimum the following packages</p>
 
 <ul>
-<li>jsonlite</li>
-<li>tidyverse</li>
-<li>lubridate</li>
-<li>ggplot2</li>
+<li><code>jsonlite</code></li>
+<li><code>tidyverse</code></li>
+<li><code>lubridate</code></li>
+<li><code>ggplot2</code></li>
 </ul>
 
 <h2 id="load-data">Load Data</h2>
@@ -622,7 +624,7 @@
 <pre><code>df &lt;- data.frame(fromJSON(&quot;file location/file&quot;, flatten=TRUE))
 </code></pre>
 
-<p>JSON comes unadultered as a list format. I have no clue how to work with lists. So, I flattened it out to a data frame. I know how to work with those.</p>
+<p>JSON comes as a list format. I have no clue how to work with lists. So, I flattened it out to a data frame. I know how to work with those.</p>
 
 <p>I was going to write a for-loop to process the file list and automatically load the data, but since I was only working with 12 files (2019), I just did it like this:</p>
 
@@ -637,11 +639,11 @@ may2019 &lt;- data.frame(fromJSON(&quot;2019/2019_MAY.json&quot;, flatten = TRUE
 
 <h2 id="process-data">Process Data</h2>
 
-<p>I thought I would simply <code>rbind</code> the data and work with a single large data set, but many files had different numbers of columns, making rbind useless. Thankfully, they had the same variable names, so I wrote a function to process the data, selecting the variables I wanted and making a few changes.</p>
+<p>I thought I would simply <code>rbind</code> the data and work with a single large data set, but many files had different numbers of columns, making it difficult to use <code>rbind</code>. Thankfully, the data sets had the same variable names, so I wrote a function to process the data, selecting the variables I wanted and making a few changes (see <a href="#function">below</a>).</p>
 
 <h2 id="become-familiar-with-the-variables">Become Familiar with the Variables</h2>
 
-<p>There are <em>a lot</em> of variables in the JSON file. There are variables for start and end location, path variables, distance, place name, accuracy estimates, etc. Here are the ones I was most interested in:</p>
+<p>Before processing the data, you should become familiar with the column names and what you may want to focus on. There are <em>a lot</em> of variables in the JSON file. There are variables for start and end location, path variables, distance, place name, accuracy estimates, etc. Here are the ones I was most interested in:</p>
 
 <ul>
 <li>timelineObjects.activitySegment.distance
@@ -652,7 +654,7 @@ may2019 &lt;- data.frame(fromJSON(&quot;2019/2019_MAY.json&quot;, flatten = TRUE
 <li>timelineObjects.activitySegment.activityType
 
 <ul>
-<li>flying, walking, in a car, etc.</li>
+<li>flying, walking, in a car, on a train, etc.</li>
 </ul></li>
 <li>timelineObjects.activitySegment.startLocation.latitudeE7 and timelineObjects.activitySegment.startLocation.longitudeE7
 
@@ -680,16 +682,16 @@ may2019 &lt;- data.frame(fromJSON(&quot;2019/2019_MAY.json&quot;, flatten = TRUE
 
 <ul>
 <li>How to convert long/late from IE7 to GPS (divide by <code>1e7</code>)</li>
-<li>How to convert time from POSIX miliseconds to human readable time `as.POSIXct(as.numeric(time_variable)/1000, origin = &ldquo;1970-01-01&rdquo;)</li>
+<li>How to convert time from POSIX milliseconds to human readable time <code>as.POSIXct(as.numeric(time_variable)/1000, origin = &quot;1970-01-01&quot;)</code></li>
 </ul>
 
-<p>One problem I noticed was that many rows were offset. Meaning data was split between two or three rows. For example, time, location, and activity. I used <code>lead()</code> and <code>zoo::na.locf()</code> to deal with these.</p>
+<p>One problem I noticed was that many rows were offset, meaning data was split between two or three rows. For example, time might have been in row 1 and location, and activity were in the next row. Sometimes, it was three rows. I used <code>lead()</code> to grab data from the next row, and <code>zoo::na.locf()</code> to grab data from the last non-empty row when <code>lead()</code> wouldn&rsquo;t do the trick. This is not a perfect solution and no doubt cause some minor innacurrcies, but for the most part, for such a large data set, it seemed to do the trick.</p>
 
-<h2 id="select-and-mutate">Select and Mutate</h2>
+<h2 id="function">Select and Mutate</h2>
 
-<p>The following function selects key variables and then mutates them, creatng variables with human-readable names. It also converts the distance to miles and kilometers. You could take it a step further and then select only those variables, but I decided to leave them in out of laziness.</p>
+<p>The following function selects key variables and then mutates them, creating variables with human-readable names. It also converts the distance to miles and kilometers. You could take it a step further and then select only those variables, dropping the original JSON columns, but I decided to leave them in out of laziness.</p>
 
-<p>The function takes a dataframe name as its only input.</p>
+<p>The function takes a data frame name as its only input.</p>
 
 <pre><code>##process data function
 json_process &lt;- function(dfin){
@@ -723,68 +725,71 @@ feb &lt;- json_process(feb2019)
 mar &lt;- json_process(mar2019)
 </code></pre>
 
-<p>And then combine the dataframes:</p>
+<p>And then combined the data frames:</p>
 
-<pre><code class="language-data">
-
-# Analyze and Visualize
-
-First, check what activities are listed in your data:
-
+<pre><code>data &lt;- rbind(jan, feb, mar, april, may, june, july, aug, sep, oct, nov, dec)
 </code></pre>
 
-<p>data %&gt;% group_by(activity) %&gt;% count</p>
+<h1 id="analyze-and-visualize">Analyze and Visualize</h1>
 
-<pre><code>The activities included IN_FERRY, IN_BUS, IN_SUBWAY, etc. However, I focused on only two carbon-emitting activities in my data - those that I could easily account carbon emissions for - and created a small dataframe to use for filtering:
+<p>First, you should check what activities are listed in your data:</p>
 
+<pre><code>data %&gt;% group_by(activity) %&gt;% count
 </code></pre>
 
-<p>carbon_activities &lt;- data.frame(activity = c(&ldquo;FLYING&rdquo;,
-                              &ldquo;IN_PASSENGER_VEHICLE&rdquo;))</p>
+<p>The activities included FLYING, IN_FERRY, IN_BUS, IN_SUBWAY, etc. However, I focused on only two carbon-emitting activities in my data - those that I could easily account carbon emissions for - and created a small data frame to use for filtering:</p>
 
-<pre><code>
-I think created a new data frame that dropped missing values, selected only flying and car activities, and then calculated emissions.
-
+<pre><code>carbon_activities &lt;- data.frame(activity = c(&quot;FLYING&quot;,
+                              &quot;IN_PASSENGER_VEHICLE&quot;))
 </code></pre>
 
-<p>prep &lt;- data %&gt;% drop_na(activity) %&gt;%
+<p>I then created a new data frame that dropped missing values, selected only flying and car activities, and then calculated emissions.</p>
+
+<pre><code>prep &lt;- data %&gt;% drop_na(activity) %&gt;%
   filter(activity %in% carbon_activities$activity) %&gt;%
   mutate(
-    emissions = ifelse(activity == &ldquo;FLYING&rdquo;, km<em>.18, km</em>.12)
-  ) %&gt;% drop_na(emissions)</p>
-
-<pre><code>
-How did I get the figures for emissions? Well, it turns out that calculating carbon emissions from flying is quite difficult. This is from the [ICAO website](https://www.icao.int/environmental-protection/Carbonoffset/Pages/default.aspx):
-
-* Step 1: Estimation of the aircraft fuel burn
-* Step 2: Calculation of the passengers' fuel burn based on a passenger/freight factor which is derived from RTK data
-* Step 3: Calculation of seats occupied (assumption: all aircraft are entirely configured with economic seats). Seat occupied = Total seats x Load Factor
-* Step 4: CO2 emissions per passenger = (Passengers' fuel burn x 3.16) / Seat occupied
-* Note: for flights above 3000 km, CO2 emissions per passenger in premium cabin = 2 x CO2 emissions per passenger in economy
-
-Their [methodology paper](https://www.icao.int/environmental-protection/CarbonOffset/Documents/Methodology%20ICAO%20Carbon%20Calculator_v10-2017.pdf) *probably* paper has enough of this information, including numerous tables, to make these calculations. While I intend to make a better attempt at this in the future, I just wanted a rough, liberal estimate of my emissions.
-
-I found [this paper from the Environmental Change Institute](https://www.eci.ox.ac.uk/research/energy/downloads/jardine09-carboninflights.pdf) that explained several different methods of calculation. The simplest is based on the World Resource Institute's liberal estimate of 0.18 kgCO2/km. I chose this because it was simple to calculate.
-
-For driving, I used [this online carbon footprint calculator](https://www.carbonfootprint.com/calculator.aspx). I selected &quot;Car&quot;, entered in 1000km and my car's average MPG (38MPG - though I often get 40-45 on longer trips), and the result was &quot;0.14 metric tons:	1000 km in a petrol vehicle doing 38 mpg (US).&quot; That is, 140 kgCO2/1000 km, which is the same as .14 kgCO2/km.
-
-Finally, I can visualize the result:
-
+    emissions = ifelse(activity == &quot;FLYING&quot;, km*.18, km*.14)
+  ) %&gt;% drop_na(emissions)
 </code></pre>
 
-<p>prep %&gt;%
+<p>How did I get the figures for emissions? Well, it turns out that calculating carbon emissions from flying is quite difficult. Here are some notes from the <a href="https://www.icao.int/environmental-protection/Carbonoffset/Pages/default.aspx" target="_blank">ICAO website</a>:</p>
+
+<ul>
+<li>Step 1: Estimation of the aircraft fuel burn</li>
+<li>Step 2: Calculation of the passengers&rsquo; fuel burn based on a passenger/freight factor which is derived from RTK data</li>
+<li>Step 3: Calculation of seats occupied (assumption: all aircraft are entirely configured with economic seats). Seat occupied = Total seats x Load Factor</li>
+<li>Step 4: CO2 emissions per passenger = (Passengers&rsquo; fuel burn x 3.16) / Seat occupied</li>
+<li>Note: for flights above 3000 km, CO2 emissions per passenger in premium cabin = 2 x CO2 emissions per passenger in economy</li>
+</ul>
+
+<p>Their <a href="https://www.icao.int/environmental-protection/CarbonOffset/Documents/Methodology%20ICAO%20Carbon%20Calculator_v10-2017.pdf" target="_blank">methodology paper</a> <em>probably</em> has enough of this information, including numerous tables, to make these calculations. While I intend to make a better attempt at this in the future, using some suggestions from <a href="https://sheilasaia.rbind.io/post/2019-04-19-carbon-cost-calcs/" target="_blank">Sheila Saia</a> I just wanted a rough, liberal estimate of my emissions.</p>
+
+<p>I found <a href="https://www.eci.ox.ac.uk/research/energy/downloads/jardine09-carboninflights.pdf" target="_blank">this paper from the Environmental Change Institute</a>, which explained several different methods of calculation. The simplest is based on the World Resource Institute&rsquo;s liberal estimate of 0.18 kgCO2/km. I chose this because it was simple to calculate.</p>
+
+<p>For driving, I used <a href="https://www.carbonfootprint.com/calculator.aspx" target="_blank">this online carbon footprint calculator</a>. I selected &ldquo;Car&rdquo;, entered in 1000km and my car&rsquo;s average MPG (38MPG - though I often get 40-45 on longer trips), and the result was &ldquo;0.14 metric tons:  1000 km in a petrol vehicle doing 38 mpg (US).&rdquo; That is, 140 kgCO2/1000 km, which is the same as .14 kgCO2/km.</p>
+
+<p>Finally, I can visualize the result:</p>
+
+<pre><code>prep %&gt;%
   group_by(month, activity) %&gt;%
   summarize(sum = sum(emissions)) %&gt;%
   ggplot()+
-  geom_bar(aes(x=as.factor(month), y=sum, fill=activity), stat=&ldquo;identity&rdquo;)+
-  #facet_wrap(~activity, scales=&ldquo;free&rdquo;)+
+  geom_bar(aes(x=as.factor(month), y=sum, fill=activity), stat=&quot;identity&quot;)+
+  #facet_wrap(~activity, scales=&quot;free&quot;)+
   scale_y_continuous(labels = function(x) format(x, scientific = FALSE))+
-  labs(title = &ldquo;Personal CO2 Emissions from Transportation&rdquo;,
-       caption = &ldquo;kgC02/km for flights calculated based on liberal WRI estimate: km * .18. \nkgCO2/km for car calculated based on .14kg per 1000km&rdquo;,
-       x = &ldquo;Month&rdquo;,
-       y = &ldquo;kgCO2&rdquo;)
-```
-<img src="personal-emissions.jpg" alt="My Personal Emissions for 2019" /></p>
+  labs(title = &quot;Personal CO2 Emissions from Transportation&quot;,
+       caption = &quot;kgC02/km for flights calculated based on liberal WRI estimate: km * .18. \nkgCO2/km for car calculated based on .14kg per 1000km&quot;,
+       x = &quot;Month&quot;,
+       y = &quot;kgCO2&quot;)
+</code></pre>
+
+<p><img src="https://anthonyschmidt.netlify.com/post/2020-02-10-carbon-footprint-google-data/personal-emissions.png" alt="My Personal Emissions - 2019" /></p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>This is a just a simple example of what one can do with their location data. I will be using my data in an interactive Tableau dashboard that also includes utility usage and will allow me to drill down by month, day, and hour. It will also allow me to compare my 2020 emissions to 2019. <strong>My goal is to have lower emissions.</strong></p>
+
+<p>I think there are a lot of possibilities with Google Location data (for tracking carbon emissions, for making cool visualizations), and even with liberal estimates of kgCO2, you still get a sense of your impact and have a visual goal you can compare against for the future.</p>
 
     </div>
 

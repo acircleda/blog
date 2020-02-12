@@ -5,7 +5,7 @@
     <link>/tags/interactive/</link>
       <atom:link href="/tags/interactive/index.xml" rel="self" type="application/rss+xml" />
     <description>Interactive</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 18 Jan 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Interactive</title>
@@ -15,11 +15,13 @@
     <item>
       <title>Student Enrollment Dashboard</title>
       <link>/project/portfolio/port-example/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 18 Jan 2020 00:00:00 +0000</pubDate>
       <guid>/project/portfolio/port-example/</guid>
       <description>&lt;p&gt;&lt;em&gt;Note: The following Tableau dashboard represents real data that has been altered to maintain confidentiality.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;The purpose of this dashboard is to allow users to understand enrollment trends, compare enrollment to another institution, and see enrollment by student country of origin.&lt;/p&gt;
+
+&lt;p&gt;&lt;div class=&#39;tableauPlaceholder&#39; id=&#39;viz1581355801663&#39; style=&#39;position: relative&#39;&gt;&lt;noscript&gt;&lt;a href=&#39;#&#39;&gt;&lt;img alt=&#39; &#39; src=&#39;https:&amp;#47;&amp;#47;public.tableau.com&amp;#47;static&amp;#47;images&amp;#47;St&amp;#47;StudentEnrollmentDashboardPortfolio&amp;#47;Dashboard1&amp;#47;1_rss.png&#39; style=&#39;border: none&#39; /&gt;&lt;/a&gt;&lt;/noscript&gt;&lt;object class=&#39;tableauViz&#39;  style=&#39;display:none;&#39;&gt;&lt;param name=&#39;host_url&#39; value=&#39;https%3A%2F%2Fpublic.tableau.com%2F&#39; /&gt; &lt;param name=&#39;embed_code_version&#39; value=&#39;3&#39; /&gt; &lt;param name=&#39;site_root&#39; value=&#39;&#39; /&gt;&lt;param name=&#39;name&#39; value=&#39;StudentEnrollmentDashboardPortfolio&amp;#47;Dashboard1&#39; /&gt;&lt;param name=&#39;tabs&#39; value=&#39;no&#39; /&gt;&lt;param name=&#39;toolbar&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;static_image&#39; value=&#39;https:&amp;#47;&amp;#47;public.tableau.com&amp;#47;static&amp;#47;images&amp;#47;St&amp;#47;StudentEnrollmentDashboardPortfolio&amp;#47;Dashboard1&amp;#47;1.png&#39; /&gt; &lt;param name=&#39;animate_transition&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_static_image&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_spinner&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_overlay&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_count&#39; value=&#39;yes&#39; /&gt;&lt;/object&gt;&lt;/div&gt;                &lt;script type=&#39;text/javascript&#39;&gt;                    var divElement = document.getElementById(&amp;lsquo;viz1581355801663&amp;rsquo;);                    var vizElement = divElement.getElementsByTagName(&amp;lsquo;object&amp;rsquo;)[0];                    if ( divElement.offsetWidth &amp;gt; 800 ) { vizElement.style.width=&amp;lsquo;1000px&amp;rsquo;;vizElement.style.height=&amp;lsquo;827px&amp;rsquo;;} else if ( divElement.offsetWidth &amp;gt; 500 ) { vizElement.style.width=&amp;lsquo;1000px&amp;rsquo;;vizElement.style.height=&amp;lsquo;827px&amp;rsquo;;} else { vizElement.style.width=&amp;lsquo;100%&amp;rsquo;;vizElement.style.height=&amp;lsquo;727px&amp;rsquo;;}                     var scriptElement = document.createElement(&amp;lsquo;script&amp;rsquo;);                    scriptElement.src = &amp;lsquo;&lt;a href=&#34;https://public.tableau.com/javascripts/api/viz_v1.js&#39;&#34; target=&#34;_blank&#34;&gt;https://public.tableau.com/javascripts/api/viz_v1.js&#39;&lt;/a&gt;;                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                &lt;/script&gt;&lt;/p&gt;
 </description>
     </item>
     

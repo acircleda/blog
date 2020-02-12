@@ -1,5 +1,5 @@
 ---
-date: "2020-1-18T00:00:00Z"
+date: "2020-01-18T00:00:00Z"
 external_link: ""
 image:
   caption: Image by Mediamodifier from Pixabay
