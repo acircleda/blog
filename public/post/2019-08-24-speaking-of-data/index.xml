@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Speaking of Data | Anthony Schmidt</title>
+    <link>/post/2019-08-24-speaking-of-data/</link>
+      <atom:link href="/post/2019-08-24-speaking-of-data/index.xml" rel="self" type="application/rss+xml" />
+    <description>Speaking of Data</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 24 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Speaking of Data</title>
+      <link>/post/2019-08-24-speaking-of-data/</link>
+    </image>
+    
+  </channel>
+</rss>

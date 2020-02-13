@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linguistics | Anthony Schmidt</title>
+    <link>/tags/linguistics/</link>
+      <atom:link href="/tags/linguistics/index.xml" rel="self" type="application/rss+xml" />
+    <description>Linguistics</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 26 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Linguistics</title>
+      <link>/tags/linguistics/</link>
+    </image>
+    
+    <item>
+      <title>The Data Is/Are In</title>
+      <link>/post/2019-02-26-2019-the-data-is-are-in/</link>
+      <pubDate>Tue, 26 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>/post/2019-02-26-2019-the-data-is-are-in/</guid>
+      <description>&lt;p&gt;Recently, it has come to my attention that I use data as a singular noun, as in “The data is nominal” rather than the plural Latinate form that it technically is, as in “The data are nominal.” To those who brought it to my attention, it is a simple mistake. Fix it. Move on.&lt;/p&gt;
+
+&lt;p&gt;But, hold up. I’m not so sure about that. I do not like my natural language use corrected. I will use singular they in writing. I will use so as an adverbial connector while speaking. And, dammit, I will use data in the singular.&lt;/p&gt;
+
+&lt;p&gt;Is this just my youthful rebellious spirit? Am I on the vanguard of language change? Am I right? Are they wrong? The answer, as you can guess is yes and no. Both “data is” and “data are” seem acceptable. Here’s the evidence:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1. Twitter&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I first turned to Twitter with a poll.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/AnthonyTeacher/status/1100064151299411970?ref_src=twsrc%5Etfw&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;twitter.png&#34; alt=&#34;Twitter Poll&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Validation! But, I wanted a more reliable data source, so I began looking at more scientific linguistics tools.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2. Google N-Gram Viewer&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The Google N-Gram viewer (see graph below) tells me that, although “data are” is more common, “data is” is also common and has been rapidly increasing in usage in books since the late 1940s. Interestingly, “data are” skyrocketed the 1970s and peaked in the early 1980s (when I was born) and has been in free fall since then. “Data is” hit a small peak around 2000, when I was in college and probably was exposed to more data-based ideas. Similar to “data are,” “data is” has been in decline (I have no guess as to why) and now they are both similar in frequency.&lt;/p&gt;
+
+&lt;p&gt;The conclusion here is that, although “data are” once reigned supreme and “data is” has climbed slowly in popularity, they have been able to literally meet each other in the middle.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.anthonyteacher.com/wp-content/uploads/2019/02/ngram.jpg&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;http://www.anthonyteacher.com/wp-content/uploads/2019/02/ngram.jpg&#34; alt=&#34;NGram Chart&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;3. Corpus of Contemporary American English (COCA)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;A general search of &lt;a href=&#34;https://corpus.byu.edu/coca/&#34; target=&#34;_blank&#34;&gt;COCA&lt;/a&gt; tells me the following:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;FORM&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;FREQUENCY&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;EXAMPLE&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;data were&lt;/td&gt;
+&lt;td&gt;4830&lt;/td&gt;
+&lt;td&gt;&lt;em&gt;Unfortunately, they did not analyze the impact of fees, as all &lt;b&gt;data&lt;/b&gt; &lt;b&gt;were&lt;/b&gt; net of fees&amp;#8230;&lt;/em&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;data are&lt;/td&gt;
+&lt;td&gt;3088&lt;/td&gt;
+&lt;td&gt;These &lt;b&gt;data&lt;/b&gt; &lt;b&gt;are&lt;/b&gt; sensitive and consumers have a right to decide whether or not they can be&amp;#8230;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;data is&lt;/td&gt;
+&lt;td&gt;2069&lt;/td&gt;
+&lt;td&gt;&amp;#8230;but the resulting &lt;b&gt;data&lt;/b&gt; &lt;b&gt;is&lt;/b&gt; complex and messy.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;data was&lt;/td&gt;
+&lt;td&gt;1075&lt;/td&gt;
+&lt;td&gt;Most of the &lt;b&gt;data&lt;/b&gt; &lt;b&gt;was&lt;/b&gt; culled from studies conducted from the mid-1990s forward at sites in Illinois, Indiana&amp;#8230;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;One thing the prompted me to do this research was the use of “data is/are” in academic contexts, so a little more searching in COCA revealed the following:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;“Data is” is 3.8 times more common in academic texts than other genres&lt;/li&gt;
+&lt;li&gt;“Data are” is is 16.8 times more common in academic texts.&lt;/li&gt;
+&lt;li&gt;“Data were” is 88.9 times more common in academic texts. In fact, this phrase was quite rare in other genres.&lt;/li&gt;
+&lt;li&gt;“Data was” is 10.8 times more common.
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The conclusion from COCA is similar to the conclusion from Google’s N-Gram viewer: “data are” is more common, especially in academic texts, but “data is” is also common, even in academic texts.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;4. Other Corpora&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Have you visited the &lt;a href=&#34;https://corpus.byu.edu/&#34; target=&#34;_blank&#34;&gt;BYU corpus page&lt;/a&gt; lately? A few years ago, it was dominated by COCA and the &lt;a href=&#34;https://corpus.byu.edu/bnc/&#34; target=&#34;_blank&#34;&gt;BNC&lt;/a&gt;, but it has grown quite a bit since then and we have our choice of corpora ranging from &lt;a href=&#34;https://corpus.byu.edu/now/&#34; target=&#34;_blank&#34;&gt;News on the Web&lt;/a&gt;, &lt;a href=&#34;https://corpus.byu.edu/wiki/&#34; target=&#34;_blank&#34;&gt;Wikipedia&lt;/a&gt;, and even &lt;a href=&#34;https://corpus.byu.edu/tv/&#34; target=&#34;_blank&#34;&gt;TV&lt;/a&gt; and &lt;a href=&#34;https://corpus.byu.edu/movies/&#34; target=&#34;_blank&#34;&gt;Movie&lt;/a&gt; corpora. I chose three to do a quick comparison of “data are/is”.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Source&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;&amp;#8220;data are/were&amp;#8221; Frequency&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;&amp;#8220;data is/was&amp;#8221; Frequency&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://corpus.byu.edu/glowbe/&#34;&gt;GloWbe&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;32 / 24&lt;/td&gt;
+&lt;td&gt;654 / 206&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://corpus.byu.edu/tv/&#34;&gt;TV Corpus&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;16 / 12&lt;/td&gt;
+&lt;td&gt;327 / 103&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://corpus.byu.edu/now/&#34;&gt;News on the Web&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;11,728 / 4,594&lt;/td&gt;
+&lt;td&gt;83,123 /18,782&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;What this data suggests is that “data is” may have grown in tandem with growth in the media, especially online media. This is evident from the higher frequency in the more informal corpora above and the peaks around the year 2000. This growth likely bled over into academic usage as more people were exposed to or participated in these newer forms of communication. However, it is important to recall that the evidence shows “data” as a singular noun existed prior to that growth, too. The growth in media likely amplified the movement of “data is” into common usage.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;5. Latinate Cousins&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;“Data” is not the only plural word used as singular: agenda, bacteria, criteria, media. These are all technically plural forms but often used in the singular. Here is how they are used (from COCA):&lt;/p&gt;
+
+&lt;table&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Term&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;&amp;#8220;are / were&amp;#8221; frequency&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;&amp;#8220;is / was&amp;#8221; frequency&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Agenda&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;61 / 34&lt;/td&gt;
+&lt;td&gt;736 / 258&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Bacteria&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;338 / 156&lt;/td&gt;
+&lt;td&gt;108 / 37&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Criteria&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;448 / 457&lt;/td&gt;
+&lt;td&gt;119 / 80&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Media&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;1060 / 376&lt;/td&gt;
+&lt;td&gt;1655 / 463&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;And here is their growth from Google N-Gram Viewer:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.anthonyteacher.com/wp-content/uploads/2019/02/ngram-2.jpg&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;http://www.anthonyteacher.com/wp-content/uploads/2019/02/ngram-2.jpg&#34; alt=&#34;Latinate Growth&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;6. Is it a British thing?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I love British English and its quirky grammar and vocabulary, like “government are” rather than the American “government is”. So maybe the “data are/is” thing is a holdover from British English since they do prefer plural forms. Interestingly, looking at the British National Corpus, “data are” and “data is” are almost equally as frequent (491 vs 452, respectively). Looking at just the US and GB dialect forms in the GloWbe Corpus reinforced this. In fact, “data is” was more common than “data are” for all inner-circle and outer-circle English varieties:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.anthonyteacher.com/wp-content/uploads/2019/02/varieties.jpg&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;http://www.anthonyteacher.com/wp-content/uploads/2019/02/varieties.jpg&#34; alt=&#34;Frequency&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;7. PLOS One&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;For my last check, I used &lt;a href=&#34;https://www.laurenceanthony.net/software/antcorgen/&#34; target=&#34;_blank&#34;&gt;AntCorGen&lt;/a&gt; to generate a corpus of 300 results sections from various peer-reviewed journals that are part of PLOS One and then ran a frequency search for “data are” and “data is”. The results were unsurprising: 72 for “data are” and 69 for “data is”. While “data are” had higher frequency in total, “data is” had greater range (greater representation in more than 1 text rather than frequent use in single text): 40 vs 30.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;8. Cognitive Linguistics&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Thus far, I have explained “data” in the singular sense as a side effect of media growth. However, I think this is neither a fully accurate nor fully plausible explanation. So, what is another way it can be explained? One way is through a cognitive linguistic understanding of “data”. In other words, how is “data” represented in the mind? Is “data” conceived of as numerous individual numbers or as a singular set of numbers? Is “data” the part or the whole? I’d argue that, since humans tend towards gestalt grouping, when we speak of data, we are not speaking of figures or numbers or even datums. We are, instead, referring to a singular group  or body of information. This mental representation then, when reflected in our lexicogrammar, takes the singular form: “the set is,” “the information is”.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Limitations&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I searched mainly for present and some past tense forms of the be verb. I did not, however, check agreement with other common collocating verbs such as show, indicate, suggest, etc.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Conclusion&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;My exploration through the data has confirmed my original hunch: both forms are acceptable and “data is” has been growing in popularity, growth which has been concomitant with the growth of the media. Furthermore, as data has become more important in our society, it has naturally taken on a singular cognitive gestalt representation.&lt;/p&gt;
+
+&lt;p&gt;What does this mean for my own writing? I will continue to use the singular form of data and will proudly point any naysayers to its evidence because the data is in and it clearly shows “data is” is OK!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

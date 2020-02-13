@@ -5,12 +5,220 @@
     <link>/tags/data-science/</link>
       <atom:link href="/tags/data-science/index.xml" rel="self" type="application/rss+xml" />
     <description>Data Science</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 18 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 10 Feb 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Data Science</title>
       <link>/tags/data-science/</link>
     </image>
+    
+    <item>
+      <title>Assessing Your Carbon Footprint with Google Location Data</title>
+      <link>/post/2020-02-10-carbon-footprint-google-data/</link>
+      <pubDate>Mon, 10 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/post/2020-02-10-carbon-footprint-google-data/</guid>
+      <description>
+
+&lt;p&gt;Google collects &lt;em&gt;a lot&lt;/em&gt; of data on us. If you have Google Maps, chances are your location is being tracked, too. Unless, of course, you have it disabled. But, if you don&amp;rsquo;t, you&amp;rsquo;d be surprised by the amount of location data (and its accuracy) contained in your Google Timeline. &lt;a href=&#34;https://www.nytimes.com/interactive/2019/12/19/opinion/location-tracking-cell-phone.html&#34; target=&#34;_blank&#34;&gt;Many worry about Google&amp;rsquo;s tracking&lt;/a&gt;, but for those of us who don&amp;rsquo;t, there is some potential fun we can have with our own data.&lt;/p&gt;
+
+&lt;p&gt;For example, we can &lt;strong&gt;estimate&lt;/strong&gt; our carbon emissions. I say &lt;strong&gt;estimate&lt;/strong&gt; because it is not exact and it is likely very difficult to account for (or even remember) all of your trips, who was with you, and how to split your emissions. Was your flight full? How &amp;ldquo;clean&amp;rdquo; was the train? How much of an Uber trip&amp;rsquo;s emissions count for you vs the driver?&lt;/p&gt;
+
+&lt;p&gt;Those are difficult questions, and the real answer is elusive. But, we can come close. Using Google Location data, We can get the date and time of travel, start and end location, the distance traveled, the place, and most importantly, the activity type.&lt;/p&gt;
+
+&lt;p&gt;Follow along and I&amp;rsquo;ll show you what I did. It&amp;rsquo;s no doubt imperfect, but for a beginner&amp;rsquo;s effort, I&amp;rsquo;d say it&amp;rsquo;s not too bad.&lt;/p&gt;
+
+&lt;h1 id=&#34;get-your-data&#34;&gt;Get Your Data&lt;/h1&gt;
+
+&lt;p&gt;Navigate to &lt;a href=&#34;https://takeout.google.com/?pli=1&#34; target=&#34;_blank&#34;&gt;Google Takeout&lt;/a&gt;, and first click &amp;ldquo;Deselect all&amp;rdquo; at the right. Then, scroll down to &amp;ldquo;Location History&amp;rdquo; and click on &amp;ldquo;Multiple Formats&amp;rdquo;. Choose JSON and click &amp;ldquo;OK&amp;rdquo;. Check the checkbox and scroll down to the bottom. Select &amp;ldquo;Next step&amp;rdquo;. Here you can export your data once or set a schedule. Click &amp;ldquo;create export&amp;rdquo;. Dependning on the amount of data, the export can take a few minutes (or &amp;ldquo;days&amp;rdquo; as Google claims). I got a year&amp;rsquo;s worth of data in about 3 minutes. Just refresh the page to check on the status.&lt;/p&gt;
+
+&lt;p&gt;When its ready, download your zip file. Extract your zip file somewhere convenient. Drill into the extracted folder until you find &amp;ldquo;Semantic Location Data&amp;rdquo;. That is what we are after. This will contain a folder for each year and a JSON file for each month in that year.&lt;/p&gt;
+
+&lt;h1 id=&#34;load-and-process&#34;&gt;Load and Process&lt;/h1&gt;
+
+&lt;p&gt;You&amp;rsquo;ll need at minimum the following packages&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;jsonlite&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tidyverse&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;lubridate&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ggplot2&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;load-data&#34;&gt;Load Data&lt;/h2&gt;
+
+&lt;p&gt;You can load your data like so:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;df &amp;lt;- data.frame(fromJSON(&amp;quot;file location/file&amp;quot;, flatten=TRUE))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;JSON comes as a list format. I have no clue how to work with lists. So, I flattened it out to a data frame. I know how to work with those.&lt;/p&gt;
+
+&lt;p&gt;I was going to write a for-loop to process the file list and automatically load the data, but since I was only working with 12 files (2019), I just did it like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;jan2019 &amp;lt;- data.frame(fromJSON(&amp;quot;2019/2019_JANUARY.json&amp;quot;, flatten = TRUE))
+feb2019 &amp;lt;- data.frame(fromJSON(&amp;quot;2019/2019_FEBRUARY.json&amp;quot;, flatten = TRUE))
+mar2019 &amp;lt;- data.frame(fromJSON(&amp;quot;2019/2019_MARCH.json&amp;quot;, flatten = TRUE))
+april2019 &amp;lt;- data.frame(fromJSON(&amp;quot;2019/2019_APRIL.json&amp;quot;, flatten = TRUE))
+may2019 &amp;lt;- data.frame(fromJSON(&amp;quot;2019/2019_MAY.json&amp;quot;, flatten = TRUE))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&amp;hellip;and so on.&lt;/p&gt;
+
+&lt;h2 id=&#34;process-data&#34;&gt;Process Data&lt;/h2&gt;
+
+&lt;p&gt;I thought I would simply &lt;code&gt;rbind&lt;/code&gt; the data and work with a single large data set, but many files had different numbers of columns, making it difficult to use &lt;code&gt;rbind&lt;/code&gt;. Thankfully, the data sets had the same variable names, so I wrote a function to process the data, selecting the variables I wanted and making a few changes (see &lt;a href=&#34;#function&#34;&gt;below&lt;/a&gt;).&lt;/p&gt;
+
+&lt;h2 id=&#34;become-familiar-with-the-variables&#34;&gt;Become Familiar with the Variables&lt;/h2&gt;
+
+&lt;p&gt;Before processing the data, you should become familiar with the column names and what you may want to focus on. There are &lt;em&gt;a lot&lt;/em&gt; of variables in the JSON file. There are variables for start and end location, path variables, distance, place name, accuracy estimates, etc. Here are the ones I was most interested in:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;timelineObjects.activitySegment.distance
+
+&lt;ul&gt;
+&lt;li&gt;distance travelled in feet&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;timelineObjects.activitySegment.activityType
+
+&lt;ul&gt;
+&lt;li&gt;flying, walking, in a car, on a train, etc.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;timelineObjects.activitySegment.startLocation.latitudeE7 and timelineObjects.activitySegment.startLocation.longitudeE7
+
+&lt;ul&gt;
+&lt;li&gt;starting location&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;timelineObjects.activitySegment.endLocation.latitudeE7 and timelineObjects.activitySegment.endLocation.longitudeE7
+
+&lt;ul&gt;
+&lt;li&gt;ending location&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;timelineObjects.placeVisit.location.name
+
+&lt;ul&gt;
+&lt;li&gt;the place I went to&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;timelineObjects.placeVisit.duration.startTimestampMs
+
+&lt;ul&gt;
+&lt;li&gt;the start time&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thanks to &lt;a href=&#34;https://shiring.github.io/maps/2016/12/30/Standortverlauf_post&#34; target=&#34;_blank&#34;&gt;Shirin&amp;rsquo;s playgRound&lt;/a&gt;, I had some clues about what to process in R, namely:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;How to convert long/late from IE7 to GPS (divide by &lt;code&gt;1e7&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;How to convert time from POSIX milliseconds to human readable time &lt;code&gt;as.POSIXct(as.numeric(time_variable)/1000, origin = &amp;quot;1970-01-01&amp;quot;)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;One problem I noticed was that many rows were offset, meaning data was split between two or three rows. For example, time might have been in row 1 and location, and activity were in the next row. Sometimes, it was three rows. I used &lt;code&gt;lead()&lt;/code&gt; to grab data from the next row, and &lt;code&gt;zoo::na.locf()&lt;/code&gt; to grab data from the last non-empty row when &lt;code&gt;lead()&lt;/code&gt; wouldn&amp;rsquo;t do the trick. This is not a perfect solution and no doubt cause some minor innacurrcies, but for the most part, for such a large data set, it seemed to do the trick.&lt;/p&gt;
+
+&lt;h2 id=&#34;function&#34;&gt;Select and Mutate&lt;/h2&gt;
+
+&lt;p&gt;The following function selects key variables and then mutates them, creating variables with human-readable names. It also converts the distance to miles and kilometers. You could take it a step further and then select only those variables, dropping the original JSON columns, but I decided to leave them in out of laziness.&lt;/p&gt;
+
+&lt;p&gt;The function takes a data frame name as its only input.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;##process data function
+json_process &amp;lt;- function(dfin){
+  dfin %&amp;gt;% select(timelineObjects.activitySegment.distance,
+                  timelineObjects.activitySegment.activityType,
+                  timelineObjects.activitySegment.startLocation.latitudeE7,
+                  timelineObjects.activitySegment.startLocation.longitudeE7,
+                  timelineObjects.activitySegment.endLocation.latitudeE7,
+                  timelineObjects.activitySegment.endLocation.longitudeE7,
+                  timelineObjects.placeVisit.location.name,
+                  timelineObjects.placeVisit.duration.startTimestampMs) %&amp;gt;%
+    mutate(
+      start_lat = timelineObjects.activitySegment.startLocation.latitudeE7 / 1e7,
+      star_long = timelineObjects.activitySegment.startLocation.longitudeE7 / 1e7,
+      end_lat = timelineObjects.activitySegment.endLocation.latitudeE7 / 1e7,
+      end_long = timelineObjects.activitySegment.endLocation.longitudeE7 / 1e7,
+      time = lead(as.POSIXct(as.numeric(timelineObjects.placeVisit.duration.startTimestampMs)/1000, origin = &amp;quot;1970-01-01&amp;quot;), 3L),
+      year = year(time),
+      month = ifelse(is.na(time), month(zoo::na.locf(time)), month(time)),
+      activity = ifelse(is.na(timelineObjects.activitySegment.activityType), zoo::na.locf(timelineObjects.activitySegment.activityType), timelineObjects.activitySegment.activityType),
+      place = lead(timelineObjects.placeVisit.location.name, 3L),
+      miles = timelineObjects.activitySegment.distance/1609,
+      km = timelineObjects.activitySegment.distance/1000)
+  }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I called the function like so:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;jan &amp;lt;- json_process(jan2019)
+feb &amp;lt;- json_process(feb2019)
+mar &amp;lt;- json_process(mar2019)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And then combined the data frames:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;data &amp;lt;- rbind(jan, feb, mar, april, may, june, july, aug, sep, oct, nov, dec)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;analyze-and-visualize&#34;&gt;Analyze and Visualize&lt;/h1&gt;
+
+&lt;p&gt;First, you should check what activities are listed in your data:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;data %&amp;gt;% group_by(activity) %&amp;gt;% count
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The activities included FLYING, IN_FERRY, IN_BUS, IN_SUBWAY, etc. However, I focused on only two carbon-emitting activities in my data - those that I could easily account carbon emissions for - and created a small data frame to use for filtering:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;carbon_activities &amp;lt;- data.frame(activity = c(&amp;quot;FLYING&amp;quot;,
+                              &amp;quot;IN_PASSENGER_VEHICLE&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I then created a new data frame that dropped missing values, selected only flying and car activities, and then calculated emissions.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;prep &amp;lt;- data %&amp;gt;% drop_na(activity) %&amp;gt;%
+  filter(activity %in% carbon_activities$activity) %&amp;gt;%
+  mutate(
+    emissions = ifelse(activity == &amp;quot;FLYING&amp;quot;, km*.18, km*.14)
+  ) %&amp;gt;% drop_na(emissions)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;How did I get the figures for emissions? Well, it turns out that calculating carbon emissions from flying is quite difficult. Here are some notes from the &lt;a href=&#34;https://www.icao.int/environmental-protection/Carbonoffset/Pages/default.aspx&#34; target=&#34;_blank&#34;&gt;ICAO website&lt;/a&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Step 1: Estimation of the aircraft fuel burn&lt;/li&gt;
+&lt;li&gt;Step 2: Calculation of the passengers&amp;rsquo; fuel burn based on a passenger/freight factor which is derived from RTK data&lt;/li&gt;
+&lt;li&gt;Step 3: Calculation of seats occupied (assumption: all aircraft are entirely configured with economic seats). Seat occupied = Total seats x Load Factor&lt;/li&gt;
+&lt;li&gt;Step 4: CO2 emissions per passenger = (Passengers&amp;rsquo; fuel burn x 3.16) / Seat occupied&lt;/li&gt;
+&lt;li&gt;Note: for flights above 3000 km, CO2 emissions per passenger in premium cabin = 2 x CO2 emissions per passenger in economy&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Their &lt;a href=&#34;https://www.icao.int/environmental-protection/CarbonOffset/Documents/Methodology%20ICAO%20Carbon%20Calculator_v10-2017.pdf&#34; target=&#34;_blank&#34;&gt;methodology paper&lt;/a&gt; &lt;em&gt;probably&lt;/em&gt; has enough of this information, including numerous tables, to make these calculations. While I intend to make a better attempt at this in the future, using some suggestions from &lt;a href=&#34;https://sheilasaia.rbind.io/post/2019-04-19-carbon-cost-calcs/&#34; target=&#34;_blank&#34;&gt;Sheila Saia&lt;/a&gt; I just wanted a rough, liberal estimate of my emissions.&lt;/p&gt;
+
+&lt;p&gt;I found &lt;a href=&#34;https://www.eci.ox.ac.uk/research/energy/downloads/jardine09-carboninflights.pdf&#34; target=&#34;_blank&#34;&gt;this paper from the Environmental Change Institute&lt;/a&gt;, which explained several different methods of calculation. The simplest is based on the World Resource Institute&amp;rsquo;s liberal estimate of 0.18 kgCO2/km. I chose this because it was simple to calculate.&lt;/p&gt;
+
+&lt;p&gt;For driving, I used &lt;a href=&#34;https://www.carbonfootprint.com/calculator.aspx&#34; target=&#34;_blank&#34;&gt;this online carbon footprint calculator&lt;/a&gt;. I selected &amp;ldquo;Car&amp;rdquo;, entered in 1000km and my car&amp;rsquo;s average MPG (38MPG - though I often get 40-45 on longer trips), and the result was &amp;ldquo;0.14 metric tons:  1000 km in a petrol vehicle doing 38 mpg (US).&amp;rdquo; That is, 140 kgCO2/1000 km, which is the same as .14 kgCO2/km.&lt;/p&gt;
+
+&lt;p&gt;Finally, I can visualize the result:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;prep %&amp;gt;%
+  group_by(month, activity) %&amp;gt;%
+  summarize(sum = sum(emissions)) %&amp;gt;%
+  ggplot()+
+  geom_bar(aes(x=as.factor(month), y=sum, fill=activity), stat=&amp;quot;identity&amp;quot;)+
+  #facet_wrap(~activity, scales=&amp;quot;free&amp;quot;)+
+  scale_y_continuous(labels = function(x) format(x, scientific = FALSE))+
+  labs(title = &amp;quot;Personal CO2 Emissions from Transportation&amp;quot;,
+       caption = &amp;quot;kgC02/km for flights calculated based on liberal WRI estimate: km * .18. \nkgCO2/km for car calculated based on .14kg per 1000km&amp;quot;,
+       x = &amp;quot;Month&amp;quot;,
+       y = &amp;quot;kgCO2&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://anthonyschmidt.netlify.com/post/2020-02-10-carbon-footprint-google-data/personal-emissions.png&#34; alt=&#34;My Personal Emissions - 2019&#34; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
+
+&lt;p&gt;This is a just a simple example of what one can do with their location data. I will be using my data in an interactive Tableau dashboard that also includes utility usage and will allow me to drill down by month, day, and hour. It will also allow me to compare my 2020 emissions to 2019. &lt;strong&gt;My goal is to have lower emissions.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I think there are a lot of possibilities with Google Location data (for tracking carbon emissions, for making cool visualizations), and even with liberal estimates of kgCO2, you still get a sense of your impact and have a visual goal you can compare against for the future.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Data-Related Jobs for ESM Students</title>
@@ -31,6 +239,70 @@
       <pubDate>Thu, 16 Jan 2020 00:00:00 +0000</pubDate>
       <guid>/project/tidy-tuesday/</guid>
       <description>&lt;p&gt;This project analyzes tweets from the #TidyTuesday hashtag to understand participation and development of data visualization and data science skills.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Speaking of Data</title>
+      <link>/post/2019-08-24-speaking-of-data/</link>
+      <pubDate>Sat, 24 Aug 2019 00:00:00 +0000</pubDate>
+      <guid>/post/2019-08-24-speaking-of-data/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Read this aloud: “We need more data.”&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;How did you pronounce the word “data”? Was the “da” in data pronounced like day or was the “a” in “da” pronounced with the same “a” as in apple? In other words, do you say day-tuh (IPA: /deɪtə/) or dah-tuh (IPA: /dætə/; like the “a” in “apple”)?&lt;/p&gt;
+
+&lt;p&gt;Two things got me thinking about this. First, there was a brief &lt;a href=&#34;https://boingboing.net/2019/08/14/brent-spiner-explains-how-patr.html&#34; target=&#34;_blank&#34;&gt;article&lt;/a&gt; and &lt;a href=&#34;https://www.youtube.com/watch?v=xeqTMTOxid8&#34; target=&#34;_blank&#34;&gt;video&lt;/a&gt; that popped up on Twitter arguing that the creation of the character “Data” from Star Trek shifted the pronunciation of the word from /dætə/ to /deɪtə/. I’m not sure I believe this, but it did make me wonder when and why the schism or shift occurred.&lt;/p&gt;
+
+&lt;p&gt;Second, my new role as data visualization researcher had me thinking about how exactly I pronounce my title. Unconsciously, I default to /dætə/. However, when I begin to think about the word and say examples aloud, it seems my pronunciation vacillates between the two.&lt;/p&gt;
+
+&lt;p&gt;While I have no doubt that both pronunciations are “correct” and common, I did wonder which one was more common. I formulated several hypotheses and then developed a method to attempt to test them. I don’t claim that any of this is scientific, but it was really fun!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;HYPOTHESES&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Given that I straddle the line between Gen Xer and Millennial, it is likely my pronunciation of data as /dætə/ is more common. This is just the phenomenon that occurs with my and the next generation. Therefore, younger people will be more likely to say /dætə/.&lt;/li&gt;
+&lt;li&gt;/dætə/ or perhaps /da:tə/ will be more common in British English than /deɪtə/, which will be more common in American English.
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;METHOD&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I had to devise a way to quickly listen to “data” in context across a variety of accents, genders, and ages. I decided to use three sources: Youglish, PlayPhrase, and the TED Corpus of Spoken English (TCSE).&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://youglish.com/search/data/all?&#34; target=&#34;_blank&#34;&gt;Youglish&lt;/a&gt; allows you to search YouTube for a word or phrase and then listen to the phrase in context from many different videos, including online lectures, webinars, TED Talks, etc. What’s more, it allows you to filter the videos by accent: US, UK, or Australian.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://playphrase.me/#/search?q=data&#34; target=&#34;_blank&#34;&gt;PlayPhrase&lt;/a&gt; is similar to Youglish. However, rather than utilize YouTube, PlayPhrase mines popular TV shows (e.g. &lt;em&gt;Supernatural&lt;/em&gt;) and movies (e.g. &lt;em&gt;Star Trek&lt;/em&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://yohasebe.com/tcse/&#34; target=&#34;_blank&#34;&gt;TCSE&lt;/a&gt; is also similar to the websites above. It utilizes only TED Talks (which also appear on Youglish).
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I first used Youglish, listening to around 20 examples of “data” in US, UK, and Australian English. I then listened to about 20 clips each from PlayPhrase and TCSE (being careful not to repeat TED Talks). In total, I had 100 observations of “data” in context. As I listened, I coded the pronunciation as 1 = /deɪtə/ and 2 = /dætə/; M for male and F for female; US, UK, AUS, or L2 for the accent; and &lt;40 or &gt;40 for a general (and very unscientific) guess about the age of the speaker.&lt;/p&gt;
+
+&lt;p&gt;In regards to accents, while I recognize there is great variation among the accent categories, the accent codes are generalizations. A US accent represents anyone with a general North American accent. A UK accent represents any of the varieties of British pronunciation. AUS was used only for Youglish videos marked as Australian. Finally, L2 was used for speakers who were not from Anglophone countries (US, UK, IR, AU, NZ) and whose first language was likely not English (based solely on accent).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;FINDINGS&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;My findings were surprising.&lt;/p&gt;
+
+&lt;p&gt;In regards to &lt;strong&gt;hypothesis 1&lt;/strong&gt;, that /dætə/ is more common, I was completely wrong (see Figure 1) . Across all accents, genders, and ages, /deɪtə/ is actually more common. This really surprised me. Even among those older than 40, including the elderly, /deɪtə/ was used common.&lt;/p&gt;
+
+&lt;p&gt;In regards to &lt;strong&gt;hypothesis 2&lt;/strong&gt;, I was even more wrong (see Figure 2). Those with British accents used /deɪtə/ rather than the other varieties. The only two accents where I heard /dætə/ was the US / North American accent and the Australian accent. For the US / North American accent, /dætə/ was used only 33% of the time; in other words, /deɪtə/ is more common.&lt;/p&gt;
+
+&lt;p&gt;While underrepresented in the sample (18 videos), it is important to note that /dæ tə/ seems most common in the Australian accent (44%). This is very surprising to me because of the close relationship between British and Australian English.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://i2.wp.com/www.anthonyschmidt.co/wp-content/uploads/2019/08/Overall@2x-100.jpg&#34; alt=&#34;Figure 1&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://i2.wp.com/www.anthonyschmidt.co/wp-content/uploads/2019/08/Accent-and-Gender@2x-100-1.jpg&#34; alt=&#34;Figure 2&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;LIMITATIONS&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Clearly, this is not a scientific study. The sample is small, does not represent accents equally, and is sampled online from online videos. However, it does give a general idea of what is the more common pronunciation.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;CONCLUSION&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;In the end, this was a fun exercise. I learned that my speech pattern of “data” as /dætə/ is not in line with other aspects of my speech that are more common: singular they, singular data, so, like, etc.&lt;/p&gt;
+
+&lt;p&gt;Although I have a better idea of which pronunciation is more common, I still have no idea about the history of the word, when the shift occurred, and what facilitated it.&lt;/p&gt;
 </description>
     </item>
     

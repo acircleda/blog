@@ -1,7 +1,7 @@
 ---
-  title: Assessing Your Carbon Footprint from Google Location Data
-author: 'Anthony Schmidt'
-date: "2020-02-10"
+title: "Assessing Your Carbon Footprint with Google Location Data"
+author: "Anthony Schmidt"
+date: '2020-02-10'
 tags:
   - Data Science
   - Climate Change
@@ -9,7 +9,7 @@ subtitle: ''
 summary: ''
 authors: []
 lastmod: ""
-featured: no
+featured:
 image:
   caption: ''
 focal_point: ''

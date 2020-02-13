@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Projects | Anthony Schmidt</title>
-    <link>/project/</link>
-      <atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
-    <description>Projects</description>
+    <title>Project | Anthony Schmidt</title>
+    <link>/tags/project/</link>
+      <atom:link href="/tags/project/index.xml" rel="self" type="application/rss+xml" />
+    <description>Project</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 18 Jan 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
-      <title>Projects</title>
-      <link>/project/</link>
+      <title>Project</title>
+      <link>/tags/project/</link>
     </image>
     
     <item>
@@ -22,38 +22,6 @@
 &lt;p&gt;The project is currently focused on administrative-level jobs. Faculty job analyses will be forthcoming.&lt;/p&gt;
 
 &lt;p&gt;The project files can be found on Github &lt;a href=&#34;https://github.com/acircleda/Data-Jobs&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;. The analyses, always under development, can be found &lt;a href=&#34;https://acircleda.github.io/Data-Jobs/&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Student Enrollment Dashboard</title>
-      <link>/project/portfolio/port-example/</link>
-      <pubDate>Sat, 18 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/project/portfolio/port-example/</guid>
-      <description>&lt;p&gt;&lt;em&gt;Note: The following Tableau dashboard represents real data that has been altered to maintain confidentiality.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;The purpose of this dashboard is to allow users to understand enrollment trends, compare enrollment to another institution, and see enrollment by student country of origin.&lt;/p&gt;
-
-&lt;div class=&#39;tableauPlaceholder&#39; id=&#39;viz1581355801663&#39; style=&#39;position: relative&#39;&gt;
-&lt;a href=&#39;#&#39;&gt;&lt;img alt=&#39; &#39; src=&#39;https:&amp;#47;&amp;#47;public.tableau.com&amp;#47;static&amp;#47;images&amp;#47;St&amp;#47;StudentEnrollmentDashboardPortfolio&amp;#47;Dashboard1&amp;#47;1_rss.png&#39; style=&#39;border: none&#39; /&gt;&lt;/a&gt;
-
-&lt;object class=&#39;tableauViz&#39;  style=&#39;display:none;&#39;&gt;
-&lt;param name=&#39;host_url&#39; value=&#39;https%3A%2F%2Fpublic.tableau.com%2F&#39; /&gt;
-&lt;param name=&#39;embed_code_version&#39; value=&#39;3&#39; /&gt;
-&lt;param name=&#39;site_root&#39; value=&#39;&#39; /&gt;
-&lt;param name=&#39;name&#39; value=&#39;StudentEnrollmentDashboardPortfolio&amp;#47;Dashboard1&#39; /&gt;&lt;param name=&#39;tabs&#39; value=&#39;no&#39; /&gt;
-&lt;param name=&#39;toolbar&#39; value=&#39;yes&#39; /&gt;
-&lt;param name=&#39;static_image&#39; value=&#39;https:&amp;#47;&amp;#47;public.tableau.com&amp;#47;static&amp;#47;images&amp;#47;St&amp;#47;StudentEnrollmentDashboardPortfolio&amp;#47;Dashboard1&amp;#47;1.png&#39; /&gt;
-&lt;param name=&#39;animate_transition&#39; value=&#39;yes&#39; /&gt;
-&lt;param name=&#39;display_static_image&#39; value=&#39;yes&#39; /&gt;
-&lt;param name=&#39;display_spinner&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_overlay&#39; value=&#39;yes&#39; /&gt;
-&lt;param name=&#39;display_count&#39; value=&#39;yes&#39; /&gt;
-&lt;/object&gt;
-&lt;/div&gt;
-
-&lt;script type=&#39;text/javascript&#39;&gt;
-var divElement = document.getElementById(&#39;viz1581355801663&#39;);                    var vizElement = divElement.getElementsByTagName(&#39;object&#39;)[0];                    if ( divElement.offsetWidth &gt; 800 ) { vizElement.style.width=&#39;1000px&#39;;vizElement.style.height=&#39;827px&#39;;} else if ( divElement.offsetWidth &gt; 500 ) { vizElement.style.width=&#39;1000px&#39;;vizElement.style.height=&#39;827px&#39;;} else { vizElement.style.width=&#39;100%&#39;;vizElement.style.height=&#39;727px&#39;;}                     var scriptElement = document.createElement(&#39;script&#39;);                    scriptElement.src = &#39;https://public.tableau.com/javascripts/api/viz_v1.js&#39;;                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                
-&lt;/script&gt;
 </description>
     </item>
     

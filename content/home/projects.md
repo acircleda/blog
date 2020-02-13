@@ -23,7 +23,7 @@ subtitle = ""
   
   [[content.filter_button]]
     name = "All"
-    tag = "*"
+    tag = "Project"
   
   [[content.filter_button]]
     name = "Education"

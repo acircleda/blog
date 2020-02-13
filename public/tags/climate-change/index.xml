@@ -5,12 +5,220 @@
     <link>/tags/climate-change/</link>
       <atom:link href="/tags/climate-change/index.xml" rel="self" type="application/rss+xml" />
     <description>Climate Change</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 07 Dec 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 10 Feb 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Climate Change</title>
       <link>/tags/climate-change/</link>
     </image>
+    
+    <item>
+      <title>Assessing Your Carbon Footprint with Google Location Data</title>
+      <link>/post/2020-02-10-carbon-footprint-google-data/</link>
+      <pubDate>Mon, 10 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/post/2020-02-10-carbon-footprint-google-data/</guid>
+      <description>
+
+&lt;p&gt;Google collects &lt;em&gt;a lot&lt;/em&gt; of data on us. If you have Google Maps, chances are your location is being tracked, too. Unless, of course, you have it disabled. But, if you don&amp;rsquo;t, you&amp;rsquo;d be surprised by the amount of location data (and its accuracy) contained in your Google Timeline. &lt;a href=&#34;https://www.nytimes.com/interactive/2019/12/19/opinion/location-tracking-cell-phone.html&#34; target=&#34;_blank&#34;&gt;Many worry about Google&amp;rsquo;s tracking&lt;/a&gt;, but for those of us who don&amp;rsquo;t, there is some potential fun we can have with our own data.&lt;/p&gt;
+
+&lt;p&gt;For example, we can &lt;strong&gt;estimate&lt;/strong&gt; our carbon emissions. I say &lt;strong&gt;estimate&lt;/strong&gt; because it is not exact and it is likely very difficult to account for (or even remember) all of your trips, who was with you, and how to split your emissions. Was your flight full? How &amp;ldquo;clean&amp;rdquo; was the train? How much of an Uber trip&amp;rsquo;s emissions count for you vs the driver?&lt;/p&gt;
+
+&lt;p&gt;Those are difficult questions, and the real answer is elusive. But, we can come close. Using Google Location data, We can get the date and time of travel, start and end location, the distance traveled, the place, and most importantly, the activity type.&lt;/p&gt;
+
+&lt;p&gt;Follow along and I&amp;rsquo;ll show you what I did. It&amp;rsquo;s no doubt imperfect, but for a beginner&amp;rsquo;s effort, I&amp;rsquo;d say it&amp;rsquo;s not too bad.&lt;/p&gt;
+
+&lt;h1 id=&#34;get-your-data&#34;&gt;Get Your Data&lt;/h1&gt;
+
+&lt;p&gt;Navigate to &lt;a href=&#34;https://takeout.google.com/?pli=1&#34; target=&#34;_blank&#34;&gt;Google Takeout&lt;/a&gt;, and first click &amp;ldquo;Deselect all&amp;rdquo; at the right. Then, scroll down to &amp;ldquo;Location History&amp;rdquo; and click on &amp;ldquo;Multiple Formats&amp;rdquo;. Choose JSON and click &amp;ldquo;OK&amp;rdquo;. Check the checkbox and scroll down to the bottom. Select &amp;ldquo;Next step&amp;rdquo;. Here you can export your data once or set a schedule. Click &amp;ldquo;create export&amp;rdquo;. Dependning on the amount of data, the export can take a few minutes (or &amp;ldquo;days&amp;rdquo; as Google claims). I got a year&amp;rsquo;s worth of data in about 3 minutes. Just refresh the page to check on the status.&lt;/p&gt;
+
+&lt;p&gt;When its ready, download your zip file. Extract your zip file somewhere convenient. Drill into the extracted folder until you find &amp;ldquo;Semantic Location Data&amp;rdquo;. That is what we are after. This will contain a folder for each year and a JSON file for each month in that year.&lt;/p&gt;
+
+&lt;h1 id=&#34;load-and-process&#34;&gt;Load and Process&lt;/h1&gt;
+
+&lt;p&gt;You&amp;rsquo;ll need at minimum the following packages&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;jsonlite&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tidyverse&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;lubridate&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ggplot2&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;load-data&#34;&gt;Load Data&lt;/h2&gt;
+
+&lt;p&gt;You can load your data like so:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;df &amp;lt;- data.frame(fromJSON(&amp;quot;file location/file&amp;quot;, flatten=TRUE))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;JSON comes as a list format. I have no clue how to work with lists. So, I flattened it out to a data frame. I know how to work with those.&lt;/p&gt;
+
+&lt;p&gt;I was going to write a for-loop to process the file list and automatically load the data, but since I was only working with 12 files (2019), I just did it like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;jan2019 &amp;lt;- data.frame(fromJSON(&amp;quot;2019/2019_JANUARY.json&amp;quot;, flatten = TRUE))
+feb2019 &amp;lt;- data.frame(fromJSON(&amp;quot;2019/2019_FEBRUARY.json&amp;quot;, flatten = TRUE))
+mar2019 &amp;lt;- data.frame(fromJSON(&amp;quot;2019/2019_MARCH.json&amp;quot;, flatten = TRUE))
+april2019 &amp;lt;- data.frame(fromJSON(&amp;quot;2019/2019_APRIL.json&amp;quot;, flatten = TRUE))
+may2019 &amp;lt;- data.frame(fromJSON(&amp;quot;2019/2019_MAY.json&amp;quot;, flatten = TRUE))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&amp;hellip;and so on.&lt;/p&gt;
+
+&lt;h2 id=&#34;process-data&#34;&gt;Process Data&lt;/h2&gt;
+
+&lt;p&gt;I thought I would simply &lt;code&gt;rbind&lt;/code&gt; the data and work with a single large data set, but many files had different numbers of columns, making it difficult to use &lt;code&gt;rbind&lt;/code&gt;. Thankfully, the data sets had the same variable names, so I wrote a function to process the data, selecting the variables I wanted and making a few changes (see &lt;a href=&#34;#function&#34;&gt;below&lt;/a&gt;).&lt;/p&gt;
+
+&lt;h2 id=&#34;become-familiar-with-the-variables&#34;&gt;Become Familiar with the Variables&lt;/h2&gt;
+
+&lt;p&gt;Before processing the data, you should become familiar with the column names and what you may want to focus on. There are &lt;em&gt;a lot&lt;/em&gt; of variables in the JSON file. There are variables for start and end location, path variables, distance, place name, accuracy estimates, etc. Here are the ones I was most interested in:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;timelineObjects.activitySegment.distance
+
+&lt;ul&gt;
+&lt;li&gt;distance travelled in feet&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;timelineObjects.activitySegment.activityType
+
+&lt;ul&gt;
+&lt;li&gt;flying, walking, in a car, on a train, etc.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;timelineObjects.activitySegment.startLocation.latitudeE7 and timelineObjects.activitySegment.startLocation.longitudeE7
+
+&lt;ul&gt;
+&lt;li&gt;starting location&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;timelineObjects.activitySegment.endLocation.latitudeE7 and timelineObjects.activitySegment.endLocation.longitudeE7
+
+&lt;ul&gt;
+&lt;li&gt;ending location&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;timelineObjects.placeVisit.location.name
+
+&lt;ul&gt;
+&lt;li&gt;the place I went to&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;timelineObjects.placeVisit.duration.startTimestampMs
+
+&lt;ul&gt;
+&lt;li&gt;the start time&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thanks to &lt;a href=&#34;https://shiring.github.io/maps/2016/12/30/Standortverlauf_post&#34; target=&#34;_blank&#34;&gt;Shirin&amp;rsquo;s playgRound&lt;/a&gt;, I had some clues about what to process in R, namely:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;How to convert long/late from IE7 to GPS (divide by &lt;code&gt;1e7&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;How to convert time from POSIX milliseconds to human readable time &lt;code&gt;as.POSIXct(as.numeric(time_variable)/1000, origin = &amp;quot;1970-01-01&amp;quot;)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;One problem I noticed was that many rows were offset, meaning data was split between two or three rows. For example, time might have been in row 1 and location, and activity were in the next row. Sometimes, it was three rows. I used &lt;code&gt;lead()&lt;/code&gt; to grab data from the next row, and &lt;code&gt;zoo::na.locf()&lt;/code&gt; to grab data from the last non-empty row when &lt;code&gt;lead()&lt;/code&gt; wouldn&amp;rsquo;t do the trick. This is not a perfect solution and no doubt cause some minor innacurrcies, but for the most part, for such a large data set, it seemed to do the trick.&lt;/p&gt;
+
+&lt;h2 id=&#34;function&#34;&gt;Select and Mutate&lt;/h2&gt;
+
+&lt;p&gt;The following function selects key variables and then mutates them, creating variables with human-readable names. It also converts the distance to miles and kilometers. You could take it a step further and then select only those variables, dropping the original JSON columns, but I decided to leave them in out of laziness.&lt;/p&gt;
+
+&lt;p&gt;The function takes a data frame name as its only input.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;##process data function
+json_process &amp;lt;- function(dfin){
+  dfin %&amp;gt;% select(timelineObjects.activitySegment.distance,
+                  timelineObjects.activitySegment.activityType,
+                  timelineObjects.activitySegment.startLocation.latitudeE7,
+                  timelineObjects.activitySegment.startLocation.longitudeE7,
+                  timelineObjects.activitySegment.endLocation.latitudeE7,
+                  timelineObjects.activitySegment.endLocation.longitudeE7,
+                  timelineObjects.placeVisit.location.name,
+                  timelineObjects.placeVisit.duration.startTimestampMs) %&amp;gt;%
+    mutate(
+      start_lat = timelineObjects.activitySegment.startLocation.latitudeE7 / 1e7,
+      star_long = timelineObjects.activitySegment.startLocation.longitudeE7 / 1e7,
+      end_lat = timelineObjects.activitySegment.endLocation.latitudeE7 / 1e7,
+      end_long = timelineObjects.activitySegment.endLocation.longitudeE7 / 1e7,
+      time = lead(as.POSIXct(as.numeric(timelineObjects.placeVisit.duration.startTimestampMs)/1000, origin = &amp;quot;1970-01-01&amp;quot;), 3L),
+      year = year(time),
+      month = ifelse(is.na(time), month(zoo::na.locf(time)), month(time)),
+      activity = ifelse(is.na(timelineObjects.activitySegment.activityType), zoo::na.locf(timelineObjects.activitySegment.activityType), timelineObjects.activitySegment.activityType),
+      place = lead(timelineObjects.placeVisit.location.name, 3L),
+      miles = timelineObjects.activitySegment.distance/1609,
+      km = timelineObjects.activitySegment.distance/1000)
+  }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I called the function like so:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;jan &amp;lt;- json_process(jan2019)
+feb &amp;lt;- json_process(feb2019)
+mar &amp;lt;- json_process(mar2019)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And then combined the data frames:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;data &amp;lt;- rbind(jan, feb, mar, april, may, june, july, aug, sep, oct, nov, dec)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;analyze-and-visualize&#34;&gt;Analyze and Visualize&lt;/h1&gt;
+
+&lt;p&gt;First, you should check what activities are listed in your data:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;data %&amp;gt;% group_by(activity) %&amp;gt;% count
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The activities included FLYING, IN_FERRY, IN_BUS, IN_SUBWAY, etc. However, I focused on only two carbon-emitting activities in my data - those that I could easily account carbon emissions for - and created a small data frame to use for filtering:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;carbon_activities &amp;lt;- data.frame(activity = c(&amp;quot;FLYING&amp;quot;,
+                              &amp;quot;IN_PASSENGER_VEHICLE&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I then created a new data frame that dropped missing values, selected only flying and car activities, and then calculated emissions.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;prep &amp;lt;- data %&amp;gt;% drop_na(activity) %&amp;gt;%
+  filter(activity %in% carbon_activities$activity) %&amp;gt;%
+  mutate(
+    emissions = ifelse(activity == &amp;quot;FLYING&amp;quot;, km*.18, km*.14)
+  ) %&amp;gt;% drop_na(emissions)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;How did I get the figures for emissions? Well, it turns out that calculating carbon emissions from flying is quite difficult. Here are some notes from the &lt;a href=&#34;https://www.icao.int/environmental-protection/Carbonoffset/Pages/default.aspx&#34; target=&#34;_blank&#34;&gt;ICAO website&lt;/a&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Step 1: Estimation of the aircraft fuel burn&lt;/li&gt;
+&lt;li&gt;Step 2: Calculation of the passengers&amp;rsquo; fuel burn based on a passenger/freight factor which is derived from RTK data&lt;/li&gt;
+&lt;li&gt;Step 3: Calculation of seats occupied (assumption: all aircraft are entirely configured with economic seats). Seat occupied = Total seats x Load Factor&lt;/li&gt;
+&lt;li&gt;Step 4: CO2 emissions per passenger = (Passengers&amp;rsquo; fuel burn x 3.16) / Seat occupied&lt;/li&gt;
+&lt;li&gt;Note: for flights above 3000 km, CO2 emissions per passenger in premium cabin = 2 x CO2 emissions per passenger in economy&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Their &lt;a href=&#34;https://www.icao.int/environmental-protection/CarbonOffset/Documents/Methodology%20ICAO%20Carbon%20Calculator_v10-2017.pdf&#34; target=&#34;_blank&#34;&gt;methodology paper&lt;/a&gt; &lt;em&gt;probably&lt;/em&gt; has enough of this information, including numerous tables, to make these calculations. While I intend to make a better attempt at this in the future, using some suggestions from &lt;a href=&#34;https://sheilasaia.rbind.io/post/2019-04-19-carbon-cost-calcs/&#34; target=&#34;_blank&#34;&gt;Sheila Saia&lt;/a&gt; I just wanted a rough, liberal estimate of my emissions.&lt;/p&gt;
+
+&lt;p&gt;I found &lt;a href=&#34;https://www.eci.ox.ac.uk/research/energy/downloads/jardine09-carboninflights.pdf&#34; target=&#34;_blank&#34;&gt;this paper from the Environmental Change Institute&lt;/a&gt;, which explained several different methods of calculation. The simplest is based on the World Resource Institute&amp;rsquo;s liberal estimate of 0.18 kgCO2/km. I chose this because it was simple to calculate.&lt;/p&gt;
+
+&lt;p&gt;For driving, I used &lt;a href=&#34;https://www.carbonfootprint.com/calculator.aspx&#34; target=&#34;_blank&#34;&gt;this online carbon footprint calculator&lt;/a&gt;. I selected &amp;ldquo;Car&amp;rdquo;, entered in 1000km and my car&amp;rsquo;s average MPG (38MPG - though I often get 40-45 on longer trips), and the result was &amp;ldquo;0.14 metric tons:  1000 km in a petrol vehicle doing 38 mpg (US).&amp;rdquo; That is, 140 kgCO2/1000 km, which is the same as .14 kgCO2/km.&lt;/p&gt;
+
+&lt;p&gt;Finally, I can visualize the result:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;prep %&amp;gt;%
+  group_by(month, activity) %&amp;gt;%
+  summarize(sum = sum(emissions)) %&amp;gt;%
+  ggplot()+
+  geom_bar(aes(x=as.factor(month), y=sum, fill=activity), stat=&amp;quot;identity&amp;quot;)+
+  #facet_wrap(~activity, scales=&amp;quot;free&amp;quot;)+
+  scale_y_continuous(labels = function(x) format(x, scientific = FALSE))+
+  labs(title = &amp;quot;Personal CO2 Emissions from Transportation&amp;quot;,
+       caption = &amp;quot;kgC02/km for flights calculated based on liberal WRI estimate: km * .18. \nkgCO2/km for car calculated based on .14kg per 1000km&amp;quot;,
+       x = &amp;quot;Month&amp;quot;,
+       y = &amp;quot;kgCO2&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://anthonyschmidt.netlify.com/post/2020-02-10-carbon-footprint-google-data/personal-emissions.png&#34; alt=&#34;My Personal Emissions - 2019&#34; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
+
+&lt;p&gt;This is a just a simple example of what one can do with their location data. I will be using my data in an interactive Tableau dashboard that also includes utility usage and will allow me to drill down by month, day, and hour. It will also allow me to compare my 2020 emissions to 2019. &lt;strong&gt;My goal is to have lower emissions.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I think there are a lot of possibilities with Google Location data (for tracking carbon emissions, for making cool visualizations), and even with liberal estimates of kgCO2, you still get a sense of your impact and have a visual goal you can compare against for the future.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Fly or Die - The Relationship between Conference Travel, Employability, and the Climate Crisis.</title>
@@ -24,6 +232,88 @@
 &lt;p&gt;&lt;strong&gt;Survey Two&lt;/strong&gt; focuses on tenure-track faculty search comittees and their attitudes toward recently-graduated PhD students&amp;rsquo; conference attendance, conference activities, and publications.&lt;/p&gt;
 
 &lt;p&gt;The ulitmate goal of this research is to understand the ideal conference and publication record that can maximize employment outcomes while minimizing our carbon footprints.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Cost of International Education</title>
+      <link>/post/2019-5-10-the-cost-of-international-education/</link>
+      <pubDate>Fri, 10 May 2019 00:00:00 +0000</pubDate>
+      <guid>/post/2019-5-10-the-cost-of-international-education/</guid>
+      <description>&lt;p&gt;Lately, I have been thinking about the environmental impact of international education. Given that students travel across the world to study, the CO2 emissions generated from their initial trip, perhaps eventual return, and any trips in between, cannot be ignored.  &lt;a href=&#34;http://www.grida.no/climate/ipcc/aviation/008.htm&#34; target=&#34;_blank&#34;&gt;According to the IPCC&lt;/a&gt;, aviation contributes about 3.5% to climate change, only set to increase in the future. The exact impact is difficult to ascertain, as it is hard to separate aviation from other anthropogenic impacts.&lt;/p&gt;
+
+&lt;p&gt;It is hard to judge the per passenger, per kilometer CO2 emissions, as routes and planes vary.  However, the &lt;a href=&#34;https://calculator.carbonfootprint.com/calculator.aspx?tab=3&#34; target=&#34;_blank&#34;&gt;Carbon Footprint website offers a calculator&lt;/a&gt;. Since China is the number one country of origin for international students in the United States, example calculations for the &lt;a href=&#34;https://www.iie.org/en/Research-and-Insights/Open-Doors/Data/International-Students/Leading-Host-Institutions&#34; target=&#34;_blank&#34;&gt;leading enrollers of international students in the US&lt;/a&gt; could be as follows:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align: center;&#34;&gt;&lt;strong&gt;University&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align: center;&#34;&gt;&lt;strong&gt;Route&lt;br /&gt;
+&lt;span style=&#34;font-size: 10pt;&#34;&gt;(on American Airlines)&lt;/span&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align: center;&#34;&gt;&lt;strong&gt;Emissions&lt;br /&gt;
+&lt;span style=&#34;font-size: 10pt;&#34;&gt;(in metric tons of CO2)&lt;/span&gt;&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;New York University&lt;/td&gt;
+&lt;td&gt;PEK -&amp;gt; DFW -&amp;gt; JFK&lt;/td&gt;
+&lt;td style=&#34;text-align: center;&#34;&gt;1.88&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;University of Southern California&lt;/td&gt;
+&lt;td&gt;PEK -&amp;gt; LAX&lt;/td&gt;
+&lt;td style=&#34;text-align: center;&#34;&gt;1.41&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Northeastern University&lt;/td&gt;
+&lt;td&gt;PEK -&amp;gt; DFW -&amp;gt; BOS&lt;/td&gt;
+&lt;td style=&#34;text-align: center;&#34;&gt;1.92&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Columbia&lt;/td&gt;
+&lt;td&gt;PEK -&amp;gt; DFW -&amp;gt; JFK&lt;/td&gt;
+&lt;td style=&#34;text-align: center;&#34;&gt;1.88&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Arizona State University&lt;/td&gt;
+&lt;td&gt;PEK -&amp;gt; DFW -&amp;gt;  PHX&lt;/td&gt;
+&lt;td style=&#34;text-align: center;&#34;&gt;1.76&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;(Again, keep in mind that these will vary based on originating city/country, destination, and connections. The further away or the more connections, the higher the emissions will be.)&lt;/p&gt;
+
+&lt;p&gt;Averaging the emissions together, that is 1.77 metric tons of CO2 per student just to enter the university. According to IIE, these universities enroll a total of 76,606 international students. There is no public data easily accessible to find out how many Chinese students they enroll, but since China &lt;a href=&#34;https://www.iie.org/Research-and-Insights/Open-Doors/Data/International-Students/Places-of-Origin&#34; target=&#34;_blank&#34;&gt;accounts for 33% of international student enrollment&lt;/a&gt;, let’s guesstimate and say 25,280 students. That makes for about 44,746 metric tons of CO2 to attend university. That seems like a really big impact. You can enter that number into the &lt;a href=&#34;https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator&#34; target=&#34;_blank&#34;&gt;EPA’s Greenhouse Gas Equivalencies Calculator&lt;/a&gt; to get a sense of what that means.&lt;/p&gt;
+
+&lt;p&gt;International students are just one example. Other examples include study abroad participants, and even attendance at international (and domestic) conferences (see also here).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;I am in no way making the argument that international students should not enroll and attend universities in the States (or elsewhere).&lt;/strong&gt; Rather, I am wondering if there are any practical solutions that can be thought of to offset their impact. Specifically, I am wondering if it would be feasible to capture a small percentage of their often enormous tuition payments and use that to either purchase carbon offsets or invest in campus sustainability projects. The rest of this blog post will consider the former.&lt;/p&gt;
+
+&lt;p&gt;There are a number of carbon offset companies on the internet. These companies use money from purchased offsets to fund different projects. For example, &lt;a href=&#34;https://sustainabletravel.org/utilities/how-is-my-contribution-used-to-offset-my-carbon-emissions/&#34; target=&#34;_blank&#34;&gt;Sustainable Travel International&lt;/a&gt; lists three ways their offsets work: “international conservation carbon reforestation projects; renewable energy projects in the United States, or international renewable energy and energy efficiency projects”.  There has been some &lt;a href=&#34;https://www.theguardian.com/environment/2011/sep/16/carbon-offset-projects-carbon-emissions&#34; target=&#34;_blank&#34;&gt;criticism&lt;/a&gt; of carbon offsets, with some suggesting they are akin to the indulgences of medieval Europe. In other words, they make people feel good about their impact without truly offsetting carbon emissions; rather, they allow “governments and companies in rich countries to offset their emissions through projects in developing countries (&lt;a href=&#34;https://www.climatechangenews.com/2018/08/31/withdrawn-un-advert-shows-carbon-offset-scheme-scrapped/&#34; target=&#34;_blank&#34;&gt;Climate Change News&lt;/a&gt;). This is often through reforestation once a forest has been cut down.  Yet, some offsets do fund renewable energy initiatives or methane capture projects. And, there is some evidence that carbon offsets might work. An article in &lt;a href=&#34;https://esajournals.onlinelibrary.wiley.com/doi/full/10.1002/fee.1515&#34; target=&#34;_blank&#34;&gt;&lt;em&gt;Frontiers in Ecology and the Environment&lt;/em&gt;&lt;/a&gt; looks at a small offset program in California and concluded that:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Offsets can contribute to climate‐change mitigation, but they can also hinder it if they distract from necessary emissions reductions overall or decrease the feasibility of deep decarbonization. We show that California’s forest offsets – by design – account for a small percentage of emissions reductions but simultaneously provide an important opportunity to supply meaningful carbon sequestration and multiple co‐benefits.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;So, it is important to recognize that offsets are not a true solution but rather a temporary one. If carbon offsets only focus on deforestation and reforestation without actually decreasing emissions, they seem rather pointless.&lt;/p&gt;
+
+&lt;p&gt;That being said, with their limitations in mind, carbon offsets may be one way to reduce the impact of international education to some extent. How financially feasible is it?&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://sustainabletravel.org/utilities/carbon-calculator/&#34; target=&#34;_blank&#34;&gt;Sustainable Travel International’s carbon calculator&lt;/a&gt; told me that my trip from Beijing to Boston would be 2.7 metric tons and cost around $65 to offset. In terms of out-of-state tuition that international students pay (for example, the average undergraduate international student pays $30,792 [calculated from IPEDS] at a public masters or doctoral university), the cost of a carbon offset like above is just 0.2% of the tuition. Even rounding up to a $100 offset to account for students who travel further or from places that require more connections amounts to 0.3% of the tuition to offset that student’s carbon.&lt;/p&gt;
+
+&lt;p&gt;I think any university administrator would think that is a reasonable amount of money to spend since they are already getting enormous revenue from the higher out-of-state tuition markup. Such offsets can also be captured for study abroad participants’ tuition, and since universities already carefully keep track of travel, it could easily be done for personnel travel.&lt;/p&gt;
+
+&lt;p&gt;Why would they want to do this, especially if every penny counts? For one, there is the moral obligation to do what can be done to help halt climate change. But, typically the moral premise is not enough. It may help institutions participate in the &lt;a href=&#34;https://sustainabledevelopment.un.org/sdinaction/hesi&#34; target=&#34;_blank&#34;&gt;UN’s Higher Education Sustainability Initiative&lt;/a&gt; as well. Having a “green” campus may attract more students or a different type of student. In addition, sustainability could affect future rankings, or current rankings in the &lt;a href=&#34;https://www.aashe.org/news/aashe-releases-the-2018-sustainable-campus-index/&#34; target=&#34;_blank&#34;&gt;sustainable campus index&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Essentially, for little money, there could be a positive impact.&lt;/p&gt;
+
+&lt;p&gt;Of course, this comes with a number of caveats. First, is that it is important to recognize the limits of carbon offsets (as mentioned above). It may be more beneficial to use the same 0.3% of tuition to help further fund campus-based sustainability projects that mitigate climate change. In fact, it is likely that some institutions already use tuition to fund such projects.&lt;/p&gt;
+
+&lt;p&gt;In addition, individual universities calculating and purchasing carbon offsets may be a moot point as &lt;a href=&#34;https://thepointsguy.com/guide/a-guide-to-airline-carbon-offset-programs/&#34; target=&#34;_blank&#34;&gt;more airlines already include offsets in their charges&lt;/a&gt;. This might increase in the future as more countries participate in the &lt;a href=&#34;https://www.icao.int/environmental-protection/CORSIA/Pages/default.aspx&#34; target=&#34;_blank&#34;&gt;Carbon Offsetting and Reduction Scheme for International Aviation&lt;/a&gt; (CORSIA; see also: &lt;a href=&#34;https://www.wired.com/story/airline-emissions-carbon-offsets-travel/&#34; target=&#34;_blank&#34;&gt;&amp;ldquo;Stop Worrying about Buying Carbon Offsets for your Flights&amp;rdquo;&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;Finally, it is important to consider the total climate change impact of students, not just their initial trip. Do the students live on-campus or off-campus? Do they walk, bike, take public transportation, or drive to school? I could not find any statistics or information that tell me the habits of most international students. But, let’s take NYU as an example, which enrolls the most international students in the US. It is likely that international students who attend NYU will not drive, as traffic is terrible and public transportation is well-developed for New York City. In addition, it is likely they will not be able to afford a large space to live in, which already decreases their energy usage. It may be that, by the end of the academic year, their carbon emissions end up equal to or less than the average student or resident. If the campus promotes green initiatives, the impact might even be lower.&lt;/p&gt;
+
+&lt;p&gt;In the end, it’s important to recognize that international education does play a role in contributing to climate change through aviation emissions. One issue is there is very little research on student impacts (domestic, out-of-state, and international; on-campus, off-campus; though there is &lt;a href=&#34;https://www.uvm.edu/sustain/sites/uvm.edu.sustain/files/uploads/Documents%20Archive/For_Website/Documents_for_Website/Publication%20and%20Resources/ghg_tracking_at_colleges_in_us.pdf&#34; target=&#34;_blank&#34;&gt;some research on campus impacts&lt;/a&gt; and &lt;a href=&#34;https://sustainability.mit.edu/ghginventory&#34; target=&#34;_blank&#34;&gt;solutions&lt;/a&gt;). One solution proposed is to capture a small percentage of extant student tuition and reallocate that for either carbon offsetting or other sustainability projects. Given the cost of offsetting, this can be done without passing any additional cost to students. For other projects, it is likely they are already being funded through tuition, and these funds could certainly be increased given the pressing issue of climate change, again with no additional cost to the student. &lt;strong&gt;If we deem both international education and the environment important, then we must find some way to reconcile the impact while mitigating further climate change&lt;/strong&gt;.&lt;/p&gt;
 </description>
     </item>
     

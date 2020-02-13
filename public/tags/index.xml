@@ -5,7 +5,7 @@
     <link>/tags/</link>
       <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 18 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 10 Feb 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Tags</title>
@@ -13,9 +13,17 @@
     </image>
     
     <item>
+      <title>Climate Change</title>
+      <link>/tags/climate-change/</link>
+      <pubDate>Mon, 10 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/tags/climate-change/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Data Science</title>
       <link>/tags/data-science/</link>
-      <pubDate>Sat, 18 Jan 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 10 Feb 2020 00:00:00 +0000</pubDate>
       <guid>/tags/data-science/</guid>
       <description></description>
     </item>
@@ -37,6 +45,14 @@
     </item>
     
     <item>
+      <title>Project</title>
+      <link>/tags/project/</link>
+      <pubDate>Sat, 18 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/tags/project/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Viz</title>
       <link>/tags/viz/</link>
       <pubDate>Sat, 18 Jan 2020 00:00:00 +0000</pubDate>
@@ -53,18 +69,18 @@
     </item>
     
     <item>
-      <title>Climate Change</title>
-      <link>/tags/climate-change/</link>
-      <pubDate>Sat, 07 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>/tags/climate-change/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>International Students</title>
       <link>/tags/international-students/</link>
       <pubDate>Fri, 01 Mar 2019 13:00:00 +0000</pubDate>
       <guid>/tags/international-students/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linguistics</title>
+      <link>/tags/linguistics/</link>
+      <pubDate>Tue, 26 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>/tags/linguistics/</guid>
       <description></description>
     </item>
     

@@ -13,6 +13,7 @@ slides:
 summary: This is an ongoing project to analyze the skills and competencies as expressed in data-related job postings.
 
 tags:
+- Project
 - Employability
 - Data Science
 title: Data-Related Jobs for ESM Students

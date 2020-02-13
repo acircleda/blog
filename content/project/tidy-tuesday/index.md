@@ -12,6 +12,7 @@ links:
 slides: example
 summary: Understanding the development of data visualization skills in an online community of practice.
 tags:
+- Project
 - Data Science
 title: Becoming Tidyr over Time
 url_code: ""
