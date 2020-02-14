@@ -26,7 +26,8 @@ folder = "portfolio"
   
   [[content.filter_button]]
     name = "All"
-    tag = "Education, Data Science, International Students, Climate Change, Employability"
+    tag = "Project"
+
   
   [[content.filter_button]]
     name = "Education"

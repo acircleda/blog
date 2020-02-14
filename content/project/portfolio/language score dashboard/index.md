@@ -12,6 +12,7 @@ slides:
 summary: The purpose of this dashboard is to allow users to understand enrollment trends, compare enrollment to another institution, and see enrollment by student country of origin.
 
 tags:
+- Portfolio
 - Interactive
 title: Language Test Scores Dashboard
 url_code: ""

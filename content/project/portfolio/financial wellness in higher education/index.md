@@ -12,6 +12,7 @@ slides:
 summary: This infographic summarizes key takeaways from a TIAA Institute/CUPA-HR survey on financial wellness in Higher Education.
 
 tags:
+- Portfolio
 - Print
 title: Financial Wellness in Higher Education
 url_code: ""

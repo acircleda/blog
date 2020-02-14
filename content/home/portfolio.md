@@ -27,7 +27,7 @@ subtitle = "Example Visualization Work"
   
   [[content.filter_button]]
     name = "All"
-    tag = "Interactive, Static, Print, Reports, Other"
+    tag = "Portfolio"
   
   [[content.filter_button]]
     name = "Interactive"

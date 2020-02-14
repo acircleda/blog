@@ -12,8 +12,9 @@ links:
 slides: example
 summary: A comparison of IEP and directly-admitted students.
 tags:
-- Education
-- International Students
+  - Project
+  - Education
+  - International Students
 title: The Efficacy of an Intensive English program
 url_code: ""
 url_pdf: ""

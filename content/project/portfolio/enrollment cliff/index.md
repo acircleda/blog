@@ -12,6 +12,7 @@ slides:
 summary: The purpose of this dashboard is to understand and explore forecasted enrollments in Higher Education.
 
 tags:
+- Portfolio
 - Interactive
 title: The Looming Enrollment Cliff
 url_code: ""

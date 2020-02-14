@@ -12,6 +12,7 @@ slides:
 summary: The image below was designed for a t-shirt marketing campaign at the English Language Institute. It depicts the phrase “welcome” in numerous languages, arranged to make the state of Tennessee’s outline.
 
 tags:
+- Portfolio
 - Print
 title: Multilingual "Welcome" Logo
 url_code: ""
