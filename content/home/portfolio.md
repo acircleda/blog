@@ -6,7 +6,7 @@ active = true  # Activate this widget? true/false
 weight = 80  # Order that this section will appear.
 
 title = "Portfolio"
-subtitle = ""
+subtitle = "Example Visualization Work"
 
 [content]
   # Page type to display. E.g. project.
@@ -27,7 +27,7 @@ subtitle = ""
   
   [[content.filter_button]]
     name = "All"
-    tag = "Viz"
+    tag = "Interactive, Static, Print, Reports, Other"
   
   [[content.filter_button]]
     name = "Interactive"

@@ -13,7 +13,6 @@ slides:
 summary: The project is focused developing opportunities for K-8 teachers to engage in professional development on the Tennessee computer science standards.
 
 tags:
-- Project
 - Education
 title: Planting the Seeds for Computer Science Education in East Tennessee
 url_code: ""

@@ -16,10 +16,10 @@ education:
 email: ""
 interests:
 - International students
-- Data science in education
 - Climate change and education
 - Quantiative research methods
 - Data visualization
+- Data science in education
 name: Anthony Schmidt
 organizations:
 - name: University of Tennessee-Knoxville

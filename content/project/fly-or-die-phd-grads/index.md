@@ -13,7 +13,6 @@ slides:
 summary: The "Fly or Die" project is a multi-survey research project that looks at the complex relationship between graduate student conference travel, employability, and the climate crisis.
 
 tags:
-- Project
 - Climate Change
 - Employability
 title: Fly or Die - The Relationship between Conference Travel, Employability, and the Climate Crisis.

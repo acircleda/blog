@@ -5,12 +5,38 @@
     <link>/project/</link>
       <atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 18 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 14 Feb 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Projects</title>
       <link>/project/</link>
     </image>
+    
+    <item>
+      <title>Financial Wellness in Higher Education</title>
+      <link>/project/portfolio/financial-wellness-in-higher-education/</link>
+      <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/project/portfolio/financial-wellness-in-higher-education/</guid>
+      <description>&lt;p&gt;This infographic summarizes key takeaways from a TIAA Institute/CUPA-HR survey on financial wellness in Higher Education. It was printed as a 2-page spread in CUPA-HR&amp;rsquo;s &lt;em&gt;Higher Ed HR Magazine,&lt;/em&gt; Winter 2019-20, distributed to over 30,000 members.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;financial_wellness.pdf&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;financial_wellness.jpg&#34; alt=&#34;Financial Wellness&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Looming Enrollment Cliff</title>
+      <link>/project/portfolio/enrollment-cliff/</link>
+      <pubDate>Thu, 13 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/project/portfolio/enrollment-cliff/</guid>
+      <description>&lt;p&gt;The purpose of this dashboard is to understand and explore forecasted enrollments in Higher Education. These forecasts are based on the &lt;em&gt;Higher Education Demand Index&lt;/em&gt; developed by Dr. Nathan Grawe and published in his book &amp;ldquo;Demographics and the Demand for Higher Education&amp;rdquo;. The interactive allows you to get an overview of the forecasts as well as take a deeper, state-by-state dive into the data.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Not working? &lt;a href=&#34;https://public.tableau.com/views/forecasts_15698547099330/Overall?:embed=y&amp;amp;:embed_code_version=3&amp;amp;:loadOrderID=0&amp;amp;:display_count=y&amp;amp;publish=yes?:embed%3Dy?:embed%3Dy&amp;amp;:origin=viz_share_link&#34; target=&#34;_blank&#34;&gt;Click here&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;div style=&#34;align: center; margin-left: -150px;&#34;&gt;
+  &lt;iframe src=&#34;https://public.tableau.com/views/forecasts_15698547099330/Overall?:showVizHome=no&amp;:embed=true&#34; width=&#34;1100px&#34; height=&#34;2200px&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
+  &lt;/div&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Data-Related Jobs for ESM Students</title>
@@ -26,34 +52,36 @@
     </item>
     
     <item>
-      <title>Student Enrollment Dashboard</title>
-      <link>/project/portfolio/port-example/</link>
+      <title>Language Test Scores Dashboard</title>
+      <link>/project/portfolio/language-score-dashboard/</link>
       <pubDate>Sat, 18 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/project/portfolio/port-example/</guid>
+      <guid>/project/portfolio/language-score-dashboard/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Note: The following Tableau dashboard represents real data that has been altered to maintain confidentiality.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The purpose of this dashboard is to understand performance on a language test across different courses, with each course (A-F) becoming increasingly more advanced. The dashboard allows users to view progress holistically as well as at the individual course level.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Not working? &lt;a href=&#34;https://public.tableau.com/views/LanguageTestScoresPortfolio/Dashboard1?:embed=y&amp;amp;:embed_code_version=3&amp;amp;:loadOrderID=0&amp;amp;:display_count=y&amp;amp;publish=yes&amp;amp;:origin=viz_share_link&#34; target=&#34;_blank&#34;&gt;Click here&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;div style=&#34;align: center; margin-left: -150px;&#34;&gt;
+  &lt;iframe src=&#34;https://public.tableau.com/views/LanguageTestScoresPortfolio/Dashboard1?:showVizHome=no&amp;:embed=true&#34; width=&#34;1000px&#34; height=&#34;900px&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
+  &lt;/div&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Student Enrollment Dashboard</title>
+      <link>/project/portfolio/student-enrollment-dashboard/</link>
+      <pubDate>Sat, 18 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/project/portfolio/student-enrollment-dashboard/</guid>
       <description>&lt;p&gt;&lt;em&gt;Note: The following Tableau dashboard represents real data that has been altered to maintain confidentiality.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;The purpose of this dashboard is to allow users to understand enrollment trends, compare enrollment to another institution, and see enrollment by student country of origin.&lt;/p&gt;
 
-&lt;div class=&#39;tableauPlaceholder&#39; id=&#39;viz1581355801663&#39; style=&#39;position: relative&#39;&gt;
-&lt;a href=&#39;#&#39;&gt;&lt;img alt=&#39; &#39; src=&#39;https:&amp;#47;&amp;#47;public.tableau.com&amp;#47;static&amp;#47;images&amp;#47;St&amp;#47;StudentEnrollmentDashboardPortfolio&amp;#47;Dashboard1&amp;#47;1_rss.png&#39; style=&#39;border: none&#39; /&gt;&lt;/a&gt;
+&lt;p&gt;&lt;em&gt;Not working? &lt;a href=&#34;https://public.tableau.com/views/StudentEnrollmentDashboardPortfolio/Dashboard1?:display_count=y&amp;amp;:origin=viz_share_link&#34; target=&#34;_blank&#34;&gt;Click here&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 
-&lt;object class=&#39;tableauViz&#39;  style=&#39;display:none;&#39;&gt;
-&lt;param name=&#39;host_url&#39; value=&#39;https%3A%2F%2Fpublic.tableau.com%2F&#39; /&gt;
-&lt;param name=&#39;embed_code_version&#39; value=&#39;3&#39; /&gt;
-&lt;param name=&#39;site_root&#39; value=&#39;&#39; /&gt;
-&lt;param name=&#39;name&#39; value=&#39;StudentEnrollmentDashboardPortfolio&amp;#47;Dashboard1&#39; /&gt;&lt;param name=&#39;tabs&#39; value=&#39;no&#39; /&gt;
-&lt;param name=&#39;toolbar&#39; value=&#39;yes&#39; /&gt;
-&lt;param name=&#39;static_image&#39; value=&#39;https:&amp;#47;&amp;#47;public.tableau.com&amp;#47;static&amp;#47;images&amp;#47;St&amp;#47;StudentEnrollmentDashboardPortfolio&amp;#47;Dashboard1&amp;#47;1.png&#39; /&gt;
-&lt;param name=&#39;animate_transition&#39; value=&#39;yes&#39; /&gt;
-&lt;param name=&#39;display_static_image&#39; value=&#39;yes&#39; /&gt;
-&lt;param name=&#39;display_spinner&#39; value=&#39;yes&#39; /&gt;&lt;param name=&#39;display_overlay&#39; value=&#39;yes&#39; /&gt;
-&lt;param name=&#39;display_count&#39; value=&#39;yes&#39; /&gt;
-&lt;/object&gt;
+&lt;div style=&#34;align: center; margin-left: -150px;&#34;&gt;
+&lt;iframe src=&#34;https://public.tableau.com/views/StudentEnrollmentDashboardPortfolio/Dashboard1?:showVizHome=no&amp;:embed=true&#34; width=&#34;1000px&#34; height=&#34;900px&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
-
-&lt;script type=&#39;text/javascript&#39;&gt;
-var divElement = document.getElementById(&#39;viz1581355801663&#39;);                    var vizElement = divElement.getElementsByTagName(&#39;object&#39;)[0];                    if ( divElement.offsetWidth &gt; 800 ) { vizElement.style.width=&#39;1000px&#39;;vizElement.style.height=&#39;827px&#39;;} else if ( divElement.offsetWidth &gt; 500 ) { vizElement.style.width=&#39;1000px&#39;;vizElement.style.height=&#39;827px&#39;;} else { vizElement.style.width=&#39;100%&#39;;vizElement.style.height=&#39;727px&#39;;}                     var scriptElement = document.createElement(&#39;script&#39;);                    scriptElement.src = &#39;https://public.tableau.com/javascripts/api/viz_v1.js&#39;;                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                
-&lt;/script&gt;
 </description>
     </item>
     
@@ -63,6 +91,17 @@ var divElement = document.getElementById(&#39;viz1581355801663&#39;);           
       <pubDate>Thu, 16 Jan 2020 00:00:00 +0000</pubDate>
       <guid>/project/tidy-tuesday/</guid>
       <description>&lt;p&gt;This project analyzes tweets from the #TidyTuesday hashtag to understand participation and development of data visualization and data science skills.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Multilingual &#34;Welcome&#34; Logo</title>
+      <link>/project/portfolio/tennessee-logo/</link>
+      <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/project/portfolio/tennessee-logo/</guid>
+      <description>&lt;p&gt;The following design is meant to showcase some of my experience with Adobe Illustrator. The image below was designed for a t-shirt marketing campaign at the &lt;a href=&#34;http://eli.utk.edu/&#34; target=&#34;_blank&#34;&gt;English Language Institute&lt;/a&gt;. It depicts the phrase “welcome” in numerous languages, arranged to make the state of Tennessee’s outline. It includes the university and department names in their respective &lt;a href=&#34;http://brand.utk.edu/&#34; target=&#34;_blank&#34;&gt;brand UTK typologies&lt;/a&gt;, as well as the phrase &lt;a href=&#34;https://www.youarewelcomehereusa.org/&#34; target=&#34;_blank&#34;&gt;#YouAreWelcomeHere&lt;/a&gt;, also in a brand font. The colors are also part of the UTK color pallette. This design was printed on smokey gray and Tennessee orange shirts.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://i1.wp.com/www.anthonyschmidt.co/wp-content/uploads/2019/07/eli_tn_multilingual.png?resize=768%2C315&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://i1.wp.com/www.anthonyschmidt.co/wp-content/uploads/2019/07/eli_tn_multilingual.png?resize=768%2C315&#34; alt=&#34;YouAreWelcomeHere&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

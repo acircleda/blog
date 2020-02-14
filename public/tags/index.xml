@@ -5,12 +5,28 @@
     <link>/tags/</link>
       <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 10 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 14 Feb 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Tags</title>
       <link>/tags/</link>
     </image>
+    
+    <item>
+      <title>Print</title>
+      <link>/tags/print/</link>
+      <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/tags/print/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Interactive</title>
+      <link>/tags/interactive/</link>
+      <pubDate>Thu, 13 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/tags/interactive/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Climate Change</title>
@@ -33,30 +49,6 @@
       <link>/tags/employability/</link>
       <pubDate>Sat, 18 Jan 2020 00:00:00 +0000</pubDate>
       <guid>/tags/employability/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Interactive</title>
-      <link>/tags/interactive/</link>
-      <pubDate>Sat, 18 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/tags/interactive/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Project</title>
-      <link>/tags/project/</link>
-      <pubDate>Sat, 18 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/tags/project/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Viz</title>
-      <link>/tags/viz/</link>
-      <pubDate>Sat, 18 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/tags/viz/</guid>
       <description></description>
     </item>
     
