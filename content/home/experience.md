@@ -27,10 +27,11 @@ date_format = "Jan 2006"
   description = """
   Responsibilities include
   
-  * Analyzing data
-  * Creating data visualizations of uni- and multivariate data for general audiences
+  * Analyzing and wrangling large data sets
+  * Creating data visualizations for general audiences
   * Creating data visualizations and infographics for print media
   * Creating interactive visualizations and dashboards
+  * Online survey creation, deployment, and analysis
   
   Tools used include
   
@@ -46,7 +47,13 @@ date_format = "Jan 2006"
   location = "Knoxville, Tennessee"
   date_start = "2014-07-02"
   date_end = "2019-08-01"
-  description = """Taught English for general and academic purposes to international students"""
+  description = """
+  * Taught beginner to advanced classes of English for general and academic purposes to international students. 
+  * Several courses included content-based instruction through history, cultural geography, and climate science.
+  * Organzed, analyzed, and reported on course evaluations.
+  * Co-wrote proposal for, coordinated academics, and taught in 2019 Summer EducationUSA Academy. This academy has a focus on business and entrepeurship and was taught in conjunction with the Haslam College of Business.
+  
+  Blog posts related to teaching and linguistics can be found at [AnthonyTeacher.com](http://www.anthonyteacher.com)"""
 
 [[experience]]
   title = "English Language Instructor"
