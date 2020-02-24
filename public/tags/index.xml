@@ -5,7 +5,7 @@
     <link>/tags/</link>
       <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 23 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 11 Mar 2020 12:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Tags</title>
@@ -13,18 +13,18 @@
     </image>
     
     <item>
-      <title>Climate Change</title>
-      <link>/tags/climate-change/</link>
-      <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>/tags/climate-change/</guid>
+      <title>Data Science</title>
+      <link>/tags/data-science/</link>
+      <pubDate>Wed, 11 Mar 2020 12:00:00 +0000</pubDate>
+      <guid>/tags/data-science/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Data Science</title>
-      <link>/tags/data-science/</link>
+      <title>Climate Change</title>
+      <link>/tags/climate-change/</link>
       <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>/tags/data-science/</guid>
+      <guid>/tags/climate-change/</guid>
       <description></description>
     </item>
     

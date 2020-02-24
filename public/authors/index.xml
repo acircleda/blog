@@ -5,7 +5,7 @@
     <link>/authors/</link>
       <atom:link href="/authors/index.xml" rel="self" type="application/rss+xml" />
     <description>Authors</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 16 Jan 2020 13:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 11 Mar 2020 12:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Authors</title>
@@ -15,7 +15,7 @@
     <item>
       <title></title>
       <link>/authors/admin/</link>
-      <pubDate>Thu, 16 Jan 2020 13:00:00 +0000</pubDate>
+      <pubDate>Wed, 11 Mar 2020 12:00:00 +0000</pubDate>
       <guid>/authors/admin/</guid>
       <description>&lt;p&gt;Anthony Schmidt is a PhD student in &lt;a href=&#34;https://epc.utk.edu/evaluation-statistics-measurement/&#34; target=&#34;_blank&#34;&gt;Evaluation, Statistics, and Measurement&lt;/a&gt; at the Universty of Tennessee-Knoxville. He is also a full-time data visualization researcher at &lt;a href=&#34;http://www.cupahr.org/&#34; target=&#34;_blank&#34;&gt;CUPA-HR&lt;/a&gt;.&lt;/p&gt;
 </description>

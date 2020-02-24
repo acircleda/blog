@@ -5,12 +5,33 @@
     <link>/tags/data-science/</link>
       <atom:link href="/tags/data-science/index.xml" rel="self" type="application/rss+xml" />
     <description>Data Science</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 23 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 11 Mar 2020 12:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Data Science</title>
       <link>/tags/data-science/</link>
     </image>
+    
+    <item>
+      <title>Becoming “TidyR” over Time- Data Visualization Development in an Online Community of Practice</title>
+      <link>/talk/2020-3-tidytuesday-cehhs/</link>
+      <pubDate>Wed, 11 Mar 2020 12:00:00 +0000</pubDate>
+      <guid>/talk/2020-3-tidytuesday-cehhs/</guid>
+      <description>
+
+&lt;h3 id=&#34;abstract&#34;&gt;Abstract&lt;/h3&gt;
+
+&lt;p&gt;Communities of practice (CoPs) are groups of people who share a common interest and participate in activities that promote learning. Originally face-to-face, the internet has ushered in many new platforms for CoPs. Twitter hashtags act as virtual homes for many. The #TidyTuesday hashtag serves as a community for those interested in data science and visualization. It involves weekly visualization challenges utilizing public datasets and the R programming language. Users contribute graphics and code to share their work and also as opportunities to learn from one another. As the importance of data science grows, the #TidyTuesday CoP is a promising context for the exploration of learning in online communities and of how individuals develop capabilities regarding visualization and programming.&lt;/p&gt;
+
+&lt;p&gt;The current research represents an exploratory project that examines one year of #TidyTuesday tweets through descriptive and content analyses. It examines who contributes, the content of their tweets, the makeup of their code, and how their code changes over time.&lt;/p&gt;
+
+&lt;p&gt;This data yielded 4,148 tweets by 1,231 unique users, 27% of whom contributed more than twice. Mean contribution was nine tweets per user and 5% contributed consistently. Only six consistent contributors appear in the list of the top-25 most popular users (by likes/retweets), meaning consistency may not represent the quality or popularity of content.&lt;/p&gt;
+
+&lt;p&gt;To understand the types of content users contribute, a small sample of tweets was qualitatively analyzed, finding 58% of tweets explained visualizations, 18% focused on findings in the datan, and 13% expressed emotion related to learning. An analysis of Github code contributions classified code into one of nine data science functions. The results showed that most code (41.19%) represented data wrangling, followed by visualization (33.88%). Analyses also indicated that over time individuals wrote longer, more complex code.&lt;/p&gt;
+
+&lt;p&gt;This preliminary research has education-related implications for those involved in data science. It suggests visualization requires strong programming skills, especially data wrangling; participation in the CoP can lead to an increase in these skills. We will discuss future directions for this work in light of scholarship on informal and social media-based contexts for learning.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Carbon Crisis Mitigation: Whose Responsibility Is It? - A #TidyTuesday-inspired Essay</title>
