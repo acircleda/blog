@@ -15,6 +15,9 @@ focal_point: ''
 preview_only: no
 projects: []
 ---
+
+*This blog post was originally published on my other blog, [AnthonyTeacher.com](http://www.anthonyteacher.com/blog/the-cost-of-international-education)*
+
 Lately, I have been thinking about the environmental impact of international education. Given that students travel across the world to study, the CO2 emissions generated from their initial trip, perhaps eventual return, and any trips in between, cannot be ignored.  [According to the IPCC](http://www.grida.no/climate/ipcc/aviation/008.htm), aviation contributes about 3.5% to climate change, only set to increase in the future. The exact impact is difficult to ascertain, as it is hard to separate aviation from other anthropogenic impacts.
 
 It is hard to judge the per passenger, per kilometer CO2 emissions, as routes and planes vary.  However, the [Carbon Footprint website offers a calculator](https://calculator.carbonfootprint.com/calculator.aspx?tab=3). Since China is the number one country of origin for international students in the United States, example calculations for the [leading enrollers of international students in the US](https://www.iie.org/en/Research-and-Insights/Open-Doors/Data/International-Students/Leading-Host-Institutions) could be as follows:

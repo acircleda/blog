@@ -16,6 +16,8 @@ preview_only: no
 projects: []
 ---
 
+*This blog post was originally published on my other blog, [AnthonyTeacher.com](http://www.anthonyteacher.com/blog/the-data-areis-in)*
+
 Recently, it has come to my attention that I use data as a singular noun, as in “The data is nominal” rather than the plural Latinate form that it technically is, as in “The data are nominal.” To those who brought it to my attention, it is a simple mistake. Fix it. Move on.
 
 But, hold up. I’m not so sure about that. I do not like my natural language use corrected. I will use singular they in writing. I will use so as an adverbial connector while speaking. And, dammit, I will use data in the singular.
