@@ -84,22 +84,168 @@
     
     <item>
       <title>Becoming “TidyR” over Time- Data Visualization Development in an Online Community of Practice</title>
-      <link>/talk/2020-3-tidytuesday-cehhs/</link>
+      <link>/talk/2020-3-becoming-tidyr-over-time/</link>
       <pubDate>Wed, 11 Mar 2020 12:00:00 +0000</pubDate>
-      <guid>/talk/2020-3-tidytuesday-cehhs/</guid>
+      <guid>/talk/2020-3-becoming-tidyr-over-time/</guid>
       <description>
 
-&lt;h3 id=&#34;abstract&#34;&gt;Abstract&lt;/h3&gt;
 
-&lt;p&gt;Communities of practice (CoPs) are groups of people who share a common interest and participate in activities that promote learning. Originally face-to-face, the internet has ushered in many new platforms for CoPs. Twitter hashtags act as virtual homes for many. The #TidyTuesday hashtag serves as a community for those interested in data science and visualization. It involves weekly visualization challenges utilizing public datasets and the R programming language. Users contribute graphics and code to share their work and also as opportunities to learn from one another. As the importance of data science grows, the #TidyTuesday CoP is a promising context for the exploration of learning in online communities and of how individuals develop capabilities regarding visualization and programming.&lt;/p&gt;
+&lt;div id=&#34;communities-of-practice&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Communities of Practice&lt;/h2&gt;
+&lt;p&gt;Communities of practice (CoPs) are groups of people who share a common interest and participate in activities that promote learning. Originally face-to-face, the internet has ushered in many new platforms for CoPs. Twitter hashtags act as virtual homes for many. The #TidyTuesday hashtag serves as a community for those interested in data science and visualization. It involves weekly visualization challenges utilizing public data sets and the R programming language. Users contribute graphics and code to share their work and also as opportunities to learn from one another. As the importance of data science grows, the #TidyTuesday CoP is a promising context for the exploration of learning in online communities and of how individuals develop capabilities regarding visualization and programming.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;tidytuesday&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;#TidyTuesday&lt;/h2&gt;
+&lt;p&gt;Every Tuesday, a unique data set is posted on Twitter using the hashtag #TidyTuesday. Participants use the data set to create visualizations using R programming language and the Tidyverse packages. Participants then share their visualization on Twitter and link to their code (on Github). This is done not only to share their own work, but as chances to learn from each other. It is open to contributors of any skill level.&lt;/p&gt;
+&lt;div id=&#34;tidytuesday-examples&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;#TidyTuesday Examples&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/ariamsita/status/1171421023838687232?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1171421023838687232&amp;ref_url=https%3A%2F%2Fnsgrantham.shinyapps.io%2Ftidytuesdayrocks%2F&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://pbs.twimg.com/media/EEG5NEMU4AUUNDF.jpg&#34; width=&#34;50%&#34; alt=&#34;@ariamsita&#34;/&gt;
+&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/jakekaupp/status/1161656332686102529?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1161656332686102529&amp;ref_url=https%3A%2F%2Fnsgrantham.shinyapps.io%2Ftidytuesdayrocks%2F&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://pbs.twimg.com/media/EB8IPOdXYAAjOd7.jpg&#34; width=&#34;50%&#34; alt=&#34;@jakekaupp&#34;/&gt;
+&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/geokaramanis/status/1164147090580267008?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1164500880177188864&amp;ref_url=https%3A%2F%2Fnsgrantham.shinyapps.io%2Ftidytuesdayrocks%2F&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://pbs.twimg.com/media/ECfhh7OX4AAGnO-.jpg&#34; width=&#34;50%&#34; alt=&#34;@geokarimanis&#34;/&gt;
+&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;what-is-r&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;What is R?&lt;/h3&gt;
+&lt;p&gt;R is a statistical programming language that is used for data analysis, modeling, machine learning, and data visualization. It has been around for over 20 years and has become a sought after programming language in data analysis, statistics, business analytics, and other fields. Below is an example of simple R code and a simple plot produced with this code.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(tidyverse)
+library(ggplot2)
 
-&lt;p&gt;The current research represents an exploratory project that examines one year of #TidyTuesday tweets through descriptive and content analyses. It examines who contributes, the content of their tweets, the makeup of their code, and how their code changes over time.&lt;/p&gt;
-
-&lt;p&gt;This data yielded 4,148 tweets by 1,231 unique users, 27% of whom contributed more than twice. Mean contribution was nine tweets per user and 5% contributed consistently. Only six consistent contributors appear in the list of the top-25 most popular users (by likes/retweets), meaning consistency may not represent the quality or popularity of content.&lt;/p&gt;
-
-&lt;p&gt;To understand the types of content users contribute, a small sample of tweets was qualitatively analyzed, finding 58% of tweets explained visualizations, 18% focused on findings in the datan, and 13% expressed emotion related to learning. An analysis of Github code contributions classified code into one of nine data science functions. The results showed that most code (41.19%) represented data wrangling, followed by visualization (33.88%). Analyses also indicated that over time individuals wrote longer, more complex code.&lt;/p&gt;
-
-&lt;p&gt;This preliminary research has education-related implications for those involved in data science. It suggests visualization requires strong programming skills, especially data wrangling; participation in the CoP can lead to an increase in these skills. We will discuss future directions for this work in light of scholarship on informal and social media-based contexts for learning.&lt;/p&gt;
+iris %&amp;gt;%
+  ggplot() +
+    geom_point(aes(x=Sepal.Length,y=Sepal.Width))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/talk/2020-3-becoming-tidyr-over-time/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;research-purpose&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Research Purpose&lt;/h2&gt;
+&lt;p&gt;The current research represents an exploratory project that examines one year of #TidyTuesday tweets through descriptive statistics, content analyses using the &lt;code&gt;TidyCode&lt;/code&gt; package, and qualitative coding in order to understand the activities and potential impacts of the #TidyTuesday CoP. It examines who contributes, the content of their tweets, the makeup of their code, and how their code changes over time.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;findings&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Findings&lt;/h2&gt;
+&lt;p&gt;Data was pulled from &lt;a href=&#34;https://nsgrantham.shinyapps.io/tidytuesdayrocks/&#34;&gt;TidyTuesday Rocks&lt;/a&gt;, an interactive app that allows you to explore TidyTuesday contributions.&lt;/p&gt;
+&lt;div id=&#34;descriptives&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Descriptives&lt;/h3&gt;
+&lt;p&gt;There were &lt;strong&gt;4,418&lt;/strong&gt; tweets contributed to the data set.&lt;/p&gt;
+&lt;p&gt;There were &lt;strong&gt;2,428&lt;/strong&gt; unique contributions to the data set.
+* A contribution is any post that included an image.&lt;/p&gt;
+&lt;p&gt;There were &lt;strong&gt;800&lt;/strong&gt; unique contributors.
+* Contributors are those who tweeted some image during #TidyTuesday&lt;/p&gt;
+&lt;p&gt;There were &lt;strong&gt;46.7&lt;/strong&gt; mean contributions per week.&lt;/p&gt;
+&lt;p&gt;Each user contributed an average of &lt;strong&gt;5.93&lt;/strong&gt; times in one year.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;content-analysis&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Content Analysis&lt;/h3&gt;
+&lt;p&gt;Along with their graphic visualizations, many contributors also share their code via Github. This allows others to reproduce contributors’ work, possibly aiding in data visualization skill development.&lt;/p&gt;
+&lt;p&gt;Code from contributors’ Github repositories were scraped and subsequently analyzed using the &lt;a href=&#34;https://cran.r-project.org/web/packages/tidycode/index.html&#34;&gt;&lt;code&gt;TidyCode&lt;/code&gt;&lt;/a&gt; package. This package allows individual functions to be classified according to a crowd-sourced dictionary of R functions. These classifications include setup, import, export, data cleaning (encompassing data wrangling and munging), visualization, communication, modeling, exploration, and evaluation. The dictionary was modified to include non-classified functions and to reclassify functions based on the content of data visualization.&lt;/p&gt;
+&lt;div id=&#34;functions-over-time&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Functions Over Time&lt;/h4&gt;
+&lt;p&gt;First, the average number of functions were tweet number was analyzed. Tweet number represents each users unique contribution for that week. The analysis showed that over time the mean number of functions increase. This could suggest writer long and more complex code, especially code that includes a larger variety of functions. A simple Pearson correlation between mean functions and tweet number also suggested that as tweet numbers increase, so do mean functions (&lt;em&gt;r&lt;/em&gt; = .54, &lt;em&gt;p&lt;/em&gt; &amp;lt; .001 - a medium correlation).&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;mean%20functions.jpeg&#34; alt=&#34;Mean Functions&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Mean Functions&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;change-in-function-proportion&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Change in Function Proportion&lt;/h4&gt;
+&lt;p&gt;An analysis of the proportion of functions by classification per week was also analyzed. This analysis focused on data cleaning, data visualization, and data communication. It showed that, while proportion fluctuates;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;communication&lt;/strong&gt; related functions are slowly increasing.
+&lt;ul&gt;
+&lt;li&gt;Communication functions are those that add a more textual, communicative layer to visualizations.&lt;/li&gt;
+&lt;li&gt;These functions include &lt;code&gt;geom_label(), geom_curve(), str_wrap(), arrow()&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;data cleaning&lt;/strong&gt; actually decreased over time, suggesting less pre-processing of data and the possibility of writing more efficient code that uses less functions.
+&lt;ul&gt;
+&lt;li&gt;These functions include &lt;code&gt;mutate(), filter(), case_when()&lt;/code&gt; and a variety of &lt;code&gt;join()&lt;/code&gt; functions&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;visualization&lt;/strong&gt; functions remain relatively stable over time
+&lt;ul&gt;
+&lt;li&gt;These include functions like &lt;code&gt;theme(), geom_path(), aes(), facet_wrap()&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;prop%20of%20code%20by%20function.jpeg&#34; alt=&#34;Proportion of Code&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Proportion of Code&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;qualitative-coding&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Qualitative Coding&lt;/h3&gt;
+&lt;div id=&#34;tweets&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Tweets&lt;/h4&gt;
+&lt;p&gt;150 random tweets (initial contributions) were samples from the data and coded. These codes were then used to reveal several themes in the tweets.&lt;/p&gt;
+&lt;p&gt;It was found that a majority of tweets were visualization focused, either explaining the visualizations themselves (how they were made, what they looked at) or discussing interesting findings in the data.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;tweets.png&#34; alt=&#34;Qualitative Tweet Analysis&#34; width=&#34;300&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Qualitative Tweet Analysis&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Some examples:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th align=&#34;left&#34;&gt;Theme&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Example&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Explaining Data&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;#TidyTuesday turned into tidy Saturday this week! Looking at plastic pollution around the globe. I made a waffle chart of the five countries with most mismanaged plastic waste.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Discussing Findings&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;#tidytuesday I used to think all nobel peace price winners are grey old guys. Turns out, they are getting younger compared to the other folks.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Engaging Community&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;My #tidytuesday viz this week is inspired by awesome people who make scarves from data. Can’t knit, but I can geom_linerange&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Showing Emotion&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;First ever #TidyTuesday submission! I’ve always been reluctant to share, because I see so many great submissions. But today I’ve done some new cool things (first time I made a map in R!!) and I’m quite happy with the result.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div id=&#34;retweets&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Retweets&lt;/h4&gt;
+&lt;p&gt;Likewise, 150 randomly sampled retweets were coded. Retweets were chosen as they can reveal how users are not only contributing to the #TidyTuesday challenge itself but how they are engaging with the community. Most retweets were simply promoting #TidyTuesday (e.g. “It’s #TidyTuesday yall!”)and these were removed from analysis as they were not seen as substantive. More substantive tweet content was found to mostly be about celebrating others’ work, related to their own learning via the community, or sharing the work of others.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;retweets.png&#34; alt=&#34;Retweets&#34; width=&#34;300&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;Retweets&lt;/p&gt;
+&lt;/div&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th align=&#34;left&#34;&gt;Theme&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Example&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Celebrating Others&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Jake’s dataviz work as part of #TidyTuesday is always beautiful. This one is especially great. Check out the legend he made using ggplot.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Learning&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Thanks to #TidyTuesday for making it so easy to learn/use #R and to get to know others! #grateful&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Sharing Others’ Visualizations&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;This thread highlights one of my favorite parts of #TidyTuesday, spontaneous and friendly collaboration!! Sara continues to do awesome deep dives on the #tidytuesday datasets! Lots of great content here and on her GitHub.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;conclusion&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;This preliminary research has education-related implications for those involved in data science. It suggests that participating in #TidyTuesday can help one develop their data visualization skills by learning from others’ visuals and code and by exercising one’s own skills. It also indicates that sustained participation can help increase the complexity of one’s code, the efficiency of one’s code, and the graphics produced may contain enhanced communicative ability.&lt;/p&gt;
+&lt;p&gt;Further research will be used to verify and enhance these claims.&lt;/p&gt;
+&lt;/div&gt;
 </description>
     </item>
     
