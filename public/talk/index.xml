@@ -20,6 +20,10 @@
       <description>
 
 
+&lt;div id=&#34;download-the-poster-here&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;&lt;a href=&#34;tidy_tuesday_poster.pdf&#34;&gt;Download the poster here!&lt;/a&gt;&lt;/h4&gt;
+&lt;p&gt;This poster was designed using the #betterposter format. &lt;a href=&#34;https://twitter.com/mikemorrison/status/1110191245035479041?lang=en&#34;&gt;Click here to learn more.&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
 &lt;div id=&#34;communities-of-practice&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Communities of Practice&lt;/h2&gt;
 &lt;p&gt;Communities of practice (CoPs) are groups of people who share a common interest and participate in activities that promote learning. Originally face-to-face, the internet has ushered in many new platforms for CoPs. Twitter hashtags act as virtual homes for many. The #TidyTuesday hashtag serves as a community for those interested in data science and visualization. It involves weekly visualization challenges utilizing public data sets and the R programming language. Users contribute graphics and code to share their work and also as opportunities to learn from one another. As the importance of data science grows, the #TidyTuesday CoP is a promising context for the exploration of learning in online communities and of how individuals develop capabilities regarding visualization and programming.&lt;/p&gt;
