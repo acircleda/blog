@@ -5,12 +5,20 @@
     <link>/authors/admin/</link>
       <atom:link href="/authors/admin/index.xml" rel="self" type="application/rss+xml" />
     <description>Anthony Schmidt</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 11 Mar 2020 12:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 15 Aug 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Anthony Schmidt</title>
       <link>/authors/admin/</link>
     </image>
+    
+    <item>
+      <title>Are International Students Getting a Bang for their Buck? The Relationship between Expenditures and International Student Graduation Rates</title>
+      <link>/publication/journal-article/</link>
+      <pubDate>Sat, 15 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>/publication/journal-article/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Becoming “TidyR” over Time- Data Visualization Development in an Online Community of Practice</title>
@@ -192,18 +200,18 @@ iris %&amp;gt;%
     </item>
     
     <item>
-      <title>A Comparison of Direct Admit and IEP Student Academic Achievement</title>
-      <link>/talk/tesol2019/</link>
-      <pubDate>Fri, 01 Mar 2019 13:00:00 +0000</pubDate>
-      <guid>/talk/tesol2019/</guid>
+      <title>Book Review - International Students in First-Year Writing: A Journey Through Socio-Academic Space</title>
+      <link>/publication/international-students-in-first-year-writing-review/</link>
+      <pubDate>Thu, 15 Aug 2019 00:00:00 +0000</pubDate>
+      <guid>/publication/international-students-in-first-year-writing-review/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Are International Students Getting a Bang for their Buck? The Relationship between Expenditures and International Student Graduation Rates</title>
-      <link>/publication/journal-article/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/publication/journal-article/</guid>
+      <title>A Comparison of Direct Admit and IEP Student Academic Achievement</title>
+      <link>/talk/tesol2019/</link>
+      <pubDate>Fri, 01 Mar 2019 13:00:00 +0000</pubDate>
+      <guid>/talk/tesol2019/</guid>
       <description></description>
     </item>
     

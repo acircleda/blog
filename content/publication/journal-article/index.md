@@ -3,8 +3,8 @@ abstract: Do increased expenditures lead to improvements in international studen
 authors:
 - admin
 -
-date: "in press"
-doi: ""
+date: "2020-08-15"
+doi: "10.32674/jis.v10i3.1279"
 featured: false
 image:
   caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/jdD8gXaTZsc)'
@@ -15,7 +15,7 @@ publication: '*Journal of International Students*'
 publication_short: ""
 publication_types:
 - "2"
-publishDate: "in press"
+publishDate: "2020-08-15"
 slides:
 summary: This study investigated to what extent institutional expenditures affect undergraduate international student graduation rates.
 tags:

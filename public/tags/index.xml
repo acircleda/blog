@@ -5,12 +5,36 @@
     <link>/tags/</link>
       <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 11 Mar 2020 12:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 15 Aug 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Tags</title>
       <link>/tags/</link>
     </image>
+    
+    <item>
+      <title>Graduation Rates</title>
+      <link>/tags/graduation-rates/</link>
+      <pubDate>Sat, 15 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>/tags/graduation-rates/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>International Students</title>
+      <link>/tags/international-students/</link>
+      <pubDate>Sat, 15 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>/tags/international-students/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IPEDS</title>
+      <link>/tags/ipeds/</link>
+      <pubDate>Sat, 15 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>/tags/ipeds/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Data Science</title>
@@ -77,34 +101,10 @@
     </item>
     
     <item>
-      <title>International Students</title>
-      <link>/tags/international-students/</link>
-      <pubDate>Fri, 01 Mar 2019 13:00:00 +0000</pubDate>
-      <guid>/tags/international-students/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Linguistics</title>
       <link>/tags/linguistics/</link>
       <pubDate>Tue, 26 Feb 2019 00:00:00 +0000</pubDate>
       <guid>/tags/linguistics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Graduation Rates</title>
-      <link>/tags/graduation-rates/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/tags/graduation-rates/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>IPEDS</title>
-      <link>/tags/ipeds/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/tags/ipeds/</guid>
       <description></description>
     </item>
     
