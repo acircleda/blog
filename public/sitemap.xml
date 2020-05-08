@@ -73,12 +73,42 @@
   </url>
   
   <url>
-    <loc>/talk/2020-3-becoming-tidyr-over-time/</loc>
-    <lastmod>2020-03-11T12:00:00+00:00</lastmod>
+    <loc>/tags/data-science/</loc>
+    <lastmod>2020-05-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/data-science/</loc>
+    <loc>/tags/project/</loc>
+    <lastmod>2020-05-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/project/</loc>
+    <lastmod>2020-05-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/project/r-handbook/</loc>
+    <lastmod>2020-05-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/climate-change/</loc>
+    <lastmod>2020-04-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/draft/draft/</loc>
+    <lastmod>2020-04-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2020-04-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/talk/2020-3-becoming-tidyr-over-time/</loc>
     <lastmod>2020-03-11T12:00:00+00:00</lastmod>
   </url>
   
@@ -88,17 +118,7 @@
   </url>
   
   <url>
-    <loc>/tags/climate-change/</loc>
-    <lastmod>2020-02-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/flying-less/</loc>
-    <lastmod>2020-02-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
+    <loc>/post/exploring-flying-less-with-tags/</loc>
     <lastmod>2020-02-29T00:00:00+00:00</lastmod>
   </url>
   
@@ -119,11 +139,6 @@
   
   <url>
     <loc>/tags/print/</loc>
-    <lastmod>2020-02-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/project/</loc>
     <lastmod>2020-02-14T00:00:00+00:00</lastmod>
   </url>
   
@@ -154,11 +169,6 @@
   
   <url>
     <loc>/project/portfolio/language-score-dashboard/</loc>
-    <lastmod>2020-01-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/project/</loc>
     <lastmod>2020-01-18T00:00:00+00:00</lastmod>
   </url>
   

@@ -5,7 +5,7 @@
     <link>/post/</link>
       <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 29 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 12 Apr 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Posts</title>
@@ -13,10 +13,31 @@
     </image>
     
     <item>
+      <title>draft</title>
+      <link>/post/draft/draft/</link>
+      <pubDate>Sun, 12 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>/post/draft/draft/</guid>
+      <description>
+
+
+&lt;p&gt;The hard sciences have done almost everything they can do for the climate crises. Human-caused climate change has been proven for decades (I highly recommend &lt;a href=&#34;https://gimletmedia.com/shows/science-vs/brhoa4/climate-change-the-apocalypse&#34;&gt;this Science Vs episode on Climate Change&lt;/a&gt;). Renewable and sustainable energy sources have been developed, and while far from perfect, are certainly heading down the path to greater efficiency and larger adoption. Electric vehicles are becoming as affordable as gasoline cars and there is now a infrastructure robust enough to faciliate &lt;a href=&#34;https://cleanenergy.org/blog/tesla-road-trip/&#34;&gt;roadtrips&lt;/a&gt;. As &lt;a href=&#34;https://youtu.be/H2QxFM9y0tY?t=510&#34;&gt;Greta Thunberg famously put it&lt;/a&gt;:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;But the climate crisis has already been solved.
+We already have all the facts and solutions.
+All we have to do is to wake up and change.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Thanks to scientists and engineers, the technical issues related to the climate crisis are well understood and well underway to being more fully realized. Now, as Thunberg notes, the last step, “to wake up and change”, is all that is left. Yet, we have not. We can present the facts, and we can show the solutions, but still, the climate crisis continues.&lt;/p&gt;
+&lt;p&gt;This is why I think it is up to the “soft” sciences - those that deal in decidely human affairs which can’t be as easily measured as natural ones: education, psychology, economics, political science, sociology, and others - to step in and help complete the great work the hard sciences have already started.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Exploring #flyingless on Twitter with TAGS</title>
-      <link>/post/flying-less/</link>
+      <link>/post/exploring-flying-less-with-tags/</link>
       <pubDate>Sat, 29 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>/post/flying-less/</guid>
+      <guid>/post/exploring-flying-less-with-tags/</guid>
       <description>
 
 

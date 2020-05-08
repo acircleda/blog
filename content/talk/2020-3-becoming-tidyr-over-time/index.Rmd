@@ -105,7 +105,7 @@ Code from contributors' Github repositories were scraped and subsequently analyz
 
 #### Functions Over Time
 
-First, the average number of functions were tweet number was analyzed. Tweet number represents each users unique contribution for that week. The analysis showed that over time the mean number of functions increase. This could suggest writer long and more complex code, especially code that includes a larger variety of functions. A simple Pearson correlation between mean functions and tweet number also suggested that as tweet numbers increase, so do mean functions (*r* = .54, *p* < .001 - a medium correlation).
+First, the average number of functions were tweet number was analyzed. Tweet number represents each users unique contribution for that week. The analysis showed that over time the mean number of functions increase. This could suggest writing longer and more complex code, especially code that includes a larger variety of functions. A simple Pearson correlation between mean functions and tweet number also suggested that as tweet numbers increase, so do mean functions (*r* = .54, *p* < .001 - a medium correlation).
 
 ![Mean Functions](mean functions.jpeg)
   

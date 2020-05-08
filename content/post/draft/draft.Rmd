@@ -1,0 +1,28 @@
+---
+title: 'draft'
+author: "Anthony Schmidt"
+date: '2020-04-12'
+output:
+  md_document
+focal_point: ''
+image:
+  caption: ''
+lastmod: ''
+featured: null
+preview_only: no
+projects: []
+subtitle: ''
+summary: ''
+tags:
+- Climate Change
+authors: []
+---
+The hard sciences have done almost everything they can do for the climate crises. Human-caused climate change has been proven for decades (I highly recommend [this Science Vs episode on Climate Change](https://gimletmedia.com/shows/science-vs/brhoa4/climate-change-the-apocalypse)). Renewable and sustainable energy sources have been developed, and while far from perfect, are certainly heading down the path to greater efficiency and larger adoption. Electric vehicles are becoming as affordable as gasoline cars and there is now a infrastructure robust enough to faciliate [roadtrips](https://cleanenergy.org/blog/tesla-road-trip/). As [Greta Thunberg famously put it](https://youtu.be/H2QxFM9y0tY?t=510):
+
+>> But the climate crisis has already been solved.
+>> We already have all the facts and solutions.
+>> All we have to do is to wake up and change.
+
+Thanks to scientists and engineers, the technical issues related to the climate crisis are well understood and well underway to being more fully realized. Now, as Thunberg notes, the last step, "to wake up and change", is all that is left. Yet, we have not. We can present the facts, and we can show the solutions, but still, the climate crisis continues.
+
+This is why I think it is up to the "soft" sciences - those that deal in decidely human affairs which can't be as easily measured as natural ones: education, psychology, economics, political science, sociology, and others - to step in and help complete the great work the hard sciences have already started.

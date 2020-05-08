@@ -5,12 +5,23 @@
     <link>/tags/project/</link>
       <atom:link href="/tags/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Project</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 18 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 May 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Project</title>
       <link>/tags/project/</link>
     </image>
+    
+    <item>
+      <title>R Handbook for ESM Students</title>
+      <link>/project/r-handbook/</link>
+      <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
+      <guid>/project/r-handbook/</guid>
+      <description>&lt;p&gt;This is an ongoing project to write an introduction to R that is relevant to students in our evaluation, statistics, and measurement PhD program. It would also be relevant to those interested in learning R, especially for analyzing survey data from import, to cleaning, to analysis.&lt;/p&gt;
+
+&lt;p&gt;The handbook is being developed with &lt;code&gt;bookdown&lt;/code&gt; and will have supplemental exercises written with &lt;code&gt;learnr&lt;/code&gt;.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Data-Related Jobs for ESM Students</title>
