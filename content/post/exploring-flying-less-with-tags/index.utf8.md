@@ -1,0 +1,69 @@
+---
+title: 'Exploring #flyingless on Twitter with TAGS'
+author: "Anthony Schmidt"
+date: '2020-02-29'
+output:
+  md_document
+focal_point: ''
+image:
+  caption: ''
+lastmod: ''
+featured: null
+preview_only: no
+projects: []
+subtitle: ''
+summary: ''
+tags:
+- Data Science
+- Climate Change
+authors: []
+---
+
+I recently started using [TAGS](https://tags.hawksey.info/) to start archiving Twitter posts with key search phrases for later exploration and possible research. One of my search phrases was the hashtag #flyingless. #flyingless typically is appended to posts related to reducing the carbon footprint associated with flying, often flying to and from conferences, but also flying in general.
+
+By just scraping the past few days worth of data, I found a few interesting takeaways.
+
+# Policies and Guides
+
+Fundings organizations are taking the carbon footprint of their funds into account. This is from the UK, but maybe we will see similar things from NSF or NIH?
+
+[![](1232612369265721345.png)](https://twitter.com/jamesryle/status/1232612369265721345)
+
+The University of Santa Barbara is also promoting smaller carbon footprints with their [Nearly Carbon-Neutral Conference Model Guide](http://hiltner.english.ucsb.edu/index.php/ncnc-guide/)
+
+[![](1233111821495754752.png)](https://twitter.com/EINS78/status/1233111821495754752)
+
+# Conferences Are Paying Attention
+
+[![](1230871054387687424.png)](https://twitter.com/AntoniaSladek/status/1230871054387687424)
+
+
+[![](1232408500178956290.png)](https://twitter.com/sachbon/status/1232408500178956290)
+
+
+# There is some good research about #flyingless
+
+I learned about [*Flights of fantasy: A reformulation of the flyers’ dilemma*](https://openresearch-repository.anu.edu.au/bitstream/1885/13949/1/Young%20et%20al%20Flights%20of%20Fantasy%202015.pdf) by Young, M., Markham, F., Reis, A. C., & Higham, J. E. (2015).
+
+[![](1233391406820904960.png)](httpstwitter.comTheGroundedProjstatus1233391406820904960)
+
+And this master's thesis by Lisa Jacobson, [*Transforming air travel behavior
+in the face of climate change: Incentives and barriers in a Swedish setting*](http://www.diva-portal.org/smash/get/diva2:1221346/FULLTEXT01.pdf)
+
+[![](1233771519433695232.png)](http://twitter.com/KA_Nicholas/statuses/1233771519433695232)
+
+# People are enjoying #flyingless
+
+People are sharing their #flyingless routes and the joy of slow travel. These mostly seem to be from Europe, where they can take advantage of modern rail travel. 
+
+[![](1231234246444015619.png)](https://twitter.com/bestdeadends/status/1231234246444015619)
+
+[![](1231490161739018240.png)](http://twitter.com/steinarhoiback/statuses/1231490161739018240)
+
+[![](1232347841886072834.png)](http://twitter.com/SlowTravelStays/statuses/1232347841886072834)
+
+# TAGS is really cool!
+
+The functionality is really great, as it now only scrapes Twitter from the present to the past 7 days, but you can also ask it to scrape every hour until a maximum amount of Tweets is reached (you set the maximum). It also auto-produces a cool interative dashboard you can play with to explore Twitter users and their tweets in the datset. [*Click here to check out the dashboard related to my #flyingless TAGS.*](https://hawksey.info/tagsexplorer/?key=1CrSy6fhs9x9cadgMLjPJuzfh5C7c5G3_3AMVRiwd1EM&gid=400689247).
+
+If you are wondering what you can do with all this Twitter data, I highly recommend checking out the online book [*Text Mining with R*](https://www.tidytextmining.com/). It's actually incredibly easy and really fun!
