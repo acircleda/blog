@@ -28,11 +28,11 @@
   
     
   
-  <meta name="description" content="This is an ongoing project to write an introduction to R that is relevant to students in our evaluation, statistics, and measurement PhD program. It would also be relevant to those interested in learning R, especially for analyzing survey data from import, to cleaning, to analysis.
-The handbook is being developed with bookdown and will have supplemental exercises written with learnr.">
+  <meta name="description" content="I am hoping to soon be working with a data set of travel data for which I will need to calculate carbon emissions of flights. There are a number of online calculators, but none that I know of that could be pulled into R to call as a function and or be used to process data.
+What’s in an Emissions Calculator?So, I decided to write my own function to do so.">
 
   
-  <link rel="alternate" hreflang="en-us" href="/project/r-handbook/">
+  <link rel="alternate" hreflang="en-us" href="/post/2020-05-08-emission-calculator-in-r/">
 
   
 
@@ -137,31 +137,32 @@ The handbook is being developed with bookdown and will have supplemental exercis
   <link rel="icon" type="image/png" href="/img/icon-32.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="/project/r-handbook/">
+  <link rel="canonical" href="/post/2020-05-08-emission-calculator-in-r/">
 
   
   
   
   
     
+    
   
   
-  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:card" content="summary">
   
   <meta property="twitter:site" content="@anthonyteacher">
   <meta property="twitter:creator" content="@anthonyteacher">
   
   <meta property="og:site_name" content="Anthony Schmidt">
-  <meta property="og:url" content="/project/r-handbook/">
-  <meta property="og:title" content="R Handbook for ESM Students | Anthony Schmidt">
-  <meta property="og:description" content="This is an ongoing project to write an introduction to R that is relevant to students in our evaluation, statistics, and measurement PhD program. It would also be relevant to those interested in learning R, especially for analyzing survey data from import, to cleaning, to analysis.
-The handbook is being developed with bookdown and will have supplemental exercises written with learnr."><meta property="og:image" content="/project/r-handbook/featured.jpg">
-  <meta property="twitter:image" content="/project/r-handbook/featured.jpg"><meta property="og:locale" content="en-us">
+  <meta property="og:url" content="/post/2020-05-08-emission-calculator-in-r/">
+  <meta property="og:title" content="Air Travel Emissions Calculator in R | Anthony Schmidt">
+  <meta property="og:description" content="I am hoping to soon be working with a data set of travel data for which I will need to calculate carbon emissions of flights. There are a number of online calculators, but none that I know of that could be pulled into R to call as a function and or be used to process data.
+What’s in an Emissions Calculator?So, I decided to write my own function to do so."><meta property="og:image" content="/img/icon-192.png">
+  <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="en-us">
   
     
-      <meta property="article:published_time" content="2020-05-01T00:00:00&#43;00:00">
+      <meta property="article:published_time" content="2020-05-20T00:00:00&#43;00:00">
     
-    <meta property="article:modified_time" content="2020-05-01T00:00:00&#43;00:00">
+    <meta property="article:modified_time" content="2020-05-20T00:00:00&#43;00:00">
   
 
   
@@ -173,6 +174,8 @@ The handbook is being developed with bookdown and will have supplemental exercis
 
 
 
+
+  
 
 
 
@@ -182,19 +185,15 @@ The handbook is being developed with bookdown and will have supplemental exercis
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "/project/r-handbook/"
+    "@id": "/post/2020-05-08-emission-calculator-in-r/"
   },
-  "headline": "R Handbook for ESM Students",
+  "headline": "Air Travel Emissions Calculator in R",
   
-  "image": [
-    "/project/r-handbook/featured.jpg"
-  ],
-  
-  "datePublished": "2020-05-01T00:00:00Z",
-  "dateModified": "2020-05-01T00:00:00Z",
+  "datePublished": "2020-05-20T00:00:00Z",
+  "dateModified": "2020-05-20T00:00:00Z",
   
   "author": {
     "@type": "Person",
@@ -209,7 +208,7 @@ The handbook is being developed with bookdown and will have supplemental exercis
       "url": "/img/icon-512.png"
     }
   },
-  "description": "This is an ongoing project to write an introduction to R that is relevant to students in our evaluation, statistics, and measurement PhD program. It would also be relevant to those interested in learning R, especially for analyzing survey data from import, to cleaning, to analysis.\nThe handbook is being developed with bookdown and will have supplemental exercises written with learnr."
+  "description": "I am hoping to soon be working with a data set of travel data for which I will need to calculate carbon emissions of flights. There are a number of online calculators, but none that I know of that could be pulled into R to call as a function and or be used to process data.\nWhat’s in an Emissions Calculator?\rSo, I decided to write my own function to do so."
 }
 </script>
 
@@ -227,7 +226,7 @@ The handbook is being developed with bookdown and will have supplemental exercis
 
 
 
-  <title>R Handbook for ESM Students | Anthony Schmidt</title>
+  <title>Air Travel Emissions Calculator in R | Anthony Schmidt</title>
 
 </head>
 
@@ -546,7 +545,7 @@ The handbook is being developed with bookdown and will have supplemental exercis
 </nav>
 
 
-  <article class="article article-project">
+  <article class="article">
 
   
 
@@ -561,24 +560,18 @@ The handbook is being developed with bookdown and will have supplemental exercis
 
 
 
-
-
-
-
-
-
-
+  
 
   
   
-
-
+  
 <div class="article-container pt-3">
-  <h1>R Handbook for ESM Students</h1>
+  <h1>Air Travel Emissions Calculator in R</h1>
 
   
 
   
+    
 
 
 <div class="article-metadata">
@@ -592,7 +585,7 @@ The handbook is being developed with bookdown and will have supplemental exercis
     
       
     
-    May 1, 2020
+    May 20, 2020
   </span>
   
 
@@ -609,78 +602,22 @@ The handbook is being developed with bookdown and will have supplemental exercis
 
 </div>
 
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="btn-links mb-3">
-  
-  
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
     
-  
-  
-  
-  
-  
-    
-  
-  <a class="btn btn-outline-primary my-1 mr-1" href="https://twitter.com/anthonyteacher" target="_blank" rel="noopener">
-    <i class="fab fa-twitter mr-1"></i>
-    Follow
-  </a>
 
 
-</div>
 
 
-</div>
 
 
-<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 482px;">
-  <div style="position: relative">
-    <img src="/project/r-handbook/featured.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Image inspired by <a href="https://www.mitchelloharawild.com/blog/user-2018-feature-wall/" target="_blank">Mitchell O&rsquo;Hara-Wild</a></span>
-  </div>
+
+
+
+
+
+
+
+
+  
 </div>
 
 
@@ -688,9 +625,60 @@ The handbook is being developed with bookdown and will have supplemental exercis
   <div class="article-container">
 
     <div class="article-style">
-      <p>This is an ongoing project to write an introduction to R that is relevant to students in our evaluation, statistics, and measurement PhD program. It would also be relevant to those interested in learning R, especially for analyzing survey data from import, to cleaning, to analysis.</p>
+      
 
-<p>The handbook is being developed with <code>bookdown</code> and will have supplemental exercises written with <code>learnr</code>.</p>
+
+<p>I am hoping to soon be working with a data set of travel data for which I will need to calculate carbon emissions of flights. There are a number of online calculators, but none that I know of that could be pulled into R to call as a function and or be used to process data.</p>
+<div id="whats-in-an-emissions-calculator" class="section level2">
+<h2>What’s in an Emissions Calculator?</h2>
+<p>So, I decided to write my own function to do so. The first thing I needed to understand was how carbon emissions for air travel are calculated. <a href="https://www.eci.ox.ac.uk/research/energy/downloads/jardine09-carboninflights.pdf">Dr. Christian Jardine authored a report in 2009 that detailed a number of different carbon emissions calculators</a>. Nearly all are approximations that cannot account for the specifics of individual trips. However, some are better than others. The best carbon emissions calculators use information available on airplane size, fuel burn, freight weight, passenger capacity, and a number of other factors. Some of that data is proprietery, as is <a href="https://www.sabreredappcentre.sabre.com/apps/Carbon-Emission-Calculator">one of the best calculators offered by Sabre Holdings</a>. This is one of the best because Sabre produces a reservation system used by airlines and can access the specific data needed for the most accurate emissions calculations. Other calculators, such as the <a href="https://www.icao.int/environmental-protection/Carbonoffset/Pages/default.aspx">ICAO calculator</a>, is publically available as a web interface for free, but to access the data that underlies the calculations (e.g. the Traffic by Flight Stage database) costs a lot of money. Some models are extremely simple, such as the model offered by the World Resources Institute, which basically uses a flat emissions factor of 0.18 kgCO2/km. This is a crude statistic that cannot account for a number of factors related to airplane emissions.</p>
+<p>Luckily, I was able to find the <a href="https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2019">UK’s Department for Environment, Food and Rural Affairs (DEFRA)</a>. They have updated data that is freely available and takes into consideration <em>some</em> of the important factors above, and include radiative forcing in their load factors. This is important to include because airplanes inject a number of greenhouse gases directly into the atmosphere and thus their emission act differently than that of cars or elecricity generation.</p>
+<p>This seems to be the best source of loadings to use for an R-based emissions calculator. The downside is that it uses the terminology <em>domestic, short-haul, long-haul</em>, and *international without clearly defining what they mean in terms of kilometers. Their <a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/829336/2019_Green-house-gas-reporting-methodology.pdf">methodology</a> states that anything within the UK is “domestic”, and that flights up to 3,700km are “short-haul”. “Long haul” is over 3,700km. “International” flights are those entirely outside the UK. It’s not clear if flights within Europe are considered international.</p>
+<p>Most of the data I will work with are based in the US, so the UK data introduces some additional uncertainty into my calculations. I did find the <a href="https://www.epa.gov/sites/production/files/2020-04/documents/ghg-emission-factors-hub.pdf">US Environmental Protection Agency (EPA) emissions calculations</a>, thinking this would be more US-based, but these are actually based on DEFRA. Interestingly, the EPA reports mileage ranges for short, medium, and long hual flights, but I could not find the corresponding DEFRA data (after converting from miles to kilometers). The EPA also did not separate out their emissions by passenger class, so it was not easy to map mileage distinctions to actual emissions.</p>
+<p>Given this small amount of uncertainty, I decided to use the DEFRA data, but EPA mileage instead of the to/from UK distinctions:</p>
+<pre class="r"><code>data_mappings &lt;- data.frame(DEFRA=c(&quot;Domestic&quot;, &quot;Short-haul&quot;, &quot;Long-haul&quot;),
+                            EPA=c(&quot;Short-haul&quot;, &quot;Medium-haul&quot;, &quot;Long-haul&quot;),
+                            Distance=c(&quot;&lt; 483 km&quot;, &quot;&lt; 483, &lt; 3,700 km&quot;, &quot;&gt; 3700 km&quot;))
+
+data_mappings %&gt;%
+  knitr::kable()</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">DEFRA</th>
+<th align="left">EPA</th>
+<th align="left">Distance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Domestic</td>
+<td align="left">Short-haul</td>
+<td align="left">&lt; 483 km</td>
+</tr>
+<tr class="even">
+<td align="left">Short-haul</td>
+<td align="left">Medium-haul</td>
+<td align="left">&lt; 483, &lt; 3,700 km</td>
+</tr>
+<tr class="odd">
+<td align="left">Long-haul</td>
+<td align="left">Long-haul</td>
+<td align="left">&gt; 3700 km</td>
+</tr>
+</tbody>
+</table>
+<p>Where flight class information was not available, I used data from the prior highest class, and when there were no other classes, I used “average passenger” data and labelled it “unknown”.</p>
+</div>
+<div id="working-with-airport-data-in-r" class="section level2">
+<h2>Working with Airport Data in R</h2>
+<p>During my research on this project, I found that someone has already made their own calculator in R. <a href="https://sheilasaia.rbind.io/post/2019-04-19-carbon-cost-calcs/">Dr. Sheila Saia’s post</a> introduced me to the <code>airportr</code> package that can be used to lookup airport codes and calculate distance (using <a href="https://en.wikipedia.org/wiki/Great-circle_distance">Great Circle Distance</a>) automatically in R.</p>
+<p>Sheila also made a function to automatically calculate emissions. However, their calculator used a flat calculation of 0.24 pounds of CO2 per mile. I wanted to have a more accurate number. What I liked about their calculator was that it also calculated carbon offset cost using the EPA’s <a href="https://19january2017snapshot.epa.gov/sites/production/files/2016-12/documents/sc_co2_tsd_august_2016.pdf">Social Cost of Carbon Technical Report</a> and fit a linear model to make offset recommendations. This is cool, but beyond what I needed.</p>
+</div>
+<div id="the-model" class="section level2">
+<h2>The Model</h2>
+<p>The model I decided to develop is based on the distance from departure airport to arrival airport for one person. It also accounts for flight class (economy, premium economy, business, first). If there are multiple legs in the trip, they can be calculated separately and summed. Likewise for round trips.</p>
+</div>
 
     </div>
 
@@ -702,9 +690,9 @@ The handbook is being developed with bookdown and will have supplemental exercis
 
 <div class="article-tags">
   
-  <a class="badge badge-light" href="/tags/project/">Project</a>
-  
   <a class="badge badge-light" href="/tags/data-science/">Data Science</a>
+  
+  <a class="badge badge-light" href="/tags/climate-change/">Climate Change</a>
   
 </div>
 
@@ -721,7 +709,7 @@ The handbook is being developed with bookdown and will have supplemental exercis
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=/project/r-handbook/&amp;text=R%20Handbook%20for%20ESM%20Students" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=/post/2020-05-08-emission-calculator-in-r/&amp;text=Air%20Travel%20Emissions%20Calculator%20in%20R" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -734,7 +722,7 @@ The handbook is being developed with bookdown and will have supplemental exercis
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=/project/r-handbook/&amp;t=R%20Handbook%20for%20ESM%20Students" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=/post/2020-05-08-emission-calculator-in-r/&amp;t=Air%20Travel%20Emissions%20Calculator%20in%20R" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -747,7 +735,7 @@ The handbook is being developed with bookdown and will have supplemental exercis
       
       
       <li>
-        <a href="mailto:?subject=R%20Handbook%20for%20ESM%20Students&amp;body=/project/r-handbook/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=Air%20Travel%20Emissions%20Calculator%20in%20R&amp;body=/post/2020-05-08-emission-calculator-in-r/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -760,7 +748,7 @@ The handbook is being developed with bookdown and will have supplemental exercis
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=/project/r-handbook/&amp;title=R%20Handbook%20for%20ESM%20Students" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=/post/2020-05-08-emission-calculator-in-r/&amp;title=Air%20Travel%20Emissions%20Calculator%20in%20R" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -773,7 +761,7 @@ The handbook is being developed with bookdown and will have supplemental exercis
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=R%20Handbook%20for%20ESM%20Students%20/project/r-handbook/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=Air%20Travel%20Emissions%20Calculator%20in%20R%20/post/2020-05-08-emission-calculator-in-r/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -786,7 +774,7 @@ The handbook is being developed with bookdown and will have supplemental exercis
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=/project/r-handbook/&amp;title=R%20Handbook%20for%20ESM%20Students" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=/post/2020-05-08-emission-calculator-in-r/&amp;title=Air%20Travel%20Emissions%20Calculator%20in%20R" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -900,15 +888,15 @@ The handbook is being developed with bookdown and will have supplemental exercis
     <h3>Related</h3>
     <ul>
       
-      <li><a href="/project/esm-data-jobs/">Data-Related Jobs for ESM Students</a></li>
-      
-      <li><a href="/project/tidy-tuesday/">Becoming Tidyr over Time</a></li>
-      
-      <li><a href="/talk/2020-3-becoming-tidyr-over-time/">Becoming “TidyR” over Time- Data Visualization Development in an Online Community of Practice</a></li>
-      
       <li><a href="/post/exploring-flying-less-with-tags/">Exploring #flyingless on Twitter with TAGS</a></li>
       
       <li><a href="/post/2020-19-02-carbon-crisis-mitigation-whose-responsibility-is-it-a-tidytuesday-inspired-essay/">Carbon Crisis Mitigation: Whose Responsibility Is It? - A #TidyTuesday-inspired Essay</a></li>
+      
+      <li><a href="/post/2020-02-10-carbon-footprint-google-data/">Assessing Your Carbon Footprint with Google Location Data</a></li>
+      
+      <li><a href="/project/flying-less-document-analysis/">Flying Less? A Document Analysis of University Climate Policies</a></li>
+      
+      <li><a href="/project/r-handbook/">R Handbook for ESM Students</a></li>
       
     </ul>
   </div>
@@ -916,22 +904,6 @@ The handbook is being developed with bookdown and will have supplemental exercis
 
 
 
-    <div class="project-related-pages content-widget-hr">
-      
-      
-
-      
-      
-      
-
-      
-      
-      
-
-      
-      
-      
-    </div>
   </div>
 </article>
 

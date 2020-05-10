@@ -73,38 +73,43 @@
   </url>
   
   <url>
+    <loc>/post/2020-05-08-emission-calculator-in-r/</loc>
+    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/climate-change/</loc>
+    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tags/data-science/</loc>
-    <lastmod>2020-05-01T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2020-05-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/project/flying-less-document-analysis/</loc>
+    <lastmod>2020-05-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/project/</loc>
-    <lastmod>2020-05-01T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/project/</loc>
-    <lastmod>2020-05-01T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/project/r-handbook/</loc>
     <lastmod>2020-05-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/climate-change/</loc>
-    <lastmod>2020-04-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/draft/draft/</loc>
-    <lastmod>2020-04-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
-    <lastmod>2020-04-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -123,7 +128,7 @@
   </url>
   
   <url>
-    <loc>/post/2020-19-2020-carbon-crisis-mitigation-whose-responsibility-is-it-a-tidytuesday-inspired-essay/</loc>
+    <loc>/post/2020-19-02-carbon-crisis-mitigation-whose-responsibility-is-it-a-tidytuesday-inspired-essay/</loc>
     <lastmod>2020-02-23T00:00:00+00:00</lastmod>
   </url>
   

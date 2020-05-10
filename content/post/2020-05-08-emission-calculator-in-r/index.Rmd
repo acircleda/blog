@@ -1,0 +1,63 @@
+---
+title: 'Air Travel Emissions Calculator in R'
+author: "Anthony Schmidt"
+date: '2020-05-20'
+draft: true
+output:
+  html_document:
+    df_print: paged
+focal_point: ''
+image:
+  caption: ''
+lastmod: ''
+featured: null
+preview_only: no
+projects: []
+subtitle: ''
+summary: ''
+tags:
+- Data Science
+- Climate Change
+authors: []
+---
+```{r message=FALSE, warning=FALSE, echo=FALSE}
+library(tidyverse)
+```
+I am hoping to soon be working with a data set of travel data for which I will need to calculate carbon emissions of flights. There are a number of online calculators, but none that I know of that could be pulled into R to call as a function and or be used to process data.
+
+## What's in an Emissions Calculator?
+
+So, I decided to write my own function to do so. The first thing I needed to understand was how carbon emissions for air travel are calculated. [Dr. Christian Jardine authored a report in 2009 that detailed a number of different carbon emissions calculators](https://www.eci.ox.ac.uk/research/energy/downloads/jardine09-carboninflights.pdf). Nearly all are approximations that cannot account for the specifics of individual trips. However, some are better than others. The best carbon emissions calculators use information available on airplane size, fuel burn, freight weight, passenger capacity, and a number of other factors. Some of that data is proprietery, as is [one of the best calculators offered by Sabre Holdings](https://www.sabreredappcentre.sabre.com/apps/Carbon-Emission-Calculator). This is one of the best because Sabre produces a reservation system used by airlines and can access the specific data needed for the most accurate emissions calculations. Other calculators, such as the [ICAO calculator](https://www.icao.int/environmental-protection/Carbonoffset/Pages/default.aspx), is publically available as a web interface for free, but to access the data that underlies the calculations (e.g. the Traffic by Flight Stage database) costs a lot of money. Some models are extremely simple, such as the model offered by the World Resources Institute, which basically uses a flat emissions factor of 0.18 kgCO2/km. This is a crude statistic that cannot account for a number of factors related to airplane emissions.
+
+Luckily, I was able to find the [UK's Department for Environment, Food and Rural Affairs (DEFRA)](https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2019). They have updated data that is freely available and takes into consideration *some* of the important factors above, and include radiative forcing in their load factors. This is important to include because airplanes inject a number of greenhouse gases directly into the atmosphere and thus their emission act differently than that of cars or elecricity generation.
+
+This seems to be the best source of loadings to use for an R-based emissions calculator. The downside is that it uses the terminology *domestic, short-haul, long-haul*, and *international without clearly defining what they mean in terms of kilometers. Their [methodology](https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/829336/2019_Green-house-gas-reporting-methodology.pdf) states that anything within the UK is "domestic", and that flights up to 3,700km are "short-haul". "Long haul" is over 3,700km. "International" flights are those entirely outside the UK. It's not clear if flights within Europe are considered international. 
+
+Most of the data I will work with are based in the US, so the UK data introduces some additional uncertainty into my calculations. I did find the [US Environmental Protection Agency (EPA) emissions calculations](https://www.epa.gov/sites/production/files/2020-04/documents/ghg-emission-factors-hub.pdf), thinking this would be more US-based, but these are actually based on DEFRA. Interestingly, the EPA reports mileage ranges for short, medium, and long hual flights, but I could not find the corresponding DEFRA data (after converting from miles to kilometers). The EPA also did not separate out their emissions by passenger class, so it was not easy to map mileage distinctions to actual emissions.
+
+Given this small amount of uncertainty, I decided to use the DEFRA data, but EPA mileage instead of the to/from UK distinctions:
+
+```{r}
+data_mappings <- data.frame(DEFRA=c("Domestic", "Short-haul", "Long-haul"),
+                            EPA=c("Short-haul", "Medium-haul", "Long-haul"),
+                            Distance=c("< 483 km", "< 483, < 3,700 km", "> 3700 km"))
+
+data_mappings %>%
+  knitr::kable()
+```
+
+
+Where flight class information was not available, I used data from the prior highest class, and when there were no other classes, I used "average passenger" data and labelled it "unknown".
+
+## Working with Airport Data in R
+
+During my research on this project, I found that someone has already made their own calculator in R. [Dr. Sheila Saia's post](https://sheilasaia.rbind.io/post/2019-04-19-carbon-cost-calcs/) introduced me to the `airportr` package that can be used to lookup airport codes and calculate distance (using [Great Circle Distance](https://en.wikipedia.org/wiki/Great-circle_distance)) automatically in R. 
+
+Sheila also made a function to automatically calculate emissions. However, their calculator used a flat calculation of 0.24 pounds of CO2 per mile. I wanted to have a more accurate number. What I liked about their calculator was that it also calculated carbon offset cost using the EPA's [Social Cost of Carbon Technical Report](https://19january2017snapshot.epa.gov/sites/production/files/2016-12/documents/sc_co2_tsd_august_2016.pdf) and fit a linear model to make offset recommendations. This is cool, but beyond what I needed.
+
+## The Model
+
+The model I decided to develop is based on the distance from departure airport to arrival airport for one person. It also accounts for flight class (economy, premium economy, business, first). If there are multiple legs in the trip, they can be calculated separately and summed. Likewise for round trips.
+
+
+

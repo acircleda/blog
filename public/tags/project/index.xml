@@ -5,12 +5,21 @@
     <link>/tags/project/</link>
       <atom:link href="/tags/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Project</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 May 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 08 May 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Project</title>
       <link>/tags/project/</link>
     </image>
+    
+    <item>
+      <title>Flying Less? A Document Analysis of University Climate Policies</title>
+      <link>/project/flying-less-document-analysis/</link>
+      <pubDate>Fri, 08 May 2020 00:00:00 +0000</pubDate>
+      <guid>/project/flying-less-document-analysis/</guid>
+      <description>&lt;p&gt;This project utilize qualitative document analysis to examine the role of flying less as a Scope 3 emissions reduction strategy in various university climate policies. It will include documents from UTK, &lt;a href=&#34;https://oira.utk.edu/peer-institutions/&#34; target=&#34;_blank&#34;&gt;UTK peer and aspirational universities&lt;/a&gt;, the top 25 public research universities, and specific institutions that have explicit attention to flying less.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>R Handbook for ESM Students</title>
