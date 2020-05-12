@@ -28,11 +28,12 @@
   
     
   
-  <meta name="description" content="I am hoping to soon be working with a data set of travel data for which I will need to calculate carbon emissions of flights. There are a number of online calculators, but none that I know of that could be pulled into R to call as a function and or be used to process data.
+  <meta name="description" content="(TL;DR: Here is the calculator)
+I am hoping to soon be working with a data set of travel data for which I will need to calculate carbon emissions of flights. There are a number of online calculators, but none that I know of that could be pulled into R to call as a function and or be used to process data.
 What’s in an Emissions Calculator?So, I decided to write my own function to do so.">
 
   
-  <link rel="alternate" hreflang="en-us" href="/post/2020-05-08-emission-calculator-in-r/">
+  <link rel="alternate" hreflang="en-us" href="https://anthonyschmidt.netlify.com/post/2020-05-08-emission-calculator-in-r/">
 
   
 
@@ -137,7 +138,7 @@ What’s in an Emissions Calculator?So, I decided to write my own function to d
   <link rel="icon" type="image/png" href="/img/icon-32.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="/post/2020-05-08-emission-calculator-in-r/">
+  <link rel="canonical" href="https://anthonyschmidt.netlify.com/post/2020-05-08-emission-calculator-in-r/">
 
   
   
@@ -153,16 +154,17 @@ What’s in an Emissions Calculator?So, I decided to write my own function to d
   <meta property="twitter:creator" content="@anthonyteacher">
   
   <meta property="og:site_name" content="Anthony Schmidt">
-  <meta property="og:url" content="/post/2020-05-08-emission-calculator-in-r/">
+  <meta property="og:url" content="https://anthonyschmidt.netlify.com/post/2020-05-08-emission-calculator-in-r/">
   <meta property="og:title" content="Air Travel Emissions Calculator in R | Anthony Schmidt">
-  <meta property="og:description" content="I am hoping to soon be working with a data set of travel data for which I will need to calculate carbon emissions of flights. There are a number of online calculators, but none that I know of that could be pulled into R to call as a function and or be used to process data.
-What’s in an Emissions Calculator?So, I decided to write my own function to do so."><meta property="og:image" content="/img/icon-192.png">
-  <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="en-us">
+  <meta property="og:description" content="(TL;DR: Here is the calculator)
+I am hoping to soon be working with a data set of travel data for which I will need to calculate carbon emissions of flights. There are a number of online calculators, but none that I know of that could be pulled into R to call as a function and or be used to process data.
+What’s in an Emissions Calculator?So, I decided to write my own function to do so."><meta property="og:image" content="https://anthonyschmidt.netlify.com/img/icon-192.png">
+  <meta property="twitter:image" content="https://anthonyschmidt.netlify.com/img/icon-192.png"><meta property="og:locale" content="en-us">
   
     
-      <meta property="article:published_time" content="2020-05-20T00:00:00&#43;00:00">
+      <meta property="article:published_time" content="2020-05-11T00:00:00&#43;00:00">
     
-    <meta property="article:modified_time" content="2020-05-20T00:00:00&#43;00:00">
+    <meta property="article:modified_time" content="2020-05-11T00:00:00&#43;00:00">
   
 
   
@@ -188,12 +190,12 @@ What’s in an Emissions Calculator?So, I decided to write my own function to d
   "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "/post/2020-05-08-emission-calculator-in-r/"
+    "@id": "https://anthonyschmidt.netlify.com/post/2020-05-08-emission-calculator-in-r/"
   },
   "headline": "Air Travel Emissions Calculator in R",
   
-  "datePublished": "2020-05-20T00:00:00Z",
-  "dateModified": "2020-05-20T00:00:00Z",
+  "datePublished": "2020-05-11T00:00:00Z",
+  "dateModified": "2020-05-11T00:00:00Z",
   
   "author": {
     "@type": "Person",
@@ -205,10 +207,10 @@ What’s in an Emissions Calculator?So, I decided to write my own function to d
     "name": "Anthony Schmidt",
     "logo": {
       "@type": "ImageObject",
-      "url": "/img/icon-512.png"
+      "url": "https://anthonyschmidt.netlify.com/img/icon-512.png"
     }
   },
-  "description": "I am hoping to soon be working with a data set of travel data for which I will need to calculate carbon emissions of flights. There are a number of online calculators, but none that I know of that could be pulled into R to call as a function and or be used to process data.\nWhat’s in an Emissions Calculator?\rSo, I decided to write my own function to do so."
+  "description": "(TL;DR: Here is the calculator)\nI am hoping to soon be working with a data set of travel data for which I will need to calculate carbon emissions of flights. There are a number of online calculators, but none that I know of that could be pulled into R to call as a function and or be used to process data.\nWhat’s in an Emissions Calculator?\rSo, I decided to write my own function to do so."
 }
 </script>
 
@@ -585,7 +587,7 @@ What’s in an Emissions Calculator?So, I decided to write my own function to d
     
       
     
-    May 20, 2020
+    May 11, 2020
   </span>
   
 
@@ -628,6 +630,7 @@ What’s in an Emissions Calculator?So, I decided to write my own function to d
       
 
 
+<p><strong>(TL;DR: <a href="https://github.com/acircleda/Flight-Emissions-Calculator">Here is the calculator</a>)</strong></p>
 <p>I am hoping to soon be working with a data set of travel data for which I will need to calculate carbon emissions of flights. There are a number of online calculators, but none that I know of that could be pulled into R to call as a function and or be used to process data.</p>
 <div id="whats-in-an-emissions-calculator" class="section level2">
 <h2>What’s in an Emissions Calculator?</h2>
@@ -636,12 +639,6 @@ What’s in an Emissions Calculator?So, I decided to write my own function to d
 <p>This seems to be the best source of loadings to use for an R-based emissions calculator. The downside is that it uses the terminology <em>domestic, short-haul, long-haul</em>, and *international without clearly defining what they mean in terms of kilometers. Their <a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/829336/2019_Green-house-gas-reporting-methodology.pdf">methodology</a> states that anything within the UK is “domestic”, and that flights up to 3,700km are “short-haul”. “Long haul” is over 3,700km. “International” flights are those entirely outside the UK. It’s not clear if flights within Europe are considered international.</p>
 <p>Most of the data I will work with are based in the US, so the UK data introduces some additional uncertainty into my calculations. I did find the <a href="https://www.epa.gov/sites/production/files/2020-04/documents/ghg-emission-factors-hub.pdf">US Environmental Protection Agency (EPA) emissions calculations</a>, thinking this would be more US-based, but these are actually based on DEFRA. Interestingly, the EPA reports mileage ranges for short, medium, and long hual flights, but I could not find the corresponding DEFRA data (after converting from miles to kilometers). The EPA also did not separate out their emissions by passenger class, so it was not easy to map mileage distinctions to actual emissions.</p>
 <p>Given this small amount of uncertainty, I decided to use the DEFRA data, but EPA mileage instead of the to/from UK distinctions:</p>
-<pre class="r"><code>data_mappings &lt;- data.frame(DEFRA=c(&quot;Domestic&quot;, &quot;Short-haul&quot;, &quot;Long-haul&quot;),
-                            EPA=c(&quot;Short-haul&quot;, &quot;Medium-haul&quot;, &quot;Long-haul&quot;),
-                            Distance=c(&quot;&lt; 483 km&quot;, &quot;&lt; 483, &lt; 3,700 km&quot;, &quot;&gt; 3700 km&quot;))
-
-data_mappings %&gt;%
-  knitr::kable()</code></pre>
 <table>
 <thead>
 <tr class="header">
@@ -675,9 +672,87 @@ data_mappings %&gt;%
 <p>During my research on this project, I found that someone has already made their own calculator in R. <a href="https://sheilasaia.rbind.io/post/2019-04-19-carbon-cost-calcs/">Dr. Sheila Saia’s post</a> introduced me to the <code>airportr</code> package that can be used to lookup airport codes and calculate distance (using <a href="https://en.wikipedia.org/wiki/Great-circle_distance">Great Circle Distance</a>) automatically in R.</p>
 <p>Sheila also made a function to automatically calculate emissions. However, their calculator used a flat calculation of 0.24 pounds of CO2 per mile. I wanted to have a more accurate number. What I liked about their calculator was that it also calculated carbon offset cost using the EPA’s <a href="https://19january2017snapshot.epa.gov/sites/production/files/2016-12/documents/sc_co2_tsd_august_2016.pdf">Social Cost of Carbon Technical Report</a> and fit a linear model to make offset recommendations. This is cool, but beyond what I needed.</p>
 </div>
-<div id="the-model" class="section level2">
-<h2>The Model</h2>
-<p>The model I decided to develop is based on the distance from departure airport to arrival airport for one person. It also accounts for flight class (economy, premium economy, business, first). If there are multiple legs in the trip, they can be calculated separately and summed. Likewise for round trips.</p>
+<div id="the-calculator" class="section level2">
+<h2>The Calculator</h2>
+<p>The model for the calculator I decided to develop is based on the distance from departure airport to arrival airport for one person. It also accounts for flight class (economy, premium economy, business, first), and allows options for different types of metrics (co2e, co2, ch4, n20). If there are multiple legs in the trip, they can be calculated separately and summed. Likewise for round trips.</p>
+<p>The calculator is not a package but a script which can be <strong>downloaded from <a href="https://github.com/acircleda/Flight-Emissions-Calculator">my GithUb repo</a></strong>. It also requires the installation of <code>airportr</code> package and downloading the <a href="https://github.com/acircleda/Flight-Emissions-Calculator/blob/master/calculations.RData"><code>calculations.RData</code> file</a>. The script will load both. The script then uses the <code>emissions</code> function to calculate emissions based on arrival and departure airports.</p>
+</div>
+<div id="examples" class="section level2">
+<h2>Examples</h2>
+<p>Calculating distance between LAX and Hong Kong:</p>
+<pre class="r"><code>source(&quot;flight emissions calculator.R&quot;)
+emissions(&quot;DEN&quot;, &quot;HKK&quot;, &quot;Economy&quot;)</code></pre>
+<pre><code>## [1] 1870.993</code></pre>
+<p>We can also calculate distance and add to an existing dataframe using <code>mutate</code> and calculate multiple itineraries at the same time. Here is some example data</p>
+<pre class="r"><code>travel_data &lt;- data.frame(name=c(&quot;Mike&quot;, &quot;Will&quot;, &quot;Elle&quot;),
+                          from=c(&quot;LAX&quot;, &quot;LGA&quot;, &quot;TYS&quot;),
+                            to=c(&quot;PUS&quot;, &quot;LHR&quot;, &quot;TPA&quot;)
+                            )
+
+travel_data %&gt;% 
+  knitr::kable()</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">from</th>
+<th align="left">to</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Mike</td>
+<td align="left">LAX</td>
+<td align="left">PUS</td>
+</tr>
+<tr class="even">
+<td align="left">Will</td>
+<td align="left">LGA</td>
+<td align="left">LHR</td>
+</tr>
+<tr class="odd">
+<td align="left">Elle</td>
+<td align="left">TYS</td>
+<td align="left">TPA</td>
+</tr>
+</tbody>
+</table>
+<p>Here is how you can take the <code>from</code> and <code>to</code> data and calculate emissions for each trip:</p>
+<pre class="r"><code>travel_data %&gt;%
+  rowwise() %&gt;%
+  mutate(emissions = emissions(from, to, output=&quot;co2&quot;)) %&gt;%
+  knitr::kable()</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">from</th>
+<th align="left">to</th>
+<th align="right">emissions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Mike</td>
+<td align="left">LAX</td>
+<td align="left">PUS</td>
+<td align="right">1873.3578</td>
+</tr>
+<tr class="even">
+<td align="left">Will</td>
+<td align="left">LGA</td>
+<td align="left">LHR</td>
+<td align="right">1077.9199</td>
+</tr>
+<tr class="odd">
+<td align="left">Elle</td>
+<td align="left">TYS</td>
+<td align="left">TPA</td>
+<td align="right">138.9975</td>
+</tr>
+</tbody>
+</table>
+<p>I hope that this calculator is of some use. Feel free to improve it over on Github!</p>
 </div>
 
     </div>
@@ -709,7 +784,7 @@ data_mappings %&gt;%
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=/post/2020-05-08-emission-calculator-in-r/&amp;text=Air%20Travel%20Emissions%20Calculator%20in%20R" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://anthonyschmidt.netlify.com/post/2020-05-08-emission-calculator-in-r/&amp;text=Air%20Travel%20Emissions%20Calculator%20in%20R" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -722,7 +797,7 @@ data_mappings %&gt;%
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=/post/2020-05-08-emission-calculator-in-r/&amp;t=Air%20Travel%20Emissions%20Calculator%20in%20R" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://anthonyschmidt.netlify.com/post/2020-05-08-emission-calculator-in-r/&amp;t=Air%20Travel%20Emissions%20Calculator%20in%20R" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -735,7 +810,7 @@ data_mappings %&gt;%
       
       
       <li>
-        <a href="mailto:?subject=Air%20Travel%20Emissions%20Calculator%20in%20R&amp;body=/post/2020-05-08-emission-calculator-in-r/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=Air%20Travel%20Emissions%20Calculator%20in%20R&amp;body=https://anthonyschmidt.netlify.com/post/2020-05-08-emission-calculator-in-r/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -748,7 +823,7 @@ data_mappings %&gt;%
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=/post/2020-05-08-emission-calculator-in-r/&amp;title=Air%20Travel%20Emissions%20Calculator%20in%20R" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=https://anthonyschmidt.netlify.com/post/2020-05-08-emission-calculator-in-r/&amp;title=Air%20Travel%20Emissions%20Calculator%20in%20R" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -761,7 +836,7 @@ data_mappings %&gt;%
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=Air%20Travel%20Emissions%20Calculator%20in%20R%20/post/2020-05-08-emission-calculator-in-r/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=Air%20Travel%20Emissions%20Calculator%20in%20R%20https://anthonyschmidt.netlify.com/post/2020-05-08-emission-calculator-in-r/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -774,7 +849,7 @@ data_mappings %&gt;%
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=/post/2020-05-08-emission-calculator-in-r/&amp;title=Air%20Travel%20Emissions%20Calculator%20in%20R" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://anthonyschmidt.netlify.com/post/2020-05-08-emission-calculator-in-r/&amp;title=Air%20Travel%20Emissions%20Calculator%20in%20R" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -813,7 +888,7 @@ data_mappings %&gt;%
     
 
     <div class="media-body">
-      <h5 class="card-title"><a href="/">Anthony Schmidt</a></h5>
+      <h5 class="card-title"><a href="https://anthonyschmidt.netlify.com/">Anthony Schmidt</a></h5>
       <h6 class="card-subtitle">PhD Student / Data Visualization Researcher</h6>
       <p class="card-text">My research interests include higher education, quantitative methods, and data visualization.</p>
       <ul class="network-icon" aria-hidden="true">
@@ -1019,16 +1094,6 @@ data_mappings %&gt;%
   
   <div class="container">
     <footer class="site-footer">
-  
-  <p class="powered-by">
-    
-      <a href="/privacy/">Privacy Policy</a>
-    
-    
-       &middot; 
-      <a href="/terms/">Terms</a>
-    
-  </p>
   
 
   <p class="powered-by">

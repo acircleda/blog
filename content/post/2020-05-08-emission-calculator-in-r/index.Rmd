@@ -1,8 +1,7 @@
 ---
 title: 'Air Travel Emissions Calculator in R'
 author: "Anthony Schmidt"
-date: '2020-05-20'
-draft: true
+date: '2020-05-11'
 output:
   html_document:
     df_print: paged
@@ -23,6 +22,8 @@ authors: []
 ```{r message=FALSE, warning=FALSE, echo=FALSE}
 library(tidyverse)
 ```
+**(TL;DR: [Here is the calculator](https://github.com/acircleda/Flight-Emissions-Calculator))**
+
 I am hoping to soon be working with a data set of travel data for which I will need to calculate carbon emissions of flights. There are a number of online calculators, but none that I know of that could be pulled into R to call as a function and or be used to process data.
 
 ## What's in an Emissions Calculator?
@@ -37,7 +38,7 @@ Most of the data I will work with are based in the US, so the UK data introduces
 
 Given this small amount of uncertainty, I decided to use the DEFRA data, but EPA mileage instead of the to/from UK distinctions:
 
-```{r}
+```{r, echo=FALSE}
 data_mappings <- data.frame(DEFRA=c("Domestic", "Short-haul", "Long-haul"),
                             EPA=c("Short-haul", "Medium-haul", "Long-haul"),
                             Distance=c("< 483 km", "< 483, < 3,700 km", "> 3700 km"))
@@ -51,13 +52,43 @@ Where flight class information was not available, I used data from the prior hig
 
 ## Working with Airport Data in R
 
-During my research on this project, I found that someone has already made their own calculator in R. [Dr. Sheila Saia's post](https://sheilasaia.rbind.io/post/2019-04-19-carbon-cost-calcs/) introduced me to the `airportr` package that can be used to lookup airport codes and calculate distance (using [Great Circle Distance](https://en.wikipedia.org/wiki/Great-circle_distance)) automatically in R. 
+During my research on this project, I found that someone has already made their own calculator in R. [Dr. Sheila Saia's post](https://sheilasaia.rbind.io/post/2019-04-19-carbon-cost-calcs/) introduced me to the `airportr` package that can be used to lookup airport codes and calculate distance (using [Great Circle Distance](https://en.wikipedia.org/wiki/Great-circle_distance)) automatically in R.
+
 
 Sheila also made a function to automatically calculate emissions. However, their calculator used a flat calculation of 0.24 pounds of CO2 per mile. I wanted to have a more accurate number. What I liked about their calculator was that it also calculated carbon offset cost using the EPA's [Social Cost of Carbon Technical Report](https://19january2017snapshot.epa.gov/sites/production/files/2016-12/documents/sc_co2_tsd_august_2016.pdf) and fit a linear model to make offset recommendations. This is cool, but beyond what I needed.
 
-## The Model
+## The Calculator
 
-The model I decided to develop is based on the distance from departure airport to arrival airport for one person. It also accounts for flight class (economy, premium economy, business, first). If there are multiple legs in the trip, they can be calculated separately and summed. Likewise for round trips.
+The model for the calculator I decided to develop is based on the distance from departure airport to arrival airport for one person. It also accounts for flight class (economy, premium economy, business, first), and allows options for different types of metrics (co2e, co2, ch4, n20). If there are multiple legs in the trip, they can be calculated separately and summed. Likewise for round trips.
 
+The calculator is not a package but a script which can be **downloaded from [my GithUb repo](https://github.com/acircleda/Flight-Emissions-Calculator)**. It also requires the installation of `airportr` package and downloading the [`calculations.RData` file](https://github.com/acircleda/Flight-Emissions-Calculator/blob/master/calculations.RData). The script will load both. The script then uses the `emissions` function to calculate emissions based on arrival and departure airports. 
 
+## Examples
 
+Calculating distance between LAX and Hong Kong:
+```{r message=FALSE, warning=FALSE}
+source("flight emissions calculator.R")
+emissions("DEN", "HKK", "Economy")
+```
+
+We can also calculate distance and add to an existing dataframe using `mutate` and calculate multiple itineraries at the same time. Here is some example data
+
+```{r}
+travel_data <- data.frame(name=c("Mike", "Will", "Elle"),
+                          from=c("LAX", "LGA", "TYS"),
+                            to=c("PUS", "LHR", "TPA")
+                            )
+
+travel_data %>% 
+  knitr::kable()
+```
+
+Here is how you can take the `from` and `to` data and calculate emissions for each trip:
+```{r}
+travel_data %>%
+  rowwise() %>%
+  mutate(emissions = emissions(from, to, output="co2")) %>%
+  knitr::kable()
+```
+
+I hope that this calculator is of some use. Feel free to improve it over on Github!

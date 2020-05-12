@@ -5,7 +5,7 @@
     <link>https://anthonyschmidt.netlify.com/tags/</link>
       <atom:link href="https://anthonyschmidt.netlify.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 08 May 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 11 May 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://anthonyschmidt.netlify.com/img/icon-192.png</url>
       <title>Tags</title>
@@ -15,8 +15,16 @@
     <item>
       <title>Climate Change</title>
       <link>https://anthonyschmidt.netlify.com/tags/climate-change/</link>
-      <pubDate>Fri, 08 May 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate>
       <guid>https://anthonyschmidt.netlify.com/tags/climate-change/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Science</title>
+      <link>https://anthonyschmidt.netlify.com/tags/data-science/</link>
+      <pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://anthonyschmidt.netlify.com/tags/data-science/</guid>
       <description></description>
     </item>
     
@@ -25,14 +33,6 @@
       <link>https://anthonyschmidt.netlify.com/tags/project/</link>
       <pubDate>Fri, 08 May 2020 00:00:00 +0000</pubDate>
       <guid>https://anthonyschmidt.netlify.com/tags/project/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Data Science</title>
-      <link>https://anthonyschmidt.netlify.com/tags/data-science/</link>
-      <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/tags/data-science/</guid>
       <description></description>
     </item>
     
