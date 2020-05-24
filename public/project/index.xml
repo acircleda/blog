@@ -26,7 +26,7 @@
       <link>https://anthonyschmidt.netlify.com/project/r-handbook/</link>
       <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
       <guid>https://anthonyschmidt.netlify.com/project/r-handbook/</guid>
-      <description>&lt;p&gt;This is an ongoing project to write an introduction to R that is relevant to students in our evaluation, statistics, and measurement PhD program. It would also be relevant to those interested in learning R, especially for analyzing survey data from import, to cleaning, to analysis.&lt;/p&gt;
+      <description>&lt;p&gt;This project is part of a summer internship with &lt;a href=&#34;https://epc.utk.edu/people/jennifer-ann-morrow-phd/&#34; target=&#34;_blank&#34;&gt;Dr. Jennifer Ann Morrow&lt;/a&gt; to create an introduction to &lt;code&gt;R&lt;/code&gt; resource guide relevant to students in our evaluation, statistics, and measurement PhD program. It would also be relevant to anyone interested in learning R. Its topics include setup, important, data manipulation, data cleaning, statistical analysis, and data visualization. The examples use real survey data and take readers from import, to cleaning, to analysis.&lt;/p&gt;
 
 &lt;p&gt;The handbook is being developed with &lt;code&gt;bookdown&lt;/code&gt; and will have supplemental exercises written with &lt;code&gt;learnr&lt;/code&gt;.&lt;/p&gt;
 </description>
