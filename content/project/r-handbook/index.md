@@ -21,7 +21,7 @@ url_slides: ""
 url_video: ""
 ---
 
-This is an ongoing project to write an introduction to R that is relevant to students in our evaluation, statistics, and measurement PhD program. It would also be relevant to those interested in learning R, especially for analyzing survey data from import, to cleaning, to analysis.
+This project is part of a summer internship with [Dr. Jennifer Ann Morrow](https://epc.utk.edu/people/jennifer-ann-morrow-phd/) to create an introduction to `R` resource guide relevant to students in our evaluation, statistics, and measurement PhD program. It would also be relevant to anyone interested in learning R. Its topics include setup, important, data manipulation, data cleaning, statistical analysis, and data visualization. The examples use real survey data and take readers from import, to cleaning, to analysis.
 
 The handbook is being developed with `bookdown` and will have supplemental exercises written with `learnr`.
 
