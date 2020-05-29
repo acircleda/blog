@@ -52,9 +52,9 @@ In regards to **hypothesis 2**, I was even more wrong (see Figure 2). Those with
 
 While underrepresented in the sample (18 videos), it is important to note that /dæ tə/ seems most common in the Australian accent (44%). This is very surprising to me because of the close relationship between British and Australian English.
 
-![Figure 1](https://i2.wp.com/www.anthonyschmidt.co/wp-content/uploads/2019/08/Overall@2x-100.jpg)
+![Figure 1](overall.jpg)
 
-![Figure 2](https://i2.wp.com/www.anthonyschmidt.co/wp-content/uploads/2019/08/Accent-and-Gender@2x-100-1.jpg)
+![Figure 2](accent_and_gender.jpg)
 
 **LIMITATIONS**
 
