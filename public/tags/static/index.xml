@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Static | Anthony Schmidt</title>
-    <link>https://anthonyschmidt.netlify.com/tags/static/</link>
-      <atom:link href="https://anthonyschmidt.netlify.com/tags/static/index.xml" rel="self" type="application/rss+xml" />
+    <link>/tags/static/</link>
+      <atom:link href="/tags/static/index.xml" rel="self" type="application/rss+xml" />
     <description>Static</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 31 May 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://anthonyschmidt.netlify.com/img/icon-192.png</url>
+      <url>/img/icon-192.png</url>
       <title>Static</title>
-      <link>https://anthonyschmidt.netlify.com/tags/static/</link>
+      <link>/tags/static/</link>
     </image>
     
     <item>
       <title>#TidyTuesday Contributions</title>
-      <link>https://anthonyschmidt.netlify.com/project/portfolio/tidytuesday/</link>
+      <link>/project/portfolio/tidytuesday/</link>
       <pubDate>Sun, 31 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/project/portfolio/tidytuesday/</guid>
+      <guid>/project/portfolio/tidytuesday/</guid>
       <description>
 
 &lt;h2 id=&#34;tidytuesday-contributions&#34;&gt;#TidyTuesday Contributions&lt;/h2&gt;
 
-&lt;p&gt;I follow #TidyTuesday on Twitter every week to improve my &lt;code&gt;R&lt;/code&gt; and visualization skills. From time to time, I have also participated. My contributions with links to related documents and code are below.&lt;/p&gt;
+&lt;p&gt;I follow &lt;a href=&#34;https://twitter.com/search?q=%23TidyTuesday&amp;amp;src=hashtag_click&#34; target=&#34;_blank&#34;&gt;#TidyTuesday on Twitter&lt;/a&gt; every week to improve my &lt;code&gt;R&lt;/code&gt; and data visualization skills. &lt;a href=&#34;https://github.com/rfordatascience/tidytuesday&#34; target=&#34;_blank&#34;&gt;#TidyTuesday is hosted by R4DS (&lt;code&gt;R&lt;/code&gt; for Data Science)&lt;/a&gt; and features random and interesting datasets with which users can practice their &lt;code&gt;R&lt;/code&gt;, &lt;code&gt;Tidyverse&lt;/code&gt;, and visualization skills. From time to time, I have also participated. My contributions with links to related documents and code are below.&lt;/p&gt;
 
 &lt;h3 id=&#34;2020-week-22-cocktails&#34;&gt;2020 Week 22 - Cocktails&lt;/h3&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-05-26/readme.md&#34; target=&#34;_blank&#34;&gt;Original Dataset&lt;/a&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;interactive-shiny-app-click&#34;&gt;Interactive Shiny App (click!)&lt;/h4&gt;
+&lt;h4 id=&#34;interactive-shiny-app-click-https-acircleda-shinyapps-io-shinybartender&#34;&gt;Interactive Shiny App (&lt;a href=&#34;https://acircleda.shinyapps.io/ShinyBartender/&#34; target=&#34;_blank&#34;&gt;click!&lt;/a&gt;)&lt;/h4&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://acircleda.shinyapps.io/ShinyBartender/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://github.com/acircleda/TidyTuesday/raw/master/2020-05-26%20-%20Cocktails/preview.jpg&#34; width=&#34;500&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 

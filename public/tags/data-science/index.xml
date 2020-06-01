@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Data Science | Anthony Schmidt</title>
-    <link>https://anthonyschmidt.netlify.com/tags/data-science/</link>
-      <atom:link href="https://anthonyschmidt.netlify.com/tags/data-science/index.xml" rel="self" type="application/rss+xml" />
+    <link>/tags/data-science/</link>
+      <atom:link href="/tags/data-science/index.xml" rel="self" type="application/rss+xml" />
     <description>Data Science</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 11 May 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://anthonyschmidt.netlify.com/img/icon-192.png</url>
+      <url>/img/icon-192.png</url>
       <title>Data Science</title>
-      <link>https://anthonyschmidt.netlify.com/tags/data-science/</link>
+      <link>/tags/data-science/</link>
     </image>
     
     <item>
       <title>Air Travel Emissions Calculator in R</title>
-      <link>https://anthonyschmidt.netlify.com/post/2020-05-08-emission-calculator-in-r/</link>
+      <link>/post/2020-05-08-emission-calculator-in-r/</link>
       <pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/post/2020-05-08-emission-calculator-in-r/</guid>
+      <guid>/post/2020-05-08-emission-calculator-in-r/</guid>
       <description>
 
 
@@ -149,9 +149,9 @@ travel_data %&amp;gt;%
     
     <item>
       <title>R Handbook for ESM Students</title>
-      <link>https://anthonyschmidt.netlify.com/project/r-handbook/</link>
+      <link>/project/r-handbook/</link>
       <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/project/r-handbook/</guid>
+      <guid>/project/r-handbook/</guid>
       <description>&lt;p&gt;This project is part of a summer internship with &lt;a href=&#34;https://epc.utk.edu/people/jennifer-ann-morrow-phd/&#34; target=&#34;_blank&#34;&gt;Dr. Jennifer Ann Morrow&lt;/a&gt; to create an introduction to &lt;code&gt;R&lt;/code&gt; resource guide relevant to students in our evaluation, statistics, and measurement PhD program. It would also be relevant to anyone interested in learning R. Its topics include setup, important, data manipulation, data cleaning, statistical analysis, and data visualization. The examples use real survey data and take readers from import, to cleaning, to analysis.&lt;/p&gt;
 
 &lt;p&gt;The handbook is being developed with &lt;code&gt;bookdown&lt;/code&gt; and will have supplemental exercises written with &lt;code&gt;learnr&lt;/code&gt;.&lt;/p&gt;
@@ -160,9 +160,9 @@ travel_data %&amp;gt;%
     
     <item>
       <title>Becoming “TidyR” over Time- Data Visualization Development in an Online Community of Practice</title>
-      <link>https://anthonyschmidt.netlify.com/talk/2020-3-becoming-tidyr-over-time/</link>
+      <link>/talk/2020-3-becoming-tidyr-over-time/</link>
       <pubDate>Wed, 11 Mar 2020 12:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/talk/2020-3-becoming-tidyr-over-time/</guid>
+      <guid>/talk/2020-3-becoming-tidyr-over-time/</guid>
       <description>
 
 
@@ -195,7 +195,7 @@ library(ggplot2)
 iris %&amp;gt;%
   ggplot() +
     geom_point(aes(x=Sepal.Length,y=Sepal.Width))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://anthonyschmidt.netlify.com/talk/2020-3-becoming-tidyr-over-time/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/talk/2020-3-becoming-tidyr-over-time/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div id=&#34;research-purpose&#34; class=&#34;section level2&#34;&gt;
@@ -331,9 +331,9 @@ iris %&amp;gt;%
     
     <item>
       <title>Exploring #flyingless on Twitter with TAGS</title>
-      <link>https://anthonyschmidt.netlify.com/post/exploring-flying-less-with-tags/</link>
+      <link>/post/exploring-flying-less-with-tags/</link>
       <pubDate>Sat, 29 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/post/exploring-flying-less-with-tags/</guid>
+      <guid>/post/exploring-flying-less-with-tags/</guid>
       <description>
 
 
@@ -376,9 +376,9 @@ in the face of climate change: Incentives and barriers in a Swedish setting&lt;/
     
     <item>
       <title>Carbon Crisis Mitigation: Whose Responsibility Is It? - A #TidyTuesday-inspired Essay</title>
-      <link>https://anthonyschmidt.netlify.com/post/2020-19-02-carbon-crisis-mitigation-whose-responsibility-is-it-a-tidytuesday-inspired-essay/</link>
+      <link>/post/2020-19-02-carbon-crisis-mitigation-whose-responsibility-is-it-a-tidytuesday-inspired-essay/</link>
       <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/post/2020-19-02-carbon-crisis-mitigation-whose-responsibility-is-it-a-tidytuesday-inspired-essay/</guid>
+      <guid>/post/2020-19-02-carbon-crisis-mitigation-whose-responsibility-is-it-a-tidytuesday-inspired-essay/</guid>
       <description>
 
 
@@ -386,7 +386,7 @@ in the face of climate change: Incentives and barriers in a Swedish setting&lt;/
 &lt;p&gt;&lt;a href=&#34;tilemap.png&#34;&gt;&lt;img src=&#34;tilemap.png&#34; alt=&#34;My #TidyTuesday Tilemap&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;This small project got me thinking about the United States, its disproportionate contribution to the climate crisis, and how changing our personal habits may have a positive change.&lt;/p&gt;
 &lt;p&gt;According to the data set, the US is 6th out of over 130 countries in terms of its food-based carbon footprint, and among the different food groups, the largest emissions are due to the consumption of beef.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://anthonyschmidt.netlify.com/post/2020-19-02-carbon-crisis-mitigation-whose-responsibility-is-it-a-tidytuesday-inspired-essay/index_files/figure-html/data-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-19-02-carbon-crisis-mitigation-whose-responsibility-is-it-a-tidytuesday-inspired-essay/index_files/figure-html/data-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Why is beef such a carbon-intensive food? Beef requires more land - land for raising cows and land required to grow the grain to feed them - and more resources overall. According to an article from the &lt;a href=&#34;https://www.smithsonianmag.com/science-nature/beef-uses-ten-times-more-resources-poultry-dairy-eggs-pork-180952103/&#34;&gt;&lt;em&gt;Smithsonian&lt;/em&gt;&lt;/a&gt;, “beef requires 28 times more land, six times more fertilizer and 11 times more water compared to those other food sources. That adds up to about five times more greenhouse gas emissions.” In addition, the &lt;a href=&#34;https://www.npr.org/sections/thesalt/2014/04/11/301794415/gassy-cows-are-warming-the-planet-and-theyre-here-to-stay&#34;&gt;methane released from cows&lt;/a&gt; increase the already high carbon footprint.&lt;/p&gt;
 &lt;p&gt;This had me wondering: if beef has such a large carbon footprint, what impact would a reduction in beef consumption have? It also led to a deeper question: can individual changes really help mitigate climate change?&lt;/p&gt;
 &lt;div id=&#34;eat-less-beef&#34; class=&#34;section level2&#34;&gt;
@@ -395,7 +395,7 @@ in the face of climate change: Incentives and barriers in a Swedish setting&lt;/
 an estimated beef-consuming US population of 299,665,704 people. Using the emissions figure above, the beef-related emissions of these people equals 335,113,160,126 kg/CO&lt;sub&gt;2&lt;/sub&gt;/year, or, &lt;strong&gt;335,113,160 metric tons of CO&lt;sub&gt;2&lt;/sub&gt; each year&lt;/strong&gt;. According to the &lt;a href=&#34;http://folk.uio.no/roberan/img/GCB2019/PNG/s15_2019_Top_FF_emitters_abs.png&#34;&gt;Global Carbon Project&lt;/a&gt;, the US emitted 5,400,000,000 metric tons of CO&lt;sub&gt;2&lt;/sub&gt; in 2018. This means that beef emissions account for 6.2% of total US emissions.&lt;/p&gt;
 &lt;p&gt;Is 6% of our carbon footprint a big deal? Well, consider that this is just 6% of emissions based solely on &lt;strong&gt;one&lt;/strong&gt; food that we eat. In that case, it is quite a bit! So, if we did reduce our beef consumption, what kind of effect would it have?&lt;/p&gt;
 &lt;p&gt;The following chart shows the amount of emissions if we reduce our consumption of beef by 10%, 20%, all the way to 100%. It shows a 10% reduction has a carbon footprint of 5.8%. A 50% reduction of beef consumption equates to our habits contributing only 3.1% of the US carbon footprint. This small percentage is &lt;strong&gt;not negligible&lt;/strong&gt; when you consider that we need to reduce our emissions by &lt;a href=&#34;https://www.ipcc.ch/2018/10/08/summary-for-policymakers-of-ipcc-special-report-on-global-warming-of-1-5c-approved-by-governments/&#34;&gt;45% overall&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://anthonyschmidt.netlify.com/post/2020-19-02-carbon-crisis-mitigation-whose-responsibility-is-it-a-tidytuesday-inspired-essay/index_files/figure-html/reduction-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-19-02-carbon-crisis-mitigation-whose-responsibility-is-it-a-tidytuesday-inspired-essay/index_files/figure-html/reduction-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;whose-responsibility&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Whose Responsibility?&lt;/h2&gt;
@@ -427,7 +427,7 @@ an estimated beef-consuming US population of 299,665,704 people. Using the emiss
 &lt;p&gt;The reasoning above assumes, others will not change. However, this is not always the case. One’s own individual changes may be mathematically small but can be symbolically profound. That is, our actions serve a symbolic role and can definitely influence others. For example, research has found a clear “neighbor effect” for solar panels, finding that installation of solar panels influences others to do so (&lt;a href=&#34;https://link.springer.com/article/10.1007/s10018-019-00239-5&#34;&gt;Kosugi et. al, 2019&lt;/a&gt;; &lt;a href=&#34;https://www.theatlantic.com/magazine/archive/2020/03/climate-change-peer-pressure/605515/&#34;&gt;Frank, 2020&lt;/a&gt;)&lt;/p&gt;
 &lt;p&gt;To that end, raising awareness and advocating for change (at school, at work, among family and friends) is another action that can be taken in addition to personal changes.&lt;/p&gt;
 &lt;p&gt;Unfortunately, we still have several other issues to deal with. One is why is it fair to ask people to stop doing the ordinary things they have always done just because these things have suddenly become associated with the climate crisis. First, as Peeters et al. (2018) point out, “The mere fact that many other people engage in an act does not render it harmless” (p. 433). In addition, what we consider ordinary or usual is certainly not so. Take our beef consumption habits. We are sixth in terms of per capita emissions - sixth out of 130 countries. The beef emissions of the United States equate to the same emissions, per capita, as the bottom 17 countries on beef consumption combined.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://anthonyschmidt.netlify.com/post/2020-19-02-carbon-crisis-mitigation-whose-responsibility-is-it-a-tidytuesday-inspired-essay/index_files/figure-html/bottom_countries-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-19-02-carbon-crisis-mitigation-whose-responsibility-is-it-a-tidytuesday-inspired-essay/index_files/figure-html/bottom_countries-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Our habits - eating beef, jet-setting around the world, hot showers several times a day, joyriding, leaving the lights on - are certainly normal to us, but around the world, they are matter of factly not the norm. The western world contains around 15% of the world’s population, yet has dissproportionatley contributed to the climate crisis through habits it considers ordinary but are in fact unique. These three charts illustrate this:&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
 &lt;img src=&#34;totalemissions.png&#34; alt=&#34;A Map of Total Emissions&#34; /&gt;
@@ -462,9 +462,9 @@ an estimated beef-consuming US population of 299,665,704 people. Using the emiss
     
     <item>
       <title>Assessing Your Carbon Footprint with Google Location Data</title>
-      <link>https://anthonyschmidt.netlify.com/post/2020-02-10-carbon-footprint-google-data/</link>
+      <link>/post/2020-02-10-carbon-footprint-google-data/</link>
       <pubDate>Mon, 10 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/post/2020-02-10-carbon-footprint-google-data/</guid>
+      <guid>/post/2020-02-10-carbon-footprint-google-data/</guid>
       <description>
 
 &lt;p&gt;Google collects &lt;em&gt;a lot&lt;/em&gt; of data on us. If you have Google Maps, chances are your location is being tracked, too. Unless, of course, you have it disabled. But, if you don&amp;rsquo;t, you&amp;rsquo;d be surprised by the amount of location data (and its accuracy) contained in your Google Timeline. &lt;a href=&#34;https://www.nytimes.com/interactive/2019/12/19/opinion/location-tracking-cell-phone.html&#34; target=&#34;_blank&#34;&gt;Many worry about Google&amp;rsquo;s tracking&lt;/a&gt;, but for those of us who don&amp;rsquo;t, there is some potential fun we can have with our own data.&lt;/p&gt;
@@ -670,9 +670,9 @@ mar &amp;lt;- json_process(mar2019)
     
     <item>
       <title>Data-Related Jobs for ESM Students</title>
-      <link>https://anthonyschmidt.netlify.com/project/esm-data-jobs/</link>
+      <link>/project/esm-data-jobs/</link>
       <pubDate>Sat, 18 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/project/esm-data-jobs/</guid>
+      <guid>/project/esm-data-jobs/</guid>
       <description>&lt;p&gt;This is an ongoing project to analyze data-related jobs posted on &lt;a href=&#34;http://www.higheredjobs.com&#34; target=&#34;_blank&#34;&gt;HigherEdJobs&lt;/a&gt;. These are jobs a typical ESM student would qualify. The jobs are analyzed in order to understand the skills and competencies that are in demand.&lt;/p&gt;
 
 &lt;p&gt;The project is currently focused on administrative-level jobs. Faculty job analyses will be forthcoming.&lt;/p&gt;
@@ -683,18 +683,18 @@ mar &amp;lt;- json_process(mar2019)
     
     <item>
       <title>Becoming Tidyr over Time</title>
-      <link>https://anthonyschmidt.netlify.com/project/tidy-tuesday/</link>
+      <link>/project/tidy-tuesday/</link>
       <pubDate>Thu, 16 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/project/tidy-tuesday/</guid>
+      <guid>/project/tidy-tuesday/</guid>
       <description>&lt;p&gt;This project analyzes tweets from the #TidyTuesday hashtag to understand participation and development of data visualization and data science skills.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Speaking of Data</title>
-      <link>https://anthonyschmidt.netlify.com/post/2019-08-24-speaking-of-data/</link>
+      <link>/post/2019-08-24-speaking-of-data/</link>
       <pubDate>Sat, 24 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/post/2019-08-24-speaking-of-data/</guid>
+      <guid>/post/2019-08-24-speaking-of-data/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Read this aloud: “We need more data.”&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;How did you pronounce the word “data”? Was the “da” in data pronounced like day or was the “a” in “da” pronounced with the same “a” as in apple? In other words, do you say day-tuh (IPA: /deɪtə/) or dah-tuh (IPA: /dætə/; like the “a” in “apple”)?&lt;/p&gt;

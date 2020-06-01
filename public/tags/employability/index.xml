@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Employability | Anthony Schmidt</title>
-    <link>https://anthonyschmidt.netlify.com/tags/employability/</link>
-      <atom:link href="https://anthonyschmidt.netlify.com/tags/employability/index.xml" rel="self" type="application/rss+xml" />
+    <link>/tags/employability/</link>
+      <atom:link href="/tags/employability/index.xml" rel="self" type="application/rss+xml" />
     <description>Employability</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 18 Jan 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://anthonyschmidt.netlify.com/img/icon-192.png</url>
+      <url>/img/icon-192.png</url>
       <title>Employability</title>
-      <link>https://anthonyschmidt.netlify.com/tags/employability/</link>
+      <link>/tags/employability/</link>
     </image>
     
     <item>
       <title>Data-Related Jobs for ESM Students</title>
-      <link>https://anthonyschmidt.netlify.com/project/esm-data-jobs/</link>
+      <link>/project/esm-data-jobs/</link>
       <pubDate>Sat, 18 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/project/esm-data-jobs/</guid>
+      <guid>/project/esm-data-jobs/</guid>
       <description>&lt;p&gt;This is an ongoing project to analyze data-related jobs posted on &lt;a href=&#34;http://www.higheredjobs.com&#34; target=&#34;_blank&#34;&gt;HigherEdJobs&lt;/a&gt;. These are jobs a typical ESM student would qualify. The jobs are analyzed in order to understand the skills and competencies that are in demand.&lt;/p&gt;
 
 &lt;p&gt;The project is currently focused on administrative-level jobs. Faculty job analyses will be forthcoming.&lt;/p&gt;
@@ -27,9 +27,9 @@
     
     <item>
       <title>Fly or Die - The Relationship between Conference Travel, Employability, and the Climate Crisis.</title>
-      <link>https://anthonyschmidt.netlify.com/project/fly-or-die-phd-grads/</link>
+      <link>/project/fly-or-die-phd-grads/</link>
       <pubDate>Sat, 07 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/project/fly-or-die-phd-grads/</guid>
+      <guid>/project/fly-or-die-phd-grads/</guid>
       <description>&lt;p&gt;The &amp;ldquo;Fly or Die&amp;rdquo; project is a multi-survey research project that looks at the complex relationship between graduate student conference travel, employability, and the climate crisis.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Survey One&lt;/strong&gt; focuses on doctoral student employment outcomes, conferences attendance, conference activities, conference types, and publications. Analyses are across disciplines and job industries.&lt;/p&gt;

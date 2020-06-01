@@ -22,15 +22,13 @@ url_slides: ""
 url_video: ""
 ---
   
-## #TidyTuesday Contributions
-
-I follow #TidyTuesday on Twitter every week to improve my `R` and visualization skills. From time to time, I have also participated. My contributions with links to related documents and code are below.
+I follow [#TidyTuesday on Twitter](https://twitter.com/search?q=%23TidyTuesday&src=hashtag_click) every week to improve my `R` and data visualization skills. [#TidyTuesday is hosted by R4DS (`R` for Data Science)](https://github.com/rfordatascience/tidytuesday) and features random and interesting datasets with which users can practice their `R`, `Tidyverse`, and visualization skills. From time to time, I have also participated. My contributions with links to related documents and code are below.
 
 ### 2020 Week 22 - Cocktails
 
 [Original Dataset](https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-05-26/readme.md)
 
-#### Interactive Shiny App (click!)
+#### Interactive Shiny App ([click!](https://acircleda.shinyapps.io/ShinyBartender/))
 
 [<img src="https://github.com/acircleda/TidyTuesday/raw/master/2020-05-26%20-%20Cocktails/preview.jpg" width="500">](https://acircleda.shinyapps.io/ShinyBartender/)
 

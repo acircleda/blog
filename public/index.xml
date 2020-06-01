@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Anthony Schmidt</title>
-    <link>https://anthonyschmidt.netlify.com/</link>
-      <atom:link href="https://anthonyschmidt.netlify.com/index.xml" rel="self" type="application/rss+xml" />
+    <link>/</link>
+      <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>Anthony Schmidt</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 31 May 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 15 Aug 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://anthonyschmidt.netlify.com/img/icon-192.png</url>
+      <url>/img/icon-192.png</url>
       <title>Anthony Schmidt</title>
-      <link>https://anthonyschmidt.netlify.com/</link>
+      <link>/</link>
     </image>
     
     <item>
       <title>Example Page 1</title>
-      <link>https://anthonyschmidt.netlify.com/courses/example/example1/</link>
+      <link>/courses/example/example1/</link>
       <pubDate>Sun, 05 May 2019 00:00:00 +0100</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/courses/example/example1/</guid>
+      <guid>/courses/example/example1/</guid>
       <description>
 
 &lt;p&gt;In this tutorial, I&amp;rsquo;ll share my top 10 tips for getting started with Academic:&lt;/p&gt;
@@ -49,9 +49,9 @@
     
     <item>
       <title>Example Page 2</title>
-      <link>https://anthonyschmidt.netlify.com/courses/example/example2/</link>
+      <link>/courses/example/example2/</link>
       <pubDate>Sun, 05 May 2019 00:00:00 +0100</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/courses/example/example2/</guid>
+      <guid>/courses/example/example2/</guid>
       <description>
 
 &lt;p&gt;Here are some more tips for getting started with Academic:&lt;/p&gt;
@@ -83,21 +83,29 @@
     </item>
     
     <item>
+      <title>Are International Students Getting a Bang for their Buck? The Relationship between Expenditures and International Student Graduation Rates</title>
+      <link>/publication/journal-article/</link>
+      <pubDate>Sat, 15 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>/publication/journal-article/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>#TidyTuesday Contributions</title>
-      <link>https://anthonyschmidt.netlify.com/project/portfolio/tidytuesday/</link>
+      <link>/project/portfolio/tidytuesday/</link>
       <pubDate>Sun, 31 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/project/portfolio/tidytuesday/</guid>
+      <guid>/project/portfolio/tidytuesday/</guid>
       <description>
 
 &lt;h2 id=&#34;tidytuesday-contributions&#34;&gt;#TidyTuesday Contributions&lt;/h2&gt;
 
-&lt;p&gt;I follow #TidyTuesday on Twitter every week to improve my &lt;code&gt;R&lt;/code&gt; and visualization skills. From time to time, I have also participated. My contributions with links to related documents and code are below.&lt;/p&gt;
+&lt;p&gt;I follow &lt;a href=&#34;https://twitter.com/search?q=%23TidyTuesday&amp;amp;src=hashtag_click&#34; target=&#34;_blank&#34;&gt;#TidyTuesday on Twitter&lt;/a&gt; every week to improve my &lt;code&gt;R&lt;/code&gt; and data visualization skills. &lt;a href=&#34;https://github.com/rfordatascience/tidytuesday&#34; target=&#34;_blank&#34;&gt;#TidyTuesday is hosted by R4DS (&lt;code&gt;R&lt;/code&gt; for Data Science)&lt;/a&gt; and features random and interesting datasets with which users can practice their &lt;code&gt;R&lt;/code&gt;, &lt;code&gt;Tidyverse&lt;/code&gt;, and visualization skills. From time to time, I have also participated. My contributions with links to related documents and code are below.&lt;/p&gt;
 
 &lt;h3 id=&#34;2020-week-22-cocktails&#34;&gt;2020 Week 22 - Cocktails&lt;/h3&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-05-26/readme.md&#34; target=&#34;_blank&#34;&gt;Original Dataset&lt;/a&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;interactive-shiny-app-click&#34;&gt;Interactive Shiny App (click!)&lt;/h4&gt;
+&lt;h4 id=&#34;interactive-shiny-app-click-https-acircleda-shinyapps-io-shinybartender&#34;&gt;Interactive Shiny App (&lt;a href=&#34;https://acircleda.shinyapps.io/ShinyBartender/&#34; target=&#34;_blank&#34;&gt;click!&lt;/a&gt;)&lt;/h4&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://acircleda.shinyapps.io/ShinyBartender/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://github.com/acircleda/TidyTuesday/raw/master/2020-05-26%20-%20Cocktails/preview.jpg&#34; width=&#34;500&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -143,9 +151,9 @@
     
     <item>
       <title>Air Travel Emissions Calculator in R</title>
-      <link>https://anthonyschmidt.netlify.com/post/2020-05-08-emission-calculator-in-r/</link>
+      <link>/post/2020-05-08-emission-calculator-in-r/</link>
       <pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/post/2020-05-08-emission-calculator-in-r/</guid>
+      <guid>/post/2020-05-08-emission-calculator-in-r/</guid>
       <description>
 
 
@@ -278,18 +286,18 @@ travel_data %&amp;gt;%
     
     <item>
       <title>Flying Less? A Document Analysis of University Climate Policies</title>
-      <link>https://anthonyschmidt.netlify.com/project/flying-less-document-analysis/</link>
+      <link>/project/flying-less-document-analysis/</link>
       <pubDate>Fri, 08 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/project/flying-less-document-analysis/</guid>
+      <guid>/project/flying-less-document-analysis/</guid>
       <description>&lt;p&gt;This project utilize qualitative document analysis to examine the role of flying less as a Scope 3 emissions reduction strategy in various university climate policies. It will include documents from UTK, &lt;a href=&#34;https://oira.utk.edu/peer-institutions/&#34; target=&#34;_blank&#34;&gt;UTK peer and aspirational universities&lt;/a&gt;, the top 25 public research universities, and specific institutions that have explicit attention to flying less.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>R Handbook for ESM Students</title>
-      <link>https://anthonyschmidt.netlify.com/project/r-handbook/</link>
+      <link>/project/r-handbook/</link>
       <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/project/r-handbook/</guid>
+      <guid>/project/r-handbook/</guid>
       <description>&lt;p&gt;This project is part of a summer internship with &lt;a href=&#34;https://epc.utk.edu/people/jennifer-ann-morrow-phd/&#34; target=&#34;_blank&#34;&gt;Dr. Jennifer Ann Morrow&lt;/a&gt; to create an introduction to &lt;code&gt;R&lt;/code&gt; resource guide relevant to students in our evaluation, statistics, and measurement PhD program. It would also be relevant to anyone interested in learning R. Its topics include setup, important, data manipulation, data cleaning, statistical analysis, and data visualization. The examples use real survey data and take readers from import, to cleaning, to analysis.&lt;/p&gt;
 
 &lt;p&gt;The handbook is being developed with &lt;code&gt;bookdown&lt;/code&gt; and will have supplemental exercises written with &lt;code&gt;learnr&lt;/code&gt;.&lt;/p&gt;
@@ -298,9 +306,9 @@ travel_data %&amp;gt;%
     
     <item>
       <title>Becoming “TidyR” over Time- Data Visualization Development in an Online Community of Practice</title>
-      <link>https://anthonyschmidt.netlify.com/talk/2020-3-becoming-tidyr-over-time/</link>
+      <link>/talk/2020-3-becoming-tidyr-over-time/</link>
       <pubDate>Wed, 11 Mar 2020 12:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/talk/2020-3-becoming-tidyr-over-time/</guid>
+      <guid>/talk/2020-3-becoming-tidyr-over-time/</guid>
       <description>
 
 
@@ -333,7 +341,7 @@ library(ggplot2)
 iris %&amp;gt;%
   ggplot() +
     geom_point(aes(x=Sepal.Length,y=Sepal.Width))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://anthonyschmidt.netlify.com/talk/2020-3-becoming-tidyr-over-time/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/talk/2020-3-becoming-tidyr-over-time/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div id=&#34;research-purpose&#34; class=&#34;section level2&#34;&gt;
@@ -469,9 +477,9 @@ iris %&amp;gt;%
     
     <item>
       <title>Exploring #flyingless on Twitter with TAGS</title>
-      <link>https://anthonyschmidt.netlify.com/post/exploring-flying-less-with-tags/</link>
+      <link>/post/exploring-flying-less-with-tags/</link>
       <pubDate>Sat, 29 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/post/exploring-flying-less-with-tags/</guid>
+      <guid>/post/exploring-flying-less-with-tags/</guid>
       <description>
 
 
@@ -514,9 +522,9 @@ in the face of climate change: Incentives and barriers in a Swedish setting&lt;/
     
     <item>
       <title>Carbon Crisis Mitigation: Whose Responsibility Is It? - A #TidyTuesday-inspired Essay</title>
-      <link>https://anthonyschmidt.netlify.com/post/2020-19-02-carbon-crisis-mitigation-whose-responsibility-is-it-a-tidytuesday-inspired-essay/</link>
+      <link>/post/2020-19-02-carbon-crisis-mitigation-whose-responsibility-is-it-a-tidytuesday-inspired-essay/</link>
       <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/post/2020-19-02-carbon-crisis-mitigation-whose-responsibility-is-it-a-tidytuesday-inspired-essay/</guid>
+      <guid>/post/2020-19-02-carbon-crisis-mitigation-whose-responsibility-is-it-a-tidytuesday-inspired-essay/</guid>
       <description>
 
 
@@ -524,7 +532,7 @@ in the face of climate change: Incentives and barriers in a Swedish setting&lt;/
 &lt;p&gt;&lt;a href=&#34;tilemap.png&#34;&gt;&lt;img src=&#34;tilemap.png&#34; alt=&#34;My #TidyTuesday Tilemap&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;This small project got me thinking about the United States, its disproportionate contribution to the climate crisis, and how changing our personal habits may have a positive change.&lt;/p&gt;
 &lt;p&gt;According to the data set, the US is 6th out of over 130 countries in terms of its food-based carbon footprint, and among the different food groups, the largest emissions are due to the consumption of beef.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://anthonyschmidt.netlify.com/post/2020-19-02-carbon-crisis-mitigation-whose-responsibility-is-it-a-tidytuesday-inspired-essay/index_files/figure-html/data-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-19-02-carbon-crisis-mitigation-whose-responsibility-is-it-a-tidytuesday-inspired-essay/index_files/figure-html/data-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Why is beef such a carbon-intensive food? Beef requires more land - land for raising cows and land required to grow the grain to feed them - and more resources overall. According to an article from the &lt;a href=&#34;https://www.smithsonianmag.com/science-nature/beef-uses-ten-times-more-resources-poultry-dairy-eggs-pork-180952103/&#34;&gt;&lt;em&gt;Smithsonian&lt;/em&gt;&lt;/a&gt;, “beef requires 28 times more land, six times more fertilizer and 11 times more water compared to those other food sources. That adds up to about five times more greenhouse gas emissions.” In addition, the &lt;a href=&#34;https://www.npr.org/sections/thesalt/2014/04/11/301794415/gassy-cows-are-warming-the-planet-and-theyre-here-to-stay&#34;&gt;methane released from cows&lt;/a&gt; increase the already high carbon footprint.&lt;/p&gt;
 &lt;p&gt;This had me wondering: if beef has such a large carbon footprint, what impact would a reduction in beef consumption have? It also led to a deeper question: can individual changes really help mitigate climate change?&lt;/p&gt;
 &lt;div id=&#34;eat-less-beef&#34; class=&#34;section level2&#34;&gt;
@@ -533,7 +541,7 @@ in the face of climate change: Incentives and barriers in a Swedish setting&lt;/
 an estimated beef-consuming US population of 299,665,704 people. Using the emissions figure above, the beef-related emissions of these people equals 335,113,160,126 kg/CO&lt;sub&gt;2&lt;/sub&gt;/year, or, &lt;strong&gt;335,113,160 metric tons of CO&lt;sub&gt;2&lt;/sub&gt; each year&lt;/strong&gt;. According to the &lt;a href=&#34;http://folk.uio.no/roberan/img/GCB2019/PNG/s15_2019_Top_FF_emitters_abs.png&#34;&gt;Global Carbon Project&lt;/a&gt;, the US emitted 5,400,000,000 metric tons of CO&lt;sub&gt;2&lt;/sub&gt; in 2018. This means that beef emissions account for 6.2% of total US emissions.&lt;/p&gt;
 &lt;p&gt;Is 6% of our carbon footprint a big deal? Well, consider that this is just 6% of emissions based solely on &lt;strong&gt;one&lt;/strong&gt; food that we eat. In that case, it is quite a bit! So, if we did reduce our beef consumption, what kind of effect would it have?&lt;/p&gt;
 &lt;p&gt;The following chart shows the amount of emissions if we reduce our consumption of beef by 10%, 20%, all the way to 100%. It shows a 10% reduction has a carbon footprint of 5.8%. A 50% reduction of beef consumption equates to our habits contributing only 3.1% of the US carbon footprint. This small percentage is &lt;strong&gt;not negligible&lt;/strong&gt; when you consider that we need to reduce our emissions by &lt;a href=&#34;https://www.ipcc.ch/2018/10/08/summary-for-policymakers-of-ipcc-special-report-on-global-warming-of-1-5c-approved-by-governments/&#34;&gt;45% overall&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://anthonyschmidt.netlify.com/post/2020-19-02-carbon-crisis-mitigation-whose-responsibility-is-it-a-tidytuesday-inspired-essay/index_files/figure-html/reduction-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-19-02-carbon-crisis-mitigation-whose-responsibility-is-it-a-tidytuesday-inspired-essay/index_files/figure-html/reduction-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;whose-responsibility&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Whose Responsibility?&lt;/h2&gt;
@@ -565,7 +573,7 @@ an estimated beef-consuming US population of 299,665,704 people. Using the emiss
 &lt;p&gt;The reasoning above assumes, others will not change. However, this is not always the case. One’s own individual changes may be mathematically small but can be symbolically profound. That is, our actions serve a symbolic role and can definitely influence others. For example, research has found a clear “neighbor effect” for solar panels, finding that installation of solar panels influences others to do so (&lt;a href=&#34;https://link.springer.com/article/10.1007/s10018-019-00239-5&#34;&gt;Kosugi et. al, 2019&lt;/a&gt;; &lt;a href=&#34;https://www.theatlantic.com/magazine/archive/2020/03/climate-change-peer-pressure/605515/&#34;&gt;Frank, 2020&lt;/a&gt;)&lt;/p&gt;
 &lt;p&gt;To that end, raising awareness and advocating for change (at school, at work, among family and friends) is another action that can be taken in addition to personal changes.&lt;/p&gt;
 &lt;p&gt;Unfortunately, we still have several other issues to deal with. One is why is it fair to ask people to stop doing the ordinary things they have always done just because these things have suddenly become associated with the climate crisis. First, as Peeters et al. (2018) point out, “The mere fact that many other people engage in an act does not render it harmless” (p. 433). In addition, what we consider ordinary or usual is certainly not so. Take our beef consumption habits. We are sixth in terms of per capita emissions - sixth out of 130 countries. The beef emissions of the United States equate to the same emissions, per capita, as the bottom 17 countries on beef consumption combined.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://anthonyschmidt.netlify.com/post/2020-19-02-carbon-crisis-mitigation-whose-responsibility-is-it-a-tidytuesday-inspired-essay/index_files/figure-html/bottom_countries-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-19-02-carbon-crisis-mitigation-whose-responsibility-is-it-a-tidytuesday-inspired-essay/index_files/figure-html/bottom_countries-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Our habits - eating beef, jet-setting around the world, hot showers several times a day, joyriding, leaving the lights on - are certainly normal to us, but around the world, they are matter of factly not the norm. The western world contains around 15% of the world’s population, yet has dissproportionatley contributed to the climate crisis through habits it considers ordinary but are in fact unique. These three charts illustrate this:&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
 &lt;img src=&#34;totalemissions.png&#34; alt=&#34;A Map of Total Emissions&#34; /&gt;
@@ -600,9 +608,9 @@ an estimated beef-consuming US population of 299,665,704 people. Using the emiss
     
     <item>
       <title>Financial Wellness in Higher Education</title>
-      <link>https://anthonyschmidt.netlify.com/project/portfolio/financial-wellness-in-higher-education/</link>
+      <link>/project/portfolio/financial-wellness-in-higher-education/</link>
       <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/project/portfolio/financial-wellness-in-higher-education/</guid>
+      <guid>/project/portfolio/financial-wellness-in-higher-education/</guid>
       <description>&lt;p&gt;This infographic summarizes key takeaways from a TIAA Institute/CUPA-HR survey on financial wellness in Higher Education. It was printed as a 2-page spread in CUPA-HR&amp;rsquo;s &lt;em&gt;Higher Ed HR Magazine,&lt;/em&gt; Winter 2019-20, distributed to over 30,000 members.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;financial_wellness.pdf&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;financial_wellness.jpg&#34; alt=&#34;Financial Wellness&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
@@ -611,9 +619,9 @@ an estimated beef-consuming US population of 299,665,704 people. Using the emiss
     
     <item>
       <title>The Looming Enrollment Cliff</title>
-      <link>https://anthonyschmidt.netlify.com/project/portfolio/enrollment-cliff/</link>
+      <link>/project/portfolio/enrollment-cliff/</link>
       <pubDate>Thu, 13 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/project/portfolio/enrollment-cliff/</guid>
+      <guid>/project/portfolio/enrollment-cliff/</guid>
       <description>&lt;p&gt;The purpose of this dashboard is to understand and explore forecasted enrollments in Higher Education. These forecasts are based on the &lt;em&gt;Higher Education Demand Index&lt;/em&gt; developed by Dr. Nathan Grawe and published in his book &amp;ldquo;Demographics and the Demand for Higher Education&amp;rdquo;. The interactive allows you to get an overview of the forecasts as well as take a deeper, state-by-state dive into the data.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Not working? &lt;a href=&#34;https://public.tableau.com/views/forecasts_15698547099330/Overall?:embed=y&amp;amp;:embed_code_version=3&amp;amp;:loadOrderID=0&amp;amp;:display_count=y&amp;amp;publish=yes?:embed%3Dy?:embed%3Dy&amp;amp;:origin=viz_share_link&#34; target=&#34;_blank&#34;&gt;Click here&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
@@ -626,9 +634,9 @@ an estimated beef-consuming US population of 299,665,704 people. Using the emiss
     
     <item>
       <title>Assessing Your Carbon Footprint with Google Location Data</title>
-      <link>https://anthonyschmidt.netlify.com/post/2020-02-10-carbon-footprint-google-data/</link>
+      <link>/post/2020-02-10-carbon-footprint-google-data/</link>
       <pubDate>Mon, 10 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/post/2020-02-10-carbon-footprint-google-data/</guid>
+      <guid>/post/2020-02-10-carbon-footprint-google-data/</guid>
       <description>
 
 &lt;p&gt;Google collects &lt;em&gt;a lot&lt;/em&gt; of data on us. If you have Google Maps, chances are your location is being tracked, too. Unless, of course, you have it disabled. But, if you don&amp;rsquo;t, you&amp;rsquo;d be surprised by the amount of location data (and its accuracy) contained in your Google Timeline. &lt;a href=&#34;https://www.nytimes.com/interactive/2019/12/19/opinion/location-tracking-cell-phone.html&#34; target=&#34;_blank&#34;&gt;Many worry about Google&amp;rsquo;s tracking&lt;/a&gt;, but for those of us who don&amp;rsquo;t, there is some potential fun we can have with our own data.&lt;/p&gt;
@@ -834,9 +842,9 @@ mar &amp;lt;- json_process(mar2019)
     
     <item>
       <title>Data-Related Jobs for ESM Students</title>
-      <link>https://anthonyschmidt.netlify.com/project/esm-data-jobs/</link>
+      <link>/project/esm-data-jobs/</link>
       <pubDate>Sat, 18 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/project/esm-data-jobs/</guid>
+      <guid>/project/esm-data-jobs/</guid>
       <description>&lt;p&gt;This is an ongoing project to analyze data-related jobs posted on &lt;a href=&#34;http://www.higheredjobs.com&#34; target=&#34;_blank&#34;&gt;HigherEdJobs&lt;/a&gt;. These are jobs a typical ESM student would qualify. The jobs are analyzed in order to understand the skills and competencies that are in demand.&lt;/p&gt;
 
 &lt;p&gt;The project is currently focused on administrative-level jobs. Faculty job analyses will be forthcoming.&lt;/p&gt;
@@ -847,9 +855,9 @@ mar &amp;lt;- json_process(mar2019)
     
     <item>
       <title>Language Test Scores Dashboard</title>
-      <link>https://anthonyschmidt.netlify.com/project/portfolio/language-score-dashboard/</link>
+      <link>/project/portfolio/language-score-dashboard/</link>
       <pubDate>Sat, 18 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/project/portfolio/language-score-dashboard/</guid>
+      <guid>/project/portfolio/language-score-dashboard/</guid>
       <description>&lt;p&gt;&lt;em&gt;Note: The following Tableau dashboard represents real data that has been altered to maintain confidentiality.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;The purpose of this dashboard is to understand performance on a language test across different courses, with each course (A-F) becoming increasingly more advanced. The dashboard allows users to view progress holistically as well as at the individual course level.&lt;/p&gt;
@@ -864,9 +872,9 @@ mar &amp;lt;- json_process(mar2019)
     
     <item>
       <title>Student Enrollment Dashboard</title>
-      <link>https://anthonyschmidt.netlify.com/project/portfolio/student-enrollment-dashboard/</link>
+      <link>/project/portfolio/student-enrollment-dashboard/</link>
       <pubDate>Sat, 18 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/project/portfolio/student-enrollment-dashboard/</guid>
+      <guid>/project/portfolio/student-enrollment-dashboard/</guid>
       <description>&lt;p&gt;&lt;em&gt;Note: The following Tableau dashboard represents real data that has been altered to maintain confidentiality.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;The purpose of this dashboard is to allow users to understand enrollment trends, compare enrollment to another institution, and see enrollment by student country of origin.&lt;/p&gt;
@@ -881,26 +889,26 @@ mar &amp;lt;- json_process(mar2019)
     
     <item>
       <title>A survey of teachers and administrators regarding the implementation of new K-8 computing education standards in Tennessee</title>
-      <link>https://anthonyschmidt.netlify.com/talk/planting-the-seeds/</link>
+      <link>/talk/planting-the-seeds/</link>
       <pubDate>Thu, 16 Jan 2020 13:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/talk/planting-the-seeds/</guid>
+      <guid>/talk/planting-the-seeds/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Becoming Tidyr over Time</title>
-      <link>https://anthonyschmidt.netlify.com/project/tidy-tuesday/</link>
+      <link>/project/tidy-tuesday/</link>
       <pubDate>Thu, 16 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/project/tidy-tuesday/</guid>
+      <guid>/project/tidy-tuesday/</guid>
       <description>&lt;p&gt;This project analyzes tweets from the #TidyTuesday hashtag to understand participation and development of data visualization and data science skills.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Multilingual &#34;Welcome&#34; Logo</title>
-      <link>https://anthonyschmidt.netlify.com/project/portfolio/tennessee-logo/</link>
+      <link>/project/portfolio/tennessee-logo/</link>
       <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/project/portfolio/tennessee-logo/</guid>
+      <guid>/project/portfolio/tennessee-logo/</guid>
       <description>&lt;p&gt;The following design is meant to showcase some of my experience with Adobe Illustrator. The image below was designed for a t-shirt marketing campaign at the &lt;a href=&#34;http://eli.utk.edu/&#34; target=&#34;_blank&#34;&gt;English Language Institute&lt;/a&gt;. It depicts the phrase “welcome” in numerous languages, arranged to make the state of Tennessee’s outline. It includes the university and department names in their respective &lt;a href=&#34;http://brand.utk.edu/&#34; target=&#34;_blank&#34;&gt;brand UTK typologies&lt;/a&gt;, as well as the phrase &lt;a href=&#34;https://www.youarewelcomehereusa.org/&#34; target=&#34;_blank&#34;&gt;#YouAreWelcomeHere&lt;/a&gt;, also in a brand font. The colors are also part of the UTK color pallette. This design was printed on smokey gray and Tennessee orange shirts.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://i1.wp.com/www.anthonyschmidt.co/wp-content/uploads/2019/07/eli_tn_multilingual.png?resize=768%2C315&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://i1.wp.com/www.anthonyschmidt.co/wp-content/uploads/2019/07/eli_tn_multilingual.png?resize=768%2C315&#34; alt=&#34;YouAreWelcomeHere&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
@@ -909,9 +917,9 @@ mar &amp;lt;- json_process(mar2019)
     
     <item>
       <title>Fly or Die - The Relationship between Conference Travel, Employability, and the Climate Crisis.</title>
-      <link>https://anthonyschmidt.netlify.com/project/fly-or-die-phd-grads/</link>
+      <link>/project/fly-or-die-phd-grads/</link>
       <pubDate>Sat, 07 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/project/fly-or-die-phd-grads/</guid>
+      <guid>/project/fly-or-die-phd-grads/</guid>
       <description>&lt;p&gt;The &amp;ldquo;Fly or Die&amp;rdquo; project is a multi-survey research project that looks at the complex relationship between graduate student conference travel, employability, and the climate crisis.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Survey One&lt;/strong&gt; focuses on doctoral student employment outcomes, conferences attendance, conference activities, conference types, and publications. Analyses are across disciplines and job industries.&lt;/p&gt;
@@ -924,9 +932,9 @@ mar &amp;lt;- json_process(mar2019)
     
     <item>
       <title>Speaking of Data</title>
-      <link>https://anthonyschmidt.netlify.com/post/2019-08-24-speaking-of-data/</link>
+      <link>/post/2019-08-24-speaking-of-data/</link>
       <pubDate>Sat, 24 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/post/2019-08-24-speaking-of-data/</guid>
+      <guid>/post/2019-08-24-speaking-of-data/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Read this aloud: “We need more data.”&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;How did you pronounce the word “data”? Was the “da” in data pronounced like day or was the “a” in “da” pronounced with the same “a” as in apple? In other words, do you say day-tuh (IPA: /deɪtə/) or dah-tuh (IPA: /dætə/; like the “a” in “apple”)?&lt;/p&gt;
@@ -988,17 +996,17 @@ mar &amp;lt;- json_process(mar2019)
     
     <item>
       <title>Book Review - International Students in First-Year Writing: A Journey Through Socio-Academic Space</title>
-      <link>https://anthonyschmidt.netlify.com/publication/international-students-in-first-year-writing-review/</link>
+      <link>/publication/international-students-in-first-year-writing-review/</link>
       <pubDate>Thu, 15 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/publication/international-students-in-first-year-writing-review/</guid>
+      <guid>/publication/international-students-in-first-year-writing-review/</guid>
       <description></description>
     </item>
     
     <item>
       <title>The Cost of International Education</title>
-      <link>https://anthonyschmidt.netlify.com/post/2019-5-10-the-cost-of-international-education/</link>
+      <link>/post/2019-5-10-the-cost-of-international-education/</link>
       <pubDate>Fri, 10 May 2019 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/post/2019-5-10-the-cost-of-international-education/</guid>
+      <guid>/post/2019-5-10-the-cost-of-international-education/</guid>
       <description>&lt;p&gt;&lt;em&gt;This blog post was originally published on my other blog, &lt;a href=&#34;http://www.anthonyteacher.com/blog/the-cost-of-international-education&#34; target=&#34;_blank&#34;&gt;AnthonyTeacher.com&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Lately, I have been thinking about the environmental impact of international education. Given that students travel across the world to study, the CO2 emissions generated from their initial trip, perhaps eventual return, and any trips in between, cannot be ignored.  &lt;a href=&#34;http://www.grida.no/climate/ipcc/aviation/008.htm&#34; target=&#34;_blank&#34;&gt;According to the IPCC&lt;/a&gt;, aviation contributes about 3.5% to climate change, only set to increase in the future. The exact impact is difficult to ascertain, as it is hard to separate aviation from other anthropogenic impacts.&lt;/p&gt;
@@ -1080,17 +1088,17 @@ mar &amp;lt;- json_process(mar2019)
     
     <item>
       <title>A Comparison of Direct Admit and IEP Student Academic Achievement</title>
-      <link>https://anthonyschmidt.netlify.com/talk/tesol2019/</link>
+      <link>/talk/tesol2019/</link>
       <pubDate>Fri, 01 Mar 2019 13:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/talk/tesol2019/</guid>
+      <guid>/talk/tesol2019/</guid>
       <description></description>
     </item>
     
     <item>
       <title>The Data Is/Are In</title>
-      <link>https://anthonyschmidt.netlify.com/post/2019-02-26-2019-the-data-is-are-in/</link>
+      <link>/post/2019-02-26-2019-the-data-is-are-in/</link>
       <pubDate>Tue, 26 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/post/2019-02-26-2019-the-data-is-are-in/</guid>
+      <guid>/post/2019-02-26-2019-the-data-is-are-in/</guid>
       <description>&lt;p&gt;&lt;em&gt;This blog post was originally published on my other blog, &lt;a href=&#34;http://www.anthonyteacher.com/blog/the-data-areis-in&#34; target=&#34;_blank&#34;&gt;AnthonyTeacher.com&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Recently, it has come to my attention that I use data as a singular noun, as in “The data is nominal” rather than the plural Latinate form that it technically is, as in “The data are nominal.” To those who brought it to my attention, it is a simple mistake. Fix it. Move on.&lt;/p&gt;
@@ -1258,9 +1266,9 @@ mar &amp;lt;- json_process(mar2019)
     
     <item>
       <title>Slides</title>
-      <link>https://anthonyschmidt.netlify.com/slides/example/</link>
+      <link>/slides/example/</link>
       <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/slides/example/</guid>
+      <guid>/slides/example/</guid>
       <description>
 
 &lt;h1 id=&#34;welcome-to-slides&#34;&gt;Welcome to Slides&lt;/h1&gt;
@@ -1438,19 +1446,37 @@ $$&lt;/p&gt;
     </item>
     
     <item>
+      <title>Privacy Policy</title>
+      <link>/privacy/</link>
+      <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
+      <guid>/privacy/</guid>
+      <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Terms</title>
+      <link>/terms/</link>
+      <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
+      <guid>/terms/</guid>
+      <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>The Efficacy of an Intensive English program</title>
-      <link>https://anthonyschmidt.netlify.com/project/iep-gpa/</link>
+      <link>/project/iep-gpa/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/project/iep-gpa/</guid>
+      <guid>/project/iep-gpa/</guid>
       <description>&lt;p&gt;This project uses longitudinal institutional data to understand the efficacy of an intensive English program (IEP) by comparing IEP students, who arrive with TOEFL scores under the institutional minimum, with directly admitted students, who have scores at or above the minimum.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Planting the Seeds for Computer Science Education in East Tennessee</title>
-      <link>https://anthonyschmidt.netlify.com/project/planting-the-seeds-for-cs/</link>
+      <link>/project/planting-the-seeds-for-cs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/project/planting-the-seeds-for-cs/</guid>
+      <guid>/project/planting-the-seeds-for-cs/</guid>
       <description>&lt;p&gt;The project is focused on understanding the needs of administrators and teachings in order to develop opportunities for K-8 teachers to engage in professional development on the Tennessee computer science standards.&lt;/p&gt;
 
 &lt;p&gt;This project is was funded through the [University of Tennessee’s Community Engaged Research Seed Program].(&lt;a href=&#34;https://research.utk.edu/2019-research-seed-program-recipients/&#34; target=&#34;_blank&#34;&gt;https://research.utk.edu/2019-research-seed-program-recipients/&lt;/a&gt;). It is related to the &lt;a href=&#34;https://www.makingdatasciencecount.com/project/cs4appalachia/&#34; target=&#34;_blank&#34;&gt;CS for Appalachia&lt;/a&gt; Research-Practice Partnership and NSF grant.&lt;/p&gt;
