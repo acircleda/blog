@@ -5,12 +5,71 @@
     <link>https://anthonyschmidt.netlify.com/project/</link>
       <atom:link href="https://anthonyschmidt.netlify.com/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 08 May 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 31 May 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://anthonyschmidt.netlify.com/img/icon-192.png</url>
       <title>Projects</title>
       <link>https://anthonyschmidt.netlify.com/project/</link>
     </image>
+    
+    <item>
+      <title>#TidyTuesday Contributions</title>
+      <link>https://anthonyschmidt.netlify.com/project/portfolio/tidytuesday/</link>
+      <pubDate>Sun, 31 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://anthonyschmidt.netlify.com/project/portfolio/tidytuesday/</guid>
+      <description>
+
+&lt;h2 id=&#34;tidytuesday-contributions&#34;&gt;#TidyTuesday Contributions&lt;/h2&gt;
+
+&lt;p&gt;I follow #TidyTuesday on Twitter every week to improve my &lt;code&gt;R&lt;/code&gt; and visualization skills. From time to time, I have also participated. My contributions with links to related documents and code are below.&lt;/p&gt;
+
+&lt;h3 id=&#34;2020-week-22-cocktails&#34;&gt;2020 Week 22 - Cocktails&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-05-26/readme.md&#34; target=&#34;_blank&#34;&gt;Original Dataset&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;interactive-shiny-app-click&#34;&gt;Interactive Shiny App (click!)&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://acircleda.shinyapps.io/ShinyBartender/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://github.com/acircleda/TidyTuesday/raw/master/2020-05-26%20-%20Cocktails/preview.jpg&#34; width=&#34;500&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;2020-week-8-food-s-carbon-footprint&#34;&gt;2020 Week 8 - Food&amp;rsquo;s Carbon Footprint&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-02-18/readme.md&#34; target=&#34;_blank&#34;&gt;Original Dataset&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.anthonyschmidt.co/post/2020-19-02-carbon-crisis-mitigation-whose-responsibility-is-it-a-tidytuesday-inspired-essay/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Carbon Crisis Mitigation: Whose Responsibility Is It? - A #TidyTuesday-inspired Essay&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;contribution-1-cholorpleth-map&#34;&gt;Contribution 1: Cholorpleth Map&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/acircleda/TidyTuesday/tree/master/2020-02-18%20-%20Food%20Emissions&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://github.com/acircleda/TidyTuesday/raw/master/2020-02-18%20-%20Food%20Emissions/totalemissions.png&#34; width=&#34;500&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;contribution-2-tile-map&#34;&gt;Contribution 2: Tile Map&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/acircleda/TidyTuesday/tree/master/2020-02-18%20-%20Food%20Emissions&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://github.com/acircleda/TidyTuesday/raw/master/2020-02-18%20-%20Food%20Emissions/tilemap.png&#34; width=&#34;500&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;2019-week-41-powerlifting&#34;&gt;2019 Week 41 - Powerlifting&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/rfordatascience/tidytuesday/blob/master/data/2019/2019-10-08&#34; target=&#34;_blank&#34;&gt;Original Dataset&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;contribution-scatterplot&#34;&gt;Contribution: Scatterplot&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/acircleda/TidyTuesday/tree/master/2019-10-8%20-%20Powerlifts&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://github.com/acircleda/TidyTuesday/raw/master/2019-10-8%20-%20Powerlifts/weightlifting.jpg&#34; width=&#34;500&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;2019-week-40-all-the-pizza&#34;&gt;2019 Week 40 - All the Pizza&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/rfordatascience/tidytuesday/blob/master/data/2019/2019-10-01&#34; target=&#34;_blank&#34;&gt;Original Dataset&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;contribution-map&#34;&gt;Contribution: Map&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/acircleda/TidyTuesday/tree/master/2019-10-1%20-%20Pizza&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://github.com/acircleda/TidyTuesday/raw/master/2019-10-1%20-%20Pizza/pizza.jpeg&#34; width=&#34;500&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;2019-week-39-school-diversity&#34;&gt;2019 Week 39 - School Diversity&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/acircleda/TidyTuesday/tree/master/2019-10-1%20-%20Pizza&#34; target=&#34;_blank&#34;&gt;Original Dataset&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;contribution-diversity-in-tennessee&#34;&gt;Contribution: Diversity in Tennessee&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/acircleda/TidyTuesday/tree/master/2019-09-24%20-%20School%20Diversity&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://github.com/acircleda/TidyTuesday/raw/master/2019-09-24%20-%20School%20Diversity/tn_schooldiversity.jpeg&#34; width=&#34;500&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Flying Less? A Document Analysis of University Climate Policies</title>

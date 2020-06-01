@@ -5,12 +5,36 @@
     <link>https://anthonyschmidt.netlify.com/tags/</link>
       <atom:link href="https://anthonyschmidt.netlify.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 11 May 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 31 May 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://anthonyschmidt.netlify.com/img/icon-192.png</url>
       <title>Tags</title>
       <link>https://anthonyschmidt.netlify.com/tags/</link>
     </image>
+    
+    <item>
+      <title>Interactive</title>
+      <link>https://anthonyschmidt.netlify.com/tags/interactive/</link>
+      <pubDate>Sun, 31 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://anthonyschmidt.netlify.com/tags/interactive/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Portfolio</title>
+      <link>https://anthonyschmidt.netlify.com/tags/portfolio/</link>
+      <pubDate>Sun, 31 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://anthonyschmidt.netlify.com/tags/portfolio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Static</title>
+      <link>https://anthonyschmidt.netlify.com/tags/static/</link>
+      <pubDate>Sun, 31 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://anthonyschmidt.netlify.com/tags/static/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Climate Change</title>
@@ -37,26 +61,10 @@
     </item>
     
     <item>
-      <title>Portfolio</title>
-      <link>https://anthonyschmidt.netlify.com/tags/portfolio/</link>
-      <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/tags/portfolio/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Print</title>
       <link>https://anthonyschmidt.netlify.com/tags/print/</link>
       <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
       <guid>https://anthonyschmidt.netlify.com/tags/print/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Interactive</title>
-      <link>https://anthonyschmidt.netlify.com/tags/interactive/</link>
-      <pubDate>Thu, 13 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/tags/interactive/</guid>
       <description></description>
     </item>
     
