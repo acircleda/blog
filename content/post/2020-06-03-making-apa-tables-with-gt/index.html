@@ -1,0 +1,3498 @@
+---
+title: "Making APA Tables with the gt Package"
+author: "Anthony Schmidt"
+date: '2020-06-04'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+lastmod: '2020-06-04T23:04:04-04:00'
+categories: []
+projects: []
+subtitle: ''
+summary: ''
+tags: 
+- Data Science
+authors: []
+---
+
+
+
+<p><code>R</code> has always been a very powerful statistical analysis tool. With the development of <code>ggplot</code>, it has also become an extremely powerful data visualization tool. However, in my experience, <code>R</code> has lacked the ability to <em>easily</em> create nice tables, especially tables suitable for APA publication.</p>
+<p>To be sure, there are a number of excellent table packages, all with their benefits and drawbacks. The ones I have personal experience with include:</p>
+<ul>
+<li><a href="https://bookdown.org/yihui/rmarkdown-cookbook/kable.html">knitr::kable()</a> - <code>kable()</code> can easily make some very nice tables in R Markdown. Just add it to the end of a pipe <code>%&gt;%</code> and you have yourself a very nice table. With a little work, and the addition of <a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html"><code>kableExtra</code></a>, you may even be able to produce an APA-style table. In fact, <a href="https://www.datadreaming.org/post/apa-tables-using-rmarkdown/">here</a> is a guide to doing just that. It requires a bit more work (e.g. adding LaTeX to YAML) but it is a really good option.</li>
+<li><a href="https://rstudio.github.io/DT/">DataTable::DT()</a> - I love using the <code>DT</code> function for making interactive tables that are sortable, searchable, and offer pagination. I have not played around much with their styling.</li>
+<li><a href="https://cran.r-project.org/web/packages/apaTables/vignettes/apaTables.html"><code>apaTables</code></a> is another package that produces APA tables out of the box, but only as Word or richtext outputs. They cannot be included in HTML or PDF. However, the use of apaTables functions <em>is</em> very useful for taking something like a regression model and getting it into the shape needed for a better table. I’ll have an example of this below.</li>
+<li><a href="https://github.com/crsh/papaja"><code>papaja</code></a> is an package that allows you to draft APA journal articles in R Markdown and creates tables with <code>apa_table()</code> that render very nicely in Word or PDF but not HTML.</li>
+</ul>
+<div id="the-gt-package" class="section level2">
+<h2>The <code>gt</code> Package</h2>
+<p><code>gt</code> was recently (March 31, 2020) released by RStudio. The idea behind <code>gt</code> follows the same philosophy that guides the <code>tidyverse</code>: simplicity and standardized grammar. Specifically, <code>gt</code> can be used to “construct a wide variety of useful tables with a cohesive set of table parts.”</p>
+<p>With <code>gt</code>, we can get very close (though not exact yet) to print-ready APA tables that can be rendered in R, R Markdown, HTML, and PDF formats. Let’s look at an example, break it down, learn how to modify it, learn how to simplify it, and then look at some use cases</p>
+<div id="install-gt-and-load-key-packages" class="section level3">
+<h3>Install <code>gt</code> and load key packages</h3>
+<p>You can install <code>gt</code> easily: <code>install.packages("gt")</code>.</p>
+<p>Here are the libraries we will need:</p>
+</div>
+<div id="create-a-basic-gt-table" class="section level3">
+<h3>Create a Basic <code>gt</code> table</h3>
+<pre class="r"><code>iris %&gt;%
+  slice(1:5) %&gt;%
+  gt()</code></pre>
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#shxoopjmif .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#shxoopjmif .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#shxoopjmif .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#shxoopjmif .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 4px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#shxoopjmif .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#shxoopjmif .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#shxoopjmif .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#shxoopjmif .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#shxoopjmif .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#shxoopjmif .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#shxoopjmif .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#shxoopjmif .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#shxoopjmif .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#shxoopjmif .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#shxoopjmif .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#shxoopjmif .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#shxoopjmif .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#shxoopjmif .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#shxoopjmif .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#shxoopjmif .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#shxoopjmif .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#shxoopjmif .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#shxoopjmif .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#shxoopjmif .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#shxoopjmif .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#shxoopjmif .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#shxoopjmif .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#shxoopjmif .gt_left {
+  text-align: left;
+}
+
+#shxoopjmif .gt_center {
+  text-align: center;
+}
+
+#shxoopjmif .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#shxoopjmif .gt_font_normal {
+  font-weight: normal;
+}
+
+#shxoopjmif .gt_font_bold {
+  font-weight: bold;
+}
+
+#shxoopjmif .gt_font_italic {
+  font-style: italic;
+}
+
+#shxoopjmif .gt_super {
+  font-size: 65%;
+}
+
+#shxoopjmif .gt_footnote_marks {
+  font-style: italic;
+  font-size: 65%;
+}
+</style>
+<div id="shxoopjmif" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Sepal.Length</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Sepal.Width</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Petal.Length</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Petal.Width</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Species</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr>
+      <td class="gt_row gt_right">5.1</td>
+      <td class="gt_row gt_right">3.5</td>
+      <td class="gt_row gt_right">1.4</td>
+      <td class="gt_row gt_right">0.2</td>
+      <td class="gt_row gt_center">setosa</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">4.9</td>
+      <td class="gt_row gt_right">3.0</td>
+      <td class="gt_row gt_right">1.4</td>
+      <td class="gt_row gt_right">0.2</td>
+      <td class="gt_row gt_center">setosa</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">4.7</td>
+      <td class="gt_row gt_right">3.2</td>
+      <td class="gt_row gt_right">1.3</td>
+      <td class="gt_row gt_right">0.2</td>
+      <td class="gt_row gt_center">setosa</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">4.6</td>
+      <td class="gt_row gt_right">3.1</td>
+      <td class="gt_row gt_right">1.5</td>
+      <td class="gt_row gt_right">0.2</td>
+      <td class="gt_row gt_center">setosa</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">5.0</td>
+      <td class="gt_row gt_right">3.6</td>
+      <td class="gt_row gt_right">1.4</td>
+      <td class="gt_row gt_right">0.2</td>
+      <td class="gt_row gt_center">setosa</td>
+    </tr>
+  </tbody>
+  
+  
+</table></div>
+</div>
+<div id="style-the-borders" class="section level3">
+<h3>Style the Borders</h3>
+<p>All APA tables have a black top border, a black border at the bottom of the column header, and a black bottom border. We can use the following code to recreate that look, as well as set the width and make the font size consistent with the table body:</p>
+<pre class="r"><code>iris %&gt;%
+  slice(1:5) %&gt;%
+  gt() %&gt;%
+  tab_options(
+    # hide the top-most border
+    table.border.top.color = &quot;white&quot;,
+    # make the title size match the body text
+    heading.title.font.size = px(16),
+    # change the column labels section
+    column_labels.border.top.width = 3,
+    column_labels.border.top.color = &quot;black&quot;, 
+    column_labels.border.bottom.width = 3,
+    column_labels.border.bottom.color = &quot;black&quot;,
+    # change the bottom of the body
+    table_body.border.bottom.color = &quot;black&quot;,
+    # hide the bottom-most line or footnotes
+    # will have a border
+    table.border.bottom.color = &quot;white&quot;,
+    # make the width 100%
+    table.width = pct(100),
+    table.background.color = &quot;white&quot;
+  )</code></pre>
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#hxjxyyhgko .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  background-color: white;
+  width: 100%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: white;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: white;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#hxjxyyhgko .gt_heading {
+  background-color: white;
+  text-align: center;
+  border-bottom-color: white;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#hxjxyyhgko .gt_title {
+  color: #333333;
+  font-size: 16px;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: white;
+  border-bottom-width: 0;
+}
+
+#hxjxyyhgko .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 4px;
+  border-top-color: white;
+  border-top-width: 0;
+}
+
+#hxjxyyhgko .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hxjxyyhgko .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 3px;
+  border-top-color: black;
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  border-bottom-color: black;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#hxjxyyhgko .gt_col_heading {
+  color: #333333;
+  background-color: white;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#hxjxyyhgko .gt_column_spanner_outer {
+  color: #333333;
+  background-color: white;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#hxjxyyhgko .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#hxjxyyhgko .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#hxjxyyhgko .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  border-bottom-color: black;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#hxjxyyhgko .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: white;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#hxjxyyhgko .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: white;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#hxjxyyhgko .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#hxjxyyhgko .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#hxjxyyhgko .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#hxjxyyhgko .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#hxjxyyhgko .gt_stub {
+  color: #333333;
+  background-color: white;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#hxjxyyhgko .gt_summary_row {
+  color: #333333;
+  background-color: white;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hxjxyyhgko .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#hxjxyyhgko .gt_grand_summary_row {
+  color: #333333;
+  background-color: white;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hxjxyyhgko .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#hxjxyyhgko .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: black;
+}
+
+#hxjxyyhgko .gt_footnotes {
+  color: #333333;
+  background-color: white;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#hxjxyyhgko .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#hxjxyyhgko .gt_sourcenotes {
+  color: #333333;
+  background-color: white;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#hxjxyyhgko .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#hxjxyyhgko .gt_left {
+  text-align: left;
+}
+
+#hxjxyyhgko .gt_center {
+  text-align: center;
+}
+
+#hxjxyyhgko .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#hxjxyyhgko .gt_font_normal {
+  font-weight: normal;
+}
+
+#hxjxyyhgko .gt_font_bold {
+  font-weight: bold;
+}
+
+#hxjxyyhgko .gt_font_italic {
+  font-style: italic;
+}
+
+#hxjxyyhgko .gt_super {
+  font-size: 65%;
+}
+
+#hxjxyyhgko .gt_footnote_marks {
+  font-style: italic;
+  font-size: 65%;
+}
+</style>
+<div id="hxjxyyhgko" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Sepal.Length</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Sepal.Width</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Petal.Length</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Petal.Width</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Species</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr>
+      <td class="gt_row gt_right">5.1</td>
+      <td class="gt_row gt_right">3.5</td>
+      <td class="gt_row gt_right">1.4</td>
+      <td class="gt_row gt_right">0.2</td>
+      <td class="gt_row gt_center">setosa</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">4.9</td>
+      <td class="gt_row gt_right">3.0</td>
+      <td class="gt_row gt_right">1.4</td>
+      <td class="gt_row gt_right">0.2</td>
+      <td class="gt_row gt_center">setosa</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">4.7</td>
+      <td class="gt_row gt_right">3.2</td>
+      <td class="gt_row gt_right">1.3</td>
+      <td class="gt_row gt_right">0.2</td>
+      <td class="gt_row gt_center">setosa</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">4.6</td>
+      <td class="gt_row gt_right">3.1</td>
+      <td class="gt_row gt_right">1.5</td>
+      <td class="gt_row gt_right">0.2</td>
+      <td class="gt_row gt_center">setosa</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_right">5.0</td>
+      <td class="gt_row gt_right">3.6</td>
+      <td class="gt_row gt_right">1.4</td>
+      <td class="gt_row gt_right">0.2</td>
+      <td class="gt_row gt_center">setosa</td>
+    </tr>
+  </tbody>
+  
+  
+</table></div>
+<p>This is good, but it’s not perfect. We still have to deal with text centering, row striping, and internal borders, not to mention titling, adding a footnote, and, if needed, italcizing specific column labels.</p>
+<p>One issue that I have not figured out is how to control the thickness of the black borders. Right now, for <code>column_labels.border.top.width</code>, the width must be set to <code>= 3</code> before any color changes. I have opened this as <a href="https://github.com/rstudio/gt/issues/600">an issue on Github</a>.</p>
+</div>
+<div id="styling-the-table-body" class="section level3">
+<h3>Styling the Table Body</h3>
+<pre class="r"><code>iris %&gt;%
+  slice(1:5) %&gt;%
+  gt() %&gt;%
+  tab_options(
+    table.border.top.color = &quot;white&quot;,
+    heading.title.font.size = px(16),
+    column_labels.border.top.width = 3,
+    column_labels.border.top.color = &quot;black&quot;,
+    column_labels.border.bottom.width = 3,
+    column_labels.border.bottom.color = &quot;black&quot;,
+    table_body.border.bottom.color = &quot;black&quot;,
+    table.border.bottom.color = &quot;white&quot;,
+    table.width = pct(100),
+    table.background.color = &quot;white&quot;
+  ) %&gt;%
+  # center column text
+  cols_align(align=&quot;center&quot;) %&gt;%
+  # set table style
+  tab_style(
+    style = list(
+      # remove horizontal lines
+      cell_borders(
+        sides = c(&quot;top&quot;, &quot;bottom&quot;),
+        color = &quot;white&quot;,
+        weight = px(1)
+      ),
+      #center text
+      cell_text(
+        align=&quot;center&quot;
+      ),
+    # remove row striping in Markdown documents
+    cell_fill(color = &quot;white&quot;, alpha = NULL)
+      ),
+      #do this for all columns and rows
+    locations = cells_body(
+      columns = everything(),
+      rows = everything()
+    ))</code></pre>
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#nlfeopkvkg .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  background-color: white;
+  width: 100%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: white;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: white;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#nlfeopkvkg .gt_heading {
+  background-color: white;
+  text-align: center;
+  border-bottom-color: white;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#nlfeopkvkg .gt_title {
+  color: #333333;
+  font-size: 16px;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: white;
+  border-bottom-width: 0;
+}
+
+#nlfeopkvkg .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 4px;
+  border-top-color: white;
+  border-top-width: 0;
+}
+
+#nlfeopkvkg .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#nlfeopkvkg .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 3px;
+  border-top-color: black;
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  border-bottom-color: black;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#nlfeopkvkg .gt_col_heading {
+  color: #333333;
+  background-color: white;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#nlfeopkvkg .gt_column_spanner_outer {
+  color: #333333;
+  background-color: white;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#nlfeopkvkg .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#nlfeopkvkg .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#nlfeopkvkg .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  border-bottom-color: black;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#nlfeopkvkg .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: white;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#nlfeopkvkg .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: white;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#nlfeopkvkg .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#nlfeopkvkg .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#nlfeopkvkg .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#nlfeopkvkg .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#nlfeopkvkg .gt_stub {
+  color: #333333;
+  background-color: white;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#nlfeopkvkg .gt_summary_row {
+  color: #333333;
+  background-color: white;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nlfeopkvkg .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#nlfeopkvkg .gt_grand_summary_row {
+  color: #333333;
+  background-color: white;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#nlfeopkvkg .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#nlfeopkvkg .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: black;
+}
+
+#nlfeopkvkg .gt_footnotes {
+  color: #333333;
+  background-color: white;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#nlfeopkvkg .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#nlfeopkvkg .gt_sourcenotes {
+  color: #333333;
+  background-color: white;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#nlfeopkvkg .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#nlfeopkvkg .gt_left {
+  text-align: left;
+}
+
+#nlfeopkvkg .gt_center {
+  text-align: center;
+}
+
+#nlfeopkvkg .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#nlfeopkvkg .gt_font_normal {
+  font-weight: normal;
+}
+
+#nlfeopkvkg .gt_font_bold {
+  font-weight: bold;
+}
+
+#nlfeopkvkg .gt_font_italic {
+  font-style: italic;
+}
+
+#nlfeopkvkg .gt_super {
+  font-size: 65%;
+}
+
+#nlfeopkvkg .gt_footnote_marks {
+  font-style: italic;
+  font-size: 65%;
+}
+</style>
+<div id="nlfeopkvkg" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Sepal.Length</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Sepal.Width</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Petal.Length</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Petal.Width</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Species</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">5.1</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.5</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1.4</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0.2</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">setosa</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4.9</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.0</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1.4</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0.2</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">setosa</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4.7</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.2</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1.3</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0.2</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">setosa</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4.6</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.1</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1.5</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0.2</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">setosa</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">5.0</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.6</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1.4</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0.2</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">setosa</td>
+    </tr>
+  </tbody>
+  
+  
+</table></div>
+<p>This is looking very close to an APA table. However, that is <em>a lot</em> of code to get the basic APA look and feel. Can we simplify it?</p>
+</div>
+<div id="create-an-apa-function" class="section level3">
+<h3>Create an <code>apa()</code> Function</h3>
+<p>The following will create an APA function that creates the basic APA table layout and includes the stylization for a title. It’s two arguments would be <code>apa(x, title)</code> where <code>x</code> = a data frame, and <code>title</code> is a string in quotes.</p>
+<pre class="r"><code>apa &lt;- function(x, title = &quot; &quot;) {
+  gt(x) %&gt;%
+  tab_options(
+    table.border.top.color = &quot;white&quot;,
+    heading.title.font.size = px(16),
+    column_labels.border.top.width = 3,
+    column_labels.border.top.color = &quot;black&quot;,
+    column_labels.border.bottom.width = 3,
+    column_labels.border.bottom.color = &quot;black&quot;,
+    table_body.border.bottom.color = &quot;black&quot;,
+    table.border.bottom.color = &quot;white&quot;,
+    table.width = pct(100),
+    table.background.color = &quot;white&quot;
+  ) %&gt;%
+  cols_align(align=&quot;center&quot;) %&gt;%
+  tab_style(
+    style = list(
+      cell_borders(
+        sides = c(&quot;top&quot;, &quot;bottom&quot;),
+        color = &quot;white&quot;,
+        weight = px(1)
+      ),
+      cell_text(
+        align=&quot;center&quot;
+      ),
+      cell_fill(color = &quot;white&quot;, alpha = NULL)
+      ),
+    locations = cells_body(
+      columns = everything(),
+      rows = everything()
+    )
+  ) %&gt;%
+    #title setup
+    tab_header(
+    title = html(&quot;&lt;i&gt;&quot;, title, &quot;&lt;/i&gt;&quot;)
+  ) %&gt;%
+  opt_align_table_header(align = &quot;left&quot;)
+}</code></pre>
+<p>Let’s try it out:</p>
+<pre class="r"><code>iris %&gt;%
+  slice(1:5) %&gt;%
+  apa(&quot;The Iris Dataset&quot;)</code></pre>
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#dwmnpjhcsw .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  background-color: white;
+  width: 100%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: white;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: white;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#dwmnpjhcsw .gt_heading {
+  background-color: white;
+  text-align: left;
+  border-bottom-color: white;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#dwmnpjhcsw .gt_title {
+  color: #333333;
+  font-size: 16px;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: white;
+  border-bottom-width: 0;
+}
+
+#dwmnpjhcsw .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 4px;
+  border-top-color: white;
+  border-top-width: 0;
+}
+
+#dwmnpjhcsw .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#dwmnpjhcsw .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 3px;
+  border-top-color: black;
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  border-bottom-color: black;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#dwmnpjhcsw .gt_col_heading {
+  color: #333333;
+  background-color: white;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#dwmnpjhcsw .gt_column_spanner_outer {
+  color: #333333;
+  background-color: white;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#dwmnpjhcsw .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#dwmnpjhcsw .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#dwmnpjhcsw .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  border-bottom-color: black;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#dwmnpjhcsw .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: white;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#dwmnpjhcsw .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: white;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#dwmnpjhcsw .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#dwmnpjhcsw .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#dwmnpjhcsw .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#dwmnpjhcsw .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#dwmnpjhcsw .gt_stub {
+  color: #333333;
+  background-color: white;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#dwmnpjhcsw .gt_summary_row {
+  color: #333333;
+  background-color: white;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dwmnpjhcsw .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#dwmnpjhcsw .gt_grand_summary_row {
+  color: #333333;
+  background-color: white;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dwmnpjhcsw .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#dwmnpjhcsw .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: black;
+}
+
+#dwmnpjhcsw .gt_footnotes {
+  color: #333333;
+  background-color: white;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#dwmnpjhcsw .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#dwmnpjhcsw .gt_sourcenotes {
+  color: #333333;
+  background-color: white;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#dwmnpjhcsw .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#dwmnpjhcsw .gt_left {
+  text-align: left;
+}
+
+#dwmnpjhcsw .gt_center {
+  text-align: center;
+}
+
+#dwmnpjhcsw .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#dwmnpjhcsw .gt_font_normal {
+  font-weight: normal;
+}
+
+#dwmnpjhcsw .gt_font_bold {
+  font-weight: bold;
+}
+
+#dwmnpjhcsw .gt_font_italic {
+  font-style: italic;
+}
+
+#dwmnpjhcsw .gt_super {
+  font-size: 65%;
+}
+
+#dwmnpjhcsw .gt_footnote_marks {
+  font-style: italic;
+  font-size: 65%;
+}
+</style>
+<div id="dwmnpjhcsw" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+  <thead class="gt_header">
+    <tr>
+      <th colspan="5" class="gt_heading gt_title gt_font_normal" style><i> The Iris Dataset </i></th>
+    </tr>
+    <tr>
+      <th colspan="5" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style></th>
+    </tr>
+  </thead>
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Sepal.Length</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Sepal.Width</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Petal.Length</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Petal.Width</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Species</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">5.1</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.5</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1.4</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0.2</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">setosa</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4.9</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.0</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1.4</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0.2</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">setosa</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4.7</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.2</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1.3</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0.2</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">setosa</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4.6</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.1</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1.5</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0.2</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">setosa</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">5.0</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.6</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1.4</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0.2</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">setosa</td>
+    </tr>
+  </tbody>
+  
+  
+</table></div>
+</div>
+<div id="add-a-footnote" class="section level3">
+<h3>Add a Footnote</h3>
+<p>If we wanted to add a note, we would do so using an additional <code>gt</code> function:</p>
+<pre class="r"><code>iris %&gt;%
+  slice(1:5) %&gt;%
+  apa(&quot;The Iris Dataset&quot;) %&gt;%
+  tab_footnote(
+    #footnote text
+    footnote = &quot;This is a footnore.&quot;,
+    # add to the column labels section
+    locations = cells_column_labels(
+      # add to the &quot;Species&quot; column
+      columns = vars(Species))
+  )</code></pre>
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#jilmteelnz .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  background-color: white;
+  width: 100%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: white;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: white;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#jilmteelnz .gt_heading {
+  background-color: white;
+  text-align: left;
+  border-bottom-color: white;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#jilmteelnz .gt_title {
+  color: #333333;
+  font-size: 16px;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: white;
+  border-bottom-width: 0;
+}
+
+#jilmteelnz .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 4px;
+  border-top-color: white;
+  border-top-width: 0;
+}
+
+#jilmteelnz .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#jilmteelnz .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 3px;
+  border-top-color: black;
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  border-bottom-color: black;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#jilmteelnz .gt_col_heading {
+  color: #333333;
+  background-color: white;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#jilmteelnz .gt_column_spanner_outer {
+  color: #333333;
+  background-color: white;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#jilmteelnz .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#jilmteelnz .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#jilmteelnz .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  border-bottom-color: black;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#jilmteelnz .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: white;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#jilmteelnz .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: white;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#jilmteelnz .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#jilmteelnz .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#jilmteelnz .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#jilmteelnz .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#jilmteelnz .gt_stub {
+  color: #333333;
+  background-color: white;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#jilmteelnz .gt_summary_row {
+  color: #333333;
+  background-color: white;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jilmteelnz .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#jilmteelnz .gt_grand_summary_row {
+  color: #333333;
+  background-color: white;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#jilmteelnz .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#jilmteelnz .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: black;
+}
+
+#jilmteelnz .gt_footnotes {
+  color: #333333;
+  background-color: white;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#jilmteelnz .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#jilmteelnz .gt_sourcenotes {
+  color: #333333;
+  background-color: white;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#jilmteelnz .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#jilmteelnz .gt_left {
+  text-align: left;
+}
+
+#jilmteelnz .gt_center {
+  text-align: center;
+}
+
+#jilmteelnz .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#jilmteelnz .gt_font_normal {
+  font-weight: normal;
+}
+
+#jilmteelnz .gt_font_bold {
+  font-weight: bold;
+}
+
+#jilmteelnz .gt_font_italic {
+  font-style: italic;
+}
+
+#jilmteelnz .gt_super {
+  font-size: 65%;
+}
+
+#jilmteelnz .gt_footnote_marks {
+  font-style: italic;
+  font-size: 65%;
+}
+</style>
+<div id="jilmteelnz" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+  <thead class="gt_header">
+    <tr>
+      <th colspan="5" class="gt_heading gt_title gt_font_normal" style><i> The Iris Dataset </i></th>
+    </tr>
+    <tr>
+      <th colspan="5" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style></th>
+    </tr>
+  </thead>
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Sepal.Length</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Sepal.Width</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Petal.Length</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Petal.Width</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Species<sup class="gt_footnote_marks">1</sup></th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">5.1</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.5</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1.4</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0.2</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">setosa</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4.9</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.0</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1.4</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0.2</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">setosa</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4.7</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.2</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1.3</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0.2</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">setosa</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4.6</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.1</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1.5</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0.2</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">setosa</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">5.0</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.6</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1.4</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0.2</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">setosa</td>
+    </tr>
+  </tbody>
+  
+  <tfoot>
+    <tr class="gt_footnotes">
+      <td colspan="5">
+        <p class="gt_footnote">
+          <sup class="gt_footnote_marks">
+            <em>1</em>
+          </sup>
+           
+          This is a footnore.
+          <br />
+        </p>
+      </td>
+    </tr>
+  </tfoot>
+</table></div>
+</div>
+<div id="italicize-column-text" class="section level3">
+<h3>Italicize Column Text</h3>
+<p>In many APA tables, statical indicators such as <em>p</em>, <em>M</em> or <em>n</em> are italicized. We can do that here in the following manner:</p>
+<pre class="r"><code>iris %&gt;%
+  slice(1:5) %&gt;%
+  apa(&quot;The Iris Dataset&quot;) %&gt;%
+    tab_footnote(
+    footnote = &quot;This is a footnore.&quot;,
+    locations = cells_column_labels(
+      columns = vars(Species))
+  ) %&gt;%
+  # add an additional table style
+  tab_style(
+    style = list(
+      # change the text
+      cell_text(style=&quot;italic&quot;)
+  ),
+  # specify the column
+  locations = cells_column_labels(
+      columns = vars(Species)
+      )
+  )</code></pre>
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#pqwjsqcpjj .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  background-color: white;
+  width: 100%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: white;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: white;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#pqwjsqcpjj .gt_heading {
+  background-color: white;
+  text-align: left;
+  border-bottom-color: white;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#pqwjsqcpjj .gt_title {
+  color: #333333;
+  font-size: 16px;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: white;
+  border-bottom-width: 0;
+}
+
+#pqwjsqcpjj .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 4px;
+  border-top-color: white;
+  border-top-width: 0;
+}
+
+#pqwjsqcpjj .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#pqwjsqcpjj .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 3px;
+  border-top-color: black;
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  border-bottom-color: black;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#pqwjsqcpjj .gt_col_heading {
+  color: #333333;
+  background-color: white;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#pqwjsqcpjj .gt_column_spanner_outer {
+  color: #333333;
+  background-color: white;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#pqwjsqcpjj .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#pqwjsqcpjj .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#pqwjsqcpjj .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  border-bottom-color: black;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#pqwjsqcpjj .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: white;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#pqwjsqcpjj .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: white;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#pqwjsqcpjj .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#pqwjsqcpjj .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#pqwjsqcpjj .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#pqwjsqcpjj .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#pqwjsqcpjj .gt_stub {
+  color: #333333;
+  background-color: white;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#pqwjsqcpjj .gt_summary_row {
+  color: #333333;
+  background-color: white;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#pqwjsqcpjj .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#pqwjsqcpjj .gt_grand_summary_row {
+  color: #333333;
+  background-color: white;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#pqwjsqcpjj .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#pqwjsqcpjj .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: black;
+}
+
+#pqwjsqcpjj .gt_footnotes {
+  color: #333333;
+  background-color: white;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#pqwjsqcpjj .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#pqwjsqcpjj .gt_sourcenotes {
+  color: #333333;
+  background-color: white;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#pqwjsqcpjj .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#pqwjsqcpjj .gt_left {
+  text-align: left;
+}
+
+#pqwjsqcpjj .gt_center {
+  text-align: center;
+}
+
+#pqwjsqcpjj .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#pqwjsqcpjj .gt_font_normal {
+  font-weight: normal;
+}
+
+#pqwjsqcpjj .gt_font_bold {
+  font-weight: bold;
+}
+
+#pqwjsqcpjj .gt_font_italic {
+  font-style: italic;
+}
+
+#pqwjsqcpjj .gt_super {
+  font-size: 65%;
+}
+
+#pqwjsqcpjj .gt_footnote_marks {
+  font-style: italic;
+  font-size: 65%;
+}
+</style>
+<div id="pqwjsqcpjj" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+  <thead class="gt_header">
+    <tr>
+      <th colspan="5" class="gt_heading gt_title gt_font_normal" style><i> The Iris Dataset </i></th>
+    </tr>
+    <tr>
+      <th colspan="5" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style></th>
+    </tr>
+  </thead>
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Sepal.Length</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Sepal.Width</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Petal.Length</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Petal.Width</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="font-style: italic;">Species<sup class="gt_footnote_marks">1</sup></th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">5.1</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.5</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1.4</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0.2</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">setosa</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4.9</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.0</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1.4</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0.2</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">setosa</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4.7</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.2</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1.3</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0.2</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">setosa</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4.6</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.1</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1.5</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0.2</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">setosa</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">5.0</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.6</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1.4</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0.2</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">setosa</td>
+    </tr>
+  </tbody>
+  
+  <tfoot>
+    <tr class="gt_footnotes">
+      <td colspan="5">
+        <p class="gt_footnote">
+          <sup class="gt_footnote_marks">
+            <em>1</em>
+          </sup>
+           
+          This is a footnore.
+          <br />
+        </p>
+      </td>
+    </tr>
+  </tfoot>
+</table></div>
+</div>
+</div>
+<div id="uses" class="section level2">
+<h2>Uses</h2>
+<p>Using <code>gt</code> to make APA tables could be useful if you are making HTML or PDF reports. Unfortunatley, they do not render at all correctly if you are knitting directly to Word. However, they can be outputted in RTF format, which can then be placed back into word. Here is an example</p>
+<pre><code>iris %&gt;%
+  slice(1:5) %&gt;%
+  gt() %&gt;%
+  as_rtf() -&gt; table
+
+fileConn&lt;-file(&quot;output.rtf&quot;)
+writeLines(table, fileConn)
+close(fileConn)</code></pre>
+<div id="use-with-apatables" class="section level3">
+<h3>Use with <code>apaTables</code></h3>
+<p>The package <code>apaTables</code> is very useful for getting something into the shape for APA and has the function to export individual tables into word. We can also shape statistical results with <code>apaTables</code> and then format that shape into an table with <code>gt</code>.</p>
+<div id="output-without-apatables" class="section level4">
+<h4>Output Without <code>apaTables</code></h4>
+<pre class="r"><code>data(mtcars)
+model &lt;- lm(mpg ~ wt, mtcars)
+summary(model)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = mpg ~ wt, data = mtcars)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -4.5432 -2.3647 -0.1252  1.4096  6.8727 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  37.2851     1.8776  19.858  &lt; 2e-16 ***
+## wt           -5.3445     0.5591  -9.559 1.29e-10 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 3.046 on 30 degrees of freedom
+## Multiple R-squared:  0.7528, Adjusted R-squared:  0.7446 
+## F-statistic: 91.38 on 1 and 30 DF,  p-value: 1.294e-10</code></pre>
+</div>
+<div id="output-with-apatables" class="section level4">
+<h4>Output with <code>apaTables</code></h4>
+<pre class="r"><code>data(mtcars)
+model &lt;- lm(mpg ~ wt, mtcars)
+apaTables::apa.reg.table(model)</code></pre>
+<pre><code>## 
+## 
+## Regression results using mpg as the criterion
+##  
+## 
+##    Predictor       b       b_95%_CI  beta    beta_95%_CI sr2 sr2_95%_CI      r
+##  (Intercept) 37.29** [33.45, 41.12]                                           
+##           wt -5.34** [-6.49, -4.20] -0.87 [-1.05, -0.68] .75 [.56, .83] -.87**
+##                                                                               
+##                                                                               
+##                                                                               
+##              Fit
+##                 
+##                 
+##      R2 = .753**
+##  95% CI[.56,.83]
+##                 
+## 
+## Note. A significant b-weight indicates the beta-weight and semi-partial correlation are also significant.
+## b represents unstandardized regression weights. beta indicates the standardized regression weights. 
+## sr2 represents the semi-partial correlation squared. r represents the zero-order correlation.
+## Square brackets are used to enclose the lower and upper limits of a confidence interval.
+## * indicates p &lt; .05. ** indicates p &lt; .01.
+## </code></pre>
+</div>
+<div id="output-with-apatables-and-gt" class="section level4">
+<h4>Output with <code>apaTables</code> and <code>gt</code></h4>
+<p><code>apa.reg.table</code> takes the regression results and builds table elements into a list. We can then use <code>apa()</code> to grab the output stored in the named list elements</p>
+<pre class="r"><code>data(mtcars)
+model &lt;- lm(mpg ~ wt, mtcars)
+apaTables::apa.reg.table(model)[[&quot;table_body&quot;]] %&gt;%
+  apa()</code></pre>
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#dzmthfuoia .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  background-color: white;
+  width: 100%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: white;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: white;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#dzmthfuoia .gt_heading {
+  background-color: white;
+  text-align: left;
+  border-bottom-color: white;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#dzmthfuoia .gt_title {
+  color: #333333;
+  font-size: 16px;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: white;
+  border-bottom-width: 0;
+}
+
+#dzmthfuoia .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 4px;
+  border-top-color: white;
+  border-top-width: 0;
+}
+
+#dzmthfuoia .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#dzmthfuoia .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 3px;
+  border-top-color: black;
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  border-bottom-color: black;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#dzmthfuoia .gt_col_heading {
+  color: #333333;
+  background-color: white;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#dzmthfuoia .gt_column_spanner_outer {
+  color: #333333;
+  background-color: white;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#dzmthfuoia .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#dzmthfuoia .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#dzmthfuoia .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  border-bottom-color: black;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#dzmthfuoia .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: white;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#dzmthfuoia .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: white;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#dzmthfuoia .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#dzmthfuoia .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#dzmthfuoia .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#dzmthfuoia .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#dzmthfuoia .gt_stub {
+  color: #333333;
+  background-color: white;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#dzmthfuoia .gt_summary_row {
+  color: #333333;
+  background-color: white;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dzmthfuoia .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#dzmthfuoia .gt_grand_summary_row {
+  color: #333333;
+  background-color: white;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dzmthfuoia .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#dzmthfuoia .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: black;
+}
+
+#dzmthfuoia .gt_footnotes {
+  color: #333333;
+  background-color: white;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#dzmthfuoia .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#dzmthfuoia .gt_sourcenotes {
+  color: #333333;
+  background-color: white;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#dzmthfuoia .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#dzmthfuoia .gt_left {
+  text-align: left;
+}
+
+#dzmthfuoia .gt_center {
+  text-align: center;
+}
+
+#dzmthfuoia .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#dzmthfuoia .gt_font_normal {
+  font-weight: normal;
+}
+
+#dzmthfuoia .gt_font_bold {
+  font-weight: bold;
+}
+
+#dzmthfuoia .gt_font_italic {
+  font-style: italic;
+}
+
+#dzmthfuoia .gt_super {
+  font-size: 65%;
+}
+
+#dzmthfuoia .gt_footnote_marks {
+  font-style: italic;
+  font-size: 65%;
+}
+</style>
+<div id="dzmthfuoia" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+  <thead class="gt_header">
+    <tr>
+      <th colspan="9" class="gt_heading gt_title gt_font_normal" style><i>   </i></th>
+    </tr>
+    <tr>
+      <th colspan="9" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style></th>
+    </tr>
+  </thead>
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Predictor</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">b</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">b_95%_CI</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">beta</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">beta_95%_CI</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">sr2</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">sr2_95%_CI</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">r</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Fit</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">(Intercept)</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">37.29**</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">[33.45, 41.12]</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">wt</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">-5.34**</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">[-6.49, -4.20]</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">-0.87</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">[-1.05, -0.68]</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">.75</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">[.56, .83]</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">-.87**</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">R2 = .753**</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">95% CI[.56,.83]</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+    </tr>
+  </tbody>
+  
+  
+</table></div>
+<p>Let’s take that even further:</p>
+<pre class="r"><code>data(mtcars)
+model &lt;- lm(mpg ~ wt, mtcars)
+apatable &lt;- apaTables::apa.reg.table(model)
+
+apa(apatable[[&quot;table_body&quot;]], apatable[[&quot;table_title&quot;]]) %&gt;%
+  tab_footnote(
+    footnote = apatable[[&quot;table_note&quot;]], 
+    locations = cells_column_labels( 
+      columns = vars(b))
+  )</code></pre>
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#flrdirhoet .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  background-color: white;
+  width: 100%;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: white;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: white;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#flrdirhoet .gt_heading {
+  background-color: white;
+  text-align: left;
+  border-bottom-color: white;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#flrdirhoet .gt_title {
+  color: #333333;
+  font-size: 16px;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: white;
+  border-bottom-width: 0;
+}
+
+#flrdirhoet .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 4px;
+  border-top-color: white;
+  border-top-width: 0;
+}
+
+#flrdirhoet .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#flrdirhoet .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 3px;
+  border-top-color: black;
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  border-bottom-color: black;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#flrdirhoet .gt_col_heading {
+  color: #333333;
+  background-color: white;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#flrdirhoet .gt_column_spanner_outer {
+  color: #333333;
+  background-color: white;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#flrdirhoet .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#flrdirhoet .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#flrdirhoet .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+  border-bottom-color: black;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#flrdirhoet .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: white;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#flrdirhoet .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: white;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#flrdirhoet .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#flrdirhoet .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#flrdirhoet .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#flrdirhoet .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#flrdirhoet .gt_stub {
+  color: #333333;
+  background-color: white;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#flrdirhoet .gt_summary_row {
+  color: #333333;
+  background-color: white;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#flrdirhoet .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#flrdirhoet .gt_grand_summary_row {
+  color: #333333;
+  background-color: white;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#flrdirhoet .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#flrdirhoet .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: black;
+}
+
+#flrdirhoet .gt_footnotes {
+  color: #333333;
+  background-color: white;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#flrdirhoet .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#flrdirhoet .gt_sourcenotes {
+  color: #333333;
+  background-color: white;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#flrdirhoet .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#flrdirhoet .gt_left {
+  text-align: left;
+}
+
+#flrdirhoet .gt_center {
+  text-align: center;
+}
+
+#flrdirhoet .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#flrdirhoet .gt_font_normal {
+  font-weight: normal;
+}
+
+#flrdirhoet .gt_font_bold {
+  font-weight: bold;
+}
+
+#flrdirhoet .gt_font_italic {
+  font-style: italic;
+}
+
+#flrdirhoet .gt_super {
+  font-size: 65%;
+}
+
+#flrdirhoet .gt_footnote_marks {
+  font-style: italic;
+  font-size: 65%;
+}
+</style>
+<div id="flrdirhoet" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+  <thead class="gt_header">
+    <tr>
+      <th colspan="9" class="gt_heading gt_title gt_font_normal" style><i> Regression results using mpg as the criterion
+ </i></th>
+    </tr>
+    <tr>
+      <th colspan="9" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style></th>
+    </tr>
+  </thead>
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Predictor</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">b<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">b_95%_CI</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">beta</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">beta_95%_CI</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">sr2</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">sr2_95%_CI</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">r</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Fit</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">(Intercept)</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">37.29**</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">[33.45, 41.12]</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">wt</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">-5.34**</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">[-6.49, -4.20]</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">-0.87</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">[-1.05, -0.68]</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">.75</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">[.56, .83]</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">-.87**</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">R2 = .753**</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">95% CI[.56,.83]</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;"></td>
+    </tr>
+  </tbody>
+  
+  <tfoot>
+    <tr class="gt_footnotes">
+      <td colspan="9">
+        <p class="gt_footnote">
+          <sup class="gt_footnote_marks">
+            <em>1</em>
+          </sup>
+           
+          Note. A significant b-weight indicates the beta-weight and semi-partial correlation are also significant.
+b represents unstandardized regression weights. beta indicates the standardized regression weights. 
+sr2 represents the semi-partial correlation squared. r represents the zero-order correlation.
+Square brackets are used to enclose the lower and upper limits of a confidence interval.
+* indicates p &lt; .05. ** indicates p &lt; .01.
+
+          <br />
+        </p>
+      </td>
+    </tr>
+  </tfoot>
+</table></div>
+<p>My examples may not be perfect or exact, but they give you a good idea about how you can use <code>gt</code> to create HTML-based reports with APA-like tables.</p>
+<p>If you have any suggestions for improving these tables, I’d love to hear them! I’m always looking to learn more.</p>
+</div>
+</div>
+</div>

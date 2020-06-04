@@ -1,0 +1,293 @@
+---
+title: "Making APA Tables with the gt Package"
+author: "Anthony Schmidt"
+date: '2020-06-04'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+lastmod: '2020-06-04T23:04:04-04:00'
+categories: []
+projects: []
+subtitle: ''
+summary: ''
+tags: 
+- Data Science
+authors: []
+---
+
+`R` has always been a very powerful statistical analysis tool. With the development of `ggplot`, it has also become an extremely powerful data visualization tool. However, in my experience, `R` has lacked the ability to *easily* create nice tables, especially tables suitable for APA publication.
+
+To be sure, there are a number of excellent table packages, all with their benefits and drawbacks. The ones I have personal experience with include:
+
+  * [knitr::kable()](https://bookdown.org/yihui/rmarkdown-cookbook/kable.html) - `kable()` can easily make some very nice tables in R Markdown. Just add it to the end of a pipe `%>%` and you have yourself a very nice table. With a little work, and the addition of [`kableExtra`](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html), you may even be able to produce an APA-style table. In fact, [here](https://www.datadreaming.org/post/apa-tables-using-rmarkdown/) is a guide to doing just that. It requires a bit more work (e.g. adding LaTeX to YAML) but it is a really good option.
+  * [DataTable::DT()](https://rstudio.github.io/DT/) - I love using the `DT` function for making interactive tables that are sortable, searchable, and offer pagination. I have not played around much with their styling.
+  * [`apaTables`](https://cran.r-project.org/web/packages/apaTables/vignettes/apaTables.html) is another package that produces APA tables out of the box, but only as Word or richtext outputs. They cannot be included in HTML or PDF. However, the use of apaTables functions *is* very useful for taking something like a regression model and getting it into the shape needed for a better table. I'll have an example of this below.
+  * [`papaja`](https://github.com/crsh/papaja) is an package that allows you to draft APA journal articles in R Markdown and creates tables with `apa_table()` that render very nicely in Word or PDF but not HTML.
+
+## The `gt` Package
+
+`gt` was recently (March 31, 2020) released by RStudio. The idea behind `gt` follows the same philosophy that guides the `tidyverse`: simplicity and standardized grammar. Specifically, `gt` can be used to "construct a wide variety of useful tables with a cohesive set of table parts."
+
+With `gt`, we can get very close (though not exact yet) to print-ready APA tables that can be rendered in R, R Markdown, HTML, and PDF formats. Let's look at an example, break it down, learn how to modify it, learn how to simplify it, and then look at some use cases
+
+
+### Install `gt` and load key packages
+
+You can install `gt` easily: `install.packages("gt")`.
+
+Here are the libraries we will need:
+
+```{r message=FALSE, warning=FALSE, include=FALSE}
+library(tidyverse)
+library(gt)
+```
+
+### Create a Basic `gt` table
+
+```{r}
+iris %>%
+  slice(1:5) %>%
+  gt()
+```
+
+### Style the Borders
+
+All APA tables have a black top border, a black border at the bottom of the column header, and a black bottom border. We can use the following code to recreate that look, as well as set the width and make the font size consistent with the table body:
+
+```{r}
+iris %>%
+  slice(1:5) %>%
+  gt() %>%
+  tab_options(
+    # hide the top-most border
+    table.border.top.color = "white",
+    # make the title size match the body text
+    heading.title.font.size = px(16),
+    # change the column labels section
+    column_labels.border.top.width = 3,
+    column_labels.border.top.color = "black", 
+    column_labels.border.bottom.width = 3,
+    column_labels.border.bottom.color = "black",
+    # change the bottom of the body
+    table_body.border.bottom.color = "black",
+    # hide the bottom-most line or footnotes
+    # will have a border
+    table.border.bottom.color = "white",
+    # make the width 100%
+    table.width = pct(100),
+    table.background.color = "white"
+  )
+```
+
+This is good, but it's not perfect. We still have to deal with text centering, row striping, and internal borders, not to mention titling, adding a footnote, and, if needed, italcizing specific column labels.
+
+One issue that I have not figured out is how to control the thickness of the black borders. Right now, for `column_labels.border.top.width`, the width must be set to `= 3` before any color changes. I have opened this as [an issue on Github](https://github.com/rstudio/gt/issues/600).
+
+### Styling the Table Body
+
+```{r}
+iris %>%
+  slice(1:5) %>%
+  gt() %>%
+  tab_options(
+    table.border.top.color = "white",
+    heading.title.font.size = px(16),
+    column_labels.border.top.width = 3,
+    column_labels.border.top.color = "black",
+    column_labels.border.bottom.width = 3,
+    column_labels.border.bottom.color = "black",
+    table_body.border.bottom.color = "black",
+    table.border.bottom.color = "white",
+    table.width = pct(100),
+    table.background.color = "white"
+  ) %>%
+  # center column text
+  cols_align(align="center") %>%
+  # set table style
+  tab_style(
+    style = list(
+      # remove horizontal lines
+      cell_borders(
+        sides = c("top", "bottom"),
+        color = "white",
+        weight = px(1)
+      ),
+      #center text
+      cell_text(
+        align="center"
+      ),
+    # remove row striping in Markdown documents
+    cell_fill(color = "white", alpha = NULL)
+      ),
+      #do this for all columns and rows
+    locations = cells_body(
+      columns = everything(),
+      rows = everything()
+    ))
+```
+
+This is looking very close to an APA table. However, that is *a lot* of code to get the basic APA look and feel. Can we simplify it?
+
+### Create an `apa()` Function
+
+The following will create an APA function that creates the basic APA table layout and includes the stylization for a title. It's two arguments would be `apa(x, title)` where `x` = a data frame, and `title` is a string in quotes.
+
+```{r message=FALSE, warning=FALSE}
+apa <- function(x, title = " ") {
+  gt(x) %>%
+  tab_options(
+    table.border.top.color = "white",
+    heading.title.font.size = px(16),
+    column_labels.border.top.width = 3,
+    column_labels.border.top.color = "black",
+    column_labels.border.bottom.width = 3,
+    column_labels.border.bottom.color = "black",
+    table_body.border.bottom.color = "black",
+    table.border.bottom.color = "white",
+    table.width = pct(100),
+    table.background.color = "white"
+  ) %>%
+  cols_align(align="center") %>%
+  tab_style(
+    style = list(
+      cell_borders(
+        sides = c("top", "bottom"),
+        color = "white",
+        weight = px(1)
+      ),
+      cell_text(
+        align="center"
+      ),
+      cell_fill(color = "white", alpha = NULL)
+      ),
+    locations = cells_body(
+      columns = everything(),
+      rows = everything()
+    )
+  ) %>%
+    #title setup
+    tab_header(
+    title = html("<i>", title, "</i>")
+  ) %>%
+  opt_align_table_header(align = "left")
+}
+
+```
+
+Let's try it out:
+
+```{r}
+iris %>%
+  slice(1:5) %>%
+  apa("The Iris Dataset")
+```
+
+### Add a Footnote
+
+If we wanted to add a note, we would do so using an additional `gt` function:
+
+```{r}
+iris %>%
+  slice(1:5) %>%
+  apa("The Iris Dataset") %>%
+  tab_footnote(
+    #footnote text
+    footnote = "This is a footnore.",
+    # add to the column labels section
+    locations = cells_column_labels(
+      # add to the "Species" column
+      columns = vars(Species))
+  )
+```
+
+### Italicize Column Text
+
+In many APA tables, statical indicators such as *p*, *M* or *n* are italicized. We can do that here in the following manner:
+
+```{r}
+iris %>%
+  slice(1:5) %>%
+  apa("The Iris Dataset") %>%
+    tab_footnote(
+    footnote = "This is a footnore.",
+    locations = cells_column_labels(
+      columns = vars(Species))
+  ) %>%
+  # add an additional table style
+  tab_style(
+    style = list(
+      # change the text
+      cell_text(style="italic")
+  ),
+  # specify the column
+  locations = cells_column_labels(
+      columns = vars(Species)
+      )
+  )
+```
+
+## Uses
+
+Using `gt` to make APA tables could be useful if you are making HTML or PDF reports. Unfortunatley, they do not render at all correctly if you are knitting directly to Word. However, they can be outputted in RTF format, which can then be placed back into word. Here is an example
+
+```
+iris %>%
+  slice(1:5) %>%
+  gt() %>%
+  as_rtf() -> table
+
+fileConn<-file("output.rtf")
+writeLines(table, fileConn)
+close(fileConn)
+```
+
+### Use with `apaTables`
+
+The package `apaTables` is very useful for getting something into the shape for APA and has the function to export individual tables into word. We can also shape statistical results with `apaTables` and then format that shape into an table with `gt`.
+
+#### Output Without `apaTables`
+```{r}
+data(mtcars)
+model <- lm(mpg ~ wt, mtcars)
+summary(model)
+```
+
+#### Output with `apaTables`
+
+```{r}
+data(mtcars)
+model <- lm(mpg ~ wt, mtcars)
+apaTables::apa.reg.table(model)
+```
+
+#### Output with `apaTables` and `gt`
+
+`apa.reg.table` takes the regression results and builds table elements into a list. We can then use `apa()` to grab the output stored in the named list elements
+
+```{r}
+data(mtcars)
+model <- lm(mpg ~ wt, mtcars)
+apaTables::apa.reg.table(model)[["table_body"]] %>%
+  apa()
+```
+
+Let's take that even further:
+```{r}
+data(mtcars)
+model <- lm(mpg ~ wt, mtcars)
+apatable <- apaTables::apa.reg.table(model)
+
+apa(apatable[["table_body"]], apatable[["table_title"]]) %>%
+  tab_footnote(
+    footnote = apatable[["table_note"]], 
+    locations = cells_column_labels( 
+      columns = vars(b))
+  )
+
+```
+
+My examples may not be perfect or exact, but they give you a good idea about how you can use `gt` to create HTML-based reports with APA-like tables.
+
+If you have any suggestions for improving these tables, I'd love to hear them! I'm always looking to learn more.
