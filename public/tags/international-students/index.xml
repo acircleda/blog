@@ -2,45 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>International Students | Anthony Schmidt</title>
-    <link>/tags/international-students/</link>
-      <atom:link href="/tags/international-students/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://anthonyschmidt.netlify.com/tags/international-students/</link>
+      <atom:link href="https://anthonyschmidt.netlify.com/tags/international-students/index.xml" rel="self" type="application/rss+xml" />
     <description>International Students</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 15 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 15 Aug 2019 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://anthonyschmidt.netlify.com/img/icon-192.png</url>
       <title>International Students</title>
-      <link>/tags/international-students/</link>
+      <link>https://anthonyschmidt.netlify.com/tags/international-students/</link>
     </image>
     
     <item>
-      <title>Are International Students Getting a Bang for their Buck? The Relationship between Expenditures and International Student Graduation Rates</title>
-      <link>/publication/journal-article/</link>
-      <pubDate>Sat, 15 Aug 2020 00:00:00 +0000</pubDate>
-      <guid>/publication/journal-article/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Book Review - International Students in First-Year Writing: A Journey Through Socio-Academic Space</title>
-      <link>/publication/international-students-in-first-year-writing-review/</link>
+      <link>https://anthonyschmidt.netlify.com/publication/international-students-in-first-year-writing-review/</link>
       <pubDate>Thu, 15 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>/publication/international-students-in-first-year-writing-review/</guid>
+      <guid>https://anthonyschmidt.netlify.com/publication/international-students-in-first-year-writing-review/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A Comparison of Direct Admit and IEP Student Academic Achievement</title>
-      <link>/talk/tesol2019/</link>
+      <link>https://anthonyschmidt.netlify.com/talk/tesol2019/</link>
       <pubDate>Fri, 01 Mar 2019 13:00:00 +0000</pubDate>
-      <guid>/talk/tesol2019/</guid>
+      <guid>https://anthonyschmidt.netlify.com/talk/tesol2019/</guid>
       <description></description>
     </item>
     
     <item>
       <title>The Efficacy of an Intensive English program</title>
-      <link>/project/iep-gpa/</link>
+      <link>https://anthonyschmidt.netlify.com/project/iep-gpa/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>/project/iep-gpa/</guid>
+      <guid>https://anthonyschmidt.netlify.com/project/iep-gpa/</guid>
       <description>&lt;p&gt;This project uses longitudinal institutional data to understand the efficacy of an intensive English program (IEP) by comparing IEP students, who arrive with TOEFL scores under the institutional minimum, with directly admitted students, who have scores at or above the minimum.&lt;/p&gt;
 </description>
     </item>

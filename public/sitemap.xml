@@ -3,285 +3,265 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/courses/example/example1/</loc>
+    <loc>https://anthonyschmidt.netlify.com/courses/example/example1/</loc>
     <lastmod>2019-05-05T00:00:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>/courses/example/</loc>
+    <loc>https://anthonyschmidt.netlify.com/courses/example/</loc>
     <lastmod>2018-09-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/courses/example/example2/</loc>
+    <loc>https://anthonyschmidt.netlify.com/courses/example/example2/</loc>
     <lastmod>2019-05-05T00:00:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/admin/</loc>
-    <lastmod>2020-08-15T00:00:00+00:00</lastmod>
+    <loc>https://anthonyschmidt.netlify.com/</loc>
+    <lastmod>2020-06-04T23:04:04-04:00</lastmod>
   </url>
   
   <url>
-    <loc>/publication_types/2/</loc>
-    <lastmod>2020-08-15T00:00:00+00:00</lastmod>
+    <loc>https://anthonyschmidt.netlify.com/tags/data-science/</loc>
+    <lastmod>2020-06-04T23:04:04-04:00</lastmod>
   </url>
   
   <url>
-    <loc>/</loc>
-    <lastmod>2020-08-15T00:00:00+00:00</lastmod>
+    <loc>https://anthonyschmidt.netlify.com/post/2020-06-03-making-apa-tables-with-gt/</loc>
+    <lastmod>2020-06-04T23:04:04-04:00</lastmod>
   </url>
   
   <url>
-    <loc>/publication/journal-article/</loc>
-    <lastmod>2020-08-15T00:00:00+00:00</lastmod>
+    <loc>https://anthonyschmidt.netlify.com/post/</loc>
+    <lastmod>2020-06-04T23:04:04-04:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/</loc>
-    <lastmod>2020-08-15T00:00:00+00:00</lastmod>
+    <loc>https://anthonyschmidt.netlify.com/tags/</loc>
+    <lastmod>2020-06-04T23:04:04-04:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/graduation-rates/</loc>
-    <lastmod>2020-08-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/international-students/</loc>
-    <lastmod>2020-08-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/ipeds/</loc>
-    <lastmod>2020-08-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication_types/</loc>
-    <lastmod>2020-08-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication/</loc>
-    <lastmod>2020-08-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2020-08-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/project/portfolio/tidytuesday/</loc>
+    <loc>https://anthonyschmidt.netlify.com/project/portfolio/tidytuesday/</loc>
     <lastmod>2020-05-31T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/interactive/</loc>
+    <loc>https://anthonyschmidt.netlify.com/tags/interactive/</loc>
     <lastmod>2020-05-31T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/portfolio/</loc>
+    <loc>https://anthonyschmidt.netlify.com/tags/portfolio/</loc>
     <lastmod>2020-05-31T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/project/</loc>
+    <loc>https://anthonyschmidt.netlify.com/project/</loc>
     <lastmod>2020-05-31T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/static/</loc>
+    <loc>https://anthonyschmidt.netlify.com/tags/static/</loc>
     <lastmod>2020-05-31T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/2020-05-08-emission-calculator-in-r/</loc>
+    <loc>https://anthonyschmidt.netlify.com/post/2020-05-08-emission-calculator-in-r/</loc>
     <lastmod>2020-05-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/climate-change/</loc>
+    <loc>https://anthonyschmidt.netlify.com/tags/climate-change/</loc>
     <lastmod>2020-05-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/data-science/</loc>
-    <lastmod>2020-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
-    <lastmod>2020-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/project/flying-less-document-analysis/</loc>
+    <loc>https://anthonyschmidt.netlify.com/project/flying-less-document-analysis/</loc>
     <lastmod>2020-05-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/project/</loc>
+    <loc>https://anthonyschmidt.netlify.com/tags/project/</loc>
     <lastmod>2020-05-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/project/r-handbook/</loc>
+    <loc>https://anthonyschmidt.netlify.com/project/r-handbook/</loc>
     <lastmod>2020-05-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/talk/2020-3-becoming-tidyr-over-time/</loc>
+    <loc>https://anthonyschmidt.netlify.com/authors/admin/</loc>
     <lastmod>2020-03-11T12:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/talk/</loc>
+    <loc>https://anthonyschmidt.netlify.com/authors/</loc>
     <lastmod>2020-03-11T12:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/exploring-flying-less-with-tags/</loc>
+    <loc>https://anthonyschmidt.netlify.com/talk/2020-3-becoming-tidyr-over-time/</loc>
+    <lastmod>2020-03-11T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://anthonyschmidt.netlify.com/talk/</loc>
+    <lastmod>2020-03-11T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://anthonyschmidt.netlify.com/post/exploring-flying-less-with-tags/</loc>
     <lastmod>2020-02-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/2020-19-02-carbon-crisis-mitigation-whose-responsibility-is-it-a-tidytuesday-inspired-essay/</loc>
+    <loc>https://anthonyschmidt.netlify.com/post/2020-19-02-carbon-crisis-mitigation-whose-responsibility-is-it-a-tidytuesday-inspired-essay/</loc>
     <lastmod>2020-02-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/project/portfolio/financial-wellness-in-higher-education/</loc>
+    <loc>https://anthonyschmidt.netlify.com/project/portfolio/financial-wellness-in-higher-education/</loc>
     <lastmod>2020-02-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/print/</loc>
+    <loc>https://anthonyschmidt.netlify.com/tags/print/</loc>
     <lastmod>2020-02-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/project/portfolio/enrollment-cliff/</loc>
+    <loc>https://anthonyschmidt.netlify.com/project/portfolio/enrollment-cliff/</loc>
     <lastmod>2020-02-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/2020-02-10-carbon-footprint-google-data/</loc>
+    <loc>https://anthonyschmidt.netlify.com/post/2020-02-10-carbon-footprint-google-data/</loc>
     <lastmod>2020-02-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/project/esm-data-jobs/</loc>
+    <loc>https://anthonyschmidt.netlify.com/project/esm-data-jobs/</loc>
     <lastmod>2020-01-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/employability/</loc>
+    <loc>https://anthonyschmidt.netlify.com/tags/employability/</loc>
     <lastmod>2020-01-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/project/portfolio/language-score-dashboard/</loc>
+    <loc>https://anthonyschmidt.netlify.com/project/portfolio/language-score-dashboard/</loc>
     <lastmod>2020-01-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/project/portfolio/student-enrollment-dashboard/</loc>
+    <loc>https://anthonyschmidt.netlify.com/project/portfolio/student-enrollment-dashboard/</loc>
     <lastmod>2020-01-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/talk/planting-the-seeds/</loc>
+    <loc>https://anthonyschmidt.netlify.com/talk/planting-the-seeds/</loc>
     <lastmod>2020-01-16T13:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/education/</loc>
+    <loc>https://anthonyschmidt.netlify.com/tags/education/</loc>
     <lastmod>2020-01-16T13:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/project/tidy-tuesday/</loc>
+    <loc>https://anthonyschmidt.netlify.com/project/tidy-tuesday/</loc>
     <lastmod>2020-01-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/project/portfolio/tennessee-logo/</loc>
+    <loc>https://anthonyschmidt.netlify.com/project/portfolio/tennessee-logo/</loc>
     <lastmod>2020-01-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/project/fly-or-die-phd-grads/</loc>
+    <loc>https://anthonyschmidt.netlify.com/project/fly-or-die-phd-grads/</loc>
     <lastmod>2019-12-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/2019-08-24-speaking-of-data/</loc>
+    <loc>https://anthonyschmidt.netlify.com/post/2019-08-24-speaking-of-data/</loc>
     <lastmod>2019-08-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/publication/international-students-in-first-year-writing-review/</loc>
+    <loc>https://anthonyschmidt.netlify.com/publication_types/2/</loc>
     <lastmod>2019-08-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/2019-5-10-the-cost-of-international-education/</loc>
+    <loc>https://anthonyschmidt.netlify.com/publication/international-students-in-first-year-writing-review/</loc>
+    <lastmod>2019-08-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://anthonyschmidt.netlify.com/tags/international-students/</loc>
+    <lastmod>2019-08-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://anthonyschmidt.netlify.com/publication_types/</loc>
+    <lastmod>2019-08-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://anthonyschmidt.netlify.com/publication/</loc>
+    <lastmod>2019-08-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://anthonyschmidt.netlify.com/post/2019-5-10-the-cost-of-international-education/</loc>
     <lastmod>2019-05-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/talk/tesol2019/</loc>
+    <loc>https://anthonyschmidt.netlify.com/talk/tesol2019/</loc>
     <lastmod>2019-03-01T13:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/linguistics/</loc>
+    <loc>https://anthonyschmidt.netlify.com/tags/linguistics/</loc>
     <lastmod>2019-02-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/2019-02-26-2019-the-data-is-are-in/</loc>
+    <loc>https://anthonyschmidt.netlify.com/post/2019-02-26-2019-the-data-is-are-in/</loc>
     <lastmod>2019-02-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/slides/</loc>
+    <loc>https://anthonyschmidt.netlify.com/slides/</loc>
     <lastmod>2019-02-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/slides/example/</loc>
+    <loc>https://anthonyschmidt.netlify.com/slides/example/</loc>
     <lastmod>2019-02-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/privacy/</loc>
-    <lastmod>2018-06-28T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/terms/</loc>
-    <lastmod>2018-06-28T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/project/iep-gpa/</loc>
+    <loc>https://anthonyschmidt.netlify.com/project/iep-gpa/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>https://anthonyschmidt.netlify.com/categories/</loc>
   </url>
   
   <url>
-    <loc>/courses/</loc>
+    <loc>https://anthonyschmidt.netlify.com/courses/</loc>
   </url>
   
   <url>
-    <loc>/project/planting-the-seeds-for-cs/</loc>
+    <loc>https://anthonyschmidt.netlify.com/project/planting-the-seeds-for-cs/</loc>
   </url>
   
 </urlset>

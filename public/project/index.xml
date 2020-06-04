@@ -2,24 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects | Anthony Schmidt</title>
-    <link>/project/</link>
-      <atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://anthonyschmidt.netlify.com/project/</link>
+      <atom:link href="https://anthonyschmidt.netlify.com/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 31 May 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://anthonyschmidt.netlify.com/img/icon-192.png</url>
       <title>Projects</title>
-      <link>/project/</link>
+      <link>https://anthonyschmidt.netlify.com/project/</link>
     </image>
     
     <item>
       <title>#TidyTuesday Contributions</title>
-      <link>/project/portfolio/tidytuesday/</link>
+      <link>https://anthonyschmidt.netlify.com/project/portfolio/tidytuesday/</link>
       <pubDate>Sun, 31 May 2020 00:00:00 +0000</pubDate>
-      <guid>/project/portfolio/tidytuesday/</guid>
+      <guid>https://anthonyschmidt.netlify.com/project/portfolio/tidytuesday/</guid>
       <description>
-
-&lt;h2 id=&#34;tidytuesday-contributions&#34;&gt;#TidyTuesday Contributions&lt;/h2&gt;
 
 &lt;p&gt;I follow &lt;a href=&#34;https://twitter.com/search?q=%23TidyTuesday&amp;amp;src=hashtag_click&#34; target=&#34;_blank&#34;&gt;#TidyTuesday on Twitter&lt;/a&gt; every week to improve my &lt;code&gt;R&lt;/code&gt; and data visualization skills. &lt;a href=&#34;https://github.com/rfordatascience/tidytuesday&#34; target=&#34;_blank&#34;&gt;#TidyTuesday is hosted by R4DS (&lt;code&gt;R&lt;/code&gt; for Data Science)&lt;/a&gt; and features random and interesting datasets with which users can practice their &lt;code&gt;R&lt;/code&gt;, &lt;code&gt;Tidyverse&lt;/code&gt;, and visualization skills. From time to time, I have also participated. My contributions with links to related documents and code are below.&lt;/p&gt;
 
@@ -73,18 +71,18 @@
     
     <item>
       <title>Flying Less? A Document Analysis of University Climate Policies</title>
-      <link>/project/flying-less-document-analysis/</link>
+      <link>https://anthonyschmidt.netlify.com/project/flying-less-document-analysis/</link>
       <pubDate>Fri, 08 May 2020 00:00:00 +0000</pubDate>
-      <guid>/project/flying-less-document-analysis/</guid>
+      <guid>https://anthonyschmidt.netlify.com/project/flying-less-document-analysis/</guid>
       <description>&lt;p&gt;This project utilize qualitative document analysis to examine the role of flying less as a Scope 3 emissions reduction strategy in various university climate policies. It will include documents from UTK, &lt;a href=&#34;https://oira.utk.edu/peer-institutions/&#34; target=&#34;_blank&#34;&gt;UTK peer and aspirational universities&lt;/a&gt;, the top 25 public research universities, and specific institutions that have explicit attention to flying less.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>R Handbook for ESM Students</title>
-      <link>/project/r-handbook/</link>
+      <link>https://anthonyschmidt.netlify.com/project/r-handbook/</link>
       <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
-      <guid>/project/r-handbook/</guid>
+      <guid>https://anthonyschmidt.netlify.com/project/r-handbook/</guid>
       <description>&lt;p&gt;This project is part of a summer internship with &lt;a href=&#34;https://epc.utk.edu/people/jennifer-ann-morrow-phd/&#34; target=&#34;_blank&#34;&gt;Dr. Jennifer Ann Morrow&lt;/a&gt; to create an introduction to &lt;code&gt;R&lt;/code&gt; resource guide relevant to students in our evaluation, statistics, and measurement PhD program. It would also be relevant to anyone interested in learning R. Its topics include setup, important, data manipulation, data cleaning, statistical analysis, and data visualization. The examples use real survey data and take readers from import, to cleaning, to analysis.&lt;/p&gt;
 
 &lt;p&gt;The handbook is being developed with &lt;code&gt;bookdown&lt;/code&gt; and will have supplemental exercises written with &lt;code&gt;learnr&lt;/code&gt;.&lt;/p&gt;
@@ -93,9 +91,9 @@
     
     <item>
       <title>Financial Wellness in Higher Education</title>
-      <link>/project/portfolio/financial-wellness-in-higher-education/</link>
+      <link>https://anthonyschmidt.netlify.com/project/portfolio/financial-wellness-in-higher-education/</link>
       <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>/project/portfolio/financial-wellness-in-higher-education/</guid>
+      <guid>https://anthonyschmidt.netlify.com/project/portfolio/financial-wellness-in-higher-education/</guid>
       <description>&lt;p&gt;This infographic summarizes key takeaways from a TIAA Institute/CUPA-HR survey on financial wellness in Higher Education. It was printed as a 2-page spread in CUPA-HR&amp;rsquo;s &lt;em&gt;Higher Ed HR Magazine,&lt;/em&gt; Winter 2019-20, distributed to over 30,000 members.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;financial_wellness.pdf&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;financial_wellness.jpg&#34; alt=&#34;Financial Wellness&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
@@ -104,9 +102,9 @@
     
     <item>
       <title>The Looming Enrollment Cliff</title>
-      <link>/project/portfolio/enrollment-cliff/</link>
+      <link>https://anthonyschmidt.netlify.com/project/portfolio/enrollment-cliff/</link>
       <pubDate>Thu, 13 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>/project/portfolio/enrollment-cliff/</guid>
+      <guid>https://anthonyschmidt.netlify.com/project/portfolio/enrollment-cliff/</guid>
       <description>&lt;p&gt;The purpose of this dashboard is to understand and explore forecasted enrollments in Higher Education. These forecasts are based on the &lt;em&gt;Higher Education Demand Index&lt;/em&gt; developed by Dr. Nathan Grawe and published in his book &amp;ldquo;Demographics and the Demand for Higher Education&amp;rdquo;. The interactive allows you to get an overview of the forecasts as well as take a deeper, state-by-state dive into the data.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Not working? &lt;a href=&#34;https://public.tableau.com/views/forecasts_15698547099330/Overall?:embed=y&amp;amp;:embed_code_version=3&amp;amp;:loadOrderID=0&amp;amp;:display_count=y&amp;amp;publish=yes?:embed%3Dy?:embed%3Dy&amp;amp;:origin=viz_share_link&#34; target=&#34;_blank&#34;&gt;Click here&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
@@ -119,9 +117,9 @@
     
     <item>
       <title>Data-Related Jobs for ESM Students</title>
-      <link>/project/esm-data-jobs/</link>
+      <link>https://anthonyschmidt.netlify.com/project/esm-data-jobs/</link>
       <pubDate>Sat, 18 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/project/esm-data-jobs/</guid>
+      <guid>https://anthonyschmidt.netlify.com/project/esm-data-jobs/</guid>
       <description>&lt;p&gt;This is an ongoing project to analyze data-related jobs posted on &lt;a href=&#34;http://www.higheredjobs.com&#34; target=&#34;_blank&#34;&gt;HigherEdJobs&lt;/a&gt;. These are jobs a typical ESM student would qualify. The jobs are analyzed in order to understand the skills and competencies that are in demand.&lt;/p&gt;
 
 &lt;p&gt;The project is currently focused on administrative-level jobs. Faculty job analyses will be forthcoming.&lt;/p&gt;
@@ -132,9 +130,9 @@
     
     <item>
       <title>Language Test Scores Dashboard</title>
-      <link>/project/portfolio/language-score-dashboard/</link>
+      <link>https://anthonyschmidt.netlify.com/project/portfolio/language-score-dashboard/</link>
       <pubDate>Sat, 18 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/project/portfolio/language-score-dashboard/</guid>
+      <guid>https://anthonyschmidt.netlify.com/project/portfolio/language-score-dashboard/</guid>
       <description>&lt;p&gt;&lt;em&gt;Note: The following Tableau dashboard represents real data that has been altered to maintain confidentiality.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;The purpose of this dashboard is to understand performance on a language test across different courses, with each course (A-F) becoming increasingly more advanced. The dashboard allows users to view progress holistically as well as at the individual course level.&lt;/p&gt;
@@ -149,9 +147,9 @@
     
     <item>
       <title>Student Enrollment Dashboard</title>
-      <link>/project/portfolio/student-enrollment-dashboard/</link>
+      <link>https://anthonyschmidt.netlify.com/project/portfolio/student-enrollment-dashboard/</link>
       <pubDate>Sat, 18 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/project/portfolio/student-enrollment-dashboard/</guid>
+      <guid>https://anthonyschmidt.netlify.com/project/portfolio/student-enrollment-dashboard/</guid>
       <description>&lt;p&gt;&lt;em&gt;Note: The following Tableau dashboard represents real data that has been altered to maintain confidentiality.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;The purpose of this dashboard is to allow users to understand enrollment trends, compare enrollment to another institution, and see enrollment by student country of origin.&lt;/p&gt;
@@ -166,18 +164,18 @@
     
     <item>
       <title>Becoming Tidyr over Time</title>
-      <link>/project/tidy-tuesday/</link>
+      <link>https://anthonyschmidt.netlify.com/project/tidy-tuesday/</link>
       <pubDate>Thu, 16 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/project/tidy-tuesday/</guid>
+      <guid>https://anthonyschmidt.netlify.com/project/tidy-tuesday/</guid>
       <description>&lt;p&gt;This project analyzes tweets from the #TidyTuesday hashtag to understand participation and development of data visualization and data science skills.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Multilingual &#34;Welcome&#34; Logo</title>
-      <link>/project/portfolio/tennessee-logo/</link>
+      <link>https://anthonyschmidt.netlify.com/project/portfolio/tennessee-logo/</link>
       <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/project/portfolio/tennessee-logo/</guid>
+      <guid>https://anthonyschmidt.netlify.com/project/portfolio/tennessee-logo/</guid>
       <description>&lt;p&gt;The following design is meant to showcase some of my experience with Adobe Illustrator. The image below was designed for a t-shirt marketing campaign at the &lt;a href=&#34;http://eli.utk.edu/&#34; target=&#34;_blank&#34;&gt;English Language Institute&lt;/a&gt;. It depicts the phrase “welcome” in numerous languages, arranged to make the state of Tennessee’s outline. It includes the university and department names in their respective &lt;a href=&#34;http://brand.utk.edu/&#34; target=&#34;_blank&#34;&gt;brand UTK typologies&lt;/a&gt;, as well as the phrase &lt;a href=&#34;https://www.youarewelcomehereusa.org/&#34; target=&#34;_blank&#34;&gt;#YouAreWelcomeHere&lt;/a&gt;, also in a brand font. The colors are also part of the UTK color pallette. This design was printed on smokey gray and Tennessee orange shirts.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://i1.wp.com/www.anthonyschmidt.co/wp-content/uploads/2019/07/eli_tn_multilingual.png?resize=768%2C315&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://i1.wp.com/www.anthonyschmidt.co/wp-content/uploads/2019/07/eli_tn_multilingual.png?resize=768%2C315&#34; alt=&#34;YouAreWelcomeHere&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
@@ -186,9 +184,9 @@
     
     <item>
       <title>Fly or Die - The Relationship between Conference Travel, Employability, and the Climate Crisis.</title>
-      <link>/project/fly-or-die-phd-grads/</link>
+      <link>https://anthonyschmidt.netlify.com/project/fly-or-die-phd-grads/</link>
       <pubDate>Sat, 07 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>/project/fly-or-die-phd-grads/</guid>
+      <guid>https://anthonyschmidt.netlify.com/project/fly-or-die-phd-grads/</guid>
       <description>&lt;p&gt;The &amp;ldquo;Fly or Die&amp;rdquo; project is a multi-survey research project that looks at the complex relationship between graduate student conference travel, employability, and the climate crisis.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Survey One&lt;/strong&gt; focuses on doctoral student employment outcomes, conferences attendance, conference activities, conference types, and publications. Analyses are across disciplines and job industries.&lt;/p&gt;
@@ -201,18 +199,18 @@
     
     <item>
       <title>The Efficacy of an Intensive English program</title>
-      <link>/project/iep-gpa/</link>
+      <link>https://anthonyschmidt.netlify.com/project/iep-gpa/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>/project/iep-gpa/</guid>
+      <guid>https://anthonyschmidt.netlify.com/project/iep-gpa/</guid>
       <description>&lt;p&gt;This project uses longitudinal institutional data to understand the efficacy of an intensive English program (IEP) by comparing IEP students, who arrive with TOEFL scores under the institutional minimum, with directly admitted students, who have scores at or above the minimum.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Planting the Seeds for Computer Science Education in East Tennessee</title>
-      <link>/project/planting-the-seeds-for-cs/</link>
+      <link>https://anthonyschmidt.netlify.com/project/planting-the-seeds-for-cs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/project/planting-the-seeds-for-cs/</guid>
+      <guid>https://anthonyschmidt.netlify.com/project/planting-the-seeds-for-cs/</guid>
       <description>&lt;p&gt;The project is focused on understanding the needs of administrators and teachings in order to develop opportunities for K-8 teachers to engage in professional development on the Tennessee computer science standards.&lt;/p&gt;
 
 &lt;p&gt;This project is was funded through the [University of Tennessee’s Community Engaged Research Seed Program].(&lt;a href=&#34;https://research.utk.edu/2019-research-seed-program-recipients/&#34; target=&#34;_blank&#34;&gt;https://research.utk.edu/2019-research-seed-program-recipients/&lt;/a&gt;). It is related to the &lt;a href=&#34;https://www.makingdatasciencecount.com/project/cs4appalachia/&#34; target=&#34;_blank&#34;&gt;CS for Appalachia&lt;/a&gt; Research-Practice Partnership and NSF grant.&lt;/p&gt;
