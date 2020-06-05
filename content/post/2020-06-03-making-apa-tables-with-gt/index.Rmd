@@ -21,7 +21,7 @@ authors: []
 
 To be sure, there are a number of excellent table packages, all with their benefits and drawbacks. The ones I have personal experience with include:
 
-  * [knitr::kable()](https://bookdown.org/yihui/rmarkdown-cookbook/kable.html) - `kable()` can easily make some very nice tables in R Markdown. Just add it to the end of a pipe `%>%` and you have yourself a very nice table. With a little work, and the addition of [`kableExtra`](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html), you may even be able to produce an APA-style table. In fact, [here](https://www.datadreaming.org/post/apa-tables-using-rmarkdown/) is a guide to doing just that. It requires a bit more work (e.g. adding LaTeX to YAML) but it is a really good option.
+  * [knitr::kable()](https://bookdown.org/yihui/rmarkdown-cookbook/kable.html) - `kable()` can easily make some very nice tables in R Markdown. Just add it to the end of a pipe `%>%` and you have yourself a very nice table. With a little work, and the addition of [`kableExtra`](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html), you may even be able to produce an APA-style table. In fact, [here](https://www.datadreaming.org/post/apa-tables-using-rmarkdown/) is a guide to doing just that. It requires a bit more work (e.g. adding LaTeX to YAML) but it is a really good option, especially for tables in Word.
   * [DataTable::DT()](https://rstudio.github.io/DT/) - I love using the `DT` function for making interactive tables that are sortable, searchable, and offer pagination. I have not played around much with their styling.
   * [`apaTables`](https://cran.r-project.org/web/packages/apaTables/vignettes/apaTables.html) is another package that produces APA tables out of the box, but only as Word or richtext outputs. They cannot be included in HTML or PDF. However, the use of apaTables functions *is* very useful for taking something like a regression model and getting it into the shape needed for a better table. I'll have an example of this below.
   * [`papaja`](https://github.com/crsh/papaja) is an package that allows you to draft APA journal articles in R Markdown and creates tables with `apa_table()` that render very nicely in Word or PDF but not HTML.
@@ -47,7 +47,7 @@ library(gt)
 ### Create a Basic `gt` table
 
 ```{r}
-iris %>%
+mtcars %>%
   slice(1:5) %>%
   gt()
 ```
@@ -57,7 +57,7 @@ iris %>%
 All APA tables have a black top border, a black border at the bottom of the column header, and a black bottom border. We can use the following code to recreate that look, as well as set the width and make the font size consistent with the table body:
 
 ```{r}
-iris %>%
+mtcars %>%
   slice(1:5) %>%
   gt() %>%
   tab_options(
@@ -88,7 +88,7 @@ One issue that I have not figured out is how to control the thickness of the bla
 ### Styling the Table Body
 
 ```{r}
-iris %>%
+mtcars %>%
   slice(1:5) %>%
   gt() %>%
   tab_options(
@@ -179,9 +179,9 @@ apa <- function(x, title = " ") {
 Let's try it out:
 
 ```{r}
-iris %>%
+mtcars %>%
   slice(1:5) %>%
-  apa("The Iris Dataset")
+  apa("Fuel consumption and aspects of automobile design and performance for 32 automobiles (1973-74 models)")
 ```
 
 ### Add a Footnote
@@ -189,16 +189,16 @@ iris %>%
 If we wanted to add a note, we would do so using an additional `gt` function:
 
 ```{r}
-iris %>%
+mtcars %>%
   slice(1:5) %>%
-  apa("The Iris Dataset") %>%
+  apa("Fuel consumption and aspects of automobile design and performance for 32 automobiles (1973-74 models)") %>%
   tab_footnote(
     #footnote text
-    footnote = "This is a footnore.",
+    footnote = "This is a footnote.",
     # add to the column labels section
     locations = cells_column_labels(
-      # add to the "Species" column
-      columns = vars(Species))
+      # add to the "mpg" column
+      columns = vars(mpg))
   )
 ```
 
@@ -207,13 +207,13 @@ iris %>%
 In many APA tables, statical indicators such as *p*, *M* or *n* are italicized. We can do that here in the following manner:
 
 ```{r}
-iris %>%
+mtcars %>%
   slice(1:5) %>%
-  apa("The Iris Dataset") %>%
+  apa("Fuel consumption and aspects of automobile design and performance for 32 automobiles (1973-74 models)") %>%
     tab_footnote(
-    footnote = "This is a footnore.",
+    footnote = "This is a footnote.",
     locations = cells_column_labels(
-      columns = vars(Species))
+      columns = vars(mpg))
   ) %>%
   # add an additional table style
   tab_style(
@@ -223,7 +223,7 @@ iris %>%
   ),
   # specify the column
   locations = cells_column_labels(
-      columns = vars(Species)
+      columns = vars(cyl)
       )
   )
 ```
@@ -233,7 +233,7 @@ iris %>%
 Using `gt` to make APA tables could be useful if you are making HTML or PDF reports. Unfortunatley, they do not render at all correctly if you are knitting directly to Word. However, they can be outputted in RTF format, which can then be placed back into word. Here is an example
 
 ```
-iris %>%
+mtcars %>%
   slice(1:5) %>%
   gt() %>%
   as_rtf() -> table
@@ -249,7 +249,6 @@ The package `apaTables` is very useful for getting something into the shape for 
 
 #### Output Without `apaTables`
 ```{r}
-data(mtcars)
 model <- lm(mpg ~ wt, mtcars)
 summary(model)
 ```
@@ -257,7 +256,6 @@ summary(model)
 #### Output with `apaTables`
 
 ```{r}
-data(mtcars)
 model <- lm(mpg ~ wt, mtcars)
 apaTables::apa.reg.table(model)
 ```
@@ -267,7 +265,6 @@ apaTables::apa.reg.table(model)
 `apa.reg.table` takes the regression results and builds table elements into a list. We can then use `apa()` to grab the output stored in the named list elements
 
 ```{r}
-data(mtcars)
 model <- lm(mpg ~ wt, mtcars)
 apaTables::apa.reg.table(model)[["table_body"]] %>%
   apa()
