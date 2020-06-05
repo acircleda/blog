@@ -40,7 +40,7 @@ You can install `gt` easily: `install.packages("gt")`.
 
 Here are the libraries we will need:
 
-```{r message=FALSE, warning=FALSE, include=FALSE}
+```{r message=FALSE, warning=FALSE, include=TRUE}
 library(tidyverse)
 library(gt)
 ```
