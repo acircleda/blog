@@ -46,4 +46,4 @@ user_groups:
 - Visitors
 ---
 
-Anthony Schmidt is a PhD student in [Evaluation, Statistics, and Measurement](https://epc.utk.edu/evaluation-statistics-measurement/) at the Universty of Tennessee-Knoxville. He is also a full-time data visualization researcher at [CUPA-HR](http://www.cupahr.org/). 
+I am a PhD student in [Evaluation, Statistics, and Measurement](https://epc.utk.edu/evaluation-statistics-measurement/) at the Universty of Tennessee-Knoxville. He is also a full-time data visualization researcher at [CUPA-HR](http://www.cupahr.org/). 
