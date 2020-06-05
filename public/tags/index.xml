@@ -2,101 +2,117 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags | Anthony Schmidt</title>
-    <link>https://anthonyschmidt.netlify.com/tags/</link>
-      <atom:link href="https://anthonyschmidt.netlify.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <link>/tags/</link>
+      <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 04 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 15 Aug 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://anthonyschmidt.netlify.com/img/icon-192.png</url>
+      <url>/img/icon-192.png</url>
       <title>Tags</title>
-      <link>https://anthonyschmidt.netlify.com/tags/</link>
+      <link>/tags/</link>
     </image>
     
     <item>
-      <title>Data Science</title>
-      <link>https://anthonyschmidt.netlify.com/tags/data-science/</link>
-      <pubDate>Thu, 04 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/tags/data-science/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Interactive</title>
-      <link>https://anthonyschmidt.netlify.com/tags/interactive/</link>
-      <pubDate>Sun, 31 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/tags/interactive/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Portfolio</title>
-      <link>https://anthonyschmidt.netlify.com/tags/portfolio/</link>
-      <pubDate>Sun, 31 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/tags/portfolio/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Static</title>
-      <link>https://anthonyschmidt.netlify.com/tags/static/</link>
-      <pubDate>Sun, 31 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/tags/static/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Climate Change</title>
-      <link>https://anthonyschmidt.netlify.com/tags/climate-change/</link>
-      <pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/tags/climate-change/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Project</title>
-      <link>https://anthonyschmidt.netlify.com/tags/project/</link>
-      <pubDate>Fri, 08 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/tags/project/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Print</title>
-      <link>https://anthonyschmidt.netlify.com/tags/print/</link>
-      <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/tags/print/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Employability</title>
-      <link>https://anthonyschmidt.netlify.com/tags/employability/</link>
-      <pubDate>Sat, 18 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/tags/employability/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Education</title>
-      <link>https://anthonyschmidt.netlify.com/tags/education/</link>
-      <pubDate>Thu, 16 Jan 2020 13:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/tags/education/</guid>
+      <title>Graduation Rates</title>
+      <link>/tags/graduation-rates/</link>
+      <pubDate>Sat, 15 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>/tags/graduation-rates/</guid>
       <description></description>
     </item>
     
     <item>
       <title>International Students</title>
-      <link>https://anthonyschmidt.netlify.com/tags/international-students/</link>
-      <pubDate>Thu, 15 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/tags/international-students/</guid>
+      <link>/tags/international-students/</link>
+      <pubDate>Sat, 15 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>/tags/international-students/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IPEDS</title>
+      <link>/tags/ipeds/</link>
+      <pubDate>Sat, 15 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>/tags/ipeds/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Science</title>
+      <link>/tags/data-science/</link>
+      <pubDate>Thu, 04 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>/tags/data-science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Interactive</title>
+      <link>/tags/interactive/</link>
+      <pubDate>Sun, 31 May 2020 00:00:00 +0000</pubDate>
+      <guid>/tags/interactive/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Portfolio</title>
+      <link>/tags/portfolio/</link>
+      <pubDate>Sun, 31 May 2020 00:00:00 +0000</pubDate>
+      <guid>/tags/portfolio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Static</title>
+      <link>/tags/static/</link>
+      <pubDate>Sun, 31 May 2020 00:00:00 +0000</pubDate>
+      <guid>/tags/static/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Climate Change</title>
+      <link>/tags/climate-change/</link>
+      <pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate>
+      <guid>/tags/climate-change/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Project</title>
+      <link>/tags/project/</link>
+      <pubDate>Fri, 08 May 2020 00:00:00 +0000</pubDate>
+      <guid>/tags/project/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Print</title>
+      <link>/tags/print/</link>
+      <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/tags/print/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Employability</title>
+      <link>/tags/employability/</link>
+      <pubDate>Sat, 18 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>/tags/employability/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Education</title>
+      <link>/tags/education/</link>
+      <pubDate>Thu, 16 Jan 2020 13:00:00 +0000</pubDate>
+      <guid>/tags/education/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linguistics</title>
-      <link>https://anthonyschmidt.netlify.com/tags/linguistics/</link>
+      <link>/tags/linguistics/</link>
       <pubDate>Tue, 26 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/tags/linguistics/</guid>
+      <guid>/tags/linguistics/</guid>
       <description></description>
     </item>
     

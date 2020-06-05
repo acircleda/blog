@@ -32,7 +32,7 @@
 To be sure, there are a number of excellent table packages, all with their benefits and drawbacks. The ones I have personal experience with include:">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://anthonyschmidt.netlify.com/post/2020-06-03-making-apa-tables-with-gt/">
+  <link rel="alternate" hreflang="en-us" href="/post/2020-06-03-making-apa-tables-with-gt/">
 
   
 
@@ -137,7 +137,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   <link rel="icon" type="image/png" href="/img/icon-32.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://anthonyschmidt.netlify.com/post/2020-06-03-making-apa-tables-with-gt/">
+  <link rel="canonical" href="/post/2020-06-03-making-apa-tables-with-gt/">
 
   
   
@@ -153,11 +153,11 @@ To be sure, there are a number of excellent table packages, all with their benef
   <meta property="twitter:creator" content="@anthonyteacher">
   
   <meta property="og:site_name" content="Anthony Schmidt">
-  <meta property="og:url" content="https://anthonyschmidt.netlify.com/post/2020-06-03-making-apa-tables-with-gt/">
+  <meta property="og:url" content="/post/2020-06-03-making-apa-tables-with-gt/">
   <meta property="og:title" content="Making APA Tables with the gt Package | Anthony Schmidt">
   <meta property="og:description" content="R has always been a very powerful statistical analysis tool. With the development of ggplot, it has also become an extremely powerful data visualization tool. However, in my experience, R has lacked the ability to easily create nice tables, especially tables suitable for APA publication.
-To be sure, there are a number of excellent table packages, all with their benefits and drawbacks. The ones I have personal experience with include:"><meta property="og:image" content="https://anthonyschmidt.netlify.com/img/icon-192.png">
-  <meta property="twitter:image" content="https://anthonyschmidt.netlify.com/img/icon-192.png"><meta property="og:locale" content="en-us">
+To be sure, there are a number of excellent table packages, all with their benefits and drawbacks. The ones I have personal experience with include:"><meta property="og:image" content="/img/icon-192.png">
+  <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="en-us">
   
     
       <meta property="article:published_time" content="2020-06-04T00:00:00&#43;00:00">
@@ -188,7 +188,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://anthonyschmidt.netlify.com/post/2020-06-03-making-apa-tables-with-gt/"
+    "@id": "/post/2020-06-03-making-apa-tables-with-gt/"
   },
   "headline": "Making APA Tables with the gt Package",
   
@@ -205,7 +205,7 @@ To be sure, there are a number of excellent table packages, all with their benef
     "name": "Anthony Schmidt",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://anthonyschmidt.netlify.com/img/icon-512.png"
+      "url": "/img/icon-512.png"
     }
   },
   "description": "R has always been a very powerful statistical analysis tool. With the development of ggplot, it has also become an extremely powerful data visualization tool. However, in my experience, R has lacked the ability to easily create nice tables, especially tables suitable for APA publication.\nTo be sure, there are a number of excellent table packages, all with their benefits and drawbacks. The ones I have personal experience with include:"
@@ -657,7 +657,7 @@ To be sure, there are a number of excellent table packages, all with their benef
 <p><code>R</code> has always been a very powerful statistical analysis tool. With the development of <code>ggplot</code>, it has also become an extremely powerful data visualization tool. However, in my experience, <code>R</code> has lacked the ability to <em>easily</em> create nice tables, especially tables suitable for APA publication.</p>
 <p>To be sure, there are a number of excellent table packages, all with their benefits and drawbacks. The ones I have personal experience with include:</p>
 <ul>
-<li><a href="https://bookdown.org/yihui/rmarkdown-cookbook/kable.html">knitr::kable()</a> - <code>kable()</code> can easily make some very nice tables in R Markdown. Just add it to the end of a pipe <code>%&gt;%</code> and you have yourself a very nice table. With a little work, and the addition of <a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html"><code>kableExtra</code></a>, you may even be able to produce an APA-style table. In fact, <a href="https://www.datadreaming.org/post/apa-tables-using-rmarkdown/">here</a> is a guide to doing just that. It requires a bit more work (e.g. adding LaTeX to YAML) but it is a really good option.</li>
+<li><a href="https://bookdown.org/yihui/rmarkdown-cookbook/kable.html">knitr::kable()</a> - <code>kable()</code> can easily make some very nice tables in R Markdown. Just add it to the end of a pipe <code>%&gt;%</code> and you have yourself a very nice table. With a little work, and the addition of <a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html"><code>kableExtra</code></a>, you may even be able to produce an APA-style table. In fact, <a href="https://www.datadreaming.org/post/apa-tables-using-rmarkdown/">here</a> is a guide to doing just that. It requires a bit more work (e.g. adding LaTeX to YAML) but it is a really good option, especially for tables in Word.</li>
 <li><a href="https://rstudio.github.io/DT/">DataTable::DT()</a> - I love using the <code>DT</code> function for making interactive tables that are sortable, searchable, and offer pagination. I have not played around much with their styling.</li>
 <li><a href="https://cran.r-project.org/web/packages/apaTables/vignettes/apaTables.html"><code>apaTables</code></a> is another package that produces APA tables out of the box, but only as Word or richtext outputs. They cannot be included in HTML or PDF. However, the use of apaTables functions <em>is</em> very useful for taking something like a regression model and getting it into the shape needed for a better table. I’ll have an example of this below.</li>
 <li><a href="https://github.com/crsh/papaja"><code>papaja</code></a> is an package that allows you to draft APA journal articles in R Markdown and creates tables with <code>apa_table()</code> that render very nicely in Word or PDF but not HTML.</li>
@@ -673,14 +673,14 @@ To be sure, there are a number of excellent table packages, all with their benef
 </div>
 <div id="create-a-basic-gt-table" class="section level3">
 <h3>Create a Basic <code>gt</code> table</h3>
-<pre class="r"><code>iris %&gt;%
+<pre class="r"><code>mtcars %&gt;%
   slice(1:5) %&gt;%
   gt()</code></pre>
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#kllibfwiup .gt_table {
+#bhgbinoerc .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -703,7 +703,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-left-color: #D3D3D3;
 }
 
-#kllibfwiup .gt_heading {
+#bhgbinoerc .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -715,7 +715,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-right-color: #D3D3D3;
 }
 
-#kllibfwiup .gt_title {
+#bhgbinoerc .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -725,7 +725,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-bottom-width: 0;
 }
 
-#kllibfwiup .gt_subtitle {
+#bhgbinoerc .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -735,13 +735,13 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-top-width: 0;
 }
 
-#kllibfwiup .gt_bottom_border {
+#bhgbinoerc .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#kllibfwiup .gt_col_headings {
+#bhgbinoerc .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -756,7 +756,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-right-color: #D3D3D3;
 }
 
-#kllibfwiup .gt_col_heading {
+#bhgbinoerc .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -776,7 +776,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   overflow-x: hidden;
 }
 
-#kllibfwiup .gt_column_spanner_outer {
+#bhgbinoerc .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -788,15 +788,15 @@ To be sure, there are a number of excellent table packages, all with their benef
   padding-right: 4px;
 }
 
-#kllibfwiup .gt_column_spanner_outer:first-child {
+#bhgbinoerc .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#kllibfwiup .gt_column_spanner_outer:last-child {
+#bhgbinoerc .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#kllibfwiup .gt_column_spanner {
+#bhgbinoerc .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -808,7 +808,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   width: 100%;
 }
 
-#kllibfwiup .gt_group_heading {
+#bhgbinoerc .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -830,7 +830,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   vertical-align: middle;
 }
 
-#kllibfwiup .gt_empty_group_heading {
+#bhgbinoerc .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -845,19 +845,19 @@ To be sure, there are a number of excellent table packages, all with their benef
   vertical-align: middle;
 }
 
-#kllibfwiup .gt_striped {
+#bhgbinoerc .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#kllibfwiup .gt_from_md > :first-child {
+#bhgbinoerc .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#kllibfwiup .gt_from_md > :last-child {
+#bhgbinoerc .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#kllibfwiup .gt_row {
+#bhgbinoerc .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -876,7 +876,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   overflow-x: hidden;
 }
 
-#kllibfwiup .gt_stub {
+#bhgbinoerc .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -888,7 +888,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   padding-left: 12px;
 }
 
-#kllibfwiup .gt_summary_row {
+#bhgbinoerc .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -898,7 +898,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   padding-right: 5px;
 }
 
-#kllibfwiup .gt_first_summary_row {
+#bhgbinoerc .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -908,7 +908,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-top-color: #D3D3D3;
 }
 
-#kllibfwiup .gt_grand_summary_row {
+#bhgbinoerc .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -918,7 +918,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   padding-right: 5px;
 }
 
-#kllibfwiup .gt_first_grand_summary_row {
+#bhgbinoerc .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -928,7 +928,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-top-color: #D3D3D3;
 }
 
-#kllibfwiup .gt_table_body {
+#bhgbinoerc .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -937,7 +937,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-bottom-color: #D3D3D3;
 }
 
-#kllibfwiup .gt_footnotes {
+#bhgbinoerc .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -951,13 +951,13 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-right-color: #D3D3D3;
 }
 
-#kllibfwiup .gt_footnote {
+#bhgbinoerc .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#kllibfwiup .gt_sourcenotes {
+#bhgbinoerc .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -971,91 +971,127 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-right-color: #D3D3D3;
 }
 
-#kllibfwiup .gt_sourcenote {
+#bhgbinoerc .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#kllibfwiup .gt_left {
+#bhgbinoerc .gt_left {
   text-align: left;
 }
 
-#kllibfwiup .gt_center {
+#bhgbinoerc .gt_center {
   text-align: center;
 }
 
-#kllibfwiup .gt_right {
+#bhgbinoerc .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#kllibfwiup .gt_font_normal {
+#bhgbinoerc .gt_font_normal {
   font-weight: normal;
 }
 
-#kllibfwiup .gt_font_bold {
+#bhgbinoerc .gt_font_bold {
   font-weight: bold;
 }
 
-#kllibfwiup .gt_font_italic {
+#bhgbinoerc .gt_font_italic {
   font-style: italic;
 }
 
-#kllibfwiup .gt_super {
+#bhgbinoerc .gt_super {
   font-size: 65%;
 }
 
-#kllibfwiup .gt_footnote_marks {
+#bhgbinoerc .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="kllibfwiup" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="bhgbinoerc" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   
   <thead class="gt_col_headings">
     <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Sepal.Length</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Sepal.Width</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Petal.Length</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Petal.Width</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Species</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">mpg</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">cyl</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">disp</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">hp</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">drat</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">wt</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">qsec</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">vs</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">am</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">gear</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">carb</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
     <tr>
-      <td class="gt_row gt_right">5.1</td>
-      <td class="gt_row gt_right">3.5</td>
-      <td class="gt_row gt_right">1.4</td>
-      <td class="gt_row gt_right">0.2</td>
-      <td class="gt_row gt_center">setosa</td>
+      <td class="gt_row gt_right">21.0</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">160</td>
+      <td class="gt_row gt_right">110</td>
+      <td class="gt_row gt_right">3.90</td>
+      <td class="gt_row gt_right">2.620</td>
+      <td class="gt_row gt_right">16.46</td>
+      <td class="gt_row gt_right">0</td>
+      <td class="gt_row gt_right">1</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">4</td>
     </tr>
     <tr>
-      <td class="gt_row gt_right">4.9</td>
-      <td class="gt_row gt_right">3.0</td>
-      <td class="gt_row gt_right">1.4</td>
-      <td class="gt_row gt_right">0.2</td>
-      <td class="gt_row gt_center">setosa</td>
+      <td class="gt_row gt_right">21.0</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">160</td>
+      <td class="gt_row gt_right">110</td>
+      <td class="gt_row gt_right">3.90</td>
+      <td class="gt_row gt_right">2.875</td>
+      <td class="gt_row gt_right">17.02</td>
+      <td class="gt_row gt_right">0</td>
+      <td class="gt_row gt_right">1</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">4</td>
     </tr>
     <tr>
-      <td class="gt_row gt_right">4.7</td>
-      <td class="gt_row gt_right">3.2</td>
-      <td class="gt_row gt_right">1.3</td>
-      <td class="gt_row gt_right">0.2</td>
-      <td class="gt_row gt_center">setosa</td>
+      <td class="gt_row gt_right">22.8</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">108</td>
+      <td class="gt_row gt_right">93</td>
+      <td class="gt_row gt_right">3.85</td>
+      <td class="gt_row gt_right">2.320</td>
+      <td class="gt_row gt_right">18.61</td>
+      <td class="gt_row gt_right">1</td>
+      <td class="gt_row gt_right">1</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">1</td>
     </tr>
     <tr>
-      <td class="gt_row gt_right">4.6</td>
-      <td class="gt_row gt_right">3.1</td>
-      <td class="gt_row gt_right">1.5</td>
-      <td class="gt_row gt_right">0.2</td>
-      <td class="gt_row gt_center">setosa</td>
+      <td class="gt_row gt_right">21.4</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">258</td>
+      <td class="gt_row gt_right">110</td>
+      <td class="gt_row gt_right">3.08</td>
+      <td class="gt_row gt_right">3.215</td>
+      <td class="gt_row gt_right">19.44</td>
+      <td class="gt_row gt_right">1</td>
+      <td class="gt_row gt_right">0</td>
+      <td class="gt_row gt_right">3</td>
+      <td class="gt_row gt_right">1</td>
     </tr>
     <tr>
-      <td class="gt_row gt_right">5.0</td>
-      <td class="gt_row gt_right">3.6</td>
-      <td class="gt_row gt_right">1.4</td>
-      <td class="gt_row gt_right">0.2</td>
-      <td class="gt_row gt_center">setosa</td>
+      <td class="gt_row gt_right">18.7</td>
+      <td class="gt_row gt_right">8</td>
+      <td class="gt_row gt_right">360</td>
+      <td class="gt_row gt_right">175</td>
+      <td class="gt_row gt_right">3.15</td>
+      <td class="gt_row gt_right">3.440</td>
+      <td class="gt_row gt_right">17.02</td>
+      <td class="gt_row gt_right">0</td>
+      <td class="gt_row gt_right">0</td>
+      <td class="gt_row gt_right">3</td>
+      <td class="gt_row gt_right">2</td>
     </tr>
   </tbody>
   
@@ -1065,7 +1101,7 @@ To be sure, there are a number of excellent table packages, all with their benef
 <div id="style-the-borders" class="section level3">
 <h3>Style the Borders</h3>
 <p>All APA tables have a black top border, a black border at the bottom of the column header, and a black bottom border. We can use the following code to recreate that look, as well as set the width and make the font size consistent with the table body:</p>
-<pre class="r"><code>iris %&gt;%
+<pre class="r"><code>mtcars %&gt;%
   slice(1:5) %&gt;%
   gt() %&gt;%
   tab_options(
@@ -1091,7 +1127,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#jggyhvarps .gt_table {
+#bdeickwmgw .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1114,7 +1150,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-left-color: #D3D3D3;
 }
 
-#jggyhvarps .gt_heading {
+#bdeickwmgw .gt_heading {
   background-color: white;
   text-align: center;
   border-bottom-color: white;
@@ -1126,7 +1162,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-right-color: #D3D3D3;
 }
 
-#jggyhvarps .gt_title {
+#bdeickwmgw .gt_title {
   color: #333333;
   font-size: 16px;
   font-weight: initial;
@@ -1136,7 +1172,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-bottom-width: 0;
 }
 
-#jggyhvarps .gt_subtitle {
+#bdeickwmgw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1146,13 +1182,13 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-top-width: 0;
 }
 
-#jggyhvarps .gt_bottom_border {
+#bdeickwmgw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#jggyhvarps .gt_col_headings {
+#bdeickwmgw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 3px;
   border-top-color: black;
@@ -1167,7 +1203,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-right-color: #D3D3D3;
 }
 
-#jggyhvarps .gt_col_heading {
+#bdeickwmgw .gt_col_heading {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -1187,7 +1223,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   overflow-x: hidden;
 }
 
-#jggyhvarps .gt_column_spanner_outer {
+#bdeickwmgw .gt_column_spanner_outer {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -1199,15 +1235,15 @@ To be sure, there are a number of excellent table packages, all with their benef
   padding-right: 4px;
 }
 
-#jggyhvarps .gt_column_spanner_outer:first-child {
+#bdeickwmgw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#jggyhvarps .gt_column_spanner_outer:last-child {
+#bdeickwmgw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#jggyhvarps .gt_column_spanner {
+#bdeickwmgw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 3px;
   border-bottom-color: black;
@@ -1219,7 +1255,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   width: 100%;
 }
 
-#jggyhvarps .gt_group_heading {
+#bdeickwmgw .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: white;
@@ -1241,7 +1277,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   vertical-align: middle;
 }
 
-#jggyhvarps .gt_empty_group_heading {
+#bdeickwmgw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: white;
@@ -1256,19 +1292,19 @@ To be sure, there are a number of excellent table packages, all with their benef
   vertical-align: middle;
 }
 
-#jggyhvarps .gt_striped {
+#bdeickwmgw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#jggyhvarps .gt_from_md > :first-child {
+#bdeickwmgw .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#jggyhvarps .gt_from_md > :last-child {
+#bdeickwmgw .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#jggyhvarps .gt_row {
+#bdeickwmgw .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1287,7 +1323,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   overflow-x: hidden;
 }
 
-#jggyhvarps .gt_stub {
+#bdeickwmgw .gt_stub {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -1299,7 +1335,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   padding-left: 12px;
 }
 
-#jggyhvarps .gt_summary_row {
+#bdeickwmgw .gt_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -1309,7 +1345,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   padding-right: 5px;
 }
 
-#jggyhvarps .gt_first_summary_row {
+#bdeickwmgw .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1319,7 +1355,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-top-color: #D3D3D3;
 }
 
-#jggyhvarps .gt_grand_summary_row {
+#bdeickwmgw .gt_grand_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -1329,7 +1365,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   padding-right: 5px;
 }
 
-#jggyhvarps .gt_first_grand_summary_row {
+#bdeickwmgw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1339,7 +1375,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-top-color: #D3D3D3;
 }
 
-#jggyhvarps .gt_table_body {
+#bdeickwmgw .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1348,7 +1384,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-bottom-color: black;
 }
 
-#jggyhvarps .gt_footnotes {
+#bdeickwmgw .gt_footnotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -1362,13 +1398,13 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-right-color: #D3D3D3;
 }
 
-#jggyhvarps .gt_footnote {
+#bdeickwmgw .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#jggyhvarps .gt_sourcenotes {
+#bdeickwmgw .gt_sourcenotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -1382,91 +1418,127 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-right-color: #D3D3D3;
 }
 
-#jggyhvarps .gt_sourcenote {
+#bdeickwmgw .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#jggyhvarps .gt_left {
+#bdeickwmgw .gt_left {
   text-align: left;
 }
 
-#jggyhvarps .gt_center {
+#bdeickwmgw .gt_center {
   text-align: center;
 }
 
-#jggyhvarps .gt_right {
+#bdeickwmgw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#jggyhvarps .gt_font_normal {
+#bdeickwmgw .gt_font_normal {
   font-weight: normal;
 }
 
-#jggyhvarps .gt_font_bold {
+#bdeickwmgw .gt_font_bold {
   font-weight: bold;
 }
 
-#jggyhvarps .gt_font_italic {
+#bdeickwmgw .gt_font_italic {
   font-style: italic;
 }
 
-#jggyhvarps .gt_super {
+#bdeickwmgw .gt_super {
   font-size: 65%;
 }
 
-#jggyhvarps .gt_footnote_marks {
+#bdeickwmgw .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="jggyhvarps" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="bdeickwmgw" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   
   <thead class="gt_col_headings">
     <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Sepal.Length</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Sepal.Width</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Petal.Length</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Petal.Width</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Species</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">mpg</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">cyl</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">disp</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">hp</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">drat</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">wt</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">qsec</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">vs</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">am</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">gear</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">carb</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
     <tr>
-      <td class="gt_row gt_right">5.1</td>
-      <td class="gt_row gt_right">3.5</td>
-      <td class="gt_row gt_right">1.4</td>
-      <td class="gt_row gt_right">0.2</td>
-      <td class="gt_row gt_center">setosa</td>
+      <td class="gt_row gt_right">21.0</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">160</td>
+      <td class="gt_row gt_right">110</td>
+      <td class="gt_row gt_right">3.90</td>
+      <td class="gt_row gt_right">2.620</td>
+      <td class="gt_row gt_right">16.46</td>
+      <td class="gt_row gt_right">0</td>
+      <td class="gt_row gt_right">1</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">4</td>
     </tr>
     <tr>
-      <td class="gt_row gt_right">4.9</td>
-      <td class="gt_row gt_right">3.0</td>
-      <td class="gt_row gt_right">1.4</td>
-      <td class="gt_row gt_right">0.2</td>
-      <td class="gt_row gt_center">setosa</td>
+      <td class="gt_row gt_right">21.0</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">160</td>
+      <td class="gt_row gt_right">110</td>
+      <td class="gt_row gt_right">3.90</td>
+      <td class="gt_row gt_right">2.875</td>
+      <td class="gt_row gt_right">17.02</td>
+      <td class="gt_row gt_right">0</td>
+      <td class="gt_row gt_right">1</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">4</td>
     </tr>
     <tr>
-      <td class="gt_row gt_right">4.7</td>
-      <td class="gt_row gt_right">3.2</td>
-      <td class="gt_row gt_right">1.3</td>
-      <td class="gt_row gt_right">0.2</td>
-      <td class="gt_row gt_center">setosa</td>
+      <td class="gt_row gt_right">22.8</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">108</td>
+      <td class="gt_row gt_right">93</td>
+      <td class="gt_row gt_right">3.85</td>
+      <td class="gt_row gt_right">2.320</td>
+      <td class="gt_row gt_right">18.61</td>
+      <td class="gt_row gt_right">1</td>
+      <td class="gt_row gt_right">1</td>
+      <td class="gt_row gt_right">4</td>
+      <td class="gt_row gt_right">1</td>
     </tr>
     <tr>
-      <td class="gt_row gt_right">4.6</td>
-      <td class="gt_row gt_right">3.1</td>
-      <td class="gt_row gt_right">1.5</td>
-      <td class="gt_row gt_right">0.2</td>
-      <td class="gt_row gt_center">setosa</td>
+      <td class="gt_row gt_right">21.4</td>
+      <td class="gt_row gt_right">6</td>
+      <td class="gt_row gt_right">258</td>
+      <td class="gt_row gt_right">110</td>
+      <td class="gt_row gt_right">3.08</td>
+      <td class="gt_row gt_right">3.215</td>
+      <td class="gt_row gt_right">19.44</td>
+      <td class="gt_row gt_right">1</td>
+      <td class="gt_row gt_right">0</td>
+      <td class="gt_row gt_right">3</td>
+      <td class="gt_row gt_right">1</td>
     </tr>
     <tr>
-      <td class="gt_row gt_right">5.0</td>
-      <td class="gt_row gt_right">3.6</td>
-      <td class="gt_row gt_right">1.4</td>
-      <td class="gt_row gt_right">0.2</td>
-      <td class="gt_row gt_center">setosa</td>
+      <td class="gt_row gt_right">18.7</td>
+      <td class="gt_row gt_right">8</td>
+      <td class="gt_row gt_right">360</td>
+      <td class="gt_row gt_right">175</td>
+      <td class="gt_row gt_right">3.15</td>
+      <td class="gt_row gt_right">3.440</td>
+      <td class="gt_row gt_right">17.02</td>
+      <td class="gt_row gt_right">0</td>
+      <td class="gt_row gt_right">0</td>
+      <td class="gt_row gt_right">3</td>
+      <td class="gt_row gt_right">2</td>
     </tr>
   </tbody>
   
@@ -1477,7 +1549,7 @@ To be sure, there are a number of excellent table packages, all with their benef
 </div>
 <div id="styling-the-table-body" class="section level3">
 <h3>Styling the Table Body</h3>
-<pre class="r"><code>iris %&gt;%
+<pre class="r"><code>mtcars %&gt;%
   slice(1:5) %&gt;%
   gt() %&gt;%
   tab_options(
@@ -1519,7 +1591,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#pugdjzzicn .gt_table {
+#dynuuuirsq .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1542,7 +1614,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-left-color: #D3D3D3;
 }
 
-#pugdjzzicn .gt_heading {
+#dynuuuirsq .gt_heading {
   background-color: white;
   text-align: center;
   border-bottom-color: white;
@@ -1554,7 +1626,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-right-color: #D3D3D3;
 }
 
-#pugdjzzicn .gt_title {
+#dynuuuirsq .gt_title {
   color: #333333;
   font-size: 16px;
   font-weight: initial;
@@ -1564,7 +1636,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-bottom-width: 0;
 }
 
-#pugdjzzicn .gt_subtitle {
+#dynuuuirsq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1574,13 +1646,13 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-top-width: 0;
 }
 
-#pugdjzzicn .gt_bottom_border {
+#dynuuuirsq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#pugdjzzicn .gt_col_headings {
+#dynuuuirsq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 3px;
   border-top-color: black;
@@ -1595,7 +1667,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-right-color: #D3D3D3;
 }
 
-#pugdjzzicn .gt_col_heading {
+#dynuuuirsq .gt_col_heading {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -1615,7 +1687,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   overflow-x: hidden;
 }
 
-#pugdjzzicn .gt_column_spanner_outer {
+#dynuuuirsq .gt_column_spanner_outer {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -1627,15 +1699,15 @@ To be sure, there are a number of excellent table packages, all with their benef
   padding-right: 4px;
 }
 
-#pugdjzzicn .gt_column_spanner_outer:first-child {
+#dynuuuirsq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#pugdjzzicn .gt_column_spanner_outer:last-child {
+#dynuuuirsq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#pugdjzzicn .gt_column_spanner {
+#dynuuuirsq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 3px;
   border-bottom-color: black;
@@ -1647,7 +1719,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   width: 100%;
 }
 
-#pugdjzzicn .gt_group_heading {
+#dynuuuirsq .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: white;
@@ -1669,7 +1741,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   vertical-align: middle;
 }
 
-#pugdjzzicn .gt_empty_group_heading {
+#dynuuuirsq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: white;
@@ -1684,19 +1756,19 @@ To be sure, there are a number of excellent table packages, all with their benef
   vertical-align: middle;
 }
 
-#pugdjzzicn .gt_striped {
+#dynuuuirsq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#pugdjzzicn .gt_from_md > :first-child {
+#dynuuuirsq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#pugdjzzicn .gt_from_md > :last-child {
+#dynuuuirsq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#pugdjzzicn .gt_row {
+#dynuuuirsq .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1715,7 +1787,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   overflow-x: hidden;
 }
 
-#pugdjzzicn .gt_stub {
+#dynuuuirsq .gt_stub {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -1727,7 +1799,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   padding-left: 12px;
 }
 
-#pugdjzzicn .gt_summary_row {
+#dynuuuirsq .gt_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -1737,7 +1809,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   padding-right: 5px;
 }
 
-#pugdjzzicn .gt_first_summary_row {
+#dynuuuirsq .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1747,7 +1819,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-top-color: #D3D3D3;
 }
 
-#pugdjzzicn .gt_grand_summary_row {
+#dynuuuirsq .gt_grand_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -1757,7 +1829,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   padding-right: 5px;
 }
 
-#pugdjzzicn .gt_first_grand_summary_row {
+#dynuuuirsq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1767,7 +1839,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-top-color: #D3D3D3;
 }
 
-#pugdjzzicn .gt_table_body {
+#dynuuuirsq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1776,7 +1848,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-bottom-color: black;
 }
 
-#pugdjzzicn .gt_footnotes {
+#dynuuuirsq .gt_footnotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -1790,13 +1862,13 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-right-color: #D3D3D3;
 }
 
-#pugdjzzicn .gt_footnote {
+#dynuuuirsq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#pugdjzzicn .gt_sourcenotes {
+#dynuuuirsq .gt_sourcenotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -1810,91 +1882,127 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-right-color: #D3D3D3;
 }
 
-#pugdjzzicn .gt_sourcenote {
+#dynuuuirsq .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#pugdjzzicn .gt_left {
+#dynuuuirsq .gt_left {
   text-align: left;
 }
 
-#pugdjzzicn .gt_center {
+#dynuuuirsq .gt_center {
   text-align: center;
 }
 
-#pugdjzzicn .gt_right {
+#dynuuuirsq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#pugdjzzicn .gt_font_normal {
+#dynuuuirsq .gt_font_normal {
   font-weight: normal;
 }
 
-#pugdjzzicn .gt_font_bold {
+#dynuuuirsq .gt_font_bold {
   font-weight: bold;
 }
 
-#pugdjzzicn .gt_font_italic {
+#dynuuuirsq .gt_font_italic {
   font-style: italic;
 }
 
-#pugdjzzicn .gt_super {
+#dynuuuirsq .gt_super {
   font-size: 65%;
 }
 
-#pugdjzzicn .gt_footnote_marks {
+#dynuuuirsq .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="pugdjzzicn" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="dynuuuirsq" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   
   <thead class="gt_col_headings">
     <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Sepal.Length</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Sepal.Width</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Petal.Length</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Petal.Width</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Species</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">mpg</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">cyl</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">disp</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">hp</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">drat</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">wt</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">qsec</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">vs</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">am</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">gear</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">carb</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
     <tr>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">5.1</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.5</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1.4</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0.2</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">setosa</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">21.0</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">6</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">160</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">110</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.90</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">2.620</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">16.46</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4</td>
     </tr>
     <tr>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4.9</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.0</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1.4</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0.2</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">setosa</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">21.0</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">6</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">160</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">110</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.90</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">2.875</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">17.02</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4</td>
     </tr>
     <tr>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4.7</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.2</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1.3</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0.2</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">setosa</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">22.8</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">108</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">93</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.85</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">2.320</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">18.61</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1</td>
     </tr>
     <tr>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4.6</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.1</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1.5</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0.2</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">setosa</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">21.4</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">6</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">258</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">110</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.08</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.215</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">19.44</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1</td>
     </tr>
     <tr>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">5.0</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.6</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1.4</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0.2</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">setosa</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">18.7</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">8</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">360</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">175</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.15</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.440</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">17.02</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">2</td>
     </tr>
   </tbody>
   
@@ -1944,14 +2052,14 @@ To be sure, there are a number of excellent table packages, all with their benef
   opt_align_table_header(align = &quot;left&quot;)
 }</code></pre>
 <p>Let’s try it out:</p>
-<pre class="r"><code>iris %&gt;%
+<pre class="r"><code>mtcars %&gt;%
   slice(1:5) %&gt;%
-  apa(&quot;The Iris Dataset&quot;)</code></pre>
+  apa(&quot;Fuel consumption and aspects of automobile design and performance for 32 automobiles (1973-74 models)&quot;)</code></pre>
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#qycgkxdfyd .gt_table {
+#oeiqybynds .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1974,7 +2082,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-left-color: #D3D3D3;
 }
 
-#qycgkxdfyd .gt_heading {
+#oeiqybynds .gt_heading {
   background-color: white;
   text-align: left;
   border-bottom-color: white;
@@ -1986,7 +2094,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-right-color: #D3D3D3;
 }
 
-#qycgkxdfyd .gt_title {
+#oeiqybynds .gt_title {
   color: #333333;
   font-size: 16px;
   font-weight: initial;
@@ -1996,7 +2104,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-bottom-width: 0;
 }
 
-#qycgkxdfyd .gt_subtitle {
+#oeiqybynds .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2006,13 +2114,13 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-top-width: 0;
 }
 
-#qycgkxdfyd .gt_bottom_border {
+#oeiqybynds .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qycgkxdfyd .gt_col_headings {
+#oeiqybynds .gt_col_headings {
   border-top-style: solid;
   border-top-width: 3px;
   border-top-color: black;
@@ -2027,7 +2135,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-right-color: #D3D3D3;
 }
 
-#qycgkxdfyd .gt_col_heading {
+#oeiqybynds .gt_col_heading {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -2047,7 +2155,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   overflow-x: hidden;
 }
 
-#qycgkxdfyd .gt_column_spanner_outer {
+#oeiqybynds .gt_column_spanner_outer {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -2059,15 +2167,15 @@ To be sure, there are a number of excellent table packages, all with their benef
   padding-right: 4px;
 }
 
-#qycgkxdfyd .gt_column_spanner_outer:first-child {
+#oeiqybynds .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qycgkxdfyd .gt_column_spanner_outer:last-child {
+#oeiqybynds .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qycgkxdfyd .gt_column_spanner {
+#oeiqybynds .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 3px;
   border-bottom-color: black;
@@ -2079,7 +2187,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   width: 100%;
 }
 
-#qycgkxdfyd .gt_group_heading {
+#oeiqybynds .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: white;
@@ -2101,7 +2209,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   vertical-align: middle;
 }
 
-#qycgkxdfyd .gt_empty_group_heading {
+#oeiqybynds .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: white;
@@ -2116,19 +2224,19 @@ To be sure, there are a number of excellent table packages, all with their benef
   vertical-align: middle;
 }
 
-#qycgkxdfyd .gt_striped {
+#oeiqybynds .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qycgkxdfyd .gt_from_md > :first-child {
+#oeiqybynds .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qycgkxdfyd .gt_from_md > :last-child {
+#oeiqybynds .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qycgkxdfyd .gt_row {
+#oeiqybynds .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2147,7 +2255,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   overflow-x: hidden;
 }
 
-#qycgkxdfyd .gt_stub {
+#oeiqybynds .gt_stub {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -2159,7 +2267,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   padding-left: 12px;
 }
 
-#qycgkxdfyd .gt_summary_row {
+#oeiqybynds .gt_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -2169,7 +2277,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   padding-right: 5px;
 }
 
-#qycgkxdfyd .gt_first_summary_row {
+#oeiqybynds .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2179,7 +2287,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-top-color: #D3D3D3;
 }
 
-#qycgkxdfyd .gt_grand_summary_row {
+#oeiqybynds .gt_grand_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -2189,7 +2297,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   padding-right: 5px;
 }
 
-#qycgkxdfyd .gt_first_grand_summary_row {
+#oeiqybynds .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2199,7 +2307,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-top-color: #D3D3D3;
 }
 
-#qycgkxdfyd .gt_table_body {
+#oeiqybynds .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2208,7 +2316,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-bottom-color: black;
 }
 
-#qycgkxdfyd .gt_footnotes {
+#oeiqybynds .gt_footnotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -2222,13 +2330,13 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-right-color: #D3D3D3;
 }
 
-#qycgkxdfyd .gt_footnote {
+#oeiqybynds .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#qycgkxdfyd .gt_sourcenotes {
+#oeiqybynds .gt_sourcenotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -2242,98 +2350,134 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-right-color: #D3D3D3;
 }
 
-#qycgkxdfyd .gt_sourcenote {
+#oeiqybynds .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#qycgkxdfyd .gt_left {
+#oeiqybynds .gt_left {
   text-align: left;
 }
 
-#qycgkxdfyd .gt_center {
+#oeiqybynds .gt_center {
   text-align: center;
 }
 
-#qycgkxdfyd .gt_right {
+#oeiqybynds .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qycgkxdfyd .gt_font_normal {
+#oeiqybynds .gt_font_normal {
   font-weight: normal;
 }
 
-#qycgkxdfyd .gt_font_bold {
+#oeiqybynds .gt_font_bold {
   font-weight: bold;
 }
 
-#qycgkxdfyd .gt_font_italic {
+#oeiqybynds .gt_font_italic {
   font-style: italic;
 }
 
-#qycgkxdfyd .gt_super {
+#oeiqybynds .gt_super {
   font-size: 65%;
 }
 
-#qycgkxdfyd .gt_footnote_marks {
+#oeiqybynds .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="qycgkxdfyd" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="oeiqybynds" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   <thead class="gt_header">
     <tr>
-      <th colspan="5" class="gt_heading gt_title gt_font_normal" style><i> The Iris Dataset </i></th>
+      <th colspan="11" class="gt_heading gt_title gt_font_normal" style><i> Fuel consumption and aspects of automobile design and performance for 32 automobiles (1973-74 models) </i></th>
     </tr>
     <tr>
-      <th colspan="5" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style></th>
+      <th colspan="11" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style></th>
     </tr>
   </thead>
   <thead class="gt_col_headings">
     <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Sepal.Length</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Sepal.Width</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Petal.Length</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Petal.Width</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Species</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">mpg</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">cyl</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">disp</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">hp</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">drat</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">wt</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">qsec</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">vs</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">am</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">gear</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">carb</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
     <tr>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">5.1</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.5</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1.4</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0.2</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">setosa</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">21.0</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">6</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">160</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">110</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.90</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">2.620</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">16.46</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4</td>
     </tr>
     <tr>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4.9</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.0</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1.4</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0.2</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">setosa</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">21.0</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">6</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">160</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">110</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.90</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">2.875</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">17.02</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4</td>
     </tr>
     <tr>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4.7</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.2</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1.3</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0.2</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">setosa</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">22.8</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">108</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">93</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.85</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">2.320</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">18.61</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1</td>
     </tr>
     <tr>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4.6</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.1</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1.5</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0.2</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">setosa</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">21.4</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">6</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">258</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">110</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.08</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.215</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">19.44</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1</td>
     </tr>
     <tr>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">5.0</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.6</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1.4</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0.2</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">setosa</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">18.7</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">8</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">360</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">175</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.15</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.440</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">17.02</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">2</td>
     </tr>
   </tbody>
   
@@ -2343,22 +2487,22 @@ To be sure, there are a number of excellent table packages, all with their benef
 <div id="add-a-footnote" class="section level3">
 <h3>Add a Footnote</h3>
 <p>If we wanted to add a note, we would do so using an additional <code>gt</code> function:</p>
-<pre class="r"><code>iris %&gt;%
+<pre class="r"><code>mtcars %&gt;%
   slice(1:5) %&gt;%
-  apa(&quot;The Iris Dataset&quot;) %&gt;%
+  apa(&quot;Fuel consumption and aspects of automobile design and performance for 32 automobiles (1973-74 models)&quot;) %&gt;%
   tab_footnote(
     #footnote text
-    footnote = &quot;This is a footnore.&quot;,
+    footnote = &quot;This is a footnote.&quot;,
     # add to the column labels section
     locations = cells_column_labels(
-      # add to the &quot;Species&quot; column
-      columns = vars(Species))
+      # add to the &quot;mpg&quot; column
+      columns = vars(mpg))
   )</code></pre>
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#dpnozrarwg .gt_table {
+#vyukmnnsqu .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -2381,7 +2525,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-left-color: #D3D3D3;
 }
 
-#dpnozrarwg .gt_heading {
+#vyukmnnsqu .gt_heading {
   background-color: white;
   text-align: left;
   border-bottom-color: white;
@@ -2393,7 +2537,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-right-color: #D3D3D3;
 }
 
-#dpnozrarwg .gt_title {
+#vyukmnnsqu .gt_title {
   color: #333333;
   font-size: 16px;
   font-weight: initial;
@@ -2403,7 +2547,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-bottom-width: 0;
 }
 
-#dpnozrarwg .gt_subtitle {
+#vyukmnnsqu .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2413,13 +2557,13 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-top-width: 0;
 }
 
-#dpnozrarwg .gt_bottom_border {
+#vyukmnnsqu .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#dpnozrarwg .gt_col_headings {
+#vyukmnnsqu .gt_col_headings {
   border-top-style: solid;
   border-top-width: 3px;
   border-top-color: black;
@@ -2434,7 +2578,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-right-color: #D3D3D3;
 }
 
-#dpnozrarwg .gt_col_heading {
+#vyukmnnsqu .gt_col_heading {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -2454,7 +2598,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   overflow-x: hidden;
 }
 
-#dpnozrarwg .gt_column_spanner_outer {
+#vyukmnnsqu .gt_column_spanner_outer {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -2466,15 +2610,15 @@ To be sure, there are a number of excellent table packages, all with their benef
   padding-right: 4px;
 }
 
-#dpnozrarwg .gt_column_spanner_outer:first-child {
+#vyukmnnsqu .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#dpnozrarwg .gt_column_spanner_outer:last-child {
+#vyukmnnsqu .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#dpnozrarwg .gt_column_spanner {
+#vyukmnnsqu .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 3px;
   border-bottom-color: black;
@@ -2486,7 +2630,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   width: 100%;
 }
 
-#dpnozrarwg .gt_group_heading {
+#vyukmnnsqu .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: white;
@@ -2508,7 +2652,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   vertical-align: middle;
 }
 
-#dpnozrarwg .gt_empty_group_heading {
+#vyukmnnsqu .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: white;
@@ -2523,19 +2667,19 @@ To be sure, there are a number of excellent table packages, all with their benef
   vertical-align: middle;
 }
 
-#dpnozrarwg .gt_striped {
+#vyukmnnsqu .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#dpnozrarwg .gt_from_md > :first-child {
+#vyukmnnsqu .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#dpnozrarwg .gt_from_md > :last-child {
+#vyukmnnsqu .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#dpnozrarwg .gt_row {
+#vyukmnnsqu .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2554,7 +2698,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   overflow-x: hidden;
 }
 
-#dpnozrarwg .gt_stub {
+#vyukmnnsqu .gt_stub {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -2566,7 +2710,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   padding-left: 12px;
 }
 
-#dpnozrarwg .gt_summary_row {
+#vyukmnnsqu .gt_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -2576,7 +2720,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   padding-right: 5px;
 }
 
-#dpnozrarwg .gt_first_summary_row {
+#vyukmnnsqu .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2586,7 +2730,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-top-color: #D3D3D3;
 }
 
-#dpnozrarwg .gt_grand_summary_row {
+#vyukmnnsqu .gt_grand_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -2596,7 +2740,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   padding-right: 5px;
 }
 
-#dpnozrarwg .gt_first_grand_summary_row {
+#vyukmnnsqu .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2606,7 +2750,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-top-color: #D3D3D3;
 }
 
-#dpnozrarwg .gt_table_body {
+#vyukmnnsqu .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2615,7 +2759,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-bottom-color: black;
 }
 
-#dpnozrarwg .gt_footnotes {
+#vyukmnnsqu .gt_footnotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -2629,13 +2773,13 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-right-color: #D3D3D3;
 }
 
-#dpnozrarwg .gt_footnote {
+#vyukmnnsqu .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#dpnozrarwg .gt_sourcenotes {
+#vyukmnnsqu .gt_sourcenotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -2649,110 +2793,146 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-right-color: #D3D3D3;
 }
 
-#dpnozrarwg .gt_sourcenote {
+#vyukmnnsqu .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#dpnozrarwg .gt_left {
+#vyukmnnsqu .gt_left {
   text-align: left;
 }
 
-#dpnozrarwg .gt_center {
+#vyukmnnsqu .gt_center {
   text-align: center;
 }
 
-#dpnozrarwg .gt_right {
+#vyukmnnsqu .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#dpnozrarwg .gt_font_normal {
+#vyukmnnsqu .gt_font_normal {
   font-weight: normal;
 }
 
-#dpnozrarwg .gt_font_bold {
+#vyukmnnsqu .gt_font_bold {
   font-weight: bold;
 }
 
-#dpnozrarwg .gt_font_italic {
+#vyukmnnsqu .gt_font_italic {
   font-style: italic;
 }
 
-#dpnozrarwg .gt_super {
+#vyukmnnsqu .gt_super {
   font-size: 65%;
 }
 
-#dpnozrarwg .gt_footnote_marks {
+#vyukmnnsqu .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="dpnozrarwg" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="vyukmnnsqu" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   <thead class="gt_header">
     <tr>
-      <th colspan="5" class="gt_heading gt_title gt_font_normal" style><i> The Iris Dataset </i></th>
+      <th colspan="11" class="gt_heading gt_title gt_font_normal" style><i> Fuel consumption and aspects of automobile design and performance for 32 automobiles (1973-74 models) </i></th>
     </tr>
     <tr>
-      <th colspan="5" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style></th>
+      <th colspan="11" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style></th>
     </tr>
   </thead>
   <thead class="gt_col_headings">
     <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Sepal.Length</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Sepal.Width</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Petal.Length</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Petal.Width</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Species<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">mpg<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">cyl</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">disp</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">hp</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">drat</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">wt</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">qsec</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">vs</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">am</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">gear</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">carb</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
     <tr>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">5.1</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.5</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1.4</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0.2</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">setosa</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">21.0</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">6</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">160</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">110</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.90</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">2.620</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">16.46</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4</td>
     </tr>
     <tr>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4.9</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.0</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1.4</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0.2</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">setosa</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">21.0</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">6</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">160</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">110</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.90</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">2.875</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">17.02</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4</td>
     </tr>
     <tr>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4.7</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.2</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1.3</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0.2</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">setosa</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">22.8</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">108</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">93</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.85</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">2.320</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">18.61</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1</td>
     </tr>
     <tr>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4.6</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.1</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1.5</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0.2</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">setosa</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">21.4</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">6</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">258</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">110</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.08</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.215</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">19.44</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1</td>
     </tr>
     <tr>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">5.0</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.6</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1.4</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0.2</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">setosa</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">18.7</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">8</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">360</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">175</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.15</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.440</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">17.02</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">2</td>
     </tr>
   </tbody>
   
   <tfoot>
     <tr class="gt_footnotes">
-      <td colspan="5">
+      <td colspan="11">
         <p class="gt_footnote">
           <sup class="gt_footnote_marks">
             <em>1</em>
           </sup>
            
-          This is a footnore.
+          This is a footnote.
           <br />
         </p>
       </td>
@@ -2763,13 +2943,13 @@ To be sure, there are a number of excellent table packages, all with their benef
 <div id="italicize-column-text" class="section level3">
 <h3>Italicize Column Text</h3>
 <p>In many APA tables, statical indicators such as <em>p</em>, <em>M</em> or <em>n</em> are italicized. We can do that here in the following manner:</p>
-<pre class="r"><code>iris %&gt;%
+<pre class="r"><code>mtcars %&gt;%
   slice(1:5) %&gt;%
-  apa(&quot;The Iris Dataset&quot;) %&gt;%
+  apa(&quot;Fuel consumption and aspects of automobile design and performance for 32 automobiles (1973-74 models)&quot;) %&gt;%
     tab_footnote(
-    footnote = &quot;This is a footnore.&quot;,
+    footnote = &quot;This is a footnote.&quot;,
     locations = cells_column_labels(
-      columns = vars(Species))
+      columns = vars(mpg))
   ) %&gt;%
   # add an additional table style
   tab_style(
@@ -2779,14 +2959,14 @@ To be sure, there are a number of excellent table packages, all with their benef
   ),
   # specify the column
   locations = cells_column_labels(
-      columns = vars(Species)
+      columns = vars(cyl)
       )
   )</code></pre>
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#tcdxfirvum .gt_table {
+#cfeknchawz .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -2809,7 +2989,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-left-color: #D3D3D3;
 }
 
-#tcdxfirvum .gt_heading {
+#cfeknchawz .gt_heading {
   background-color: white;
   text-align: left;
   border-bottom-color: white;
@@ -2821,7 +3001,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-right-color: #D3D3D3;
 }
 
-#tcdxfirvum .gt_title {
+#cfeknchawz .gt_title {
   color: #333333;
   font-size: 16px;
   font-weight: initial;
@@ -2831,7 +3011,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-bottom-width: 0;
 }
 
-#tcdxfirvum .gt_subtitle {
+#cfeknchawz .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2841,13 +3021,13 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-top-width: 0;
 }
 
-#tcdxfirvum .gt_bottom_border {
+#cfeknchawz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#tcdxfirvum .gt_col_headings {
+#cfeknchawz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 3px;
   border-top-color: black;
@@ -2862,7 +3042,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-right-color: #D3D3D3;
 }
 
-#tcdxfirvum .gt_col_heading {
+#cfeknchawz .gt_col_heading {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -2882,7 +3062,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   overflow-x: hidden;
 }
 
-#tcdxfirvum .gt_column_spanner_outer {
+#cfeknchawz .gt_column_spanner_outer {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -2894,15 +3074,15 @@ To be sure, there are a number of excellent table packages, all with their benef
   padding-right: 4px;
 }
 
-#tcdxfirvum .gt_column_spanner_outer:first-child {
+#cfeknchawz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#tcdxfirvum .gt_column_spanner_outer:last-child {
+#cfeknchawz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#tcdxfirvum .gt_column_spanner {
+#cfeknchawz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 3px;
   border-bottom-color: black;
@@ -2914,7 +3094,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   width: 100%;
 }
 
-#tcdxfirvum .gt_group_heading {
+#cfeknchawz .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: white;
@@ -2936,7 +3116,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   vertical-align: middle;
 }
 
-#tcdxfirvum .gt_empty_group_heading {
+#cfeknchawz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: white;
@@ -2951,19 +3131,19 @@ To be sure, there are a number of excellent table packages, all with their benef
   vertical-align: middle;
 }
 
-#tcdxfirvum .gt_striped {
+#cfeknchawz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#tcdxfirvum .gt_from_md > :first-child {
+#cfeknchawz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#tcdxfirvum .gt_from_md > :last-child {
+#cfeknchawz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#tcdxfirvum .gt_row {
+#cfeknchawz .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2982,7 +3162,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   overflow-x: hidden;
 }
 
-#tcdxfirvum .gt_stub {
+#cfeknchawz .gt_stub {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -2994,7 +3174,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   padding-left: 12px;
 }
 
-#tcdxfirvum .gt_summary_row {
+#cfeknchawz .gt_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -3004,7 +3184,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   padding-right: 5px;
 }
 
-#tcdxfirvum .gt_first_summary_row {
+#cfeknchawz .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3014,7 +3194,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-top-color: #D3D3D3;
 }
 
-#tcdxfirvum .gt_grand_summary_row {
+#cfeknchawz .gt_grand_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -3024,7 +3204,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   padding-right: 5px;
 }
 
-#tcdxfirvum .gt_first_grand_summary_row {
+#cfeknchawz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3034,7 +3214,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-top-color: #D3D3D3;
 }
 
-#tcdxfirvum .gt_table_body {
+#cfeknchawz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3043,7 +3223,7 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-bottom-color: black;
 }
 
-#tcdxfirvum .gt_footnotes {
+#cfeknchawz .gt_footnotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -3057,13 +3237,13 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-right-color: #D3D3D3;
 }
 
-#tcdxfirvum .gt_footnote {
+#cfeknchawz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#tcdxfirvum .gt_sourcenotes {
+#cfeknchawz .gt_sourcenotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -3077,110 +3257,146 @@ To be sure, there are a number of excellent table packages, all with their benef
   border-right-color: #D3D3D3;
 }
 
-#tcdxfirvum .gt_sourcenote {
+#cfeknchawz .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#tcdxfirvum .gt_left {
+#cfeknchawz .gt_left {
   text-align: left;
 }
 
-#tcdxfirvum .gt_center {
+#cfeknchawz .gt_center {
   text-align: center;
 }
 
-#tcdxfirvum .gt_right {
+#cfeknchawz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#tcdxfirvum .gt_font_normal {
+#cfeknchawz .gt_font_normal {
   font-weight: normal;
 }
 
-#tcdxfirvum .gt_font_bold {
+#cfeknchawz .gt_font_bold {
   font-weight: bold;
 }
 
-#tcdxfirvum .gt_font_italic {
+#cfeknchawz .gt_font_italic {
   font-style: italic;
 }
 
-#tcdxfirvum .gt_super {
+#cfeknchawz .gt_super {
   font-size: 65%;
 }
 
-#tcdxfirvum .gt_footnote_marks {
+#cfeknchawz .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="tcdxfirvum" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="cfeknchawz" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   <thead class="gt_header">
     <tr>
-      <th colspan="5" class="gt_heading gt_title gt_font_normal" style><i> The Iris Dataset </i></th>
+      <th colspan="11" class="gt_heading gt_title gt_font_normal" style><i> Fuel consumption and aspects of automobile design and performance for 32 automobiles (1973-74 models) </i></th>
     </tr>
     <tr>
-      <th colspan="5" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style></th>
+      <th colspan="11" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style></th>
     </tr>
   </thead>
   <thead class="gt_col_headings">
     <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Sepal.Length</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Sepal.Width</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Petal.Length</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">Petal.Width</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="font-style: italic;">Species<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">mpg<sup class="gt_footnote_marks">1</sup></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="font-style: italic;">cyl</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">disp</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">hp</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">drat</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">wt</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">qsec</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">vs</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">am</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">gear</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">carb</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
     <tr>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">5.1</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.5</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1.4</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0.2</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">setosa</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">21.0</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">6</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">160</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">110</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.90</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">2.620</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">16.46</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4</td>
     </tr>
     <tr>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4.9</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.0</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1.4</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0.2</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">setosa</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">21.0</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">6</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">160</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">110</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.90</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">2.875</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">17.02</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4</td>
     </tr>
     <tr>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4.7</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.2</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1.3</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0.2</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">setosa</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">22.8</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">108</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">93</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.85</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">2.320</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">18.61</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1</td>
     </tr>
     <tr>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">4.6</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.1</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1.5</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0.2</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">setosa</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">21.4</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">6</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">258</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">110</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.08</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.215</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">19.44</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1</td>
     </tr>
     <tr>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">5.0</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.6</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">1.4</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0.2</td>
-      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">setosa</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">18.7</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">8</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">360</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">175</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.15</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3.440</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">17.02</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">0</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">3</td>
+      <td class="gt_row gt_center" style="border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;">2</td>
     </tr>
   </tbody>
   
   <tfoot>
     <tr class="gt_footnotes">
-      <td colspan="5">
+      <td colspan="11">
         <p class="gt_footnote">
           <sup class="gt_footnote_marks">
             <em>1</em>
           </sup>
            
-          This is a footnore.
+          This is a footnote.
           <br />
         </p>
       </td>
@@ -3192,7 +3408,7 @@ To be sure, there are a number of excellent table packages, all with their benef
 <div id="uses" class="section level2">
 <h2>Uses</h2>
 <p>Using <code>gt</code> to make APA tables could be useful if you are making HTML or PDF reports. Unfortunatley, they do not render at all correctly if you are knitting directly to Word. However, they can be outputted in RTF format, which can then be placed back into word. Here is an example</p>
-<pre><code>iris %&gt;%
+<pre><code>mtcars %&gt;%
   slice(1:5) %&gt;%
   gt() %&gt;%
   as_rtf() -&gt; table
@@ -3205,8 +3421,7 @@ close(fileConn)</code></pre>
 <p>The package <code>apaTables</code> is very useful for getting something into the shape for APA and has the function to export individual tables into word. We can also shape statistical results with <code>apaTables</code> and then format that shape into an table with <code>gt</code>.</p>
 <div id="output-without-apatables" class="section level4">
 <h4>Output Without <code>apaTables</code></h4>
-<pre class="r"><code>data(mtcars)
-model &lt;- lm(mpg ~ wt, mtcars)
+<pre class="r"><code>model &lt;- lm(mpg ~ wt, mtcars)
 summary(model)</code></pre>
 <pre><code>## 
 ## Call:
@@ -3229,8 +3444,7 @@ summary(model)</code></pre>
 </div>
 <div id="output-with-apatables" class="section level4">
 <h4>Output with <code>apaTables</code></h4>
-<pre class="r"><code>data(mtcars)
-model &lt;- lm(mpg ~ wt, mtcars)
+<pre class="r"><code>model &lt;- lm(mpg ~ wt, mtcars)
 apaTables::apa.reg.table(model)</code></pre>
 <pre><code>## 
 ## 
@@ -3260,15 +3474,14 @@ apaTables::apa.reg.table(model)</code></pre>
 <div id="output-with-apatables-and-gt" class="section level4">
 <h4>Output with <code>apaTables</code> and <code>gt</code></h4>
 <p><code>apa.reg.table</code> takes the regression results and builds table elements into a list. We can then use <code>apa()</code> to grab the output stored in the named list elements</p>
-<pre class="r"><code>data(mtcars)
-model &lt;- lm(mpg ~ wt, mtcars)
+<pre class="r"><code>model &lt;- lm(mpg ~ wt, mtcars)
 apaTables::apa.reg.table(model)[[&quot;table_body&quot;]] %&gt;%
   apa()</code></pre>
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#abwxegrctp .gt_table {
+#rmayipahso .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -3291,7 +3504,7 @@ apaTables::apa.reg.table(model)[[&quot;table_body&quot;]] %&gt;%
   border-left-color: #D3D3D3;
 }
 
-#abwxegrctp .gt_heading {
+#rmayipahso .gt_heading {
   background-color: white;
   text-align: left;
   border-bottom-color: white;
@@ -3303,7 +3516,7 @@ apaTables::apa.reg.table(model)[[&quot;table_body&quot;]] %&gt;%
   border-right-color: #D3D3D3;
 }
 
-#abwxegrctp .gt_title {
+#rmayipahso .gt_title {
   color: #333333;
   font-size: 16px;
   font-weight: initial;
@@ -3313,7 +3526,7 @@ apaTables::apa.reg.table(model)[[&quot;table_body&quot;]] %&gt;%
   border-bottom-width: 0;
 }
 
-#abwxegrctp .gt_subtitle {
+#rmayipahso .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3323,13 +3536,13 @@ apaTables::apa.reg.table(model)[[&quot;table_body&quot;]] %&gt;%
   border-top-width: 0;
 }
 
-#abwxegrctp .gt_bottom_border {
+#rmayipahso .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#abwxegrctp .gt_col_headings {
+#rmayipahso .gt_col_headings {
   border-top-style: solid;
   border-top-width: 3px;
   border-top-color: black;
@@ -3344,7 +3557,7 @@ apaTables::apa.reg.table(model)[[&quot;table_body&quot;]] %&gt;%
   border-right-color: #D3D3D3;
 }
 
-#abwxegrctp .gt_col_heading {
+#rmayipahso .gt_col_heading {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -3364,7 +3577,7 @@ apaTables::apa.reg.table(model)[[&quot;table_body&quot;]] %&gt;%
   overflow-x: hidden;
 }
 
-#abwxegrctp .gt_column_spanner_outer {
+#rmayipahso .gt_column_spanner_outer {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -3376,15 +3589,15 @@ apaTables::apa.reg.table(model)[[&quot;table_body&quot;]] %&gt;%
   padding-right: 4px;
 }
 
-#abwxegrctp .gt_column_spanner_outer:first-child {
+#rmayipahso .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#abwxegrctp .gt_column_spanner_outer:last-child {
+#rmayipahso .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#abwxegrctp .gt_column_spanner {
+#rmayipahso .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 3px;
   border-bottom-color: black;
@@ -3396,7 +3609,7 @@ apaTables::apa.reg.table(model)[[&quot;table_body&quot;]] %&gt;%
   width: 100%;
 }
 
-#abwxegrctp .gt_group_heading {
+#rmayipahso .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: white;
@@ -3418,7 +3631,7 @@ apaTables::apa.reg.table(model)[[&quot;table_body&quot;]] %&gt;%
   vertical-align: middle;
 }
 
-#abwxegrctp .gt_empty_group_heading {
+#rmayipahso .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: white;
@@ -3433,19 +3646,19 @@ apaTables::apa.reg.table(model)[[&quot;table_body&quot;]] %&gt;%
   vertical-align: middle;
 }
 
-#abwxegrctp .gt_striped {
+#rmayipahso .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#abwxegrctp .gt_from_md > :first-child {
+#rmayipahso .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#abwxegrctp .gt_from_md > :last-child {
+#rmayipahso .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#abwxegrctp .gt_row {
+#rmayipahso .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3464,7 +3677,7 @@ apaTables::apa.reg.table(model)[[&quot;table_body&quot;]] %&gt;%
   overflow-x: hidden;
 }
 
-#abwxegrctp .gt_stub {
+#rmayipahso .gt_stub {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -3476,7 +3689,7 @@ apaTables::apa.reg.table(model)[[&quot;table_body&quot;]] %&gt;%
   padding-left: 12px;
 }
 
-#abwxegrctp .gt_summary_row {
+#rmayipahso .gt_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -3486,7 +3699,7 @@ apaTables::apa.reg.table(model)[[&quot;table_body&quot;]] %&gt;%
   padding-right: 5px;
 }
 
-#abwxegrctp .gt_first_summary_row {
+#rmayipahso .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3496,7 +3709,7 @@ apaTables::apa.reg.table(model)[[&quot;table_body&quot;]] %&gt;%
   border-top-color: #D3D3D3;
 }
 
-#abwxegrctp .gt_grand_summary_row {
+#rmayipahso .gt_grand_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -3506,7 +3719,7 @@ apaTables::apa.reg.table(model)[[&quot;table_body&quot;]] %&gt;%
   padding-right: 5px;
 }
 
-#abwxegrctp .gt_first_grand_summary_row {
+#rmayipahso .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3516,7 +3729,7 @@ apaTables::apa.reg.table(model)[[&quot;table_body&quot;]] %&gt;%
   border-top-color: #D3D3D3;
 }
 
-#abwxegrctp .gt_table_body {
+#rmayipahso .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3525,7 +3738,7 @@ apaTables::apa.reg.table(model)[[&quot;table_body&quot;]] %&gt;%
   border-bottom-color: black;
 }
 
-#abwxegrctp .gt_footnotes {
+#rmayipahso .gt_footnotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -3539,13 +3752,13 @@ apaTables::apa.reg.table(model)[[&quot;table_body&quot;]] %&gt;%
   border-right-color: #D3D3D3;
 }
 
-#abwxegrctp .gt_footnote {
+#rmayipahso .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#abwxegrctp .gt_sourcenotes {
+#rmayipahso .gt_sourcenotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -3559,46 +3772,46 @@ apaTables::apa.reg.table(model)[[&quot;table_body&quot;]] %&gt;%
   border-right-color: #D3D3D3;
 }
 
-#abwxegrctp .gt_sourcenote {
+#rmayipahso .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#abwxegrctp .gt_left {
+#rmayipahso .gt_left {
   text-align: left;
 }
 
-#abwxegrctp .gt_center {
+#rmayipahso .gt_center {
   text-align: center;
 }
 
-#abwxegrctp .gt_right {
+#rmayipahso .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#abwxegrctp .gt_font_normal {
+#rmayipahso .gt_font_normal {
   font-weight: normal;
 }
 
-#abwxegrctp .gt_font_bold {
+#rmayipahso .gt_font_bold {
   font-weight: bold;
 }
 
-#abwxegrctp .gt_font_italic {
+#rmayipahso .gt_font_italic {
   font-style: italic;
 }
 
-#abwxegrctp .gt_super {
+#rmayipahso .gt_super {
   font-size: 65%;
 }
 
-#abwxegrctp .gt_footnote_marks {
+#rmayipahso .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="abwxegrctp" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="rmayipahso" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   <thead class="gt_header">
     <tr>
       <th colspan="9" class="gt_heading gt_title gt_font_normal" style><i>   </i></th>
@@ -3695,7 +3908,7 @@ apa(apatable[[&quot;table_body&quot;]], apatable[[&quot;table_title&quot;]]) %&g
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#ugkevaxnco .gt_table {
+#xflxbwslxk .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -3718,7 +3931,7 @@ apa(apatable[[&quot;table_body&quot;]], apatable[[&quot;table_title&quot;]]) %&g
   border-left-color: #D3D3D3;
 }
 
-#ugkevaxnco .gt_heading {
+#xflxbwslxk .gt_heading {
   background-color: white;
   text-align: left;
   border-bottom-color: white;
@@ -3730,7 +3943,7 @@ apa(apatable[[&quot;table_body&quot;]], apatable[[&quot;table_title&quot;]]) %&g
   border-right-color: #D3D3D3;
 }
 
-#ugkevaxnco .gt_title {
+#xflxbwslxk .gt_title {
   color: #333333;
   font-size: 16px;
   font-weight: initial;
@@ -3740,7 +3953,7 @@ apa(apatable[[&quot;table_body&quot;]], apatable[[&quot;table_title&quot;]]) %&g
   border-bottom-width: 0;
 }
 
-#ugkevaxnco .gt_subtitle {
+#xflxbwslxk .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3750,13 +3963,13 @@ apa(apatable[[&quot;table_body&quot;]], apatable[[&quot;table_title&quot;]]) %&g
   border-top-width: 0;
 }
 
-#ugkevaxnco .gt_bottom_border {
+#xflxbwslxk .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ugkevaxnco .gt_col_headings {
+#xflxbwslxk .gt_col_headings {
   border-top-style: solid;
   border-top-width: 3px;
   border-top-color: black;
@@ -3771,7 +3984,7 @@ apa(apatable[[&quot;table_body&quot;]], apatable[[&quot;table_title&quot;]]) %&g
   border-right-color: #D3D3D3;
 }
 
-#ugkevaxnco .gt_col_heading {
+#xflxbwslxk .gt_col_heading {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -3791,7 +4004,7 @@ apa(apatable[[&quot;table_body&quot;]], apatable[[&quot;table_title&quot;]]) %&g
   overflow-x: hidden;
 }
 
-#ugkevaxnco .gt_column_spanner_outer {
+#xflxbwslxk .gt_column_spanner_outer {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -3803,15 +4016,15 @@ apa(apatable[[&quot;table_body&quot;]], apatable[[&quot;table_title&quot;]]) %&g
   padding-right: 4px;
 }
 
-#ugkevaxnco .gt_column_spanner_outer:first-child {
+#xflxbwslxk .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ugkevaxnco .gt_column_spanner_outer:last-child {
+#xflxbwslxk .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ugkevaxnco .gt_column_spanner {
+#xflxbwslxk .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 3px;
   border-bottom-color: black;
@@ -3823,7 +4036,7 @@ apa(apatable[[&quot;table_body&quot;]], apatable[[&quot;table_title&quot;]]) %&g
   width: 100%;
 }
 
-#ugkevaxnco .gt_group_heading {
+#xflxbwslxk .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: white;
@@ -3845,7 +4058,7 @@ apa(apatable[[&quot;table_body&quot;]], apatable[[&quot;table_title&quot;]]) %&g
   vertical-align: middle;
 }
 
-#ugkevaxnco .gt_empty_group_heading {
+#xflxbwslxk .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: white;
@@ -3860,19 +4073,19 @@ apa(apatable[[&quot;table_body&quot;]], apatable[[&quot;table_title&quot;]]) %&g
   vertical-align: middle;
 }
 
-#ugkevaxnco .gt_striped {
+#xflxbwslxk .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ugkevaxnco .gt_from_md > :first-child {
+#xflxbwslxk .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ugkevaxnco .gt_from_md > :last-child {
+#xflxbwslxk .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ugkevaxnco .gt_row {
+#xflxbwslxk .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3891,7 +4104,7 @@ apa(apatable[[&quot;table_body&quot;]], apatable[[&quot;table_title&quot;]]) %&g
   overflow-x: hidden;
 }
 
-#ugkevaxnco .gt_stub {
+#xflxbwslxk .gt_stub {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -3903,7 +4116,7 @@ apa(apatable[[&quot;table_body&quot;]], apatable[[&quot;table_title&quot;]]) %&g
   padding-left: 12px;
 }
 
-#ugkevaxnco .gt_summary_row {
+#xflxbwslxk .gt_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -3913,7 +4126,7 @@ apa(apatable[[&quot;table_body&quot;]], apatable[[&quot;table_title&quot;]]) %&g
   padding-right: 5px;
 }
 
-#ugkevaxnco .gt_first_summary_row {
+#xflxbwslxk .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3923,7 +4136,7 @@ apa(apatable[[&quot;table_body&quot;]], apatable[[&quot;table_title&quot;]]) %&g
   border-top-color: #D3D3D3;
 }
 
-#ugkevaxnco .gt_grand_summary_row {
+#xflxbwslxk .gt_grand_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -3933,7 +4146,7 @@ apa(apatable[[&quot;table_body&quot;]], apatable[[&quot;table_title&quot;]]) %&g
   padding-right: 5px;
 }
 
-#ugkevaxnco .gt_first_grand_summary_row {
+#xflxbwslxk .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3943,7 +4156,7 @@ apa(apatable[[&quot;table_body&quot;]], apatable[[&quot;table_title&quot;]]) %&g
   border-top-color: #D3D3D3;
 }
 
-#ugkevaxnco .gt_table_body {
+#xflxbwslxk .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3952,7 +4165,7 @@ apa(apatable[[&quot;table_body&quot;]], apatable[[&quot;table_title&quot;]]) %&g
   border-bottom-color: black;
 }
 
-#ugkevaxnco .gt_footnotes {
+#xflxbwslxk .gt_footnotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -3966,13 +4179,13 @@ apa(apatable[[&quot;table_body&quot;]], apatable[[&quot;table_title&quot;]]) %&g
   border-right-color: #D3D3D3;
 }
 
-#ugkevaxnco .gt_footnote {
+#xflxbwslxk .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#ugkevaxnco .gt_sourcenotes {
+#xflxbwslxk .gt_sourcenotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -3986,46 +4199,46 @@ apa(apatable[[&quot;table_body&quot;]], apatable[[&quot;table_title&quot;]]) %&g
   border-right-color: #D3D3D3;
 }
 
-#ugkevaxnco .gt_sourcenote {
+#xflxbwslxk .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#ugkevaxnco .gt_left {
+#xflxbwslxk .gt_left {
   text-align: left;
 }
 
-#ugkevaxnco .gt_center {
+#xflxbwslxk .gt_center {
   text-align: center;
 }
 
-#ugkevaxnco .gt_right {
+#xflxbwslxk .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ugkevaxnco .gt_font_normal {
+#xflxbwslxk .gt_font_normal {
   font-weight: normal;
 }
 
-#ugkevaxnco .gt_font_bold {
+#xflxbwslxk .gt_font_bold {
   font-weight: bold;
 }
 
-#ugkevaxnco .gt_font_italic {
+#xflxbwslxk .gt_font_italic {
   font-style: italic;
 }
 
-#ugkevaxnco .gt_super {
+#xflxbwslxk .gt_super {
   font-size: 65%;
 }
 
-#ugkevaxnco .gt_footnote_marks {
+#xflxbwslxk .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="ugkevaxnco" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="xflxbwslxk" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   <thead class="gt_header">
     <tr>
       <th colspan="9" class="gt_heading gt_title gt_font_normal" style><i> Regression results using mpg as the criterion
@@ -4159,7 +4372,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https://anthonyschmidt.netlify.com/post/2020-06-03-making-apa-tables-with-gt/&amp;text=Making%20APA%20Tables%20with%20the%20gt%20Package" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=/post/2020-06-03-making-apa-tables-with-gt/&amp;text=Making%20APA%20Tables%20with%20the%20gt%20Package" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -4172,7 +4385,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://anthonyschmidt.netlify.com/post/2020-06-03-making-apa-tables-with-gt/&amp;t=Making%20APA%20Tables%20with%20the%20gt%20Package" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=/post/2020-06-03-making-apa-tables-with-gt/&amp;t=Making%20APA%20Tables%20with%20the%20gt%20Package" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -4185,7 +4398,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
       
       
       <li>
-        <a href="mailto:?subject=Making%20APA%20Tables%20with%20the%20gt%20Package&amp;body=https://anthonyschmidt.netlify.com/post/2020-06-03-making-apa-tables-with-gt/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=Making%20APA%20Tables%20with%20the%20gt%20Package&amp;body=/post/2020-06-03-making-apa-tables-with-gt/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -4198,7 +4411,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://anthonyschmidt.netlify.com/post/2020-06-03-making-apa-tables-with-gt/&amp;title=Making%20APA%20Tables%20with%20the%20gt%20Package" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=/post/2020-06-03-making-apa-tables-with-gt/&amp;title=Making%20APA%20Tables%20with%20the%20gt%20Package" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -4211,7 +4424,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=Making%20APA%20Tables%20with%20the%20gt%20Package%20https://anthonyschmidt.netlify.com/post/2020-06-03-making-apa-tables-with-gt/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=Making%20APA%20Tables%20with%20the%20gt%20Package%20/post/2020-06-03-making-apa-tables-with-gt/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -4224,7 +4437,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://anthonyschmidt.netlify.com/post/2020-06-03-making-apa-tables-with-gt/&amp;title=Making%20APA%20Tables%20with%20the%20gt%20Package" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=/post/2020-06-03-making-apa-tables-with-gt/&amp;title=Making%20APA%20Tables%20with%20the%20gt%20Package" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -4263,7 +4476,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
     
 
     <div class="media-body">
-      <h5 class="card-title"><a href="https://anthonyschmidt.netlify.com/">Anthony Schmidt</a></h5>
+      <h5 class="card-title"><a href="/">Anthony Schmidt</a></h5>
       <h6 class="card-subtitle">PhD Student / Data Visualization Researcher</h6>
       <p class="card-text">My research interests include higher education, quantitative methods, and data visualization.</p>
       <ul class="network-icon" aria-hidden="true">
@@ -4497,6 +4710,16 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
   
   <div class="container">
     <footer class="site-footer">
+  
+  <p class="powered-by">
+    
+      <a href="/privacy/">Privacy Policy</a>
+    
+    
+       &middot; 
+      <a href="/terms/">Terms</a>
+    
+  </p>
   
 
   <p class="powered-by">

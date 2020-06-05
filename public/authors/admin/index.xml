@@ -2,21 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Anthony Schmidt</title>
-    <link>https://anthonyschmidt.netlify.com/authors/admin/</link>
-      <atom:link href="https://anthonyschmidt.netlify.com/authors/admin/index.xml" rel="self" type="application/rss+xml" />
+    <link>/authors/admin/</link>
+      <atom:link href="/authors/admin/index.xml" rel="self" type="application/rss+xml" />
     <description>Anthony Schmidt</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 11 Mar 2020 12:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 15 Aug 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://anthonyschmidt.netlify.com/img/icon-192.png</url>
+      <url>/img/icon-192.png</url>
       <title>Anthony Schmidt</title>
-      <link>https://anthonyschmidt.netlify.com/authors/admin/</link>
+      <link>/authors/admin/</link>
     </image>
     
     <item>
+      <title>Are International Students Getting a Bang for their Buck? The Relationship between Expenditures and International Student Graduation Rates</title>
+      <link>/publication/journal-article/</link>
+      <pubDate>Sat, 15 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>/publication/journal-article/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Becoming “TidyR” over Time- Data Visualization Development in an Online Community of Practice</title>
-      <link>https://anthonyschmidt.netlify.com/talk/2020-3-becoming-tidyr-over-time/</link>
+      <link>/talk/2020-3-becoming-tidyr-over-time/</link>
       <pubDate>Wed, 11 Mar 2020 12:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/talk/2020-3-becoming-tidyr-over-time/</guid>
+      <guid>/talk/2020-3-becoming-tidyr-over-time/</guid>
       <description>
 
 
@@ -49,7 +57,7 @@ library(ggplot2)
 iris %&amp;gt;%
   ggplot() +
     geom_point(aes(x=Sepal.Length,y=Sepal.Width))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://anthonyschmidt.netlify.com/talk/2020-3-becoming-tidyr-over-time/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/talk/2020-3-becoming-tidyr-over-time/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div id=&#34;research-purpose&#34; class=&#34;section level2&#34;&gt;
@@ -185,25 +193,25 @@ iris %&amp;gt;%
     
     <item>
       <title>A survey of teachers and administrators regarding the implementation of new K-8 computing education standards in Tennessee</title>
-      <link>https://anthonyschmidt.netlify.com/talk/planting-the-seeds/</link>
+      <link>/talk/planting-the-seeds/</link>
       <pubDate>Thu, 16 Jan 2020 13:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/talk/planting-the-seeds/</guid>
+      <guid>/talk/planting-the-seeds/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Book Review - International Students in First-Year Writing: A Journey Through Socio-Academic Space</title>
-      <link>https://anthonyschmidt.netlify.com/publication/international-students-in-first-year-writing-review/</link>
+      <link>/publication/international-students-in-first-year-writing-review/</link>
       <pubDate>Thu, 15 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/publication/international-students-in-first-year-writing-review/</guid>
+      <guid>/publication/international-students-in-first-year-writing-review/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A Comparison of Direct Admit and IEP Student Academic Achievement</title>
-      <link>https://anthonyschmidt.netlify.com/talk/tesol2019/</link>
+      <link>/talk/tesol2019/</link>
       <pubDate>Fri, 01 Mar 2019 13:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/talk/tesol2019/</guid>
+      <guid>/talk/tesol2019/</guid>
       <description></description>
     </item>
     

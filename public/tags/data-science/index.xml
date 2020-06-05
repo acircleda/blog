@@ -2,28 +2,28 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Data Science | Anthony Schmidt</title>
-    <link>https://anthonyschmidt.netlify.com/tags/data-science/</link>
-      <atom:link href="https://anthonyschmidt.netlify.com/tags/data-science/index.xml" rel="self" type="application/rss+xml" />
+    <link>/tags/data-science/</link>
+      <atom:link href="/tags/data-science/index.xml" rel="self" type="application/rss+xml" />
     <description>Data Science</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 04 Jun 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://anthonyschmidt.netlify.com/img/icon-192.png</url>
+      <url>/img/icon-192.png</url>
       <title>Data Science</title>
-      <link>https://anthonyschmidt.netlify.com/tags/data-science/</link>
+      <link>/tags/data-science/</link>
     </image>
     
     <item>
       <title>Making APA Tables with the gt Package</title>
-      <link>https://anthonyschmidt.netlify.com/post/2020-06-03-making-apa-tables-with-gt/</link>
+      <link>/post/2020-06-03-making-apa-tables-with-gt/</link>
       <pubDate>Thu, 04 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/post/2020-06-03-making-apa-tables-with-gt/</guid>
+      <guid>/post/2020-06-03-making-apa-tables-with-gt/</guid>
       <description>
 
 
 &lt;p&gt;&lt;code&gt;R&lt;/code&gt; has always been a very powerful statistical analysis tool. With the development of &lt;code&gt;ggplot&lt;/code&gt;, it has also become an extremely powerful data visualization tool. However, in my experience, &lt;code&gt;R&lt;/code&gt; has lacked the ability to &lt;em&gt;easily&lt;/em&gt; create nice tables, especially tables suitable for APA publication.&lt;/p&gt;
 &lt;p&gt;To be sure, there are a number of excellent table packages, all with their benefits and drawbacks. The ones I have personal experience with include:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://bookdown.org/yihui/rmarkdown-cookbook/kable.html&#34;&gt;knitr::kable()&lt;/a&gt; - &lt;code&gt;kable()&lt;/code&gt; can easily make some very nice tables in R Markdown. Just add it to the end of a pipe &lt;code&gt;%&amp;gt;%&lt;/code&gt; and you have yourself a very nice table. With a little work, and the addition of &lt;a href=&#34;https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html&#34;&gt;&lt;code&gt;kableExtra&lt;/code&gt;&lt;/a&gt;, you may even be able to produce an APA-style table. In fact, &lt;a href=&#34;https://www.datadreaming.org/post/apa-tables-using-rmarkdown/&#34;&gt;here&lt;/a&gt; is a guide to doing just that. It requires a bit more work (e.g. adding LaTeX to YAML) but it is a really good option.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://bookdown.org/yihui/rmarkdown-cookbook/kable.html&#34;&gt;knitr::kable()&lt;/a&gt; - &lt;code&gt;kable()&lt;/code&gt; can easily make some very nice tables in R Markdown. Just add it to the end of a pipe &lt;code&gt;%&amp;gt;%&lt;/code&gt; and you have yourself a very nice table. With a little work, and the addition of &lt;a href=&#34;https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html&#34;&gt;&lt;code&gt;kableExtra&lt;/code&gt;&lt;/a&gt;, you may even be able to produce an APA-style table. In fact, &lt;a href=&#34;https://www.datadreaming.org/post/apa-tables-using-rmarkdown/&#34;&gt;here&lt;/a&gt; is a guide to doing just that. It requires a bit more work (e.g. adding LaTeX to YAML) but it is a really good option, especially for tables in Word.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://rstudio.github.io/DT/&#34;&gt;DataTable::DT()&lt;/a&gt; - I love using the &lt;code&gt;DT&lt;/code&gt; function for making interactive tables that are sortable, searchable, and offer pagination. I have not played around much with their styling.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://cran.r-project.org/web/packages/apaTables/vignettes/apaTables.html&#34;&gt;&lt;code&gt;apaTables&lt;/code&gt;&lt;/a&gt; is another package that produces APA tables out of the box, but only as Word or richtext outputs. They cannot be included in HTML or PDF. However, the use of apaTables functions &lt;em&gt;is&lt;/em&gt; very useful for taking something like a regression model and getting it into the shape needed for a better table. I’ll have an example of this below.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/crsh/papaja&#34;&gt;&lt;code&gt;papaja&lt;/code&gt;&lt;/a&gt; is an package that allows you to draft APA journal articles in R Markdown and creates tables with &lt;code&gt;apa_table()&lt;/code&gt; that render very nicely in Word or PDF but not HTML.&lt;/li&gt;
@@ -39,14 +39,14 @@
 &lt;/div&gt;
 &lt;div id=&#34;create-a-basic-gt-table&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Create a Basic &lt;code&gt;gt&lt;/code&gt; table&lt;/h3&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;iris %&amp;gt;%
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mtcars %&amp;gt;%
   slice(1:5) %&amp;gt;%
   gt()&lt;/code&gt;&lt;/pre&gt;
 &lt;style&gt;html {
   font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Oxygen, Ubuntu, Cantarell, &#39;Helvetica Neue&#39;, &#39;Fira Sans&#39;, &#39;Droid Sans&#39;, Arial, sans-serif;
 }
 
-#kllibfwiup .gt_table {
+#bhgbinoerc .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -69,7 +69,7 @@
   border-left-color: #D3D3D3;
 }
 
-#kllibfwiup .gt_heading {
+#bhgbinoerc .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -81,7 +81,7 @@
   border-right-color: #D3D3D3;
 }
 
-#kllibfwiup .gt_title {
+#bhgbinoerc .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -91,7 +91,7 @@
   border-bottom-width: 0;
 }
 
-#kllibfwiup .gt_subtitle {
+#bhgbinoerc .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -101,13 +101,13 @@
   border-top-width: 0;
 }
 
-#kllibfwiup .gt_bottom_border {
+#bhgbinoerc .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#kllibfwiup .gt_col_headings {
+#bhgbinoerc .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -122,7 +122,7 @@
   border-right-color: #D3D3D3;
 }
 
-#kllibfwiup .gt_col_heading {
+#bhgbinoerc .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -142,7 +142,7 @@
   overflow-x: hidden;
 }
 
-#kllibfwiup .gt_column_spanner_outer {
+#bhgbinoerc .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -154,15 +154,15 @@
   padding-right: 4px;
 }
 
-#kllibfwiup .gt_column_spanner_outer:first-child {
+#bhgbinoerc .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#kllibfwiup .gt_column_spanner_outer:last-child {
+#bhgbinoerc .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#kllibfwiup .gt_column_spanner {
+#bhgbinoerc .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -174,7 +174,7 @@
   width: 100%;
 }
 
-#kllibfwiup .gt_group_heading {
+#bhgbinoerc .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -196,7 +196,7 @@
   vertical-align: middle;
 }
 
-#kllibfwiup .gt_empty_group_heading {
+#bhgbinoerc .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -211,19 +211,19 @@
   vertical-align: middle;
 }
 
-#kllibfwiup .gt_striped {
+#bhgbinoerc .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#kllibfwiup .gt_from_md &gt; :first-child {
+#bhgbinoerc .gt_from_md &gt; :first-child {
   margin-top: 0;
 }
 
-#kllibfwiup .gt_from_md &gt; :last-child {
+#bhgbinoerc .gt_from_md &gt; :last-child {
   margin-bottom: 0;
 }
 
-#kllibfwiup .gt_row {
+#bhgbinoerc .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -242,7 +242,7 @@
   overflow-x: hidden;
 }
 
-#kllibfwiup .gt_stub {
+#bhgbinoerc .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -254,7 +254,7 @@
   padding-left: 12px;
 }
 
-#kllibfwiup .gt_summary_row {
+#bhgbinoerc .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -264,7 +264,7 @@
   padding-right: 5px;
 }
 
-#kllibfwiup .gt_first_summary_row {
+#bhgbinoerc .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -274,7 +274,7 @@
   border-top-color: #D3D3D3;
 }
 
-#kllibfwiup .gt_grand_summary_row {
+#bhgbinoerc .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -284,7 +284,7 @@
   padding-right: 5px;
 }
 
-#kllibfwiup .gt_first_grand_summary_row {
+#bhgbinoerc .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -294,7 +294,7 @@
   border-top-color: #D3D3D3;
 }
 
-#kllibfwiup .gt_table_body {
+#bhgbinoerc .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -303,7 +303,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#kllibfwiup .gt_footnotes {
+#bhgbinoerc .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -317,13 +317,13 @@
   border-right-color: #D3D3D3;
 }
 
-#kllibfwiup .gt_footnote {
+#bhgbinoerc .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#kllibfwiup .gt_sourcenotes {
+#bhgbinoerc .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -337,91 +337,127 @@
   border-right-color: #D3D3D3;
 }
 
-#kllibfwiup .gt_sourcenote {
+#bhgbinoerc .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#kllibfwiup .gt_left {
+#bhgbinoerc .gt_left {
   text-align: left;
 }
 
-#kllibfwiup .gt_center {
+#bhgbinoerc .gt_center {
   text-align: center;
 }
 
-#kllibfwiup .gt_right {
+#bhgbinoerc .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#kllibfwiup .gt_font_normal {
+#bhgbinoerc .gt_font_normal {
   font-weight: normal;
 }
 
-#kllibfwiup .gt_font_bold {
+#bhgbinoerc .gt_font_bold {
   font-weight: bold;
 }
 
-#kllibfwiup .gt_font_italic {
+#bhgbinoerc .gt_font_italic {
   font-style: italic;
 }
 
-#kllibfwiup .gt_super {
+#bhgbinoerc .gt_super {
   font-size: 65%;
 }
 
-#kllibfwiup .gt_footnote_marks {
+#bhgbinoerc .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 &lt;/style&gt;
-&lt;div id=&#34;kllibfwiup&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
+&lt;div id=&#34;bhgbinoerc&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
   
   &lt;thead class=&#34;gt_col_headings&#34;&gt;
     &lt;tr&gt;
-      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Sepal.Length&lt;/th&gt;
-      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Sepal.Width&lt;/th&gt;
-      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Petal.Length&lt;/th&gt;
-      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Petal.Width&lt;/th&gt;
-      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Species&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;mpg&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;cyl&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;disp&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;hp&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;drat&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;wt&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;qsec&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;vs&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;am&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;gear&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;carb&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody class=&#34;gt_table_body&#34;&gt;
     &lt;tr&gt;
-      &lt;td class=&#34;gt_row gt_right&#34;&gt;5.1&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_right&#34;&gt;3.5&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_right&#34;&gt;1.4&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_right&#34;&gt;0.2&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34;&gt;setosa&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;21.0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;6&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;160&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;110&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;3.90&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;2.620&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;16.46&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;1&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;4&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;4&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td class=&#34;gt_row gt_right&#34;&gt;4.9&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_right&#34;&gt;3.0&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_right&#34;&gt;1.4&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_right&#34;&gt;0.2&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34;&gt;setosa&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;21.0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;6&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;160&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;110&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;3.90&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;2.875&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;17.02&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;1&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;4&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;4&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td class=&#34;gt_row gt_right&#34;&gt;4.7&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_right&#34;&gt;3.2&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_right&#34;&gt;1.3&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_right&#34;&gt;0.2&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34;&gt;setosa&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;22.8&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;4&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;108&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;93&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;3.85&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;2.320&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;18.61&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;1&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;1&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;4&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;1&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td class=&#34;gt_row gt_right&#34;&gt;4.6&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_right&#34;&gt;3.1&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_right&#34;&gt;1.5&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_right&#34;&gt;0.2&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34;&gt;setosa&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;21.4&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;6&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;258&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;110&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;3.08&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;3.215&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;19.44&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;1&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;3&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;1&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td class=&#34;gt_row gt_right&#34;&gt;5.0&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_right&#34;&gt;3.6&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_right&#34;&gt;1.4&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_right&#34;&gt;0.2&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34;&gt;setosa&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;18.7&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;8&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;360&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;175&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;3.15&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;3.440&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;17.02&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;3&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;2&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
   
@@ -431,7 +467,7 @@
 &lt;div id=&#34;style-the-borders&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Style the Borders&lt;/h3&gt;
 &lt;p&gt;All APA tables have a black top border, a black border at the bottom of the column header, and a black bottom border. We can use the following code to recreate that look, as well as set the width and make the font size consistent with the table body:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;iris %&amp;gt;%
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mtcars %&amp;gt;%
   slice(1:5) %&amp;gt;%
   gt() %&amp;gt;%
   tab_options(
@@ -457,7 +493,7 @@
   font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Oxygen, Ubuntu, Cantarell, &#39;Helvetica Neue&#39;, &#39;Fira Sans&#39;, &#39;Droid Sans&#39;, Arial, sans-serif;
 }
 
-#jggyhvarps .gt_table {
+#bdeickwmgw .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -480,7 +516,7 @@
   border-left-color: #D3D3D3;
 }
 
-#jggyhvarps .gt_heading {
+#bdeickwmgw .gt_heading {
   background-color: white;
   text-align: center;
   border-bottom-color: white;
@@ -492,7 +528,7 @@
   border-right-color: #D3D3D3;
 }
 
-#jggyhvarps .gt_title {
+#bdeickwmgw .gt_title {
   color: #333333;
   font-size: 16px;
   font-weight: initial;
@@ -502,7 +538,7 @@
   border-bottom-width: 0;
 }
 
-#jggyhvarps .gt_subtitle {
+#bdeickwmgw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -512,13 +548,13 @@
   border-top-width: 0;
 }
 
-#jggyhvarps .gt_bottom_border {
+#bdeickwmgw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#jggyhvarps .gt_col_headings {
+#bdeickwmgw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 3px;
   border-top-color: black;
@@ -533,7 +569,7 @@
   border-right-color: #D3D3D3;
 }
 
-#jggyhvarps .gt_col_heading {
+#bdeickwmgw .gt_col_heading {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -553,7 +589,7 @@
   overflow-x: hidden;
 }
 
-#jggyhvarps .gt_column_spanner_outer {
+#bdeickwmgw .gt_column_spanner_outer {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -565,15 +601,15 @@
   padding-right: 4px;
 }
 
-#jggyhvarps .gt_column_spanner_outer:first-child {
+#bdeickwmgw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#jggyhvarps .gt_column_spanner_outer:last-child {
+#bdeickwmgw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#jggyhvarps .gt_column_spanner {
+#bdeickwmgw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 3px;
   border-bottom-color: black;
@@ -585,7 +621,7 @@
   width: 100%;
 }
 
-#jggyhvarps .gt_group_heading {
+#bdeickwmgw .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: white;
@@ -607,7 +643,7 @@
   vertical-align: middle;
 }
 
-#jggyhvarps .gt_empty_group_heading {
+#bdeickwmgw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: white;
@@ -622,19 +658,19 @@
   vertical-align: middle;
 }
 
-#jggyhvarps .gt_striped {
+#bdeickwmgw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#jggyhvarps .gt_from_md &gt; :first-child {
+#bdeickwmgw .gt_from_md &gt; :first-child {
   margin-top: 0;
 }
 
-#jggyhvarps .gt_from_md &gt; :last-child {
+#bdeickwmgw .gt_from_md &gt; :last-child {
   margin-bottom: 0;
 }
 
-#jggyhvarps .gt_row {
+#bdeickwmgw .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -653,7 +689,7 @@
   overflow-x: hidden;
 }
 
-#jggyhvarps .gt_stub {
+#bdeickwmgw .gt_stub {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -665,7 +701,7 @@
   padding-left: 12px;
 }
 
-#jggyhvarps .gt_summary_row {
+#bdeickwmgw .gt_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -675,7 +711,7 @@
   padding-right: 5px;
 }
 
-#jggyhvarps .gt_first_summary_row {
+#bdeickwmgw .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -685,7 +721,7 @@
   border-top-color: #D3D3D3;
 }
 
-#jggyhvarps .gt_grand_summary_row {
+#bdeickwmgw .gt_grand_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -695,7 +731,7 @@
   padding-right: 5px;
 }
 
-#jggyhvarps .gt_first_grand_summary_row {
+#bdeickwmgw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -705,7 +741,7 @@
   border-top-color: #D3D3D3;
 }
 
-#jggyhvarps .gt_table_body {
+#bdeickwmgw .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -714,7 +750,7 @@
   border-bottom-color: black;
 }
 
-#jggyhvarps .gt_footnotes {
+#bdeickwmgw .gt_footnotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -728,13 +764,13 @@
   border-right-color: #D3D3D3;
 }
 
-#jggyhvarps .gt_footnote {
+#bdeickwmgw .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#jggyhvarps .gt_sourcenotes {
+#bdeickwmgw .gt_sourcenotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -748,91 +784,127 @@
   border-right-color: #D3D3D3;
 }
 
-#jggyhvarps .gt_sourcenote {
+#bdeickwmgw .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#jggyhvarps .gt_left {
+#bdeickwmgw .gt_left {
   text-align: left;
 }
 
-#jggyhvarps .gt_center {
+#bdeickwmgw .gt_center {
   text-align: center;
 }
 
-#jggyhvarps .gt_right {
+#bdeickwmgw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#jggyhvarps .gt_font_normal {
+#bdeickwmgw .gt_font_normal {
   font-weight: normal;
 }
 
-#jggyhvarps .gt_font_bold {
+#bdeickwmgw .gt_font_bold {
   font-weight: bold;
 }
 
-#jggyhvarps .gt_font_italic {
+#bdeickwmgw .gt_font_italic {
   font-style: italic;
 }
 
-#jggyhvarps .gt_super {
+#bdeickwmgw .gt_super {
   font-size: 65%;
 }
 
-#jggyhvarps .gt_footnote_marks {
+#bdeickwmgw .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 &lt;/style&gt;
-&lt;div id=&#34;jggyhvarps&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
+&lt;div id=&#34;bdeickwmgw&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
   
   &lt;thead class=&#34;gt_col_headings&#34;&gt;
     &lt;tr&gt;
-      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Sepal.Length&lt;/th&gt;
-      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Sepal.Width&lt;/th&gt;
-      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Petal.Length&lt;/th&gt;
-      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Petal.Width&lt;/th&gt;
-      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Species&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;mpg&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;cyl&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;disp&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;hp&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;drat&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;wt&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;qsec&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;vs&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;am&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;gear&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_right&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;carb&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody class=&#34;gt_table_body&#34;&gt;
     &lt;tr&gt;
-      &lt;td class=&#34;gt_row gt_right&#34;&gt;5.1&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_right&#34;&gt;3.5&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_right&#34;&gt;1.4&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_right&#34;&gt;0.2&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34;&gt;setosa&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;21.0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;6&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;160&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;110&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;3.90&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;2.620&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;16.46&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;1&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;4&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;4&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td class=&#34;gt_row gt_right&#34;&gt;4.9&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_right&#34;&gt;3.0&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_right&#34;&gt;1.4&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_right&#34;&gt;0.2&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34;&gt;setosa&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;21.0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;6&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;160&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;110&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;3.90&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;2.875&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;17.02&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;1&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;4&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;4&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td class=&#34;gt_row gt_right&#34;&gt;4.7&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_right&#34;&gt;3.2&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_right&#34;&gt;1.3&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_right&#34;&gt;0.2&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34;&gt;setosa&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;22.8&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;4&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;108&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;93&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;3.85&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;2.320&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;18.61&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;1&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;1&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;4&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;1&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td class=&#34;gt_row gt_right&#34;&gt;4.6&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_right&#34;&gt;3.1&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_right&#34;&gt;1.5&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_right&#34;&gt;0.2&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34;&gt;setosa&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;21.4&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;6&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;258&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;110&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;3.08&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;3.215&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;19.44&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;1&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;3&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;1&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td class=&#34;gt_row gt_right&#34;&gt;5.0&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_right&#34;&gt;3.6&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_right&#34;&gt;1.4&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_right&#34;&gt;0.2&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34;&gt;setosa&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;18.7&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;8&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;360&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;175&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;3.15&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;3.440&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;17.02&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;3&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_right&#34;&gt;2&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
   
@@ -843,7 +915,7 @@
 &lt;/div&gt;
 &lt;div id=&#34;styling-the-table-body&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Styling the Table Body&lt;/h3&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;iris %&amp;gt;%
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mtcars %&amp;gt;%
   slice(1:5) %&amp;gt;%
   gt() %&amp;gt;%
   tab_options(
@@ -885,7 +957,7 @@
   font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Oxygen, Ubuntu, Cantarell, &#39;Helvetica Neue&#39;, &#39;Fira Sans&#39;, &#39;Droid Sans&#39;, Arial, sans-serif;
 }
 
-#pugdjzzicn .gt_table {
+#dynuuuirsq .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -908,7 +980,7 @@
   border-left-color: #D3D3D3;
 }
 
-#pugdjzzicn .gt_heading {
+#dynuuuirsq .gt_heading {
   background-color: white;
   text-align: center;
   border-bottom-color: white;
@@ -920,7 +992,7 @@
   border-right-color: #D3D3D3;
 }
 
-#pugdjzzicn .gt_title {
+#dynuuuirsq .gt_title {
   color: #333333;
   font-size: 16px;
   font-weight: initial;
@@ -930,7 +1002,7 @@
   border-bottom-width: 0;
 }
 
-#pugdjzzicn .gt_subtitle {
+#dynuuuirsq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -940,13 +1012,13 @@
   border-top-width: 0;
 }
 
-#pugdjzzicn .gt_bottom_border {
+#dynuuuirsq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#pugdjzzicn .gt_col_headings {
+#dynuuuirsq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 3px;
   border-top-color: black;
@@ -961,7 +1033,7 @@
   border-right-color: #D3D3D3;
 }
 
-#pugdjzzicn .gt_col_heading {
+#dynuuuirsq .gt_col_heading {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -981,7 +1053,7 @@
   overflow-x: hidden;
 }
 
-#pugdjzzicn .gt_column_spanner_outer {
+#dynuuuirsq .gt_column_spanner_outer {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -993,15 +1065,15 @@
   padding-right: 4px;
 }
 
-#pugdjzzicn .gt_column_spanner_outer:first-child {
+#dynuuuirsq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#pugdjzzicn .gt_column_spanner_outer:last-child {
+#dynuuuirsq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#pugdjzzicn .gt_column_spanner {
+#dynuuuirsq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 3px;
   border-bottom-color: black;
@@ -1013,7 +1085,7 @@
   width: 100%;
 }
 
-#pugdjzzicn .gt_group_heading {
+#dynuuuirsq .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: white;
@@ -1035,7 +1107,7 @@
   vertical-align: middle;
 }
 
-#pugdjzzicn .gt_empty_group_heading {
+#dynuuuirsq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: white;
@@ -1050,19 +1122,19 @@
   vertical-align: middle;
 }
 
-#pugdjzzicn .gt_striped {
+#dynuuuirsq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#pugdjzzicn .gt_from_md &gt; :first-child {
+#dynuuuirsq .gt_from_md &gt; :first-child {
   margin-top: 0;
 }
 
-#pugdjzzicn .gt_from_md &gt; :last-child {
+#dynuuuirsq .gt_from_md &gt; :last-child {
   margin-bottom: 0;
 }
 
-#pugdjzzicn .gt_row {
+#dynuuuirsq .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1081,7 +1153,7 @@
   overflow-x: hidden;
 }
 
-#pugdjzzicn .gt_stub {
+#dynuuuirsq .gt_stub {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -1093,7 +1165,7 @@
   padding-left: 12px;
 }
 
-#pugdjzzicn .gt_summary_row {
+#dynuuuirsq .gt_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -1103,7 +1175,7 @@
   padding-right: 5px;
 }
 
-#pugdjzzicn .gt_first_summary_row {
+#dynuuuirsq .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1113,7 +1185,7 @@
   border-top-color: #D3D3D3;
 }
 
-#pugdjzzicn .gt_grand_summary_row {
+#dynuuuirsq .gt_grand_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -1123,7 +1195,7 @@
   padding-right: 5px;
 }
 
-#pugdjzzicn .gt_first_grand_summary_row {
+#dynuuuirsq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1133,7 +1205,7 @@
   border-top-color: #D3D3D3;
 }
 
-#pugdjzzicn .gt_table_body {
+#dynuuuirsq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1142,7 +1214,7 @@
   border-bottom-color: black;
 }
 
-#pugdjzzicn .gt_footnotes {
+#dynuuuirsq .gt_footnotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -1156,13 +1228,13 @@
   border-right-color: #D3D3D3;
 }
 
-#pugdjzzicn .gt_footnote {
+#dynuuuirsq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#pugdjzzicn .gt_sourcenotes {
+#dynuuuirsq .gt_sourcenotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -1176,91 +1248,127 @@
   border-right-color: #D3D3D3;
 }
 
-#pugdjzzicn .gt_sourcenote {
+#dynuuuirsq .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#pugdjzzicn .gt_left {
+#dynuuuirsq .gt_left {
   text-align: left;
 }
 
-#pugdjzzicn .gt_center {
+#dynuuuirsq .gt_center {
   text-align: center;
 }
 
-#pugdjzzicn .gt_right {
+#dynuuuirsq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#pugdjzzicn .gt_font_normal {
+#dynuuuirsq .gt_font_normal {
   font-weight: normal;
 }
 
-#pugdjzzicn .gt_font_bold {
+#dynuuuirsq .gt_font_bold {
   font-weight: bold;
 }
 
-#pugdjzzicn .gt_font_italic {
+#dynuuuirsq .gt_font_italic {
   font-style: italic;
 }
 
-#pugdjzzicn .gt_super {
+#dynuuuirsq .gt_super {
   font-size: 65%;
 }
 
-#pugdjzzicn .gt_footnote_marks {
+#dynuuuirsq .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 &lt;/style&gt;
-&lt;div id=&#34;pugdjzzicn&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
+&lt;div id=&#34;dynuuuirsq&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
   
   &lt;thead class=&#34;gt_col_headings&#34;&gt;
     &lt;tr&gt;
-      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Sepal.Length&lt;/th&gt;
-      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Sepal.Width&lt;/th&gt;
-      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Petal.Length&lt;/th&gt;
-      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Petal.Width&lt;/th&gt;
-      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Species&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;mpg&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;cyl&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;disp&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;hp&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;drat&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;wt&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;qsec&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;vs&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;am&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;gear&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;carb&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody class=&#34;gt_table_body&#34;&gt;
     &lt;tr&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;5.1&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.5&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1.4&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;0.2&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;setosa&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;21.0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;6&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;160&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;110&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.90&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;2.620&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;16.46&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;4&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;4&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;4.9&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.0&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1.4&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;0.2&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;setosa&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;21.0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;6&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;160&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;110&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.90&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;2.875&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;17.02&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;4&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;4&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;4.7&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.2&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1.3&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;0.2&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;setosa&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;22.8&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;4&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;108&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;93&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.85&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;2.320&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;18.61&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;4&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;4.6&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.1&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1.5&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;0.2&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;setosa&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;21.4&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;6&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;258&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;110&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.08&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.215&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;19.44&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;5.0&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.6&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1.4&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;0.2&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;setosa&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;18.7&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;8&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;360&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;175&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.15&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.440&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;17.02&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;2&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
   
@@ -1310,14 +1418,14 @@
   opt_align_table_header(align = &amp;quot;left&amp;quot;)
 }&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Let’s try it out:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;iris %&amp;gt;%
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mtcars %&amp;gt;%
   slice(1:5) %&amp;gt;%
-  apa(&amp;quot;The Iris Dataset&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+  apa(&amp;quot;Fuel consumption and aspects of automobile design and performance for 32 automobiles (1973-74 models)&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;style&gt;html {
   font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Oxygen, Ubuntu, Cantarell, &#39;Helvetica Neue&#39;, &#39;Fira Sans&#39;, &#39;Droid Sans&#39;, Arial, sans-serif;
 }
 
-#qycgkxdfyd .gt_table {
+#oeiqybynds .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1340,7 +1448,7 @@
   border-left-color: #D3D3D3;
 }
 
-#qycgkxdfyd .gt_heading {
+#oeiqybynds .gt_heading {
   background-color: white;
   text-align: left;
   border-bottom-color: white;
@@ -1352,7 +1460,7 @@
   border-right-color: #D3D3D3;
 }
 
-#qycgkxdfyd .gt_title {
+#oeiqybynds .gt_title {
   color: #333333;
   font-size: 16px;
   font-weight: initial;
@@ -1362,7 +1470,7 @@
   border-bottom-width: 0;
 }
 
-#qycgkxdfyd .gt_subtitle {
+#oeiqybynds .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1372,13 +1480,13 @@
   border-top-width: 0;
 }
 
-#qycgkxdfyd .gt_bottom_border {
+#oeiqybynds .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qycgkxdfyd .gt_col_headings {
+#oeiqybynds .gt_col_headings {
   border-top-style: solid;
   border-top-width: 3px;
   border-top-color: black;
@@ -1393,7 +1501,7 @@
   border-right-color: #D3D3D3;
 }
 
-#qycgkxdfyd .gt_col_heading {
+#oeiqybynds .gt_col_heading {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -1413,7 +1521,7 @@
   overflow-x: hidden;
 }
 
-#qycgkxdfyd .gt_column_spanner_outer {
+#oeiqybynds .gt_column_spanner_outer {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -1425,15 +1533,15 @@
   padding-right: 4px;
 }
 
-#qycgkxdfyd .gt_column_spanner_outer:first-child {
+#oeiqybynds .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qycgkxdfyd .gt_column_spanner_outer:last-child {
+#oeiqybynds .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qycgkxdfyd .gt_column_spanner {
+#oeiqybynds .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 3px;
   border-bottom-color: black;
@@ -1445,7 +1553,7 @@
   width: 100%;
 }
 
-#qycgkxdfyd .gt_group_heading {
+#oeiqybynds .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: white;
@@ -1467,7 +1575,7 @@
   vertical-align: middle;
 }
 
-#qycgkxdfyd .gt_empty_group_heading {
+#oeiqybynds .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: white;
@@ -1482,19 +1590,19 @@
   vertical-align: middle;
 }
 
-#qycgkxdfyd .gt_striped {
+#oeiqybynds .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qycgkxdfyd .gt_from_md &gt; :first-child {
+#oeiqybynds .gt_from_md &gt; :first-child {
   margin-top: 0;
 }
 
-#qycgkxdfyd .gt_from_md &gt; :last-child {
+#oeiqybynds .gt_from_md &gt; :last-child {
   margin-bottom: 0;
 }
 
-#qycgkxdfyd .gt_row {
+#oeiqybynds .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1513,7 +1621,7 @@
   overflow-x: hidden;
 }
 
-#qycgkxdfyd .gt_stub {
+#oeiqybynds .gt_stub {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -1525,7 +1633,7 @@
   padding-left: 12px;
 }
 
-#qycgkxdfyd .gt_summary_row {
+#oeiqybynds .gt_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -1535,7 +1643,7 @@
   padding-right: 5px;
 }
 
-#qycgkxdfyd .gt_first_summary_row {
+#oeiqybynds .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1545,7 +1653,7 @@
   border-top-color: #D3D3D3;
 }
 
-#qycgkxdfyd .gt_grand_summary_row {
+#oeiqybynds .gt_grand_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -1555,7 +1663,7 @@
   padding-right: 5px;
 }
 
-#qycgkxdfyd .gt_first_grand_summary_row {
+#oeiqybynds .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1565,7 +1673,7 @@
   border-top-color: #D3D3D3;
 }
 
-#qycgkxdfyd .gt_table_body {
+#oeiqybynds .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1574,7 +1682,7 @@
   border-bottom-color: black;
 }
 
-#qycgkxdfyd .gt_footnotes {
+#oeiqybynds .gt_footnotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -1588,13 +1696,13 @@
   border-right-color: #D3D3D3;
 }
 
-#qycgkxdfyd .gt_footnote {
+#oeiqybynds .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#qycgkxdfyd .gt_sourcenotes {
+#oeiqybynds .gt_sourcenotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -1608,98 +1716,134 @@
   border-right-color: #D3D3D3;
 }
 
-#qycgkxdfyd .gt_sourcenote {
+#oeiqybynds .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#qycgkxdfyd .gt_left {
+#oeiqybynds .gt_left {
   text-align: left;
 }
 
-#qycgkxdfyd .gt_center {
+#oeiqybynds .gt_center {
   text-align: center;
 }
 
-#qycgkxdfyd .gt_right {
+#oeiqybynds .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qycgkxdfyd .gt_font_normal {
+#oeiqybynds .gt_font_normal {
   font-weight: normal;
 }
 
-#qycgkxdfyd .gt_font_bold {
+#oeiqybynds .gt_font_bold {
   font-weight: bold;
 }
 
-#qycgkxdfyd .gt_font_italic {
+#oeiqybynds .gt_font_italic {
   font-style: italic;
 }
 
-#qycgkxdfyd .gt_super {
+#oeiqybynds .gt_super {
   font-size: 65%;
 }
 
-#qycgkxdfyd .gt_footnote_marks {
+#oeiqybynds .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 &lt;/style&gt;
-&lt;div id=&#34;qycgkxdfyd&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
+&lt;div id=&#34;oeiqybynds&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
   &lt;thead class=&#34;gt_header&#34;&gt;
     &lt;tr&gt;
-      &lt;th colspan=&#34;5&#34; class=&#34;gt_heading gt_title gt_font_normal&#34; style&gt;&lt;i&gt; The Iris Dataset &lt;/i&gt;&lt;/th&gt;
+      &lt;th colspan=&#34;11&#34; class=&#34;gt_heading gt_title gt_font_normal&#34; style&gt;&lt;i&gt; Fuel consumption and aspects of automobile design and performance for 32 automobiles (1973-74 models) &lt;/i&gt;&lt;/th&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;th colspan=&#34;5&#34; class=&#34;gt_heading gt_subtitle gt_font_normal gt_bottom_border&#34; style&gt;&lt;/th&gt;
+      &lt;th colspan=&#34;11&#34; class=&#34;gt_heading gt_subtitle gt_font_normal gt_bottom_border&#34; style&gt;&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;thead class=&#34;gt_col_headings&#34;&gt;
     &lt;tr&gt;
-      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Sepal.Length&lt;/th&gt;
-      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Sepal.Width&lt;/th&gt;
-      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Petal.Length&lt;/th&gt;
-      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Petal.Width&lt;/th&gt;
-      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Species&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;mpg&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;cyl&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;disp&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;hp&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;drat&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;wt&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;qsec&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;vs&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;am&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;gear&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;carb&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody class=&#34;gt_table_body&#34;&gt;
     &lt;tr&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;5.1&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.5&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1.4&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;0.2&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;setosa&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;21.0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;6&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;160&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;110&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.90&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;2.620&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;16.46&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;4&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;4&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;4.9&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.0&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1.4&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;0.2&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;setosa&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;21.0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;6&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;160&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;110&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.90&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;2.875&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;17.02&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;4&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;4&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;4.7&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.2&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1.3&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;0.2&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;setosa&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;22.8&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;4&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;108&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;93&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.85&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;2.320&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;18.61&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;4&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;4.6&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.1&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1.5&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;0.2&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;setosa&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;21.4&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;6&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;258&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;110&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.08&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.215&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;19.44&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;5.0&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.6&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1.4&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;0.2&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;setosa&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;18.7&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;8&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;360&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;175&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.15&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.440&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;17.02&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;2&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
   
@@ -1709,22 +1853,22 @@
 &lt;div id=&#34;add-a-footnote&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Add a Footnote&lt;/h3&gt;
 &lt;p&gt;If we wanted to add a note, we would do so using an additional &lt;code&gt;gt&lt;/code&gt; function:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;iris %&amp;gt;%
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mtcars %&amp;gt;%
   slice(1:5) %&amp;gt;%
-  apa(&amp;quot;The Iris Dataset&amp;quot;) %&amp;gt;%
+  apa(&amp;quot;Fuel consumption and aspects of automobile design and performance for 32 automobiles (1973-74 models)&amp;quot;) %&amp;gt;%
   tab_footnote(
     #footnote text
-    footnote = &amp;quot;This is a footnore.&amp;quot;,
+    footnote = &amp;quot;This is a footnote.&amp;quot;,
     # add to the column labels section
     locations = cells_column_labels(
-      # add to the &amp;quot;Species&amp;quot; column
-      columns = vars(Species))
+      # add to the &amp;quot;mpg&amp;quot; column
+      columns = vars(mpg))
   )&lt;/code&gt;&lt;/pre&gt;
 &lt;style&gt;html {
   font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Oxygen, Ubuntu, Cantarell, &#39;Helvetica Neue&#39;, &#39;Fira Sans&#39;, &#39;Droid Sans&#39;, Arial, sans-serif;
 }
 
-#dpnozrarwg .gt_table {
+#vyukmnnsqu .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1747,7 +1891,7 @@
   border-left-color: #D3D3D3;
 }
 
-#dpnozrarwg .gt_heading {
+#vyukmnnsqu .gt_heading {
   background-color: white;
   text-align: left;
   border-bottom-color: white;
@@ -1759,7 +1903,7 @@
   border-right-color: #D3D3D3;
 }
 
-#dpnozrarwg .gt_title {
+#vyukmnnsqu .gt_title {
   color: #333333;
   font-size: 16px;
   font-weight: initial;
@@ -1769,7 +1913,7 @@
   border-bottom-width: 0;
 }
 
-#dpnozrarwg .gt_subtitle {
+#vyukmnnsqu .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1779,13 +1923,13 @@
   border-top-width: 0;
 }
 
-#dpnozrarwg .gt_bottom_border {
+#vyukmnnsqu .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#dpnozrarwg .gt_col_headings {
+#vyukmnnsqu .gt_col_headings {
   border-top-style: solid;
   border-top-width: 3px;
   border-top-color: black;
@@ -1800,7 +1944,7 @@
   border-right-color: #D3D3D3;
 }
 
-#dpnozrarwg .gt_col_heading {
+#vyukmnnsqu .gt_col_heading {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -1820,7 +1964,7 @@
   overflow-x: hidden;
 }
 
-#dpnozrarwg .gt_column_spanner_outer {
+#vyukmnnsqu .gt_column_spanner_outer {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -1832,15 +1976,15 @@
   padding-right: 4px;
 }
 
-#dpnozrarwg .gt_column_spanner_outer:first-child {
+#vyukmnnsqu .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#dpnozrarwg .gt_column_spanner_outer:last-child {
+#vyukmnnsqu .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#dpnozrarwg .gt_column_spanner {
+#vyukmnnsqu .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 3px;
   border-bottom-color: black;
@@ -1852,7 +1996,7 @@
   width: 100%;
 }
 
-#dpnozrarwg .gt_group_heading {
+#vyukmnnsqu .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: white;
@@ -1874,7 +2018,7 @@
   vertical-align: middle;
 }
 
-#dpnozrarwg .gt_empty_group_heading {
+#vyukmnnsqu .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: white;
@@ -1889,19 +2033,19 @@
   vertical-align: middle;
 }
 
-#dpnozrarwg .gt_striped {
+#vyukmnnsqu .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#dpnozrarwg .gt_from_md &gt; :first-child {
+#vyukmnnsqu .gt_from_md &gt; :first-child {
   margin-top: 0;
 }
 
-#dpnozrarwg .gt_from_md &gt; :last-child {
+#vyukmnnsqu .gt_from_md &gt; :last-child {
   margin-bottom: 0;
 }
 
-#dpnozrarwg .gt_row {
+#vyukmnnsqu .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1920,7 +2064,7 @@
   overflow-x: hidden;
 }
 
-#dpnozrarwg .gt_stub {
+#vyukmnnsqu .gt_stub {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -1932,7 +2076,7 @@
   padding-left: 12px;
 }
 
-#dpnozrarwg .gt_summary_row {
+#vyukmnnsqu .gt_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -1942,7 +2086,7 @@
   padding-right: 5px;
 }
 
-#dpnozrarwg .gt_first_summary_row {
+#vyukmnnsqu .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1952,7 +2096,7 @@
   border-top-color: #D3D3D3;
 }
 
-#dpnozrarwg .gt_grand_summary_row {
+#vyukmnnsqu .gt_grand_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -1962,7 +2106,7 @@
   padding-right: 5px;
 }
 
-#dpnozrarwg .gt_first_grand_summary_row {
+#vyukmnnsqu .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1972,7 +2116,7 @@
   border-top-color: #D3D3D3;
 }
 
-#dpnozrarwg .gt_table_body {
+#vyukmnnsqu .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1981,7 +2125,7 @@
   border-bottom-color: black;
 }
 
-#dpnozrarwg .gt_footnotes {
+#vyukmnnsqu .gt_footnotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -1995,13 +2139,13 @@
   border-right-color: #D3D3D3;
 }
 
-#dpnozrarwg .gt_footnote {
+#vyukmnnsqu .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#dpnozrarwg .gt_sourcenotes {
+#vyukmnnsqu .gt_sourcenotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -2015,110 +2159,146 @@
   border-right-color: #D3D3D3;
 }
 
-#dpnozrarwg .gt_sourcenote {
+#vyukmnnsqu .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#dpnozrarwg .gt_left {
+#vyukmnnsqu .gt_left {
   text-align: left;
 }
 
-#dpnozrarwg .gt_center {
+#vyukmnnsqu .gt_center {
   text-align: center;
 }
 
-#dpnozrarwg .gt_right {
+#vyukmnnsqu .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#dpnozrarwg .gt_font_normal {
+#vyukmnnsqu .gt_font_normal {
   font-weight: normal;
 }
 
-#dpnozrarwg .gt_font_bold {
+#vyukmnnsqu .gt_font_bold {
   font-weight: bold;
 }
 
-#dpnozrarwg .gt_font_italic {
+#vyukmnnsqu .gt_font_italic {
   font-style: italic;
 }
 
-#dpnozrarwg .gt_super {
+#vyukmnnsqu .gt_super {
   font-size: 65%;
 }
 
-#dpnozrarwg .gt_footnote_marks {
+#vyukmnnsqu .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 &lt;/style&gt;
-&lt;div id=&#34;dpnozrarwg&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
+&lt;div id=&#34;vyukmnnsqu&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
   &lt;thead class=&#34;gt_header&#34;&gt;
     &lt;tr&gt;
-      &lt;th colspan=&#34;5&#34; class=&#34;gt_heading gt_title gt_font_normal&#34; style&gt;&lt;i&gt; The Iris Dataset &lt;/i&gt;&lt;/th&gt;
+      &lt;th colspan=&#34;11&#34; class=&#34;gt_heading gt_title gt_font_normal&#34; style&gt;&lt;i&gt; Fuel consumption and aspects of automobile design and performance for 32 automobiles (1973-74 models) &lt;/i&gt;&lt;/th&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;th colspan=&#34;5&#34; class=&#34;gt_heading gt_subtitle gt_font_normal gt_bottom_border&#34; style&gt;&lt;/th&gt;
+      &lt;th colspan=&#34;11&#34; class=&#34;gt_heading gt_subtitle gt_font_normal gt_bottom_border&#34; style&gt;&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;thead class=&#34;gt_col_headings&#34;&gt;
     &lt;tr&gt;
-      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Sepal.Length&lt;/th&gt;
-      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Sepal.Width&lt;/th&gt;
-      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Petal.Length&lt;/th&gt;
-      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Petal.Width&lt;/th&gt;
-      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Species&lt;sup class=&#34;gt_footnote_marks&#34;&gt;1&lt;/sup&gt;&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;mpg&lt;sup class=&#34;gt_footnote_marks&#34;&gt;1&lt;/sup&gt;&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;cyl&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;disp&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;hp&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;drat&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;wt&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;qsec&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;vs&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;am&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;gear&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;carb&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody class=&#34;gt_table_body&#34;&gt;
     &lt;tr&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;5.1&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.5&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1.4&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;0.2&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;setosa&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;21.0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;6&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;160&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;110&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.90&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;2.620&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;16.46&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;4&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;4&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;4.9&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.0&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1.4&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;0.2&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;setosa&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;21.0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;6&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;160&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;110&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.90&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;2.875&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;17.02&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;4&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;4&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;4.7&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.2&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1.3&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;0.2&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;setosa&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;22.8&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;4&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;108&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;93&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.85&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;2.320&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;18.61&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;4&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;4.6&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.1&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1.5&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;0.2&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;setosa&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;21.4&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;6&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;258&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;110&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.08&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.215&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;19.44&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;5.0&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.6&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1.4&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;0.2&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;setosa&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;18.7&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;8&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;360&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;175&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.15&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.440&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;17.02&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;2&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
   
   &lt;tfoot&gt;
     &lt;tr class=&#34;gt_footnotes&#34;&gt;
-      &lt;td colspan=&#34;5&#34;&gt;
+      &lt;td colspan=&#34;11&#34;&gt;
         &lt;p class=&#34;gt_footnote&#34;&gt;
           &lt;sup class=&#34;gt_footnote_marks&#34;&gt;
             &lt;em&gt;1&lt;/em&gt;
           &lt;/sup&gt;
            
-          This is a footnore.
+          This is a footnote.
           &lt;br /&gt;
         &lt;/p&gt;
       &lt;/td&gt;
@@ -2129,13 +2309,13 @@
 &lt;div id=&#34;italicize-column-text&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Italicize Column Text&lt;/h3&gt;
 &lt;p&gt;In many APA tables, statical indicators such as &lt;em&gt;p&lt;/em&gt;, &lt;em&gt;M&lt;/em&gt; or &lt;em&gt;n&lt;/em&gt; are italicized. We can do that here in the following manner:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;iris %&amp;gt;%
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mtcars %&amp;gt;%
   slice(1:5) %&amp;gt;%
-  apa(&amp;quot;The Iris Dataset&amp;quot;) %&amp;gt;%
+  apa(&amp;quot;Fuel consumption and aspects of automobile design and performance for 32 automobiles (1973-74 models)&amp;quot;) %&amp;gt;%
     tab_footnote(
-    footnote = &amp;quot;This is a footnore.&amp;quot;,
+    footnote = &amp;quot;This is a footnote.&amp;quot;,
     locations = cells_column_labels(
-      columns = vars(Species))
+      columns = vars(mpg))
   ) %&amp;gt;%
   # add an additional table style
   tab_style(
@@ -2145,14 +2325,14 @@
   ),
   # specify the column
   locations = cells_column_labels(
-      columns = vars(Species)
+      columns = vars(cyl)
       )
   )&lt;/code&gt;&lt;/pre&gt;
 &lt;style&gt;html {
   font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Oxygen, Ubuntu, Cantarell, &#39;Helvetica Neue&#39;, &#39;Fira Sans&#39;, &#39;Droid Sans&#39;, Arial, sans-serif;
 }
 
-#tcdxfirvum .gt_table {
+#cfeknchawz .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -2175,7 +2355,7 @@
   border-left-color: #D3D3D3;
 }
 
-#tcdxfirvum .gt_heading {
+#cfeknchawz .gt_heading {
   background-color: white;
   text-align: left;
   border-bottom-color: white;
@@ -2187,7 +2367,7 @@
   border-right-color: #D3D3D3;
 }
 
-#tcdxfirvum .gt_title {
+#cfeknchawz .gt_title {
   color: #333333;
   font-size: 16px;
   font-weight: initial;
@@ -2197,7 +2377,7 @@
   border-bottom-width: 0;
 }
 
-#tcdxfirvum .gt_subtitle {
+#cfeknchawz .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2207,13 +2387,13 @@
   border-top-width: 0;
 }
 
-#tcdxfirvum .gt_bottom_border {
+#cfeknchawz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#tcdxfirvum .gt_col_headings {
+#cfeknchawz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 3px;
   border-top-color: black;
@@ -2228,7 +2408,7 @@
   border-right-color: #D3D3D3;
 }
 
-#tcdxfirvum .gt_col_heading {
+#cfeknchawz .gt_col_heading {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -2248,7 +2428,7 @@
   overflow-x: hidden;
 }
 
-#tcdxfirvum .gt_column_spanner_outer {
+#cfeknchawz .gt_column_spanner_outer {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -2260,15 +2440,15 @@
   padding-right: 4px;
 }
 
-#tcdxfirvum .gt_column_spanner_outer:first-child {
+#cfeknchawz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#tcdxfirvum .gt_column_spanner_outer:last-child {
+#cfeknchawz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#tcdxfirvum .gt_column_spanner {
+#cfeknchawz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 3px;
   border-bottom-color: black;
@@ -2280,7 +2460,7 @@
   width: 100%;
 }
 
-#tcdxfirvum .gt_group_heading {
+#cfeknchawz .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: white;
@@ -2302,7 +2482,7 @@
   vertical-align: middle;
 }
 
-#tcdxfirvum .gt_empty_group_heading {
+#cfeknchawz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: white;
@@ -2317,19 +2497,19 @@
   vertical-align: middle;
 }
 
-#tcdxfirvum .gt_striped {
+#cfeknchawz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#tcdxfirvum .gt_from_md &gt; :first-child {
+#cfeknchawz .gt_from_md &gt; :first-child {
   margin-top: 0;
 }
 
-#tcdxfirvum .gt_from_md &gt; :last-child {
+#cfeknchawz .gt_from_md &gt; :last-child {
   margin-bottom: 0;
 }
 
-#tcdxfirvum .gt_row {
+#cfeknchawz .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2348,7 +2528,7 @@
   overflow-x: hidden;
 }
 
-#tcdxfirvum .gt_stub {
+#cfeknchawz .gt_stub {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -2360,7 +2540,7 @@
   padding-left: 12px;
 }
 
-#tcdxfirvum .gt_summary_row {
+#cfeknchawz .gt_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -2370,7 +2550,7 @@
   padding-right: 5px;
 }
 
-#tcdxfirvum .gt_first_summary_row {
+#cfeknchawz .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2380,7 +2560,7 @@
   border-top-color: #D3D3D3;
 }
 
-#tcdxfirvum .gt_grand_summary_row {
+#cfeknchawz .gt_grand_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -2390,7 +2570,7 @@
   padding-right: 5px;
 }
 
-#tcdxfirvum .gt_first_grand_summary_row {
+#cfeknchawz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2400,7 +2580,7 @@
   border-top-color: #D3D3D3;
 }
 
-#tcdxfirvum .gt_table_body {
+#cfeknchawz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2409,7 +2589,7 @@
   border-bottom-color: black;
 }
 
-#tcdxfirvum .gt_footnotes {
+#cfeknchawz .gt_footnotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -2423,13 +2603,13 @@
   border-right-color: #D3D3D3;
 }
 
-#tcdxfirvum .gt_footnote {
+#cfeknchawz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#tcdxfirvum .gt_sourcenotes {
+#cfeknchawz .gt_sourcenotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -2443,110 +2623,146 @@
   border-right-color: #D3D3D3;
 }
 
-#tcdxfirvum .gt_sourcenote {
+#cfeknchawz .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#tcdxfirvum .gt_left {
+#cfeknchawz .gt_left {
   text-align: left;
 }
 
-#tcdxfirvum .gt_center {
+#cfeknchawz .gt_center {
   text-align: center;
 }
 
-#tcdxfirvum .gt_right {
+#cfeknchawz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#tcdxfirvum .gt_font_normal {
+#cfeknchawz .gt_font_normal {
   font-weight: normal;
 }
 
-#tcdxfirvum .gt_font_bold {
+#cfeknchawz .gt_font_bold {
   font-weight: bold;
 }
 
-#tcdxfirvum .gt_font_italic {
+#cfeknchawz .gt_font_italic {
   font-style: italic;
 }
 
-#tcdxfirvum .gt_super {
+#cfeknchawz .gt_super {
   font-size: 65%;
 }
 
-#tcdxfirvum .gt_footnote_marks {
+#cfeknchawz .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 &lt;/style&gt;
-&lt;div id=&#34;tcdxfirvum&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
+&lt;div id=&#34;cfeknchawz&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
   &lt;thead class=&#34;gt_header&#34;&gt;
     &lt;tr&gt;
-      &lt;th colspan=&#34;5&#34; class=&#34;gt_heading gt_title gt_font_normal&#34; style&gt;&lt;i&gt; The Iris Dataset &lt;/i&gt;&lt;/th&gt;
+      &lt;th colspan=&#34;11&#34; class=&#34;gt_heading gt_title gt_font_normal&#34; style&gt;&lt;i&gt; Fuel consumption and aspects of automobile design and performance for 32 automobiles (1973-74 models) &lt;/i&gt;&lt;/th&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;th colspan=&#34;5&#34; class=&#34;gt_heading gt_subtitle gt_font_normal gt_bottom_border&#34; style&gt;&lt;/th&gt;
+      &lt;th colspan=&#34;11&#34; class=&#34;gt_heading gt_subtitle gt_font_normal gt_bottom_border&#34; style&gt;&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;thead class=&#34;gt_col_headings&#34;&gt;
     &lt;tr&gt;
-      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Sepal.Length&lt;/th&gt;
-      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Sepal.Width&lt;/th&gt;
-      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Petal.Length&lt;/th&gt;
-      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;Petal.Width&lt;/th&gt;
-      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34; style=&#34;font-style: italic;&#34;&gt;Species&lt;sup class=&#34;gt_footnote_marks&#34;&gt;1&lt;/sup&gt;&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;mpg&lt;sup class=&#34;gt_footnote_marks&#34;&gt;1&lt;/sup&gt;&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34; style=&#34;font-style: italic;&#34;&gt;cyl&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;disp&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;hp&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;drat&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;wt&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;qsec&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;vs&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;am&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;gear&lt;/th&gt;
+      &lt;th class=&#34;gt_col_heading gt_columns_bottom_border gt_center&#34; rowspan=&#34;1&#34; colspan=&#34;1&#34;&gt;carb&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody class=&#34;gt_table_body&#34;&gt;
     &lt;tr&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;5.1&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.5&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1.4&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;0.2&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;setosa&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;21.0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;6&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;160&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;110&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.90&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;2.620&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;16.46&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;4&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;4&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;4.9&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.0&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1.4&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;0.2&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;setosa&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;21.0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;6&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;160&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;110&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.90&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;2.875&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;17.02&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;4&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;4&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;4.7&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.2&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1.3&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;0.2&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;setosa&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;22.8&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;4&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;108&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;93&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.85&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;2.320&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;18.61&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;4&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;4.6&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.1&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1.5&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;0.2&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;setosa&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;21.4&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;6&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;258&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;110&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.08&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.215&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;19.44&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;5.0&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.6&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;1.4&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;0.2&lt;/td&gt;
-      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;setosa&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;18.7&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;8&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;360&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;175&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.15&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3.440&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;17.02&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;0&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;3&lt;/td&gt;
+      &lt;td class=&#34;gt_row gt_center&#34; style=&#34;border-top-width: 1px; border-top-style: solid; border-top-color: white; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: white; text-align: center; background-color: #FFFFFF;&#34;&gt;2&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
   
   &lt;tfoot&gt;
     &lt;tr class=&#34;gt_footnotes&#34;&gt;
-      &lt;td colspan=&#34;5&#34;&gt;
+      &lt;td colspan=&#34;11&#34;&gt;
         &lt;p class=&#34;gt_footnote&#34;&gt;
           &lt;sup class=&#34;gt_footnote_marks&#34;&gt;
             &lt;em&gt;1&lt;/em&gt;
           &lt;/sup&gt;
            
-          This is a footnore.
+          This is a footnote.
           &lt;br /&gt;
         &lt;/p&gt;
       &lt;/td&gt;
@@ -2558,7 +2774,7 @@
 &lt;div id=&#34;uses&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Uses&lt;/h2&gt;
 &lt;p&gt;Using &lt;code&gt;gt&lt;/code&gt; to make APA tables could be useful if you are making HTML or PDF reports. Unfortunatley, they do not render at all correctly if you are knitting directly to Word. However, they can be outputted in RTF format, which can then be placed back into word. Here is an example&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;iris %&amp;gt;%
+&lt;pre&gt;&lt;code&gt;mtcars %&amp;gt;%
   slice(1:5) %&amp;gt;%
   gt() %&amp;gt;%
   as_rtf() -&amp;gt; table
@@ -2571,8 +2787,7 @@ close(fileConn)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The package &lt;code&gt;apaTables&lt;/code&gt; is very useful for getting something into the shape for APA and has the function to export individual tables into word. We can also shape statistical results with &lt;code&gt;apaTables&lt;/code&gt; and then format that shape into an table with &lt;code&gt;gt&lt;/code&gt;.&lt;/p&gt;
 &lt;div id=&#34;output-without-apatables&#34; class=&#34;section level4&#34;&gt;
 &lt;h4&gt;Output Without &lt;code&gt;apaTables&lt;/code&gt;&lt;/h4&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data(mtcars)
-model &amp;lt;- lm(mpg ~ wt, mtcars)
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;model &amp;lt;- lm(mpg ~ wt, mtcars)
 summary(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## 
 ## Call:
@@ -2595,8 +2810,7 @@ summary(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div id=&#34;output-with-apatables&#34; class=&#34;section level4&#34;&gt;
 &lt;h4&gt;Output with &lt;code&gt;apaTables&lt;/code&gt;&lt;/h4&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data(mtcars)
-model &amp;lt;- lm(mpg ~ wt, mtcars)
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;model &amp;lt;- lm(mpg ~ wt, mtcars)
 apaTables::apa.reg.table(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## 
 ## 
@@ -2626,15 +2840,14 @@ apaTables::apa.reg.table(model)&lt;/code&gt;&lt;/pre&gt;
 &lt;div id=&#34;output-with-apatables-and-gt&#34; class=&#34;section level4&#34;&gt;
 &lt;h4&gt;Output with &lt;code&gt;apaTables&lt;/code&gt; and &lt;code&gt;gt&lt;/code&gt;&lt;/h4&gt;
 &lt;p&gt;&lt;code&gt;apa.reg.table&lt;/code&gt; takes the regression results and builds table elements into a list. We can then use &lt;code&gt;apa()&lt;/code&gt; to grab the output stored in the named list elements&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data(mtcars)
-model &amp;lt;- lm(mpg ~ wt, mtcars)
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;model &amp;lt;- lm(mpg ~ wt, mtcars)
 apaTables::apa.reg.table(model)[[&amp;quot;table_body&amp;quot;]] %&amp;gt;%
   apa()&lt;/code&gt;&lt;/pre&gt;
 &lt;style&gt;html {
   font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Oxygen, Ubuntu, Cantarell, &#39;Helvetica Neue&#39;, &#39;Fira Sans&#39;, &#39;Droid Sans&#39;, Arial, sans-serif;
 }
 
-#abwxegrctp .gt_table {
+#rmayipahso .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -2657,7 +2870,7 @@ apaTables::apa.reg.table(model)[[&amp;quot;table_body&amp;quot;]] %&amp;gt;%
   border-left-color: #D3D3D3;
 }
 
-#abwxegrctp .gt_heading {
+#rmayipahso .gt_heading {
   background-color: white;
   text-align: left;
   border-bottom-color: white;
@@ -2669,7 +2882,7 @@ apaTables::apa.reg.table(model)[[&amp;quot;table_body&amp;quot;]] %&amp;gt;%
   border-right-color: #D3D3D3;
 }
 
-#abwxegrctp .gt_title {
+#rmayipahso .gt_title {
   color: #333333;
   font-size: 16px;
   font-weight: initial;
@@ -2679,7 +2892,7 @@ apaTables::apa.reg.table(model)[[&amp;quot;table_body&amp;quot;]] %&amp;gt;%
   border-bottom-width: 0;
 }
 
-#abwxegrctp .gt_subtitle {
+#rmayipahso .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2689,13 +2902,13 @@ apaTables::apa.reg.table(model)[[&amp;quot;table_body&amp;quot;]] %&amp;gt;%
   border-top-width: 0;
 }
 
-#abwxegrctp .gt_bottom_border {
+#rmayipahso .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#abwxegrctp .gt_col_headings {
+#rmayipahso .gt_col_headings {
   border-top-style: solid;
   border-top-width: 3px;
   border-top-color: black;
@@ -2710,7 +2923,7 @@ apaTables::apa.reg.table(model)[[&amp;quot;table_body&amp;quot;]] %&amp;gt;%
   border-right-color: #D3D3D3;
 }
 
-#abwxegrctp .gt_col_heading {
+#rmayipahso .gt_col_heading {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -2730,7 +2943,7 @@ apaTables::apa.reg.table(model)[[&amp;quot;table_body&amp;quot;]] %&amp;gt;%
   overflow-x: hidden;
 }
 
-#abwxegrctp .gt_column_spanner_outer {
+#rmayipahso .gt_column_spanner_outer {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -2742,15 +2955,15 @@ apaTables::apa.reg.table(model)[[&amp;quot;table_body&amp;quot;]] %&amp;gt;%
   padding-right: 4px;
 }
 
-#abwxegrctp .gt_column_spanner_outer:first-child {
+#rmayipahso .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#abwxegrctp .gt_column_spanner_outer:last-child {
+#rmayipahso .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#abwxegrctp .gt_column_spanner {
+#rmayipahso .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 3px;
   border-bottom-color: black;
@@ -2762,7 +2975,7 @@ apaTables::apa.reg.table(model)[[&amp;quot;table_body&amp;quot;]] %&amp;gt;%
   width: 100%;
 }
 
-#abwxegrctp .gt_group_heading {
+#rmayipahso .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: white;
@@ -2784,7 +2997,7 @@ apaTables::apa.reg.table(model)[[&amp;quot;table_body&amp;quot;]] %&amp;gt;%
   vertical-align: middle;
 }
 
-#abwxegrctp .gt_empty_group_heading {
+#rmayipahso .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: white;
@@ -2799,19 +3012,19 @@ apaTables::apa.reg.table(model)[[&amp;quot;table_body&amp;quot;]] %&amp;gt;%
   vertical-align: middle;
 }
 
-#abwxegrctp .gt_striped {
+#rmayipahso .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#abwxegrctp .gt_from_md &gt; :first-child {
+#rmayipahso .gt_from_md &gt; :first-child {
   margin-top: 0;
 }
 
-#abwxegrctp .gt_from_md &gt; :last-child {
+#rmayipahso .gt_from_md &gt; :last-child {
   margin-bottom: 0;
 }
 
-#abwxegrctp .gt_row {
+#rmayipahso .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2830,7 +3043,7 @@ apaTables::apa.reg.table(model)[[&amp;quot;table_body&amp;quot;]] %&amp;gt;%
   overflow-x: hidden;
 }
 
-#abwxegrctp .gt_stub {
+#rmayipahso .gt_stub {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -2842,7 +3055,7 @@ apaTables::apa.reg.table(model)[[&amp;quot;table_body&amp;quot;]] %&amp;gt;%
   padding-left: 12px;
 }
 
-#abwxegrctp .gt_summary_row {
+#rmayipahso .gt_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -2852,7 +3065,7 @@ apaTables::apa.reg.table(model)[[&amp;quot;table_body&amp;quot;]] %&amp;gt;%
   padding-right: 5px;
 }
 
-#abwxegrctp .gt_first_summary_row {
+#rmayipahso .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2862,7 +3075,7 @@ apaTables::apa.reg.table(model)[[&amp;quot;table_body&amp;quot;]] %&amp;gt;%
   border-top-color: #D3D3D3;
 }
 
-#abwxegrctp .gt_grand_summary_row {
+#rmayipahso .gt_grand_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -2872,7 +3085,7 @@ apaTables::apa.reg.table(model)[[&amp;quot;table_body&amp;quot;]] %&amp;gt;%
   padding-right: 5px;
 }
 
-#abwxegrctp .gt_first_grand_summary_row {
+#rmayipahso .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2882,7 +3095,7 @@ apaTables::apa.reg.table(model)[[&amp;quot;table_body&amp;quot;]] %&amp;gt;%
   border-top-color: #D3D3D3;
 }
 
-#abwxegrctp .gt_table_body {
+#rmayipahso .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2891,7 +3104,7 @@ apaTables::apa.reg.table(model)[[&amp;quot;table_body&amp;quot;]] %&amp;gt;%
   border-bottom-color: black;
 }
 
-#abwxegrctp .gt_footnotes {
+#rmayipahso .gt_footnotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -2905,13 +3118,13 @@ apaTables::apa.reg.table(model)[[&amp;quot;table_body&amp;quot;]] %&amp;gt;%
   border-right-color: #D3D3D3;
 }
 
-#abwxegrctp .gt_footnote {
+#rmayipahso .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#abwxegrctp .gt_sourcenotes {
+#rmayipahso .gt_sourcenotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -2925,46 +3138,46 @@ apaTables::apa.reg.table(model)[[&amp;quot;table_body&amp;quot;]] %&amp;gt;%
   border-right-color: #D3D3D3;
 }
 
-#abwxegrctp .gt_sourcenote {
+#rmayipahso .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#abwxegrctp .gt_left {
+#rmayipahso .gt_left {
   text-align: left;
 }
 
-#abwxegrctp .gt_center {
+#rmayipahso .gt_center {
   text-align: center;
 }
 
-#abwxegrctp .gt_right {
+#rmayipahso .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#abwxegrctp .gt_font_normal {
+#rmayipahso .gt_font_normal {
   font-weight: normal;
 }
 
-#abwxegrctp .gt_font_bold {
+#rmayipahso .gt_font_bold {
   font-weight: bold;
 }
 
-#abwxegrctp .gt_font_italic {
+#rmayipahso .gt_font_italic {
   font-style: italic;
 }
 
-#abwxegrctp .gt_super {
+#rmayipahso .gt_super {
   font-size: 65%;
 }
 
-#abwxegrctp .gt_footnote_marks {
+#rmayipahso .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 &lt;/style&gt;
-&lt;div id=&#34;abwxegrctp&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
+&lt;div id=&#34;rmayipahso&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
   &lt;thead class=&#34;gt_header&#34;&gt;
     &lt;tr&gt;
       &lt;th colspan=&#34;9&#34; class=&#34;gt_heading gt_title gt_font_normal&#34; style&gt;&lt;i&gt;   &lt;/i&gt;&lt;/th&gt;
@@ -3061,7 +3274,7 @@ apa(apatable[[&amp;quot;table_body&amp;quot;]], apatable[[&amp;quot;table_title&
   font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Oxygen, Ubuntu, Cantarell, &#39;Helvetica Neue&#39;, &#39;Fira Sans&#39;, &#39;Droid Sans&#39;, Arial, sans-serif;
 }
 
-#ugkevaxnco .gt_table {
+#xflxbwslxk .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -3084,7 +3297,7 @@ apa(apatable[[&amp;quot;table_body&amp;quot;]], apatable[[&amp;quot;table_title&
   border-left-color: #D3D3D3;
 }
 
-#ugkevaxnco .gt_heading {
+#xflxbwslxk .gt_heading {
   background-color: white;
   text-align: left;
   border-bottom-color: white;
@@ -3096,7 +3309,7 @@ apa(apatable[[&amp;quot;table_body&amp;quot;]], apatable[[&amp;quot;table_title&
   border-right-color: #D3D3D3;
 }
 
-#ugkevaxnco .gt_title {
+#xflxbwslxk .gt_title {
   color: #333333;
   font-size: 16px;
   font-weight: initial;
@@ -3106,7 +3319,7 @@ apa(apatable[[&amp;quot;table_body&amp;quot;]], apatable[[&amp;quot;table_title&
   border-bottom-width: 0;
 }
 
-#ugkevaxnco .gt_subtitle {
+#xflxbwslxk .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3116,13 +3329,13 @@ apa(apatable[[&amp;quot;table_body&amp;quot;]], apatable[[&amp;quot;table_title&
   border-top-width: 0;
 }
 
-#ugkevaxnco .gt_bottom_border {
+#xflxbwslxk .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ugkevaxnco .gt_col_headings {
+#xflxbwslxk .gt_col_headings {
   border-top-style: solid;
   border-top-width: 3px;
   border-top-color: black;
@@ -3137,7 +3350,7 @@ apa(apatable[[&amp;quot;table_body&amp;quot;]], apatable[[&amp;quot;table_title&
   border-right-color: #D3D3D3;
 }
 
-#ugkevaxnco .gt_col_heading {
+#xflxbwslxk .gt_col_heading {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -3157,7 +3370,7 @@ apa(apatable[[&amp;quot;table_body&amp;quot;]], apatable[[&amp;quot;table_title&
   overflow-x: hidden;
 }
 
-#ugkevaxnco .gt_column_spanner_outer {
+#xflxbwslxk .gt_column_spanner_outer {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -3169,15 +3382,15 @@ apa(apatable[[&amp;quot;table_body&amp;quot;]], apatable[[&amp;quot;table_title&
   padding-right: 4px;
 }
 
-#ugkevaxnco .gt_column_spanner_outer:first-child {
+#xflxbwslxk .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ugkevaxnco .gt_column_spanner_outer:last-child {
+#xflxbwslxk .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ugkevaxnco .gt_column_spanner {
+#xflxbwslxk .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 3px;
   border-bottom-color: black;
@@ -3189,7 +3402,7 @@ apa(apatable[[&amp;quot;table_body&amp;quot;]], apatable[[&amp;quot;table_title&
   width: 100%;
 }
 
-#ugkevaxnco .gt_group_heading {
+#xflxbwslxk .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: white;
@@ -3211,7 +3424,7 @@ apa(apatable[[&amp;quot;table_body&amp;quot;]], apatable[[&amp;quot;table_title&
   vertical-align: middle;
 }
 
-#ugkevaxnco .gt_empty_group_heading {
+#xflxbwslxk .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: white;
@@ -3226,19 +3439,19 @@ apa(apatable[[&amp;quot;table_body&amp;quot;]], apatable[[&amp;quot;table_title&
   vertical-align: middle;
 }
 
-#ugkevaxnco .gt_striped {
+#xflxbwslxk .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ugkevaxnco .gt_from_md &gt; :first-child {
+#xflxbwslxk .gt_from_md &gt; :first-child {
   margin-top: 0;
 }
 
-#ugkevaxnco .gt_from_md &gt; :last-child {
+#xflxbwslxk .gt_from_md &gt; :last-child {
   margin-bottom: 0;
 }
 
-#ugkevaxnco .gt_row {
+#xflxbwslxk .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3257,7 +3470,7 @@ apa(apatable[[&amp;quot;table_body&amp;quot;]], apatable[[&amp;quot;table_title&
   overflow-x: hidden;
 }
 
-#ugkevaxnco .gt_stub {
+#xflxbwslxk .gt_stub {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -3269,7 +3482,7 @@ apa(apatable[[&amp;quot;table_body&amp;quot;]], apatable[[&amp;quot;table_title&
   padding-left: 12px;
 }
 
-#ugkevaxnco .gt_summary_row {
+#xflxbwslxk .gt_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -3279,7 +3492,7 @@ apa(apatable[[&amp;quot;table_body&amp;quot;]], apatable[[&amp;quot;table_title&
   padding-right: 5px;
 }
 
-#ugkevaxnco .gt_first_summary_row {
+#xflxbwslxk .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3289,7 +3502,7 @@ apa(apatable[[&amp;quot;table_body&amp;quot;]], apatable[[&amp;quot;table_title&
   border-top-color: #D3D3D3;
 }
 
-#ugkevaxnco .gt_grand_summary_row {
+#xflxbwslxk .gt_grand_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -3299,7 +3512,7 @@ apa(apatable[[&amp;quot;table_body&amp;quot;]], apatable[[&amp;quot;table_title&
   padding-right: 5px;
 }
 
-#ugkevaxnco .gt_first_grand_summary_row {
+#xflxbwslxk .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3309,7 +3522,7 @@ apa(apatable[[&amp;quot;table_body&amp;quot;]], apatable[[&amp;quot;table_title&
   border-top-color: #D3D3D3;
 }
 
-#ugkevaxnco .gt_table_body {
+#xflxbwslxk .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3318,7 +3531,7 @@ apa(apatable[[&amp;quot;table_body&amp;quot;]], apatable[[&amp;quot;table_title&
   border-bottom-color: black;
 }
 
-#ugkevaxnco .gt_footnotes {
+#xflxbwslxk .gt_footnotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -3332,13 +3545,13 @@ apa(apatable[[&amp;quot;table_body&amp;quot;]], apatable[[&amp;quot;table_title&
   border-right-color: #D3D3D3;
 }
 
-#ugkevaxnco .gt_footnote {
+#xflxbwslxk .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#ugkevaxnco .gt_sourcenotes {
+#xflxbwslxk .gt_sourcenotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -3352,46 +3565,46 @@ apa(apatable[[&amp;quot;table_body&amp;quot;]], apatable[[&amp;quot;table_title&
   border-right-color: #D3D3D3;
 }
 
-#ugkevaxnco .gt_sourcenote {
+#xflxbwslxk .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#ugkevaxnco .gt_left {
+#xflxbwslxk .gt_left {
   text-align: left;
 }
 
-#ugkevaxnco .gt_center {
+#xflxbwslxk .gt_center {
   text-align: center;
 }
 
-#ugkevaxnco .gt_right {
+#xflxbwslxk .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ugkevaxnco .gt_font_normal {
+#xflxbwslxk .gt_font_normal {
   font-weight: normal;
 }
 
-#ugkevaxnco .gt_font_bold {
+#xflxbwslxk .gt_font_bold {
   font-weight: bold;
 }
 
-#ugkevaxnco .gt_font_italic {
+#xflxbwslxk .gt_font_italic {
   font-style: italic;
 }
 
-#ugkevaxnco .gt_super {
+#xflxbwslxk .gt_super {
   font-size: 65%;
 }
 
-#ugkevaxnco .gt_footnote_marks {
+#xflxbwslxk .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 &lt;/style&gt;
-&lt;div id=&#34;ugkevaxnco&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
+&lt;div id=&#34;xflxbwslxk&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
   &lt;thead class=&#34;gt_header&#34;&gt;
     &lt;tr&gt;
       &lt;th colspan=&#34;9&#34; class=&#34;gt_heading gt_title gt_font_normal&#34; style&gt;&lt;i&gt; Regression results using mpg as the criterion
@@ -3502,9 +3715,9 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
     
     <item>
       <title>Air Travel Emissions Calculator in R</title>
-      <link>https://anthonyschmidt.netlify.com/post/2020-05-08-emission-calculator-in-r/</link>
+      <link>/post/2020-05-08-emission-calculator-in-r/</link>
       <pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/post/2020-05-08-emission-calculator-in-r/</guid>
+      <guid>/post/2020-05-08-emission-calculator-in-r/</guid>
       <description>
 
 
@@ -3637,9 +3850,9 @@ travel_data %&amp;gt;%
     
     <item>
       <title>R Handbook for ESM Students</title>
-      <link>https://anthonyschmidt.netlify.com/project/r-handbook/</link>
+      <link>/project/r-handbook/</link>
       <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/project/r-handbook/</guid>
+      <guid>/project/r-handbook/</guid>
       <description>&lt;p&gt;This project is part of a summer internship with &lt;a href=&#34;https://epc.utk.edu/people/jennifer-ann-morrow-phd/&#34; target=&#34;_blank&#34;&gt;Dr. Jennifer Ann Morrow&lt;/a&gt; to create an introduction to &lt;code&gt;R&lt;/code&gt; resource guide relevant to students in our evaluation, statistics, and measurement PhD program. It would also be relevant to anyone interested in learning R. Its topics include setup, important, data manipulation, data cleaning, statistical analysis, and data visualization. The examples use real survey data and take readers from import, to cleaning, to analysis.&lt;/p&gt;
 
 &lt;p&gt;The handbook is being developed with &lt;code&gt;bookdown&lt;/code&gt; and will have supplemental exercises written with &lt;code&gt;learnr&lt;/code&gt;.&lt;/p&gt;
@@ -3648,9 +3861,9 @@ travel_data %&amp;gt;%
     
     <item>
       <title>Becoming “TidyR” over Time- Data Visualization Development in an Online Community of Practice</title>
-      <link>https://anthonyschmidt.netlify.com/talk/2020-3-becoming-tidyr-over-time/</link>
+      <link>/talk/2020-3-becoming-tidyr-over-time/</link>
       <pubDate>Wed, 11 Mar 2020 12:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/talk/2020-3-becoming-tidyr-over-time/</guid>
+      <guid>/talk/2020-3-becoming-tidyr-over-time/</guid>
       <description>
 
 
@@ -3683,7 +3896,7 @@ library(ggplot2)
 iris %&amp;gt;%
   ggplot() +
     geom_point(aes(x=Sepal.Length,y=Sepal.Width))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;https://anthonyschmidt.netlify.com/talk/2020-3-becoming-tidyr-over-time/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/talk/2020-3-becoming-tidyr-over-time/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div id=&#34;research-purpose&#34; class=&#34;section level2&#34;&gt;
@@ -3819,9 +4032,9 @@ iris %&amp;gt;%
     
     <item>
       <title>Exploring #flyingless on Twitter with TAGS</title>
-      <link>https://anthonyschmidt.netlify.com/post/exploring-flying-less-with-tags/</link>
+      <link>/post/exploring-flying-less-with-tags/</link>
       <pubDate>Sat, 29 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/post/exploring-flying-less-with-tags/</guid>
+      <guid>/post/exploring-flying-less-with-tags/</guid>
       <description>
 
 
@@ -3864,9 +4077,9 @@ in the face of climate change: Incentives and barriers in a Swedish setting&lt;/
     
     <item>
       <title>Carbon Crisis Mitigation: Whose Responsibility Is It? - A #TidyTuesday-inspired Essay</title>
-      <link>https://anthonyschmidt.netlify.com/post/2020-19-02-carbon-crisis-mitigation-whose-responsibility-is-it-a-tidytuesday-inspired-essay/</link>
+      <link>/post/2020-19-02-carbon-crisis-mitigation-whose-responsibility-is-it-a-tidytuesday-inspired-essay/</link>
       <pubDate>Sun, 23 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/post/2020-19-02-carbon-crisis-mitigation-whose-responsibility-is-it-a-tidytuesday-inspired-essay/</guid>
+      <guid>/post/2020-19-02-carbon-crisis-mitigation-whose-responsibility-is-it-a-tidytuesday-inspired-essay/</guid>
       <description>
 
 
@@ -3874,7 +4087,7 @@ in the face of climate change: Incentives and barriers in a Swedish setting&lt;/
 &lt;p&gt;&lt;a href=&#34;tilemap.png&#34;&gt;&lt;img src=&#34;tilemap.png&#34; alt=&#34;My #TidyTuesday Tilemap&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;This small project got me thinking about the United States, its disproportionate contribution to the climate crisis, and how changing our personal habits may have a positive change.&lt;/p&gt;
 &lt;p&gt;According to the data set, the US is 6th out of over 130 countries in terms of its food-based carbon footprint, and among the different food groups, the largest emissions are due to the consumption of beef.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://anthonyschmidt.netlify.com/post/2020-19-02-carbon-crisis-mitigation-whose-responsibility-is-it-a-tidytuesday-inspired-essay/index_files/figure-html/data-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-19-02-carbon-crisis-mitigation-whose-responsibility-is-it-a-tidytuesday-inspired-essay/index_files/figure-html/data-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Why is beef such a carbon-intensive food? Beef requires more land - land for raising cows and land required to grow the grain to feed them - and more resources overall. According to an article from the &lt;a href=&#34;https://www.smithsonianmag.com/science-nature/beef-uses-ten-times-more-resources-poultry-dairy-eggs-pork-180952103/&#34;&gt;&lt;em&gt;Smithsonian&lt;/em&gt;&lt;/a&gt;, “beef requires 28 times more land, six times more fertilizer and 11 times more water compared to those other food sources. That adds up to about five times more greenhouse gas emissions.” In addition, the &lt;a href=&#34;https://www.npr.org/sections/thesalt/2014/04/11/301794415/gassy-cows-are-warming-the-planet-and-theyre-here-to-stay&#34;&gt;methane released from cows&lt;/a&gt; increase the already high carbon footprint.&lt;/p&gt;
 &lt;p&gt;This had me wondering: if beef has such a large carbon footprint, what impact would a reduction in beef consumption have? It also led to a deeper question: can individual changes really help mitigate climate change?&lt;/p&gt;
 &lt;div id=&#34;eat-less-beef&#34; class=&#34;section level2&#34;&gt;
@@ -3883,7 +4096,7 @@ in the face of climate change: Incentives and barriers in a Swedish setting&lt;/
 an estimated beef-consuming US population of 299,665,704 people. Using the emissions figure above, the beef-related emissions of these people equals 335,113,160,126 kg/CO&lt;sub&gt;2&lt;/sub&gt;/year, or, &lt;strong&gt;335,113,160 metric tons of CO&lt;sub&gt;2&lt;/sub&gt; each year&lt;/strong&gt;. According to the &lt;a href=&#34;http://folk.uio.no/roberan/img/GCB2019/PNG/s15_2019_Top_FF_emitters_abs.png&#34;&gt;Global Carbon Project&lt;/a&gt;, the US emitted 5,400,000,000 metric tons of CO&lt;sub&gt;2&lt;/sub&gt; in 2018. This means that beef emissions account for 6.2% of total US emissions.&lt;/p&gt;
 &lt;p&gt;Is 6% of our carbon footprint a big deal? Well, consider that this is just 6% of emissions based solely on &lt;strong&gt;one&lt;/strong&gt; food that we eat. In that case, it is quite a bit! So, if we did reduce our beef consumption, what kind of effect would it have?&lt;/p&gt;
 &lt;p&gt;The following chart shows the amount of emissions if we reduce our consumption of beef by 10%, 20%, all the way to 100%. It shows a 10% reduction has a carbon footprint of 5.8%. A 50% reduction of beef consumption equates to our habits contributing only 3.1% of the US carbon footprint. This small percentage is &lt;strong&gt;not negligible&lt;/strong&gt; when you consider that we need to reduce our emissions by &lt;a href=&#34;https://www.ipcc.ch/2018/10/08/summary-for-policymakers-of-ipcc-special-report-on-global-warming-of-1-5c-approved-by-governments/&#34;&gt;45% overall&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://anthonyschmidt.netlify.com/post/2020-19-02-carbon-crisis-mitigation-whose-responsibility-is-it-a-tidytuesday-inspired-essay/index_files/figure-html/reduction-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-19-02-carbon-crisis-mitigation-whose-responsibility-is-it-a-tidytuesday-inspired-essay/index_files/figure-html/reduction-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;whose-responsibility&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Whose Responsibility?&lt;/h2&gt;
@@ -3915,7 +4128,7 @@ an estimated beef-consuming US population of 299,665,704 people. Using the emiss
 &lt;p&gt;The reasoning above assumes, others will not change. However, this is not always the case. One’s own individual changes may be mathematically small but can be symbolically profound. That is, our actions serve a symbolic role and can definitely influence others. For example, research has found a clear “neighbor effect” for solar panels, finding that installation of solar panels influences others to do so (&lt;a href=&#34;https://link.springer.com/article/10.1007/s10018-019-00239-5&#34;&gt;Kosugi et. al, 2019&lt;/a&gt;; &lt;a href=&#34;https://www.theatlantic.com/magazine/archive/2020/03/climate-change-peer-pressure/605515/&#34;&gt;Frank, 2020&lt;/a&gt;)&lt;/p&gt;
 &lt;p&gt;To that end, raising awareness and advocating for change (at school, at work, among family and friends) is another action that can be taken in addition to personal changes.&lt;/p&gt;
 &lt;p&gt;Unfortunately, we still have several other issues to deal with. One is why is it fair to ask people to stop doing the ordinary things they have always done just because these things have suddenly become associated with the climate crisis. First, as Peeters et al. (2018) point out, “The mere fact that many other people engage in an act does not render it harmless” (p. 433). In addition, what we consider ordinary or usual is certainly not so. Take our beef consumption habits. We are sixth in terms of per capita emissions - sixth out of 130 countries. The beef emissions of the United States equate to the same emissions, per capita, as the bottom 17 countries on beef consumption combined.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://anthonyschmidt.netlify.com/post/2020-19-02-carbon-crisis-mitigation-whose-responsibility-is-it-a-tidytuesday-inspired-essay/index_files/figure-html/bottom_countries-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2020-19-02-carbon-crisis-mitigation-whose-responsibility-is-it-a-tidytuesday-inspired-essay/index_files/figure-html/bottom_countries-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Our habits - eating beef, jet-setting around the world, hot showers several times a day, joyriding, leaving the lights on - are certainly normal to us, but around the world, they are matter of factly not the norm. The western world contains around 15% of the world’s population, yet has dissproportionatley contributed to the climate crisis through habits it considers ordinary but are in fact unique. These three charts illustrate this:&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
 &lt;img src=&#34;totalemissions.png&#34; alt=&#34;A Map of Total Emissions&#34; /&gt;
@@ -3950,9 +4163,9 @@ an estimated beef-consuming US population of 299,665,704 people. Using the emiss
     
     <item>
       <title>Assessing Your Carbon Footprint with Google Location Data</title>
-      <link>https://anthonyschmidt.netlify.com/post/2020-02-10-carbon-footprint-google-data/</link>
+      <link>/post/2020-02-10-carbon-footprint-google-data/</link>
       <pubDate>Mon, 10 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/post/2020-02-10-carbon-footprint-google-data/</guid>
+      <guid>/post/2020-02-10-carbon-footprint-google-data/</guid>
       <description>
 
 &lt;p&gt;Google collects &lt;em&gt;a lot&lt;/em&gt; of data on us. If you have Google Maps, chances are your location is being tracked, too. Unless, of course, you have it disabled. But, if you don&amp;rsquo;t, you&amp;rsquo;d be surprised by the amount of location data (and its accuracy) contained in your Google Timeline. &lt;a href=&#34;https://www.nytimes.com/interactive/2019/12/19/opinion/location-tracking-cell-phone.html&#34; target=&#34;_blank&#34;&gt;Many worry about Google&amp;rsquo;s tracking&lt;/a&gt;, but for those of us who don&amp;rsquo;t, there is some potential fun we can have with our own data.&lt;/p&gt;
@@ -4158,9 +4371,9 @@ mar &amp;lt;- json_process(mar2019)
     
     <item>
       <title>Data-Related Jobs for ESM Students</title>
-      <link>https://anthonyschmidt.netlify.com/project/esm-data-jobs/</link>
+      <link>/project/esm-data-jobs/</link>
       <pubDate>Sat, 18 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/project/esm-data-jobs/</guid>
+      <guid>/project/esm-data-jobs/</guid>
       <description>&lt;p&gt;This is an ongoing project to analyze data-related jobs posted on &lt;a href=&#34;http://www.higheredjobs.com&#34; target=&#34;_blank&#34;&gt;HigherEdJobs&lt;/a&gt;. These are jobs a typical ESM student would qualify. The jobs are analyzed in order to understand the skills and competencies that are in demand.&lt;/p&gt;
 
 &lt;p&gt;The project is currently focused on administrative-level jobs. Faculty job analyses will be forthcoming.&lt;/p&gt;
@@ -4171,18 +4384,18 @@ mar &amp;lt;- json_process(mar2019)
     
     <item>
       <title>Becoming Tidyr over Time</title>
-      <link>https://anthonyschmidt.netlify.com/project/tidy-tuesday/</link>
+      <link>/project/tidy-tuesday/</link>
       <pubDate>Thu, 16 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/project/tidy-tuesday/</guid>
+      <guid>/project/tidy-tuesday/</guid>
       <description>&lt;p&gt;This project analyzes tweets from the #TidyTuesday hashtag to understand participation and development of data visualization and data science skills.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Speaking of Data</title>
-      <link>https://anthonyschmidt.netlify.com/post/2019-08-24-speaking-of-data/</link>
+      <link>/post/2019-08-24-speaking-of-data/</link>
       <pubDate>Sat, 24 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>https://anthonyschmidt.netlify.com/post/2019-08-24-speaking-of-data/</guid>
+      <guid>/post/2019-08-24-speaking-of-data/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Read this aloud: “We need more data.”&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;How did you pronounce the word “data”? Was the “da” in data pronounced like day or was the “a” in “da” pronounced with the same “a” as in apple? In other words, do you say day-tuh (IPA: /deɪtə/) or dah-tuh (IPA: /dætə/; like the “a” in “apple”)?&lt;/p&gt;
