@@ -15,6 +15,7 @@ summary: ''
 tags: 
 - Data Science
 authors: []
+output: blogdown::html_page
 ---
 
 `R` has always been a very powerful statistical analysis tool. With the development of `ggplot`, it has also become an extremely powerful data visualization tool. However, in my experience, `R` has lacked the ability to *easily* create nice tables, especially tables suitable for APA publication.
