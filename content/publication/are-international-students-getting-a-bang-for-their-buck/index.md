@@ -2,7 +2,6 @@
 abstract: Do increased expenditures lead to improvements in international students’ outcomes? As state subsidies for public higher education institutions remain low, the reliance on out-of-state tuition from international students underscores their importance. Because international students often pay such higher tuition fees, it is worth studying how such fees impact their education. This study investigated to what extent institutional expenditures affect undergraduate international student graduation rates. Using OLS regression with robust standard errors, the results indicated that academic support expenditures are significantly related to international student graduation rates, but may only have small effects. Out-of-state tuition was also found to be significant, suggesting tuition affects international students in ways not captured by expenditure data.
 authors:
 - admin
--
 date: "2020-08-15"
 doi: "10.32674/jis.v10i3.1279"
 featured: false

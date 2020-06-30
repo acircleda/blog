@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="PhD Student - Evaluation, Statistics, and Measurement">
+  <meta name="description" content="PhD Student / Data Visualization Researcher">
 
   
   <link rel="alternate" hreflang="en-us" href="/publication_types/3/">
@@ -91,6 +91,42 @@
 
 
 
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-159650336-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           document.location = url;
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target);  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-159650336-1', {});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
   
 
 
@@ -120,10 +156,10 @@
   <meta property="og:site_name" content="Anthony Schmidt">
   <meta property="og:url" content="/publication_types/3/">
   <meta property="og:title" content="3 | Anthony Schmidt">
-  <meta property="og:description" content="PhD Student - Evaluation, Statistics, and Measurement"><meta property="og:image" content="/img/icon-192.png">
+  <meta property="og:description" content="PhD Student / Data Visualization Researcher"><meta property="og:image" content="/img/icon-192.png">
   <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2019-04-07T00:00:00&#43;00:00">
+    <meta property="og:updated_time" content="2020-06-05T00:00:00&#43;00:00">
   
 
   
@@ -222,7 +258,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/#hero"><span>Demo</span></a>
+          <a class="nav-link " href="/#about"><span>Home</span></a>
         </li>
 
         
@@ -251,7 +287,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+          <a class="nav-link " href="/#posts"><span>Blog</span></a>
         </li>
 
         
@@ -309,7 +345,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/#featured"><span>Publications</span></a>
+          <a class="nav-link " href="/#publications"><span>Publications</span></a>
         </li>
 
         
@@ -329,9 +365,74 @@
         
         
         
+          
+          
+          
+            
+          
+          
+        
 
         <li class="nav-item">
-          <a class="nav-link " href="/otherblogs/"><span>Other Blogs</span></a>
+          <a class="nav-link " href="/#talks"><span>Presentations</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#portfolio"><span>Portfolio</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#experience"><span>Experience</span></a>
         </li>
 
         
@@ -372,6 +473,8 @@
         
         
           
+            
+          
         
 
         
@@ -382,7 +485,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/files/cv.pdf"><span>CV</span></a>
+          <a class="nav-link " href="https://github.com/acircleda/CV/blob/master/hyndman/Anthony_Schmidt_CV_hyndman.pdf" target="_blank" rel="noopener"><span>CV</span></a>
         </li>
 
         
@@ -452,10 +555,10 @@
   
   
   <div>
-    <h2><a href="/publication/preprint/">An example preprint / working paper</a></h2>
+    <h2><a href="/publication/intl-student-academic-achievement/">Intensive English Program (IEP) Student Academic Achivement: Comparing IEP and Directly-Admitted International Student GPA</a></h2>
     <div class="article-style">
       
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
+      The current research examines the effectiveness of an IEP by comparing IEP students to directly-admitted international students on GPA.
       
     </div>
   </div>

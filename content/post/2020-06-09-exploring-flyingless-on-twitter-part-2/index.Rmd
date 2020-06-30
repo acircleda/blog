@@ -1,0 +1,84 @@
+---
+title: 'Exploring #flyingless on Twitter, part 2'
+author: ''
+date: '2020-06-09'
+slug: exploring-flyingless-on-twitter-part-2
+categories: []
+tags: []
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-06-09T08:48:30-04:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+In a [previous post](https://www.anthonyschmidt.co/post/exploring-flying-less-with-tags/), I described how you can use a special [Twitter Archiving Google Sheet](https://tags.hawksey.info/) to follow a hashtag or keyword on Twitter. This post will show how that data can be analyzed in `R`.
+
+## But first...**a conundrum**
+
+1. You want to collect Twitter data over the next few months. The `rtweet` package provides a lot of functionality to collect and analyze the data, but you are limited to only the last seven days. You can't reach further back than that. If you want to collect data on a consistent basis, you will need to run an `rtweet` script every week to collect new data. Then you'll need to combine and clean the data so it integrates well with your previous week's data. **That is a lot of work**.
+
+2. You want to collect Twitter data over the next few months. You can use the TAGS template to constantly update with data automatically. However, numerous duplicates are created and the included "Remove Duplicates" function doesn't work well. In addition, the data collected is very limited. You don't get information about likes, rewtweets, media, geolocation, etc. In sum, **there is not enough information**. 
+
+## A solution...**combine `rtweet` and TAGS
+
+TAGS gives you something *very* useful, the status ID of every tweet. You can feed that to `rtweet` to pull nearly unlimited historical data to create a dataset that has duplicates removed **and** has detailed columns of information. Here's what we will do:
+
+### Load libraries
+
+```{r}
+library(tidyverse)
+library(rtweet)
+library(gsheet)
+```
+
+### Import data from TAGS
+
+We can use the `gsheet` package to import a Google sheet that has the status "Anyone on the internet with this link can view". Make sure the link you copy is the link to the exact tab/worksheet you would like to import.
+
+```{r message=FALSE, warning=FALSE}
+tags_data <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1CrSy6fhs9x9cadgMLjPJuzfh5C7c5G3_3AMVRiwd1EM/edit#gid=400689247")
+```
+
+Note that the tags data contains 18 variables:
+
+```{r}
+names(tags_data)
+```
+
+We'll need that "id_str" for the next step.
+
+### Build a larger dataset with `lookup_statuses`
+
+We can use `lookup_statuses` to build a new dataset using the "id_str" from the tags_data. This will also remove duplicates. Depending on the number of rows in your TAGS data, the new dataset could take a few minutes to download and make.
+
+Note: you may need to authorize `rtweet` before it runs. See [https://rtweet.info/](https://rtweet.info/) for more information.
+
+```{r}
+twitter_data <- lookup_statuses(tags_data$id_str)
+```
+
+Now I have less observations (duplicates removed) and 90 columns of information.
+
+```{r}
+names(twitter_data)
+```
+
+## Asking Questions with Twitter Data
+
+We can now explore the #flyingless Twitter hashtag.
+
+### Where are people tweeting from?
+
+I am using world shapefiles downloaded from [https://thematicmapping.org/downloads/world_borders.php](https://thematicmapping.org/downloads/world_borders.php). You'll need to unzip *all* files.
+
+```{r}
+library(sf)
+
+world_map <- read_sf("TM_WORLD_BORDERS_SIMPL-0.3.shp")
+```

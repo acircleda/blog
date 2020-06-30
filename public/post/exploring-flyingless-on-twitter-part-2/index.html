@@ -28,10 +28,11 @@
   
     
   
-  <meta name="description" content="This study investigated to what extent institutional expenditures affect undergraduate international student graduation rates.">
+  <meta name="description" content="In a previous post, I described how you can use a special Twitter Archiving Google Sheet to follow a hashtag or keyword on Twitter. This post will show how that data can be analyzed in R.
+But first…a conundrumYou want to collect Twitter data over the next few months. The rtweet package provides a lot of functionality to collect and analyze the data, but you are limited to only the last seven days.">
 
   
-  <link rel="alternate" hreflang="en-us" href="/publication/journal-article/">
+  <link rel="alternate" hreflang="en-us" href="/post/exploring-flyingless-on-twitter-part-2/">
 
   
 
@@ -136,7 +137,7 @@
   <link rel="icon" type="image/png" href="/img/icon-32.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="/publication/journal-article/">
+  <link rel="canonical" href="/post/exploring-flyingless-on-twitter-part-2/">
 
   
   
@@ -152,15 +153,16 @@
   <meta property="twitter:creator" content="@anthonyteacher">
   
   <meta property="og:site_name" content="Anthony Schmidt">
-  <meta property="og:url" content="/publication/journal-article/">
-  <meta property="og:title" content="Are International Students Getting a Bang for their Buck? The Relationship between Expenditures and International Student Graduation Rates | Anthony Schmidt">
-  <meta property="og:description" content="This study investigated to what extent institutional expenditures affect undergraduate international student graduation rates."><meta property="og:image" content="/img/icon-192.png">
+  <meta property="og:url" content="/post/exploring-flyingless-on-twitter-part-2/">
+  <meta property="og:title" content="Exploring #flyingless on Twitter, part 2 | Anthony Schmidt">
+  <meta property="og:description" content="In a previous post, I described how you can use a special Twitter Archiving Google Sheet to follow a hashtag or keyword on Twitter. This post will show how that data can be analyzed in R.
+But first…a conundrumYou want to collect Twitter data over the next few months. The rtweet package provides a lot of functionality to collect and analyze the data, but you are limited to only the last seven days."><meta property="og:image" content="/img/icon-192.png">
   <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="en-us">
   
     
-      <meta property="article:published_time" content="2020-08-15T00:00:00&#43;00:00">
+      <meta property="article:published_time" content="2020-06-09T00:00:00&#43;00:00">
     
-    <meta property="article:modified_time" content="2020-08-15T00:00:00&#43;00:00">
+    <meta property="article:modified_time" content="2020-06-09T08:48:30-04:00">
   
 
   
@@ -172,6 +174,8 @@
 
 
 
+
+  
 
 
 
@@ -181,15 +185,15 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "/publication/journal-article/"
+    "@id": "/post/exploring-flyingless-on-twitter-part-2/"
   },
-  "headline": "Are International Students Getting a Bang for their Buck? The Relationship between Expenditures and International Student Graduation Rates",
+  "headline": "Exploring #flyingless on Twitter, part 2",
   
-  "datePublished": "2020-08-15T00:00:00Z",
-  "dateModified": "2020-08-15T00:00:00Z",
+  "datePublished": "2020-06-09T00:00:00Z",
+  "dateModified": "2020-06-09T08:48:30-04:00",
   
   "author": {
     "@type": "Person",
@@ -204,7 +208,7 @@
       "url": "/img/icon-512.png"
     }
   },
-  "description": "This study investigated to what extent institutional expenditures affect undergraduate international student graduation rates."
+  "description": "In a previous post, I described how you can use a special Twitter Archiving Google Sheet to follow a hashtag or keyword on Twitter. This post will show how that data can be analyzed in R.\nBut first…a conundrum\rYou want to collect Twitter data over the next few months. The rtweet package provides a lot of functionality to collect and analyze the data, but you are limited to only the last seven days."
 }
 </script>
 
@@ -222,7 +226,7 @@
 
 
 
-  <title>Are International Students Getting a Bang for their Buck? The Relationship between Expenditures and International Student Graduation Rates | Anthony Schmidt</title>
+  <title>Exploring #flyingless on Twitter, part 2 | Anthony Schmidt</title>
 
 </head>
 
@@ -565,7 +569,7 @@
 </nav>
 
 
-  <div class="pub">
+  <article class="article">
 
   
 
@@ -586,7 +590,7 @@
   
   
 <div class="article-container pt-3">
-  <h1>Are International Students Getting a Bang for their Buck? The Relationship between Expenditures and International Student Graduation Rates</h1>
+  <h1>Exploring #flyingless on Twitter, part 2</h1>
 
   
 
@@ -598,27 +602,16 @@
 
   
   
-  
-  
-  <div>
-    
-
-
-
-  
-  <span><a href="/authors/admin/">Anthony Schmidt</a></span>
-
-  </div>
-  
-  
 
   
   <span class="article-date">
     
     
       
+          Last updated on
+      
     
-    August 2020
+    Jun 9, 2020
   </span>
   
 
@@ -647,51 +640,7 @@
 
 
 
-  
 
-
-
-<div class="btn-links mb-3">
-  
-  
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-<button type="button" class="btn btn-outline-primary my-1 mr-1 js-cite-modal"
-        data-filename="/publication/journal-article/cite.bib">
-  Cite
-</button>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<a class="btn btn-outline-primary my-1 mr-1" href="https://doi.org/10.32674/jis.v10i3.1279" target="_blank" rel="noopener">
-  DOI
-</a>
-
-
-
-</div>
 
 
   
@@ -701,65 +650,130 @@
 
   <div class="article-container">
 
-    
-    <h3>Abstract</h3>
-    <p class="pub-abstract">Do increased expenditures lead to improvements in international students’ outcomes? As state subsidies for public higher education institutions remain low, the reliance on out-of-state tuition from international students underscores their importance. Because international students often pay such higher tuition fees, it is worth studying how such fees impact their education. This study investigated to what extent institutional expenditures affect undergraduate international student graduation rates. Using OLS regression with robust standard errors, the results indicated that academic support expenditures are significantly related to international student graduation rates, but may only have small effects. Out-of-state tuition was also found to be significant, suggesting tuition affects international students in ways not captured by expenditure data.</p>
-    
-
-    
-    <div class="row">
-      <div class="col-md-1"></div>
-      <div class="col-md-10">
-        <div class="row">
-          <div class="col-12 col-md-3 pub-row-heading">Type</div>
-          <div class="col-12 col-md-9">
-            
-            
-            <a href="/publication/#2">
-              Journal article
-            </a>
-            
-          </div>
-        </div>
-      </div>
-      <div class="col-md-1"></div>
-    </div>
-    <div class="d-md-none space-below"></div>
-    
-
-    
-    <div class="row">
-      <div class="col-md-1"></div>
-      <div class="col-md-10">
-        <div class="row">
-          <div class="col-12 col-md-3 pub-row-heading">Publication</div>
-          <div class="col-12 col-md-9"><em>Journal of International Students</em></div>
-        </div>
-      </div>
-      <div class="col-md-1"></div>
-    </div>
-    <div class="d-md-none space-below"></div>
-    
-
-    <div class="space-below"></div>
-
-    <div class="article-style"></div>
-
-    
+    <div class="article-style">
+      
 
 
-
-
-
-<div class="article-tags">
-  
-  <a class="badge badge-light" href="/tags/international-students/">International Students</a>
-  
-  <a class="badge badge-light" href="/tags/ipeds/">IPEDS</a>
-  
-  <a class="badge badge-light" href="/tags/graduation-rates/">Graduation Rates</a>
-  
+<p>In a <a href="https://www.anthonyschmidt.co/post/exploring-flying-less-with-tags/">previous post</a>, I described how you can use a special <a href="https://tags.hawksey.info/">Twitter Archiving Google Sheet</a> to follow a hashtag or keyword on Twitter. This post will show how that data can be analyzed in <code>R</code>.</p>
+<div id="but-firsta-conundrum" class="section level2">
+<h2>But first…<strong>a conundrum</strong></h2>
+<ol style="list-style-type: decimal">
+<li><p>You want to collect Twitter data over the next few months. The <code>rtweet</code> package provides a lot of functionality to collect and analyze the data, but you are limited to only the last seven days. You can’t reach further back than that. If you want to collect data on a consistent basis, you will need to run an <code>rtweet</code> script every week to collect new data. Then you’ll need to combine and clean the data so it integrates well with your previous week’s data. <strong>That is a lot of work</strong>.</p></li>
+<li><p>You want to collect Twitter data over the next few months. You can use the TAGS template to constantly update with data automatically. However, numerous duplicates are created and the included “Remove Duplicates” function doesn’t work well. In addition, the data collected is very limited. You don’t get information about likes, rewtweets, media, geolocation, etc. In sum, <strong>there is not enough information</strong>.</p></li>
+</ol>
 </div>
+<div id="a-solutioncombine-rtweet-and-tags" class="section level2">
+<h2>A solution…**combine <code>rtweet</code> and TAGS</h2>
+<p>TAGS gives you something <em>very</em> useful, the status ID of every tweet. You can feed that to <code>rtweet</code> to pull nearly unlimited historical data to create a dataset that has duplicates removed <strong>and</strong> has detailed columns of information. Here’s what we will do:</p>
+<div id="load-libraries" class="section level3">
+<h3>Load libraries</h3>
+<pre class="r"><code>library(tidyverse)</code></pre>
+<pre><code>## -- Attaching packages ---------------------- tidyverse 1.3.0 --</code></pre>
+<pre><code>## v ggplot2 3.3.1     v purrr   0.3.4
+## v tibble  3.0.1     v dplyr   1.0.0
+## v tidyr   1.1.0     v stringr 1.4.0
+## v readr   1.3.1     v forcats 0.5.0</code></pre>
+<pre><code>## -- Conflicts ------------------------- tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<pre class="r"><code>library(rtweet)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;rtweet&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:purrr&#39;:
+## 
+##     flatten</code></pre>
+<pre class="r"><code>library(gsheet)</code></pre>
+</div>
+<div id="import-data-from-tags" class="section level3">
+<h3>Import data from TAGS</h3>
+<p>We can use the <code>gsheet</code> package to import a Google sheet that has the status “Anyone on the internet with this link can view”. Make sure the link you copy is the link to the exact tab/worksheet you would like to import.</p>
+<pre class="r"><code>tags_data &lt;- gsheet2tbl(&quot;https://docs.google.com/spreadsheets/d/1CrSy6fhs9x9cadgMLjPJuzfh5C7c5G3_3AMVRiwd1EM/edit#gid=400689247&quot;)</code></pre>
+<p>Note that the tags data contains 18 variables:</p>
+<pre class="r"><code>names(tags_data)</code></pre>
+<pre><code>##  [1] &quot;id_str&quot;                    &quot;from_user&quot;                
+##  [3] &quot;text&quot;                      &quot;status_url&quot;               
+##  [5] &quot;created_at&quot;                &quot;time&quot;                     
+##  [7] &quot;geo_coordinates&quot;           &quot;user_lang&quot;                
+##  [9] &quot;in_reply_to_user_id_str&quot;   &quot;in_reply_to_screen_name&quot;  
+## [11] &quot;from_user_id_str&quot;          &quot;in_reply_to_status_id_str&quot;
+## [13] &quot;source&quot;                    &quot;profile_image_url&quot;        
+## [15] &quot;user_followers_count&quot;      &quot;user_friends_count&quot;       
+## [17] &quot;user_location&quot;             &quot;entities_str&quot;</code></pre>
+<p>We’ll need that “id_str” for the next step.</p>
+</div>
+<div id="build-a-larger-dataset-with-lookup_statuses" class="section level3">
+<h3>Build a larger dataset with <code>lookup_statuses</code></h3>
+<p>We can use <code>lookup_statuses</code> to build a new dataset using the “id_str” from the tags_data. This will also remove duplicates. Depending on the number of rows in your TAGS data, the new dataset could take a few minutes to download and make.</p>
+<p>Note: you may need to authorize <code>rtweet</code> before it runs. See <a href="https://rtweet.info/">https://rtweet.info/</a> for more information.</p>
+<pre class="r"><code>twitter_data &lt;- lookup_statuses(tags_data$id_str)</code></pre>
+<p>Now I have less observations (duplicates removed) and 90 columns of information.</p>
+<pre class="r"><code>names(twitter_data)</code></pre>
+<pre><code>##  [1] &quot;user_id&quot;                 &quot;status_id&quot;              
+##  [3] &quot;created_at&quot;              &quot;screen_name&quot;            
+##  [5] &quot;text&quot;                    &quot;source&quot;                 
+##  [7] &quot;display_text_width&quot;      &quot;reply_to_status_id&quot;     
+##  [9] &quot;reply_to_user_id&quot;        &quot;reply_to_screen_name&quot;   
+## [11] &quot;is_quote&quot;                &quot;is_retweet&quot;             
+## [13] &quot;favorite_count&quot;          &quot;retweet_count&quot;          
+## [15] &quot;quote_count&quot;             &quot;reply_count&quot;            
+## [17] &quot;hashtags&quot;                &quot;symbols&quot;                
+## [19] &quot;urls_url&quot;                &quot;urls_t.co&quot;              
+## [21] &quot;urls_expanded_url&quot;       &quot;media_url&quot;              
+## [23] &quot;media_t.co&quot;              &quot;media_expanded_url&quot;     
+## [25] &quot;media_type&quot;              &quot;ext_media_url&quot;          
+## [27] &quot;ext_media_t.co&quot;          &quot;ext_media_expanded_url&quot; 
+## [29] &quot;ext_media_type&quot;          &quot;mentions_user_id&quot;       
+## [31] &quot;mentions_screen_name&quot;    &quot;lang&quot;                   
+## [33] &quot;quoted_status_id&quot;        &quot;quoted_text&quot;            
+## [35] &quot;quoted_created_at&quot;       &quot;quoted_source&quot;          
+## [37] &quot;quoted_favorite_count&quot;   &quot;quoted_retweet_count&quot;   
+## [39] &quot;quoted_user_id&quot;          &quot;quoted_screen_name&quot;     
+## [41] &quot;quoted_name&quot;             &quot;quoted_followers_count&quot; 
+## [43] &quot;quoted_friends_count&quot;    &quot;quoted_statuses_count&quot;  
+## [45] &quot;quoted_location&quot;         &quot;quoted_description&quot;     
+## [47] &quot;quoted_verified&quot;         &quot;retweet_status_id&quot;      
+## [49] &quot;retweet_text&quot;            &quot;retweet_created_at&quot;     
+## [51] &quot;retweet_source&quot;          &quot;retweet_favorite_count&quot; 
+## [53] &quot;retweet_retweet_count&quot;   &quot;retweet_user_id&quot;        
+## [55] &quot;retweet_screen_name&quot;     &quot;retweet_name&quot;           
+## [57] &quot;retweet_followers_count&quot; &quot;retweet_friends_count&quot;  
+## [59] &quot;retweet_statuses_count&quot;  &quot;retweet_location&quot;       
+## [61] &quot;retweet_description&quot;     &quot;retweet_verified&quot;       
+## [63] &quot;place_url&quot;               &quot;place_name&quot;             
+## [65] &quot;place_full_name&quot;         &quot;place_type&quot;             
+## [67] &quot;country&quot;                 &quot;country_code&quot;           
+## [69] &quot;geo_coords&quot;              &quot;coords_coords&quot;          
+## [71] &quot;bbox_coords&quot;             &quot;status_url&quot;             
+## [73] &quot;name&quot;                    &quot;location&quot;               
+## [75] &quot;description&quot;             &quot;url&quot;                    
+## [77] &quot;protected&quot;               &quot;followers_count&quot;        
+## [79] &quot;friends_count&quot;           &quot;listed_count&quot;           
+## [81] &quot;statuses_count&quot;          &quot;favourites_count&quot;       
+## [83] &quot;account_created_at&quot;      &quot;verified&quot;               
+## [85] &quot;profile_url&quot;             &quot;profile_expanded_url&quot;   
+## [87] &quot;account_lang&quot;            &quot;profile_banner_url&quot;     
+## [89] &quot;profile_background_url&quot;  &quot;profile_image_url&quot;</code></pre>
+</div>
+</div>
+<div id="asking-questions-with-twitter-data" class="section level2">
+<h2>Asking Questions with Twitter Data</h2>
+<p>We can now explore the #flyingless Twitter hashtag.</p>
+<div id="where-are-people-tweeting-from" class="section level3">
+<h3>Where are people tweeting from?</h3>
+<p>I am using world shapefiles downloaded from <a href="https://thematicmapping.org/downloads/world_borders.php">https://thematicmapping.org/downloads/world_borders.php</a>. You’ll need to unzip <em>all</em> files.</p>
+<pre class="r"><code>library(sf)</code></pre>
+<pre><code>## Linking to GEOS 3.8.0, GDAL 3.0.4, PROJ 6.3.1</code></pre>
+<pre class="r"><code>world_map &lt;- read_sf(&quot;TM_WORLD_BORDERS_SIMPL-0.3.shp&quot;)</code></pre>
+</div>
+</div>
+
+    </div>
+
+    
+
+
+
+
 
 
 
@@ -774,7 +788,7 @@
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=/publication/journal-article/&amp;text=Are%20International%20Students%20Getting%20a%20Bang%20for%20their%20Buck?%20The%20Relationship%20between%20Expenditures%20and%20International%20Student%20Graduation%20Rates" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=/post/exploring-flyingless-on-twitter-part-2/&amp;text=Exploring%20#flyingless%20on%20Twitter,%20part%202" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -787,7 +801,7 @@
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=/publication/journal-article/&amp;t=Are%20International%20Students%20Getting%20a%20Bang%20for%20their%20Buck?%20The%20Relationship%20between%20Expenditures%20and%20International%20Student%20Graduation%20Rates" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=/post/exploring-flyingless-on-twitter-part-2/&amp;t=Exploring%20#flyingless%20on%20Twitter,%20part%202" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -800,7 +814,7 @@
       
       
       <li>
-        <a href="mailto:?subject=Are%20International%20Students%20Getting%20a%20Bang%20for%20their%20Buck?%20The%20Relationship%20between%20Expenditures%20and%20International%20Student%20Graduation%20Rates&amp;body=/publication/journal-article/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=Exploring%20#flyingless%20on%20Twitter,%20part%202&amp;body=/post/exploring-flyingless-on-twitter-part-2/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -813,7 +827,7 @@
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=/publication/journal-article/&amp;title=Are%20International%20Students%20Getting%20a%20Bang%20for%20their%20Buck?%20The%20Relationship%20between%20Expenditures%20and%20International%20Student%20Graduation%20Rates" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=/post/exploring-flyingless-on-twitter-part-2/&amp;title=Exploring%20#flyingless%20on%20Twitter,%20part%202" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -826,7 +840,7 @@
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=Are%20International%20Students%20Getting%20a%20Bang%20for%20their%20Buck?%20The%20Relationship%20between%20Expenditures%20and%20International%20Student%20Graduation%20Rates%20/publication/journal-article/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=Exploring%20#flyingless%20on%20Twitter,%20part%202%20/post/exploring-flyingless-on-twitter-part-2/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -839,7 +853,7 @@
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=/publication/journal-article/&amp;title=Are%20International%20Students%20Getting%20a%20Bang%20for%20their%20Buck?%20The%20Relationship%20between%20Expenditures%20and%20International%20Student%20Graduation%20Rates" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=/post/exploring-flyingless-on-twitter-part-2/&amp;title=Exploring%20#flyingless%20on%20Twitter,%20part%202" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -858,10 +872,6 @@
 
 
 
-  
-  
-    
-  
   
 
 
@@ -946,6 +956,34 @@
 
 
 
+<section id="comments">
+  
+    
+<div id="disqus_thread"></div>
+<script>
+  let disqus_config = function () {
+    
+    
+    
+  };
+  (function() {
+    if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+      document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+      return;
+    }
+    var d = document, s = d.createElement('script'); s.async = true;
+    s.src = 'https://' + "acircleda" + '.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+  
+</section>
+
 
 
 
@@ -953,24 +991,11 @@
 
   
   
-  <div class="article-widget content-widget-hr">
-    <h3>Related</h3>
-    <ul>
-      
-      <li><a href="/publication/international-students-in-first-year-writing-review/">Book Review - International Students in First-Year Writing: A Journey Through Socio-Academic Space</a></li>
-      
-      <li><a href="/talk/tesol2019/">A Comparison of Direct Admit and IEP Student Academic Achievement</a></li>
-      
-      <li><a href="/project/iep-gpa/">The Efficacy of an Intensive English program</a></li>
-      
-    </ul>
+
+
+
   </div>
-  
-
-
-
-  </div>
-</div>
+</article>
 
       
 
