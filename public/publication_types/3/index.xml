@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>3 | Anthony Schmidt</title>
-    <link>/publication_types/3/</link>
-      <atom:link href="/publication_types/3/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://www.anthonyschmidt.co/publication_types/3/</link>
+      <atom:link href="https://www.anthonyschmidt.co/publication_types/3/index.xml" rel="self" type="application/rss+xml" />
     <description>3</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 05 Jun 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://www.anthonyschmidt.co/img/icon-192.png</url>
       <title>3</title>
-      <link>/publication_types/3/</link>
+      <link>https://www.anthonyschmidt.co/publication_types/3/</link>
     </image>
     
     <item>
       <title>Intensive English Program (IEP) Student Academic Achivement: Comparing IEP and Directly-Admitted International Student GPA</title>
-      <link>/publication/intl-student-academic-achievement/</link>
+      <link>https://www.anthonyschmidt.co/publication/intl-student-academic-achievement/</link>
       <pubDate>Fri, 05 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>/publication/intl-student-academic-achievement/</guid>
+      <guid>https://www.anthonyschmidt.co/publication/intl-student-academic-achievement/</guid>
       <description></description>
     </item>
     

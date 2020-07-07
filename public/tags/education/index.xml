@@ -2,46 +2,46 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Education | Anthony Schmidt</title>
-    <link>/tags/education/</link>
-      <atom:link href="/tags/education/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://www.anthonyschmidt.co/tags/education/</link>
+      <atom:link href="https://www.anthonyschmidt.co/tags/education/index.xml" rel="self" type="application/rss+xml" />
     <description>Education</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 16 Jan 2020 13:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://www.anthonyschmidt.co/img/icon-192.png</url>
       <title>Education</title>
-      <link>/tags/education/</link>
+      <link>https://www.anthonyschmidt.co/tags/education/</link>
     </image>
     
     <item>
       <title>A survey of teachers and administrators regarding the implementation of new K-8 computing education standards in Tennessee</title>
-      <link>/talk/planting-the-seeds/</link>
+      <link>https://www.anthonyschmidt.co/talk/planting-the-seeds/</link>
       <pubDate>Thu, 16 Jan 2020 13:00:00 +0000</pubDate>
-      <guid>/talk/planting-the-seeds/</guid>
+      <guid>https://www.anthonyschmidt.co/talk/planting-the-seeds/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A Comparison of Direct Admit and IEP Student Academic Achievement</title>
-      <link>/talk/tesol2019/</link>
+      <link>https://www.anthonyschmidt.co/talk/tesol2019/</link>
       <pubDate>Fri, 01 Mar 2019 13:00:00 +0000</pubDate>
-      <guid>/talk/tesol2019/</guid>
+      <guid>https://www.anthonyschmidt.co/talk/tesol2019/</guid>
       <description></description>
     </item>
     
     <item>
       <title>The Efficacy of an Intensive English program</title>
-      <link>/project/iep-gpa/</link>
+      <link>https://www.anthonyschmidt.co/project/iep-gpa/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>/project/iep-gpa/</guid>
+      <guid>https://www.anthonyschmidt.co/project/iep-gpa/</guid>
       <description>&lt;p&gt;This project uses longitudinal institutional data to understand the efficacy of an intensive English program (IEP) by comparing IEP students, who arrive with TOEFL scores under the institutional minimum, with directly admitted students, who have scores at or above the minimum.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Planting the Seeds for Computer Science Education in East Tennessee</title>
-      <link>/project/planting-the-seeds-for-cs/</link>
+      <link>https://www.anthonyschmidt.co/project/planting-the-seeds-for-cs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/project/planting-the-seeds-for-cs/</guid>
+      <guid>https://www.anthonyschmidt.co/project/planting-the-seeds-for-cs/</guid>
       <description>&lt;p&gt;The project is focused on understanding the needs of administrators and teachings in order to develop opportunities for K-8 teachers to engage in professional development on the Tennessee computer science standards.&lt;/p&gt;
 
 &lt;p&gt;This project is was funded through the [University of Tennessee’s Community Engaged Research Seed Program].(&lt;a href=&#34;https://research.utk.edu/2019-research-seed-program-recipients/&#34; target=&#34;_blank&#34;&gt;https://research.utk.edu/2019-research-seed-program-recipients/&lt;/a&gt;). It is related to the &lt;a href=&#34;https://www.makingdatasciencecount.com/project/cs4appalachia/&#34; target=&#34;_blank&#34;&gt;CS for Appalachia&lt;/a&gt; Research-Practice Partnership and NSF grant.&lt;/p&gt;

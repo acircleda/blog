@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Recent &amp; Upcoming Talks | Anthony Schmidt</title>
-    <link>/talk/</link>
-      <atom:link href="/talk/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://www.anthonyschmidt.co/talk/</link>
+      <atom:link href="https://www.anthonyschmidt.co/talk/index.xml" rel="self" type="application/rss+xml" />
     <description>Recent &amp; Upcoming Talks</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 11 Mar 2020 12:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://www.anthonyschmidt.co/img/icon-192.png</url>
       <title>Recent &amp; Upcoming Talks</title>
-      <link>/talk/</link>
+      <link>https://www.anthonyschmidt.co/talk/</link>
     </image>
     
     <item>
       <title>Becoming “TidyR” over Time- Data Visualization Development in an Online Community of Practice</title>
-      <link>/talk/2020-3-becoming-tidyr-over-time/</link>
+      <link>https://www.anthonyschmidt.co/talk/2020-3-becoming-tidyr-over-time/</link>
       <pubDate>Wed, 11 Mar 2020 12:00:00 +0000</pubDate>
-      <guid>/talk/2020-3-becoming-tidyr-over-time/</guid>
+      <guid>https://www.anthonyschmidt.co/talk/2020-3-becoming-tidyr-over-time/</guid>
       <description>
 
 
@@ -49,7 +49,7 @@ library(ggplot2)
 iris %&amp;gt;%
   ggplot() +
     geom_point(aes(x=Sepal.Length,y=Sepal.Width))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/talk/2020-3-becoming-tidyr-over-time/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.anthonyschmidt.co/talk/2020-3-becoming-tidyr-over-time/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div id=&#34;research-purpose&#34; class=&#34;section level2&#34;&gt;
@@ -185,17 +185,17 @@ iris %&amp;gt;%
     
     <item>
       <title>A survey of teachers and administrators regarding the implementation of new K-8 computing education standards in Tennessee</title>
-      <link>/talk/planting-the-seeds/</link>
+      <link>https://www.anthonyschmidt.co/talk/planting-the-seeds/</link>
       <pubDate>Thu, 16 Jan 2020 13:00:00 +0000</pubDate>
-      <guid>/talk/planting-the-seeds/</guid>
+      <guid>https://www.anthonyschmidt.co/talk/planting-the-seeds/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A Comparison of Direct Admit and IEP Student Academic Achievement</title>
-      <link>/talk/tesol2019/</link>
+      <link>https://www.anthonyschmidt.co/talk/tesol2019/</link>
       <pubDate>Fri, 01 Mar 2019 13:00:00 +0000</pubDate>
-      <guid>/talk/tesol2019/</guid>
+      <guid>https://www.anthonyschmidt.co/talk/tesol2019/</guid>
       <description></description>
     </item>
     

@@ -2,29 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Graduation Rates | Anthony Schmidt</title>
-    <link>/tags/graduation-rates/</link>
-      <atom:link href="/tags/graduation-rates/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://www.anthonyschmidt.co/tags/graduation-rates/</link>
+      <atom:link href="https://www.anthonyschmidt.co/tags/graduation-rates/index.xml" rel="self" type="application/rss+xml" />
     <description>Graduation Rates</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 15 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 05 Jun 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://www.anthonyschmidt.co/img/icon-192.png</url>
       <title>Graduation Rates</title>
-      <link>/tags/graduation-rates/</link>
+      <link>https://www.anthonyschmidt.co/tags/graduation-rates/</link>
     </image>
     
     <item>
-      <title>Are International Students Getting a Bang for their Buck? The Relationship between Expenditures and International Student Graduation Rates</title>
-      <link>/publication/are-international-students-getting-a-bang-for-their-buck/</link>
-      <pubDate>Sat, 15 Aug 2020 00:00:00 +0000</pubDate>
-      <guid>/publication/are-international-students-getting-a-bang-for-their-buck/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Intensive English Program (IEP) Student Academic Achivement: Comparing IEP and Directly-Admitted International Student GPA</title>
-      <link>/publication/intl-student-academic-achievement/</link>
+      <link>https://www.anthonyschmidt.co/publication/intl-student-academic-achievement/</link>
       <pubDate>Fri, 05 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>/publication/intl-student-academic-achievement/</guid>
+      <guid>https://www.anthonyschmidt.co/publication/intl-student-academic-achievement/</guid>
       <description></description>
     </item>
     

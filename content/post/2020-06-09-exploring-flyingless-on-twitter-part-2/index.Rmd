@@ -15,6 +15,7 @@ image:
   focal_point: ''
   preview_only: no
 projects: []
+draft: true
 ---
 
 In a [previous post](https://www.anthonyschmidt.co/post/exploring-flying-less-with-tags/), I described how you can use a special [Twitter Archiving Google Sheet](https://tags.hawksey.info/) to follow a hashtag or keyword on Twitter. This post will show how that data can be analyzed in `R`.
