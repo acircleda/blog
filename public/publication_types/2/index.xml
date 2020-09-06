@@ -2,21 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2 | Anthony Schmidt</title>
-    <link>https://www.anthonyschmidt.co/publication_types/2/</link>
-      <atom:link href="https://www.anthonyschmidt.co/publication_types/2/index.xml" rel="self" type="application/rss+xml" />
+    <link>/publication_types/2/</link>
+      <atom:link href="/publication_types/2/index.xml" rel="self" type="application/rss+xml" />
     <description>2</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 15 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 15 Aug 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://www.anthonyschmidt.co/img/icon-192.png</url>
+      <url>/img/icon-192.png</url>
       <title>2</title>
-      <link>https://www.anthonyschmidt.co/publication_types/2/</link>
+      <link>/publication_types/2/</link>
     </image>
     
     <item>
+      <title>Are International Students Getting a Bang for their Buck? The Relationship between Expenditures and International Student Graduation Rates</title>
+      <link>/publication/are-international-students-getting-a-bang-for-their-buck/</link>
+      <pubDate>Sat, 15 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>/publication/are-international-students-getting-a-bang-for-their-buck/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Book Review - International Students in First-Year Writing: A Journey Through Socio-Academic Space</title>
-      <link>https://www.anthonyschmidt.co/publication/international-students-in-first-year-writing-review/</link>
+      <link>/publication/international-students-in-first-year-writing-review/</link>
       <pubDate>Thu, 15 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>https://www.anthonyschmidt.co/publication/international-students-in-first-year-writing-review/</guid>
+      <guid>/publication/international-students-in-first-year-writing-review/</guid>
       <description></description>
     </item>
     

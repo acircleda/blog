@@ -1,0 +1,134 @@
+---
+title: 'Exploring #flyingless on Twitter, part 2'
+author: ''
+date: '2020-06-09'
+slug: exploring-flyingless-on-twitter-part-2
+categories: []
+tags: []
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-06-09T08:48:30-04:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+draft: true
+---
+
+
+
+<p>In a <a href="https://www.anthonyschmidt.co/post/exploring-flying-less-with-tags/">previous post</a>, I described how you can use a special <a href="https://tags.hawksey.info/">Twitter Archiving Google Sheet</a> to follow a hashtag or keyword on Twitter. This post will show how that data can be analyzed in <code>R</code>.</p>
+<div id="but-firsta-conundrum" class="section level2">
+<h2>But first…<strong>a conundrum</strong></h2>
+<ol style="list-style-type: decimal">
+<li><p>You want to collect Twitter data over the next few months. The <code>rtweet</code> package provides a lot of functionality to collect and analyze the data, but you are limited to only the last seven days. You can’t reach further back than that. If you want to collect data on a consistent basis, you will need to run an <code>rtweet</code> script every week to collect new data. Then you’ll need to combine and clean the data so it integrates well with your previous week’s data. <strong>That is a lot of work</strong>.</p></li>
+<li><p>You want to collect Twitter data over the next few months. You can use the TAGS template to constantly update with data automatically. However, numerous duplicates are created and the included “Remove Duplicates” function doesn’t work well. In addition, the data collected is very limited. You don’t get information about likes, rewtweets, media, geolocation, etc. In sum, <strong>there is not enough information</strong>.</p></li>
+</ol>
+</div>
+<div id="a-solutioncombine-rtweet-and-tags" class="section level2">
+<h2>A solution…**combine <code>rtweet</code> and TAGS</h2>
+<p>TAGS gives you something <em>very</em> useful, the status ID of every tweet. You can feed that to <code>rtweet</code> to pull nearly unlimited historical data to create a dataset that has duplicates removed <strong>and</strong> has detailed columns of information. Here’s what we will do:</p>
+<div id="load-libraries" class="section level3">
+<h3>Load libraries</h3>
+<pre class="r"><code>library(tidyverse)</code></pre>
+<pre><code>## -- Attaching packages ------------------------ tidyverse 1.3.0 --</code></pre>
+<pre><code>## v ggplot2 3.3.1     v purrr   0.3.4
+## v tibble  3.0.1     v dplyr   1.0.0
+## v tidyr   1.1.0     v stringr 1.4.0
+## v readr   1.3.1     v forcats 0.5.0</code></pre>
+<pre><code>## -- Conflicts --------------------------- tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<pre class="r"><code>library(rtweet)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;rtweet&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:purrr&#39;:
+## 
+##     flatten</code></pre>
+<pre class="r"><code>library(gsheet)</code></pre>
+</div>
+<div id="import-data-from-tags" class="section level3">
+<h3>Import data from TAGS</h3>
+<p>We can use the <code>gsheet</code> package to import a Google sheet that has the status “Anyone on the internet with this link can view”. Make sure the link you copy is the link to the exact tab/worksheet you would like to import.</p>
+<pre class="r"><code>tags_data &lt;- gsheet2tbl(&quot;https://docs.google.com/spreadsheets/d/1CrSy6fhs9x9cadgMLjPJuzfh5C7c5G3_3AMVRiwd1EM/edit#gid=400689247&quot;)</code></pre>
+<p>Note that the tags data contains 18 variables:</p>
+<pre class="r"><code>names(tags_data)</code></pre>
+<pre><code>##  [1] &quot;id_str&quot;                    &quot;from_user&quot;                
+##  [3] &quot;text&quot;                      &quot;status_url&quot;               
+##  [5] &quot;created_at&quot;                &quot;time&quot;                     
+##  [7] &quot;geo_coordinates&quot;           &quot;user_lang&quot;                
+##  [9] &quot;in_reply_to_user_id_str&quot;   &quot;in_reply_to_screen_name&quot;  
+## [11] &quot;from_user_id_str&quot;          &quot;in_reply_to_status_id_str&quot;
+## [13] &quot;source&quot;                    &quot;profile_image_url&quot;        
+## [15] &quot;user_followers_count&quot;      &quot;user_friends_count&quot;       
+## [17] &quot;user_location&quot;             &quot;entities_str&quot;</code></pre>
+<p>We’ll need that “id_str” for the next step.</p>
+</div>
+<div id="build-a-larger-dataset-with-lookup_statuses" class="section level3">
+<h3>Build a larger dataset with <code>lookup_statuses</code></h3>
+<p>We can use <code>lookup_statuses</code> to build a new dataset using the “id_str” from the tags_data. This will also remove duplicates. Depending on the number of rows in your TAGS data, the new dataset could take a few minutes to download and make.</p>
+<p>Note: you may need to authorize <code>rtweet</code> before it runs. See <a href="https://rtweet.info/">https://rtweet.info/</a> for more information.</p>
+<pre class="r"><code>twitter_data &lt;- lookup_statuses(tags_data$id_str)</code></pre>
+<p>Now I have less observations (duplicates removed) and 90 columns of information.</p>
+<pre class="r"><code>names(twitter_data)</code></pre>
+<pre><code>##  [1] &quot;user_id&quot;                 &quot;status_id&quot;              
+##  [3] &quot;created_at&quot;              &quot;screen_name&quot;            
+##  [5] &quot;text&quot;                    &quot;source&quot;                 
+##  [7] &quot;display_text_width&quot;      &quot;reply_to_status_id&quot;     
+##  [9] &quot;reply_to_user_id&quot;        &quot;reply_to_screen_name&quot;   
+## [11] &quot;is_quote&quot;                &quot;is_retweet&quot;             
+## [13] &quot;favorite_count&quot;          &quot;retweet_count&quot;          
+## [15] &quot;quote_count&quot;             &quot;reply_count&quot;            
+## [17] &quot;hashtags&quot;                &quot;symbols&quot;                
+## [19] &quot;urls_url&quot;                &quot;urls_t.co&quot;              
+## [21] &quot;urls_expanded_url&quot;       &quot;media_url&quot;              
+## [23] &quot;media_t.co&quot;              &quot;media_expanded_url&quot;     
+## [25] &quot;media_type&quot;              &quot;ext_media_url&quot;          
+## [27] &quot;ext_media_t.co&quot;          &quot;ext_media_expanded_url&quot; 
+## [29] &quot;ext_media_type&quot;          &quot;mentions_user_id&quot;       
+## [31] &quot;mentions_screen_name&quot;    &quot;lang&quot;                   
+## [33] &quot;quoted_status_id&quot;        &quot;quoted_text&quot;            
+## [35] &quot;quoted_created_at&quot;       &quot;quoted_source&quot;          
+## [37] &quot;quoted_favorite_count&quot;   &quot;quoted_retweet_count&quot;   
+## [39] &quot;quoted_user_id&quot;          &quot;quoted_screen_name&quot;     
+## [41] &quot;quoted_name&quot;             &quot;quoted_followers_count&quot; 
+## [43] &quot;quoted_friends_count&quot;    &quot;quoted_statuses_count&quot;  
+## [45] &quot;quoted_location&quot;         &quot;quoted_description&quot;     
+## [47] &quot;quoted_verified&quot;         &quot;retweet_status_id&quot;      
+## [49] &quot;retweet_text&quot;            &quot;retweet_created_at&quot;     
+## [51] &quot;retweet_source&quot;          &quot;retweet_favorite_count&quot; 
+## [53] &quot;retweet_retweet_count&quot;   &quot;retweet_user_id&quot;        
+## [55] &quot;retweet_screen_name&quot;     &quot;retweet_name&quot;           
+## [57] &quot;retweet_followers_count&quot; &quot;retweet_friends_count&quot;  
+## [59] &quot;retweet_statuses_count&quot;  &quot;retweet_location&quot;       
+## [61] &quot;retweet_description&quot;     &quot;retweet_verified&quot;       
+## [63] &quot;place_url&quot;               &quot;place_name&quot;             
+## [65] &quot;place_full_name&quot;         &quot;place_type&quot;             
+## [67] &quot;country&quot;                 &quot;country_code&quot;           
+## [69] &quot;geo_coords&quot;              &quot;coords_coords&quot;          
+## [71] &quot;bbox_coords&quot;             &quot;status_url&quot;             
+## [73] &quot;name&quot;                    &quot;location&quot;               
+## [75] &quot;description&quot;             &quot;url&quot;                    
+## [77] &quot;protected&quot;               &quot;followers_count&quot;        
+## [79] &quot;friends_count&quot;           &quot;listed_count&quot;           
+## [81] &quot;statuses_count&quot;          &quot;favourites_count&quot;       
+## [83] &quot;account_created_at&quot;      &quot;verified&quot;               
+## [85] &quot;profile_url&quot;             &quot;profile_expanded_url&quot;   
+## [87] &quot;account_lang&quot;            &quot;profile_banner_url&quot;     
+## [89] &quot;profile_background_url&quot;  &quot;profile_image_url&quot;</code></pre>
+</div>
+</div>
+<div id="asking-questions-with-twitter-data" class="section level2">
+<h2>Asking Questions with Twitter Data</h2>
+<p>We can now explore the #flyingless Twitter hashtag.</p>
+<div id="where-are-people-tweeting-from" class="section level3">
+<h3>Where are people tweeting from?</h3>
+<p>I am using world shapefiles downloaded from <a href="https://thematicmapping.org/downloads/world_borders.php">https://thematicmapping.org/downloads/world_borders.php</a>. You’ll need to unzip <em>all</em> files.</p>
+<pre class="r"><code>library(sf)</code></pre>
+<pre><code>## Linking to GEOS 3.8.0, GDAL 3.0.4, PROJ 6.3.1</code></pre>
+<pre class="r"><code>world_map &lt;- read_sf(&quot;TM_WORLD_BORDERS_SIMPL-0.3.shp&quot;)</code></pre>
+</div>
+</div>

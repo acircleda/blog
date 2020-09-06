@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Static | Anthony Schmidt</title>
-    <link>https://www.anthonyschmidt.co/tags/static/</link>
-      <atom:link href="https://www.anthonyschmidt.co/tags/static/index.xml" rel="self" type="application/rss+xml" />
+    <link>/tags/static/</link>
+      <atom:link href="/tags/static/index.xml" rel="self" type="application/rss+xml" />
     <description>Static</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 31 May 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://www.anthonyschmidt.co/img/icon-192.png</url>
+      <url>/img/icon-192.png</url>
       <title>Static</title>
-      <link>https://www.anthonyschmidt.co/tags/static/</link>
+      <link>/tags/static/</link>
     </image>
     
     <item>
       <title>#TidyTuesday Contributions</title>
-      <link>https://www.anthonyschmidt.co/project/portfolio/tidytuesday/</link>
+      <link>/project/portfolio/tidytuesday/</link>
       <pubDate>Sun, 31 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://www.anthonyschmidt.co/project/portfolio/tidytuesday/</guid>
+      <guid>/project/portfolio/tidytuesday/</guid>
       <description>
 
 &lt;p&gt;I follow &lt;a href=&#34;https://twitter.com/search?q=%23TidyTuesday&amp;amp;src=hashtag_click&#34; target=&#34;_blank&#34;&gt;#TidyTuesday on Twitter&lt;/a&gt; every week to improve my &lt;code&gt;R&lt;/code&gt; and data visualization skills. &lt;a href=&#34;https://github.com/rfordatascience/tidytuesday&#34; target=&#34;_blank&#34;&gt;#TidyTuesday is hosted by R4DS (&lt;code&gt;R&lt;/code&gt; for Data Science)&lt;/a&gt; and features random and interesting datasets with which users can practice their &lt;code&gt;R&lt;/code&gt;, &lt;code&gt;Tidyverse&lt;/code&gt;, and visualization skills. From time to time, I have also participated. My contributions with links to related documents and code are below.&lt;/p&gt;

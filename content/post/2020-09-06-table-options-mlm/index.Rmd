@@ -1,0 +1,195 @@
+---
+title: "R/R Markdown Table Options for Multilevel Models"
+author: "Anthony Schmidt"
+date: '2020-09-06'
+output:
+  html_document:
+    df_print: paged
+  word_document: default
+focal_point: ''
+image:
+  caption: ''
+lastmod: ''
+featured: null
+preview_only: no
+projects: []
+subtitle: ''
+summary: null
+tags: 
+- Data Science
+authors: []
+---
+
+I am currently taking a multilevel modeling class in my PhD program. It is week 3-ish and I am learning a lot. The course is software-agnostic, meaning we can use any software we want (SPSS, SAS, Stata, R, HLM). The first assignment comes as a data set and word document. I am working completely in R / R Markdown to generate both the data and model analyses and to complete the Word-based homework. Because I am working in an R -> Word workflow, I need to know what options I have for creating nice tables of my models.
+
+So, I am taking a break from my first assignment to compare the default output of the most popular R model summary packages, look at some extended features, and make a cross-package comparison for my own future reference.
+
+Let's begin!
+
+## The Models
+
+For this example, I am going to use Allison Horst's `palmerpenguins` package for the data and produce two simple and non-substantive multi-level models. I will use `lme4::lmer` and `lmerTest::lme4`, which produces p-values and a few different estimates. Note: I will not be interpreting these models.
+
+```{r}
+library(palmerpenguins)
+
+# unconditional model
+model_0 <- lme4::lmer(body_mass_g ~ 1 + (1 | island), REML = F, data=penguins)
+
+model_0_lmertest <- lmerTest::lmer(body_mass_g ~ 1 + (1 | island), REML = F, data=penguins)
+
+model_1 <- lme4::lmer(body_mass_g ~ sex + (1 | island), REML = F, data=penguins)
+
+model_1_lmertest <- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F, data=penguins)
+```
+
+## The Packages
+
+The most popular packages that can take a model object and produce a neat table summary include `modelsummary`, `gtsummary`, `huxtable`, and `sjPlot`. I will generate default tables with each of these packages with the goal of being able to insert them into a Word document via `knitr`. I will try to keep customization to a minimum.
+
+### `modelsummary`
+
+[`modelsummary`](https://vincentarelbundock.github.io/modelsummary/articles/modelsummary.html) offers the `msummary` function and allows me to create side-by-side tables. This **will** work for `lme4` models, but **will not** work for `lmerTest` models.
+
+```{r}
+modelsummary::msummary(list(
+  "Null Model" = model_0, 
+  "Model 1" = model_1))
+```
+
+#### Screenshot from Word
+
+![Screenshot from Word for `msummary`](msummary.JPG)
+
+#### Notes
+
+  * `msummary` produces a decent side-by-side table in Word.
+  * The default style looks like APA, which is something I would want.
+  * However, it splits the fixed effects of intercept and sex up so that intercept is above the random effects and sex is below. 
+  * In addition, it lacks default inclusion of ICC and pseudo-$R^2$. If one want's p-values, it will not work with lmerTest, giving an error of `Error: Column 6 must be named.`.
+  * Finally, the default width is a bit narrow, meaning additional customization is needed. It can easily be customized using `flextable` (which works well in Word) with the following code:
+  
+`modelsummary::msummary(list("Null Model" = model_0, "Model 1" = model_1), output = 'flextable')`
+
+## `gtsummary`
+
+`gtsummary` is based on the `gt` package, which allows easy and advanced customization of tables in `R`.
+
+I could not get `gtsummary` to make a table for my null model, `model_0`. It produced the error: `Error: must be a character vector, not a logical vector.`. However, it worked for `model_1` and `model_1_lmertest`. Here is the no frills default:
+
+```{r message=FALSE, warning=FALSE}
+gtsummary::tbl_regression(model_1_lmertest)
+```
+
+That table is *clearly* not a good table. I did some googling, and found I had to add the following tidy function to produce a table with all estimates:
+
+```{r}
+gtsummary::tbl_regression(model_1_lmertest, tidy_fun = broom.mixed::tidy)
+```
+
+#### Screenshot from Word
+
+![Screenshot from Word of `gtsummary`](gtsummary.JPG)
+
+#### Notes
+
+  * This table is created in `gt`, but as of right now, `gt` doesn't work with Word so it was automatically converted to a `kable` table.
+  * You can do a lot of customization using `gt` and then convert it to `kable` or `flextable` (using `as_flex_table()`).
+  * While adding confidence intervals are nice, the lack of fit statistics makes the default output inadequate. Looking through the `gtsummary` reference, I do not see a way to add these.
+  * Side-by-side tables requires saving each table as an object and then using `tbl_merge`.
+  
+## `huxtable`
+
+[`huxtable`](https://cran.r-project.org/web/packages/huxtable/vignettes/huxtable.html) works with both `lme4` and `lmerTest`. It uses the `huxreg` function and can easily make side-by-side tables.
+
+```{r}
+huxtable::huxreg(list(
+                 "Null Model" = model_0_lmertest, 
+                 "Model 1" = model_1_lmertest))
+```
+
+#### Screenshot from Word
+
+![Screenshot from Word of `huxtable`](huxtable.JPG)
+
+#### Notes
+
+ * By default `huxreg` produces a nice side-by-side table.
+ * The default *looks like* simple ASCII/Markdown table, **but** it knits to Word nicely without any need to make changes.
+ * Output looks like `modelsummary::msummary` but lacks ICC values.
+ * `huxtable` also separates fixed effects like `modelsummary`
+ * Can be customized via `huxtable` or `flextable` via `as_flextable` - though I could not get this to work.
+ 
+## `sjPlot`
+
+[`sjPlot`](https://strengejacke.github.io/sjPlot/) is a table and visualization package meant for a number of social science methods (linear models, generalized linear models, PCA, robust standard errors, etc.).
+
+Below is the HTML table. This table can be styled with CSS.
+
+```{r}
+sjPlot::tab_model(model_0, model_1)
+```
+
+#### Screenshot from Word
+
+**NONE**
+
+#### Notes
+
+  * It works with `lmerTest` but if you only use `lme4`, `sjPlot` automatically adds p-values. 
+  * `sjPlot` creates a *very* nice table with random effects listed with their Greek values, $\sigma^2$ and $\tau$, plus ICC and $R^2$!
+  * Unfortunately, it produces only an HTML table and this table cannot be automatically added to Word.
+  * It seems you cannot rename the models. The model name is simply the DV.
+  * Styling the table for HTML requires CSS.
+  * It cannot be converted to `flextable` or `kable`
+  
+  -----
+  
+## Final Thoughts
+
+In a perfect world, we would be able to knit the `sjPlot` table to Word and be done with it. Unfortunately, this does not work for now. The best and easiest option would be:
+
+  * If p-values are NOT important, use `modelsummary:msummary` with some customization via `modelsummary` and `output = 'flextable'`, plus further `flextable` customization.
+  * If p-values ARE important, use `huxtable::huxreg` and customization via `huxtable`  (which is much more limited).
+
+The following example creates a function to automatically customize the table (useful if you will have multiple tables), and adds ICC and R2. I did not have time to organize the fixed and random effects, nor add the Greek symbols (ideally, in parentheses)
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+library(flextable)
+
+#table formatting function
+flex <- function(data, title=NULL) {
+  set_table_properties(data, layout = "autofit", width = 1) %>%
+  fontsize(size=12, part="all") %>%
+      set_caption(title, 
+                  autonum = officer::run_autonum(seq_id = "tab", 
+                                                 pre_label = "Table ", 
+                                                 post_label = "\n", 
+                                                 bkm = "anytable"))
+}
+
+#adding ICC and R2
+mlm_added <- tribble(~term, ~"Null Model", ~"Model 1",
+                     "ICC", 
+                        performance::icc(model_0)$ICC_conditional, 
+                        performance::icc(model_1)$ICC_conditional,
+                     "pseudo R2",
+          performance::r2(model_0)[["R2_conditional"]][["Conditional R2"]],
+          performance::r2(model_1)[["R2_conditional"]][["Conditional R2"]])
+
+modelsummary::msummary(list("Null Model" = model_0, 
+                            "Model 1" = model_1), 
+                       output = 'flextable', add_rows = mlm_added) %>%
+  flex("Multilevel Model of Palmer Penguins")
+  
+```
+
+#### Screenshot from Word
+
+![Screenshot from Word of Customized `modelsummary`](modelsummarycustom.JPG)
+
+
+-----
+
+Do you know a better way to make great MLM tables in R Markdown, or have you figured out a sjPlot hack!? Please let me know.

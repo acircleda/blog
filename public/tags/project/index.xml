@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Project | Anthony Schmidt</title>
-    <link>https://www.anthonyschmidt.co/tags/project/</link>
-      <atom:link href="https://www.anthonyschmidt.co/tags/project/index.xml" rel="self" type="application/rss+xml" />
+    <link>/tags/project/</link>
+      <atom:link href="/tags/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Project</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 08 May 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://www.anthonyschmidt.co/img/icon-192.png</url>
+      <url>/img/icon-192.png</url>
       <title>Project</title>
-      <link>https://www.anthonyschmidt.co/tags/project/</link>
+      <link>/tags/project/</link>
     </image>
     
     <item>
       <title>Flying Less? A Document Analysis of University Climate Policies</title>
-      <link>https://www.anthonyschmidt.co/project/flying-less-document-analysis/</link>
+      <link>/project/flying-less-document-analysis/</link>
       <pubDate>Fri, 08 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://www.anthonyschmidt.co/project/flying-less-document-analysis/</guid>
+      <guid>/project/flying-less-document-analysis/</guid>
       <description>&lt;p&gt;This project utilize qualitative document analysis to examine the role of flying less as a Scope 3 emissions reduction strategy in various university climate policies. It will include documents from UTK, &lt;a href=&#34;https://oira.utk.edu/peer-institutions/&#34; target=&#34;_blank&#34;&gt;UTK peer and aspirational universities&lt;/a&gt;, the top 25 public research universities, and specific institutions that have explicit attention to flying less.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>R Handbook for ESM Students</title>
-      <link>https://www.anthonyschmidt.co/project/r-handbook/</link>
+      <link>/project/r-handbook/</link>
       <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://www.anthonyschmidt.co/project/r-handbook/</guid>
+      <guid>/project/r-handbook/</guid>
       <description>&lt;p&gt;This project is part of a summer internship with &lt;a href=&#34;https://epc.utk.edu/people/jennifer-ann-morrow-phd/&#34; target=&#34;_blank&#34;&gt;Dr. Jennifer Ann Morrow&lt;/a&gt; to create an introduction to &lt;code&gt;R&lt;/code&gt; resource guide relevant to students in our evaluation, statistics, and measurement PhD program. It would also be relevant to anyone interested in learning R. Its topics include setup, important, data manipulation, data cleaning, statistical analysis, and data visualization. The examples use real survey data and take readers from import, to cleaning, to analysis.&lt;/p&gt;
 
 &lt;p&gt;The handbook is being developed with &lt;code&gt;bookdown&lt;/code&gt; and will have supplemental exercises written with &lt;code&gt;learnr&lt;/code&gt;.&lt;/p&gt;
@@ -34,9 +34,9 @@
     
     <item>
       <title>Data-Related Jobs for ESM Students</title>
-      <link>https://www.anthonyschmidt.co/project/esm-data-jobs/</link>
+      <link>/project/esm-data-jobs/</link>
       <pubDate>Sat, 18 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>https://www.anthonyschmidt.co/project/esm-data-jobs/</guid>
+      <guid>/project/esm-data-jobs/</guid>
       <description>&lt;p&gt;This is an ongoing project to analyze data-related jobs posted on &lt;a href=&#34;http://www.higheredjobs.com&#34; target=&#34;_blank&#34;&gt;HigherEdJobs&lt;/a&gt;. These are jobs a typical ESM student would qualify. The jobs are analyzed in order to understand the skills and competencies that are in demand.&lt;/p&gt;
 
 &lt;p&gt;The project is currently focused on administrative-level jobs. Faculty job analyses will be forthcoming.&lt;/p&gt;
@@ -47,18 +47,18 @@
     
     <item>
       <title>Becoming Tidyr over Time</title>
-      <link>https://www.anthonyschmidt.co/project/tidy-tuesday/</link>
+      <link>/project/tidy-tuesday/</link>
       <pubDate>Thu, 16 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>https://www.anthonyschmidt.co/project/tidy-tuesday/</guid>
+      <guid>/project/tidy-tuesday/</guid>
       <description>&lt;p&gt;This project analyzes tweets from the #TidyTuesday hashtag to understand participation and development of data visualization and data science skills.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Fly or Die - The Relationship between Conference Travel, Employability, and the Climate Crisis.</title>
-      <link>https://www.anthonyschmidt.co/project/fly-or-die-phd-grads/</link>
+      <link>/project/fly-or-die-phd-grads/</link>
       <pubDate>Sat, 07 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>https://www.anthonyschmidt.co/project/fly-or-die-phd-grads/</guid>
+      <guid>/project/fly-or-die-phd-grads/</guid>
       <description>&lt;p&gt;The &amp;ldquo;Fly or Die&amp;rdquo; project is a multi-survey research project that looks at the complex relationship between graduate student conference travel, employability, and the climate crisis.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Survey One&lt;/strong&gt; focuses on doctoral student employment outcomes, conferences attendance, conference activities, conference types, and publications. Analyses are across disciplines and job industries.&lt;/p&gt;
@@ -71,18 +71,18 @@
     
     <item>
       <title>The Efficacy of an Intensive English program</title>
-      <link>https://www.anthonyschmidt.co/project/iep-gpa/</link>
+      <link>/project/iep-gpa/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>https://www.anthonyschmidt.co/project/iep-gpa/</guid>
+      <guid>/project/iep-gpa/</guid>
       <description>&lt;p&gt;This project uses longitudinal institutional data to understand the efficacy of an intensive English program (IEP) by comparing IEP students, who arrive with TOEFL scores under the institutional minimum, with directly admitted students, who have scores at or above the minimum.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Planting the Seeds for Computer Science Education in East Tennessee</title>
-      <link>https://www.anthonyschmidt.co/project/planting-the-seeds-for-cs/</link>
+      <link>/project/planting-the-seeds-for-cs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.anthonyschmidt.co/project/planting-the-seeds-for-cs/</guid>
+      <guid>/project/planting-the-seeds-for-cs/</guid>
       <description>&lt;p&gt;The project is focused on understanding the needs of administrators and teachings in order to develop opportunities for K-8 teachers to engage in professional development on the Tennessee computer science standards.&lt;/p&gt;
 
 &lt;p&gt;This project is was funded through the [University of Tennessee’s Community Engaged Research Seed Program].(&lt;a href=&#34;https://research.utk.edu/2019-research-seed-program-recipients/&#34; target=&#34;_blank&#34;&gt;https://research.utk.edu/2019-research-seed-program-recipients/&lt;/a&gt;). It is related to the &lt;a href=&#34;https://www.makingdatasciencecount.com/project/cs4appalachia/&#34; target=&#34;_blank&#34;&gt;CS for Appalachia&lt;/a&gt; Research-Practice Partnership and NSF grant.&lt;/p&gt;
