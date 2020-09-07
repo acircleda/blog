@@ -3,9 +3,9 @@ title: "R/R Markdown Table Options for Multilevel Models"
 author: "Anthony Schmidt"
 date: '2020-09-06'
 output:
+  word_document: default
   html_document:
     df_print: paged
-  word_document: default
 focal_point: ''
 image:
   caption: ''
@@ -174,7 +174,8 @@ flex <- function(data, title=NULL) {
                                                  bkm = "anytable"))
 }
 
-#adding ICC and R2
+#adding ICC and R2 - note you can also write a function with glance_custom
+# https://vincentarelbundock.github.io/modelsummary/articles/newmodels.html
 mlm_added <- tribble(~term, ~"Null Model", ~"Model 1",
                      "ICC", 
                         performance::icc(model_0)$ICC_conditional, 
@@ -183,9 +184,18 @@ mlm_added <- tribble(~term, ~"Null Model", ~"Model 1",
           performance::r2(model_0)[["R2_conditional"]][["Conditional R2"]],
           performance::r2(model_1)[["R2_conditional"]][["Conditional R2"]])
 
+#changing names of coefficients
+cm <- c("sexmale"="Male",
+        "sd__(Intercept)"="SD Intercept (τ00)",
+        "sd__Observation" = "SD Observation (σ2)",
+        "(Intercept)" = "Intercept")
+
+#the final table
 modelsummary::msummary(list("Null Model" = model_0, 
                             "Model 1" = model_1), 
-                       output = 'flextable', add_rows = mlm_added) %>%
+                       output = 'flextable', 
+                       add_rows = mlm_added,
+                       coef_map = cm) %>%
   flex("Multilevel Model of Palmer Penguins")
   
 ```
@@ -201,6 +211,6 @@ Do you know a better way to make great MLM tables in R Markdown, or have you fig
 
 -----
 
-*Thanks to Vincet Arel-Bundock ([@VincentAB](https://twitter.com/VincentAB); author of `modelsummary`) for the tip about loading `broom.mixed`*
+*Thanks to Vincet Arel-Bundock (https://twitter.com/VincentAB; author of `modelsummary`) for the tip about loading `broom.mixed`*
 
-*Thanks to Daniel ([@strengejacke](https://twitter.com/strengejacke); author of `sjPlot`) for pointing out using `dv.labels`*
+*Thanks to Daniel (https://twitter.com/strengejacke; author of `sjPlot`) for pointing out to use `dv.labels`*
