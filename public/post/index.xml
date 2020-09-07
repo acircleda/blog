@@ -46,7 +46,7 @@ model_1_lmertest &amp;lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML
 &lt;p&gt;The most popular packages that can take a model object and produce a neat table summary include &lt;code&gt;modelsummary&lt;/code&gt;, &lt;code&gt;gtsummary&lt;/code&gt;, &lt;code&gt;huxtable&lt;/code&gt;, and &lt;code&gt;sjPlot&lt;/code&gt;. I will generate default tables with each of these packages with the goal of being able to insert them into a Word document via &lt;code&gt;knitr&lt;/code&gt;. I will try to keep customization to a minimum.&lt;/p&gt;
 &lt;div id=&#34;modelsummary&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;&lt;code&gt;modelsummary&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://vincentarelbundock.github.io/modelsummary/articles/modelsummary.html&#34;&gt;&lt;code&gt;modelsummary&lt;/code&gt;&lt;/a&gt; offers the &lt;code&gt;msummary&lt;/code&gt; function and allows me to create side-by-side tables. This &lt;strong&gt;will&lt;/strong&gt; work for &lt;code&gt;lme4&lt;/code&gt; models, but &lt;strong&gt;will not&lt;/strong&gt; work for &lt;code&gt;lmerTest&lt;/code&gt; models.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://vincentarelbundock.github.io/modelsummary/articles/modelsummary.html&#34;&gt;&lt;code&gt;modelsummary&lt;/code&gt;&lt;/a&gt; offers the &lt;code&gt;msummary&lt;/code&gt; function and allows me to create side-by-side tables. This &lt;strong&gt;will&lt;/strong&gt; work for &lt;code&gt;lme4&lt;/code&gt; models, but &lt;strong&gt;will not&lt;/strong&gt; work for &lt;code&gt;lmerTest&lt;/code&gt; models unless you load the package &lt;code&gt;broom.mixed&lt;/code&gt; first.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;modelsummary::msummary(list(
   &amp;quot;Null Model&amp;quot; = model_0, 
   &amp;quot;Model 1&amp;quot; = model_1))&lt;/code&gt;&lt;/pre&gt;
@@ -177,6 +177,159 @@ Log.Lik.
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;p&gt;Here, I have loaded &lt;code&gt;broom.mixed&lt;/code&gt; and added a call for significance stars with &lt;code&gt;stars=T&lt;/code&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(broom.mixed)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Registered S3 methods overwritten by &amp;#39;broom.mixed&amp;#39;:
+##   method         from 
+##   augment.lme    broom
+##   augment.merMod broom
+##   glance.lme     broom
+##   glance.merMod  broom
+##   glance.stanreg broom
+##   tidy.brmsfit   broom
+##   tidy.gamlss    broom
+##   tidy.lme       broom
+##   tidy.merMod    broom
+##   tidy.rjags     broom
+##   tidy.stanfit   broom
+##   tidy.stanreg   broom&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;modelsummary::msummary(list(
+  &amp;quot;Null Model&amp;quot; = model_0_lmertest, 
+  &amp;quot;Model 1&amp;quot; = model_1_lmertest), stars = T)&lt;/code&gt;&lt;/pre&gt;
+&lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Null Model
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Model 1
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+(Intercept)
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+4048.143***
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+3713.505***
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+(275.116)
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+(273.909)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+sd__(Intercept)
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+471.900NA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+468.149NA
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+sd__Observation
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+626.335NA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+532.804NA
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+sexmale
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+674.365***
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+(58.402)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+AIC
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+5393.7
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+5147.3
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+BIC
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+5405.2
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+5162.5
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Log.Lik.
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+-2693.833
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+-2569.644
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;tfoot&gt;
+&lt;tr&gt;
+&lt;td style=&#34;padding: 0; border:0;&#34; colspan=&#34;100%&#34;&gt;
+&lt;sup&gt;&lt;/sup&gt; * p &amp;lt; 0.1, ** p &amp;lt; 0.05, *** p &amp;lt; 0.01
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tfoot&gt;
+&lt;/table&gt;
 &lt;div id=&#34;screenshot-from-word&#34; class=&#34;section level4&#34;&gt;
 &lt;h4&gt;Screenshot from Word&lt;/h4&gt;
 &lt;div class=&#34;figure&#34;&gt;
@@ -191,8 +344,7 @@ Log.Lik.
 &lt;ul&gt;
 &lt;li&gt;The default style looks like APA, which is something I would want.&lt;/li&gt;
 &lt;li&gt;However, it splits the fixed effects of intercept and sex up so that intercept is above the random effects and sex is below.&lt;/li&gt;
-&lt;li&gt;In addition, it lacks default inclusion of ICC and pseudo-&lt;span class=&#34;math inline&#34;&gt;\(R^2\)&lt;/span&gt;. If one want’s p-values, it will not work with lmerTest, giving an error of &lt;code&gt;Error: Column 6 must be named.&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Finally, the default width is a bit narrow, meaning additional customization is needed. It can easily be customized using &lt;code&gt;flextable&lt;/code&gt; (which works well in Word) with the following code:&lt;/li&gt;
+&lt;li&gt;Finally, the default width is a bit narrow, meaning additional customization is needed. It can easily be customized using &lt;code&gt;flextable&lt;/code&gt;, which works well in Word. The following code coverts it to &lt;code&gt;flextable&lt;/code&gt;:&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;code&gt;modelsummary::msummary(list(&#34;Null Model&#34; = model_0, &#34;Model 1&#34; = model_1), output = &#39;flextable&#39;)&lt;/code&gt;&lt;/p&gt;
@@ -208,7 +360,7 @@ Log.Lik.
   font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Oxygen, Ubuntu, Cantarell, &#39;Helvetica Neue&#39;, &#39;Fira Sans&#39;, &#39;Droid Sans&#39;, Arial, sans-serif;
 }
 
-#ohzvncadjl .gt_table {
+#pyehpnynwq .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -231,7 +383,7 @@ Log.Lik.
   border-left-color: #D3D3D3;
 }
 
-#ohzvncadjl .gt_heading {
+#pyehpnynwq .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -243,7 +395,7 @@ Log.Lik.
   border-right-color: #D3D3D3;
 }
 
-#ohzvncadjl .gt_title {
+#pyehpnynwq .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -253,7 +405,7 @@ Log.Lik.
   border-bottom-width: 0;
 }
 
-#ohzvncadjl .gt_subtitle {
+#pyehpnynwq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -263,13 +415,13 @@ Log.Lik.
   border-top-width: 0;
 }
 
-#ohzvncadjl .gt_bottom_border {
+#pyehpnynwq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ohzvncadjl .gt_col_headings {
+#pyehpnynwq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -284,7 +436,7 @@ Log.Lik.
   border-right-color: #D3D3D3;
 }
 
-#ohzvncadjl .gt_col_heading {
+#pyehpnynwq .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -304,7 +456,7 @@ Log.Lik.
   overflow-x: hidden;
 }
 
-#ohzvncadjl .gt_column_spanner_outer {
+#pyehpnynwq .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -316,15 +468,15 @@ Log.Lik.
   padding-right: 4px;
 }
 
-#ohzvncadjl .gt_column_spanner_outer:first-child {
+#pyehpnynwq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ohzvncadjl .gt_column_spanner_outer:last-child {
+#pyehpnynwq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ohzvncadjl .gt_column_spanner {
+#pyehpnynwq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -336,7 +488,7 @@ Log.Lik.
   width: 100%;
 }
 
-#ohzvncadjl .gt_group_heading {
+#pyehpnynwq .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -358,7 +510,7 @@ Log.Lik.
   vertical-align: middle;
 }
 
-#ohzvncadjl .gt_empty_group_heading {
+#pyehpnynwq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -373,19 +525,19 @@ Log.Lik.
   vertical-align: middle;
 }
 
-#ohzvncadjl .gt_striped {
+#pyehpnynwq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ohzvncadjl .gt_from_md &gt; :first-child {
+#pyehpnynwq .gt_from_md &gt; :first-child {
   margin-top: 0;
 }
 
-#ohzvncadjl .gt_from_md &gt; :last-child {
+#pyehpnynwq .gt_from_md &gt; :last-child {
   margin-bottom: 0;
 }
 
-#ohzvncadjl .gt_row {
+#pyehpnynwq .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -404,7 +556,7 @@ Log.Lik.
   overflow-x: hidden;
 }
 
-#ohzvncadjl .gt_stub {
+#pyehpnynwq .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -416,7 +568,7 @@ Log.Lik.
   padding-left: 12px;
 }
 
-#ohzvncadjl .gt_summary_row {
+#pyehpnynwq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -426,7 +578,7 @@ Log.Lik.
   padding-right: 5px;
 }
 
-#ohzvncadjl .gt_first_summary_row {
+#pyehpnynwq .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -436,7 +588,7 @@ Log.Lik.
   border-top-color: #D3D3D3;
 }
 
-#ohzvncadjl .gt_grand_summary_row {
+#pyehpnynwq .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -446,7 +598,7 @@ Log.Lik.
   padding-right: 5px;
 }
 
-#ohzvncadjl .gt_first_grand_summary_row {
+#pyehpnynwq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -456,7 +608,7 @@ Log.Lik.
   border-top-color: #D3D3D3;
 }
 
-#ohzvncadjl .gt_table_body {
+#pyehpnynwq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -465,7 +617,7 @@ Log.Lik.
   border-bottom-color: #D3D3D3;
 }
 
-#ohzvncadjl .gt_footnotes {
+#pyehpnynwq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -479,13 +631,13 @@ Log.Lik.
   border-right-color: #D3D3D3;
 }
 
-#ohzvncadjl .gt_footnote {
+#pyehpnynwq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#ohzvncadjl .gt_sourcenotes {
+#pyehpnynwq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -499,46 +651,46 @@ Log.Lik.
   border-right-color: #D3D3D3;
 }
 
-#ohzvncadjl .gt_sourcenote {
+#pyehpnynwq .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#ohzvncadjl .gt_left {
+#pyehpnynwq .gt_left {
   text-align: left;
 }
 
-#ohzvncadjl .gt_center {
+#pyehpnynwq .gt_center {
   text-align: center;
 }
 
-#ohzvncadjl .gt_right {
+#pyehpnynwq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ohzvncadjl .gt_font_normal {
+#pyehpnynwq .gt_font_normal {
   font-weight: normal;
 }
 
-#ohzvncadjl .gt_font_bold {
+#pyehpnynwq .gt_font_bold {
   font-weight: bold;
 }
 
-#ohzvncadjl .gt_font_italic {
+#pyehpnynwq .gt_font_italic {
   font-style: italic;
 }
 
-#ohzvncadjl .gt_super {
+#pyehpnynwq .gt_super {
   font-size: 65%;
 }
 
-#ohzvncadjl .gt_footnote_marks {
+#pyehpnynwq .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 &lt;/style&gt;
-&lt;div id=&#34;ohzvncadjl&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
+&lt;div id=&#34;pyehpnynwq&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
   
   &lt;thead class=&#34;gt_col_headings&#34;&gt;
     &lt;tr&gt;
@@ -590,7 +742,7 @@ Log.Lik.
   font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Oxygen, Ubuntu, Cantarell, &#39;Helvetica Neue&#39;, &#39;Fira Sans&#39;, &#39;Droid Sans&#39;, Arial, sans-serif;
 }
 
-#wfbsvcfoct .gt_table {
+#gyksqhrkkz .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -613,7 +765,7 @@ Log.Lik.
   border-left-color: #D3D3D3;
 }
 
-#wfbsvcfoct .gt_heading {
+#gyksqhrkkz .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -625,7 +777,7 @@ Log.Lik.
   border-right-color: #D3D3D3;
 }
 
-#wfbsvcfoct .gt_title {
+#gyksqhrkkz .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -635,7 +787,7 @@ Log.Lik.
   border-bottom-width: 0;
 }
 
-#wfbsvcfoct .gt_subtitle {
+#gyksqhrkkz .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -645,13 +797,13 @@ Log.Lik.
   border-top-width: 0;
 }
 
-#wfbsvcfoct .gt_bottom_border {
+#gyksqhrkkz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#wfbsvcfoct .gt_col_headings {
+#gyksqhrkkz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -666,7 +818,7 @@ Log.Lik.
   border-right-color: #D3D3D3;
 }
 
-#wfbsvcfoct .gt_col_heading {
+#gyksqhrkkz .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -686,7 +838,7 @@ Log.Lik.
   overflow-x: hidden;
 }
 
-#wfbsvcfoct .gt_column_spanner_outer {
+#gyksqhrkkz .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -698,15 +850,15 @@ Log.Lik.
   padding-right: 4px;
 }
 
-#wfbsvcfoct .gt_column_spanner_outer:first-child {
+#gyksqhrkkz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#wfbsvcfoct .gt_column_spanner_outer:last-child {
+#gyksqhrkkz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#wfbsvcfoct .gt_column_spanner {
+#gyksqhrkkz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -718,7 +870,7 @@ Log.Lik.
   width: 100%;
 }
 
-#wfbsvcfoct .gt_group_heading {
+#gyksqhrkkz .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -740,7 +892,7 @@ Log.Lik.
   vertical-align: middle;
 }
 
-#wfbsvcfoct .gt_empty_group_heading {
+#gyksqhrkkz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -755,19 +907,19 @@ Log.Lik.
   vertical-align: middle;
 }
 
-#wfbsvcfoct .gt_striped {
+#gyksqhrkkz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#wfbsvcfoct .gt_from_md &gt; :first-child {
+#gyksqhrkkz .gt_from_md &gt; :first-child {
   margin-top: 0;
 }
 
-#wfbsvcfoct .gt_from_md &gt; :last-child {
+#gyksqhrkkz .gt_from_md &gt; :last-child {
   margin-bottom: 0;
 }
 
-#wfbsvcfoct .gt_row {
+#gyksqhrkkz .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -786,7 +938,7 @@ Log.Lik.
   overflow-x: hidden;
 }
 
-#wfbsvcfoct .gt_stub {
+#gyksqhrkkz .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -798,7 +950,7 @@ Log.Lik.
   padding-left: 12px;
 }
 
-#wfbsvcfoct .gt_summary_row {
+#gyksqhrkkz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -808,7 +960,7 @@ Log.Lik.
   padding-right: 5px;
 }
 
-#wfbsvcfoct .gt_first_summary_row {
+#gyksqhrkkz .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -818,7 +970,7 @@ Log.Lik.
   border-top-color: #D3D3D3;
 }
 
-#wfbsvcfoct .gt_grand_summary_row {
+#gyksqhrkkz .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -828,7 +980,7 @@ Log.Lik.
   padding-right: 5px;
 }
 
-#wfbsvcfoct .gt_first_grand_summary_row {
+#gyksqhrkkz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -838,7 +990,7 @@ Log.Lik.
   border-top-color: #D3D3D3;
 }
 
-#wfbsvcfoct .gt_table_body {
+#gyksqhrkkz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -847,7 +999,7 @@ Log.Lik.
   border-bottom-color: #D3D3D3;
 }
 
-#wfbsvcfoct .gt_footnotes {
+#gyksqhrkkz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -861,13 +1013,13 @@ Log.Lik.
   border-right-color: #D3D3D3;
 }
 
-#wfbsvcfoct .gt_footnote {
+#gyksqhrkkz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#wfbsvcfoct .gt_sourcenotes {
+#gyksqhrkkz .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -881,46 +1033,46 @@ Log.Lik.
   border-right-color: #D3D3D3;
 }
 
-#wfbsvcfoct .gt_sourcenote {
+#gyksqhrkkz .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#wfbsvcfoct .gt_left {
+#gyksqhrkkz .gt_left {
   text-align: left;
 }
 
-#wfbsvcfoct .gt_center {
+#gyksqhrkkz .gt_center {
   text-align: center;
 }
 
-#wfbsvcfoct .gt_right {
+#gyksqhrkkz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#wfbsvcfoct .gt_font_normal {
+#gyksqhrkkz .gt_font_normal {
   font-weight: normal;
 }
 
-#wfbsvcfoct .gt_font_bold {
+#gyksqhrkkz .gt_font_bold {
   font-weight: bold;
 }
 
-#wfbsvcfoct .gt_font_italic {
+#gyksqhrkkz .gt_font_italic {
   font-style: italic;
 }
 
-#wfbsvcfoct .gt_super {
+#gyksqhrkkz .gt_super {
   font-size: 65%;
 }
 
-#wfbsvcfoct .gt_footnote_marks {
+#gyksqhrkkz .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 &lt;/style&gt;
-&lt;div id=&#34;wfbsvcfoct&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
+&lt;div id=&#34;gyksqhrkkz&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
   
   &lt;thead class=&#34;gt_col_headings&#34;&gt;
     &lt;tr&gt;
@@ -1093,17 +1245,18 @@ Log.Lik.
 &lt;h2&gt;&lt;code&gt;sjPlot&lt;/code&gt;&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://strengejacke.github.io/sjPlot/&#34;&gt;&lt;code&gt;sjPlot&lt;/code&gt;&lt;/a&gt; is a table and visualization package meant for a number of social science methods (linear models, generalized linear models, PCA, robust standard errors, etc.).&lt;/p&gt;
 &lt;p&gt;Below is the HTML table. This table can be styled with CSS.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sjPlot::tab_model(model_0, model_1)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sjPlot::tab_model(model_0, model_1, 
+                  dv.labels = c(&amp;quot;Null Model&amp;quot;, &amp;quot;Model 1&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
 &lt;table style=&#34;border-collapse:collapse; border:none;&#34;&gt;
 &lt;tr&gt;
 &lt;th style=&#34;border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm;  text-align:left; &#34;&gt;
  
 &lt;/th&gt;
 &lt;th colspan=&#34;3&#34; style=&#34;border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; &#34;&gt;
-body mass g
+Null Model
 &lt;/th&gt;
 &lt;th colspan=&#34;3&#34; style=&#34;border-top: double; text-align:center; font-style:normal; font-weight:bold; padding:0.2cm; &#34;&gt;
-body mass g
+Model 1
 &lt;/th&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -1247,10 +1400,9 @@ Marginal R&lt;sup&gt;2&lt;/sup&gt; / Conditional R&lt;sup&gt;2&lt;/sup&gt;
 &lt;div id=&#34;notes-3&#34; class=&#34;section level4&#34;&gt;
 &lt;h4&gt;Notes&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;It works with &lt;code&gt;lmerTest&lt;/code&gt; but if you only use &lt;code&gt;lme4&lt;/code&gt;, &lt;code&gt;sjPlot&lt;/code&gt; automatically adds p-values.&lt;/li&gt;
+&lt;li&gt;It works with &lt;code&gt;lmerTest&lt;/code&gt;. However, if you only use &lt;code&gt;lme4&lt;/code&gt;, &lt;code&gt;sjPlot&lt;/code&gt; automatically adds p-values.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;sjPlot&lt;/code&gt; creates a &lt;em&gt;very&lt;/em&gt; nice table with random effects listed with their Greek values, &lt;span class=&#34;math inline&#34;&gt;\(\sigma^2\)&lt;/span&gt; and &lt;span class=&#34;math inline&#34;&gt;\(\tau\)&lt;/span&gt;, plus ICC and &lt;span class=&#34;math inline&#34;&gt;\(R^2\)&lt;/span&gt;!&lt;/li&gt;
 &lt;li&gt;Unfortunately, it produces only an HTML table and this table cannot be automatically added to Word.&lt;/li&gt;
-&lt;li&gt;It seems you cannot rename the models. The model name is simply the DV.&lt;/li&gt;
 &lt;li&gt;Styling the table for HTML requires CSS.&lt;/li&gt;
 &lt;li&gt;It cannot be converted to &lt;code&gt;flextable&lt;/code&gt; or &lt;code&gt;kable&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -1259,12 +1411,8 @@ Marginal R&lt;sup&gt;2&lt;/sup&gt; / Conditional R&lt;sup&gt;2&lt;/sup&gt;
 &lt;/div&gt;
 &lt;div id=&#34;final-thoughts&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Final Thoughts&lt;/h2&gt;
-&lt;p&gt;In a perfect world, we would be able to knit the &lt;code&gt;sjPlot&lt;/code&gt; table to Word and be done with it. Unfortunately, this does not work for now. The best and easiest option would be:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;If p-values are NOT important, use &lt;code&gt;modelsummary:msummary&lt;/code&gt; with some customization via &lt;code&gt;modelsummary&lt;/code&gt; and &lt;code&gt;output = &#39;flextable&#39;&lt;/code&gt;, plus further &lt;code&gt;flextable&lt;/code&gt; customization.&lt;/li&gt;
-&lt;li&gt;If p-values ARE important, use &lt;code&gt;huxtable::huxreg&lt;/code&gt; and customization via &lt;code&gt;huxtable&lt;/code&gt; (which is much more limited).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The following example creates a function to automatically customize the table (useful if you will have multiple tables), and adds ICC and R2. I did not have time to organize the fixed and random effects, nor add the Greek symbols (ideally, in parentheses)&lt;/p&gt;
+&lt;p&gt;In a perfect world, we would be able to knit the &lt;code&gt;sjPlot&lt;/code&gt; table to Word and be done with it. Unfortunately, this does not work for now. The best and easiest option would be using &lt;code&gt;modelsummary::msummary&lt;/code&gt;. If you need p-values, use &lt;code&gt;lmertest&lt;/code&gt; and &lt;code&gt;broom.mixed&lt;/code&gt;, and be sure to call &lt;code&gt;stars = T&lt;/code&gt; inside &lt;code&gt;msummary&lt;/code&gt;. Then, make sure to also include &lt;code&gt;output = &#39;flextable&#39;&lt;/code&gt; to add more customization and allow your table to knit to Word.&lt;/p&gt;
+&lt;p&gt;The following example creates a simple function to automatically customize the table (useful if you will have multiple tables), and adds ICC and R2. I did not have time to organize the fixed and random effects, nor add the Greek symbols (ideally, in parentheses), but I think it’s easy to see how well &lt;code&gt;modelsummary&lt;/code&gt; and &lt;code&gt;flextable&lt;/code&gt; work together for your multilevel models!&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(tidyverse)
 library(flextable)
 
@@ -1294,7 +1442,7 @@ modelsummary::msummary(list(&amp;quot;Null Model&amp;quot; = model_0,
   flex(&amp;quot;Multilevel Model of Palmer Penguins&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;div class=&#34;tabwid&#34;&gt;&lt;table style=&#39;table-layout:auto;border-collapse:collapse;width:100%;&#39;&gt;
 &lt;caption&gt;
-&lt;span id=&#34;tab:unnamed-chunk-7&#34;&gt;Table 1: &lt;/span&gt;Multilevel Model of Palmer Penguins
+&lt;span id=&#34;tab:unnamed-chunk-8&#34;&gt;Table 1: &lt;/span&gt;Multilevel Model of Palmer Penguins
 &lt;/caption&gt;
 &lt;thead&gt;&lt;tr style=&#34;overflow-wrap:break-word;&#34;&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 2.00px solid rgba(0, 0, 0, 1.00);border-top: 2.00px solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt; &lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 2.00px solid rgba(0, 0, 0, 1.00);border-top: 2.00px solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;Null Model&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 2.00px solid rgba(0, 0, 0, 1.00);border-top: 2.00px solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;Model 1&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr style=&#34;overflow-wrap:break-word;&#34;&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;(Intercept)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;4048.143&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;3713.505&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&#34;overflow-wrap:break-word;&#34;&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;(275.116)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;(273.909)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&#34;overflow-wrap:break-word;&#34;&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;sd__(Intercept)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;471.900&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;468.149&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&#34;overflow-wrap:break-word;&#34;&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&#34;overflow-wrap:break-word;&#34;&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;sd__Observation&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;626.335&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;532.804&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&#34;overflow-wrap:break-word;&#34;&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&#34;overflow-wrap:break-word;&#34;&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;sexmale&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;674.365&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&#34;overflow-wrap:break-word;&#34;&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;(58.402)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&#34;overflow-wrap:break-word;&#34;&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 1.00px solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;AIC&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 1.00px solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;5393.7&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 1.00px solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;5147.3&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&#34;overflow-wrap:break-word;&#34;&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;BIC&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;5405.2&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;5162.5&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&#34;overflow-wrap:break-word;&#34;&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;Log.Lik.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;-2693.833&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;-2569.644&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&#34;overflow-wrap:break-word;&#34;&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;ICC&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;0.362&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;0.355&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&#34;overflow-wrap:break-word;&#34;&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 2.00px solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;pseudo R2&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 2.00px solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;0.362&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&#34;background-color:transparent;vertical-align: middle;border-bottom: 2.00px solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;&#34;&gt;&lt;p style=&#34;margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:2px;padding-top:2px;padding-left:5px;padding-right:5px;background-color:transparent;&#34;&gt;&lt;span style=&#34;font-family:&#39;Roboto&#39;;font-size:12px;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(17, 17, 17, 1.00);background-color:transparent;&#34;&gt;0.540&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;
 &lt;div id=&#34;screenshot-from-word-4&#34; class=&#34;section level4&#34;&gt;
@@ -1305,6 +1453,9 @@ modelsummary::msummary(list(&amp;quot;Null Model&amp;quot; = model_0,
 &lt;/div&gt;
 &lt;hr /&gt;
 &lt;p&gt;Do you know a better way to make great MLM tables in R Markdown, or have you figured out a sjPlot hack!? Please let me know.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;em&gt;Thanks to Vincet Arel-Bundock (&lt;span class=&#34;citation&#34;&gt;[@VincentAB]&lt;/span&gt;(&lt;a href=&#34;https://twitter.com/VincentAB&#34; class=&#34;uri&#34;&gt;https://twitter.com/VincentAB&lt;/a&gt;); author of &lt;code&gt;modelsummary&lt;/code&gt;) for the tip about loading &lt;code&gt;broom.mixed&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Thanks to Daniel (&lt;span class=&#34;citation&#34;&gt;[@strengejacke]&lt;/span&gt;(&lt;a href=&#34;https://twitter.com/strengejacke&#34; class=&#34;uri&#34;&gt;https://twitter.com/strengejacke&lt;/a&gt;); author of &lt;code&gt;sjPlot&lt;/code&gt;) for pointing out using &lt;code&gt;dv.labels&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 </description>
@@ -1469,7 +1620,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Oxygen, Ubuntu, Cantarell, &#39;Helvetica Neue&#39;, &#39;Fira Sans&#39;, &#39;Droid Sans&#39;, Arial, sans-serif;
 }
 
-#rvovkrkjoo .gt_table {
+#ajqzvgofjz .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1492,7 +1643,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-left-color: #D3D3D3;
 }
 
-#rvovkrkjoo .gt_heading {
+#ajqzvgofjz .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1504,7 +1655,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-right-color: #D3D3D3;
 }
 
-#rvovkrkjoo .gt_title {
+#ajqzvgofjz .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1514,7 +1665,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-bottom-width: 0;
 }
 
-#rvovkrkjoo .gt_subtitle {
+#ajqzvgofjz .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1524,13 +1675,13 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-top-width: 0;
 }
 
-#rvovkrkjoo .gt_bottom_border {
+#ajqzvgofjz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#rvovkrkjoo .gt_col_headings {
+#ajqzvgofjz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1545,7 +1696,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-right-color: #D3D3D3;
 }
 
-#rvovkrkjoo .gt_col_heading {
+#ajqzvgofjz .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1565,7 +1716,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   overflow-x: hidden;
 }
 
-#rvovkrkjoo .gt_column_spanner_outer {
+#ajqzvgofjz .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1577,15 +1728,15 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   padding-right: 4px;
 }
 
-#rvovkrkjoo .gt_column_spanner_outer:first-child {
+#ajqzvgofjz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#rvovkrkjoo .gt_column_spanner_outer:last-child {
+#ajqzvgofjz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#rvovkrkjoo .gt_column_spanner {
+#ajqzvgofjz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1597,7 +1748,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   width: 100%;
 }
 
-#rvovkrkjoo .gt_group_heading {
+#ajqzvgofjz .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1619,7 +1770,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   vertical-align: middle;
 }
 
-#rvovkrkjoo .gt_empty_group_heading {
+#ajqzvgofjz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1634,19 +1785,19 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   vertical-align: middle;
 }
 
-#rvovkrkjoo .gt_striped {
+#ajqzvgofjz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#rvovkrkjoo .gt_from_md &gt; :first-child {
+#ajqzvgofjz .gt_from_md &gt; :first-child {
   margin-top: 0;
 }
 
-#rvovkrkjoo .gt_from_md &gt; :last-child {
+#ajqzvgofjz .gt_from_md &gt; :last-child {
   margin-bottom: 0;
 }
 
-#rvovkrkjoo .gt_row {
+#ajqzvgofjz .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1665,7 +1816,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   overflow-x: hidden;
 }
 
-#rvovkrkjoo .gt_stub {
+#ajqzvgofjz .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1677,7 +1828,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   padding-left: 12px;
 }
 
-#rvovkrkjoo .gt_summary_row {
+#ajqzvgofjz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1687,7 +1838,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   padding-right: 5px;
 }
 
-#rvovkrkjoo .gt_first_summary_row {
+#ajqzvgofjz .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1697,7 +1848,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-top-color: #D3D3D3;
 }
 
-#rvovkrkjoo .gt_grand_summary_row {
+#ajqzvgofjz .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1707,7 +1858,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   padding-right: 5px;
 }
 
-#rvovkrkjoo .gt_first_grand_summary_row {
+#ajqzvgofjz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1717,7 +1868,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-top-color: #D3D3D3;
 }
 
-#rvovkrkjoo .gt_table_body {
+#ajqzvgofjz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1726,7 +1877,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-bottom-color: #D3D3D3;
 }
 
-#rvovkrkjoo .gt_footnotes {
+#ajqzvgofjz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1740,13 +1891,13 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-right-color: #D3D3D3;
 }
 
-#rvovkrkjoo .gt_footnote {
+#ajqzvgofjz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#rvovkrkjoo .gt_sourcenotes {
+#ajqzvgofjz .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1760,46 +1911,46 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-right-color: #D3D3D3;
 }
 
-#rvovkrkjoo .gt_sourcenote {
+#ajqzvgofjz .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#rvovkrkjoo .gt_left {
+#ajqzvgofjz .gt_left {
   text-align: left;
 }
 
-#rvovkrkjoo .gt_center {
+#ajqzvgofjz .gt_center {
   text-align: center;
 }
 
-#rvovkrkjoo .gt_right {
+#ajqzvgofjz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#rvovkrkjoo .gt_font_normal {
+#ajqzvgofjz .gt_font_normal {
   font-weight: normal;
 }
 
-#rvovkrkjoo .gt_font_bold {
+#ajqzvgofjz .gt_font_bold {
   font-weight: bold;
 }
 
-#rvovkrkjoo .gt_font_italic {
+#ajqzvgofjz .gt_font_italic {
   font-style: italic;
 }
 
-#rvovkrkjoo .gt_super {
+#ajqzvgofjz .gt_super {
   font-size: 65%;
 }
 
-#rvovkrkjoo .gt_footnote_marks {
+#ajqzvgofjz .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 &lt;/style&gt;
-&lt;div id=&#34;rvovkrkjoo&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
+&lt;div id=&#34;ajqzvgofjz&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
   
   &lt;thead class=&#34;gt_col_headings&#34;&gt;
     &lt;tr&gt;
@@ -1916,7 +2067,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Oxygen, Ubuntu, Cantarell, &#39;Helvetica Neue&#39;, &#39;Fira Sans&#39;, &#39;Droid Sans&#39;, Arial, sans-serif;
 }
 
-#ukingjknto .gt_table {
+#vpwnyqfmuf .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1939,7 +2090,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-left-color: #D3D3D3;
 }
 
-#ukingjknto .gt_heading {
+#vpwnyqfmuf .gt_heading {
   background-color: white;
   text-align: center;
   border-bottom-color: white;
@@ -1951,7 +2102,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-right-color: #D3D3D3;
 }
 
-#ukingjknto .gt_title {
+#vpwnyqfmuf .gt_title {
   color: #333333;
   font-size: 16px;
   font-weight: initial;
@@ -1961,7 +2112,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-bottom-width: 0;
 }
 
-#ukingjknto .gt_subtitle {
+#vpwnyqfmuf .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1971,13 +2122,13 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-top-width: 0;
 }
 
-#ukingjknto .gt_bottom_border {
+#vpwnyqfmuf .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ukingjknto .gt_col_headings {
+#vpwnyqfmuf .gt_col_headings {
   border-top-style: solid;
   border-top-width: 3px;
   border-top-color: black;
@@ -1992,7 +2143,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-right-color: #D3D3D3;
 }
 
-#ukingjknto .gt_col_heading {
+#vpwnyqfmuf .gt_col_heading {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -2012,7 +2163,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   overflow-x: hidden;
 }
 
-#ukingjknto .gt_column_spanner_outer {
+#vpwnyqfmuf .gt_column_spanner_outer {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -2024,15 +2175,15 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   padding-right: 4px;
 }
 
-#ukingjknto .gt_column_spanner_outer:first-child {
+#vpwnyqfmuf .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ukingjknto .gt_column_spanner_outer:last-child {
+#vpwnyqfmuf .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ukingjknto .gt_column_spanner {
+#vpwnyqfmuf .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 3px;
   border-bottom-color: black;
@@ -2044,7 +2195,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   width: 100%;
 }
 
-#ukingjknto .gt_group_heading {
+#vpwnyqfmuf .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: white;
@@ -2066,7 +2217,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   vertical-align: middle;
 }
 
-#ukingjknto .gt_empty_group_heading {
+#vpwnyqfmuf .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: white;
@@ -2081,19 +2232,19 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   vertical-align: middle;
 }
 
-#ukingjknto .gt_striped {
+#vpwnyqfmuf .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ukingjknto .gt_from_md &gt; :first-child {
+#vpwnyqfmuf .gt_from_md &gt; :first-child {
   margin-top: 0;
 }
 
-#ukingjknto .gt_from_md &gt; :last-child {
+#vpwnyqfmuf .gt_from_md &gt; :last-child {
   margin-bottom: 0;
 }
 
-#ukingjknto .gt_row {
+#vpwnyqfmuf .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2112,7 +2263,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   overflow-x: hidden;
 }
 
-#ukingjknto .gt_stub {
+#vpwnyqfmuf .gt_stub {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -2124,7 +2275,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   padding-left: 12px;
 }
 
-#ukingjknto .gt_summary_row {
+#vpwnyqfmuf .gt_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -2134,7 +2285,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   padding-right: 5px;
 }
 
-#ukingjknto .gt_first_summary_row {
+#vpwnyqfmuf .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2144,7 +2295,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-top-color: #D3D3D3;
 }
 
-#ukingjknto .gt_grand_summary_row {
+#vpwnyqfmuf .gt_grand_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -2154,7 +2305,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   padding-right: 5px;
 }
 
-#ukingjknto .gt_first_grand_summary_row {
+#vpwnyqfmuf .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2164,7 +2315,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-top-color: #D3D3D3;
 }
 
-#ukingjknto .gt_table_body {
+#vpwnyqfmuf .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2173,7 +2324,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-bottom-color: black;
 }
 
-#ukingjknto .gt_footnotes {
+#vpwnyqfmuf .gt_footnotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -2187,13 +2338,13 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-right-color: #D3D3D3;
 }
 
-#ukingjknto .gt_footnote {
+#vpwnyqfmuf .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#ukingjknto .gt_sourcenotes {
+#vpwnyqfmuf .gt_sourcenotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -2207,46 +2358,46 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-right-color: #D3D3D3;
 }
 
-#ukingjknto .gt_sourcenote {
+#vpwnyqfmuf .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#ukingjknto .gt_left {
+#vpwnyqfmuf .gt_left {
   text-align: left;
 }
 
-#ukingjknto .gt_center {
+#vpwnyqfmuf .gt_center {
   text-align: center;
 }
 
-#ukingjknto .gt_right {
+#vpwnyqfmuf .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ukingjknto .gt_font_normal {
+#vpwnyqfmuf .gt_font_normal {
   font-weight: normal;
 }
 
-#ukingjknto .gt_font_bold {
+#vpwnyqfmuf .gt_font_bold {
   font-weight: bold;
 }
 
-#ukingjknto .gt_font_italic {
+#vpwnyqfmuf .gt_font_italic {
   font-style: italic;
 }
 
-#ukingjknto .gt_super {
+#vpwnyqfmuf .gt_super {
   font-size: 65%;
 }
 
-#ukingjknto .gt_footnote_marks {
+#vpwnyqfmuf .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 &lt;/style&gt;
-&lt;div id=&#34;ukingjknto&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
+&lt;div id=&#34;vpwnyqfmuf&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
   
   &lt;thead class=&#34;gt_col_headings&#34;&gt;
     &lt;tr&gt;
@@ -2380,7 +2531,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Oxygen, Ubuntu, Cantarell, &#39;Helvetica Neue&#39;, &#39;Fira Sans&#39;, &#39;Droid Sans&#39;, Arial, sans-serif;
 }
 
-#sgapmjricl .gt_table {
+#ubseyzvivt .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -2403,7 +2554,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-left-color: #D3D3D3;
 }
 
-#sgapmjricl .gt_heading {
+#ubseyzvivt .gt_heading {
   background-color: white;
   text-align: center;
   border-bottom-color: white;
@@ -2415,7 +2566,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-right-color: #D3D3D3;
 }
 
-#sgapmjricl .gt_title {
+#ubseyzvivt .gt_title {
   color: #333333;
   font-size: 16px;
   font-weight: initial;
@@ -2425,7 +2576,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-bottom-width: 0;
 }
 
-#sgapmjricl .gt_subtitle {
+#ubseyzvivt .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2435,13 +2586,13 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-top-width: 0;
 }
 
-#sgapmjricl .gt_bottom_border {
+#ubseyzvivt .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#sgapmjricl .gt_col_headings {
+#ubseyzvivt .gt_col_headings {
   border-top-style: solid;
   border-top-width: 3px;
   border-top-color: black;
@@ -2456,7 +2607,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-right-color: #D3D3D3;
 }
 
-#sgapmjricl .gt_col_heading {
+#ubseyzvivt .gt_col_heading {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -2476,7 +2627,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   overflow-x: hidden;
 }
 
-#sgapmjricl .gt_column_spanner_outer {
+#ubseyzvivt .gt_column_spanner_outer {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -2488,15 +2639,15 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   padding-right: 4px;
 }
 
-#sgapmjricl .gt_column_spanner_outer:first-child {
+#ubseyzvivt .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#sgapmjricl .gt_column_spanner_outer:last-child {
+#ubseyzvivt .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#sgapmjricl .gt_column_spanner {
+#ubseyzvivt .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 3px;
   border-bottom-color: black;
@@ -2508,7 +2659,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   width: 100%;
 }
 
-#sgapmjricl .gt_group_heading {
+#ubseyzvivt .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: white;
@@ -2530,7 +2681,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   vertical-align: middle;
 }
 
-#sgapmjricl .gt_empty_group_heading {
+#ubseyzvivt .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: white;
@@ -2545,19 +2696,19 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   vertical-align: middle;
 }
 
-#sgapmjricl .gt_striped {
+#ubseyzvivt .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#sgapmjricl .gt_from_md &gt; :first-child {
+#ubseyzvivt .gt_from_md &gt; :first-child {
   margin-top: 0;
 }
 
-#sgapmjricl .gt_from_md &gt; :last-child {
+#ubseyzvivt .gt_from_md &gt; :last-child {
   margin-bottom: 0;
 }
 
-#sgapmjricl .gt_row {
+#ubseyzvivt .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2576,7 +2727,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   overflow-x: hidden;
 }
 
-#sgapmjricl .gt_stub {
+#ubseyzvivt .gt_stub {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -2588,7 +2739,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   padding-left: 12px;
 }
 
-#sgapmjricl .gt_summary_row {
+#ubseyzvivt .gt_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -2598,7 +2749,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   padding-right: 5px;
 }
 
-#sgapmjricl .gt_first_summary_row {
+#ubseyzvivt .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2608,7 +2759,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-top-color: #D3D3D3;
 }
 
-#sgapmjricl .gt_grand_summary_row {
+#ubseyzvivt .gt_grand_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -2618,7 +2769,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   padding-right: 5px;
 }
 
-#sgapmjricl .gt_first_grand_summary_row {
+#ubseyzvivt .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2628,7 +2779,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-top-color: #D3D3D3;
 }
 
-#sgapmjricl .gt_table_body {
+#ubseyzvivt .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2637,7 +2788,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-bottom-color: black;
 }
 
-#sgapmjricl .gt_footnotes {
+#ubseyzvivt .gt_footnotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -2651,13 +2802,13 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-right-color: #D3D3D3;
 }
 
-#sgapmjricl .gt_footnote {
+#ubseyzvivt .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#sgapmjricl .gt_sourcenotes {
+#ubseyzvivt .gt_sourcenotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -2671,46 +2822,46 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-right-color: #D3D3D3;
 }
 
-#sgapmjricl .gt_sourcenote {
+#ubseyzvivt .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#sgapmjricl .gt_left {
+#ubseyzvivt .gt_left {
   text-align: left;
 }
 
-#sgapmjricl .gt_center {
+#ubseyzvivt .gt_center {
   text-align: center;
 }
 
-#sgapmjricl .gt_right {
+#ubseyzvivt .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#sgapmjricl .gt_font_normal {
+#ubseyzvivt .gt_font_normal {
   font-weight: normal;
 }
 
-#sgapmjricl .gt_font_bold {
+#ubseyzvivt .gt_font_bold {
   font-weight: bold;
 }
 
-#sgapmjricl .gt_font_italic {
+#ubseyzvivt .gt_font_italic {
   font-style: italic;
 }
 
-#sgapmjricl .gt_super {
+#ubseyzvivt .gt_super {
   font-size: 65%;
 }
 
-#sgapmjricl .gt_footnote_marks {
+#ubseyzvivt .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 &lt;/style&gt;
-&lt;div id=&#34;sgapmjricl&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
+&lt;div id=&#34;ubseyzvivt&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
   
   &lt;thead class=&#34;gt_col_headings&#34;&gt;
     &lt;tr&gt;
@@ -2848,7 +2999,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Oxygen, Ubuntu, Cantarell, &#39;Helvetica Neue&#39;, &#39;Fira Sans&#39;, &#39;Droid Sans&#39;, Arial, sans-serif;
 }
 
-#tlpnymxvre .gt_table {
+#fwjcbafckc .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -2871,7 +3022,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-left-color: #D3D3D3;
 }
 
-#tlpnymxvre .gt_heading {
+#fwjcbafckc .gt_heading {
   background-color: white;
   text-align: left;
   border-bottom-color: white;
@@ -2883,7 +3034,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-right-color: #D3D3D3;
 }
 
-#tlpnymxvre .gt_title {
+#fwjcbafckc .gt_title {
   color: #333333;
   font-size: 16px;
   font-weight: initial;
@@ -2893,7 +3044,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-bottom-width: 0;
 }
 
-#tlpnymxvre .gt_subtitle {
+#fwjcbafckc .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2903,13 +3054,13 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-top-width: 0;
 }
 
-#tlpnymxvre .gt_bottom_border {
+#fwjcbafckc .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#tlpnymxvre .gt_col_headings {
+#fwjcbafckc .gt_col_headings {
   border-top-style: solid;
   border-top-width: 3px;
   border-top-color: black;
@@ -2924,7 +3075,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-right-color: #D3D3D3;
 }
 
-#tlpnymxvre .gt_col_heading {
+#fwjcbafckc .gt_col_heading {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -2944,7 +3095,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   overflow-x: hidden;
 }
 
-#tlpnymxvre .gt_column_spanner_outer {
+#fwjcbafckc .gt_column_spanner_outer {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -2956,15 +3107,15 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   padding-right: 4px;
 }
 
-#tlpnymxvre .gt_column_spanner_outer:first-child {
+#fwjcbafckc .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#tlpnymxvre .gt_column_spanner_outer:last-child {
+#fwjcbafckc .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#tlpnymxvre .gt_column_spanner {
+#fwjcbafckc .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 3px;
   border-bottom-color: black;
@@ -2976,7 +3127,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   width: 100%;
 }
 
-#tlpnymxvre .gt_group_heading {
+#fwjcbafckc .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: white;
@@ -2998,7 +3149,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   vertical-align: middle;
 }
 
-#tlpnymxvre .gt_empty_group_heading {
+#fwjcbafckc .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: white;
@@ -3013,19 +3164,19 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   vertical-align: middle;
 }
 
-#tlpnymxvre .gt_striped {
+#fwjcbafckc .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#tlpnymxvre .gt_from_md &gt; :first-child {
+#fwjcbafckc .gt_from_md &gt; :first-child {
   margin-top: 0;
 }
 
-#tlpnymxvre .gt_from_md &gt; :last-child {
+#fwjcbafckc .gt_from_md &gt; :last-child {
   margin-bottom: 0;
 }
 
-#tlpnymxvre .gt_row {
+#fwjcbafckc .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3044,7 +3195,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   overflow-x: hidden;
 }
 
-#tlpnymxvre .gt_stub {
+#fwjcbafckc .gt_stub {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -3056,7 +3207,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   padding-left: 12px;
 }
 
-#tlpnymxvre .gt_summary_row {
+#fwjcbafckc .gt_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -3066,7 +3217,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   padding-right: 5px;
 }
 
-#tlpnymxvre .gt_first_summary_row {
+#fwjcbafckc .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3076,7 +3227,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-top-color: #D3D3D3;
 }
 
-#tlpnymxvre .gt_grand_summary_row {
+#fwjcbafckc .gt_grand_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -3086,7 +3237,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   padding-right: 5px;
 }
 
-#tlpnymxvre .gt_first_grand_summary_row {
+#fwjcbafckc .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3096,7 +3247,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-top-color: #D3D3D3;
 }
 
-#tlpnymxvre .gt_table_body {
+#fwjcbafckc .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3105,7 +3256,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-bottom-color: black;
 }
 
-#tlpnymxvre .gt_footnotes {
+#fwjcbafckc .gt_footnotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -3119,13 +3270,13 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-right-color: #D3D3D3;
 }
 
-#tlpnymxvre .gt_footnote {
+#fwjcbafckc .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#tlpnymxvre .gt_sourcenotes {
+#fwjcbafckc .gt_sourcenotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -3139,46 +3290,46 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-right-color: #D3D3D3;
 }
 
-#tlpnymxvre .gt_sourcenote {
+#fwjcbafckc .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#tlpnymxvre .gt_left {
+#fwjcbafckc .gt_left {
   text-align: left;
 }
 
-#tlpnymxvre .gt_center {
+#fwjcbafckc .gt_center {
   text-align: center;
 }
 
-#tlpnymxvre .gt_right {
+#fwjcbafckc .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#tlpnymxvre .gt_font_normal {
+#fwjcbafckc .gt_font_normal {
   font-weight: normal;
 }
 
-#tlpnymxvre .gt_font_bold {
+#fwjcbafckc .gt_font_bold {
   font-weight: bold;
 }
 
-#tlpnymxvre .gt_font_italic {
+#fwjcbafckc .gt_font_italic {
   font-style: italic;
 }
 
-#tlpnymxvre .gt_super {
+#fwjcbafckc .gt_super {
   font-size: 65%;
 }
 
-#tlpnymxvre .gt_footnote_marks {
+#fwjcbafckc .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 &lt;/style&gt;
-&lt;div id=&#34;tlpnymxvre&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
+&lt;div id=&#34;fwjcbafckc&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
   &lt;thead class=&#34;gt_header&#34;&gt;
     &lt;tr&gt;
       &lt;th colspan=&#34;11&#34; class=&#34;gt_heading gt_title gt_font_normal&#34; style&gt;&lt;i&gt; Fuel consumption and aspects of automobile design and performance for 32 automobiles (1973-74 models) &lt;/i&gt;&lt;/th&gt;
@@ -3291,7 +3442,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Oxygen, Ubuntu, Cantarell, &#39;Helvetica Neue&#39;, &#39;Fira Sans&#39;, &#39;Droid Sans&#39;, Arial, sans-serif;
 }
 
-#eakjaacjtz .gt_table {
+#rclgfhcouc .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -3314,7 +3465,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-left-color: #D3D3D3;
 }
 
-#eakjaacjtz .gt_heading {
+#rclgfhcouc .gt_heading {
   background-color: white;
   text-align: left;
   border-bottom-color: white;
@@ -3326,7 +3477,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-right-color: #D3D3D3;
 }
 
-#eakjaacjtz .gt_title {
+#rclgfhcouc .gt_title {
   color: #333333;
   font-size: 16px;
   font-weight: initial;
@@ -3336,7 +3487,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-bottom-width: 0;
 }
 
-#eakjaacjtz .gt_subtitle {
+#rclgfhcouc .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3346,13 +3497,13 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-top-width: 0;
 }
 
-#eakjaacjtz .gt_bottom_border {
+#rclgfhcouc .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#eakjaacjtz .gt_col_headings {
+#rclgfhcouc .gt_col_headings {
   border-top-style: solid;
   border-top-width: 3px;
   border-top-color: black;
@@ -3367,7 +3518,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-right-color: #D3D3D3;
 }
 
-#eakjaacjtz .gt_col_heading {
+#rclgfhcouc .gt_col_heading {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -3387,7 +3538,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   overflow-x: hidden;
 }
 
-#eakjaacjtz .gt_column_spanner_outer {
+#rclgfhcouc .gt_column_spanner_outer {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -3399,15 +3550,15 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   padding-right: 4px;
 }
 
-#eakjaacjtz .gt_column_spanner_outer:first-child {
+#rclgfhcouc .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#eakjaacjtz .gt_column_spanner_outer:last-child {
+#rclgfhcouc .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#eakjaacjtz .gt_column_spanner {
+#rclgfhcouc .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 3px;
   border-bottom-color: black;
@@ -3419,7 +3570,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   width: 100%;
 }
 
-#eakjaacjtz .gt_group_heading {
+#rclgfhcouc .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: white;
@@ -3441,7 +3592,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   vertical-align: middle;
 }
 
-#eakjaacjtz .gt_empty_group_heading {
+#rclgfhcouc .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: white;
@@ -3456,19 +3607,19 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   vertical-align: middle;
 }
 
-#eakjaacjtz .gt_striped {
+#rclgfhcouc .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#eakjaacjtz .gt_from_md &gt; :first-child {
+#rclgfhcouc .gt_from_md &gt; :first-child {
   margin-top: 0;
 }
 
-#eakjaacjtz .gt_from_md &gt; :last-child {
+#rclgfhcouc .gt_from_md &gt; :last-child {
   margin-bottom: 0;
 }
 
-#eakjaacjtz .gt_row {
+#rclgfhcouc .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3487,7 +3638,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   overflow-x: hidden;
 }
 
-#eakjaacjtz .gt_stub {
+#rclgfhcouc .gt_stub {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -3499,7 +3650,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   padding-left: 12px;
 }
 
-#eakjaacjtz .gt_summary_row {
+#rclgfhcouc .gt_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -3509,7 +3660,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   padding-right: 5px;
 }
 
-#eakjaacjtz .gt_first_summary_row {
+#rclgfhcouc .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3519,7 +3670,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-top-color: #D3D3D3;
 }
 
-#eakjaacjtz .gt_grand_summary_row {
+#rclgfhcouc .gt_grand_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -3529,7 +3680,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   padding-right: 5px;
 }
 
-#eakjaacjtz .gt_first_grand_summary_row {
+#rclgfhcouc .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3539,7 +3690,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-top-color: #D3D3D3;
 }
 
-#eakjaacjtz .gt_table_body {
+#rclgfhcouc .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3548,7 +3699,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-bottom-color: black;
 }
 
-#eakjaacjtz .gt_footnotes {
+#rclgfhcouc .gt_footnotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -3562,13 +3713,13 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-right-color: #D3D3D3;
 }
 
-#eakjaacjtz .gt_footnote {
+#rclgfhcouc .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#eakjaacjtz .gt_sourcenotes {
+#rclgfhcouc .gt_sourcenotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -3582,46 +3733,46 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-right-color: #D3D3D3;
 }
 
-#eakjaacjtz .gt_sourcenote {
+#rclgfhcouc .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#eakjaacjtz .gt_left {
+#rclgfhcouc .gt_left {
   text-align: left;
 }
 
-#eakjaacjtz .gt_center {
+#rclgfhcouc .gt_center {
   text-align: center;
 }
 
-#eakjaacjtz .gt_right {
+#rclgfhcouc .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#eakjaacjtz .gt_font_normal {
+#rclgfhcouc .gt_font_normal {
   font-weight: normal;
 }
 
-#eakjaacjtz .gt_font_bold {
+#rclgfhcouc .gt_font_bold {
   font-weight: bold;
 }
 
-#eakjaacjtz .gt_font_italic {
+#rclgfhcouc .gt_font_italic {
   font-style: italic;
 }
 
-#eakjaacjtz .gt_super {
+#rclgfhcouc .gt_super {
   font-size: 65%;
 }
 
-#eakjaacjtz .gt_footnote_marks {
+#rclgfhcouc .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 &lt;/style&gt;
-&lt;div id=&#34;eakjaacjtz&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
+&lt;div id=&#34;rclgfhcouc&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
   &lt;thead class=&#34;gt_header&#34;&gt;
     &lt;tr&gt;
       &lt;th colspan=&#34;11&#34; class=&#34;gt_heading gt_title gt_font_normal&#34; style&gt;&lt;i&gt; Fuel consumption and aspects of automobile design and performance for 32 automobiles (1973-74 models) &lt;/i&gt;&lt;/th&gt;
@@ -3755,7 +3906,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Oxygen, Ubuntu, Cantarell, &#39;Helvetica Neue&#39;, &#39;Fira Sans&#39;, &#39;Droid Sans&#39;, Arial, sans-serif;
 }
 
-#xvpoiryezi .gt_table {
+#nphzjfwond .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -3778,7 +3929,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-left-color: #D3D3D3;
 }
 
-#xvpoiryezi .gt_heading {
+#nphzjfwond .gt_heading {
   background-color: white;
   text-align: left;
   border-bottom-color: white;
@@ -3790,7 +3941,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-right-color: #D3D3D3;
 }
 
-#xvpoiryezi .gt_title {
+#nphzjfwond .gt_title {
   color: #333333;
   font-size: 16px;
   font-weight: initial;
@@ -3800,7 +3951,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-bottom-width: 0;
 }
 
-#xvpoiryezi .gt_subtitle {
+#nphzjfwond .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3810,13 +3961,13 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-top-width: 0;
 }
 
-#xvpoiryezi .gt_bottom_border {
+#nphzjfwond .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xvpoiryezi .gt_col_headings {
+#nphzjfwond .gt_col_headings {
   border-top-style: solid;
   border-top-width: 3px;
   border-top-color: black;
@@ -3831,7 +3982,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-right-color: #D3D3D3;
 }
 
-#xvpoiryezi .gt_col_heading {
+#nphzjfwond .gt_col_heading {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -3851,7 +4002,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   overflow-x: hidden;
 }
 
-#xvpoiryezi .gt_column_spanner_outer {
+#nphzjfwond .gt_column_spanner_outer {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -3863,15 +4014,15 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   padding-right: 4px;
 }
 
-#xvpoiryezi .gt_column_spanner_outer:first-child {
+#nphzjfwond .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xvpoiryezi .gt_column_spanner_outer:last-child {
+#nphzjfwond .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xvpoiryezi .gt_column_spanner {
+#nphzjfwond .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 3px;
   border-bottom-color: black;
@@ -3883,7 +4034,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   width: 100%;
 }
 
-#xvpoiryezi .gt_group_heading {
+#nphzjfwond .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: white;
@@ -3905,7 +4056,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   vertical-align: middle;
 }
 
-#xvpoiryezi .gt_empty_group_heading {
+#nphzjfwond .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: white;
@@ -3920,19 +4071,19 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   vertical-align: middle;
 }
 
-#xvpoiryezi .gt_striped {
+#nphzjfwond .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xvpoiryezi .gt_from_md &gt; :first-child {
+#nphzjfwond .gt_from_md &gt; :first-child {
   margin-top: 0;
 }
 
-#xvpoiryezi .gt_from_md &gt; :last-child {
+#nphzjfwond .gt_from_md &gt; :last-child {
   margin-bottom: 0;
 }
 
-#xvpoiryezi .gt_row {
+#nphzjfwond .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3951,7 +4102,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   overflow-x: hidden;
 }
 
-#xvpoiryezi .gt_stub {
+#nphzjfwond .gt_stub {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -3963,7 +4114,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   padding-left: 12px;
 }
 
-#xvpoiryezi .gt_summary_row {
+#nphzjfwond .gt_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -3973,7 +4124,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   padding-right: 5px;
 }
 
-#xvpoiryezi .gt_first_summary_row {
+#nphzjfwond .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3983,7 +4134,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-top-color: #D3D3D3;
 }
 
-#xvpoiryezi .gt_grand_summary_row {
+#nphzjfwond .gt_grand_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -3993,7 +4144,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   padding-right: 5px;
 }
 
-#xvpoiryezi .gt_first_grand_summary_row {
+#nphzjfwond .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4003,7 +4154,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-top-color: #D3D3D3;
 }
 
-#xvpoiryezi .gt_table_body {
+#nphzjfwond .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4012,7 +4163,7 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-bottom-color: black;
 }
 
-#xvpoiryezi .gt_footnotes {
+#nphzjfwond .gt_footnotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -4026,13 +4177,13 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-right-color: #D3D3D3;
 }
 
-#xvpoiryezi .gt_footnote {
+#nphzjfwond .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#xvpoiryezi .gt_sourcenotes {
+#nphzjfwond .gt_sourcenotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -4046,46 +4197,46 @@ library(gt)&lt;/code&gt;&lt;/pre&gt;
   border-right-color: #D3D3D3;
 }
 
-#xvpoiryezi .gt_sourcenote {
+#nphzjfwond .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#xvpoiryezi .gt_left {
+#nphzjfwond .gt_left {
   text-align: left;
 }
 
-#xvpoiryezi .gt_center {
+#nphzjfwond .gt_center {
   text-align: center;
 }
 
-#xvpoiryezi .gt_right {
+#nphzjfwond .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xvpoiryezi .gt_font_normal {
+#nphzjfwond .gt_font_normal {
   font-weight: normal;
 }
 
-#xvpoiryezi .gt_font_bold {
+#nphzjfwond .gt_font_bold {
   font-weight: bold;
 }
 
-#xvpoiryezi .gt_font_italic {
+#nphzjfwond .gt_font_italic {
   font-style: italic;
 }
 
-#xvpoiryezi .gt_super {
+#nphzjfwond .gt_super {
   font-size: 65%;
 }
 
-#xvpoiryezi .gt_footnote_marks {
+#nphzjfwond .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 &lt;/style&gt;
-&lt;div id=&#34;xvpoiryezi&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
+&lt;div id=&#34;nphzjfwond&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
   &lt;thead class=&#34;gt_header&#34;&gt;
     &lt;tr&gt;
       &lt;th colspan=&#34;11&#34; class=&#34;gt_heading gt_title gt_font_normal&#34; style&gt;&lt;i&gt; Fuel consumption and aspects of automobile design and performance for 32 automobiles (1973-74 models) &lt;/i&gt;&lt;/th&gt;
@@ -4270,7 +4421,7 @@ apaTables::apa.reg.table(model)[[&amp;quot;table_body&amp;quot;]] %&amp;gt;%
   font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Oxygen, Ubuntu, Cantarell, &#39;Helvetica Neue&#39;, &#39;Fira Sans&#39;, &#39;Droid Sans&#39;, Arial, sans-serif;
 }
 
-#xjzienwtje .gt_table {
+#aljndxxjzw .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -4293,7 +4444,7 @@ apaTables::apa.reg.table(model)[[&amp;quot;table_body&amp;quot;]] %&amp;gt;%
   border-left-color: #D3D3D3;
 }
 
-#xjzienwtje .gt_heading {
+#aljndxxjzw .gt_heading {
   background-color: white;
   text-align: left;
   border-bottom-color: white;
@@ -4305,7 +4456,7 @@ apaTables::apa.reg.table(model)[[&amp;quot;table_body&amp;quot;]] %&amp;gt;%
   border-right-color: #D3D3D3;
 }
 
-#xjzienwtje .gt_title {
+#aljndxxjzw .gt_title {
   color: #333333;
   font-size: 16px;
   font-weight: initial;
@@ -4315,7 +4466,7 @@ apaTables::apa.reg.table(model)[[&amp;quot;table_body&amp;quot;]] %&amp;gt;%
   border-bottom-width: 0;
 }
 
-#xjzienwtje .gt_subtitle {
+#aljndxxjzw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4325,13 +4476,13 @@ apaTables::apa.reg.table(model)[[&amp;quot;table_body&amp;quot;]] %&amp;gt;%
   border-top-width: 0;
 }
 
-#xjzienwtje .gt_bottom_border {
+#aljndxxjzw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xjzienwtje .gt_col_headings {
+#aljndxxjzw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 3px;
   border-top-color: black;
@@ -4346,7 +4497,7 @@ apaTables::apa.reg.table(model)[[&amp;quot;table_body&amp;quot;]] %&amp;gt;%
   border-right-color: #D3D3D3;
 }
 
-#xjzienwtje .gt_col_heading {
+#aljndxxjzw .gt_col_heading {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -4366,7 +4517,7 @@ apaTables::apa.reg.table(model)[[&amp;quot;table_body&amp;quot;]] %&amp;gt;%
   overflow-x: hidden;
 }
 
-#xjzienwtje .gt_column_spanner_outer {
+#aljndxxjzw .gt_column_spanner_outer {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -4378,15 +4529,15 @@ apaTables::apa.reg.table(model)[[&amp;quot;table_body&amp;quot;]] %&amp;gt;%
   padding-right: 4px;
 }
 
-#xjzienwtje .gt_column_spanner_outer:first-child {
+#aljndxxjzw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xjzienwtje .gt_column_spanner_outer:last-child {
+#aljndxxjzw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xjzienwtje .gt_column_spanner {
+#aljndxxjzw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 3px;
   border-bottom-color: black;
@@ -4398,7 +4549,7 @@ apaTables::apa.reg.table(model)[[&amp;quot;table_body&amp;quot;]] %&amp;gt;%
   width: 100%;
 }
 
-#xjzienwtje .gt_group_heading {
+#aljndxxjzw .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: white;
@@ -4420,7 +4571,7 @@ apaTables::apa.reg.table(model)[[&amp;quot;table_body&amp;quot;]] %&amp;gt;%
   vertical-align: middle;
 }
 
-#xjzienwtje .gt_empty_group_heading {
+#aljndxxjzw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: white;
@@ -4435,19 +4586,19 @@ apaTables::apa.reg.table(model)[[&amp;quot;table_body&amp;quot;]] %&amp;gt;%
   vertical-align: middle;
 }
 
-#xjzienwtje .gt_striped {
+#aljndxxjzw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xjzienwtje .gt_from_md &gt; :first-child {
+#aljndxxjzw .gt_from_md &gt; :first-child {
   margin-top: 0;
 }
 
-#xjzienwtje .gt_from_md &gt; :last-child {
+#aljndxxjzw .gt_from_md &gt; :last-child {
   margin-bottom: 0;
 }
 
-#xjzienwtje .gt_row {
+#aljndxxjzw .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4466,7 +4617,7 @@ apaTables::apa.reg.table(model)[[&amp;quot;table_body&amp;quot;]] %&amp;gt;%
   overflow-x: hidden;
 }
 
-#xjzienwtje .gt_stub {
+#aljndxxjzw .gt_stub {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -4478,7 +4629,7 @@ apaTables::apa.reg.table(model)[[&amp;quot;table_body&amp;quot;]] %&amp;gt;%
   padding-left: 12px;
 }
 
-#xjzienwtje .gt_summary_row {
+#aljndxxjzw .gt_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -4488,7 +4639,7 @@ apaTables::apa.reg.table(model)[[&amp;quot;table_body&amp;quot;]] %&amp;gt;%
   padding-right: 5px;
 }
 
-#xjzienwtje .gt_first_summary_row {
+#aljndxxjzw .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4498,7 +4649,7 @@ apaTables::apa.reg.table(model)[[&amp;quot;table_body&amp;quot;]] %&amp;gt;%
   border-top-color: #D3D3D3;
 }
 
-#xjzienwtje .gt_grand_summary_row {
+#aljndxxjzw .gt_grand_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -4508,7 +4659,7 @@ apaTables::apa.reg.table(model)[[&amp;quot;table_body&amp;quot;]] %&amp;gt;%
   padding-right: 5px;
 }
 
-#xjzienwtje .gt_first_grand_summary_row {
+#aljndxxjzw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4518,7 +4669,7 @@ apaTables::apa.reg.table(model)[[&amp;quot;table_body&amp;quot;]] %&amp;gt;%
   border-top-color: #D3D3D3;
 }
 
-#xjzienwtje .gt_table_body {
+#aljndxxjzw .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4527,7 +4678,7 @@ apaTables::apa.reg.table(model)[[&amp;quot;table_body&amp;quot;]] %&amp;gt;%
   border-bottom-color: black;
 }
 
-#xjzienwtje .gt_footnotes {
+#aljndxxjzw .gt_footnotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -4541,13 +4692,13 @@ apaTables::apa.reg.table(model)[[&amp;quot;table_body&amp;quot;]] %&amp;gt;%
   border-right-color: #D3D3D3;
 }
 
-#xjzienwtje .gt_footnote {
+#aljndxxjzw .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#xjzienwtje .gt_sourcenotes {
+#aljndxxjzw .gt_sourcenotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -4561,46 +4712,46 @@ apaTables::apa.reg.table(model)[[&amp;quot;table_body&amp;quot;]] %&amp;gt;%
   border-right-color: #D3D3D3;
 }
 
-#xjzienwtje .gt_sourcenote {
+#aljndxxjzw .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#xjzienwtje .gt_left {
+#aljndxxjzw .gt_left {
   text-align: left;
 }
 
-#xjzienwtje .gt_center {
+#aljndxxjzw .gt_center {
   text-align: center;
 }
 
-#xjzienwtje .gt_right {
+#aljndxxjzw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xjzienwtje .gt_font_normal {
+#aljndxxjzw .gt_font_normal {
   font-weight: normal;
 }
 
-#xjzienwtje .gt_font_bold {
+#aljndxxjzw .gt_font_bold {
   font-weight: bold;
 }
 
-#xjzienwtje .gt_font_italic {
+#aljndxxjzw .gt_font_italic {
   font-style: italic;
 }
 
-#xjzienwtje .gt_super {
+#aljndxxjzw .gt_super {
   font-size: 65%;
 }
 
-#xjzienwtje .gt_footnote_marks {
+#aljndxxjzw .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 &lt;/style&gt;
-&lt;div id=&#34;xjzienwtje&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
+&lt;div id=&#34;aljndxxjzw&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
   &lt;thead class=&#34;gt_header&#34;&gt;
     &lt;tr&gt;
       &lt;th colspan=&#34;9&#34; class=&#34;gt_heading gt_title gt_font_normal&#34; style&gt;&lt;i&gt;   &lt;/i&gt;&lt;/th&gt;
@@ -4697,7 +4848,7 @@ apa(apatable[[&amp;quot;table_body&amp;quot;]], apatable[[&amp;quot;table_title&
   font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Oxygen, Ubuntu, Cantarell, &#39;Helvetica Neue&#39;, &#39;Fira Sans&#39;, &#39;Droid Sans&#39;, Arial, sans-serif;
 }
 
-#lyamljomun .gt_table {
+#fryvnzifsg .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -4720,7 +4871,7 @@ apa(apatable[[&amp;quot;table_body&amp;quot;]], apatable[[&amp;quot;table_title&
   border-left-color: #D3D3D3;
 }
 
-#lyamljomun .gt_heading {
+#fryvnzifsg .gt_heading {
   background-color: white;
   text-align: left;
   border-bottom-color: white;
@@ -4732,7 +4883,7 @@ apa(apatable[[&amp;quot;table_body&amp;quot;]], apatable[[&amp;quot;table_title&
   border-right-color: #D3D3D3;
 }
 
-#lyamljomun .gt_title {
+#fryvnzifsg .gt_title {
   color: #333333;
   font-size: 16px;
   font-weight: initial;
@@ -4742,7 +4893,7 @@ apa(apatable[[&amp;quot;table_body&amp;quot;]], apatable[[&amp;quot;table_title&
   border-bottom-width: 0;
 }
 
-#lyamljomun .gt_subtitle {
+#fryvnzifsg .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4752,13 +4903,13 @@ apa(apatable[[&amp;quot;table_body&amp;quot;]], apatable[[&amp;quot;table_title&
   border-top-width: 0;
 }
 
-#lyamljomun .gt_bottom_border {
+#fryvnzifsg .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#lyamljomun .gt_col_headings {
+#fryvnzifsg .gt_col_headings {
   border-top-style: solid;
   border-top-width: 3px;
   border-top-color: black;
@@ -4773,7 +4924,7 @@ apa(apatable[[&amp;quot;table_body&amp;quot;]], apatable[[&amp;quot;table_title&
   border-right-color: #D3D3D3;
 }
 
-#lyamljomun .gt_col_heading {
+#fryvnzifsg .gt_col_heading {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -4793,7 +4944,7 @@ apa(apatable[[&amp;quot;table_body&amp;quot;]], apatable[[&amp;quot;table_title&
   overflow-x: hidden;
 }
 
-#lyamljomun .gt_column_spanner_outer {
+#fryvnzifsg .gt_column_spanner_outer {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -4805,15 +4956,15 @@ apa(apatable[[&amp;quot;table_body&amp;quot;]], apatable[[&amp;quot;table_title&
   padding-right: 4px;
 }
 
-#lyamljomun .gt_column_spanner_outer:first-child {
+#fryvnzifsg .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#lyamljomun .gt_column_spanner_outer:last-child {
+#fryvnzifsg .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#lyamljomun .gt_column_spanner {
+#fryvnzifsg .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 3px;
   border-bottom-color: black;
@@ -4825,7 +4976,7 @@ apa(apatable[[&amp;quot;table_body&amp;quot;]], apatable[[&amp;quot;table_title&
   width: 100%;
 }
 
-#lyamljomun .gt_group_heading {
+#fryvnzifsg .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: white;
@@ -4847,7 +4998,7 @@ apa(apatable[[&amp;quot;table_body&amp;quot;]], apatable[[&amp;quot;table_title&
   vertical-align: middle;
 }
 
-#lyamljomun .gt_empty_group_heading {
+#fryvnzifsg .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: white;
@@ -4862,19 +5013,19 @@ apa(apatable[[&amp;quot;table_body&amp;quot;]], apatable[[&amp;quot;table_title&
   vertical-align: middle;
 }
 
-#lyamljomun .gt_striped {
+#fryvnzifsg .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#lyamljomun .gt_from_md &gt; :first-child {
+#fryvnzifsg .gt_from_md &gt; :first-child {
   margin-top: 0;
 }
 
-#lyamljomun .gt_from_md &gt; :last-child {
+#fryvnzifsg .gt_from_md &gt; :last-child {
   margin-bottom: 0;
 }
 
-#lyamljomun .gt_row {
+#fryvnzifsg .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4893,7 +5044,7 @@ apa(apatable[[&amp;quot;table_body&amp;quot;]], apatable[[&amp;quot;table_title&
   overflow-x: hidden;
 }
 
-#lyamljomun .gt_stub {
+#fryvnzifsg .gt_stub {
   color: #333333;
   background-color: white;
   font-size: 100%;
@@ -4905,7 +5056,7 @@ apa(apatable[[&amp;quot;table_body&amp;quot;]], apatable[[&amp;quot;table_title&
   padding-left: 12px;
 }
 
-#lyamljomun .gt_summary_row {
+#fryvnzifsg .gt_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -4915,7 +5066,7 @@ apa(apatable[[&amp;quot;table_body&amp;quot;]], apatable[[&amp;quot;table_title&
   padding-right: 5px;
 }
 
-#lyamljomun .gt_first_summary_row {
+#fryvnzifsg .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4925,7 +5076,7 @@ apa(apatable[[&amp;quot;table_body&amp;quot;]], apatable[[&amp;quot;table_title&
   border-top-color: #D3D3D3;
 }
 
-#lyamljomun .gt_grand_summary_row {
+#fryvnzifsg .gt_grand_summary_row {
   color: #333333;
   background-color: white;
   text-transform: inherit;
@@ -4935,7 +5086,7 @@ apa(apatable[[&amp;quot;table_body&amp;quot;]], apatable[[&amp;quot;table_title&
   padding-right: 5px;
 }
 
-#lyamljomun .gt_first_grand_summary_row {
+#fryvnzifsg .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4945,7 +5096,7 @@ apa(apatable[[&amp;quot;table_body&amp;quot;]], apatable[[&amp;quot;table_title&
   border-top-color: #D3D3D3;
 }
 
-#lyamljomun .gt_table_body {
+#fryvnzifsg .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4954,7 +5105,7 @@ apa(apatable[[&amp;quot;table_body&amp;quot;]], apatable[[&amp;quot;table_title&
   border-bottom-color: black;
 }
 
-#lyamljomun .gt_footnotes {
+#fryvnzifsg .gt_footnotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -4968,13 +5119,13 @@ apa(apatable[[&amp;quot;table_body&amp;quot;]], apatable[[&amp;quot;table_title&
   border-right-color: #D3D3D3;
 }
 
-#lyamljomun .gt_footnote {
+#fryvnzifsg .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#lyamljomun .gt_sourcenotes {
+#fryvnzifsg .gt_sourcenotes {
   color: #333333;
   background-color: white;
   border-bottom-style: none;
@@ -4988,46 +5139,46 @@ apa(apatable[[&amp;quot;table_body&amp;quot;]], apatable[[&amp;quot;table_title&
   border-right-color: #D3D3D3;
 }
 
-#lyamljomun .gt_sourcenote {
+#fryvnzifsg .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#lyamljomun .gt_left {
+#fryvnzifsg .gt_left {
   text-align: left;
 }
 
-#lyamljomun .gt_center {
+#fryvnzifsg .gt_center {
   text-align: center;
 }
 
-#lyamljomun .gt_right {
+#fryvnzifsg .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#lyamljomun .gt_font_normal {
+#fryvnzifsg .gt_font_normal {
   font-weight: normal;
 }
 
-#lyamljomun .gt_font_bold {
+#fryvnzifsg .gt_font_bold {
   font-weight: bold;
 }
 
-#lyamljomun .gt_font_italic {
+#fryvnzifsg .gt_font_italic {
   font-style: italic;
 }
 
-#lyamljomun .gt_super {
+#fryvnzifsg .gt_super {
   font-size: 65%;
 }
 
-#lyamljomun .gt_footnote_marks {
+#fryvnzifsg .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 &lt;/style&gt;
-&lt;div id=&#34;lyamljomun&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
+&lt;div id=&#34;fryvnzifsg&#34; style=&#34;overflow-x:auto;overflow-y:auto;width:auto;height:auto;&#34;&gt;&lt;table class=&#34;gt_table&#34;&gt;
   &lt;thead class=&#34;gt_header&#34;&gt;
     &lt;tr&gt;
       &lt;th colspan=&#34;9&#34; class=&#34;gt_heading gt_title gt_font_normal&#34; style&gt;&lt;i&gt; Regression results using mpg as the criterion

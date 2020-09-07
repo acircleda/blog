@@ -49,12 +49,21 @@ The most popular packages that can take a model object and produce a neat table 
 
 ### `modelsummary`
 
-[`modelsummary`](https://vincentarelbundock.github.io/modelsummary/articles/modelsummary.html) offers the `msummary` function and allows me to create side-by-side tables. This **will** work for `lme4` models, but **will not** work for `lmerTest` models.
+[`modelsummary`](https://vincentarelbundock.github.io/modelsummary/articles/modelsummary.html) offers the `msummary` function and allows me to create side-by-side tables. This **will** work for `lme4` models, but **will not** work for `lmerTest` models unless you load the package `broom.mixed` first.
 
 ```{r}
 modelsummary::msummary(list(
   "Null Model" = model_0, 
   "Model 1" = model_1))
+```
+
+Here, I have loaded `broom.mixed` and added a call for significance stars with `stars=T`.
+
+```{r}
+library(broom.mixed)
+modelsummary::msummary(list(
+  "Null Model" = model_0_lmertest, 
+  "Model 1" = model_1_lmertest), stars = T)
 ```
 
 #### Screenshot from Word
@@ -66,8 +75,7 @@ modelsummary::msummary(list(
   * `msummary` produces a decent side-by-side table in Word.
   * The default style looks like APA, which is something I would want.
   * However, it splits the fixed effects of intercept and sex up so that intercept is above the random effects and sex is below. 
-  * In addition, it lacks default inclusion of ICC and pseudo-$R^2$. If one want's p-values, it will not work with lmerTest, giving an error of `Error: Column 6 must be named.`.
-  * Finally, the default width is a bit narrow, meaning additional customization is needed. It can easily be customized using `flextable` (which works well in Word) with the following code:
+  * Finally, the default width is a bit narrow, meaning additional customization is needed. It can easily be customized using `flextable`, which works well in Word. The following code coverts it to `flextable`:
   
 `modelsummary::msummary(list("Null Model" = model_0, "Model 1" = model_1), output = 'flextable')`
 
@@ -127,7 +135,8 @@ huxtable::huxreg(list(
 Below is the HTML table. This table can be styled with CSS.
 
 ```{r}
-sjPlot::tab_model(model_0, model_1)
+sjPlot::tab_model(model_0, model_1, 
+                  dv.labels = c("Null Model", "Model 1"))
 ```
 
 #### Screenshot from Word
@@ -136,10 +145,9 @@ sjPlot::tab_model(model_0, model_1)
 
 #### Notes
 
-  * It works with `lmerTest` but if you only use `lme4`, `sjPlot` automatically adds p-values. 
+  * It works with `lmerTest`. However, if you only use `lme4`, `sjPlot` automatically adds p-values. 
   * `sjPlot` creates a *very* nice table with random effects listed with their Greek values, $\sigma^2$ and $\tau$, plus ICC and $R^2$!
   * Unfortunately, it produces only an HTML table and this table cannot be automatically added to Word.
-  * It seems you cannot rename the models. The model name is simply the DV.
   * Styling the table for HTML requires CSS.
   * It cannot be converted to `flextable` or `kable`
   
@@ -147,12 +155,9 @@ sjPlot::tab_model(model_0, model_1)
   
 ## Final Thoughts
 
-In a perfect world, we would be able to knit the `sjPlot` table to Word and be done with it. Unfortunately, this does not work for now. The best and easiest option would be:
+In a perfect world, we would be able to knit the `sjPlot` table to Word and be done with it. Unfortunately, this does not work for now. The best and easiest option would be using `modelsummary::msummary`. If you need p-values, use `lmertest` and `broom.mixed`, and be sure to call `stars = T` inside `msummary`. Then, make sure to also include `output = 'flextable'` to add more customization and allow your table to knit to Word.
 
-  * If p-values are NOT important, use `modelsummary:msummary` with some customization via `modelsummary` and `output = 'flextable'`, plus further `flextable` customization.
-  * If p-values ARE important, use `huxtable::huxreg` and customization via `huxtable`  (which is much more limited).
-
-The following example creates a function to automatically customize the table (useful if you will have multiple tables), and adds ICC and R2. I did not have time to organize the fixed and random effects, nor add the Greek symbols (ideally, in parentheses)
+The following example creates a simple function to automatically customize the table (useful if you will have multiple tables), and adds ICC and R2. I did not have time to organize the fixed and random effects, nor add the Greek symbols (ideally, in parentheses), but I think it's easy to see how well `modelsummary` and `flextable` work together for your multilevel models!
 
 ```{r message=FALSE, warning=FALSE}
 library(tidyverse)
@@ -193,3 +198,9 @@ modelsummary::msummary(list("Null Model" = model_0,
 -----
 
 Do you know a better way to make great MLM tables in R Markdown, or have you figured out a sjPlot hack!? Please let me know.
+
+-----
+
+*Thanks to Vincet Arel-Bundock ([@VincentAB](https://twitter.com/VincentAB); author of `modelsummary`) for the tip about loading `broom.mixed`*
+
+*Thanks to Daniel ([@strengejacke](https://twitter.com/strengejacke); author of `sjPlot`) for pointing out using `dv.labels`*
