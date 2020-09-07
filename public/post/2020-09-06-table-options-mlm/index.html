@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="I am currently taking a multilevel modeling class in my PhD program. It is week 3-ish and I am learning a lot. The course is software-agnostic, meaning we can use any software we want (SPSS, SAS, Stata, R, HLM). The first assignment comes as a data set and word document. I am working completely in R / R Markdown to generate both the data and model analyses and to complete the Word-based homework.">
+  <meta name="description" content="I am currently taking a multilevel modeling class in my PhD program. It is week 3-ish and I am learning a lot. The course is software-agnostic, meaning we can use any software we want (SPSS, SAS, Stata, R, HLM). The first assignment comes as a data set and Word document. I am working completely in R / R Markdown to generate both the data and model analyses and to complete the Word-based homework.">
 
   
   <link rel="alternate" hreflang="en-us" href="/post/2020-09-06-table-options-mlm/">
@@ -154,7 +154,7 @@
   <meta property="og:site_name" content="Anthony Schmidt">
   <meta property="og:url" content="/post/2020-09-06-table-options-mlm/">
   <meta property="og:title" content="R/R Markdown Table Options for Multilevel Models | Anthony Schmidt">
-  <meta property="og:description" content="I am currently taking a multilevel modeling class in my PhD program. It is week 3-ish and I am learning a lot. The course is software-agnostic, meaning we can use any software we want (SPSS, SAS, Stata, R, HLM). The first assignment comes as a data set and word document. I am working completely in R / R Markdown to generate both the data and model analyses and to complete the Word-based homework."><meta property="og:image" content="/img/icon-192.png">
+  <meta property="og:description" content="I am currently taking a multilevel modeling class in my PhD program. It is week 3-ish and I am learning a lot. The course is software-agnostic, meaning we can use any software we want (SPSS, SAS, Stata, R, HLM). The first assignment comes as a data set and Word document. I am working completely in R / R Markdown to generate both the data and model analyses and to complete the Word-based homework."><meta property="og:image" content="/img/icon-192.png">
   <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="en-us">
   
     
@@ -206,7 +206,7 @@
       "url": "/img/icon-512.png"
     }
   },
-  "description": "I am currently taking a multilevel modeling class in my PhD program. It is week 3-ish and I am learning a lot. The course is software-agnostic, meaning we can use any software we want (SPSS, SAS, Stata, R, HLM). The first assignment comes as a data set and word document. I am working completely in R / R Markdown to generate both the data and model analyses and to complete the Word-based homework."
+  "description": "I am currently taking a multilevel modeling class in my PhD program. It is week 3-ish and I am learning a lot. The course is software-agnostic, meaning we can use any software we want (SPSS, SAS, Stata, R, HLM). The first assignment comes as a data set and Word document. I am working completely in R / R Markdown to generate both the data and model analyses and to complete the Word-based homework."
 }
 </script>
 
@@ -652,7 +652,7 @@
 <script src="/rmarkdown-libs/tabwid/tabwid.js"></script>
 
 
-<p>I am currently taking a multilevel modeling class in my PhD program. It is week 3-ish and I am learning a lot. The course is software-agnostic, meaning we can use any software we want (SPSS, SAS, Stata, R, HLM). The first assignment comes as a data set and word document. I am working completely in R / R Markdown to generate both the data and model analyses and to complete the Word-based homework. Because I am working in an R -&gt; Word workflow, I need to know what options I have for creating nice tables of my models.</p>
+<p>I am currently taking a multilevel modeling class in my PhD program. It is week 3-ish and I am learning a lot. The course is software-agnostic, meaning we can use any software we want (SPSS, SAS, Stata, R, HLM). The first assignment comes as a data set and Word document. I am working completely in R / R Markdown to generate both the data and model analyses and to complete the Word-based homework. Because I am working in an R -&gt; Word workflow, I need to know what options I have for creating nice tables of my models.</p>
 <p>So, I am taking a break from my first assignment to compare the default output of the most popular R model summary packages, look at some extended features, and make a cross-package comparison for my own future reference.</p>
 <p>Let’s begin!</p>
 <div id="the-models" class="section level2">
@@ -727,7 +727,7 @@ model_1_lmertest &lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#sbziiuvqpr .gt_table {
+#idgjxlbpai .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -750,7 +750,7 @@ model_1_lmertest &lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F
   border-left-color: #D3D3D3;
 }
 
-#sbziiuvqpr .gt_heading {
+#idgjxlbpai .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -762,7 +762,7 @@ model_1_lmertest &lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F
   border-right-color: #D3D3D3;
 }
 
-#sbziiuvqpr .gt_title {
+#idgjxlbpai .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -772,7 +772,7 @@ model_1_lmertest &lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F
   border-bottom-width: 0;
 }
 
-#sbziiuvqpr .gt_subtitle {
+#idgjxlbpai .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -782,13 +782,13 @@ model_1_lmertest &lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F
   border-top-width: 0;
 }
 
-#sbziiuvqpr .gt_bottom_border {
+#idgjxlbpai .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#sbziiuvqpr .gt_col_headings {
+#idgjxlbpai .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -803,7 +803,7 @@ model_1_lmertest &lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F
   border-right-color: #D3D3D3;
 }
 
-#sbziiuvqpr .gt_col_heading {
+#idgjxlbpai .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -823,7 +823,7 @@ model_1_lmertest &lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F
   overflow-x: hidden;
 }
 
-#sbziiuvqpr .gt_column_spanner_outer {
+#idgjxlbpai .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -835,15 +835,15 @@ model_1_lmertest &lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F
   padding-right: 4px;
 }
 
-#sbziiuvqpr .gt_column_spanner_outer:first-child {
+#idgjxlbpai .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#sbziiuvqpr .gt_column_spanner_outer:last-child {
+#idgjxlbpai .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#sbziiuvqpr .gt_column_spanner {
+#idgjxlbpai .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -855,7 +855,7 @@ model_1_lmertest &lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F
   width: 100%;
 }
 
-#sbziiuvqpr .gt_group_heading {
+#idgjxlbpai .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -877,7 +877,7 @@ model_1_lmertest &lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F
   vertical-align: middle;
 }
 
-#sbziiuvqpr .gt_empty_group_heading {
+#idgjxlbpai .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -892,19 +892,19 @@ model_1_lmertest &lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F
   vertical-align: middle;
 }
 
-#sbziiuvqpr .gt_striped {
+#idgjxlbpai .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#sbziiuvqpr .gt_from_md > :first-child {
+#idgjxlbpai .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#sbziiuvqpr .gt_from_md > :last-child {
+#idgjxlbpai .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#sbziiuvqpr .gt_row {
+#idgjxlbpai .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -923,7 +923,7 @@ model_1_lmertest &lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F
   overflow-x: hidden;
 }
 
-#sbziiuvqpr .gt_stub {
+#idgjxlbpai .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -935,7 +935,7 @@ model_1_lmertest &lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F
   padding-left: 12px;
 }
 
-#sbziiuvqpr .gt_summary_row {
+#idgjxlbpai .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -945,7 +945,7 @@ model_1_lmertest &lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F
   padding-right: 5px;
 }
 
-#sbziiuvqpr .gt_first_summary_row {
+#idgjxlbpai .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -955,7 +955,7 @@ model_1_lmertest &lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F
   border-top-color: #D3D3D3;
 }
 
-#sbziiuvqpr .gt_grand_summary_row {
+#idgjxlbpai .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -965,7 +965,7 @@ model_1_lmertest &lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F
   padding-right: 5px;
 }
 
-#sbziiuvqpr .gt_first_grand_summary_row {
+#idgjxlbpai .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -975,7 +975,7 @@ model_1_lmertest &lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F
   border-top-color: #D3D3D3;
 }
 
-#sbziiuvqpr .gt_table_body {
+#idgjxlbpai .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -984,7 +984,7 @@ model_1_lmertest &lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F
   border-bottom-color: #D3D3D3;
 }
 
-#sbziiuvqpr .gt_footnotes {
+#idgjxlbpai .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -998,13 +998,13 @@ model_1_lmertest &lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F
   border-right-color: #D3D3D3;
 }
 
-#sbziiuvqpr .gt_footnote {
+#idgjxlbpai .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#sbziiuvqpr .gt_sourcenotes {
+#idgjxlbpai .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1018,46 +1018,46 @@ model_1_lmertest &lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F
   border-right-color: #D3D3D3;
 }
 
-#sbziiuvqpr .gt_sourcenote {
+#idgjxlbpai .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#sbziiuvqpr .gt_left {
+#idgjxlbpai .gt_left {
   text-align: left;
 }
 
-#sbziiuvqpr .gt_center {
+#idgjxlbpai .gt_center {
   text-align: center;
 }
 
-#sbziiuvqpr .gt_right {
+#idgjxlbpai .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#sbziiuvqpr .gt_font_normal {
+#idgjxlbpai .gt_font_normal {
   font-weight: normal;
 }
 
-#sbziiuvqpr .gt_font_bold {
+#idgjxlbpai .gt_font_bold {
   font-weight: bold;
 }
 
-#sbziiuvqpr .gt_font_italic {
+#idgjxlbpai .gt_font_italic {
   font-style: italic;
 }
 
-#sbziiuvqpr .gt_super {
+#idgjxlbpai .gt_super {
   font-size: 65%;
 }
 
-#sbziiuvqpr .gt_footnote_marks {
+#idgjxlbpai .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="sbziiuvqpr" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="idgjxlbpai" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   
   <thead class="gt_col_headings">
     <tr>
@@ -1109,7 +1109,7 @@ model_1_lmertest &lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#xdtjffbonr .gt_table {
+#lemtiduusa .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1132,7 +1132,7 @@ model_1_lmertest &lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F
   border-left-color: #D3D3D3;
 }
 
-#xdtjffbonr .gt_heading {
+#lemtiduusa .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1144,7 +1144,7 @@ model_1_lmertest &lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F
   border-right-color: #D3D3D3;
 }
 
-#xdtjffbonr .gt_title {
+#lemtiduusa .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1154,7 +1154,7 @@ model_1_lmertest &lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F
   border-bottom-width: 0;
 }
 
-#xdtjffbonr .gt_subtitle {
+#lemtiduusa .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1164,13 +1164,13 @@ model_1_lmertest &lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F
   border-top-width: 0;
 }
 
-#xdtjffbonr .gt_bottom_border {
+#lemtiduusa .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#xdtjffbonr .gt_col_headings {
+#lemtiduusa .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1185,7 +1185,7 @@ model_1_lmertest &lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F
   border-right-color: #D3D3D3;
 }
 
-#xdtjffbonr .gt_col_heading {
+#lemtiduusa .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1205,7 +1205,7 @@ model_1_lmertest &lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F
   overflow-x: hidden;
 }
 
-#xdtjffbonr .gt_column_spanner_outer {
+#lemtiduusa .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1217,15 +1217,15 @@ model_1_lmertest &lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F
   padding-right: 4px;
 }
 
-#xdtjffbonr .gt_column_spanner_outer:first-child {
+#lemtiduusa .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#xdtjffbonr .gt_column_spanner_outer:last-child {
+#lemtiduusa .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#xdtjffbonr .gt_column_spanner {
+#lemtiduusa .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1237,7 +1237,7 @@ model_1_lmertest &lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F
   width: 100%;
 }
 
-#xdtjffbonr .gt_group_heading {
+#lemtiduusa .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1259,7 +1259,7 @@ model_1_lmertest &lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F
   vertical-align: middle;
 }
 
-#xdtjffbonr .gt_empty_group_heading {
+#lemtiduusa .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1274,19 +1274,19 @@ model_1_lmertest &lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F
   vertical-align: middle;
 }
 
-#xdtjffbonr .gt_striped {
+#lemtiduusa .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#xdtjffbonr .gt_from_md > :first-child {
+#lemtiduusa .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#xdtjffbonr .gt_from_md > :last-child {
+#lemtiduusa .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#xdtjffbonr .gt_row {
+#lemtiduusa .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1305,7 +1305,7 @@ model_1_lmertest &lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F
   overflow-x: hidden;
 }
 
-#xdtjffbonr .gt_stub {
+#lemtiduusa .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1317,7 +1317,7 @@ model_1_lmertest &lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F
   padding-left: 12px;
 }
 
-#xdtjffbonr .gt_summary_row {
+#lemtiduusa .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1327,7 +1327,7 @@ model_1_lmertest &lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F
   padding-right: 5px;
 }
 
-#xdtjffbonr .gt_first_summary_row {
+#lemtiduusa .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1337,7 +1337,7 @@ model_1_lmertest &lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F
   border-top-color: #D3D3D3;
 }
 
-#xdtjffbonr .gt_grand_summary_row {
+#lemtiduusa .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1347,7 +1347,7 @@ model_1_lmertest &lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F
   padding-right: 5px;
 }
 
-#xdtjffbonr .gt_first_grand_summary_row {
+#lemtiduusa .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1357,7 +1357,7 @@ model_1_lmertest &lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F
   border-top-color: #D3D3D3;
 }
 
-#xdtjffbonr .gt_table_body {
+#lemtiduusa .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1366,7 +1366,7 @@ model_1_lmertest &lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F
   border-bottom-color: #D3D3D3;
 }
 
-#xdtjffbonr .gt_footnotes {
+#lemtiduusa .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1380,13 +1380,13 @@ model_1_lmertest &lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F
   border-right-color: #D3D3D3;
 }
 
-#xdtjffbonr .gt_footnote {
+#lemtiduusa .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#xdtjffbonr .gt_sourcenotes {
+#lemtiduusa .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1400,46 +1400,46 @@ model_1_lmertest &lt;- lmerTest::lmer(body_mass_g ~ sex + (1 | island), REML = F
   border-right-color: #D3D3D3;
 }
 
-#xdtjffbonr .gt_sourcenote {
+#lemtiduusa .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#xdtjffbonr .gt_left {
+#lemtiduusa .gt_left {
   text-align: left;
 }
 
-#xdtjffbonr .gt_center {
+#lemtiduusa .gt_center {
   text-align: center;
 }
 
-#xdtjffbonr .gt_right {
+#lemtiduusa .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#xdtjffbonr .gt_font_normal {
+#lemtiduusa .gt_font_normal {
   font-weight: normal;
 }
 
-#xdtjffbonr .gt_font_bold {
+#lemtiduusa .gt_font_bold {
   font-weight: bold;
 }
 
-#xdtjffbonr .gt_font_italic {
+#lemtiduusa .gt_font_italic {
   font-style: italic;
 }
 
-#xdtjffbonr .gt_super {
+#lemtiduusa .gt_super {
   font-size: 65%;
 }
 
-#xdtjffbonr .gt_footnote_marks {
+#lemtiduusa .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="xdtjffbonr" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="lemtiduusa" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   
   <thead class="gt_col_headings">
     <tr>
