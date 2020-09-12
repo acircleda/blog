@@ -5,12 +5,31 @@
     <link>/tags/climate-change/</link>
       <atom:link href="/tags/climate-change/index.xml" rel="self" type="application/rss+xml" />
     <description>Climate Change</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 11 May 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 12 Sep 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Climate Change</title>
       <link>/tags/climate-change/</link>
     </image>
+    
+    <item>
+      <title>What do institutional policies have to say about #flyingless?</title>
+      <link>/post/what-do-institutional-policies-have-to-say-about-flyingless/</link>
+      <pubDate>Sat, 12 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>/post/what-do-institutional-policies-have-to-say-about-flyingless/</guid>
+      <description>&lt;p&gt;This summer, I undertook a small research project that examined institutional policies related to climate change. These mostly included Climate Action Plans and Sustainability Plans, as well as reports, updates, and any other relevant documents available on institutional sustainability websites.&lt;/p&gt;
+
+&lt;p&gt;My focus was on how these policies discussed Scope 3 emissions related to flying (usually termed &amp;ldquo;business air travel&amp;rdquo;). I wanted to see how these policies discussed and addressed the issue of flying in academia.&lt;/p&gt;
+
+&lt;p&gt;There is a lot to say on this subject, and my manuscript for this particular research project is still under development. In the meantime, I have condensed some of the key findings in the one-page summary below.&lt;/p&gt;
+
+&lt;p&gt;&lt;object data=&#34;one page summary-general.pdf&#34; type=&#34;application/pdf&#34; width=&#34;100%&#34; height=&#34;700px&#34;&gt;
+    &lt;embed src=&#34;one page summary-general.pdf&#34;&gt;
+        &lt;p&gt;This browser does not support PDFs. Please download the PDF to view it: &lt;a href=&#34;one page summary-general.pdf&#34;&gt;Download PDF&lt;/a&gt;.&lt;/p&gt;
+    &lt;/embed&gt;
+&lt;/object&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Air Travel Emissions Calculator in R</title>

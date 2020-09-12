@@ -19,7 +19,27 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2020-09-06T00:00:00+00:00</lastmod>
+    <lastmod>2020-09-12T19:29:09-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/climate-change/</loc>
+    <lastmod>2020-09-12T19:29:09-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2020-09-12T19:29:09-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-09-12T19:29:09-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/what-do-institutional-policies-have-to-say-about-flyingless/</loc>
+    <lastmod>2020-09-12T19:29:09-04:00</lastmod>
   </url>
   
   <url>
@@ -28,17 +48,7 @@
   </url>
   
   <url>
-    <loc>/post/</loc>
-    <lastmod>2020-09-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/post/2020-09-06-table-options-mlm/</loc>
-    <lastmod>2020-09-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
     <lastmod>2020-09-06T00:00:00+00:00</lastmod>
   </url>
   
@@ -134,11 +144,6 @@
   
   <url>
     <loc>/post/2020-05-08-emission-calculator-in-r/</loc>
-    <lastmod>2020-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/climate-change/</loc>
     <lastmod>2020-05-11T00:00:00+00:00</lastmod>
   </url>
   
