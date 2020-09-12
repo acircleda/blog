@@ -16,6 +16,12 @@ image:
   focal_point: ''
   preview_only: no
 projects: []
+twitter:
+- card: "summary_large_image"
+- site: "@AnthonyTeacher"
+- creator: "@AnthonyTeacher"
+- title: "What do institutional policies have to say about #flyingless?"
+- image: "one page summary-general.jpg"
 ---
 
 This summer, I undertook a small research project that examined institutional policies related to climate change. These mostly included Climate Action Plans and Sustainability Plans, as well as reports, updates, and any other relevant documents available on institutional sustainability websites.
