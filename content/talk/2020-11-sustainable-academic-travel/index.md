@@ -24,7 +24,7 @@ publishDate: "2020-11-25T00:00:00Z"
 tags: [Climate Change]
 title: "University Air Travel and GHG Mitigation: Examining Institutional Policies through the Lens of #flyingless"
 url_code: ""
-url_pdf: "Academic Travel Roundtable.pdf"
+url_pdf: "https://www.anthonyschmidt.co/talk/2020-11-sustainable-academic-travel/Academic Travel Roundtable.pdf"
 url_slides: ""
 url_video: ""
 ---

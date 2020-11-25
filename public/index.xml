@@ -5369,7 +5369,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
 &lt;tr class=&#34;even&#34;&gt;
 &lt;td align=&#34;left&#34;&gt;Short-haul&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Medium-haul&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&amp;gt; 483, &amp;lt; 3,700 km&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;483 &amp;lt; 3,700 km&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;odd&#34;&gt;
 &lt;td align=&#34;left&#34;&gt;Long-haul&lt;/td&gt;
