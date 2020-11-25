@@ -43,7 +43,7 @@ Given this small amount of uncertainty, I decided to use the DEFRA data, but EPA
 ```{r, echo=FALSE}
 data_mappings <- data.frame(DEFRA=c("Domestic", "Short-haul", "Long-haul"),
                             EPA=c("Short-haul", "Medium-haul", "Long-haul"),
-                            Distance=c("< 483 km", "< 483, < 3,700 km", "> 3700 km"))
+                            Distance=c("< 483 km", "483 < 3,700 km", "> 3700 km"))
 
 data_mappings %>%
   knitr::kable()

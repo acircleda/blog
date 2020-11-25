@@ -18,8 +18,38 @@
   </url>
   
   <url>
+    <loc>/authors/admin/</loc>
+    <lastmod>2020-11-25T09:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/</loc>
-    <lastmod>2020-09-27T00:00:00+00:00</lastmod>
+    <lastmod>2020-11-25T09:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/authors/</loc>
+    <lastmod>2020-11-25T09:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/climate-change/</loc>
+    <lastmod>2020-11-25T09:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/talk/</loc>
+    <lastmod>2020-11-25T09:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-11-25T09:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/talk/2020-11-sustainable-academic-travel/</loc>
+    <lastmod>2020-11-25T09:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -38,16 +68,6 @@
   </url>
   
   <url>
-    <loc>/tags/</loc>
-    <lastmod>2020-09-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/climate-change/</loc>
-    <lastmod>2020-09-12T19:29:09-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/post/what-do-institutional-policies-have-to-say-about-flyingless/</loc>
     <lastmod>2020-09-12T19:29:09-04:00</lastmod>
   </url>
@@ -58,22 +78,12 @@
   </url>
   
   <url>
-    <loc>/authors/admin/</loc>
-    <lastmod>2020-08-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/publication_types/2/</loc>
     <lastmod>2020-08-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/publication/are-international-students-getting-a-bang-for-their-buck/</loc>
-    <lastmod>2020-08-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/authors/</loc>
     <lastmod>2020-08-15T00:00:00+00:00</lastmod>
   </url>
   
@@ -169,11 +179,6 @@
   
   <url>
     <loc>/talk/2020-3-becoming-tidyr-over-time/</loc>
-    <lastmod>2020-03-11T12:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/talk/</loc>
     <lastmod>2020-03-11T12:00:00+00:00</lastmod>
   </url>
   

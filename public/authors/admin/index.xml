@@ -5,12 +5,20 @@
     <link>/authors/admin/</link>
       <atom:link href="/authors/admin/index.xml" rel="self" type="application/rss+xml" />
     <description>Anthony Schmidt</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 15 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 25 Nov 2020 09:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Anthony Schmidt</title>
       <link>/authors/admin/</link>
     </image>
+    
+    <item>
+      <title>University Air Travel and GHG Mitigation: Examining Institutional Policies through the Lens of #flyingless</title>
+      <link>/talk/2020-11-sustainable-academic-travel/</link>
+      <pubDate>Wed, 25 Nov 2020 09:00:00 +0000</pubDate>
+      <guid>/talk/2020-11-sustainable-academic-travel/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Are International Students Getting a Bang for their Buck? The Relationship between Expenditures and International Student Graduation Rates</title>

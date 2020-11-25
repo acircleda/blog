@@ -5188,6 +5188,8 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
       <pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate>
       <guid>/post/2020-05-08-emission-calculator-in-r/</guid>
       <description>
+&lt;link href=&#34;/rmarkdown-libs/anchor-sections/anchor-sections.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;/rmarkdown-libs/anchor-sections/anchor-sections.js&#34;&gt;&lt;/script&gt;
 
 
 &lt;p&gt;&lt;strong&gt;(TL;DR: &lt;a href=&#34;https://github.com/acircleda/Flight-Emissions-Calculator&#34;&gt;Here is the calculator&lt;/a&gt;)&lt;/strong&gt;&lt;/p&gt;
@@ -5216,7 +5218,7 @@ Square brackets are used to enclose the lower and upper limits of a confidence i
 &lt;tr class=&#34;even&#34;&gt;
 &lt;td align=&#34;left&#34;&gt;Short-haul&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Medium-haul&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&amp;lt; 483, &amp;lt; 3,700 km&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&amp;gt; 483, &amp;lt; 3,700 km&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;odd&#34;&gt;
 &lt;td align=&#34;left&#34;&gt;Long-haul&lt;/td&gt;
