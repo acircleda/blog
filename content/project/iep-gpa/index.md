@@ -4,18 +4,13 @@ external_link: ""
 image:
   caption: Photo by Jack Parker / UTK
   focal_point: Smart
-links:
-- icon: twitter
-  icon_pack: fab
-  name: Follow
-  url: https://twitter.com/georgecushen
 slides: example
 summary: A comparison of IEP and directly-admitted students.
 tags:
   - Project
   - Education
   - International Students
-title: The Efficacy of an Intensive English program
+title: Intensive English Program Student Academic Achievement
 url_code: ""
 url_pdf: ""
 url_slides: ""

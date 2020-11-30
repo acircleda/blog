@@ -47,5 +47,5 @@
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
 [[main]]
   name = "CV"
-  url = "https://github.com/acircleda/CV/blob/master/hyndman/Anthony_Schmidt_CV_hyndman.pdf"
+  url = "https://github.com/acircleda/CV/blob/master/hyndman/Anthony_Schmidt_CV.pdf"
   weight = 90

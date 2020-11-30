@@ -4,11 +4,6 @@ external_link: ""
 image:
   caption: Image by Mediamodifier from Pixabay
   focal_point: Smart
-links:
-- icon: twitter
-  icon_pack: fab
-  name: Follow
-  url: https://twitter.com/anthonyteacher
 slides:
 summary: This is an ongoing project to analyze the skills and competencies as expressed in data-related job postings.
 

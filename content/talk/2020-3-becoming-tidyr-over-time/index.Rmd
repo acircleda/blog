@@ -15,11 +15,6 @@ featured: false
 image:
   caption: 'Image credit: [**UTK**](https://cehhs.utk.edu/2020-graduate-student-advisory-board-graduate-research-colloquium/)'
   focal_point: Right
-links:
-- icon: twitter
-  icon_pack: fab
-  name: Follow
-  url: https://twitter.com/anthonyteacher
 location: 
 math: true
 projects:

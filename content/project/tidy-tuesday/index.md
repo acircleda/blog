@@ -4,11 +4,6 @@ external_link: ""
 image:
   caption: Photo by Jack Parker / UTK
   focal_point: Smart
-links:
-- icon: twitter
-  icon_pack: fab
-  name: Follow
-  url: https://twitter.com/anthonyteacher
 slides: example
 summary: Understanding the development of data visualization skills in an online community of practice.
 tags:

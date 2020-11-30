@@ -4,11 +4,6 @@ external_link: ""
 image:
   caption: Image by David Mark from Pixabay 
   focal_point: Smart
-links:
-- icon: twitter
-  icon_pack: fab
-  name: Follow
-  url: https://twitter.com/anthonyteacher
 slides:
 summary: The "Fly or Die" project is a multi-survey research project that looks at the complex relationship between graduate student conference travel, employability, and the climate crisis.
 
