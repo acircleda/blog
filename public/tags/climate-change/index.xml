@@ -49,7 +49,7 @@
 &lt;script src=&#34;/rmarkdown-libs/anchor-sections/anchor-sections.js&#34;&gt;&lt;/script&gt;
 
 
-&lt;p&gt;&lt;strong&gt;(TL;DR: &lt;a href=&#34;https://github.com/acircleda/Flight-Emissions-Calculator&#34;&gt;Here is the calculator&lt;/a&gt;)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note: this is now a &lt;a href=&#34;https://github.com/acircleda/footprint&#34;&gt;package&lt;/a&gt;! Please visit the link to install and see updated code. It follows the same methodology as below but includes functionality to calculate footprint by latitude and longitude as well as airport codes&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;I am hoping to soon be working with a data set of travel data for which I will need to calculate carbon emissions of flights. There are a number of online calculators, but none that I know of that could be pulled into R to call as a function and or be used to process data.&lt;/p&gt;
 &lt;div id=&#34;whats-in-an-emissions-calculator&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;What’s in an Emissions Calculator?&lt;/h2&gt;

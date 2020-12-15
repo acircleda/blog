@@ -13,7 +13,7 @@ featured: null
 preview_only: no
 projects: []
 subtitle: ''
-summary: "**(TL;DR: [Here is the calculator](https://github.com/acircleda/Flight-Emissions-Calculator))**
+summary: "**Note: this is now a [package](https://github.com/acircleda/footprint)!**
 
 I am hoping to soon be working with a data set of travel data for which I will need to calculate carbon emissions of flights. There are a number of online calculators, but none that I know of that could be pulled into R to call as a function and or be used to process data."
 tags:
@@ -21,10 +21,11 @@ tags:
 - Climate Change
 authors: []
 ---
+
 ```{r message=FALSE, warning=FALSE, echo=FALSE}
 library(tidyverse)
 ```
-**(TL;DR: [Here is the calculator](https://github.com/acircleda/Flight-Emissions-Calculator))**
+**Note: this is now a [package](https://github.com/acircleda/footprint)! Please visit the link to install and see updated code. It follows the same methodology as below but includes functionality to calculate footprint by latitude and longitude as well as airport codes**
 
 I am hoping to soon be working with a data set of travel data for which I will need to calculate carbon emissions of flights. There are a number of online calculators, but none that I know of that could be pulled into R to call as a function and or be used to process data.
 
