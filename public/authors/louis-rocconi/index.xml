@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Louis Rocconi | Anthony Schmidt</title>
+    <link>/authors/louis-rocconi/</link>
+      <atom:link href="/authors/louis-rocconi/index.xml" rel="self" type="application/rss+xml" />
+    <description>Louis Rocconi</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 19 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Louis Rocconi</title>
+      <link>/authors/louis-rocconi/</link>
+    </image>
+    
+    <item>
+      <title>STARS and Stripes: Political and Institutional Factors that Affect Higher Education Sustainability Ratings</title>
+      <link>/publication/stars/</link>
+      <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>/publication/stars/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
