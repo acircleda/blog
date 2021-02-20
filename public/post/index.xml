@@ -5,12 +5,424 @@
     <link>/post/</link>
       <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 27 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 21 Feb 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Posts</title>
       <link>/post/</link>
     </image>
+    
+    <item>
+      <title>Making a Correlation Table with Highlighted Values</title>
+      <link>/post/2021-02-20-correlation-table-highlighting/</link>
+      <pubDate>Sun, 21 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>/post/2021-02-20-correlation-table-highlighting/</guid>
+      <description>
+&lt;link href=&#34;/rmarkdown-libs/tabwid/tabwid.css&#34; rel=&#34;stylesheet&#34; /&gt;
+
+
+&lt;p&gt;This blog post is inspired by a structural equation modeling class I am currently taking. Part of assessing model fit is examining model residuals derived between the observed variance-covariance matrix &lt;span class=&#34;math inline&#34;&gt;\(S\)&lt;/span&gt; and the model-implied variance-covariance matrix &lt;span class=&#34;math inline&#34;&gt;\(\Sigma\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;One way to do this is to examine the residual correlation matrix (i.e. the standardized version of the variance-covariance matrix). However, these matrices can end up being huge and it might be difficult to identify troublesome residuals. I thought it would be useful if you could not only produce the matrix but also highlight the values based on some set threshhold.&lt;/p&gt;
+&lt;p&gt;What I am talking about is a heatmap and it it not only useful in SEM. Any type of correlation matrix can benefit from heatmaps and I see several great approaches to this:&lt;/p&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;First, &lt;a href=&#34;http://www.sthda.com/english/wiki/ggplot2-quick-correlation-matrix-heatmap-r-software-and-data-visualization&#34;&gt;you can make one using &lt;code&gt;ggplot&lt;/code&gt;&lt;/a&gt;, but this produces an image not a table.&lt;/li&gt;
+&lt;li&gt;You can &lt;a href=&#34;https://www.r-graph-gallery.com/correlogram.html&#34;&gt;make a correlogram&lt;/a&gt;, but, again this is an image, not a table.&lt;/li&gt;
+&lt;li&gt;Use the &lt;code&gt;flextable&lt;/code&gt; package. This is especially useful if you want to knit to a Word document.&lt;/li&gt;
+&lt;li&gt;Use the &lt;code&gt;ztable&lt;/code&gt; package’s &lt;code&gt;makeheatmap&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This blog post will explore the latter two options. It will use the &lt;code&gt;mtcars&lt;/code&gt; data set. So, let’s prepare a correlation matrix based on that first.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(tidyverse)
+
+# create data set for correlation
+my_data &amp;lt;- mtcars %&amp;gt;%
+  select(1,3,4,5,6,7)
+
+# make initial correlation matrix
+cor_mat &amp;lt;- cor(my_data)
+
+# erase the upper triangle
+cor_mat[upper.tri(cor_mat)] &amp;lt;- NA 
+
+# remove the 1s on the diagonal
+diag(cor_mat) &amp;lt;- NA 
+
+# make the matrix a data frame
+cor_mat &amp;lt;- cor_mat %&amp;gt;%
+  as.data.frame() %&amp;gt;%
+  rownames_to_column(&amp;quot;var&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;div id=&#34;use-flextable&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Use &lt;code&gt;flextable&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;I love using &lt;code&gt;flextable&lt;/code&gt; for many reasons but mostly because it works so well within Word documents, and I have to use Word documents a lot. This first approach simply colors cells based on a whether the value in the cell is greater than (or less than, or equal to) some pre-specified value.&lt;/p&gt;
+&lt;p&gt;In the code below, we pipe our matrix/dataframe into &lt;code&gt;flextable&lt;/code&gt; and then use &lt;code&gt;flextable::bg&lt;/code&gt; to use columns 2 to the end and then we specify a function which loops over the columns and for each cell sets it first to transparent and then, if &amp;lt; .1, sets it to light blue.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(flextable)
+
+cor_mat %&amp;gt;%
+  flextable() %&amp;gt;%
+  bg(bg = function(x){
+                  out &amp;lt;- rep(&amp;quot;transparent&amp;quot;, length(x))
+                  out[x &amp;lt; .1] &amp;lt;- &amp;quot;light blue&amp;quot;
+                  out
+                })&lt;/code&gt;&lt;/pre&gt;
+&lt;template id=&#34;36ed2d53-bb4e-4a7e-86a9-96bcd6e9f313&#34;&gt;&lt;style&gt;
+.tabwid table{
+  border-collapse:collapse;
+  line-height:1;
+  margin-left:auto;
+  margin-right:auto;
+  border-width: 0;
+  display: table;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  table-layout: fixed;
+  border-spacing: 0;
+  border-color: transparent;
+}
+.tabwid_left table{
+  margin-left:0;
+}
+.tabwid_right table{
+  margin-right:0;
+}
+.tabwid td {
+    padding: 0;
+}
+.tabwid a {
+  text-decoration: none;
+}
+.tabwid thead {
+    background-color: transparent;
+}
+.tabwid tfoot {
+    background-color: transparent;
+}
+.tabwid table tr {
+background-color: transparent;
+}
+&lt;/style&gt;&lt;div class=&#34;tabwid&#34;&gt;&lt;style&gt;.cl-516d5e0c{border-collapse:collapse;}.cl-515bd1e6{font-family:&#39;Arial&#39;;font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-515bf8f6{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:3pt;padding-top:3pt;padding-left:3pt;padding-right:3pt;line-height: 1;background-color:transparent;}.cl-515bf8f7{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:3pt;padding-top:3pt;padding-left:3pt;padding-right:3pt;line-height: 1;background-color:transparent;}.cl-515c6e12{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-515c6e13{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-515c6e14{width:54pt;background-clip: padding-box;background-color:rgba(173, 216, 230, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-515c6e15{width:54pt;background-clip: padding-box;background-color:rgba(173, 216, 230, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-515c6e16{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-515c6e17{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-515c6e18{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-515c6e19{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}&lt;/style&gt;&lt;table class=&#39;cl-516d5e0c&#39;&gt;
+&lt;thead&gt;&lt;tr style=&#34;overflow-wrap:break-word;&#34;&gt;&lt;td class=&#34;cl-515c6e19&#34;&gt;&lt;p class=&#34;cl-515bf8f6&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;var&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e18&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;mpg&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e18&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;disp&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e18&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;hp&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e18&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;drat&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e18&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;wt&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e18&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;qsec&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr style=&#34;overflow-wrap:break-word;&#34;&gt;&lt;td class=&#34;cl-515c6e13&#34;&gt;&lt;p class=&#34;cl-515bf8f6&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;mpg&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e12&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e12&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e12&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e12&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e12&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e12&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&#34;overflow-wrap:break-word;&#34;&gt;&lt;td class=&#34;cl-515c6e13&#34;&gt;&lt;p class=&#34;cl-515bf8f6&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;disp&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e14&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;-0.85&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e12&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e12&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e12&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e12&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e12&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&#34;overflow-wrap:break-word;&#34;&gt;&lt;td class=&#34;cl-515c6e13&#34;&gt;&lt;p class=&#34;cl-515bf8f6&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;hp&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e14&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;-0.78&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e12&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;0.79&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e12&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e12&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e12&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e12&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&#34;overflow-wrap:break-word;&#34;&gt;&lt;td class=&#34;cl-515c6e13&#34;&gt;&lt;p class=&#34;cl-515bf8f6&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;drat&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e12&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;0.68&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e14&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;-0.71&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e14&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;-0.45&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e12&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e12&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e12&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&#34;overflow-wrap:break-word;&#34;&gt;&lt;td class=&#34;cl-515c6e13&#34;&gt;&lt;p class=&#34;cl-515bf8f6&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;wt&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e14&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;-0.87&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e12&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;0.89&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e12&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;0.66&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e14&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;-0.712&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e12&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e12&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&#34;overflow-wrap:break-word;&#34;&gt;&lt;td class=&#34;cl-515c6e17&#34;&gt;&lt;p class=&#34;cl-515bf8f6&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;qsec&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e16&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;0.42&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e15&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;-0.43&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e15&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;-0.71&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e15&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;0.091&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e15&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;-0.17&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-515c6e16&#34;&gt;&lt;p class=&#34;cl-515bf8f7&#34;&gt;&lt;span class=&#34;cl-515bd1e6&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;/template&gt;
+&lt;div id=&#34;7e5bc9b6-60fa-4b4c-ba74-14defb0ce219&#34;&gt;&lt;/div&gt;
+&lt;script&gt;
+var dest = document.getElementById(&#34;7e5bc9b6-60fa-4b4c-ba74-14defb0ce219&#34;);
+var template = document.getElementById(&#34;36ed2d53-bb4e-4a7e-86a9-96bcd6e9f313&#34;);
+var caption = template.content.querySelector(&#34;caption&#34;);
+if(caption) {
+  caption.style.cssText = &#34;display:block;&#34;
+  var newcapt = document.createElement(&#34;p&#34;);
+  newcapt.appendChild(caption)
+  dest.parentNode.insertBefore(newcapt, dest.previousSibling);
+}
+var fantome = dest.attachShadow({mode: &#39;open&#39;});
+var templateContent = template.content;
+fantome.appendChild(templateContent);
+fantome.appendChild(templateContent);
+&lt;/script&gt;
+
+&lt;p&gt;&lt;em&gt;Note: I had help on this one from &lt;a href=&#34;https://stackoverflow.com/questions/66174645/conditional-formatting-of-flextable-correlation-table/66174823?noredirect=1#comment117002339_66174823&#34;&gt;Stack Overflow&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;The code quickly highlights cells based on a single criteria. It does not make a heatmap where ranges of values are represented by a sequential palette of colors from light to dark. However, you could specify multiple criteria using multiple lines of &lt;code&gt;out[x &amp;lt; #] &amp;lt;- &#34;color&#34;&lt;/code&gt;. For example, in the code below, values less than .1 are light blue and values above .5 are coral.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;cor_mat %&amp;gt;%
+  flextable() %&amp;gt;%
+  bg(j = 2:ncol(cor_mat),
+     bg = function(x){
+                  out &amp;lt;- rep(&amp;quot;transparent&amp;quot;, length(x))
+                  out[x &amp;lt; .1] &amp;lt;- &amp;quot;light blue&amp;quot;
+                  out[x &amp;gt; .5] &amp;lt;- &amp;quot;coral&amp;quot;
+                  out
+                })&lt;/code&gt;&lt;/pre&gt;
+&lt;template id=&#34;90dea1f8-57e0-4910-8901-690b4b4c2809&#34;&gt;&lt;style&gt;
+.tabwid table{
+  border-collapse:collapse;
+  line-height:1;
+  margin-left:auto;
+  margin-right:auto;
+  border-width: 0;
+  display: table;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  table-layout: fixed;
+  border-spacing: 0;
+  border-color: transparent;
+}
+.tabwid_left table{
+  margin-left:0;
+}
+.tabwid_right table{
+  margin-right:0;
+}
+.tabwid td {
+    padding: 0;
+}
+.tabwid a {
+  text-decoration: none;
+}
+.tabwid thead {
+    background-color: transparent;
+}
+.tabwid tfoot {
+    background-color: transparent;
+}
+.tabwid table tr {
+background-color: transparent;
+}
+&lt;/style&gt;&lt;div class=&#34;tabwid&#34;&gt;&lt;style&gt;.cl-5191aeec{border-collapse:collapse;}.cl-518777ec{font-family:&#39;Arial&#39;;font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-518777ed{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:3pt;padding-top:3pt;padding-left:3pt;padding-right:3pt;line-height: 1;background-color:transparent;}.cl-518777ee{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:3pt;padding-top:3pt;padding-left:3pt;padding-right:3pt;line-height: 1;background-color:transparent;}.cl-5187c5b2{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5187c5b3{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5187c5b4{width:54pt;background-clip: padding-box;background-color:rgba(173, 216, 230, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5187c5b5{width:54pt;background-clip: padding-box;background-color:rgba(255, 127, 80, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5187c5b6{width:54pt;background-clip: padding-box;background-color:rgba(173, 216, 230, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5187c5b7{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5187c5b8{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5187c5b9{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5187c5ba{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}&lt;/style&gt;&lt;table class=&#39;cl-5191aeec&#39;&gt;
+&lt;thead&gt;&lt;tr style=&#34;overflow-wrap:break-word;&#34;&gt;&lt;td class=&#34;cl-5187c5ba&#34;&gt;&lt;p class=&#34;cl-518777ed&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;var&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b9&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;mpg&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b9&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;disp&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b9&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;hp&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b9&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;drat&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b9&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;wt&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b9&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;qsec&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr style=&#34;overflow-wrap:break-word;&#34;&gt;&lt;td class=&#34;cl-5187c5b3&#34;&gt;&lt;p class=&#34;cl-518777ed&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;mpg&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b2&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b2&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b2&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b2&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b2&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b2&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&#34;overflow-wrap:break-word;&#34;&gt;&lt;td class=&#34;cl-5187c5b3&#34;&gt;&lt;p class=&#34;cl-518777ed&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;disp&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b4&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;-0.85&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b2&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b2&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b2&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b2&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b2&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&#34;overflow-wrap:break-word;&#34;&gt;&lt;td class=&#34;cl-5187c5b3&#34;&gt;&lt;p class=&#34;cl-518777ed&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;hp&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b4&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;-0.78&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b5&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;0.79&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b2&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b2&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b2&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b2&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&#34;overflow-wrap:break-word;&#34;&gt;&lt;td class=&#34;cl-5187c5b3&#34;&gt;&lt;p class=&#34;cl-518777ed&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;drat&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b5&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;0.68&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b4&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;-0.71&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b4&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;-0.45&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b2&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b2&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b2&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&#34;overflow-wrap:break-word;&#34;&gt;&lt;td class=&#34;cl-5187c5b3&#34;&gt;&lt;p class=&#34;cl-518777ed&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;wt&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b4&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;-0.87&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b5&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;0.89&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b5&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;0.66&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b4&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;-0.712&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b2&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b2&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&#34;overflow-wrap:break-word;&#34;&gt;&lt;td class=&#34;cl-5187c5b8&#34;&gt;&lt;p class=&#34;cl-518777ed&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;qsec&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b7&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;0.42&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b6&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;-0.43&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b6&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;-0.71&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b6&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;0.091&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b6&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;-0.17&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-5187c5b7&#34;&gt;&lt;p class=&#34;cl-518777ee&#34;&gt;&lt;span class=&#34;cl-518777ec&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;/template&gt;
+&lt;div id=&#34;7fc54385-0e99-408a-a747-765a6518a55a&#34;&gt;&lt;/div&gt;
+&lt;script&gt;
+var dest = document.getElementById(&#34;7fc54385-0e99-408a-a747-765a6518a55a&#34;);
+var template = document.getElementById(&#34;90dea1f8-57e0-4910-8901-690b4b4c2809&#34;);
+var caption = template.content.querySelector(&#34;caption&#34;);
+if(caption) {
+  caption.style.cssText = &#34;display:block;&#34;
+  var newcapt = document.createElement(&#34;p&#34;);
+  newcapt.appendChild(caption)
+  dest.parentNode.insertBefore(newcapt, dest.previousSibling);
+}
+var fantome = dest.attachShadow({mode: &#39;open&#39;});
+var templateContent = template.content;
+fantome.appendChild(templateContent);
+fantome.appendChild(templateContent);
+&lt;/script&gt;
+
+&lt;p&gt;This works well if you have one or two values to specify, but is not convenient if you are trying to produce an actual heatmap. For that, the approach below is much better.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;use-ztable&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Use &lt;code&gt;ztable&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;The package &lt;code&gt;ztable&lt;/code&gt; offers two useful functions: &lt;code&gt;makeheatmap&lt;/code&gt; and &lt;code&gt;ztable2flextable&lt;/code&gt;. &lt;a href=&#34;https://cran.r-project.org/web/packages/ztable/vignettes/heatmapTable.html&#34;&gt;According to its latest vignette&lt;/a&gt;, only the development version of &lt;code&gt;ztable&lt;/code&gt; currently has the heatmap, so you will have to install it from Github.&lt;/p&gt;
+&lt;p&gt;We can produce a traditional heatmap as follows:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(ztable)
+options(ztable.type=&amp;quot;html&amp;quot;)
+
+ztable(cor_mat) %&amp;gt;%
+  makeHeatmap()&lt;/code&gt;&lt;/pre&gt;
+&lt;head&gt;
+&lt;style&gt;
+        table {
+              font-family: times ;
+color:  black ;
+text-align: right;}
+        th {
+              padding: 1px 1px 5px 5px;
+            }
+        td {
+             padding: 1px 1px 5px 5px; }
+      &lt;/style&gt;
+&lt;/head&gt;
+&lt;table align=&#34;center&#34; style=&#34;border-collapse: collapse; caption-side:top; font-size:11pt;&#34;&gt;
+&lt;caption style=&#34;text-align:center;&#34;&gt;
+&lt;/caption&gt;
+&lt;tr&gt;
+&lt;th style=&#34;border-left: 0px solid black;background-color: #FFFFFF;border-top: 2px solid gray;border-bottom: 1px solid gray;&#34;&gt;
+ 
+&lt;/th&gt;
+&lt;th &lt;th align=&#34;center&#34; style=&#34;font-weight: normal;border-left: 0px solid black;border-bottom: 1px solid gray;border-top: 2px solid gray;&#34;&gt;var&lt;/th&gt;
+&lt;th &lt;th align=&#34;center&#34; style=&#34;font-weight: normal;border-left: 0px solid black;border-bottom: 1px solid gray;border-top: 2px solid gray;&#34;&gt;mpg&lt;/th&gt;
+&lt;th &lt;th align=&#34;center&#34; style=&#34;font-weight: normal;border-left: 0px solid black;border-bottom: 1px solid gray;border-top: 2px solid gray;&#34;&gt;disp&lt;/th&gt;
+&lt;th &lt;th align=&#34;center&#34; style=&#34;font-weight: normal;border-left: 0px solid black;border-bottom: 1px solid gray;border-top: 2px solid gray;&#34;&gt;hp&lt;/th&gt;
+&lt;th &lt;th align=&#34;center&#34; style=&#34;font-weight: normal;border-left: 0px solid black;border-bottom: 1px solid gray;border-top: 2px solid gray;&#34;&gt;drat&lt;/th&gt;
+&lt;th &lt;th align=&#34;center&#34; style=&#34;font-weight: normal;border-left: 0px solid black;border-bottom: 1px solid gray;border-top: 2px solid gray;&#34;&gt;wt&lt;/th&gt;
+&lt;th &lt;th align=&#34;center&#34; style=&#34;font-weight: normal;border-left: 0px solid black;border-right:0px solid black;border-bottom: 1px solid gray;border-top: 2px solid gray;&#34;&gt;qsec&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;border-left: 0px solid black; &#34;&gt;
+1
+&lt;/td&gt;
+&lt;td align=&#34;left&#34; style=&#34;border-left: 0px solid black;&#34;&gt;
+mpg
+&lt;/td&gt;
+&lt;td align=&#34;right&#34; style=&#34;border-left: 0px solid black;background-color: #FFF5F0;&#34;&gt;
+&lt;/td&gt;
+&lt;td align=&#34;right&#34; style=&#34;border-left: 0px solid black;background-color: #FFF5F0;&#34;&gt;
+&lt;/td&gt;
+&lt;td align=&#34;right&#34; style=&#34;border-left: 0px solid black;background-color: #FFF5F0;&#34;&gt;
+&lt;/td&gt;
+&lt;td align=&#34;right&#34; style=&#34;border-left: 0px solid black;background-color: #FFF5F0;&#34;&gt;
+&lt;/td&gt;
+&lt;td align=&#34;right&#34; style=&#34;border-left: 0px solid black;background-color: #FFF5F0;&#34;&gt;
+&lt;/td&gt;
+&lt;td align=&#34;right&#34; style=&#34;border-left: 0px solid black;border-right:0px solid black;background-color: #FFF5F0;&#34;&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;border-left: 0px solid black; border-top: hidden;&#34;&gt;
+2
+&lt;/td&gt;
+&lt;td align=&#34;left&#34; style=&#34;border-left: 0px solid black;border-top: hidden;&#34;&gt;
+disp
+&lt;/td&gt;
+&lt;td align=&#34;right&#34; style=&#34;border-left: 0px solid black;border-top: hidden;background-color: #FFF5F0;&#34;&gt;
+-0.85
+&lt;/td&gt;
+&lt;td align=&#34;right&#34; style=&#34;border-left: 0px solid black;border-top: hidden;background-color: #FFF5F0;&#34;&gt;
+&lt;/td&gt;
+&lt;td align=&#34;right&#34; style=&#34;border-left: 0px solid black;border-top: hidden;background-color: #FFF5F0;&#34;&gt;
+&lt;/td&gt;
+&lt;td align=&#34;right&#34; style=&#34;border-left: 0px solid black;border-top: hidden;background-color: #FFF5F0;&#34;&gt;
+&lt;/td&gt;
+&lt;td align=&#34;right&#34; style=&#34;border-left: 0px solid black;border-top: hidden;background-color: #FFF5F0;&#34;&gt;
+&lt;/td&gt;
+&lt;td align=&#34;right&#34; style=&#34;border-left: 0px solid black;border-right:0px solid black;border-top: hidden;background-color: #FFF5F0;&#34;&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;border-left: 0px solid black; border-top: hidden;&#34;&gt;
+3
+&lt;/td&gt;
+&lt;td align=&#34;left&#34; style=&#34;border-left: 0px solid black;border-top: hidden;&#34;&gt;
+hp
+&lt;/td&gt;
+&lt;td align=&#34;right&#34; style=&#34;border-left: 0px solid black;border-top: hidden;background-color: #FFF5F0;&#34;&gt;
+-0.78
+&lt;/td&gt;
+&lt;td align=&#34;right&#34; style=&#34;border-left: 0px solid black;border-top: hidden;background-color: #67000D;color: #FFFFFF;&#34;&gt;
+0.79
+&lt;/td&gt;
+&lt;td align=&#34;right&#34; style=&#34;border-left: 0px solid black;border-top: hidden;background-color: #FFF5F0;&#34;&gt;
+&lt;/td&gt;
+&lt;td align=&#34;right&#34; style=&#34;border-left: 0px solid black;border-top: hidden;background-color: #FFF5F0;&#34;&gt;
+&lt;/td&gt;
+&lt;td align=&#34;right&#34; style=&#34;border-left: 0px solid black;border-top: hidden;background-color: #FFF5F0;&#34;&gt;
+&lt;/td&gt;
+&lt;td align=&#34;right&#34; style=&#34;border-left: 0px solid black;border-right:0px solid black;border-top: hidden;background-color: #FFF5F0;&#34;&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;border-left: 0px solid black; border-top: hidden;&#34;&gt;
+4
+&lt;/td&gt;
+&lt;td align=&#34;left&#34; style=&#34;border-left: 0px solid black;border-top: hidden;&#34;&gt;
+drat
+&lt;/td&gt;
+&lt;td align=&#34;right&#34; style=&#34;border-left: 0px solid black;border-top: hidden;background-color: #A50F15;color: #FFFFFF;&#34;&gt;
+0.68
+&lt;/td&gt;
+&lt;td align=&#34;right&#34; style=&#34;border-left: 0px solid black;border-top: hidden;background-color: #FEE0D2;&#34;&gt;
+-0.71
+&lt;/td&gt;
+&lt;td align=&#34;right&#34; style=&#34;border-left: 0px solid black;border-top: hidden;background-color: #FCBBA1;&#34;&gt;
+-0.45
+&lt;/td&gt;
+&lt;td align=&#34;right&#34; style=&#34;border-left: 0px solid black;border-top: hidden;background-color: #FFF5F0;&#34;&gt;
+&lt;/td&gt;
+&lt;td align=&#34;right&#34; style=&#34;border-left: 0px solid black;border-top: hidden;background-color: #FFF5F0;&#34;&gt;
+&lt;/td&gt;
+&lt;td align=&#34;right&#34; style=&#34;border-left: 0px solid black;border-right:0px solid black;border-top: hidden;background-color: #FFF5F0;&#34;&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;border-left: 0px solid black; border-top: hidden;&#34;&gt;
+5
+&lt;/td&gt;
+&lt;td align=&#34;left&#34; style=&#34;border-left: 0px solid black;border-top: hidden;&#34;&gt;
+wt
+&lt;/td&gt;
+&lt;td align=&#34;right&#34; style=&#34;border-left: 0px solid black;border-top: hidden;background-color: #FFF5F0;&#34;&gt;
+-0.87
+&lt;/td&gt;
+&lt;td align=&#34;right&#34; style=&#34;border-left: 0px solid black;border-top: hidden;background-color: #67000D;color: #FFFFFF;&#34;&gt;
+0.89
+&lt;/td&gt;
+&lt;td align=&#34;right&#34; style=&#34;border-left: 0px solid black;border-top: hidden;background-color: #A50F15;color: #FFFFFF;&#34;&gt;
+0.66
+&lt;/td&gt;
+&lt;td align=&#34;right&#34; style=&#34;border-left: 0px solid black;border-top: hidden;background-color: #FEE0D2;&#34;&gt;
+-0.71
+&lt;/td&gt;
+&lt;td align=&#34;right&#34; style=&#34;border-left: 0px solid black;border-top: hidden;background-color: #FFF5F0;&#34;&gt;
+&lt;/td&gt;
+&lt;td align=&#34;right&#34; style=&#34;border-left: 0px solid black;border-right:0px solid black;border-top: hidden;background-color: #FFF5F0;&#34;&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;border-left: 0px solid black; border-top: hidden;&#34;&gt;
+6
+&lt;/td&gt;
+&lt;td align=&#34;left&#34; style=&#34;border-left: 0px solid black;border-top: hidden;&#34;&gt;
+qsec
+&lt;/td&gt;
+&lt;td align=&#34;right&#34; style=&#34;border-left: 0px solid black;border-top: hidden;background-color: #CB181D;color: #FFFFFF;&#34;&gt;
+0.42
+&lt;/td&gt;
+&lt;td align=&#34;right&#34; style=&#34;border-left: 0px solid black;border-top: hidden;background-color: #FCBBA1;&#34;&gt;
+-0.43
+&lt;/td&gt;
+&lt;td align=&#34;right&#34; style=&#34;border-left: 0px solid black;border-top: hidden;background-color: #FEE0D2;&#34;&gt;
+-0.71
+&lt;/td&gt;
+&lt;td align=&#34;right&#34; style=&#34;border-left: 0px solid black;border-top: hidden;background-color: #FB6A4A;color: #FFFFFF;&#34;&gt;
+0.09
+&lt;/td&gt;
+&lt;td align=&#34;right&#34; style=&#34;border-left: 0px solid black;border-top: hidden;background-color: #FC9272;&#34;&gt;
+-0.17
+&lt;/td&gt;
+&lt;td align=&#34;right&#34; style=&#34;border-left: 0px solid black;border-right:0px solid black;border-top: hidden;background-color: #FFF5F0;&#34;&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td colspan=&#34;8&#34; align=&#34;left&#34; style=&#34;font-size:9pt ;border-top: 1px solid black; border-bottom: hidden;&#34;&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;p&gt;Note that the &lt;code&gt;R&lt;/code&gt; output for this is pure HTML. You can’t actually preview the table in R Studio. You have to set the options and specify whether the ztable is &lt;code&gt;&#34;html&#34;&lt;/code&gt; or &lt;code&gt;&#34;latex&#34;&lt;/code&gt;. You also have to set the R code chunk to &lt;code&gt;results = &#39;asis&#39;&lt;/code&gt;. Or, you can forgo those additional steps and convert it to a &lt;code&gt;flextable&lt;/code&gt; object using &lt;code&gt;ztable2flextable&lt;/code&gt; which will output nicely in R Studio, HTML, and Word without having to worry about setting the options.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ztable(cor_mat) %&amp;gt;%
+  makeHeatmap() %&amp;gt;%
+  ztable2flextable()&lt;/code&gt;&lt;/pre&gt;
+&lt;template id=&#34;d9d8a5db-7e15-4744-a35f-c7c6c69003fb&#34;&gt;&lt;style&gt;
+.tabwid table{
+  border-collapse:collapse;
+  line-height:1;
+  margin-left:auto;
+  margin-right:auto;
+  border-width: 0;
+  display: table;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  table-layout: fixed;
+  border-spacing: 0;
+  border-color: transparent;
+}
+.tabwid_left table{
+  margin-left:0;
+}
+.tabwid_right table{
+  margin-right:0;
+}
+.tabwid td {
+    padding: 0;
+}
+.tabwid a {
+  text-decoration: none;
+}
+.tabwid thead {
+    background-color: transparent;
+}
+.tabwid tfoot {
+    background-color: transparent;
+}
+.tabwid table tr {
+background-color: transparent;
+}
+&lt;/style&gt;&lt;div class=&#34;tabwid&#34;&gt;&lt;style&gt;.cl-51e1a3b6{border-collapse:collapse;}.cl-51d28886{font-family:&#39;Arial&#39;;font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-51d28887{font-family:&#39;Arial&#39;;font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-51d28888{font-family:&#39;Arial&#39;;font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-51d28889{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:3pt;padding-top:3pt;padding-left:3pt;padding-right:3pt;line-height: 1;background-color:transparent;}.cl-51d2888a{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:3pt;padding-top:3pt;padding-left:3pt;padding-right:3pt;line-height: 1;background-color:transparent;}.cl-51d324e4{width:54pt;background-clip: padding-box;background-color:rgba(255, 245, 240, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-51d324e5{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-51d324e6{width:54pt;background-clip: padding-box;background-color:rgba(103, 0, 13, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-51d324e7{width:54pt;background-clip: padding-box;background-color:rgba(252, 187, 161, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-51d324e8{width:54pt;background-clip: padding-box;background-color:rgba(254, 224, 210, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-51d324e9{width:54pt;background-clip: padding-box;background-color:rgba(165, 15, 21, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-51d324ea{width:54pt;background-clip: padding-box;background-color:rgba(252, 187, 161, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-51d324eb{width:54pt;background-clip: padding-box;background-color:rgba(254, 224, 210, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-51d324ec{width:54pt;background-clip: padding-box;background-color:rgba(255, 245, 240, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-51d324ed{width:54pt;background-clip: padding-box;background-color:rgba(203, 24, 29, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-51d324ee{width:54pt;background-clip: padding-box;background-color:rgba(251, 106, 74, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-51d34bcc{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-51d34bcd{width:54pt;background-clip: padding-box;background-color:rgba(252, 146, 114, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-51d34bce{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 2pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}&lt;/style&gt;&lt;table class=&#39;cl-51e1a3b6&#39;&gt;
+&lt;thead&gt;&lt;tr style=&#34;overflow-wrap:break-word;&#34;&gt;&lt;td class=&#34;cl-51d34bce&#34;&gt;&lt;p class=&#34;cl-51d28889&#34;&gt;&lt;span class=&#34;cl-51d28886&#34;&gt;rowname&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d34bce&#34;&gt;&lt;p class=&#34;cl-51d28889&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;var&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d34bce&#34;&gt;&lt;p class=&#34;cl-51d28889&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;mpg&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d34bce&#34;&gt;&lt;p class=&#34;cl-51d28889&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;disp&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d34bce&#34;&gt;&lt;p class=&#34;cl-51d28889&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;hp&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d34bce&#34;&gt;&lt;p class=&#34;cl-51d28889&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;drat&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d34bce&#34;&gt;&lt;p class=&#34;cl-51d28889&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;wt&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d34bce&#34;&gt;&lt;p class=&#34;cl-51d28889&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;qsec&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr style=&#34;overflow-wrap:break-word;&#34;&gt;&lt;td class=&#34;cl-51d324e5&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;1&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d324e5&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;mpg&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d324e4&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d324e4&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d324e4&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d324e4&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d324e4&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d324e4&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&#34;overflow-wrap:break-word;&#34;&gt;&lt;td class=&#34;cl-51d324e5&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d324e5&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;disp&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d324e4&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;-0.85&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d324e4&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d324e4&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d324e4&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d324e4&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d324e4&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&#34;overflow-wrap:break-word;&#34;&gt;&lt;td class=&#34;cl-51d324e5&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;3&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d324e5&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;hp&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d324e4&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;-0.78&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d324e6&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28888&#34;&gt;0.79&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d324e4&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d324e4&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d324e4&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d324e4&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&#34;overflow-wrap:break-word;&#34;&gt;&lt;td class=&#34;cl-51d324e5&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;4&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d324e5&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;drat&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d324e9&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28888&#34;&gt;0.68&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d324e8&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;-0.71&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d324e7&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;-0.45&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d324e4&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d324e4&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d324e4&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&#34;overflow-wrap:break-word;&#34;&gt;&lt;td class=&#34;cl-51d324e5&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;5&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d324e5&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;wt&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d324e4&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;-0.87&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d324e6&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28888&#34;&gt;0.89&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d324e9&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28888&#34;&gt;0.66&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d324e8&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;-0.71&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d324e4&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d324e4&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&#34;overflow-wrap:break-word;&#34;&gt;&lt;td class=&#34;cl-51d34bcc&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;6&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d34bcc&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;qsec&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d324ed&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28888&#34;&gt;0.42&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d324ea&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;-0.43&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d324eb&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;-0.71&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d324ee&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28888&#34;&gt;0.09&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d34bcd&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;-0.17&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td class=&#34;cl-51d324ec&#34;&gt;&lt;p class=&#34;cl-51d2888a&#34;&gt;&lt;span class=&#34;cl-51d28887&#34;&gt;&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;/template&gt;
+&lt;div id=&#34;e7120579-74e9-462a-b61c-1987c7f0b08f&#34;&gt;&lt;/div&gt;
+&lt;script&gt;
+var dest = document.getElementById(&#34;e7120579-74e9-462a-b61c-1987c7f0b08f&#34;);
+var template = document.getElementById(&#34;d9d8a5db-7e15-4744-a35f-c7c6c69003fb&#34;);
+var caption = template.content.querySelector(&#34;caption&#34;);
+if(caption) {
+  caption.style.cssText = &#34;display:block;&#34;
+  var newcapt = document.createElement(&#34;p&#34;);
+  newcapt.appendChild(caption)
+  dest.parentNode.insertBefore(newcapt, dest.previousSibling);
+}
+var fantome = dest.attachShadow({mode: &#39;open&#39;});
+var templateContent = template.content;
+fantome.appendChild(templateContent);
+fantome.appendChild(templateContent);
+&lt;/script&gt;
+
+&lt;p&gt;I hope this brief tutorial was useful!&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Exploratory Factor Analysis Tables in R</title>

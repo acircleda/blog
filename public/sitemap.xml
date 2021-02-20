@@ -18,6 +18,46 @@
   </url>
   
   <url>
+    <loc>/</loc>
+    <lastmod>2021-02-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2021-02-20-correlation-table-highlighting/</loc>
+    <lastmod>2021-02-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2021-02-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/climate-change/</loc>
+    <lastmod>2021-02-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/project/footprint/</loc>
+    <lastmod>2021-02-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/project/</loc>
+    <lastmod>2021-02-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/project/</loc>
+    <lastmod>2021-02-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2021-02-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/authors/admin/</loc>
     <lastmod>2021-01-19T00:00:00+00:00</lastmod>
   </url>
@@ -28,27 +68,12 @@
   </url>
   
   <url>
-    <loc>/</loc>
-    <lastmod>2021-01-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/authors/</loc>
     <lastmod>2021-01-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/climate-change/</loc>
-    <lastmod>2021-01-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/authors/louis-rocconi/</loc>
-    <lastmod>2021-01-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/project/</loc>
     <lastmod>2021-01-19T00:00:00+00:00</lastmod>
   </url>
   
@@ -64,11 +89,6 @@
   
   <url>
     <loc>/publication/stars/</loc>
-    <lastmod>2021-01-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
     <lastmod>2021-01-19T00:00:00+00:00</lastmod>
   </url>
   
@@ -94,11 +114,6 @@
   
   <url>
     <loc>/post/2020-09-27-efa-tables-in-r/</loc>
-    <lastmod>2020-09-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
     <lastmod>2020-09-27T00:00:00+00:00</lastmod>
   </url>
   
@@ -164,11 +179,6 @@
   
   <url>
     <loc>/tags/portfolio/</loc>
-    <lastmod>2020-05-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/project/</loc>
     <lastmod>2020-05-31T00:00:00+00:00</lastmod>
   </url>
   

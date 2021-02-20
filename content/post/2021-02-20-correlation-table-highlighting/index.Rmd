@@ -1,0 +1,115 @@
+---
+title: "Making a Correlation Table with Highlighted Values"
+author: "Anthony Schmidt"
+date: '2021-02-21'
+output:
+  html_document:
+    df_print: paged
+focal_point: ''
+image:
+  caption: ''
+lastmod: ''
+featured: null
+preview_only: no
+projects: []
+subtitle: ''
+summary: null
+tags: 
+authors: []
+---
+
+This blog post is inspired by a structural equation modeling class I am currently taking. Part of assessing model fit is examining model residuals derived between the observed variance-covariance matrix $S$ and the model-implied variance-covariance matrix $\Sigma$. 
+
+One way to do this is to examine the residual correlation matrix (i.e. the standardized version of the variance-covariance matrix). However, these matrices can end up being huge and it might be difficult to identify troublesome residuals. I thought it would be useful if you could not only produce the matrix but also highlight the values based on some set threshhold.
+
+What I am talking about is a heatmap and it it not only useful in SEM. Any type of correlation matrix can benefit from heatmaps and I see several great approaches to this:
+
+  1. First, [you can make one using `ggplot`](http://www.sthda.com/english/wiki/ggplot2-quick-correlation-matrix-heatmap-r-software-and-data-visualization), but this produces an image not a table.
+  2. You can [make a correlogram](https://www.r-graph-gallery.com/correlogram.html), but, again this is an image, not a table.
+  3. Use the `flextable` package. This is especially useful if you want to knit to a Word document.
+  4. Use the `ztable` package's `makeheatmap`
+  
+This blog post will explore the latter two options. It will use the `mtcars` data set. So, let's prepare a correlation matrix based on that first.
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+
+# create data set for correlation
+my_data <- mtcars %>%
+  select(1,3,4,5,6,7)
+
+# make initial correlation matrix
+cor_mat <- cor(my_data)
+
+# erase the upper triangle
+cor_mat[upper.tri(cor_mat)] <- NA 
+
+# remove the 1s on the diagonal
+diag(cor_mat) <- NA 
+
+# make the matrix a data frame
+cor_mat <- cor_mat %>%
+  as.data.frame() %>%
+  rownames_to_column("var")
+```
+
+
+## Use `flextable`
+
+I love using `flextable` for many reasons but mostly because it works so well within Word documents, and I have to use Word documents a lot. This first approach simply colors cells based on a whether the value in the cell is greater than (or less than, or equal to) some pre-specified value.
+
+In the code below, we pipe our matrix/dataframe into `flextable` and then use `flextable::bg` to use columns 2 to the end and then we specify a function which loops over the columns and for each cell sets it first to transparent and then, if < .1, sets it to light blue. 
+
+```{r message=FALSE, warning=FALSE}
+library(flextable)
+
+cor_mat %>%
+  flextable() %>%
+  bg(bg = function(x){
+                  out <- rep("transparent", length(x))
+                  out[x < .1] <- "light blue"
+                  out
+                })
+```
+
+*Note: I had help on this one from [Stack Overflow](https://stackoverflow.com/questions/66174645/conditional-formatting-of-flextable-correlation-table/66174823?noredirect=1#comment117002339_66174823)*
+
+The code quickly highlights cells based on a single criteria. It does not make a heatmap where ranges of values are represented by a sequential palette of colors from light to dark. However, you could specify multiple criteria using multiple lines of `out[x < #] <- "color"`. For example, in the code below, values less than .1 are light blue and values above .5 are coral.
+
+```{r}
+cor_mat %>%
+  flextable() %>%
+  bg(j = 2:ncol(cor_mat),
+     bg = function(x){
+                  out <- rep("transparent", length(x))
+                  out[x < .1] <- "light blue"
+                  out[x > .5] <- "coral"
+                  out
+                })
+```
+
+This works well if you have one or two values to specify, but is not convenient if you are trying to produce an actual heatmap. For that, the approach below is much better.
+
+## Use `ztable`
+
+The package `ztable` offers two useful functions: `makeheatmap` and `ztable2flextable`. [According to its latest vignette](https://cran.r-project.org/web/packages/ztable/vignettes/heatmapTable.html), only the development version of `ztable` currently has the heatmap, so you will have to install it from Github.
+
+We can produce a traditional heatmap as follows:
+
+```{r message=FALSE, warning=FALSE, results='asis'}
+library(ztable)
+options(ztable.type="html")
+
+ztable(cor_mat) %>%
+  makeHeatmap()
+```
+
+Note that the `R` output for this is pure HTML. You can't actually preview the table in R Studio. You have to set the options and specify whether the ztable is `"html"` or `"latex"`. You also have to set the R code chunk to `results = 'asis'`. Or, you can forgo those additional steps and convert it to a `flextable` object using `ztable2flextable` which will output nicely in R Studio, HTML, and Word without having to worry about setting the options.
+
+```{r}
+ztable(cor_mat) %>%
+  makeHeatmap() %>%
+  ztable2flextable()
+```
+
+I hope this brief tutorial was useful!
