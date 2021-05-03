@@ -28,77 +28,95 @@ knitr::opts_knit$set(message=TRUE, warning=FALSE, echo=FALSE)
 library(tweetrmd)
 ```
 
-# Topic: Academia
+## Topic: Academia
 
-## et al. (when saying it aloud)
-```{r echo=FALSE}
-tweet_screenshot(tweet_url("anthonyteacher", "1387169430338166786"))
-
-```
-
-## et al. (pronouncing it)
+### et al.
+<a href="https://twitter.com/AnthonyTeacher/status/1387208369853898756">
 ```{r echo=FALSE}
 tweet_screenshot(tweet_url("anthonyteacher", "1387208369853898756"))
 
 ```
 
+</a>
 
 ## The PISA Exam
+<a href="https://twitter.com/AnthonyTeacher/status/1386489043307929602">
+
 ```{r echo=FALSE}
 tweet_screenshot(tweet_url("anthonyteacher", "1386489043307929602"))
 
 ```
+</a>
 
 ## "Carnegie"
+<a href="https://twitter.com/AnthonyTeacher/status/1177776246643679232">
+
 ```{r echo=FALSE}
 tweet_screenshot(tweet_url("anthonyteacher", "1177776246643679232"))
 
 ```
+</a>
 
 ## "Primer"
+<a href="https://twitter.com/AnthonyTeacher/status/1221062308518154240">
+
 ```{r echo=FALSE}
 tweet_screenshot(tweet_url("anthonyteacher", "1221062308518154240"))
 
 ```
+</a>
 
 
-# Topic: Data Science
+## Topic: Data Science
 
 
-## The `lavaan` R package
+### The `lavaan` R package
+<a href="https://twitter.com/AnthonyTeacher/status/1318228714585456650">
+
 ```{r echo=FALSE}
 tweet_screenshot(tweet_url("anthonyteacher", "1318228714585456650"))
 
 ```
+</a>
 
-## Code vs Syntax
+### Code vs Syntax
+
+Admittedly, this one is not about pronunciation
+<a href="https://twitter.com/AnthonyTeacher/status/1324686373786439680">
+
 ```{r echo=FALSE}
 tweet_screenshot(tweet_url("anthonyteacher", "1324686373786439680"))
 
 ```
+</a>
 
+### The `lmer` R function
+<a href="https://twitter.com/AnthonyTeacher/status/1353802143694807040">
 
-## The `lmer` R function
 ```{r echo=FALSE}
 tweet_screenshot(tweet_url("anthonyteacher", "1353802143694807040"))
 
 ```
 
+</a>
+### SEM (Structural Equation Modeling)
+<a href="https://twitter.com/AnthonyTeacher/status/1361724568667308032">
 
-## SEM (Structural Equation Modeling)
 ```{r echo=FALSE}
 tweet_screenshot(tweet_url("anthonyteacher", "1361724568667308032"))
 
 ```
+</a>
+### data vs data
+<a href="https://twitter.com/AnthonyTeacher/status/1162326051474812929">
 
-## data vs data
 ```{r echo=FALSE}
 tweet_screenshot(tweet_url("anthonyteacher", "1162326051474812929"))
 
 ```
+</a>
 
-
-# How I did it
+## How I did it
 
 I used the `rtweet` package to access my tweets. Sadly, there is no `rtweet` field that identifies whether a tweet is a poll, so I searched for tweets with a question mark, excluded retweets or tweets mentioning someone, and then manually browsed the short list (using `pull(text)`) until I had the row numbers of the tweets I wanted:
 
