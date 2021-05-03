@@ -39,7 +39,7 @@ tweet_screenshot(tweet_url("anthonyteacher", "1387208369853898756"))
 
 </a>
 
-## The PISA Exam
+### The PISA Exam
 <a href="https://twitter.com/AnthonyTeacher/status/1386489043307929602">
 
 ```{r echo=FALSE}
@@ -48,7 +48,7 @@ tweet_screenshot(tweet_url("anthonyteacher", "1386489043307929602"))
 ```
 </a>
 
-## "Carnegie"
+### "Carnegie"
 <a href="https://twitter.com/AnthonyTeacher/status/1177776246643679232">
 
 ```{r echo=FALSE}
@@ -57,7 +57,7 @@ tweet_screenshot(tweet_url("anthonyteacher", "1177776246643679232"))
 ```
 </a>
 
-## "Primer"
+### "Primer"
 <a href="https://twitter.com/AnthonyTeacher/status/1221062308518154240">
 
 ```{r echo=FALSE}
