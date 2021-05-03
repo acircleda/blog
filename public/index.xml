@@ -5,7 +5,7 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>Anthony Schmidt</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 21 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 27 Apr 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Anthony Schmidt</title>
@@ -79,6 +79,96 @@
 &lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
 
 &lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How do you pronounce that? Twitter Polls, Academic Language, and Data Science</title>
+      <link>/post/2021-04-27-twitter-polls/</link>
+      <pubDate>Tue, 27 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>/post/2021-04-27-twitter-polls/</guid>
+      <description>
+
+
+&lt;p&gt;Over the years, I have asked a fair amount of questions on Twitter in the form of polls. Many of these have to do with pronunciation, especially academic or data science pronunciation. Clearly, my interest in linguistics persists long after my career change to something more data sciency.&lt;/p&gt;
+&lt;p&gt;As a way to curate some of these little gem Twitter polls, I offer screenshots of the polls below, organized into two categories: &lt;strong&gt;Academia&lt;/strong&gt; and &lt;strong&gt;Data Science&lt;/strong&gt;, though the two are not mutually exclusive. At the bottom of this post explains how I used R to find the polls and generate the screenshots.&lt;/p&gt;
+&lt;div id=&#34;topic-academia&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Topic: Academia&lt;/h1&gt;
+&lt;div id=&#34;et-al.-when-saying-it-aloud&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;et al. (when saying it aloud)&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2021-04-27-twitter-polls/index_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;et-al.-pronouncing-it&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;et al. (pronouncing it)&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2021-04-27-twitter-polls/index_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-pisa-exam&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The PISA Exam&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2021-04-27-twitter-polls/index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;carnegie&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;“Carnegie”&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2021-04-27-twitter-polls/index_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;primer&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;“Primer”&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2021-04-27-twitter-polls/index_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;topic-data-science&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Topic: Data Science&lt;/h1&gt;
+&lt;div id=&#34;the-lavaan-r-package&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The &lt;code&gt;lavaan&lt;/code&gt; R package&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2021-04-27-twitter-polls/index_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;code-vs-syntax&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Code vs Syntax&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2021-04-27-twitter-polls/index_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;the-lmer-r-function&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;The &lt;code&gt;lmer&lt;/code&gt; R function&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2021-04-27-twitter-polls/index_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;sem-structural-equation-modeling&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;SEM (Structural Equation Modeling)&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2021-04-27-twitter-polls/index_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;data-vs-data&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;data vs data&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/post/2021-04-27-twitter-polls/index_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;how-i-did-it&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;How I did it&lt;/h1&gt;
+&lt;p&gt;I used the &lt;code&gt;rtweet&lt;/code&gt; package to access my tweets. Sadly, there is no &lt;code&gt;rtweet&lt;/code&gt; field that identifies whether a tweet is a poll, so I searched for tweets with a question mark, excluded retweets or tweets mentioning someone, and then manually browsed the short list (using &lt;code&gt;pull(text)&lt;/code&gt;) until I had the row numbers of the tweets I wanted:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(tidyverse)
+library(rtweet)
+
+data &amp;lt;- get_timelines(&amp;quot;anthonyteacher&amp;quot;, n = 5000)
+
+data %&amp;gt;%
+  filter(str_detect(text, &amp;quot;\\?&amp;quot;)==T) %&amp;gt;%
+  filter(str_detect(text, &amp;quot;\\@&amp;quot;)==F) %&amp;gt;%
+  filter(is_retweet == &amp;quot;FALSE&amp;quot;) %&amp;gt;%
+  #pull(text) # display tweets and find row numbers
+  slice(1,
+        2,
+        10,
+        16,
+        26,
+        28,
+        51,
+        54,
+        59,
+        66,
+        73) %&amp;gt;%
+  select(status_id) %&amp;gt;%
+  mutate(url = paste0(&amp;quot;https://twitter.com/anthonyteacher/status/&amp;quot;, status_id)) %&amp;gt;% DT::datatable()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I used &lt;code&gt;datatable&lt;/code&gt; to quickly visit each poll to recall the content and organize them into the two categories above.&lt;/p&gt;
+&lt;p&gt;Inside this post, which begins as an .Rmd document, I used the &lt;code&gt;tweetrmd&lt;/code&gt; package to generate automatic screenshots of the tweets, like so:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tweet_screenshot(tweet_url(&amp;quot;anthonyteacher&amp;quot;, &amp;quot;1162326051474812929&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Et voilà…this post.&lt;/p&gt;
+&lt;/div&gt;
 </description>
     </item>
     
