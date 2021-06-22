@@ -5,12 +5,49 @@
     <link>/tags/interactive/</link>
       <atom:link href="/tags/interactive/index.xml" rel="self" type="application/rss+xml" />
     <description>Interactive</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 31 May 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 21 Jun 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Interactive</title>
       <link>/tags/interactive/</link>
     </image>
+    
+    <item>
+      <title>Reports with Interactive Visualizations</title>
+      <link>/portfolio/interactive-reports/</link>
+      <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>/portfolio/interactive-reports/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;https://www.cupahr.org/surveys/research-briefs/minimum-wage-changes-higher-ed/&#34; target=&#34;_blank&#34;&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;how-will-minimum-wage-changes-impact-higher-ed&#34;&gt;How Will Minimum Wage Changes Impact Higher Ed?&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;minwage.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.cupahr.org/surveys/research-briefs/2021-higher-ed-skilled-craft-workforce/&#34; target=&#34;_blank&#34;&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;the-higher-ed-skilled-craft-workforce-pay-aging-diversity-and-equity&#34;&gt;The Higher Ed Skilled Craft Workforce: Pay, Aging, Diversity, and Equity&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;skilledcraft.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.cupahr.org/surveys/dataondemand/hr-benchmarking/&#34; target=&#34;_blank&#34;&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;2021-hr-benchmarking-stats&#34;&gt;2021 HR Benchmarking Stats&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;hrbenchmarking.JPG&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>#TidyTuesday Contributions</title>
@@ -66,6 +103,21 @@
 &lt;h4 id=&#34;contribution-diversity-in-tennessee&#34;&gt;Contribution: Diversity in Tennessee&lt;/h4&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/acircleda/TidyTuesday/tree/master/2019-09-24%20-%20School%20Diversity&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://github.com/acircleda/TidyTuesday/raw/master/2019-09-24%20-%20School%20Diversity/tn_schooldiversity.jpeg&#34; width=&#34;500&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Looming Enrollment Cliff</title>
+      <link>/portfolio/enrollment-cliff/</link>
+      <pubDate>Thu, 13 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>/portfolio/enrollment-cliff/</guid>
+      <description>&lt;p&gt;The purpose of this dashboard is to understand and explore forecasted enrollments in Higher Education. These forecasts are based on the &lt;em&gt;Higher Education Demand Index&lt;/em&gt; developed by Dr. Nathan Grawe and published in his book &amp;ldquo;Demographics and the Demand for Higher Education&amp;rdquo;. The interactive allows you to get an overview of the forecasts as well as take a deeper, state-by-state dive into the data.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Not working? &lt;a href=&#34;https://public.tableau.com/views/forecasts_15698547099330/Overall?:embed=y&amp;amp;:embed_code_version=3&amp;amp;:loadOrderID=0&amp;amp;:display_count=y&amp;amp;publish=yes?:embed%3Dy?:embed%3Dy&amp;amp;:origin=viz_share_link&#34; target=&#34;_blank&#34;&gt;Click here&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;div style=&#34;align: center; margin-left: -150px;&#34;&gt;
+  &lt;iframe src=&#34;https://public.tableau.com/views/forecasts_15698547099330/Overall?:showVizHome=no&amp;:embed=true&#34; width=&#34;1100px&#34; height=&#34;2200px&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
+  &lt;/div&gt;&lt;/p&gt;
 </description>
     </item>
     

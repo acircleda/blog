@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reports | Anthony Schmidt</title>
+    <link>/tags/reports/</link>
+      <atom:link href="/tags/reports/index.xml" rel="self" type="application/rss+xml" />
+    <description>Reports</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 21 Jun 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>/img/icon-192.png</url>
+      <title>Reports</title>
+      <link>/tags/reports/</link>
+    </image>
+    
+    <item>
+      <title>Poll Results</title>
+      <link>/portfolio/snap-polls/</link>
+      <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>/portfolio/snap-polls/</guid>
+      <description>&lt;p&gt;At the link below, you can find static and interactive visuals created for &amp;ldquo;Snap Polls&amp;rdquo; - pulse surveys of CUPA-HR&amp;rsquo;s membership.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.cupahr.org/surveys/snap-poll/snap-poll-results/&#34; target=&#34;_blank&#34;&gt;https://www.cupahr.org/surveys/snap-poll/snap-poll-results/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Reports with Interactive Visualizations</title>
+      <link>/portfolio/interactive-reports/</link>
+      <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>/portfolio/interactive-reports/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;https://www.cupahr.org/surveys/research-briefs/minimum-wage-changes-higher-ed/&#34; target=&#34;_blank&#34;&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;how-will-minimum-wage-changes-impact-higher-ed&#34;&gt;How Will Minimum Wage Changes Impact Higher Ed?&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;minwage.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.cupahr.org/surveys/research-briefs/2021-higher-ed-skilled-craft-workforce/&#34; target=&#34;_blank&#34;&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;the-higher-ed-skilled-craft-workforce-pay-aging-diversity-and-equity&#34;&gt;The Higher Ed Skilled Craft Workforce: Pay, Aging, Diversity, and Equity&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;skilledcraft.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.cupahr.org/surveys/dataondemand/hr-benchmarking/&#34; target=&#34;_blank&#34;&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;2021-hr-benchmarking-stats&#34;&gt;2021 HR Benchmarking Stats&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;hrbenchmarking.JPG&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Reports with Static Visualizations</title>
+      <link>/portfolio/static-reports/</link>
+      <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>/portfolio/static-reports/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;https://www.cupahr.org/surveys/research-briefs/2020-the-higher-ed-hr-workforce/&#34; target=&#34;_blank&#34;&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;the-higher-ed-hr-workforce&#34;&gt;The Higher Ed HR Workforce&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;hrworkforce.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.cupahr.org/surveys/research-briefs/faculty-in-the-health-professions/&#34; target=&#34;_blank&#34;&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;faculty-in-the-health-professions-growth-composition-and-salaries&#34;&gt;Faculty in the Health Professions: Growth, Composition, and Salaries&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;healthprofessions.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.cupahr.org/blog/a-comprehensive-look-into-the-wellbeing-of-higher-ed-employees/&#34; target=&#34;_blank&#34;&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;a-comprehensive-look-into-the-well-being-of-higher-ed-employees&#34;&gt;A Comprehensive Look Into the Well-Being of Higher Ed Employees&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.cupahr.org/wp-content/uploads/wellness-components-1200x600.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

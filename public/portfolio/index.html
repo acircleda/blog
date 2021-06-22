@@ -91,6 +91,42 @@
 
 
 
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-159650336-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           document.location = url;
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target);  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-159650336-1', {});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
   
 
 
@@ -123,7 +159,7 @@
   <meta property="og:description" content="PhD Student / Data Visualization Researcher"><meta property="og:image" content="/img/icon-192.png">
   <meta property="twitter:image" content="/img/icon-192.png"><meta property="og:locale" content="en-us">
   
-    
+    <meta property="og:updated_time" content="2021-06-21T00:00:00&#43;00:00">
   
 
   
@@ -141,7 +177,7 @@
 
 
   <title>Portfolios | Anthony Schmidt</title>
-
+  
 </head>
 
 <body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
@@ -309,7 +345,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/#talks"><span>Publications</span></a>
+          <a class="nav-link " href="/#publications"><span>Publications</span></a>
         </li>
 
         
@@ -339,35 +375,6 @@
 
         <li class="nav-item">
           <a class="nav-link " href="/#talks"><span>Presentations</span></a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-        
-        
-        
-        
-        
-          
-          
-          
-            
-          
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#portfolio"><span>Portfolio</span></a>
         </li>
 
         
@@ -426,6 +433,30 @@
 
         <li class="nav-item">
           <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+            
+          
+        
+
+        
+        
+        
+        
+        
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="https://github.com/acircleda/CV/blob/master/hyndman/Anthony_Schmidt_CV.pdf" target="_blank" rel="noopener"><span>CV</span></a>
         </li>
 
         
@@ -495,10 +526,55 @@
   
   
   <div>
-    <h2><a href="/portfolio/port-example/">Data-Related Jobs for ESM Students</a></h2>
+    <h2><a href="/portfolio/snap-polls/">Poll Results</a></h2>
     <div class="article-style">
       
-      This is an ongoing project to analyze the skills and competencies as expressed in data-related job postings.
+      Visualizations of poll results.
+      
+    </div>
+  </div>
+  
+  <div>
+    <h2><a href="/portfolio/interactive-reports/">Reports with Interactive Visualizations</a></h2>
+    <div class="article-style">
+      
+      Example reports that include interactive visualizations.
+      
+    </div>
+  </div>
+  
+  <div>
+    <h2><a href="/portfolio/static-reports/">Reports with Static Visualizations</a></h2>
+    <div class="article-style">
+      
+      Example reports that include static visualizations.
+      
+    </div>
+  </div>
+  
+  <div>
+    <h2><a href="/portfolio/financial-wellness-in-higher-education/">Financial Wellness in Higher Education</a></h2>
+    <div class="article-style">
+      
+      This infographic summarizes key takeaways from a TIAA Institute/CUPA-HR survey on financial wellness in Higher Education.
+      
+    </div>
+  </div>
+  
+  <div>
+    <h2><a href="/portfolio/enrollment-cliff/">The Looming Enrollment Cliff</a></h2>
+    <div class="article-style">
+      
+      The purpose of this dashboard is to understand and explore forecasted enrollments in Higher Education.
+      
+    </div>
+  </div>
+  
+  <div>
+    <h2><a href="/portfolio/tennessee-logo/">Multilingual &#34;Welcome&#34; Logo</a></h2>
+    <div class="article-style">
+      
+      The image below was designed for a t-shirt marketing campaign at the English Language Institute. It depicts the phrase “welcome” in numerous languages, arranged to make the state of Tennessee’s outline.
       
     </div>
   </div>
@@ -511,6 +587,9 @@
       
 
     
+    
+    
+    <script src="/js/mathjax-config.js"></script>
     
 
     
@@ -532,6 +611,8 @@
       
 
       
+      
+      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
       
     
 

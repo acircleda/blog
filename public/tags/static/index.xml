@@ -5,12 +5,60 @@
     <link>/tags/static/</link>
       <atom:link href="/tags/static/index.xml" rel="self" type="application/rss+xml" />
     <description>Static</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 31 May 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 21 Jun 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Static</title>
       <link>/tags/static/</link>
     </image>
+    
+    <item>
+      <title>Poll Results</title>
+      <link>/portfolio/snap-polls/</link>
+      <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>/portfolio/snap-polls/</guid>
+      <description>&lt;p&gt;At the link below, you can find static and interactive visuals created for &amp;ldquo;Snap Polls&amp;rdquo; - pulse surveys of CUPA-HR&amp;rsquo;s membership.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.cupahr.org/surveys/snap-poll/snap-poll-results/&#34; target=&#34;_blank&#34;&gt;https://www.cupahr.org/surveys/snap-poll/snap-poll-results/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Reports with Static Visualizations</title>
+      <link>/portfolio/static-reports/</link>
+      <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>/portfolio/static-reports/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;https://www.cupahr.org/surveys/research-briefs/2020-the-higher-ed-hr-workforce/&#34; target=&#34;_blank&#34;&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;the-higher-ed-hr-workforce&#34;&gt;The Higher Ed HR Workforce&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;hrworkforce.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.cupahr.org/surveys/research-briefs/faculty-in-the-health-professions/&#34; target=&#34;_blank&#34;&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;faculty-in-the-health-professions-growth-composition-and-salaries&#34;&gt;Faculty in the Health Professions: Growth, Composition, and Salaries&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;healthprofessions.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.cupahr.org/blog/a-comprehensive-look-into-the-wellbeing-of-higher-ed-employees/&#34; target=&#34;_blank&#34;&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;a-comprehensive-look-into-the-well-being-of-higher-ed-employees&#34;&gt;A Comprehensive Look Into the Well-Being of Higher Ed Employees&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.cupahr.org/wp-content/uploads/wellness-components-1200x600.jpg&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>#TidyTuesday Contributions</title>
