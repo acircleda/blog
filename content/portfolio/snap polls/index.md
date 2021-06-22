@@ -28,6 +28,6 @@ At the link below, you can find static and interactive visuals created for "Snap
 
 https://www.cupahr.org/surveys/snap-poll/snap-poll-results/
 
-<img src="featured.jpg" />
+<img src="snappoll.jpg" />
 </a>
 

@@ -44,10 +44,6 @@ subtitle = "Example Visualization Work"
 [[content.filter_button]]
     name = "Reports"
     tag = "Reports"
-    
-[[content.filter_button]]
-    name = "Other"
-    tag = "Other"
 
 
 [design]

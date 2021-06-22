@@ -27,9 +27,6 @@ remotes::install_github("acircleda/footprint")
 
 Or you can install it from CRAN:
 
-You can install the development version from
-[GitHub](https://github.com/) with:
-
 ``` r
 install.packages("footprint")
 ```

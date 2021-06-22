@@ -50,59 +50,17 @@
     </item>
     
     <item>
-      <title>#TidyTuesday Contributions</title>
-      <link>/project/portfolio/tidytuesday/</link>
-      <pubDate>Sun, 31 May 2020 00:00:00 +0000</pubDate>
-      <guid>/project/portfolio/tidytuesday/</guid>
-      <description>
+      <title>The Black and White Higher Education Workforce</title>
+      <link>/portfolio/black-and-white/</link>
+      <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>/portfolio/black-and-white/</guid>
+      <description>&lt;p&gt;This interactive graphic explores the representation and pay of Black employees across the higher education workforce.&lt;/p&gt;
 
-&lt;p&gt;I follow &lt;a href=&#34;https://twitter.com/search?q=%23TidyTuesday&amp;amp;src=hashtag_click&#34; target=&#34;_blank&#34;&gt;#TidyTuesday on Twitter&lt;/a&gt; every week to improve my &lt;code&gt;R&lt;/code&gt; and data visualization skills. &lt;a href=&#34;https://github.com/rfordatascience/tidytuesday&#34; target=&#34;_blank&#34;&gt;#TidyTuesday is hosted by R4DS (&lt;code&gt;R&lt;/code&gt; for Data Science)&lt;/a&gt; and features random and interesting datasets with which users can practice their &lt;code&gt;R&lt;/code&gt;, &lt;code&gt;Tidyverse&lt;/code&gt;, and visualization skills. From time to time, I have also participated. My contributions with links to related documents and code are below.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Not working? &lt;a href=&#34;https://www.cupahr.org/knowledge-center/diversity-resources/black-and-white-higher-education-workforce/&#34; target=&#34;_blank&#34;&gt;Click here&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;2020-week-22-cocktails&#34;&gt;2020 Week 22 - Cocktails&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-05-26/readme.md&#34; target=&#34;_blank&#34;&gt;Original Dataset&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;interactive-shiny-app-click-https-acircleda-shinyapps-io-shinybartender&#34;&gt;Interactive Shiny App (&lt;a href=&#34;https://acircleda.shinyapps.io/ShinyBartender/&#34; target=&#34;_blank&#34;&gt;click!&lt;/a&gt;)&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://acircleda.shinyapps.io/ShinyBartender/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://github.com/acircleda/TidyTuesday/raw/master/2020-05-26%20-%20Cocktails/preview.jpg&#34; width=&#34;500&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;2020-week-8-food-s-carbon-footprint&#34;&gt;2020 Week 8 - Food&amp;rsquo;s Carbon Footprint&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/rfordatascience/tidytuesday/blob/master/data/2020/2020-02-18/readme.md&#34; target=&#34;_blank&#34;&gt;Original Dataset&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.anthonyschmidt.co/post/2020-19-02-carbon-crisis-mitigation-whose-responsibility-is-it-a-tidytuesday-inspired-essay/&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Carbon Crisis Mitigation: Whose Responsibility Is It? - A #TidyTuesday-inspired Essay&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;contribution-1-cholorpleth-map&#34;&gt;Contribution 1: Cholorpleth Map&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/acircleda/TidyTuesday/tree/master/2020-02-18%20-%20Food%20Emissions&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://github.com/acircleda/TidyTuesday/raw/master/2020-02-18%20-%20Food%20Emissions/totalemissions.png&#34; width=&#34;500&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;contribution-2-tile-map&#34;&gt;Contribution 2: Tile Map&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/acircleda/TidyTuesday/tree/master/2020-02-18%20-%20Food%20Emissions&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://github.com/acircleda/TidyTuesday/raw/master/2020-02-18%20-%20Food%20Emissions/tilemap.png&#34; width=&#34;500&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;2019-week-41-powerlifting&#34;&gt;2019 Week 41 - Powerlifting&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/rfordatascience/tidytuesday/blob/master/data/2019/2019-10-08&#34; target=&#34;_blank&#34;&gt;Original Dataset&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;contribution-scatterplot&#34;&gt;Contribution: Scatterplot&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/acircleda/TidyTuesday/tree/master/2019-10-8%20-%20Powerlifts&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://github.com/acircleda/TidyTuesday/raw/master/2019-10-8%20-%20Powerlifts/weightlifting.jpg&#34; width=&#34;500&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;2019-week-40-all-the-pizza&#34;&gt;2019 Week 40 - All the Pizza&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/rfordatascience/tidytuesday/blob/master/data/2019/2019-10-01&#34; target=&#34;_blank&#34;&gt;Original Dataset&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;contribution-map&#34;&gt;Contribution: Map&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/acircleda/TidyTuesday/tree/master/2019-10-1%20-%20Pizza&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://github.com/acircleda/TidyTuesday/raw/master/2019-10-1%20-%20Pizza/pizza.jpeg&#34; width=&#34;500&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;2019-week-39-school-diversity&#34;&gt;2019 Week 39 - School Diversity&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/acircleda/TidyTuesday/tree/master/2019-10-1%20-%20Pizza&#34; target=&#34;_blank&#34;&gt;Original Dataset&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;contribution-diversity-in-tennessee&#34;&gt;Contribution: Diversity in Tennessee&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/acircleda/TidyTuesday/tree/master/2019-09-24%20-%20School%20Diversity&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://github.com/acircleda/TidyTuesday/raw/master/2019-09-24%20-%20School%20Diversity/tn_schooldiversity.jpeg&#34; width=&#34;500&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;div style=&#34;align: center;&#34;&gt;
+  &lt;iframe src=&#34;https://public.tableau.com/views/BlackandWhiteHigherEdWorkforce/TheBlackandWhiteHigherEducationWorkforce?:showVizHome=no&amp;:embed=true&#34; width=&#34;800px&#34; height=&#34;1100px&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
+  &lt;/div&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -118,55 +76,6 @@
 &lt;p&gt;&lt;div style=&#34;align: center; margin-left: -150px;&#34;&gt;
   &lt;iframe src=&#34;https://public.tableau.com/views/forecasts_15698547099330/Overall?:showVizHome=no&amp;:embed=true&#34; width=&#34;1100px&#34; height=&#34;2200px&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
   &lt;/div&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>The Looming Enrollment Cliff</title>
-      <link>/project/portfolio/enrollment-cliff/</link>
-      <pubDate>Thu, 13 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>/project/portfolio/enrollment-cliff/</guid>
-      <description>&lt;p&gt;The purpose of this dashboard is to understand and explore forecasted enrollments in Higher Education. These forecasts are based on the &lt;em&gt;Higher Education Demand Index&lt;/em&gt; developed by Dr. Nathan Grawe and published in his book &amp;ldquo;Demographics and the Demand for Higher Education&amp;rdquo;. The interactive allows you to get an overview of the forecasts as well as take a deeper, state-by-state dive into the data.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Not working? &lt;a href=&#34;https://public.tableau.com/views/forecasts_15698547099330/Overall?:embed=y&amp;amp;:embed_code_version=3&amp;amp;:loadOrderID=0&amp;amp;:display_count=y&amp;amp;publish=yes?:embed%3Dy?:embed%3Dy&amp;amp;:origin=viz_share_link&#34; target=&#34;_blank&#34;&gt;Click here&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;div style=&#34;align: center; margin-left: -150px;&#34;&gt;
-  &lt;iframe src=&#34;https://public.tableau.com/views/forecasts_15698547099330/Overall?:showVizHome=no&amp;:embed=true&#34; width=&#34;1100px&#34; height=&#34;2200px&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
-  &lt;/div&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Language Test Scores Dashboard</title>
-      <link>/project/portfolio/language-score-dashboard/</link>
-      <pubDate>Sat, 18 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/project/portfolio/language-score-dashboard/</guid>
-      <description>&lt;p&gt;&lt;em&gt;Note: The following Tableau dashboard represents real data that has been altered to maintain confidentiality.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;The purpose of this dashboard is to understand performance on a language test across different courses, with each course (A-F) becoming increasingly more advanced. The dashboard allows users to view progress holistically as well as at the individual course level.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Not working? &lt;a href=&#34;https://public.tableau.com/views/LanguageTestScoresPortfolio/Dashboard1?:embed=y&amp;amp;:embed_code_version=3&amp;amp;:loadOrderID=0&amp;amp;:display_count=y&amp;amp;publish=yes&amp;amp;:origin=viz_share_link&#34; target=&#34;_blank&#34;&gt;Click here&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;div style=&#34;align: center; margin-left: -150px;&#34;&gt;
-  &lt;iframe src=&#34;https://public.tableau.com/views/LanguageTestScoresPortfolio/Dashboard1?:showVizHome=no&amp;:embed=true&#34; width=&#34;1000px&#34; height=&#34;900px&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
-  &lt;/div&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Student Enrollment Dashboard</title>
-      <link>/project/portfolio/student-enrollment-dashboard/</link>
-      <pubDate>Sat, 18 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/project/portfolio/student-enrollment-dashboard/</guid>
-      <description>&lt;p&gt;&lt;em&gt;Note: The following Tableau dashboard represents real data that has been altered to maintain confidentiality.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;The purpose of this dashboard is to allow users to understand enrollment trends, compare enrollment to another institution, and see enrollment by student country of origin.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Not working? &lt;a href=&#34;https://public.tableau.com/views/StudentEnrollmentDashboardPortfolio/Dashboard1?:display_count=y&amp;amp;:origin=viz_share_link&#34; target=&#34;_blank&#34;&gt;Click here&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;div style=&#34;align: center; margin-left: -150px;&#34;&gt;
-&lt;iframe src=&#34;https://public.tableau.com/views/StudentEnrollmentDashboardPortfolio/Dashboard1?:showVizHome=no&amp;:embed=true&#34; width=&#34;1000px&#34; height=&#34;900px&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
 </description>
     </item>
     

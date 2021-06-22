@@ -13,8 +13,7 @@ summary: This interactive graphic explores the representation and pay of Black e
 
 tags:
 - Portfolio
-- Static
-- Reports
+- Interactive
 title: The Black and White Higher Education Workforce
 url_code: ""
 url_pdf: ""
@@ -22,7 +21,10 @@ url_slides: ""
 url_video: ""
 ---
 
-This interactive graphic explores the representation and pay of Black employees across the higher education workforce. <a href="https://www.cupahr.org/knowledge-center/diversity-resources/black-and-white-higher-education-workforce/" target="_blank"/>Click here to visit.
+This interactive graphic explores the representation and pay of Black employees across the higher education workforce. 
 
-<img src="featured.jpg" />
-</a>
+*Not working? [Click here](https://www.cupahr.org/knowledge-center/diversity-resources/black-and-white-higher-education-workforce/)*
+  
+  <div style="align: center;">
+  <iframe src="https://public.tableau.com/views/BlackandWhiteHigherEdWorkforce/TheBlackandWhiteHigherEducationWorkforce?:showVizHome=no&:embed=true" width="800px" height="1100px" frameborder="0"></iframe>
+  </div>

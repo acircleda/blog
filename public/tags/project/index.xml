@@ -28,9 +28,6 @@ remotes::install_github(&amp;quot;acircleda/footprint&amp;quot;)
 
 &lt;p&gt;Or you can install it from CRAN:&lt;/p&gt;
 
-&lt;p&gt;You can install the development version from
-&lt;a href=&#34;https://github.com/&#34; target=&#34;_blank&#34;&gt;GitHub&lt;/a&gt; with:&lt;/p&gt;
-
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;install.packages(&amp;quot;footprint&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
 </description>

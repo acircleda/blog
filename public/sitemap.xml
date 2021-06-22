@@ -68,6 +68,11 @@
   </url>
   
   <url>
+    <loc>/portfolio/black-and-white/</loc>
+    <lastmod>2021-06-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/post/2021-04-27-twitter-polls/</loc>
     <lastmod>2021-04-27T00:00:00+00:00</lastmod>
   </url>
@@ -213,11 +218,6 @@
   </url>
   
   <url>
-    <loc>/project/portfolio/tidytuesday/</loc>
-    <lastmod>2020-05-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/post/2020-05-08-emission-calculator-in-r/</loc>
     <lastmod>2020-05-11T00:00:00+00:00</lastmod>
   </url>
@@ -253,22 +253,12 @@
   </url>
   
   <url>
-    <loc>/project/portfolio/financial-wellness-in-higher-education/</loc>
-    <lastmod>2020-02-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/print/</loc>
     <lastmod>2020-02-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/portfolio/enrollment-cliff/</loc>
-    <lastmod>2020-02-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/project/portfolio/enrollment-cliff/</loc>
     <lastmod>2020-02-13T00:00:00+00:00</lastmod>
   </url>
   
@@ -284,16 +274,6 @@
   
   <url>
     <loc>/tags/employability/</loc>
-    <lastmod>2020-01-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/project/portfolio/language-score-dashboard/</loc>
-    <lastmod>2020-01-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/project/portfolio/student-enrollment-dashboard/</loc>
     <lastmod>2020-01-18T00:00:00+00:00</lastmod>
   </url>
   
@@ -314,11 +294,6 @@
   
   <url>
     <loc>/portfolio/tennessee-logo/</loc>
-    <lastmod>2020-01-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/project/portfolio/tennessee-logo/</loc>
     <lastmod>2020-01-06T00:00:00+00:00</lastmod>
   </url>
   

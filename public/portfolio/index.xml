@@ -19,7 +19,12 @@
       <guid>/portfolio/snap-polls/</guid>
       <description>&lt;p&gt;At the link below, you can find static and interactive visuals created for &amp;ldquo;Snap Polls&amp;rdquo; - pulse surveys of CUPA-HR&amp;rsquo;s membership.&lt;/p&gt;
 
+&lt;p&gt;&lt;a href=&#34;https://www.cupahr.org/surveys/snap-poll/snap-poll-results/&#34; target=&#34;_blank&#34; /&gt;&lt;/p&gt;
+
 &lt;p&gt;&lt;a href=&#34;https://www.cupahr.org/surveys/snap-poll/snap-poll-results/&#34; target=&#34;_blank&#34;&gt;https://www.cupahr.org/surveys/snap-poll/snap-poll-results/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;snappoll.jpg&#34; /&gt;
+&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -94,6 +99,21 @@
 &lt;p&gt;&lt;img src=&#34;https://www.cupahr.org/wp-content/uploads/wellness-components-1200x600.jpg&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The Black and White Higher Education Workforce</title>
+      <link>/portfolio/black-and-white/</link>
+      <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>/portfolio/black-and-white/</guid>
+      <description>&lt;p&gt;This interactive graphic explores the representation and pay of Black employees across the higher education workforce.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Not working? &lt;a href=&#34;https://www.cupahr.org/knowledge-center/diversity-resources/black-and-white-higher-education-workforce/&#34; target=&#34;_blank&#34;&gt;Click here&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;div style=&#34;align: center;&#34;&gt;
+  &lt;iframe src=&#34;https://public.tableau.com/views/BlackandWhiteHigherEdWorkforce/TheBlackandWhiteHigherEducationWorkforce?:showVizHome=no&amp;:embed=true&#34; width=&#34;800px&#34; height=&#34;1100px&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
+  &lt;/div&gt;&lt;/p&gt;
 </description>
     </item>
     
