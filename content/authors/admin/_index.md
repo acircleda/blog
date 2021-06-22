@@ -1,7 +1,7 @@
 ---
 authors:
 - admin
-bio: My research interests include higher education, quantitative methods, and data visualization.
+bio: My research interests include climate change, society, and education, as well as quantitative methods and data visualization.
 education:
   courses:
   - course: PhD in Evaluation, Statistics, and Measurement
@@ -15,11 +15,11 @@ education:
     year: 2006
 email: ""
 interests:
-- International students
 - Climate change and education
-- Quantiative research methods
+- International students
+- Quantitative research methods
 - Data visualization
-- Data science in education
+- Data science (in) education
 name: Anthony Schmidt
 organizations:
 - name: University of Tennessee-Knoxville
