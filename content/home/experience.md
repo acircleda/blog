@@ -36,8 +36,9 @@ date_format = "Jan 2006"
   Tools used include
   
   * R, SPSS, Excel
-  * Tableau
   * Adobe Illustrator
+  * Tableau
+  * Infogram
   """
 
 [[experience]]
@@ -52,8 +53,7 @@ date_format = "Jan 2006"
   * Several courses included content-based instruction through history, cultural geography, and climate science.
   * Organzed, analyzed, and reported on course evaluations.
   * Co-wrote proposal for, coordinated academics, and taught in 2019 Summer EducationUSA Academy. This academy has a focus on business and entrepeurship and was taught in conjunction with the Haslam College of Business.
-  
-  Blog posts related to teaching and linguistics can be found at [AnthonyTeacher.com](http://www.anthonyteacher.com)"""
+"""
 
 [[experience]]
   title = "English Language Instructor"
