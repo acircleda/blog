@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linguistics | Anthony Schmidt</title>
-    <link>/tags/linguistics/</link>
-      <atom:link href="/tags/linguistics/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://www.anthonyschmidt.co/tags/linguistics/</link>
+      <atom:link href="https://www.anthonyschmidt.co/tags/linguistics/index.xml" rel="self" type="application/rss+xml" />
     <description>Linguistics</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 26 Feb 2019 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://www.anthonyschmidt.co/img/icon-192.png</url>
       <title>Linguistics</title>
-      <link>/tags/linguistics/</link>
+      <link>https://www.anthonyschmidt.co/tags/linguistics/</link>
     </image>
     
     <item>
       <title>The Data Is/Are In</title>
-      <link>/post/2019-02-26-2019-the-data-is-are-in/</link>
+      <link>https://www.anthonyschmidt.co/post/2019-02-26-2019-the-data-is-are-in/</link>
       <pubDate>Tue, 26 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>/post/2019-02-26-2019-the-data-is-are-in/</guid>
+      <guid>https://www.anthonyschmidt.co/post/2019-02-26-2019-the-data-is-are-in/</guid>
       <description>&lt;p&gt;&lt;em&gt;This blog post was originally published on my other blog, &lt;a href=&#34;http://www.anthonyteacher.com/blog/the-data-areis-in&#34; target=&#34;_blank&#34;&gt;AnthonyTeacher.com&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Recently, it has come to my attention that I use data as a singular noun, as in “The data is nominal” rather than the plural Latinate form that it technically is, as in “The data are nominal.” To those who brought it to my attention, it is a simple mistake. Fix it. Move on.&lt;/p&gt;

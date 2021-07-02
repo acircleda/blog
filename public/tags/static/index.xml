@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Static | Anthony Schmidt</title>
-    <link>/tags/static/</link>
-      <atom:link href="/tags/static/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://www.anthonyschmidt.co/tags/static/</link>
+      <atom:link href="https://www.anthonyschmidt.co/tags/static/index.xml" rel="self" type="application/rss+xml" />
     <description>Static</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 21 Jun 2021 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://www.anthonyschmidt.co/img/icon-192.png</url>
       <title>Static</title>
-      <link>/tags/static/</link>
+      <link>https://www.anthonyschmidt.co/tags/static/</link>
     </image>
     
     <item>
       <title>Poll Results</title>
-      <link>/portfolio/snap-polls/</link>
+      <link>https://www.anthonyschmidt.co/portfolio/snap-polls/</link>
       <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
-      <guid>/portfolio/snap-polls/</guid>
+      <guid>https://www.anthonyschmidt.co/portfolio/snap-polls/</guid>
       <description>&lt;p&gt;At the link below, you can find static and interactive visuals created for &amp;ldquo;Snap Polls&amp;rdquo; - pulse surveys of CUPA-HR&amp;rsquo;s membership.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://www.cupahr.org/surveys/snap-poll/snap-poll-results/&#34; target=&#34;_blank&#34; /&gt;&lt;/p&gt;
@@ -30,9 +30,9 @@
     
     <item>
       <title>Reports with Static Visualizations</title>
-      <link>/portfolio/static-reports/</link>
+      <link>https://www.anthonyschmidt.co/portfolio/static-reports/</link>
       <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
-      <guid>/portfolio/static-reports/</guid>
+      <guid>https://www.anthonyschmidt.co/portfolio/static-reports/</guid>
       <description>
 
 &lt;p&gt;&lt;a href=&#34;https://www.cupahr.org/surveys/research-briefs/2020-the-higher-ed-hr-workforce/&#34; target=&#34;_blank&#34;&gt;&lt;/p&gt;

@@ -2,125 +2,125 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags | Anthony Schmidt</title>
-    <link>/tags/</link>
-      <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://www.anthonyschmidt.co/tags/</link>
+      <atom:link href="https://www.anthonyschmidt.co/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 21 Jun 2021 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://www.anthonyschmidt.co/img/icon-192.png</url>
       <title>Tags</title>
-      <link>/tags/</link>
+      <link>https://www.anthonyschmidt.co/tags/</link>
     </image>
     
     <item>
       <title>Interactive</title>
-      <link>/tags/interactive/</link>
+      <link>https://www.anthonyschmidt.co/tags/interactive/</link>
       <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/interactive/</guid>
+      <guid>https://www.anthonyschmidt.co/tags/interactive/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Portfolio</title>
-      <link>/tags/portfolio/</link>
+      <link>https://www.anthonyschmidt.co/tags/portfolio/</link>
       <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/portfolio/</guid>
+      <guid>https://www.anthonyschmidt.co/tags/portfolio/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Reports</title>
-      <link>/tags/reports/</link>
+      <link>https://www.anthonyschmidt.co/tags/reports/</link>
       <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/reports/</guid>
+      <guid>https://www.anthonyschmidt.co/tags/reports/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Static</title>
-      <link>/tags/static/</link>
+      <link>https://www.anthonyschmidt.co/tags/static/</link>
       <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/static/</guid>
+      <guid>https://www.anthonyschmidt.co/tags/static/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Climate Change</title>
-      <link>/tags/climate-change/</link>
+      <link>https://www.anthonyschmidt.co/tags/climate-change/</link>
       <pubDate>Sat, 20 Feb 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/climate-change/</guid>
+      <guid>https://www.anthonyschmidt.co/tags/climate-change/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Project</title>
-      <link>/tags/project/</link>
+      <link>https://www.anthonyschmidt.co/tags/project/</link>
       <pubDate>Sat, 20 Feb 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/project/</guid>
+      <guid>https://www.anthonyschmidt.co/tags/project/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Data Science</title>
-      <link>/tags/data-science/</link>
+      <link>https://www.anthonyschmidt.co/tags/data-science/</link>
       <pubDate>Sun, 27 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>/tags/data-science/</guid>
+      <guid>https://www.anthonyschmidt.co/tags/data-science/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Graduation Rates</title>
-      <link>/tags/graduation-rates/</link>
+      <link>https://www.anthonyschmidt.co/tags/graduation-rates/</link>
       <pubDate>Sat, 15 Aug 2020 00:00:00 +0000</pubDate>
-      <guid>/tags/graduation-rates/</guid>
+      <guid>https://www.anthonyschmidt.co/tags/graduation-rates/</guid>
       <description></description>
     </item>
     
     <item>
       <title>International Students</title>
-      <link>/tags/international-students/</link>
+      <link>https://www.anthonyschmidt.co/tags/international-students/</link>
       <pubDate>Sat, 15 Aug 2020 00:00:00 +0000</pubDate>
-      <guid>/tags/international-students/</guid>
+      <guid>https://www.anthonyschmidt.co/tags/international-students/</guid>
       <description></description>
     </item>
     
     <item>
       <title>IPEDS</title>
-      <link>/tags/ipeds/</link>
+      <link>https://www.anthonyschmidt.co/tags/ipeds/</link>
       <pubDate>Sat, 15 Aug 2020 00:00:00 +0000</pubDate>
-      <guid>/tags/ipeds/</guid>
+      <guid>https://www.anthonyschmidt.co/tags/ipeds/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Print</title>
-      <link>/tags/print/</link>
+      <link>https://www.anthonyschmidt.co/tags/print/</link>
       <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>/tags/print/</guid>
+      <guid>https://www.anthonyschmidt.co/tags/print/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Employability</title>
-      <link>/tags/employability/</link>
+      <link>https://www.anthonyschmidt.co/tags/employability/</link>
       <pubDate>Sat, 18 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/tags/employability/</guid>
+      <guid>https://www.anthonyschmidt.co/tags/employability/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Education</title>
-      <link>/tags/education/</link>
+      <link>https://www.anthonyschmidt.co/tags/education/</link>
       <pubDate>Thu, 16 Jan 2020 13:00:00 +0000</pubDate>
-      <guid>/tags/education/</guid>
+      <guid>https://www.anthonyschmidt.co/tags/education/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linguistics</title>
-      <link>/tags/linguistics/</link>
+      <link>https://www.anthonyschmidt.co/tags/linguistics/</link>
       <pubDate>Tue, 26 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>/tags/linguistics/</guid>
+      <guid>https://www.anthonyschmidt.co/tags/linguistics/</guid>
       <description></description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Portfolios | Anthony Schmidt</title>
-    <link>/portfolio/</link>
-      <atom:link href="/portfolio/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://www.anthonyschmidt.co/portfolio/</link>
+      <atom:link href="https://www.anthonyschmidt.co/portfolio/index.xml" rel="self" type="application/rss+xml" />
     <description>Portfolios</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 21 Jun 2021 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://www.anthonyschmidt.co/img/icon-192.png</url>
       <title>Portfolios</title>
-      <link>/portfolio/</link>
+      <link>https://www.anthonyschmidt.co/portfolio/</link>
     </image>
     
     <item>
       <title>Poll Results</title>
-      <link>/portfolio/snap-polls/</link>
+      <link>https://www.anthonyschmidt.co/portfolio/snap-polls/</link>
       <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
-      <guid>/portfolio/snap-polls/</guid>
+      <guid>https://www.anthonyschmidt.co/portfolio/snap-polls/</guid>
       <description>&lt;p&gt;At the link below, you can find static and interactive visuals created for &amp;ldquo;Snap Polls&amp;rdquo; - pulse surveys of CUPA-HR&amp;rsquo;s membership.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://www.cupahr.org/surveys/snap-poll/snap-poll-results/&#34; target=&#34;_blank&#34; /&gt;&lt;/p&gt;
@@ -29,10 +29,25 @@
     </item>
     
     <item>
-      <title>Reports with Interactive Visualizations</title>
-      <link>/portfolio/interactive-reports/</link>
+      <title>Racial/Ethnic Diversity in the Higher Education Workforce</title>
+      <link>https://www.anthonyschmidt.co/portfolio/diversity/</link>
       <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
-      <guid>/portfolio/interactive-reports/</guid>
+      <guid>https://www.anthonyschmidt.co/portfolio/diversity/</guid>
+      <description>&lt;p&gt;This interactive graphic explores the representation and pay of Black employees across the higher education workforce.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Not working? &lt;a href=&#34;https://public.tableau.com/app/profile/cupahr/viz/DiversityMaps/DiversityMaps&#34; target=&#34;_blank&#34;&gt;Click here&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;div style=&#34;align: center; margin-left: -100px;&#34;&gt;
+  &lt;iframe src=&#34;https://public.tableau.com/views/DiversityMaps/DiversityMaps?:showVizHome=no&amp;:embed=true&#34; width=&#34;1000px&#34; height=&#34;900px&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
+  &lt;/div&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Reports with Interactive Visualizations</title>
+      <link>https://www.anthonyschmidt.co/portfolio/interactive-reports/</link>
+      <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>https://www.anthonyschmidt.co/portfolio/interactive-reports/</guid>
       <description>
 
 &lt;p&gt;&lt;a href=&#34;https://www.cupahr.org/surveys/research-briefs/minimum-wage-changes-higher-ed/&#34; target=&#34;_blank&#34;&gt;&lt;/p&gt;
@@ -67,9 +82,9 @@
     
     <item>
       <title>Reports with Static Visualizations</title>
-      <link>/portfolio/static-reports/</link>
+      <link>https://www.anthonyschmidt.co/portfolio/static-reports/</link>
       <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
-      <guid>/portfolio/static-reports/</guid>
+      <guid>https://www.anthonyschmidt.co/portfolio/static-reports/</guid>
       <description>
 
 &lt;p&gt;&lt;a href=&#34;https://www.cupahr.org/surveys/research-briefs/2020-the-higher-ed-hr-workforce/&#34; target=&#34;_blank&#34;&gt;&lt;/p&gt;
@@ -104,9 +119,9 @@
     
     <item>
       <title>The Black and White Higher Education Workforce</title>
-      <link>/portfolio/black-and-white/</link>
+      <link>https://www.anthonyschmidt.co/portfolio/black-and-white/</link>
       <pubDate>Mon, 21 Jun 2021 00:00:00 +0000</pubDate>
-      <guid>/portfolio/black-and-white/</guid>
+      <guid>https://www.anthonyschmidt.co/portfolio/black-and-white/</guid>
       <description>&lt;p&gt;This interactive graphic explores the representation and pay of Black employees across the higher education workforce.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Not working? &lt;a href=&#34;https://www.cupahr.org/knowledge-center/diversity-resources/black-and-white-higher-education-workforce/&#34; target=&#34;_blank&#34;&gt;Click here&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
@@ -119,9 +134,9 @@
     
     <item>
       <title>Financial Wellness in Higher Education</title>
-      <link>/portfolio/financial-wellness-in-higher-education/</link>
+      <link>https://www.anthonyschmidt.co/portfolio/financial-wellness-in-higher-education/</link>
       <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>/portfolio/financial-wellness-in-higher-education/</guid>
+      <guid>https://www.anthonyschmidt.co/portfolio/financial-wellness-in-higher-education/</guid>
       <description>&lt;p&gt;This infographic summarizes key takeaways from a TIAA Institute/CUPA-HR survey on financial wellness in Higher Education. It was printed as a 2-page spread in CUPA-HR&amp;rsquo;s &lt;em&gt;Higher Ed HR Magazine,&lt;/em&gt; Winter 2019-20, distributed to over 30,000 members.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;financial_wellness.pdf&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;financial_wellness.jpg&#34; alt=&#34;Financial Wellness&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
@@ -130,9 +145,9 @@
     
     <item>
       <title>The Looming Enrollment Cliff</title>
-      <link>/portfolio/enrollment-cliff/</link>
+      <link>https://www.anthonyschmidt.co/portfolio/enrollment-cliff/</link>
       <pubDate>Thu, 13 Feb 2020 00:00:00 +0000</pubDate>
-      <guid>/portfolio/enrollment-cliff/</guid>
+      <guid>https://www.anthonyschmidt.co/portfolio/enrollment-cliff/</guid>
       <description>&lt;p&gt;The purpose of this dashboard is to understand and explore forecasted enrollments in Higher Education. These forecasts are based on the &lt;em&gt;Higher Education Demand Index&lt;/em&gt; developed by Dr. Nathan Grawe and published in his book &amp;ldquo;Demographics and the Demand for Higher Education&amp;rdquo;. The interactive allows you to get an overview of the forecasts as well as take a deeper, state-by-state dive into the data.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Not working? &lt;a href=&#34;https://public.tableau.com/views/forecasts_15698547099330/Overall?:embed=y&amp;amp;:embed_code_version=3&amp;amp;:loadOrderID=0&amp;amp;:display_count=y&amp;amp;publish=yes?:embed%3Dy?:embed%3Dy&amp;amp;:origin=viz_share_link&#34; target=&#34;_blank&#34;&gt;Click here&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
@@ -145,9 +160,9 @@
     
     <item>
       <title>Multilingual &#34;Welcome&#34; Logo</title>
-      <link>/portfolio/tennessee-logo/</link>
+      <link>https://www.anthonyschmidt.co/portfolio/tennessee-logo/</link>
       <pubDate>Mon, 06 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/portfolio/tennessee-logo/</guid>
+      <guid>https://www.anthonyschmidt.co/portfolio/tennessee-logo/</guid>
       <description>&lt;p&gt;The following design is meant to showcase some of my experience with Adobe Illustrator. The image below was designed for a t-shirt marketing campaign at the &lt;a href=&#34;http://eli.utk.edu/&#34; target=&#34;_blank&#34;&gt;English Language Institute&lt;/a&gt;. It depicts the phrase “welcome” in numerous languages, arranged to make the state of Tennessee’s outline. It includes the university and department names in their respective &lt;a href=&#34;http://brand.utk.edu/&#34; target=&#34;_blank&#34;&gt;brand UTK typologies&lt;/a&gt;, as well as the phrase &lt;a href=&#34;https://www.youarewelcomehereusa.org/&#34; target=&#34;_blank&#34;&gt;#YouAreWelcomeHere&lt;/a&gt;, also in a brand font. The colors are also part of the UTK color pallette. This design was printed on smokey gray and Tennessee orange shirts.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://i1.wp.com/www.anthonyschmidt.co/wp-content/uploads/2019/07/eli_tn_multilingual.png?resize=768%2C315&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://i1.wp.com/www.anthonyschmidt.co/wp-content/uploads/2019/07/eli_tn_multilingual.png?resize=768%2C315&#34; alt=&#34;YouAreWelcomeHere&#34; /&gt;&lt;/a&gt;&lt;/p&gt;

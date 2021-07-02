@@ -3,370 +3,360 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/courses/example/example1/</loc>
+    <loc>https://www.anthonyschmidt.co/courses/example/example1/</loc>
     <lastmod>2019-05-05T00:00:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>/courses/example/</loc>
+    <loc>https://www.anthonyschmidt.co/courses/example/</loc>
     <lastmod>2018-09-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/courses/example/example2/</loc>
+    <loc>https://www.anthonyschmidt.co/courses/example/example2/</loc>
     <lastmod>2019-05-05T00:00:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>/</loc>
+    <loc>https://www.anthonyschmidt.co/</loc>
     <lastmod>2021-06-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/interactive/</loc>
+    <loc>https://www.anthonyschmidt.co/tags/interactive/</loc>
     <lastmod>2021-06-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/portfolio/snap-polls/</loc>
+    <loc>https://www.anthonyschmidt.co/portfolio/snap-polls/</loc>
     <lastmod>2021-06-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/portfolio/</loc>
+    <loc>https://www.anthonyschmidt.co/tags/portfolio/</loc>
     <lastmod>2021-06-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/portfolio/</loc>
+    <loc>https://www.anthonyschmidt.co/portfolio/</loc>
     <lastmod>2021-06-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/reports/</loc>
+    <loc>https://www.anthonyschmidt.co/portfolio/diversity/</loc>
     <lastmod>2021-06-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/portfolio/interactive-reports/</loc>
+    <loc>https://www.anthonyschmidt.co/tags/reports/</loc>
     <lastmod>2021-06-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/portfolio/static-reports/</loc>
+    <loc>https://www.anthonyschmidt.co/portfolio/interactive-reports/</loc>
     <lastmod>2021-06-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/static/</loc>
+    <loc>https://www.anthonyschmidt.co/portfolio/static-reports/</loc>
     <lastmod>2021-06-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>https://www.anthonyschmidt.co/tags/static/</loc>
     <lastmod>2021-06-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/portfolio/black-and-white/</loc>
+    <loc>https://www.anthonyschmidt.co/tags/</loc>
     <lastmod>2021-06-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/2021-04-27-twitter-polls/</loc>
+    <loc>https://www.anthonyschmidt.co/portfolio/black-and-white/</loc>
+    <lastmod>2021-06-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.anthonyschmidt.co/post/2021-04-27-twitter-polls/</loc>
     <lastmod>2021-04-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/</loc>
+    <loc>https://www.anthonyschmidt.co/post/</loc>
     <lastmod>2021-04-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/2021-02-20-correlation-table-highlighting/</loc>
+    <loc>https://www.anthonyschmidt.co/post/2021-02-20-correlation-table-highlighting/</loc>
     <lastmod>2021-02-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/climate-change/</loc>
+    <loc>https://www.anthonyschmidt.co/tags/climate-change/</loc>
     <lastmod>2021-02-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/project/footprint/</loc>
+    <loc>https://www.anthonyschmidt.co/project/footprint/</loc>
     <lastmod>2021-02-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/project/</loc>
+    <loc>https://www.anthonyschmidt.co/tags/project/</loc>
     <lastmod>2021-02-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/project/</loc>
+    <loc>https://www.anthonyschmidt.co/project/</loc>
     <lastmod>2021-02-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/admin/</loc>
+    <loc>https://www.anthonyschmidt.co/authors/admin/</loc>
     <lastmod>2021-01-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/publication_types/3/</loc>
+    <loc>https://www.anthonyschmidt.co/publication_types/3/</loc>
     <lastmod>2021-01-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/</loc>
+    <loc>https://www.anthonyschmidt.co/authors/</loc>
     <lastmod>2021-01-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/authors/louis-rocconi/</loc>
+    <loc>https://www.anthonyschmidt.co/authors/louis-rocconi/</loc>
     <lastmod>2021-01-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/publication_types/</loc>
+    <loc>https://www.anthonyschmidt.co/publication_types/</loc>
     <lastmod>2021-01-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/publication/</loc>
+    <loc>https://www.anthonyschmidt.co/publication/</loc>
     <lastmod>2021-01-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/publication/stars/</loc>
+    <loc>https://www.anthonyschmidt.co/publication/stars/</loc>
     <lastmod>2021-01-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/publication/university-air-travel/</loc>
+    <loc>https://www.anthonyschmidt.co/publication/university-air-travel/</loc>
     <lastmod>2021-01-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/talk/</loc>
+    <loc>https://www.anthonyschmidt.co/talk/</loc>
     <lastmod>2020-11-25T09:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/talk/2020-11-sustainable-academic-travel/</loc>
+    <loc>https://www.anthonyschmidt.co/talk/2020-11-sustainable-academic-travel/</loc>
     <lastmod>2020-11-25T09:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/data-science/</loc>
+    <loc>https://www.anthonyschmidt.co/tags/data-science/</loc>
     <lastmod>2020-09-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/2020-09-27-efa-tables-in-r/</loc>
+    <loc>https://www.anthonyschmidt.co/post/2020-09-27-efa-tables-in-r/</loc>
     <lastmod>2020-09-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/what-do-institutional-policies-have-to-say-about-flyingless/</loc>
+    <loc>https://www.anthonyschmidt.co/post/what-do-institutional-policies-have-to-say-about-flyingless/</loc>
     <lastmod>2020-09-12T19:29:09-04:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/2020-09-06-table-options-mlm/</loc>
+    <loc>https://www.anthonyschmidt.co/post/2020-09-06-table-options-mlm/</loc>
     <lastmod>2020-09-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/publication_types/2/</loc>
+    <loc>https://www.anthonyschmidt.co/publication_types/2/</loc>
     <lastmod>2020-08-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/publication/are-international-students-getting-a-bang-for-their-buck/</loc>
+    <loc>https://www.anthonyschmidt.co/publication/are-international-students-getting-a-bang-for-their-buck/</loc>
     <lastmod>2020-08-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/graduation-rates/</loc>
+    <loc>https://www.anthonyschmidt.co/tags/graduation-rates/</loc>
     <lastmod>2020-08-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/international-students/</loc>
+    <loc>https://www.anthonyschmidt.co/tags/international-students/</loc>
     <lastmod>2020-08-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/ipeds/</loc>
+    <loc>https://www.anthonyschmidt.co/tags/ipeds/</loc>
     <lastmod>2020-08-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/exploring-flyingless-on-twitter-part-2/</loc>
-    <lastmod>2020-06-09T08:48:30-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/publication/intl-student-academic-achievement/</loc>
+    <loc>https://www.anthonyschmidt.co/publication/intl-student-academic-achievement/</loc>
     <lastmod>2020-06-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/2020-06-03-making-apa-tables-with-gt/</loc>
+    <loc>https://www.anthonyschmidt.co/post/2020-06-03-making-apa-tables-with-gt/</loc>
     <lastmod>2020-06-04T23:04:04-04:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/2020-05-08-emission-calculator-in-r/</loc>
+    <loc>https://www.anthonyschmidt.co/post/2020-05-08-emission-calculator-in-r/</loc>
     <lastmod>2020-05-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/project/flying-less-document-analysis/</loc>
+    <loc>https://www.anthonyschmidt.co/project/flying-less-document-analysis/</loc>
     <lastmod>2020-05-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/project/r-handbook/</loc>
+    <loc>https://www.anthonyschmidt.co/project/r-handbook/</loc>
     <lastmod>2020-05-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/talk/2020-3-becoming-tidyr-over-time/</loc>
+    <loc>https://www.anthonyschmidt.co/talk/2020-3-becoming-tidyr-over-time/</loc>
     <lastmod>2020-03-11T12:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/exploring-flying-less-with-tags/</loc>
+    <loc>https://www.anthonyschmidt.co/post/exploring-flying-less-with-tags/</loc>
     <lastmod>2020-02-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/2020-19-02-carbon-crisis-mitigation-whose-responsibility-is-it-a-tidytuesday-inspired-essay/</loc>
+    <loc>https://www.anthonyschmidt.co/post/2020-19-02-carbon-crisis-mitigation-whose-responsibility-is-it-a-tidytuesday-inspired-essay/</loc>
     <lastmod>2020-02-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/portfolio/financial-wellness-in-higher-education/</loc>
+    <loc>https://www.anthonyschmidt.co/portfolio/financial-wellness-in-higher-education/</loc>
     <lastmod>2020-02-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/print/</loc>
+    <loc>https://www.anthonyschmidt.co/tags/print/</loc>
     <lastmod>2020-02-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/portfolio/enrollment-cliff/</loc>
+    <loc>https://www.anthonyschmidt.co/portfolio/enrollment-cliff/</loc>
     <lastmod>2020-02-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/2020-02-10-carbon-footprint-google-data/</loc>
+    <loc>https://www.anthonyschmidt.co/post/2020-02-10-carbon-footprint-google-data/</loc>
     <lastmod>2020-02-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/project/esm-data-jobs/</loc>
+    <loc>https://www.anthonyschmidt.co/project/esm-data-jobs/</loc>
     <lastmod>2020-01-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/employability/</loc>
+    <loc>https://www.anthonyschmidt.co/tags/employability/</loc>
     <lastmod>2020-01-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/talk/planting-the-seeds/</loc>
+    <loc>https://www.anthonyschmidt.co/talk/planting-the-seeds/</loc>
     <lastmod>2020-01-16T13:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/education/</loc>
+    <loc>https://www.anthonyschmidt.co/tags/education/</loc>
     <lastmod>2020-01-16T13:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/project/tidy-tuesday/</loc>
+    <loc>https://www.anthonyschmidt.co/project/tidy-tuesday/</loc>
     <lastmod>2020-01-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/portfolio/tennessee-logo/</loc>
+    <loc>https://www.anthonyschmidt.co/portfolio/tennessee-logo/</loc>
     <lastmod>2020-01-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/project/fly-or-die-phd-grads/</loc>
+    <loc>https://www.anthonyschmidt.co/project/fly-or-die-phd-grads/</loc>
     <lastmod>2019-12-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/2019-08-24-speaking-of-data/</loc>
+    <loc>https://www.anthonyschmidt.co/post/2019-08-24-speaking-of-data/</loc>
     <lastmod>2019-08-24T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/publication/international-students-in-first-year-writing-review/</loc>
+    <loc>https://www.anthonyschmidt.co/publication/international-students-in-first-year-writing-review/</loc>
     <lastmod>2019-08-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/2019-5-10-the-cost-of-international-education/</loc>
+    <loc>https://www.anthonyschmidt.co/post/2019-5-10-the-cost-of-international-education/</loc>
     <lastmod>2019-05-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/talk/tesol2019/</loc>
+    <loc>https://www.anthonyschmidt.co/talk/tesol2019/</loc>
     <lastmod>2019-03-01T13:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/linguistics/</loc>
+    <loc>https://www.anthonyschmidt.co/tags/linguistics/</loc>
     <lastmod>2019-02-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/2019-02-26-2019-the-data-is-are-in/</loc>
+    <loc>https://www.anthonyschmidt.co/post/2019-02-26-2019-the-data-is-are-in/</loc>
     <lastmod>2019-02-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/slides/</loc>
+    <loc>https://www.anthonyschmidt.co/slides/</loc>
     <lastmod>2019-02-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/slides/example/</loc>
+    <loc>https://www.anthonyschmidt.co/slides/example/</loc>
     <lastmod>2019-02-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/privacy/</loc>
-    <lastmod>2018-06-28T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/terms/</loc>
-    <lastmod>2018-06-28T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/project/iep-gpa/</loc>
+    <loc>https://www.anthonyschmidt.co/project/iep-gpa/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>https://www.anthonyschmidt.co/categories/</loc>
   </url>
   
   <url>
-    <loc>/courses/</loc>
+    <loc>https://www.anthonyschmidt.co/courses/</loc>
   </url>
   
   <url>
-    <loc>/project/planting-the-seeds-for-cs/</loc>
+    <loc>https://www.anthonyschmidt.co/project/planting-the-seeds-for-cs/</loc>
   </url>
   
 </urlset>

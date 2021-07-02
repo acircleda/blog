@@ -2,64 +2,64 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Anthony Schmidt</title>
-    <link>/authors/admin/</link>
-      <atom:link href="/authors/admin/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://www.anthonyschmidt.co/authors/admin/</link>
+      <atom:link href="https://www.anthonyschmidt.co/authors/admin/index.xml" rel="self" type="application/rss+xml" />
     <description>Anthony Schmidt</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 19 Jan 2021 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://www.anthonyschmidt.co/img/icon-192.png</url>
       <title>Anthony Schmidt</title>
-      <link>/authors/admin/</link>
+      <link>https://www.anthonyschmidt.co/authors/admin/</link>
     </image>
     
     <item>
       <title>STARS and Stripes: Political and Institutional Factors that Affect Higher Education Sustainability Ratings</title>
-      <link>/publication/stars/</link>
+      <link>https://www.anthonyschmidt.co/publication/stars/</link>
       <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>/publication/stars/</guid>
+      <guid>https://www.anthonyschmidt.co/publication/stars/</guid>
       <description></description>
     </item>
     
     <item>
       <title>University air travel and greenhouse gas mitigation: An analysis of higher education climate policies</title>
-      <link>/publication/university-air-travel/</link>
+      <link>https://www.anthonyschmidt.co/publication/university-air-travel/</link>
       <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>/publication/university-air-travel/</guid>
+      <guid>https://www.anthonyschmidt.co/publication/university-air-travel/</guid>
       <description></description>
     </item>
     
     <item>
       <title>University Air Travel and GHG Mitigation: Examining Institutional Policies through the Lens of #flyingless</title>
-      <link>/talk/2020-11-sustainable-academic-travel/</link>
+      <link>https://www.anthonyschmidt.co/talk/2020-11-sustainable-academic-travel/</link>
       <pubDate>Wed, 25 Nov 2020 09:00:00 +0000</pubDate>
-      <guid>/talk/2020-11-sustainable-academic-travel/</guid>
+      <guid>https://www.anthonyschmidt.co/talk/2020-11-sustainable-academic-travel/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Are International Students Getting a Bang for their Buck? The Relationship between Expenditures and International Student Graduation Rates</title>
-      <link>/publication/are-international-students-getting-a-bang-for-their-buck/</link>
+      <link>https://www.anthonyschmidt.co/publication/are-international-students-getting-a-bang-for-their-buck/</link>
       <pubDate>Sat, 15 Aug 2020 00:00:00 +0000</pubDate>
-      <guid>/publication/are-international-students-getting-a-bang-for-their-buck/</guid>
+      <guid>https://www.anthonyschmidt.co/publication/are-international-students-getting-a-bang-for-their-buck/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Intensive English Program (IEP) Student Academic Achivement: Comparing IEP and Directly-Admitted International Student GPA</title>
-      <link>/publication/intl-student-academic-achievement/</link>
+      <link>https://www.anthonyschmidt.co/publication/intl-student-academic-achievement/</link>
       <pubDate>Fri, 05 Jun 2020 00:00:00 +0000</pubDate>
-      <guid>/publication/intl-student-academic-achievement/</guid>
+      <guid>https://www.anthonyschmidt.co/publication/intl-student-academic-achievement/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Becoming “TidyR” over Time- Data Visualization Development in an Online Community of Practice</title>
-      <link>/talk/2020-3-becoming-tidyr-over-time/</link>
+      <link>https://www.anthonyschmidt.co/talk/2020-3-becoming-tidyr-over-time/</link>
       <pubDate>Wed, 11 Mar 2020 12:00:00 +0000</pubDate>
-      <guid>/talk/2020-3-becoming-tidyr-over-time/</guid>
+      <guid>https://www.anthonyschmidt.co/talk/2020-3-becoming-tidyr-over-time/</guid>
       <description>
-&lt;link href=&#34;/rmarkdown-libs/anchor-sections/anchor-sections.css&#34; rel=&#34;stylesheet&#34; /&gt;
-&lt;script src=&#34;/rmarkdown-libs/anchor-sections/anchor-sections.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;https://www.anthonyschmidt.co/rmarkdown-libs/anchor-sections/anchor-sections.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;script src=&#34;https://www.anthonyschmidt.co/rmarkdown-libs/anchor-sections/anchor-sections.js&#34;&gt;&lt;/script&gt;
 
 
 &lt;div id=&#34;download-the-poster-here&#34; class=&#34;section level4&#34;&gt;
@@ -91,7 +91,7 @@ library(ggplot2)
 iris %&amp;gt;%
   ggplot() +
     geom_point(aes(x=Sepal.Length,y=Sepal.Width))&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/talk/2020-3-becoming-tidyr-over-time/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.anthonyschmidt.co/talk/2020-3-becoming-tidyr-over-time/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div id=&#34;research-purpose&#34; class=&#34;section level2&#34;&gt;
@@ -235,25 +235,25 @@ iris %&amp;gt;%
     
     <item>
       <title>A survey of teachers and administrators regarding the implementation of new K-8 computing education standards in Tennessee</title>
-      <link>/talk/planting-the-seeds/</link>
+      <link>https://www.anthonyschmidt.co/talk/planting-the-seeds/</link>
       <pubDate>Thu, 16 Jan 2020 13:00:00 +0000</pubDate>
-      <guid>/talk/planting-the-seeds/</guid>
+      <guid>https://www.anthonyschmidt.co/talk/planting-the-seeds/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Book Review - International Students in First-Year Writing: A Journey Through Socio-Academic Space</title>
-      <link>/publication/international-students-in-first-year-writing-review/</link>
+      <link>https://www.anthonyschmidt.co/publication/international-students-in-first-year-writing-review/</link>
       <pubDate>Thu, 15 Aug 2019 00:00:00 +0000</pubDate>
-      <guid>/publication/international-students-in-first-year-writing-review/</guid>
+      <guid>https://www.anthonyschmidt.co/publication/international-students-in-first-year-writing-review/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A Comparison of Direct Admit and IEP Student Academic Achievement</title>
-      <link>/talk/tesol2019/</link>
+      <link>https://www.anthonyschmidt.co/talk/tesol2019/</link>
       <pubDate>Fri, 01 Mar 2019 13:00:00 +0000</pubDate>
-      <guid>/talk/tesol2019/</guid>
+      <guid>https://www.anthonyschmidt.co/talk/tesol2019/</guid>
       <description></description>
     </item>
     
