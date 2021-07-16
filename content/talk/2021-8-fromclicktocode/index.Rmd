@@ -34,7 +34,7 @@ output:
 
 Proprietary software such as SPSS, Stata, and SAS have traditionally dominated statistics courses, particularly in applied statistics courses in the social and behavioral sciences. More recently, R has become the software package of choice due to its open-source nature, limited resource use, and flexibility. While these features may excite veteran researchers and statisticians, the R programming language can feel daunting to students, especially those who have become accustomed to point-and-click software and graphical user interfaces. This presentation will discuss the switch from SPSS to R in an advanced graduate-level applied statistics course in an educational psychology program. The presentation will focus on strategies implemented by the instructors for designing materials, scaffolding, and developing practice activities and assessments. In addition, results from a survey on students’ experiences, challenges, and strategies with transitioning to and learning R will be shared. Insights for module sequencing, material design, and general pedagogy will be highlighted.
 
-## Resources
+## Resources 
 
 - Interactive R Reference Guide
   - [.Rmd file used to create guide](Data-Analysis-with-R.Rmd)
