@@ -12,7 +12,7 @@ image:
 location: 
 math: true
 projects:
-publishDate: "2021-08-11T00:00:00Z"
+publishDate: "2021-07-16T00:00:00Z"
 slides: 
 summary: "This presentation will discuss the switch from SPSS to R in an advanced graduate-level applied statistics course in an educational psychology program."
 tags: [Data Science]
