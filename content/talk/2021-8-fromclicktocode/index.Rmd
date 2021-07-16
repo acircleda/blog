@@ -2,7 +2,7 @@
 abstract:
 all_day: false
 authors: [admin, "Louis Rocconi"]
-date: "2021-07-15T1:00:00Z"
+date: "2021-08-11T1:00:00Z"
 date_end: "2021-08-11T3:00:00Z"
 event: 2021 Joint Statistical Meeting
 event_url: https://web.archive.org/web/20210716145020/https://ww2.amstat.org/meetings/jsm/2021/onlineprogram/AbstractDetails.cfm?abstractid=317897
@@ -12,7 +12,7 @@ image:
 location: 
 math: true
 projects:
-publishDate: "2021-07-16T00:00:00Z"
+publishDate: "2021-07-15T00:00:00Z"
 slides: 
 summary: "This presentation will discuss the switch from SPSS to R in an advanced graduate-level applied statistics course in an educational psychology program."
 tags: [Data Science]
