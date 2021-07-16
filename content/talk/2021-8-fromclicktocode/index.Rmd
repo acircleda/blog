@@ -37,6 +37,6 @@ Proprietary software such as SPSS, Stata, and SAS have traditionally dominated s
 ## Resources 
 
 - Interactive R Reference Guide
-  - [.Rmd file used to create guide](Data-Analysis-with-R.Rmd)
-  - [.html file given to students](Data-Analysis-with-R.html)
+  - [.Rmd file used to create guide](https://github.com/acircleda/blog/blob/master/content/talk/2021-8-fromclicktocode/Data-Analysis-with-R.Rmd)
+  - [.html file given to students](https://github.com/acircleda/blog/blob/master/content/talk/2021-8-fromclicktocode/Data-Analysis-with-R.html)
 - [Heloful R Code (.pdf)](Helpful-R-Code.pdf)
