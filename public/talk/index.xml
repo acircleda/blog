@@ -5,12 +5,44 @@
     <link>https://www.anthonyschmidt.co/talk/</link>
       <atom:link href="https://www.anthonyschmidt.co/talk/index.xml" rel="self" type="application/rss+xml" />
     <description>Recent &amp; Upcoming Talks</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 25 Nov 2020 09:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 15 Jul 2021 01:00:00 +0000</lastBuildDate>
     <image>
       <url>https://www.anthonyschmidt.co/img/icon-192.png</url>
       <title>Recent &amp; Upcoming Talks</title>
       <link>https://www.anthonyschmidt.co/talk/</link>
     </image>
+    
+    <item>
+      <title>From Click to Code: Insights from Instructors and Students on Moving from SPSS to R in a Graduate-Level Applied Statistics Course</title>
+      <link>https://www.anthonyschmidt.co/talk/2021-8-fromclicktocode/</link>
+      <pubDate>Thu, 15 Jul 2021 01:00:00 +0000</pubDate>
+      <guid>https://www.anthonyschmidt.co/talk/2021-8-fromclicktocode/</guid>
+      <description>
+&lt;script src=&#34;https://www.anthonyschmidt.co/talk/2021-8-fromclicktocode/index_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;Classroom Teaching and Pedagogy — Contributed Speed Session&lt;/li&gt;
+&lt;li&gt;Section on Statistics and Data Science Education, Section on Teaching of Statistics in the Health Sciences, Text Analysis Interest Group&lt;/li&gt;
+&lt;li&gt;Chair(s): Jamis Perrett, Bayer U.S.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div id=&#34;abstract&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Abstract&lt;/h2&gt;
+&lt;p&gt;Proprietary software such as SPSS, Stata, and SAS have traditionally dominated statistics courses, particularly in applied statistics courses in the social and behavioral sciences. More recently, R has become the software package of choice due to its open-source nature, limited resource use, and flexibility. While these features may excite veteran researchers and statisticians, the R programming language can feel daunting to students, especially those who have become accustomed to point-and-click software and graphical user interfaces. This presentation will discuss the switch from SPSS to R in an advanced graduate-level applied statistics course in an educational psychology program. The presentation will focus on strategies implemented by the instructors for designing materials, scaffolding, and developing practice activities and assessments. In addition, results from a survey on students’ experiences, challenges, and strategies with transitioning to and learning R will be shared. Insights for module sequencing, material design, and general pedagogy will be highlighted.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;resources&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Resources&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Interactive R Reference Guide
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;Data-Analysis-with-R.Rmd&#34;&gt;.Rmd file used to create guide&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;Data-Analysis-with-R.html&#34;&gt;.html file given to students&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;Helpful-R-Code.pdf&#34;&gt;Heloful R Code (.pdf)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>University Air Travel and GHG Mitigation: Examining Institutional Policies through the Lens of #flyingless</title>
