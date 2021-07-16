@@ -1,0 +1,680 @@
+---
+title: "An Introduction to Data Analysis with R"
+author: "EDPY 678 - Applied Stats III"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(palmerpenguins)
+```
+
+This handout demonstrates how to conduct some of the analyses we learned in EDPY 577/677 using R code instead of the SPSS point-and-click method. 
+
+# R Set Up
+
+It is recommended that you use an R Project for each course or major assignment. This will avoid having to set a working directory and write long file paths. You can move your files anywhere. As long as the R Project .rproj file is included, there should be no issues.
+
+To create an R Project, simply go to **File \> New Project...**. If you want to create a new directory, select *New Directory*. On the next screen, choose *New Project*, locate where you want to put your project, and click *Create Project*. If you have a directory already and you just want to make it into a project, click *Existing Directory*. The *Version Control* option is useful if you will be placing your project on [Github](http://www.github.com).
+
+To access a folder *within* your R Project folder, you can use a simple path such as `read.csv("data/data.csv")`. To access a file *outside* of your R Project folder, you can use `..`: `read.csv("../other_data/data.csv")`.
+
+# Packages
+
+## Installing Packages
+
+Packages are installed by typing `install.packages("package name")` in the `R` console. To replicate the examples in this document, you will need to install the following packages:
+
+    install.packages("palmerpenguins") # for example data
+    install.packages("tidyverse")
+    install.packages("skimr")
+    install.packages("janitor")
+
+## Loading Packages
+
+Loading a package can be done with the following code: `library(package name)`. It is recommended to load all packages at the top of your script file.
+
+## Loading Data
+
+You can load many different data types using `R`:
+
+-   CSV files with `read.csv` from the base `R` package:
+
+    -   `read.csv("name_of_file.csv")`
+    -   `read.csv("http://www.website.com/internet/file.csv)`
+
+-   Excel files with `read_excel` from the `readxl` package (you may need to modify function defaults for read_excel to work properly):
+
+    -   `read_excel("name_of_file.xlsx")`
+
+-   The `haven` package reads data from other statistical software packages:
+
+    -   `read_spss("name_of_file.sav")` or `read_sav` reads SPSS data files
+    -   `read_dta` reads Stata data files
+    -   `read_sas` reads SAS data files
+    -   `haven` can also save a data set as an SPSS, Stata, or SAS data file using the `write_sav`, `write_dta`, and `write_sas` functions
+
+## Data Objects
+
+You can save data and results as R objects. You can use `=` or `<-`. `<-` is recommended. Examples: 
+*Note*: c() means "combine"
+
+```{r message=FALSE, warning=FALSE}
+# character vector
+phrase <- "Good luck in Stats III" 
+
+#numeric vector
+answers <- c(6*5, 6^2, 5*sqrt(23))
+
+# a data frame
+dataframe <- data.frame(col_1 = c(1,2,3),
+                        col_2 = c("A", "B", "C"))
+
+# assign data to an object named penguins
+penguins <- read.csv("https://raw.githubusercontent.com/allisonhorst/palmerpenguins/master/inst/extdata/penguins.csv")
+
+# assign results from a t-test to t_test_results
+t_test_results <- t.test(body_mass_g ~ sex, data=penguins)
+```
+
+> **For more practice**, check out this [interactive tutorial on R programming basics](https://rstudio.cloud/learn/primers/1.2).
+
+## The Pipe `%>%`
+
+In some of the code below you will see the pipe operator, `%>%`. This is a function from the `Tidyverse` package that allows you to connect multiple functions together without the use of multiple parentheses. It stands for "and then". You can easily connected multiple commands in a single pipe chain. This is especially useful when data cleaning. Here is an example of multiple functions in a chain. The following code:
+
+  1. Accesses the penguins data
+  2. Selects 3 columns
+  3. Drops any rows with `NA` values in "island"
+  4. Creates a new variable named "combined" and a row ID variable named "id"
+  5. Filters the data to only include penguins with bill length greater than 25 mm
+  6. Summarizes the data by creating a combined mean value
+
+
+```{r}
+penguins %>%
+  select(bill_length_mm, flipper_length_mm, island) %>%
+  drop_na(island) %>%
+  mutate(combined = bill_length_mm * flipper_length_mm,
+         id = row_number()) %>%
+  filter(bill_length_mm > 25) %>%
+  summarize(combined_mean = mean(combined, na.rm=T))
+```
+
+
+Without piping (i.e., Base R), you would need to write this code as the following, which uses multiple data objects:
+Note: $ is used to subset or name an element of a list
+
+```{r}
+penguins_subset <- subset(penguins, !is.na(island), select=c(bill_length_mm, flipper_length_mm, island))
+
+penguins_subset$combined <- penguins_subset$bill_length_mm* penguins_subset$flipper_length_mm
+
+penguins_subset$id <- seq.int(nrow(penguins_subset)) 
+
+penguins_subset <- subset(penguins_subset, bill_length_mm > 25)
+
+mean(penguins_subset$combined, na.rm=T)
+```
+
+In sum, there are many ways to write `R` code. Sometimes `%>%` pipes make it easier. You may use whichever you prefer. 
+
+------------------------------------------------------------------------
+
+# Descriptive Statistics
+
+## Variable Names
+
+Quickly view your column names (variables) with the `names` function:
+
+```{r}
+names(penguins)
+```
+
+## Variable Types
+
+View the types of variables using `str`:
+
+```{r}
+str(penguins)
+```
+
+Variable types:
+
+-   **num** - numeric
+-   **int** - integer (1L, 2L; same as numeric)
+-   **dbl** - double (double precision; same as numeric)
+-   **Factor** - categorical
+-   **chr** - character text
+-   **logical** - TRUE/FALSE
+
+## Calculating Means
+
+### `summary` from base `R`
+
+For **numeric** variables, this will return quartiles, median, means, mix, max, and NAs. For **nominal/categorical** variables, this will return counts (*n*'s).
+
+### Summarize all variables
+
+```{r}
+summary(penguins)
+```
+
+#### Summarize a single variable
+
+Use the `$` dollar sign to refer to a specific variable.
+
+```{r}
+summary(penguins$bill_length_mm)
+```
+
+### `describe` from the `psych` package
+
+You can load the `psych` package and use describe to get mean, sd, median, and other variables.
+*Note*: if you haven't installed the `psych` package run `install.packages("psych")` before running code below.  
+
+#### Describe all variables
+
+```{r message=FALSE, warning=FALSE}
+library(psych)
+
+describe(penguins)
+```
+
+#### Describe a single variables
+
+```{r}
+describe(penguins$flipper_length_mm)
+```
+
+#### Describe by a group
+
+We can use `describeBy(numeric_variable, group=grouping_variable)` if you want the descriptive statistics for individual groups:
+
+```{r}
+describeBy(penguins$flipper_length_mm, group=penguins$species)
+```
+
+### `skim` from the `skimr` package
+
+`skim` will give you number missing, mean, sd, percentile, and a small histogram. `skim` can be used on all variables or a specific variable, just as demonstrated above.
+
+```{r message=FALSE, warning=FALSE}
+library(skimr)
+
+#Tidyverse
+penguins %>%
+  skim(body_mass_g)
+
+#Base R
+skim(penguins$body_mass_g)
+```
+
+We can also use this function for groups if we first use `group_by`:
+
+```{r}
+#Tidyverse
+penguins %>%
+  group_by(species) %>%
+  skim(body_mass_g)
+
+```
+
+### `summarize` from the `Tidyverse` package
+
+You can make your own custom summary using `summarize` combined with base `R` functions of `mean`, `median`, `min`, `max`, `sd`, and so on. Add `na.rm=T` to remove NA values.
+
+```{r message=FALSE, warning=FALSE}
+#Tidyverse
+penguins %>%
+  summarize(body_mass_mean = mean(body_mass_g, na.rm=T),
+            body_mass_sd = sd(body_mass_g, na.rm = T),
+            bill_length_mean = mean(bill_length_mm, na.rm=T),
+            bill_length_sd = sd(bill_length_mm, na.rm=T))
+
+#Base R
+cbind(mean(penguins$body_mass_g, na.rm=T), sd(penguins$body_mass_g, na.rm=T), mean(penguins$bill_length_mm, na.rm=T), sd(penguins$bill_length_mm, na.rm=T))
+```
+
+#### Summarize by a group
+
+We can also use `group_by` to summarize by group.
+
+```{r}
+#Tidyverse
+penguins %>%
+  group_by(species) %>% #add one or more groups
+  summarize(body_mass_mean = mean(body_mass_g, na.rm=T),
+            body_mass_sd = sd(body_mass_g, na.rm = T),
+            bill_length_mean = mean(bill_length_mm, na.rm=T),
+            bill_length_sd = sd(bill_length_mm, na.rm=T))
+
+#Base R
+penguins_noNA <- na.omit(penguins) #remove NA
+by(penguins_noNA$body_mass_g, penguins_noNA$species, mean)
+by(penguins_noNA$body_mass_g, penguins_noNA$species, sd)
+by(penguins_noNA$bill_length_mm, penguins_noNA$species, mean)
+by(penguins_noNA$bill_length_mm, penguins_noNA$species, sd)
+```
+
+## Frequencies
+
+### `tabyl` from the `janitor` package (https://cran.r-project.org/web/packages/janitor/vignettes/janitor.html)
+
+`tabyl` can get frequencies for single variables. The `table` function in Base R will so create a frequency table (but it isn't as nice).
+
+```{r message=FALSE, warning=FALSE}
+library(janitor)
+
+tabyl(penguins$species)
+table(penguins$species)
+# to get proportions you need to wrap table in prob.table
+prop.table(table(penguins$species))
+```
+
+`tabyl` can also get crosstabs or frequencies by groups:
+
+```{r}
+#Tidyverse
+penguins %>%
+  tabyl(species, island)
+
+# Base R
+table(penguins$species, penguins$island)
+```
+
+You can easily add row and column totals like so:
+
+```{r, error=TRUE}
+#Tidyverse
+penguins %>%
+  tabyl(species, island) %>%
+  adorn_totals(c("row", "col"))
+
+#Base R
+table <- tabyl(penguins$species, penguins$island) #notice the error
+table <- tabyl(penguins, species, island)
+adorn_totals(table, c("row", "col"))
+```
+
+Use `adorn_` commands to use percentages, rounding, etc:
+
+```{r}
+#Tidyverse
+penguins %>%
+  tabyl(species, island) %>%
+  adorn_totals(c("row", "col")) %>%
+  adorn_percentages() %>%
+  adorn_rounding() 
+
+#Base R
+table <- tabyl(penguins, species, island)
+table <- adorn_totals(table, c("row", "col"))
+table <- adorn_percentages(table)
+adorn_rounding(table)
+
+```
+
+## Histograms
+
+You can easily see frequencies by making a histogram with the `hist` command:
+
+```{r}
+hist(penguins$bill_depth_mm)
+```
+
+> **Read more**, about descriptives in R [Reproducible statistics for psychologists with R: Descriptives](https://crumplab.github.io/rstatsforpsych/descriptives.html).
+
+------------------------------------------------------------------------
+
+# Data Manipulation
+
+The following functions will help you change and manipulate your data.
+
+## Rename Variables
+
+Use the `rename("new name" = old_name)` function:
+
+```{r}
+names(penguins) #print variable names
+
+#Tidyverse
+penguins <- penguins %>%
+  rename("weight" = body_mass_g)
+
+names(penguins) #check that rename worked
+
+#Base R
+names(penguins)[names(penguins)=="body_mass_g"] <- "weight"    #by variable name
+names(penguins)[6] <- "weight"       #by column number
+
+names(penguins) #check that rename worked
+```
+
+## Recode Variables
+
+You can use `recode` inside a `mutate` (change) function to change how individual factor levels are assigned. For example, for penguin sex, there is female, male, and NA. Let's change female to 0 and male to 1 in the variable sex 2.
+
+```{r}
+#Tidyverse
+penguins %>%
+  count(sex)
+
+penguins %>%
+  mutate(male = recode(sex, 
+                       male = 1, 
+                       female = 0)) %>%
+  select(sex, male) %>%   # select the two sex variables to compare
+  head() #head lists the first 6 parts 
+
+#Base R
+table(penguins$sex)
+penguins$male <- ifelse(penguins$sex=="male", 1, ifelse(penguins$sex=="female",0, NA))
+table(penguins$male)
+
+```
+
+## Create New Variables
+
+We can use `mutate` to change and create variables. For example, in the `penguins` data set, weight is in grams. Let's convert that to pounds. 1 gram = 0.00220462 pounds.
+
+```{r}
+#Tidyverse
+penguins <- penguins %>%
+  mutate(weight_lbs = weight * 0.00220462)
+
+#Base R
+penguins$weight_lbs <- penguins$weight*0.00220462
+```
+
+------------------------------------------------------------------------
+
+> **For more practice**, check out some [common data manipulation tools in these interactive exercises](https://rstudio.cloud/learn/primers/2.1).
+
+
+------------------------------------------------------------------------
+
+# Statistics
+
+## Correlations
+
+Use `cor` from base `R` for most correlations (e.g., Pearson's *r*, Kendall's $$\tau$$, Spearman's $$\rho$$). Arguments include "method" and "use". Method has options for Pearson, Kendall, and Spearman correlations. If there is missing data, like below, you can use pairwise complete observations or only complete observations. Type `?cor` in the console for more information.
+
+### Correlation Matrix
+
+```{r, error=TRUE}
+penguins %>%
+  select(where(is.numeric)) %>% #selecting only numeric variables
+  cor(method = "pearson", 
+      use = "complete.obs") %>%
+  round(3)
+
+#Base R
+cor(penguins, use="complete.obs") #notice the error 'x' must be numeric. This indicates that we have non-numeric variables (i.e., strings, factors)
+str(penguins) #anything that is not "num" or "int" can not be used in a correlation
+#Filter using only numeric
+round(cor(Filter(is.numeric, penguins), use="complete.obs"),3)
+
+```
+
+### Correlation Coefficient
+
+If you just need the correlation coefficient between two variables, you can correlate only those variables using `cor(data$var1, data$var2, method="method", use="use")`
+
+```{r}
+#Tidyverse
+cor(penguins$bill_length_mm, penguins$flipper_length_mm,
+    method = "pearson", 
+    use = "complete.obs") %>%
+  round(3)
+
+#Base R
+round(cor(penguins$bill_length_mm, penguins$flipper_length_mm, use = "complete.obs"),3)
+```
+
+### Correlation Test
+
+You can use `cor.test` to get the correlation coefficient, a *p*-value, and a confidence interval for the correlation:
+
+```{r}
+cor.test(penguins$bill_length_mm, penguins$flipper_length_mm,
+    method = "pearson", 
+    use = "complete.obs")
+
+```
+
+### Write-up of a Pearson r or point biserial correlation:
+
+-   The results of a Pearson r correlation with variable 1 and variable 2 showed that these two variables were significantly positively related, $r=.\#\#,p = .\#\#, r^2 = .\#\#$.
+
+-   The results of a Pearson r correlation between penguin bill length and flipper length showed that these two variables were significantly positively related, $r = .66$, $p < .001$, $r^2 = .42.$
+
+> **Read more** about correlation in R:
+>
+>   - [Correlation Test Between Two Variables in R](http://www.sthda.com/english/wiki/correlation-test-between-two-variables-in-r)
+>   - [Reproducible statistics for psychologists with R: Correlation](https://crumplab.github.io/rstatsforpsych/correlation.html)
+
+## Chi-Square Test of Independence
+
+Recall that crosstabs can easily be displayed with `tabyl` as well as in Base R using `table`:
+
+```{r}
+#Tidyverse and tabyl
+penguins %>%
+  tabyl(species, island)
+
+#Base R
+table(penguins$species, penguins$island)
+```
+
+To calculate a chi-square statistics, we can simply call `janitor`'s `chisq.test` function. Note that because base `R` also has a `chisq.test` function, we will use `janitor::chisq.test()`. Both packages function the same way, only the data is entered differently. (Base `R`'s `chisq.test` cannot be used with `%>%` pipes and so the data must be entered using `$`).
+
+For either function, you must give it a crosstabs table and use `chisq.test(crosstabs table)`.
+
+```{r}
+# Tidyverse, tably, janitor
+penguins %>%
+  tabyl(species, island) %>%
+  janitor::chisq.test() 
+
+#Base R
+stats::chisq.test(penguins$species, penguins$island)
+```
+
+### Write-up of a Chi-square analysis:
+
+-   The results of a chi-square test of independence with variable 1 and variable 2 showed that these two variables were significantly related, $\chi^2(df) = \#.\#\#, p = .\#\#\#$.
+-   The results of a chi-square test of independence with penguin species and island location showed that these two variables were significantly related, $\chi^2(4) = 299.55, p < .001$.
+
+> **Read more** about chi square in R:
+>
+>   - [Chi-Square Test of Independence in R](http://www.sthda.com/english/wiki/chi-square-test-of-independence-in-r)
+>   - [Reproducible statistics for psychologists with R: Chi Square](https://crumplab.github.io/rstatsforpsych/chi-square.html)
+
+## Independent Samples t-test
+
+We can use the `t.test` function from base `R` to conduct an independent t-test with one grouping variable (IV) that has 2 levels and one dependent variable (DV) that is continuous.
+
+The `t.test` function has several arguments. For an independent-samples t-test, you can use: `t.test(DV ~ IV, data=data, var.equal=T/F)`
+
+### Levene's test of homoegeneity of variances
+
+We first need to determine whether variances are similar or not. We can use the `car` package and the `leveneTest(DV ~ IV, data=data)` for this:
+
+```{r message=FALSE, warning=FALSE}
+library(car)
+
+leveneTest(weight_lbs ~ sex, # DV ~ IV
+           data=penguins)
+```
+
+The result showed a significant difference in variances (i.e., they are not equal).
+
+### T-test
+
+```{r}
+t.test(weight_lbs ~ sex, # DV ~ IV
+       data=penguins,
+       var.equal = F) # Note we choose F (FALSE) because of the Levene's test above. F is default so if we did not include this, it would default to a Welch's t-test
+```
+
+*Optional*: We can get a neater table of data by using `tidy` from the `broom` package:
+
+```{r message=FALSE, warning=FALSE}
+#Optional 
+library(broom)
+
+t.test(weight_lbs ~ sex, # DV ~ IV
+       data=penguins,
+       paired=F,
+       var.equal = F) %>%
+  tidy()
+
+```
+
+-   **Estimate** is the mean difference
+-   **Estimate** 1 is female
+-   **Estimate** 2 is male
+-   **Statistic** is the t-value
+
+### Cohen's *d*
+
+```{r}
+# using psych package
+psych::cohen.d(penguins[, c("weight_lbs", "sex")], "sex")
+
+# using effectsize package
+t <- t.test(weight_lbs ~ sex, data=penguins)
+effectsize::effectsize(t)
+
+```
+
+### Write-up of an Independent t-test:
+
+-   The results of the independent t-test with XX as the independent variable and XX as the dependent variable showed that Group 1 (*M*=\#.\#\#, *SD*=\#.\#\#) reporting the dependent variable significantly more than Group 2 (*M*=\#.\#\#, *SD*=\#.\#\#), $t(df) = \#.\#\#, p = .\#\#\#, d = \#\#$.
+-   The results of the independent t-test with sex as the independent variable and penguin weight as the dependent variable showed that Male penguins (*M*=10.0, *SD*=1.74) weigh significantly more than Females (*M*=8.5, *SD*=1.47), $t(323.9) = -8.55, p < .001, d = .95$.
+
+> **Read more** about independent t-tests in R:
+>
+>   - [Unpaired Two-Samples T-test in R](http://www.sthda.com/english/wiki/unpaired-two-samples-t-test-in-r)
+>   - [Reproducible statistics for psychologists with R: T-Tests](https://crumplab.github.io/rstatsforpsych/t-tests.html)
+
+## Dependent Samples t-test
+
+You can use the t-test command above, adding `paired=T` to the `t.test` command. The `penguins` data set does not have any paired data, so we will simulate some by adding random variation to each value:
+
+```{r}
+penguins <- penguins %>%
+  mutate(weight_lbs2 = weight_lbs + sample(-10:10, n(), replace = TRUE))
+
+(paired <- t.test(penguins$weight_lbs, penguins$weight_lbs2, paired=T))
+
+# paired-samples Cohen's d
+difference <- penguins$weight_lbs - penguins$weight_lbs2
+(cohens_d <- mean(difference, na.rm=T)/sd(difference, na.rm=T))
+
+```
+
+### Write-up of a Dependent t-test:
+
+-   The results of the dependent t-test with XX as the independent variable and XX as the dependent variable showed that Pretest scores (*M*=\#.\#\#, *SD*=\#.\#\#) were significantly lower than Posttest scores (*M*=\#.\#\#, *SD*=\#.\#\#), $t(df) = \#.\#\#, p = .\#\#\#, d = \#\#$.
+-   The results of the dependent t-test examining penguin weight at two time points showed no statistical difference, $t(341) = -0.544, p =.587, d = .06$.
+
+> **Read more** about dependent t-tests in R:
+>
+>   - [Paired Samples T-test in R](http://www.sthda.com/english/wiki/paired-samples-t-test-in-r)
+>   - [Reproducible statistics for psychologists with R: T-Tests](https://crumplab.github.io/rstatsforpsych/t-tests.html)
+
+## Oneway ANOVA
+
+You can use `aov` from the `stats` package for a oneway between-subjects ANOVA, like this: `aov(DV ~ group, data = data)`. We can then use `summary.aov` to get the results.
+
+```{r}
+weight_analysis <- aov(weight_lbs ~ island, data = penguins)
+summary.aov(weight_analysis)
+
+#Welch's ANOVA
+oneway.test(weight_lbs ~ island, data = penguins)
+
+# Levene's test
+car::leveneTest(weight_lbs ~ island, data = penguins)
+```
+
+You can perform post-hoc tests using different functions. For example, a Tukey test:
+
+```{r}
+TukeyHSD(weight_analysis)
+
+```
+
+A pairwise t-test:
+
+```{r}
+pairwise.t.test(penguins$weight_lbs, penguins$island,
+                 p.adjust.method = "BH")
+```
+
+<!-- http://www.sthda.com/english/wiki/one-way-anova-test-in-r#compute-one-way-anova-test -->
+
+To calculate an effect size, such as eta squared or partial eta squared, you can use the `sjstats` package. (Note: in an ANOVA model with one IV, eta squared = partial eta squared.)
+
+```{r message=FALSE, warning=FALSE}
+library(sjstats)
+
+eta_sq(weight_analysis, partial = T)
+
+# Using effectsize package
+effectsize::omega_squared(weight_analysis)
+```
+
+### Write-up of a Oneway BS ANOVA:
+
+-   There is a significant difference among the different groups of the independent variable, $F(df,f-statistic) = \#.\#\#, p = \#.\#\#, partial \eta^2= \#.\#\#$ . The results of the XXX posthoc test showed that Group 1 (*M*=\#.\#\#, *SD*=\#.\#\#) had higher levels of dependent variable compared to Group 2 (*M*=\#.\#\#, *SD*=\#.\#\#) and Group 3 (*M*=\#.\#\#, *SD*=\#.\#\#), *d* = \#\#.
+-   There is a significant difference in penguin weight among penguins on different islands, $Welch's \: F(2,150.4) = 106.97, \: p < .0001, \: partial \: \eta^2=.39$. The results of the Tukey posthoc test showed that Biscoe penguins weighted more than Dream ($\Delta$*M* = 2.21, d = 1.6) and Torgersen penguins ($\Delta$*M* = 2.23, d = 1.6).
+
+
+------------------------------------------------------------------------
+
+# Saving
+
+## Saving your data
+
+If you want to save the data and objects that you have loaded, cleaned, and analyzed, you may do so in two ways:
+
+You can select the data objects and save them using `save` and saving it as a .Rdata file:
+
+```{r}
+save(penguins, t_test_results, weight_analysis, file="my_data.Rdata")
+```
+
+You may load this data back into your `R` environment using `load`:
+
+```{r}
+load("my_data.Rdata")
+```
+
+You can also save all the entire environment (workspace) using `save.image`:
+
+```{r}
+save.image(file = "all_data.Rdata")
+```
+
+You can load it the same way as above.
+
+You can also save data frames as CSV files with `write.csv`:
+
+```{r}
+write.csv(penguins, file="penguins_data.csv")
+```
+
+## Saving output
+
+You can save your code and output together by compiling your document. Navigate to **File -\> Compile Document** and choose HTML, Word, or PDF. Note: if there are any errors in your code, it will not compile until you fix them. Reading the error messages can help.
