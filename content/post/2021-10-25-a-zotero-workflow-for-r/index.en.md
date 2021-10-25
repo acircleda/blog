@@ -25,9 +25,9 @@ There are several packages that make using R and Zotero pretty seamless. The pur
 
 Key to successfully using Zotero is installing add-ons. As part of my Zotero setup, I primarily use the [Better BibTex for Zotero](https://retorque.re/zotero-better-bibtex/) add-on. This facilitates a number of important processes for the workflow:
 
--   The generation of citation keys, which are necessary for referring to sources in-text (e.g. `@author2021`). You can set custom key formats and other key tricks. Mine is simple: \`\[auth:lower\]\[year\]\`, with each key unique to each library.
+-   The generation of citation keys, which are necessary for referring to sources in-text (e.g., `@author2021`). You can set custom key formats and other key tricks. Mine is simple: `[auth:lower][year]`, with each key unique to each library.
 
--   Better BibTex also converts Zotero's default unicode to LaTeX, ensuring citations are formatted and appear correctly (99% of the time).
+-   Better BibTex also converts Zotero's default unicode to LaTeX, ensuring citations are formatted and appear correctly (95% of the time).
 
 -   Updated exports of your library. You can export your entire library and that export will be automatically updated every time you add, remove, or make changes in Zotero. There are numerous options for working with these auto exports as well.
 
@@ -37,15 +37,15 @@ Key to successfully using Zotero is installing add-ons. As part of my Zotero set
 
 1.  `citr::insert_citation()` (this is also an R Studio addin). This pops up a gui which allows you to select your Zotero library and search for citations. This makes it super convenient to insert references as you are typing. It is so convenient, in fact, that I have it mapped to a [custom keyboard command](https://support.rstudio.com/hc/en-us/articles/206382178-Customizing-Keyboard-Shortcuts): **Ctrl + ;** . As you insert citations into your document, they are also automatically added the the bibliography file you have specified in your YAML, keeping your end of document references page updated and formatted correctly. However, I have had some issues lately with the `insert_citation()` function crashing lately, mostly due to libraries with non-Roman letters in author names. So, I have not been using this as much lately, as will be shown below.
 
-2.  `citr::tidy_bib_file()` . This handy function keep essentially keeps your bibliography file clean by removing duplicates and unwanted entries. I call this function every time I knit to keep my bibliography file sparkling.
+2.  `citr::tidy_bib_file()` . This handy function essentially keeps your bibliography file clean by removing duplicates and unwanted entries. I call this function every time I knit to keep my bibliography file sparkling.
 
 ## Workflow
 
-I have a specific library dedicated to my project, in my current case, a "Dissertation" library with all my related readings. I typically add files to my library using Chrome's Save to Zotero extension.
+I have a specific library dedicated to my project, in my current case, a "Dissertation" library with all my related readings. I typically add files to my library using Chrome's *Save to Zotero* extension.
 
 I have previously exported this library to my R project folder, and selected the option to keep it updated as I add, remove, and make changes to the library within Zotero. This exported library has been cleverly named "Dissertation.bib".
 
-As I write in my R Markdown document and need a reference, I search Zotero until I find it, and copy the citation key to include in text (e.g., `@author2021` ).
+As I write in my R Markdown document and need a reference, I search Zotero until I find it, and copy the citation key to include in text (e.g., `@author2021` ). This can also be done using `citr::insert_citation()` .
 
 When I go to knit my document, the following code is called right after R libraries are loaded:
 
@@ -64,6 +64,6 @@ What do the arguments refer to?
 
 -   `file` refers to the clean document `citr` creates that only includes citations referenced in my R files. This file is included in my YAML: `bibliography: references.bib`
 
-The above process keeps a properly updated bibliography that contains no superfluous references. In addition, as I am knitting, the console shoots out warnings of any references missing, most often because of typos or issues with hyphens (tip: don't use hyphens). This allows me to fix citations and re-knit quickly, ensuring a properly cited final document.
+The above process keeps a properly updated bibliography that contains no superfluous references. In addition, as I am knitting, the console shoots out warnings of any references missing, most often because of typos or issues with hyphens (tip: don't use hyphens). This allows me to fix citations and re-knit quickly, ensuring a properly-cited final document.
 
 I find the above workflow convenient and low maintenance. The only effort is the initial setup, adding additional Markdown files to the `rmd_file` argument as needed, and fixing missing citations. Combining R and Zotero is pretty easy and makes the writing experience pleasurable. So, I highly recommend writing in R. However, even if you choose to write in another platform (Word, Google Docs), I still highly recommend Zotero because it is free, easy-to-use, and open source - which means many robust addons to improve its functionality.

@@ -18,12 +18,22 @@
   </url>
   
   <url>
-    <loc>https://www.anthonyschmidt.co/authors/admin/</loc>
-    <lastmod>2021-08-11T01:00:00+00:00</lastmod>
+    <loc>https://www.anthonyschmidt.co/post/2021-10-25-a-zotero-workflow-for-r/</loc>
+    <lastmod>2021-10-25T10:45:10-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.anthonyschmidt.co/</loc>
+    <lastmod>2021-10-25T10:45:10-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.anthonyschmidt.co/post/</loc>
+    <lastmod>2021-10-25T10:45:10-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.anthonyschmidt.co/authors/admin/</loc>
     <lastmod>2021-08-11T01:00:00+00:00</lastmod>
   </url>
   
@@ -109,11 +119,6 @@
   
   <url>
     <loc>https://www.anthonyschmidt.co/post/2021-04-27-twitter-polls/</loc>
-    <lastmod>2021-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.anthonyschmidt.co/post/</loc>
     <lastmod>2021-04-27T00:00:00+00:00</lastmod>
   </url>
   

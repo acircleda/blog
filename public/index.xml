@@ -5,7 +5,7 @@
     <link>https://www.anthonyschmidt.co/</link>
       <atom:link href="https://www.anthonyschmidt.co/index.xml" rel="self" type="application/rss+xml" />
     <description>Anthony Schmidt</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 11 Aug 2021 01:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 25 Oct 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://www.anthonyschmidt.co/img/icon-192.png</url>
       <title>Anthony Schmidt</title>
@@ -79,6 +79,73 @@
 &lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
 
 &lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A Zotero Workflow for R</title>
+      <link>https://www.anthonyschmidt.co/post/2021-10-25-a-zotero-workflow-for-r/</link>
+      <pubDate>Mon, 25 Oct 2021 00:00:00 +0000</pubDate>
+      <guid>https://www.anthonyschmidt.co/post/2021-10-25-a-zotero-workflow-for-r/</guid>
+      <description>
+
+&lt;p&gt;In terms of citation management systems, there are not many options: EndNote, Excel, Mendeley, and Zotero. I was a big fan of Mendeley, especially with its integrated PDF reader. However, as I began to write more text in R, I realized using Mendeley was insufficient. When I heard that Zotero integrates nicely with R, I made the switch immediately.&lt;/p&gt;
+
+&lt;p&gt;There are several packages that make using R and Zotero pretty seamless. The purpose of this short blogpost is to outline the current packages and workflow I am using as I write my dissertation.&lt;/p&gt;
+
+&lt;h2 id=&#34;zotero-setup&#34;&gt;Zotero Setup&lt;/h2&gt;
+
+&lt;p&gt;Key to successfully using Zotero is installing add-ons. As part of my Zotero setup, I primarily use the &lt;a href=&#34;https://retorque.re/zotero-better-bibtex/&#34; target=&#34;_blank&#34;&gt;Better BibTex for Zotero&lt;/a&gt; add-on. This facilitates a number of important processes for the workflow:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;The generation of citation keys, which are necessary for referring to sources in-text (e.g. &lt;code&gt;@author2021&lt;/code&gt;). You can set custom key formats and other key tricks. Mine is simple: `[auth:lower][year]`, with each key unique to each library.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Better BibTex also converts Zotero&amp;rsquo;s default unicode to LaTeX, ensuring citations are formatted and appear correctly (99% of the time).&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Updated exports of your library. You can export your entire library and that export will be automatically updated every time you add, remove, or make changes in Zotero. There are numerous options for working with these auto exports as well.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;r-packages&#34;&gt;R Packages&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/crsh/citr&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;citr&lt;/code&gt;&lt;/a&gt; is the package I use to integrate R and Zotero. There are two key functions I use from citr:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;citr::insert_citation()&lt;/code&gt; (this is also an R Studio addin). This pops up a gui which allows you to select your Zotero library and search for citations. This makes it super convenient to insert references as you are typing. It is so convenient, in fact, that I have it mapped to a &lt;a href=&#34;https://support.rstudio.com/hc/en-us/articles/206382178-Customizing-Keyboard-Shortcuts&#34; target=&#34;_blank&#34;&gt;custom keyboard command&lt;/a&gt;: &lt;strong&gt;Ctrl + ;&lt;/strong&gt; . As you insert citations into your document, they are also automatically added the the bibliography file you have specified in your YAML, keeping your end of document references page updated and formatted correctly. However, I have had some issues lately with the &lt;code&gt;insert_citation()&lt;/code&gt; function crashing lately, mostly due to libraries with non-Roman letters in author names. So, I have not been using this as much lately, as will be shown below.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;citr::tidy_bib_file()&lt;/code&gt; . This handy function keep essentially keeps your bibliography file clean by removing duplicates and unwanted entries. I call this function every time I knit to keep my bibliography file sparkling.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;workflow&#34;&gt;Workflow&lt;/h2&gt;
+
+&lt;p&gt;I have a specific library dedicated to my project, in my current case, a &amp;ldquo;Dissertation&amp;rdquo; library with all my related readings. I typically add files to my library using Chrome&amp;rsquo;s Save to Zotero extension.&lt;/p&gt;
+
+&lt;p&gt;I have previously exported this library to my R project folder, and selected the option to keep it updated as I add, remove, and make changes to the library within Zotero. This exported library has been cleverly named &amp;ldquo;Dissertation.bib&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;As I write in my R Markdown document and need a reference, I search Zotero until I find it, and copy the citation key to include in text (e.g., &lt;code&gt;@author2021&lt;/code&gt; ).&lt;/p&gt;
+
+&lt;p&gt;When I go to knit my document, the following code is called right after R libraries are loaded:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;citr::tidy_bib_file(
+  rmd_file = c(&amp;quot;index.Rmd&amp;quot;, &amp;quot;03-introduction.Rmd&amp;quot;, 
+  &amp;quot;04-lit-review.Rmd&amp;quot;),
+  messy_bibliography = &amp;quot;Dissertation.bib&amp;quot;, #updated by Zotero
+  file = &amp;quot;references.bib&amp;quot; #read in by R
+)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;What do the arguments refer to?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;rmd_file&lt;/code&gt; refers to the specific R Markdown files I have written and want &lt;code&gt;citr&lt;/code&gt; to look through to update my bibliography&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;messy_bibliography&lt;/code&gt; refers to the Zotero-managed export. This is considered &amp;ldquo;messy&amp;rdquo; because it likely includes numerous citations I have not actually referred to in text.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;file&lt;/code&gt; refers to the clean document &lt;code&gt;citr&lt;/code&gt; creates that only includes citations referenced in my R files. This file is included in my YAML: &lt;code&gt;bibliography: references.bib&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The above process keeps a properly updated bibliography that contains no superfluous references. In addition, as I am knitting, the console shoots out warnings of any references missing, most often because of typos or issues with hyphens (tip: don&amp;rsquo;t use hyphens). This allows me to fix citations and re-knit quickly, ensuring a properly cited final document.&lt;/p&gt;
+
+&lt;p&gt;I find the above workflow convenient and low maintenance. The only effort is the initial setup, adding additional Markdown files to the &lt;code&gt;rmd_file&lt;/code&gt; argument as needed, and fixing missing citations. Combining R and Zotero is pretty easy and makes the writing experience pleasurable. So, I highly recommend writing in R. However, even if you choose to write in another platform (Word, Google Docs), I still highly recommend Zotero because it is free, easy-to-use, and open source - which means many robust addons to improve its functionality.&lt;/p&gt;
 </description>
     </item>
     
