@@ -25,9 +25,9 @@ name: Anthony Schmidt
 organizations:
 - name: University of Tennessee-Knoxville
   url: "http://www.utk.edu"
-- name: College and University Professional Association for Human Resources (CUPA-HR)
-  url: "http://www.cupahr.org"
-role: PhD Student / Data Visualization Researcher
+- name: Amplify
+  url: "http://www.amplify.com"
+role: PhD Student / Data Scientist
 social:
 - icon: envelope
   icon_pack: fas
@@ -47,4 +47,4 @@ user_groups:
 - Visitors
 ---
 
-I am a PhD student in [Evaluation, Statistics, and Measurement](https://epc.utk.edu/evaluation-statistics-measurement/) at the Universty of Tennessee-Knoxville. I am also a full-time data visualization researcher at [CUPA-HR](http://www.cupahr.org/). 
+I am a PhD student in [Evaluation, Statistics, and Measurement](https://epc.utk.edu/evaluation-statistics-measurement/) at the Universty of Tennessee-Knoxville. I am also a full-time data scientist at [Amploify](http://www.amplify.com/). 
