@@ -47,4 +47,4 @@ user_groups:
 - Visitors
 ---
 
-I am a PhD student in [Evaluation, Statistics, and Measurement](https://epc.utk.edu/evaluation-statistics-measurement/) at the Universty of Tennessee-Knoxville. I am also a full-time data scientist at [Amploify](http://www.amplify.com/).  
+I am a PhD student in [Evaluation, Statistics, and Measurement](https://epc.utk.edu/evaluation-statistics-measurement/) at the Universty of Tennessee-Knoxville. I am also a full-time data scientist at [Amplify](http://www.amplify.com/).  
