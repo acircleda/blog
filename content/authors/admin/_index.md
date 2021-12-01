@@ -4,7 +4,7 @@ authors:
 bio: My research interests include climate change, society, and education. I also have a focus on quantitative methods, including data science education and data visualization.
 education:
   courses:
-  - course: PhD in Evaluation, Statistics, and Measurement
+  - course: PhD in Evaluation, Statistics, and Methodology
     institution: University of Tennessee-Knoxville
     year: in progress
   - course: MSEd in Language Education/TESOL
