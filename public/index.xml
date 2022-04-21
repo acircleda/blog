@@ -5,7 +5,7 @@
     <link>https://www.anthonyschmidt.co/</link>
       <atom:link href="https://www.anthonyschmidt.co/index.xml" rel="self" type="application/rss+xml" />
     <description>Anthony Schmidt</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 25 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 21 Apr 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://www.anthonyschmidt.co/img/icon-192.png</url>
       <title>Anthony Schmidt</title>
@@ -83,6 +83,244 @@
     </item>
     
     <item>
+      <title>Make an Easy-to-Maintain CV or Resume using R</title>
+      <link>https://www.anthonyschmidt.co/post/2022-04-21-make-an-easy-to-maintain-cv-or-resume-using-r/</link>
+      <pubDate>Thu, 21 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.anthonyschmidt.co/post/2022-04-21-make-an-easy-to-maintain-cv-or-resume-using-r/</guid>
+      <description>
+
+&lt;p&gt;The &lt;a href=&#34;https://github.com/mitchelloharawild/vitae&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;vitae&lt;/code&gt;&lt;/a&gt; package makes it easy to create a reproducible and dare I say quite sexy looking CV or résumé using R Markdown. Essentially, the Vitae package takes in the key CV data - education, work experience, etc. - as data frames and translates this into a pre-templated LaTeX document which then outputs as a PDF.&lt;/p&gt;
+
+&lt;p&gt;A &lt;em&gt;very basic&lt;/em&gt; example looks like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;CV.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Many of the &lt;code&gt;vitae&lt;/code&gt; pre-made examples are based on either creating the data frames in the doc - for example through &lt;code&gt;tibble::tribble&lt;/code&gt; - or importing via CSV/Excel. Publications can be read in via Google Scholar or a bibliography file. The idea is to update those files, then open up your .Rmd and hit knit.&lt;/p&gt;
+
+&lt;p&gt;All of this can also be accomplished via a single Google Sheet where education, work, conferences, publications, etc. can be easily stored and updated. This is how I maintain my CV - almost effortlessly.&lt;/p&gt;
+
+&lt;p&gt;I will walk you through how to build a super simple CV using &lt;code&gt;vitae&lt;/code&gt;, &lt;code&gt;tidyverse&lt;/code&gt;, and the &lt;code&gt;googlesheets4&lt;/code&gt; package (or, if you&amp;rsquo;d prefer something simpler, you can also use the &lt;code&gt;gsheet&lt;/code&gt; package).&lt;/p&gt;
+
+&lt;p&gt;To begin building a CV using &lt;code&gt;vitae&lt;/code&gt;, you create a new R Markdown document and select a &lt;code&gt;vitae&lt;/code&gt; template in R Studio. This pre-builds an Rmd file that gives examples of including data via hard-coded data frames or .bib files. Instead, we are going to start from scratch and build a CV using the Hyndman template. Once you see my examples below, they can be extended to any other template you wish.&lt;/p&gt;
+
+&lt;h2 id=&#34;basic-set-up&#34;&gt;Basic Set-up&lt;/h2&gt;
+
+&lt;p&gt;Starting with a fresh .Rmd file, you begin with the necessary YAML, which can be changed to suit your needs:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;---
+name: Marie
+surname: Curie
+position: &amp;quot;Professor&amp;quot;
+address: &amp;quot;School of Physics &amp;amp; Chemistry, École Normale Supérieure&amp;quot;
+phone: +1 22 3333 4444
+www: mariecurie.com
+email: &amp;quot;Marie.Curie@ens.fr&amp;quot;
+twitter: mariecurie
+github: mariecurie
+linkedin: mariecurie
+date: &amp;quot;`r format(Sys.time(), &#39;%B %Y&#39;)`&amp;quot;
+output: 
+  vitae::hyndman
+---
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Next, we will include the chunk that sets some global R Markdown options and loads our key libraries:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+library(tidyverse)
+library(googlesheets4)
+```
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;google-sheets&#34;&gt;Google Sheets&lt;/h2&gt;
+
+&lt;p&gt;Create a new Google Sheet or make a copy of &lt;a href=&#34;https://docs.google.com/spreadsheets/d/1YKFymOOFCN6Ywlbkst3sDkrWDcRRgS6iI2djq_D_0-8/edit#gid=0&#34; target=&#34;_blank&#34;&gt;this one&lt;/a&gt;, which is used in the examples. You can use any number of worksheets and organize it however you want.&lt;/p&gt;
+
+&lt;h3 id=&#34;googlesheets4-vs-gsheet-packages&#34;&gt;&lt;code&gt;googlesheets4&lt;/code&gt; vs &lt;code&gt;gsheet&lt;/code&gt; Packages&lt;/h3&gt;
+
+&lt;p&gt;In my examples below, I used the &lt;code&gt;googlesheets4&lt;/code&gt; package. This requires some beforehand set-up so to authorize the package to interact with your Google Drive account. You can read more about that package &lt;a href=&#34;https://googlesheets4.tidyverse.org/&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;. If you do not want to mess with authentication, you can use the &lt;code&gt;gsheet&lt;/code&gt; package, which will allow you to work with any Google Sheet so long as it is viewable by anyone with the link. Just replace &lt;code&gt;googlesheets4::read_sheet()&lt;/code&gt; with &lt;code&gt;gsheet::gsheet2tbl()&lt;/code&gt;!&lt;/p&gt;
+
+&lt;h2 id=&#34;education&#34;&gt;Education&lt;/h2&gt;
+
+&lt;p&gt;The first worksheet in my &lt;a href=&#34;https://docs.google.com/spreadsheets/d/1YKFymOOFCN6Ywlbkst3sDkrWDcRRgS6iI2djq_D_0-8/edit#gid=0&#34; target=&#34;_blank&#34;&gt;Example CV Google Sheet&lt;/a&gt; is the education sheet, which is typically the first section of the CV.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;education.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We can read it in to R with &lt;code&gt;googlesheets4::read_sheet()&lt;/code&gt;. We will then pass it to &lt;code&gt;vitae::detailed_entries()&lt;/code&gt; and point that function&amp;rsquo;s arguments to the proper columns. The &lt;em&gt;what, when, where, with,&lt;/em&gt; and &lt;em&gt;why&lt;/em&gt; arguments refer to the type of information, which is then used with the &lt;code&gt;vitae&lt;/code&gt; templates to create the proper format.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;```{r education}
+googlesheets4::read_sheet(&amp;quot;https://docs.google.com/spreadsheets/d/1YKFymOOFCN6Ywlbkst3sDkrWDcRRgS6iI2djq_D_0-8/edit#gid=0&amp;quot;, sheet=&amp;quot;Education&amp;quot;) %&amp;gt;%
+  vitae::detailed_entries(what = Degree,
+                          when = Year,
+                          where = Institution, 
+                          with = Location, 
+                          why = Details)
+```
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;With the Hyndman template, this becomes this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;education_cv.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;publications&#34;&gt;Publications&lt;/h2&gt;
+
+&lt;p&gt;There are many ways to include publications in your CV. This can be through a bibliography file that you keep, your Google Scholar profile (with the &lt;code&gt;scholar&lt;/code&gt; package), or in the Google Sheet. I prefer to keep everything in a Google Sheet, so for the example CV, I have a worksheet labeled &amp;ldquo;Publications&amp;rdquo; that looks like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;pubs.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;These are common field names for creating a bibliography file. You can read more about Bibtex field names and their requirements &lt;a href=&#34;https://www.andy-roberts.net/res/writing/latex/bibentries.pdf&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;. You can build a bibligraphy of not only journal articles but software, conferences, tech reports, and more. The &amp;ldquo;category&amp;rdquo; field on the end is so I can separate my publications into categories. For example, if I want to display my software separate from my peer-reviewed journal articles, I just need to use a &lt;code&gt;filter&lt;/code&gt; after reading in my sheet. I then use the &lt;code&gt;RefManageR&lt;/code&gt; package to convert the table into a bibliography and write that to a local file. Next, &lt;code&gt;bibliography_entries&lt;/code&gt; reads in that local bibliography file and renders the correct formatting. The code looks like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Software
+
+```{r software}
+googlesheets4::read_sheet(&amp;quot;https://docs.google.com/spreadsheets/d/1YKFymOOFCN6Ywlbkst3sDkrWDcRRgS6iI2djq_D_0-8/edit#gid=0&amp;quot;, sheet=&amp;quot;Publications&amp;quot;) %&amp;gt;%
+  filter(category == &amp;quot;software&amp;quot;) %&amp;gt;%
+  select(-category) %&amp;gt;%
+  RefManageR::as.BibEntry() %&amp;gt;%
+  RefManageR::WriteBib(&amp;quot;software.bib&amp;quot;, biblatex=T)
+
+
+vitae::bibliography_entries(&amp;quot;software.bib&amp;quot;) %&amp;gt;%
+  arrange(desc(issued))
+```
+
+# Publications
+```{r peerreviewed}
+googlesheets4::read_sheet(&amp;quot;https://docs.google.com/spreadsheets/d/1YKFymOOFCN6Ywlbkst3sDkrWDcRRgS6iI2djq_D_0-8/edit#gid=0&amp;quot;, sheet=&amp;quot;Publications&amp;quot;) %&amp;gt;%
+  filter(category == &amp;quot;peer&amp;quot;) %&amp;gt;%
+  select(-category) %&amp;gt;%
+  RefManageR::as.BibEntry() %&amp;gt;%
+  RefManageR::WriteBib(&amp;quot;peerreviewed.bib&amp;quot;, biblatex=T)
+
+
+vitae::bibliography_entries(&amp;quot;peerreviewed.bib&amp;quot;) %&amp;gt;%
+  arrange(desc(issued))
+```
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And the result looks like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;pub_cv.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;other-content&#34;&gt;Other Content&lt;/h2&gt;
+
+&lt;p&gt;Of course, you are not limited to education and publications. You can create any type of data in Google Sheets, read it in, and then include it properly formatted with &lt;code&gt;vitae::detailed_entries&lt;/code&gt;, &lt;code&gt;vitae::brief_entries&lt;/code&gt;, or &lt;code&gt;vitae::bibliography_entries&lt;/code&gt;. Here is one final example using the &amp;ldquo;Nobel Prizes&amp;rdquo; sheet.&lt;/p&gt;
+
+&lt;p&gt;Data:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;nobel.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Nobel Prizes
+
+```{r}
+googlesheets4::read_sheet(&amp;quot;https://docs.google.com/spreadsheets/d/1YKFymOOFCN6Ywlbkst3sDkrWDcRRgS6iI2djq_D_0-8/edit#gid=0&amp;quot;, sheet=&amp;quot;Nobel Prizes&amp;quot;) %&amp;gt;% 
+  brief_entries(
+    glue::glue(&amp;quot;Nobel Prize in {Type}&amp;quot;),
+    Year, 
+    Desc
+  )
+```
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Result:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;nobel_cv.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You can include any number of sections as needed and organize both the CV-generating .Rmd file and the Google Sheet however you would like. You can also include text and LaTex within the .Rmd to add more content and customization. I highly recommend checking out the examples linked on the &lt;a href=&#34;https://github.com/mitchelloharawild/vitae&#34; target=&#34;_blank&#34;&gt;&lt;code&gt;vitae&lt;/code&gt; Github repo&lt;/a&gt; as well as the package vignettes.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/acircleda/CV/blob/master/Anthony%20Schmidt%20-%20Full%20CV/Anthony-Schmidt-CV.pdf&#34; target=&#34;_blank&#34;&gt;Here&lt;/a&gt; is the current version of my own CV for an example of what you can do.&lt;/p&gt;
+
+&lt;h2 id=&#34;workflow&#34;&gt;Workflow&lt;/h2&gt;
+
+&lt;p&gt;The process for creating this CV was outlined above. The process for maintaining this CV is quite simple:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Update the Google Sheet&lt;/li&gt;
+&lt;li&gt;Open your .Rmd&lt;/li&gt;
+&lt;li&gt;Knit&lt;/li&gt;
+&lt;li&gt;Enjoy!&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;How often and how automated you do this is up to you! I hope that my blog post is useful for giving you the basic tools needed in making a reproducible, easy-to-maintain CV (or résumé - or both!) in R.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Creating a New R Project from the Windows Context Menu</title>
+      <link>https://www.anthonyschmidt.co/post/2021-11-19-creating-a-new-r-project-from-the-windows-context-menu/</link>
+      <pubDate>Fri, 19 Nov 2021 00:00:00 +0000</pubDate>
+      <guid>https://www.anthonyschmidt.co/post/2021-11-19-creating-a-new-r-project-from-the-windows-context-menu/</guid>
+      <description>
+
+&lt;p&gt;Here is something I have wanted to do for a while: create a new folder and then simply be able to right-click and create a new R Project immediately in that folder. No need to open RStudio and click through the R Project menus. Fast, efficient, and easy.&lt;/p&gt;
+
+&lt;p&gt;I finally sat down to do it and here is the result:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;rproject_context_menu.png&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;rproject_context_menu.png&#34; alt=&#34;&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Creating it was surprisingly easy and just took a little trial and error. I also followed the advice from &lt;a href=&#34;https://superuser.com/questions/735582/context-menu-for-new-file-with-template&#34; target=&#34;_blank&#34;&gt;this StackExchange superuser post&lt;/a&gt;. Here are the steps I followed:&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Note: these steps only apply to the Windows operating system.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;create-a-rproj-template&#34;&gt;Create a .Rproj Template&lt;/h3&gt;
+
+&lt;p&gt;To make this work successfully, windows needs to create an .Rproj file with some attributes filled in. I basically took an existing .Rproj file, copied it to a new folder, and renamed it rproj.Rproj. Alternatively, you could create a blank .txt file, enter in the required contents, and rename it with the .Rproj extension. The contents of the template file were as follows, all of which can be changed to suit your needs and can also be changed later under RStudio -&amp;gt; Tools -&amp;gt; Project Options.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Version: 1.0
+
+RestoreWorkspace: Yes
+SaveWorkspace: Yes
+AlwaysSaveHistory: Default
+
+EnableCodeIndexing: Yes
+UseSpacesForTab: Yes
+NumSpacesForTab: 2
+Encoding: UTF-8
+
+RnwWeave: knitr
+LaTeX: pdfLaTeX
+
+AutoAppendNewline: Yes
+StripTrailingWhitespace: Yes
+
+BuildType: Website
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This template then needs to placed within a specific folder on your machine. I clicked the Windows key to bring up the start menu and then pasted the following: &lt;code&gt;%APPDATA%\Microsoft\Windows\Templates&lt;/code&gt; . This brought me to an empty folder, in which I pasted my template file:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;templatefolder.PNG&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;access-the-registry-editor&#34;&gt;Access the Registry Editor&lt;/h3&gt;
+
+&lt;p&gt;You now need to set up the context menu. Press the Windows key and type &lt;code&gt;regedit&lt;/code&gt;. This will give you access to the Registry Editor.&lt;/p&gt;
+
+&lt;p&gt;You will need to navigate to &lt;code&gt;HKEY_CLASSES_ROOT&lt;/code&gt; and look for the &lt;code&gt;.Rproj&lt;/code&gt; folder. Right click on the folder and select New -&amp;gt; Key. Call the key &lt;code&gt;ShellNew&lt;/code&gt; (note the capital letters).&lt;/p&gt;
+
+&lt;p&gt;Click on &lt;code&gt;ShellNew&lt;/code&gt; and within the folder, right click and select New -&amp;gt; String Value. Call this &lt;code&gt;FileName&lt;/code&gt; (note the capital letters). After creating &lt;code&gt;FileName&lt;/code&gt;, right click on it and select Modify. Enter in the name of your .Rproj template (e.g., rproj.Rproj).&lt;/p&gt;
+
+&lt;p&gt;This should immediately add it to your context menu under &amp;ldquo;New&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;regedit.PNG&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;testing&#34;&gt;Testing&lt;/h3&gt;
+
+&lt;p&gt;To test this out, create a new folder somewhere on your computer. Right click and select New -&amp;gt; R Project. Open the R Project. It should work without any issues. To triple-check it is correct, type &lt;code&gt;getwd()&lt;/code&gt; in the console and make sure it is pointed to the correct directory.&lt;/p&gt;
+
+&lt;h3 id=&#34;notes&#34;&gt;Notes&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;The R Project will be named based on the folder that it is in.&lt;/li&gt;
+&lt;li&gt;I am not responsible for any issues or problems playing with registry keys may cause to your machine.&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
       <title>A Zotero Workflow for R</title>
       <link>https://www.anthonyschmidt.co/post/2021-10-25-a-zotero-workflow-for-r/</link>
       <pubDate>Mon, 25 Oct 2021 00:00:00 +0000</pubDate>
@@ -98,9 +336,9 @@
 &lt;p&gt;Key to successfully using Zotero is installing add-ons. As part of my Zotero setup, I primarily use the &lt;a href=&#34;https://retorque.re/zotero-better-bibtex/&#34; target=&#34;_blank&#34;&gt;Better BibTex for Zotero&lt;/a&gt; add-on. This facilitates a number of important processes for the workflow:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;The generation of citation keys, which are necessary for referring to sources in-text (e.g. &lt;code&gt;@author2021&lt;/code&gt;). You can set custom key formats and other key tricks. Mine is simple: `[auth:lower][year]`, with each key unique to each library.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The generation of citation keys, which are necessary for referring to sources in-text (e.g., &lt;code&gt;@author2021&lt;/code&gt;). You can set custom key formats and other key tricks. Mine is simple: &lt;code&gt;[auth:lower][year]&lt;/code&gt;, with each key unique to each library.&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;Better BibTex also converts Zotero&amp;rsquo;s default unicode to LaTeX, ensuring citations are formatted and appear correctly (99% of the time).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Better BibTex also converts Zotero&amp;rsquo;s default unicode to LaTeX, ensuring citations are formatted and appear correctly (95% of the time).&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Updated exports of your library. You can export your entire library and that export will be automatically updated every time you add, remove, or make changes in Zotero. There are numerous options for working with these auto exports as well.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -112,16 +350,16 @@
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;&lt;code&gt;citr::insert_citation()&lt;/code&gt; (this is also an R Studio addin). This pops up a gui which allows you to select your Zotero library and search for citations. This makes it super convenient to insert references as you are typing. It is so convenient, in fact, that I have it mapped to a &lt;a href=&#34;https://support.rstudio.com/hc/en-us/articles/206382178-Customizing-Keyboard-Shortcuts&#34; target=&#34;_blank&#34;&gt;custom keyboard command&lt;/a&gt;: &lt;strong&gt;Ctrl + ;&lt;/strong&gt; . As you insert citations into your document, they are also automatically added the the bibliography file you have specified in your YAML, keeping your end of document references page updated and formatted correctly. However, I have had some issues lately with the &lt;code&gt;insert_citation()&lt;/code&gt; function crashing lately, mostly due to libraries with non-Roman letters in author names. So, I have not been using this as much lately, as will be shown below.&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;code&gt;citr::tidy_bib_file()&lt;/code&gt; . This handy function keep essentially keeps your bibliography file clean by removing duplicates and unwanted entries. I call this function every time I knit to keep my bibliography file sparkling.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;citr::tidy_bib_file()&lt;/code&gt; . This handy function essentially keeps your bibliography file clean by removing duplicates and unwanted entries. I call this function every time I knit to keep my bibliography file sparkling.&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&#34;workflow&#34;&gt;Workflow&lt;/h2&gt;
 
-&lt;p&gt;I have a specific library dedicated to my project, in my current case, a &amp;ldquo;Dissertation&amp;rdquo; library with all my related readings. I typically add files to my library using Chrome&amp;rsquo;s Save to Zotero extension.&lt;/p&gt;
+&lt;p&gt;I have a specific library dedicated to my project, in my current case, a &amp;ldquo;Dissertation&amp;rdquo; library with all my related readings. I typically add files to my library using Chrome&amp;rsquo;s &lt;em&gt;Save to Zotero&lt;/em&gt; extension.&lt;/p&gt;
 
 &lt;p&gt;I have previously exported this library to my R project folder, and selected the option to keep it updated as I add, remove, and make changes to the library within Zotero. This exported library has been cleverly named &amp;ldquo;Dissertation.bib&amp;rdquo;.&lt;/p&gt;
 
-&lt;p&gt;As I write in my R Markdown document and need a reference, I search Zotero until I find it, and copy the citation key to include in text (e.g., &lt;code&gt;@author2021&lt;/code&gt; ).&lt;/p&gt;
+&lt;p&gt;As I write in my R Markdown document and need a reference, I search Zotero until I find it, and copy the citation key to include in text (e.g., &lt;code&gt;@author2021&lt;/code&gt; ). This can also be done using &lt;code&gt;citr::insert_citation()&lt;/code&gt; .&lt;/p&gt;
 
 &lt;p&gt;When I go to knit my document, the following code is called right after R libraries are loaded:&lt;/p&gt;
 
@@ -143,7 +381,7 @@
 &lt;li&gt;&lt;p&gt;&lt;code&gt;file&lt;/code&gt; refers to the clean document &lt;code&gt;citr&lt;/code&gt; creates that only includes citations referenced in my R files. This file is included in my YAML: &lt;code&gt;bibliography: references.bib&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;The above process keeps a properly updated bibliography that contains no superfluous references. In addition, as I am knitting, the console shoots out warnings of any references missing, most often because of typos or issues with hyphens (tip: don&amp;rsquo;t use hyphens). This allows me to fix citations and re-knit quickly, ensuring a properly cited final document.&lt;/p&gt;
+&lt;p&gt;The above process keeps a properly updated bibliography that contains no superfluous references. In addition, as I am knitting, the console shoots out warnings of any references missing, most often because of typos or issues with hyphens (tip: don&amp;rsquo;t use hyphens). This allows me to fix citations and re-knit quickly, ensuring a properly-cited final document.&lt;/p&gt;
 
 &lt;p&gt;I find the above workflow convenient and low maintenance. The only effort is the initial setup, adding additional Markdown files to the &lt;code&gt;rmd_file&lt;/code&gt; argument as needed, and fixing missing citations. Combining R and Zotero is pretty easy and makes the writing experience pleasurable. So, I highly recommend writing in R. However, even if you choose to write in another platform (Word, Google Docs), I still highly recommend Zotero because it is free, easy-to-use, and open source - which means many robust addons to improve its functionality.&lt;/p&gt;
 </description>

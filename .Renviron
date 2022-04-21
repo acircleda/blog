@@ -1,0 +1,2 @@
+GIT_SSH_COMMAND=ssh -i ~/.ssh/id_rsa
+GITHUB_PAT=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
