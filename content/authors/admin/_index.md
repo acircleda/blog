@@ -49,4 +49,4 @@ user_groups:
 
 I am a data scientist, researcher, teacher, designer, and tinkerer. I hold a  PhD from the University of Tennessee's [Evaluation, Statistics, and Methodology](https://elps.utk.edu/evaluation-statistics-methodology-phd/) program and I am currently employed as a senior data scientist at [Amplify](http://www.amplify.com/). I work at the intersection of education and data science. My mission is to work across the data lifecycle to help improve learning. 
 
-Note: This website is sporadically maintained. My apologies.
+Note: This website is sporadically maintained. My apologies!
