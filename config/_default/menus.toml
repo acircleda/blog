@@ -29,7 +29,7 @@
   weight = 50
 
 [[main]]
-  name = "Portfolio"
+  name = "Data Viz Portfolio"
   url = "#portfolio"
   weight = 60
 

@@ -6,7 +6,7 @@ active = true  # Activate this widget? true/false
 weight = 40  # Order that this section will appear.
 
 title = "Projects"
-subtitle = "What I'm Currently Working On"
+subtitle = "Projects I've Been Involved In"
 
 folder = "portfolio"
 
@@ -30,20 +30,9 @@ folder = "portfolio"
 
   
   [[content.filter_button]]
-    name = "Education"
-    tag = "Education"
-    
-  [[content.filter_button]]
-    name = "International Students"
-    tag = "International Students"
+    name = "Research"
+    tag = "Research"
   
-  [[content.filter_button]]
-    name = "Climate Change"
-    tag = "Climate Change"
-    
-  [[content.filter_button]]
-    name = "Employability"
-    tag = "Employability"
     
   [[content.filter_button]]
     name = "Data Science"

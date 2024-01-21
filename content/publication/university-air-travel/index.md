@@ -4,20 +4,20 @@ abstract: "Higher education institutions have been involved with environmental a
 <br/><br/>[Access the preprint here.](https://doi.org/10.35542/osf.io/bmuas)"
 authors:
 - admin
-date: "2021-01-19"
-doi: "10.35542/osf.io/bmuas"
+date: "2022-04-02"
+doi: "10.1108/IJSHE-07-2021-0318"
 featured: false
 projects: [flying-less-document-analysis]
-publication: 'EdArXiV'
+publication: 'International Journal of Sustainability in Higher Education'
 publication_short: ""
 publication_types:
 - "3"
-publishDate: "2021-01-19"
+publishDate: "2022-04-02"
 slides:
 summary: This research used qualitative document analysis to examine the climate policies of 46 public doctoral institutions to understand how they address university air travel greenhouse gas mitigation.
 tags:
 - Project
-- Climate Change
+- Research
 title: "University air travel and greenhouse gas mitigation: An analysis of higher education climate policies"
 url_code: ""
 url_dataset: "https://osf.io/sek5w/"

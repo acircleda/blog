@@ -9,13 +9,12 @@ summary: This is an ongoing project to analyze the skills and competencies as ex
 
 tags:
 - Project
-- Employability
-- Data Science
 title: Data-Related Jobs for ESM Students
 url_code: ""
 url_pdf: ""
 url_slides: ""
 url_video: ""
+draft: true
 ---
 
 This is an ongoing project to analyze data-related jobs posted on [HigherEdJobs](http://www.higheredjobs.com). These are jobs a typical ESM student would qualify. The jobs are analyzed in order to understand the skills and competencies that are in demand.

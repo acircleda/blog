@@ -13,8 +13,9 @@ tags:
 title: Planting the Seeds for Computer Science Education in East Tennessee
 url_code: ""
 url_pdf: ""
-url_slides: ""
+slides: ""
 url_video: ""
+draft: true
 ---
 
 The project was focused on understanding the needs of administrators and teachings in order to develop opportunities for K-8 teachers to engage in professional development on the Tennessee computer science standards.

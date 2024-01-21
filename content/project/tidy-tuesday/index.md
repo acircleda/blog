@@ -9,10 +9,11 @@ summary: Understanding the development of data visualization skills in an online
 tags:
 - Project
 - Data Science
+- Research
 title: Becoming Tidyr over Time
 url_code: ""
 url_pdf: ""
-url_slides: ""
+slides: ""
 url_video: ""
 ---
 

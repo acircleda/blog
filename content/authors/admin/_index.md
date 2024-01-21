@@ -1,7 +1,7 @@
 ---
 authors:
 - admin
-bio: My research interests include climate change, society, and education. I also have a focus on quantitative methods, including data science education and data visualization.
+bio: My research interests include data science and education. I focus on statistics, research methods, data visualization, and machine learning.
 education:
   courses:
   - course: PhD in Evaluation, Statistics, and Methodology
@@ -15,20 +15,23 @@ education:
     year: 2006
 email: ""
 interests:
-- Climate change, society, and education
-- Quantitative research methods
+- Statistics and quantitative research methods
 - Data visualization
-- Data science (in) education
-- R
+- Data science
+- Machine learning
+- Education
+- Climate change
+- Electric vehicles
+- 3D printing
 name: Anthony Schmidt
 # organizations:
 # - name: Amplify
 #   url: "http://www.amplify.com"
 role: Data Scientist
 social:
-- icon: twitter
-  icon_pack: fab
-  link: https://twitter.com/AnthonyTeacher
+#- icon: twitter
+#  icon_pack: fab
+#  link: https://twitter.com/AnthonyTeacher
 - icon: github
   icon_pack: fab
   link: https://github.com/acircleda
@@ -44,4 +47,4 @@ user_groups:
 - Visitors
 ---
 
-I recently graduated with a PhD from the University of Tennessee's [Evaluation, Statistics, and Measurement](https://epc.utk.edu/evaluation-statistics-measurement/) program. I am currently a data scientist at [Amplify](http://www.amplify.com/). I primarily play in R and SQL.
+I am a data scientist, researcher, teacher, designer, and tinkerer. I hold a  PhD from the University of Tennessee's [Evaluation, Statistics, and Methodology](https://elps.utk.edu/evaluation-statistics-methodology-phd/) program and I am currently employed as a senior data scientist at [Amplify](http://www.amplify.com/). I work at the intersection of education and data science. My mission is to work across the data lifecycle to help improve learning.

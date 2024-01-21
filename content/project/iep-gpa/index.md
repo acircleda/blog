@@ -8,13 +8,14 @@ slides: example
 summary: A comparison of IEP and directly-admitted students.
 tags:
   - Project
-  - Education
-  - International Students
-title: Intensive English Program Student Academic Achievement
+  - Research
+title: "Comparing Intensive English Program (IEP) and Directly-Admitted International Students’ Academic Achievement"
 url_code: ""
-url_pdf: ""
-url_slides: ""
+url_pdf: "https://doi.org/10.35542/osf.io/vm37t"
+slides: ""
 url_video: ""
 ---
 
-This project uses longitudinal institutional data to understand the efficacy of an intensive English program (IEP) by comparing IEP students, who arrive with TOEFL scores under the institutional minimum, with directly admitted students, who have scores at or above the minimum.
+> Schmidt, A. (2020, June 19). Comparing Intensive English Program  (IEP) and Directly-Admitted International Students’ Academic Achievement. *EdArXiv*. https://doi.org/10.35542/osf.io/vm37t
+
+Intensive English programs (IEPs) exist as an additional pathway into higher education for international students who need additional language support before full matriculation. Despite their long history in higher education, there is little research on the performance of IEP students. The current research examines IEP student performance by comparing them to directly-admitted international students. Results from regression models on first-semester and first-year GPA indicated no significant differences between these two student groups. Follow-up equivalence testing indicated statistical equivalence in several cases. The findings lead to the conclusion that the IEP students perform on par with directly-admitted international students. These findings imply further support for IEPs as alterative pathways to direct admission.

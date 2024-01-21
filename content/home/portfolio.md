@@ -5,8 +5,8 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 80  # Order that this section will appear.
 
-title = "Portfolio"
-subtitle = "Example Visualization Work"
+title = "Data Viz Portfolio"
+subtitle = "Past Visualization Work"
 
 [content]
   # Page type to display. E.g. project.

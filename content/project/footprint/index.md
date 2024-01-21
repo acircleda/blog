@@ -6,7 +6,7 @@ image:
 summary: "The goal of footprint is to calculate carbon footprints from air travel based on IATA airport codes or latitude and longitude."
 tags:
   - Project
-  - Climate Change
+  - Data Science
 title: "footprint: Calculate carbon footprints from air travel in R"
 url_code: ""
 url_pdf: ""
