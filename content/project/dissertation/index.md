@@ -9,7 +9,7 @@ slides: example
 summary: A summary and link to my dissertation.
 tags:
 - Project
-- Research
+- Publications
 title: Science Education to the Rescue? Assessing The Relationship Between Scientific Literacy and Carbon Emissions
 url_code: "https://github.com/acircleda/dissertation"
 url_pdf: "https://trace.tennessee.edu/utk_graddiss/7303/"

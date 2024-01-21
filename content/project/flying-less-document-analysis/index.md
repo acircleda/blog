@@ -4,15 +4,18 @@ external_link: ""
 image:
   caption: Image by [Jan Vašek](https://pixabay.com/users/JESHOOTS-com-264599/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2373727) from [Pixabay](https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2373727)
   focal_point: Smart
-slides:
 summary: This project utilize qualitative document analysis to examine the role of flying less as a Scope 3 emissions reduction strategy in various university climate policies
 tags:
 - Project
-- Research
+- Publications
 title: "University air travel and greenhouse gas mitigation: an analysis of higher education climate policies"
 url_code: "https://osf.io/sek5w/"
 url_pdf: "https://edarxiv.org/bmuas/download?format=pdf"
+url_dataset: "https://osf.io/sek5w/"
+doi: "10.1108/IJSHE-07-2021-0318"
 slides: ""
+publication_types:
+- "3"
 ---
 
 > Schmidt, A. (2022). University air travel and greenhouse gas mitigation: an analysis of higher education climate policies. *International Journal of Sustainability in Higher Education*, 23(6), 1426-1442. https://doi.org/10.1108/IJSHE-07-2021-0318

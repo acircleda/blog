@@ -4,11 +4,10 @@ external_link: ""
 image:
   caption: Image inspired by [Mitchell O'Hara-Wild](https://www.mitchelloharawild.com/blog/user-2018-feature-wall/)
   focal_point: Smart
-slides:
 summary: This project entailed development of a `R` resource guide relevant to students in our evaluation, statistics, and measurement PhD program.
 tags:
 - Project
-- Data Science
+- Other Work
 title: R Handbook for ESM Students
 url_code: "https://github.com/acircleda/RESMHandbook"
 url_pdf: ""

@@ -8,12 +8,13 @@ image:
 summary: "A summary of the research paper, *STARS and Stripes: Political and Institutional Factors that Affect Higher Education Sustainability Ratings*"
 tags:
   - Project
-  - Research
+  - Other Research
 title: "STARS and Stripes: Political and Institutional Factors that Affect Higher Education Sustainability Ratings"
 url_code: "https://github.com/acircleda/STARS/tree/master"
 url_pdf: "https://osf.io/preprints/edarxiv/d5bku"
 slides: ""
 url_video: ""
+doi: 10.35542/osf.io/d5bku
 ---
   
 > Schmidt, A. & Rocconi, L. (2021). STARS and stripes: Political and institutional factors that affect higher education sustainability ratings. *EdArXiv*. https://doi.org/10.35542/osf.io/d5bku

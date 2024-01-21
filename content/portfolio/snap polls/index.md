@@ -2,20 +2,20 @@
 date: "2021-06-21T00:00:00Z"
 external_link: ""
 image:
-  focal_point: Top
+  preview_only: yes
 links:
 - icon: twitter
   icon_pack: fab
   name: Follow
   url: https://twitter.com/anthonyteacher
 slides:
-summary: Visualizations of poll results.
+summary: Visualizations of CUPA-HR poll results.
 
 tags:
 - Portfolio
 - Static
 - Reports
-title: Poll Results
+title: Member Poll Results
 url_code: ""
 url_pdf: ""
 url_slides: ""

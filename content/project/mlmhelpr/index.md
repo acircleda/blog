@@ -9,7 +9,7 @@ image:
   preview_only: yes
 tags:
 - Project
-- Data Science
+- R Packages
 title: "mlmhelpr: Multilevel/Mixed Model Helper Functions"
 url_code: "https://github.com/lrocconi/mlmhelpr"
 url_pdf: ""

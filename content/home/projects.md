@@ -5,7 +5,7 @@ headless = true  # This file represents a page section.
 active = true  # Activate this widget? true/false
 weight = 40  # Order that this section will appear.
 
-title = "Projects"
+title = "Projects & Publications"
 subtitle = "Projects I've Been Involved In"
 
 folder = "portfolio"
@@ -22,21 +22,27 @@ folder = "portfolio"
   # To remove toolbar, delete/comment all instances of `[[content.filter_button]]` below.
   
   # Default filter index (e.g. 0 corresponds to the first `[[filter_button]]` instance below).
-  filter_default = 0
+  #filter_default = 0
   
   [[content.filter_button]]
     name = "All"
     tag = "Project"
-
   
   [[content.filter_button]]
-    name = "Research"
-    tag = "Research"
-  
+    name = "Publications"
+    tag = "Publications"
     
   [[content.filter_button]]
-    name = "Data Science"
-    tag = "Data Science"
+    name = "R Packages"
+    tag = "R Packages"
+    
+  [[content.filter_button]]
+    name = "Other Research"
+    tag = "Other Research"
+    
+  [[content.filter_button]]
+    name = "Other Work"
+    tag = "Other Work"
 
 
 

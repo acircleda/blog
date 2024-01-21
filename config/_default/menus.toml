@@ -9,7 +9,7 @@
   weight = 10
 
 [[main]]
-  name = "Projects"
+  name = "Projects & Pubs"
   url = "#projects"
   weight = 30
 
@@ -19,17 +19,12 @@
   weight = 20
 
 [[main]]
-  name = "Publications"
-  url = "#publications"
-  weight = 40
-
-[[main]]
   name = "Presentations"
   url = "#talks"
   weight = 50
 
 [[main]]
-  name = "Data Viz Portfolio"
+  name = "Data Viz"
   url = "#portfolio"
   weight = 60
 
