@@ -5,12 +5,28 @@
     <link>https://www.anthonyschmidt.co/authors/admin/</link>
       <atom:link href="https://www.anthonyschmidt.co/authors/admin/index.xml" rel="self" type="application/rss+xml" />
     <description>Anthony Schmidt</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 11 Aug 2021 01:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 02 Apr 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://www.anthonyschmidt.co/img/icon-192.png</url>
       <title>Anthony Schmidt</title>
       <link>https://www.anthonyschmidt.co/authors/admin/</link>
     </image>
+    
+    <item>
+      <title>University air travel and greenhouse gas mitigation: An analysis of higher education climate policies</title>
+      <link>https://www.anthonyschmidt.co/publication/university-air-travel/</link>
+      <pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.anthonyschmidt.co/publication/university-air-travel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The representation of women and racial/ethnic minorities in the workforce of minority-serving higher education institutions</title>
+      <link>https://www.anthonyschmidt.co/publication/msis/</link>
+      <pubDate>Tue, 01 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.anthonyschmidt.co/publication/msis/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>From Click to Code: Insights from Instructors and Students on Moving from SPSS to R in a Graduate-Level Applied Statistics Course</title>
@@ -52,14 +68,6 @@
       <link>https://www.anthonyschmidt.co/publication/stars/</link>
       <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
       <guid>https://www.anthonyschmidt.co/publication/stars/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>University air travel and greenhouse gas mitigation: An analysis of higher education climate policies</title>
-      <link>https://www.anthonyschmidt.co/publication/university-air-travel/</link>
-      <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>https://www.anthonyschmidt.co/publication/university-air-travel/</guid>
       <description></description>
     </item>
     

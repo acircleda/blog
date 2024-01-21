@@ -19,7 +19,42 @@
   
   <url>
     <loc>https://www.anthonyschmidt.co/</loc>
-    <lastmod>2022-04-21T13:36:28-04:00</lastmod>
+    <lastmod>2024-01-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.anthonyschmidt.co/tags/project/</loc>
+    <lastmod>2024-01-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.anthonyschmidt.co/project/</loc>
+    <lastmod>2024-01-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.anthonyschmidt.co/tags/research/</loc>
+    <lastmod>2024-01-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.anthonyschmidt.co/project/dissertation/</loc>
+    <lastmod>2024-01-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.anthonyschmidt.co/tags/</loc>
+    <lastmod>2024-01-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.anthonyschmidt.co/tags/data-science/</loc>
+    <lastmod>2022-11-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.anthonyschmidt.co/project/mlmhelpr/</loc>
+    <lastmod>2022-11-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -33,6 +68,46 @@
   </url>
   
   <url>
+    <loc>https://www.anthonyschmidt.co/authors/admin/</loc>
+    <lastmod>2022-04-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.anthonyschmidt.co/publication_types/3/</loc>
+    <lastmod>2022-04-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.anthonyschmidt.co/authors/</loc>
+    <lastmod>2022-04-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.anthonyschmidt.co/publication_types/</loc>
+    <lastmod>2022-04-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.anthonyschmidt.co/publication/</loc>
+    <lastmod>2022-04-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.anthonyschmidt.co/publication/university-air-travel/</loc>
+    <lastmod>2022-04-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.anthonyschmidt.co/publication_types/4/</loc>
+    <lastmod>2022-02-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.anthonyschmidt.co/publication/msis/</loc>
+    <lastmod>2022-02-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.anthonyschmidt.co/post/2021-11-19-creating-a-new-r-project-from-the-windows-context-menu/</loc>
     <lastmod>2021-11-19T08:54:09-05:00</lastmod>
   </url>
@@ -40,21 +115,6 @@
   <url>
     <loc>https://www.anthonyschmidt.co/post/2021-10-25-a-zotero-workflow-for-r/</loc>
     <lastmod>2021-10-25T10:45:10-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.anthonyschmidt.co/authors/admin/</loc>
-    <lastmod>2021-08-11T01:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.anthonyschmidt.co/authors/</loc>
-    <lastmod>2021-08-11T01:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.anthonyschmidt.co/tags/data-science/</loc>
-    <lastmod>2021-08-11T01:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -69,11 +129,6 @@
   
   <url>
     <loc>https://www.anthonyschmidt.co/talk/</loc>
-    <lastmod>2021-08-11T01:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.anthonyschmidt.co/tags/</loc>
     <lastmod>2021-08-11T01:00:00+00:00</lastmod>
   </url>
   
@@ -138,47 +193,22 @@
   </url>
   
   <url>
-    <loc>https://www.anthonyschmidt.co/tags/climate-change/</loc>
-    <lastmod>2021-02-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.anthonyschmidt.co/project/footprint/</loc>
     <lastmod>2021-02-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.anthonyschmidt.co/tags/project/</loc>
-    <lastmod>2021-02-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.anthonyschmidt.co/project/</loc>
-    <lastmod>2021-02-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.anthonyschmidt.co/publication_types/3/</loc>
+    <loc>https://www.anthonyschmidt.co/tags/climate-change/</loc>
     <lastmod>2021-01-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.anthonyschmidt.co/publication_types/</loc>
-    <lastmod>2021-01-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.anthonyschmidt.co/publication/</loc>
+    <loc>https://www.anthonyschmidt.co/project/stars/</loc>
     <lastmod>2021-01-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.anthonyschmidt.co/publication/stars/</loc>
-    <lastmod>2021-01-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.anthonyschmidt.co/publication/university-air-travel/</loc>
     <lastmod>2021-01-19T00:00:00+00:00</lastmod>
   </url>
   
@@ -283,16 +313,6 @@
   </url>
   
   <url>
-    <loc>https://www.anthonyschmidt.co/project/esm-data-jobs/</loc>
-    <lastmod>2020-01-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.anthonyschmidt.co/tags/employability/</loc>
-    <lastmod>2020-01-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.anthonyschmidt.co/talk/planting-the-seeds/</loc>
     <lastmod>2020-01-16T13:00:00+00:00</lastmod>
   </url>
@@ -310,11 +330,6 @@
   <url>
     <loc>https://www.anthonyschmidt.co/portfolio/tennessee-logo/</loc>
     <lastmod>2020-01-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.anthonyschmidt.co/project/fly-or-die-phd-grads/</loc>
-    <lastmod>2019-12-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -373,10 +388,6 @@
   
   <url>
     <loc>https://www.anthonyschmidt.co/courses/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.anthonyschmidt.co/project/planting-the-seeds-for-cs/</loc>
   </url>
   
 </urlset>

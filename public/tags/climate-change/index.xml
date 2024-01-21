@@ -5,7 +5,7 @@
     <link>https://www.anthonyschmidt.co/tags/climate-change/</link>
       <atom:link href="https://www.anthonyschmidt.co/tags/climate-change/index.xml" rel="self" type="application/rss+xml" />
     <description>Climate Change</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 20 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 19 Jan 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://www.anthonyschmidt.co/img/icon-192.png</url>
       <title>Climate Change</title>
@@ -13,39 +13,10 @@
     </image>
     
     <item>
-      <title>footprint: Calculate carbon footprints from air travel in R</title>
-      <link>https://www.anthonyschmidt.co/project/footprint/</link>
-      <pubDate>Sat, 20 Feb 2021 00:00:00 +0000</pubDate>
-      <guid>https://www.anthonyschmidt.co/project/footprint/</guid>
-      <description>&lt;p&gt;This package was developed with &lt;a href=&#34;https://github.com/KKulma&#34; target=&#34;_blank&#34;&gt;Dr. Kasia Kulman&lt;/a&gt;. The package started as a simple function and was first featured as a &lt;a href=&#34;https://www.anthonyschmidt.co/post/2020-05-08-emission-calculator-in-r/&#34; target=&#34;_blank&#34;&gt;blog post&lt;/a&gt;. It is now a fully-developed package on CRAN which allows you to calculate greenhouse gas emissions based on to/from airport codes to latitude and longitude.&lt;/p&gt;
-
-&lt;p&gt;You can install the development version from
-&lt;a href=&#34;https://github.com/&#34; target=&#34;_blank&#34;&gt;GitHub&lt;/a&gt; with:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# install.packages(&amp;quot;remotes&amp;quot;)
-remotes::install_github(&amp;quot;acircleda/footprint&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Or you can install it from CRAN:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;install.packages(&amp;quot;footprint&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
       <title>STARS and Stripes: Political and Institutional Factors that Affect Higher Education Sustainability Ratings</title>
       <link>https://www.anthonyschmidt.co/publication/stars/</link>
       <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
       <guid>https://www.anthonyschmidt.co/publication/stars/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>University air travel and greenhouse gas mitigation: An analysis of higher education climate policies</title>
-      <link>https://www.anthonyschmidt.co/publication/university-air-travel/</link>
-      <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>https://www.anthonyschmidt.co/publication/university-air-travel/</guid>
       <description></description>
     </item>
     
@@ -210,15 +181,6 @@ travel_data %&amp;gt;%
 &lt;/table&gt;
 &lt;p&gt;I hope that this calculator is of some use. Feel free to improve it over on Github!&lt;/p&gt;
 &lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>A Document Analysis of University Climate Policies and Air Travel</title>
-      <link>https://www.anthonyschmidt.co/project/flying-less-document-analysis/</link>
-      <pubDate>Fri, 08 May 2020 00:00:00 +0000</pubDate>
-      <guid>https://www.anthonyschmidt.co/project/flying-less-document-analysis/</guid>
-      <description>&lt;p&gt;This project utilize qualitative document analysis to examine the role of flying less as a Scope 3 emissions reduction strategy in various university climate policies. It will include documents from UTK, &lt;a href=&#34;https://oira.utk.edu/peer-institutions/&#34; target=&#34;_blank&#34;&gt;UTK peer and aspirational universities&lt;/a&gt;, the top 25 public research universities, and specific institutions that have explicit attention to flying less.&lt;/p&gt;
 </description>
     </item>
     
@@ -472,21 +434,6 @@ mar &amp;lt;- json_process(mar2019)
 &lt;p&gt;This is a just a simple example of what one can do with their location data. I will be using my data in an interactive Tableau dashboard that also includes utility usage and will allow me to drill down by month, day, and hour. It will also allow me to compare my 2020 emissions to 2019. &lt;strong&gt;My goal is to have lower emissions.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;I think there are a lot of possibilities with Google Location data (for tracking carbon emissions, for making cool visualizations), and even with liberal estimates of kgCO2, you still get a sense of your impact and have a visual goal you can compare against for the future.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Fly or Die - The Relationship between Conference Travel, Employability, and the Climate Crisis.</title>
-      <link>https://www.anthonyschmidt.co/project/fly-or-die-phd-grads/</link>
-      <pubDate>Sat, 07 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>https://www.anthonyschmidt.co/project/fly-or-die-phd-grads/</guid>
-      <description>&lt;p&gt;The &amp;ldquo;Fly or Die&amp;rdquo; project is a multi-survey research project that looks at the complex relationship between graduate student conference travel, employability, and the climate crisis.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Survey One&lt;/strong&gt; focuses on doctoral student employment outcomes, conferences attendance, conference activities, conference types, and publications. Analyses are across disciplines and job industries.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Survey Two&lt;/strong&gt; focuses on tenure-track faculty search comittees and their attitudes toward recently-graduated PhD students&amp;rsquo; conference attendance, conference activities, and publications.&lt;/p&gt;
-
-&lt;p&gt;The ulitmate goal of this research is to understand the ideal conference and publication record that can maximize employment outcomes while minimizing our carbon footprints.&lt;/p&gt;
 </description>
     </item>
     

@@ -5,12 +5,25 @@
     <link>https://www.anthonyschmidt.co/tags/data-science/</link>
       <atom:link href="https://www.anthonyschmidt.co/tags/data-science/index.xml" rel="self" type="application/rss+xml" />
     <description>Data Science</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 11 Aug 2021 01:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 04 Nov 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://www.anthonyschmidt.co/img/icon-192.png</url>
       <title>Data Science</title>
       <link>https://www.anthonyschmidt.co/tags/data-science/</link>
     </image>
+    
+    <item>
+      <title>mlmhelpr: Multilevel/Mixed Model Helper Functions</title>
+      <link>https://www.anthonyschmidt.co/project/mlmhelpr/</link>
+      <pubDate>Fri, 04 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.anthonyschmidt.co/project/mlmhelpr/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Rocconi, L. &amp;amp; Schmidt, A. (2022). mlmhelpr [R package]. &lt;a href=&#34;https://cran.r-project.org/web/packages/mlmhelpr/&#34; target=&#34;_blank&#34;&gt;https://cran.r-project.org/web/packages/mlmhelpr/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;A collection of miscellaneous helper function for running multilevel/mixed models in &amp;lsquo;lme4&amp;rsquo;. This package aims to provide functions to compute common tasks when estimating multilevel models such as computing the intraclass correlation and design effect, centering variables, estimating the proportion of variance explained at each level, pseudo-R squared, random intercept and slope reliabilities, tests for homogeneity of variance at level-1, and cluster robust and bootstrap standard errors. The tests and statistics reported in the package are from Raudenbush &amp;amp; Bryk (2002, ISBN:9780761919049), Hox et al. (2018, ISBN:9781138121362), and Snijders &amp;amp; Bosker (2012, ISBN:9781849202015).&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>From Click to Code: Insights from Instructors and Students on Moving from SPSS to R in a Graduate-Level Applied Statistics Course</title>
@@ -44,6 +57,27 @@
 &lt;h2&gt;Abstract&lt;/h2&gt;
 &lt;p&gt;Proprietary software such as SPSS, Stata, and SAS have traditionally dominated statistics courses, particularly in applied statistics courses in the social and behavioral sciences. More recently, R has become the software package of choice due to its open-source nature, limited resource use, and flexibility. While these features may excite veteran researchers and statisticians, the R programming language can feel daunting to students, especially those who have become accustomed to point-and-click software and graphical user interfaces. This presentation will discuss the switch from SPSS to R in an advanced graduate-level applied statistics course in an educational psychology program. The presentation will focus on strategies implemented by the instructors for designing materials, scaffolding, and developing practice activities and assessments. In addition, results from a survey on students’ experiences, challenges, and strategies with transitioning to and learning R will be shared. Insights for module sequencing, material design, and general pedagogy will be highlighted.&lt;/p&gt;
 &lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>footprint: Calculate carbon footprints from air travel in R</title>
+      <link>https://www.anthonyschmidt.co/project/footprint/</link>
+      <pubDate>Sat, 20 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>https://www.anthonyschmidt.co/project/footprint/</guid>
+      <description>&lt;p&gt;This package was developed with &lt;a href=&#34;https://github.com/KKulma&#34; target=&#34;_blank&#34;&gt;Dr. Kasia Kulman&lt;/a&gt;. The package started as a simple function and was first featured as a &lt;a href=&#34;https://www.anthonyschmidt.co/post/2020-05-08-emission-calculator-in-r/&#34; target=&#34;_blank&#34;&gt;blog post&lt;/a&gt;. It is now a fully-developed package on CRAN which allows you to calculate greenhouse gas emissions based on to/from airport codes to latitude and longitude.&lt;/p&gt;
+
+&lt;p&gt;You can install the development version from
+&lt;a href=&#34;https://github.com/&#34; target=&#34;_blank&#34;&gt;GitHub&lt;/a&gt; with:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# install.packages(&amp;quot;remotes&amp;quot;)
+remotes::install_github(&amp;quot;acircleda/footprint&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Or you can install it from CRAN:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;install.packages(&amp;quot;footprint&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
@@ -5217,9 +5251,7 @@ travel_data %&amp;gt;%
       <link>https://www.anthonyschmidt.co/project/r-handbook/</link>
       <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
       <guid>https://www.anthonyschmidt.co/project/r-handbook/</guid>
-      <description>&lt;p&gt;This project was part of a summer internship with &lt;a href=&#34;https://epc.utk.edu/people/jennifer-ann-morrow-phd/&#34; target=&#34;_blank&#34;&gt;Dr. Jennifer Ann Morrow&lt;/a&gt; to create an introduction to &lt;code&gt;R&lt;/code&gt; resource guide relevant to students in our evaluation, statistics, and measurement PhD program. It would also be relevant to anyone interested in learning R. Its topics include setup, important, data manipulation, data cleaning, statistical analysis, and data visualization. The examples use real survey data and take readers from import, to cleaning, to analysis.&lt;/p&gt;
-
-&lt;p&gt;The handbook was being developed with &lt;code&gt;bookdown&lt;/code&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;The &lt;a href=&#34;https://bookdown.org/aschmi11/RESMHandbook/&#34; target=&#34;_blank&#34;&gt;R Software Handbook&lt;/a&gt; was developed as part of a summer internship with &lt;a href=&#34;https://epc.utk.edu/people/jennifer-ann-morrow-phd/&#34; target=&#34;_blank&#34;&gt;Dr. Jennifer Ann Morrow&lt;/a&gt;. The goal was to create an introduction to &lt;code&gt;R&lt;/code&gt; resource guide relevant to students in our evaluation, statistics, and measurement PhD program. It would also be relevant to anyone interested in learning R. Its topics include setup, important, data manipulation, data cleaning, statistical analysis, and data visualization. The examples use real survey data and take readers from import, to cleaning, to analysis.&lt;/p&gt;
 </description>
     </item>
     
@@ -5654,19 +5686,6 @@ mar &amp;lt;- json_process(mar2019)
 &lt;p&gt;This is a just a simple example of what one can do with their location data. I will be using my data in an interactive Tableau dashboard that also includes utility usage and will allow me to drill down by month, day, and hour. It will also allow me to compare my 2020 emissions to 2019. &lt;strong&gt;My goal is to have lower emissions.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;I think there are a lot of possibilities with Google Location data (for tracking carbon emissions, for making cool visualizations), and even with liberal estimates of kgCO2, you still get a sense of your impact and have a visual goal you can compare against for the future.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Data-Related Jobs for ESM Students</title>
-      <link>https://www.anthonyschmidt.co/project/esm-data-jobs/</link>
-      <pubDate>Sat, 18 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>https://www.anthonyschmidt.co/project/esm-data-jobs/</guid>
-      <description>&lt;p&gt;This is an ongoing project to analyze data-related jobs posted on &lt;a href=&#34;http://www.higheredjobs.com&#34; target=&#34;_blank&#34;&gt;HigherEdJobs&lt;/a&gt;. These are jobs a typical ESM student would qualify. The jobs are analyzed in order to understand the skills and competencies that are in demand.&lt;/p&gt;
-
-&lt;p&gt;The project is currently focused on administrative-level jobs. Faculty job analyses will be forthcoming.&lt;/p&gt;
-
-&lt;p&gt;The project files can be found on Github &lt;a href=&#34;https://github.com/acircleda/Data-Jobs&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;. The analyses, always under development, can be found &lt;a href=&#34;https://acircleda.github.io/Data-Jobs/&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     

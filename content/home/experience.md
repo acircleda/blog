@@ -18,13 +18,33 @@ date_format = "Jan 2006"
 #   Leave `date_end` empty if it's your current employer.
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 [[experience]]
-  title = "Data Scientist"
+  title = "Senior Data Scientist"
   company = "Amplify"
   company_url = "http://www.amplify.com"
   location = "Remote / Brooklyn, NY"
   date_start = "2021-11-29"
   date_end = ""
   description = """
+  Notable Achievements:
+  
+  * Productionizing knowlegde tracing machine learning models to predict student proficiency
+  * Quarterly psychometric report for math content improvement
+  
+  Responsibilities include
+  
+  * Collaborated in data specification, ingestion, and transformation
+  * Conducted descriptive, inferential, and psychometric analyses
+  * Contributed data access, wrangling, and visualization functions to internal R package
+  * Built and maintained product-specific dashboards
+  * Worked cross-functionally with research, product, engineering, and design teams
+  
+  Tools used include
+  
+  * SQL, R, Python
+  * Snowflake
+  * Looker
+  * dbt
+  * docker
   """
 
 
@@ -34,15 +54,21 @@ date_format = "Jan 2006"
   company_url = "http://www.cupahr.org"
   location = "Knoxville, Tennessee"
   date_start = "2019-08-01"
-  date_end = ""
+  date_end = "2021-11-19"
   description = """
+  Notable Achievements:
+  
+  * Published first report examining representation and salary at minority-serving institutions 
+  * Published just-in-time reports related to FLSA overtime changes, minimum wage, COVID and remote-work
+  * Introduced interactive graphics to publications
+  
   Responsibilities include
   
-  * Analyzing and wrangling large data sets
-  * Creating data visualizations for general audiences
-  * Creating data visualizations and infographics for print media
-  * Creating interactive visualizations and dashboards
-  * Online survey creation, deployment, and analysis
+  * Analyzed and wrangled large data sets
+  * Created data visualizations for general audiences
+  * Created data visualizations and infographics for print media
+  * Created interactive visualizations and dashboards
+  * Desiged and analyzed online surveys
   
   Tools used include
   

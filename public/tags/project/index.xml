@@ -5,12 +5,60 @@
     <link>https://www.anthonyschmidt.co/tags/project/</link>
       <atom:link href="https://www.anthonyschmidt.co/tags/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Project</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 20 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 21 Jan 2024 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://www.anthonyschmidt.co/img/icon-192.png</url>
       <title>Project</title>
       <link>https://www.anthonyschmidt.co/tags/project/</link>
     </image>
+    
+    <item>
+      <title>Science Education to the Rescue? Assessing The Relationship Between Scientific Literacy and Carbon Emissions</title>
+      <link>https://www.anthonyschmidt.co/project/dissertation/</link>
+      <pubDate>Sun, 21 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://www.anthonyschmidt.co/project/dissertation/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Schmidt, A. (2022). Science Education to the Rescue? Assessing The Relationship Between Scientific Literacy and Carbon Emissions. [Doctoral dissertation, University of Tennessee, Knoxville]. &lt;a href=&#34;https://trace.tennessee.edu/utk_graddiss/7303/&#34; target=&#34;_blank&#34;&gt;https://trace.tennessee.edu/utk_graddiss/7303/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;This is a summary of my PhD dissertation. Use the links above to view the code and read the manuscript.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Human activities have radically changed the climate, negatively impacting all life on earth. The technical means to address this climate crisis exist, but there are major social and political hurdles that stand in the way. Education has been touted as one possible means for helping to move forward necessary action on climate change. A hybrid model of planned behavior and human capital helps explain how education can affect climate change. The current dissertation sought to assess what relationship may exist between changes in per capita carbon emissions and science education as measured by the Programme for International Student Achievement (PISA).&lt;/p&gt;
+
+&lt;p&gt;Results from multilevel growth models showed that countries with higher scientific literacy scores are significantly associated with higher CO2 per capita, though this is likely driven by economics and not directly by education. There were no significant relationships between changes in scientific literacy within a country and changes in that country’s emissions. This suggests evidence for the effect of science education is undetermined.&lt;/p&gt;
+
+&lt;p&gt;Based on this research, it is suggested that shifts in educational policies and practices that emphasizes and integrates science and climate change education across the curricula may have a greater effect on emissions. In addition, science and climate education should be imbued with a focus on effective climate change actions that can foster the individual and systemic changes needed to avert a global catastrophe.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>mlmhelpr: Multilevel/Mixed Model Helper Functions</title>
+      <link>https://www.anthonyschmidt.co/project/mlmhelpr/</link>
+      <pubDate>Fri, 04 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.anthonyschmidt.co/project/mlmhelpr/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Rocconi, L. &amp;amp; Schmidt, A. (2022). mlmhelpr [R package]. &lt;a href=&#34;https://cran.r-project.org/web/packages/mlmhelpr/&#34; target=&#34;_blank&#34;&gt;https://cran.r-project.org/web/packages/mlmhelpr/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;A collection of miscellaneous helper function for running multilevel/mixed models in &amp;lsquo;lme4&amp;rsquo;. This package aims to provide functions to compute common tasks when estimating multilevel models such as computing the intraclass correlation and design effect, centering variables, estimating the proportion of variance explained at each level, pseudo-R squared, random intercept and slope reliabilities, tests for homogeneity of variance at level-1, and cluster robust and bootstrap standard errors. The tests and statistics reported in the package are from Raudenbush &amp;amp; Bryk (2002, ISBN:9780761919049), Hox et al. (2018, ISBN:9781138121362), and Snijders &amp;amp; Bosker (2012, ISBN:9781849202015).&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>University air travel and greenhouse gas mitigation: An analysis of higher education climate policies</title>
+      <link>https://www.anthonyschmidt.co/publication/university-air-travel/</link>
+      <pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.anthonyschmidt.co/publication/university-air-travel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The representation of women and racial/ethnic minorities in the workforce of minority-serving higher education institutions</title>
+      <link>https://www.anthonyschmidt.co/publication/msis/</link>
+      <pubDate>Tue, 01 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.anthonyschmidt.co/publication/msis/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>footprint: Calculate carbon footprints from air travel in R</title>
@@ -35,6 +83,19 @@ remotes::install_github(&amp;quot;acircleda/footprint&amp;quot;)
     
     <item>
       <title>STARS and Stripes: Political and Institutional Factors that Affect Higher Education Sustainability Ratings</title>
+      <link>https://www.anthonyschmidt.co/project/stars/</link>
+      <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://www.anthonyschmidt.co/project/stars/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Schmidt, A. &amp;amp; Rocconi, L. (2021). STARS and stripes: Political and institutional factors that affect higher education sustainability ratings. &lt;em&gt;EdArXiv&lt;/em&gt;. &lt;a href=&#34;https://doi.org/10.35542/osf.io/d5bku&#34; target=&#34;_blank&#34;&gt;https://doi.org/10.35542/osf.io/d5bku&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Environmental issues have played a role in higher education since at least the 1970s, beginning with a focus on sustainability and most recently addressing the climate crisis. Concomitant with the rise in higher education sustainability initiatives have been the rise of higher education sustainability assessments (HESAs), serving as tools for benchmarking, self-assessment, and comparisons. The STARS assessment is the most ubiquitous HESA in North America. The present research employed stakeholder theory to investigate what factors are associated with institutional and political factors affect STARS ratings. Using a multilevel model of local- and state-level variables, the results indicated that measures of local partisanship have little to no influence while state sustainability targets have small effects on STARS ratings. Furthermore, the results reaffirmed past research that indicated institution-level stakeholders (e.g., faculty, students, staff) and institutional characteristics such as finances play a larger and more critical role in institutional sustainability.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>STARS and Stripes: Political and Institutional Factors that Affect Higher Education Sustainability Ratings</title>
       <link>https://www.anthonyschmidt.co/publication/stars/</link>
       <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
       <guid>https://www.anthonyschmidt.co/publication/stars/</guid>
@@ -42,19 +103,37 @@ remotes::install_github(&amp;quot;acircleda/footprint&amp;quot;)
     </item>
     
     <item>
-      <title>University air travel and greenhouse gas mitigation: An analysis of higher education climate policies</title>
-      <link>https://www.anthonyschmidt.co/publication/university-air-travel/</link>
-      <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>https://www.anthonyschmidt.co/publication/university-air-travel/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>A Document Analysis of University Climate Policies and Air Travel</title>
+      <title>University air travel and greenhouse gas mitigation: an analysis of higher education climate policies</title>
       <link>https://www.anthonyschmidt.co/project/flying-less-document-analysis/</link>
       <pubDate>Fri, 08 May 2020 00:00:00 +0000</pubDate>
       <guid>https://www.anthonyschmidt.co/project/flying-less-document-analysis/</guid>
-      <description>&lt;p&gt;This project utilize qualitative document analysis to examine the role of flying less as a Scope 3 emissions reduction strategy in various university climate policies. It will include documents from UTK, &lt;a href=&#34;https://oira.utk.edu/peer-institutions/&#34; target=&#34;_blank&#34;&gt;UTK peer and aspirational universities&lt;/a&gt;, the top 25 public research universities, and specific institutions that have explicit attention to flying less.&lt;/p&gt;
+      <description>
+
+&lt;blockquote&gt;
+&lt;p&gt;Schmidt, A. (2022). University air travel and greenhouse gas mitigation: an analysis of higher education climate policies. &lt;em&gt;International Journal of Sustainability in Higher Education&lt;/em&gt;, 23(6), 1426-1442. &lt;a href=&#34;https://doi.org/10.1108/IJSHE-07-2021-0318&#34; target=&#34;_blank&#34;&gt;https://doi.org/10.1108/IJSHE-07-2021-0318&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;purpose&#34;&gt;Purpose&lt;/h2&gt;
+
+&lt;p&gt;Numerous higher education institutions have created policies that aim to reduce their carbon footprints. Most policies focus on reducing greenhouse gas emissions related to energy production and consumption. One area that has received less attention has been greenhouse gas emissions from university air travel. The purpose of this paper is to understand how US higher education institutions address university air travel emissions.&lt;/p&gt;
+
+&lt;h2 id=&#34;design-methodology-approach&#34;&gt;Design/methodology/approach&lt;/h2&gt;
+
+&lt;p&gt;The present research used qualitative document analysis to examine the climate policies of 44 doctoral institutions. The analysis sought to establish themes across a range of climate policy documents from the sampled institutions. Intercoder consensus, peer review and member checking were used to increase the reliability and validity of the analysis.&lt;/p&gt;
+
+&lt;h2 id=&#34;findings&#34;&gt;Findings&lt;/h2&gt;
+
+&lt;p&gt;Five major themes emerged from the documents: no consideration of air travel, lack of quality data for accurate consideration, recommendations to offset air travel emissions, support for videoconferencing and other suggestions for mitigation. These themes are discussed in detail, as are practical suggestions and implications stemming from this and related research.&lt;/p&gt;
+
+&lt;h2 id=&#34;research-limitations-implications&#34;&gt;Research limitations/implications&lt;/h2&gt;
+
+&lt;p&gt;The research is based on a sample of US doctoral institutions and their public documents. It is therefore limited in its generalizability.&lt;/p&gt;
+
+&lt;h2 id=&#34;practical-implications&#34;&gt;Practical implications&lt;/h2&gt;
+
+&lt;p&gt;Institutions need to create a culture in which individual behavior changes toward lower travel are supported. Though problematic, institutions in the USA need to strive to implement suggested offset programs. Given the ubiquity of virtual presence, institutions need to further support videoconferencing.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://edarxiv.org/bmuas/download?format=pdf&#34; target=&#34;_blank&#34;&gt;PDF from EdArXiv&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -63,22 +142,7 @@ remotes::install_github(&amp;quot;acircleda/footprint&amp;quot;)
       <link>https://www.anthonyschmidt.co/project/r-handbook/</link>
       <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
       <guid>https://www.anthonyschmidt.co/project/r-handbook/</guid>
-      <description>&lt;p&gt;This project was part of a summer internship with &lt;a href=&#34;https://epc.utk.edu/people/jennifer-ann-morrow-phd/&#34; target=&#34;_blank&#34;&gt;Dr. Jennifer Ann Morrow&lt;/a&gt; to create an introduction to &lt;code&gt;R&lt;/code&gt; resource guide relevant to students in our evaluation, statistics, and measurement PhD program. It would also be relevant to anyone interested in learning R. Its topics include setup, important, data manipulation, data cleaning, statistical analysis, and data visualization. The examples use real survey data and take readers from import, to cleaning, to analysis.&lt;/p&gt;
-
-&lt;p&gt;The handbook was being developed with &lt;code&gt;bookdown&lt;/code&gt;.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Data-Related Jobs for ESM Students</title>
-      <link>https://www.anthonyschmidt.co/project/esm-data-jobs/</link>
-      <pubDate>Sat, 18 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>https://www.anthonyschmidt.co/project/esm-data-jobs/</guid>
-      <description>&lt;p&gt;This is an ongoing project to analyze data-related jobs posted on &lt;a href=&#34;http://www.higheredjobs.com&#34; target=&#34;_blank&#34;&gt;HigherEdJobs&lt;/a&gt;. These are jobs a typical ESM student would qualify. The jobs are analyzed in order to understand the skills and competencies that are in demand.&lt;/p&gt;
-
-&lt;p&gt;The project is currently focused on administrative-level jobs. Faculty job analyses will be forthcoming.&lt;/p&gt;
-
-&lt;p&gt;The project files can be found on Github &lt;a href=&#34;https://github.com/acircleda/Data-Jobs&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;. The analyses, always under development, can be found &lt;a href=&#34;https://acircleda.github.io/Data-Jobs/&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;The &lt;a href=&#34;https://bookdown.org/aschmi11/RESMHandbook/&#34; target=&#34;_blank&#34;&gt;R Software Handbook&lt;/a&gt; was developed as part of a summer internship with &lt;a href=&#34;https://epc.utk.edu/people/jennifer-ann-morrow-phd/&#34; target=&#34;_blank&#34;&gt;Dr. Jennifer Ann Morrow&lt;/a&gt;. The goal was to create an introduction to &lt;code&gt;R&lt;/code&gt; resource guide relevant to students in our evaluation, statistics, and measurement PhD program. It would also be relevant to anyone interested in learning R. Its topics include setup, important, data manipulation, data cleaning, statistical analysis, and data visualization. The examples use real survey data and take readers from import, to cleaning, to analysis.&lt;/p&gt;
 </description>
     </item>
     
@@ -92,37 +156,15 @@ remotes::install_github(&amp;quot;acircleda/footprint&amp;quot;)
     </item>
     
     <item>
-      <title>Fly or Die - The Relationship between Conference Travel, Employability, and the Climate Crisis.</title>
-      <link>https://www.anthonyschmidt.co/project/fly-or-die-phd-grads/</link>
-      <pubDate>Sat, 07 Dec 2019 00:00:00 +0000</pubDate>
-      <guid>https://www.anthonyschmidt.co/project/fly-or-die-phd-grads/</guid>
-      <description>&lt;p&gt;The &amp;ldquo;Fly or Die&amp;rdquo; project is a multi-survey research project that looks at the complex relationship between graduate student conference travel, employability, and the climate crisis.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Survey One&lt;/strong&gt; focuses on doctoral student employment outcomes, conferences attendance, conference activities, conference types, and publications. Analyses are across disciplines and job industries.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Survey Two&lt;/strong&gt; focuses on tenure-track faculty search comittees and their attitudes toward recently-graduated PhD students&amp;rsquo; conference attendance, conference activities, and publications.&lt;/p&gt;
-
-&lt;p&gt;The ulitmate goal of this research is to understand the ideal conference and publication record that can maximize employment outcomes while minimizing our carbon footprints.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Intensive English Program Student Academic Achievement</title>
+      <title>Comparing Intensive English Program (IEP) and Directly-Admitted International Students’ Academic Achievement</title>
       <link>https://www.anthonyschmidt.co/project/iep-gpa/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       <guid>https://www.anthonyschmidt.co/project/iep-gpa/</guid>
-      <description>&lt;p&gt;This project uses longitudinal institutional data to understand the efficacy of an intensive English program (IEP) by comparing IEP students, who arrive with TOEFL scores under the institutional minimum, with directly admitted students, who have scores at or above the minimum.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Planting the Seeds for Computer Science Education in East Tennessee</title>
-      <link>https://www.anthonyschmidt.co/project/planting-the-seeds-for-cs/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.anthonyschmidt.co/project/planting-the-seeds-for-cs/</guid>
-      <description>&lt;p&gt;The project was focused on understanding the needs of administrators and teachings in order to develop opportunities for K-8 teachers to engage in professional development on the Tennessee computer science standards.&lt;/p&gt;
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Schmidt, A. (2020, June 19). Comparing Intensive English Program  (IEP) and Directly-Admitted International Students’ Academic Achievement. &lt;em&gt;EdArXiv&lt;/em&gt;. &lt;a href=&#34;https://doi.org/10.35542/osf.io/vm37t&#34; target=&#34;_blank&#34;&gt;https://doi.org/10.35542/osf.io/vm37t&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;This project  was funded through the [University of Tennessee’s Community Engaged Research Seed Program].(&lt;a href=&#34;https://research.utk.edu/2019-research-seed-program-recipients/&#34; target=&#34;_blank&#34;&gt;https://research.utk.edu/2019-research-seed-program-recipients/&lt;/a&gt;). It is related to the &lt;a href=&#34;https://www.makingdatasciencecount.com/project/cs4appalachia/&#34; target=&#34;_blank&#34;&gt;CS for Appalachia&lt;/a&gt; Research-Practice Partnership and NSF grant.&lt;/p&gt;
+&lt;p&gt;Intensive English programs (IEPs) exist as an additional pathway into higher education for international students who need additional language support before full matriculation. Despite their long history in higher education, there is little research on the performance of IEP students. The current research examines IEP student performance by comparing them to directly-admitted international students. Results from regression models on first-semester and first-year GPA indicated no significant differences between these two student groups. Follow-up equivalence testing indicated statistical equivalence in several cases. The findings lead to the conclusion that the IEP students perform on par with directly-admitted international students. These findings imply further support for IEPs as alterative pathways to direct admission.&lt;/p&gt;
 </description>
     </item>
     
